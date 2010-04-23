@@ -1,0 +1,895 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Techozoic Fluid\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-25 10:36-0500\n"
+"PO-Revision-Date: 2010-04-18 10:17+0100\n"
+"Last-Translator: wolforg <contact@wolforg.eu>\n"
+"Language-Team: Wolforg <contact@wolforg.eu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-Language: French\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: C:\\Documents and Settings\\jeremy.WES.BCSBOE\\Desktop\\techozoic-fluid\n"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/404.php:20
+msgid "Error 404 - Not Found"
+msgstr "Erreur 404 - Non Trouvé"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/404.php:22
+msgid "Browse Archives"
+msgstr "Naviguer dans les Archives"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:13
+#, php-format
+msgid "Archive for the %s Category"
+msgstr "Archives pour la Catégorie %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:16
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:19
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:22
+#, php-format
+msgid "Archive for %s"
+msgstr "Archives pour %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:25
+msgid "Search Results"
+msgstr "Résultats de Recherche"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:28
+msgid "Author Archive"
+msgstr "Archives de l'Auteur"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:31
+msgid "Blog Archives"
+msgstr "Archives du Site"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:35
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:63
+msgid "&laquo; Previous Entries"
+msgstr "&laquo; Articles Précédents"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:36
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:64
+msgid "Next Entries &raquo;"
+msgstr "Articles suivants &raquo;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:40
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:10
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:33
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:56
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Lien Permanent pour %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:57
+#, php-format
+msgid "Posted in %s"
+msgstr "Publié dans %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:57
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:61
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:319
+msgid "Edit"
+msgstr "Modifier"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:57
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:23
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:49
+msgid "No Comments &#187;"
+msgstr "0 Commentaires &#187;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:57
+msgid "1 Comment &#187;"
+msgstr "1 Commentaire &#187;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:57
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:23
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:49
+msgid "% Comment &#187;"
+msgid_plural "% Comments &#187"
+msgstr[0] "% Commentaire &#187;"
+msgstr[1] "% Commentaires &#187"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/archive.php:69
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:80
+msgid "Not Found"
+msgstr "Non Trouvé"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:14
+msgid "Read the rest of this entry"
+msgstr "Lire la Suite"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:16
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:42
+msgid "Pages"
+msgstr "Pages"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:20
+#, php-format
+msgid "This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed."
+msgstr "Cet article a été publié le %1$s à %2$s et est classé dans %3$s. Vous pouvez suivre ses commentaires via son fil %4$s."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:20
+msgid "RSS 2.0"
+msgstr "RSS 2.0"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:23
+#, php-format
+msgid "You can %1$s or %2$s from your own site."
+msgstr "Vous pouvez %1$s ou %2$s sur votre site."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:23
+msgid "leave a response"
+msgstr "faire un commentaire"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:23
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:26
+msgid "trackback"
+msgstr "faire un trackback"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:26
+#, php-format
+msgid "Responses are currently closed, but you can %s from your site."
+msgstr "Commentaires actuellement clos, mais vous pouvez %s sur votre site."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:29
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Vous pouvez aller à la fin et laisser un commentaire. Pings actuellement non autorisés."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:32
+msgid "Both comments and pings are currently closed."
+msgstr "Commentaires et Pings actuellement clos."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:34
+msgid "  Edit this entry."
+msgstr " Modifier"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/attachment.php:46
+msgid "Sorry, no attachments matched your criteria."
+msgstr "Désolé, aucun fichier joint ne correspond à vos critères."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Ne chargez pas cette page directement, svp."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:6
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:13
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Cet article est protégé par un mot de passe. Entrez le pour voir les commentaires."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:23
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:49
+msgid "One Comment &#187;"
+msgstr "Un Commentaire &#187;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:37
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:99
+msgid "Comments are closed."
+msgstr "Commentaires clos."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:49
+#, php-format
+msgid "%1$s to %2$s &#8221;"
+msgstr "%1$s pour %2$s &#8221;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:55
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:313
+#, php-format
+msgid "Comment by %s"
+msgstr "Commentaire par %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:57
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:88
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:315
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de validation."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:70
+msgid "TrackBacks / PingBacks"
+msgstr "TrackBacks / PingBacks"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:81
+msgid "TrackBack"
+msgstr "TrackBack"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:83
+msgid "PingBack"
+msgstr "PingBack"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:117
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:119
+msgid "Leave a Reply"
+msgstr "Laisser une Réponse"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:117
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Laisser une Réponse pour %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:123
+#, php-format
+msgid "You must be %s to post a comment."
+msgstr "Vous devez être %s pour poster un commentaire."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:123
+msgid "logged in"
+msgstr "connecté"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:128
+#, php-format
+msgid "Logged in as %s"
+msgstr "Connecté en tant que %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:128
+msgid "Log out of this account"
+msgstr "Déconnexion de ce compte"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:128
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:131
+msgid "Name"
+msgstr "Nom"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:131
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:133
+msgid "(required)"
+msgstr "(requis)"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:133
+msgid "Mail (will not be published)"
+msgstr "Email (ne sera pas publié)"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:135
+msgid "Website"
+msgstr "Site Web"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/comments.php:140
+msgid "Submit Comment"
+msgstr "Envoyer Commentaire"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/footer.php:12
+msgid "by"
+msgstr "par"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/footer.php:12
+msgid "Top"
+msgstr "Haut | <a href=\"http://www.wolforg.eu\">Traduit par Wolforg</a>"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/footer.php:13
+#, php-format
+msgid "%1$d mySQL queries in %2$s seconds."
+msgstr "%1$d requêtes mySQL en %2$s secondes."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:16
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:19
+msgid "Right Sidebar"
+msgstr "Barre Latérale Droite"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:17
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:20
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/l_sidebar.php:3
+msgid "Left Sidebar"
+msgstr "Barre Latérale Gauche"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:25
+msgid "Techozoic Sidebar Navigation Menu - option to add categories to navigation"
+msgstr "Menu de Navigation Barre Latérale Techozoic  - option pour ajouter catégories à la navigation"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:26
+msgid "Techozoic Navigation"
+msgstr "Navigation Techozoic"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:32
+msgid "Navigation"
+msgstr "Navigation"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:47
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:411
+msgid "Home"
+msgstr "Accueil"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:57
+msgid "Categories"
+msgstr "Catégories"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:84
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:148
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:244
+msgid "Title:"
+msgstr "Titre :"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:87
+msgid "Include Pages in Menu"
+msgstr "Inclure les Pages dans le Menu"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:89
+msgid "Include Categories in Menu"
+msgstr "Inclure les Catégories dans le Menu"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:91
+msgid "Separate Pages and Categories"
+msgstr "Séparer les Pages et les Catégories"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:100
+msgid "Author information Widget - Enter short blurb about yourself"
+msgstr "Widget d'information sur l'Auteur - Entrez quelques infos sur vous"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:101
+msgid "Techozoic About"
+msgstr "A Propos de Techozoic"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:106
+msgid "About Author"
+msgstr "A Propos de l'Auteur"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:150
+msgid "Write About yourself here"
+msgstr "Ecrivez à propos de vous ici"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:153
+msgid "Enable Gravatar"
+msgstr "Activer Gravatar"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:155
+msgid "Size of Gravatar"
+msgstr "Taille du Gravatar"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:157
+msgid "Between 25 and 100 Pixels"
+msgstr "Entre 25 et 100 Pixels"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:166
+msgid "Meta Information as well as Dashboard and Log In/Out Links"
+msgstr "Infos complémentaires comme Tableau de Bord et liens de Connexion/Déconnexion"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:167
+msgid "Techozoic Meta"
+msgstr "Infos Complémentaires Techozoic"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:182
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/l_sidebar.php:7
+msgid "This page validates as XHTML 1.0 Transitional"
+msgstr "Cette page est valide XHTML 1.0 Transitionnel"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:182
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/l_sidebar.php:7
+msgid "Valid XHTML"
+msgstr "Valide XHTML"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:183
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/l_sidebar.php:9
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Propulsé par WordPress."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:201
+msgid "Title"
+msgstr "Titre"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:210
+msgid "Link to RSS feed for blog as well as comment RSS feed"
+msgstr "Lien pour le fil RSS du site comme pour le fil RSS de commentaire"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:211
+msgid "Techozoic RSS"
+msgstr "RSS Techozoic"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:227
+msgid "Comments"
+msgstr "Commentaires"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:283
+msgid "Thank you for using the Techozoic Theme.  "
+msgstr "Merci d'utiliser le thème Techozoic."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:285
+#, php-format
+msgid "Visit the %s to start customizing Techozoic.  "
+msgstr "Visitez la %s pour commencer à personnaliser Techozoic.  "
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:285
+msgid "options page"
+msgstr "page d'options"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:286
+#, php-format
+msgid "If your having problems or would like to suggest a new feature, please visit the %s."
+msgstr "Si vous rencontrez des problèmes ou désirez proposer une fonction, visitez %s, svp."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:286
+msgid "Support Forum"
+msgstr "Forum de Support"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:286
+msgid "support forum"
+msgstr "forum de support"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:333
+#, php-format
+msgid "Ping from %s"
+msgstr "Ping de %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:431
+msgid "Archive for category &#39;"
+msgstr "Archives pour la catégorie &#39;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:474
+msgid "Search results for &#39;"
+msgstr "Résultats de recherche pour &#39;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:477
+msgid "Posts tagged &#39;"
+msgstr "Articles avec le mot-clé &#39;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:484
+msgid "Articles posted by "
+msgstr "Article publié par"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:487
+msgid "Error 404"
+msgstr "Erreur 404"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:492
+msgid "Page"
+msgstr "Page"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:505
+msgid "Delete"
+msgstr "Supprimer"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/functions.php:506
+msgid "Spam"
+msgstr "Spam"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/header.php:125
+msgid "Dashboard"
+msgstr "Tableau de Bord"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/header.php:126
+msgid "Log Out"
+msgstr "Déconnexion"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/header.php:132
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/header.php:134
+msgid "Login"
+msgstr "Connexion"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/header.php:141
+msgid "Username: "
+msgstr "Nom d'Utilisateur :"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/header.php:142
+msgid "Password: "
+msgstr "Mot de Passe :"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/header.php:143
+msgid "Log in"
+msgstr "Connexion"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:19
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:76
+msgid "&laquo; Older Entries"
+msgstr "&laquo; Articles plus Anciens"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:20
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:77
+msgid "Newer Entries &raquo;"
+msgstr "Articles plus Récents &raquo;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:34
+msgid "By"
+msgstr "Par"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:34
+#, php-format
+msgid "Filed in %s"
+msgstr "Classé dans %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:34
+msgid "&nbsp;|&nbsp; Edit."
+msgstr "&nbsp;|&nbsp; Modifier."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:38
+msgid "Read the remainder of this entry &raquo;"
+msgstr "Lire la suite de cet article &raquo;"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:41
+msgid "Be the first to comment"
+msgstr "Soyez le premier à commenter"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:41
+msgid "1 Comment"
+msgstr "1 Commentaire"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:41
+msgid "% Comment so far"
+msgid_plural "% Comments so far"
+msgstr[0] "Déjà % Commentaire"
+msgstr[1] "Déjà % Commentaires"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:41
+msgid "Comments Closed"
+msgstr "Commentaires Clos"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:53
+msgid "DIGG this!"
+msgstr "Digguez ça!"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:54
+msgid "del.icio.us this!"
+msgstr "Partager sur del.icio.us"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:56
+msgid "Trackback"
+msgstr "Trackback"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:58
+msgid "To the top"
+msgstr "En Haut"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/index.php:81
+msgid "Sorry, but you are looking for something that isn't here"
+msgstr "Désolé, mais vous recherchez quelque chose qui ne se trouve pas ici"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/l_sidebar.php:8
+msgid "Valid CSS"
+msgstr "CSS Valide"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/l_sidebar.php:18
+msgid "Tags"
+msgstr "Mots-Clés"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/page.php:23
+msgid "Read the rest of this page"
+msgstr "Lire la suite de cette page"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/page.php:24
+msgid "Pages:"
+msgstr "Pages :"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/page.php:30
+msgid "Edit this page."
+msgstr "Modifier cette page"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/search.php:39
+msgid "Posted in $s"
+msgstr "Publié dans $s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/search.php:48
+msgid "No posts found. Try a different search?"
+msgstr "Aucun article trouvé. Essayer une recherche différente?"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/searchform.php:2
+msgid "Search: Type and Enter"
+msgstr "Recherche + Entrée"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/searchform.php:4
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:44
+msgid "Go"
+msgstr "Go"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:10
+msgid "Pages Below Current"
+msgstr "Pages sous l'actuelle"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:20
+#, php-format
+msgid "You are currently browsing the archives for the %s category."
+msgstr "Vous naviguez actuellement dans les archives de la catégorie %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:22
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:24
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:26
+#, php-format
+msgid "You are currently browsing the %1$s archives for %2$s."
+msgstr "Vous naviguez actuellement dans les archives %1$s pour %2$s."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:28
+#, php-format
+msgid "You have searched the %1$s archives for %2$d."
+msgstr "Vous avez recherché les archives de %1$s pour %2$d."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:30
+#, php-format
+msgid "You are currently browsing the %1$s archives."
+msgstr "Vous naviguez actuellement dans les archives de %1$s."
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:33
+msgid "Syndicate"
+msgstr "Syndiquer"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/sidebar.php:48
+msgid "Blogroll"
+msgstr "Liens"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/single.php:20
+#, php-format
+msgid "By %s"
+msgstr "Par %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/single.php:22
+#, php-format
+msgid "Go back to %s"
+msgstr "Retour sur %s"
+
+#: C:\Documents
+#: and
+#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/single.php:56
+msgid "Sorry, no posts matched your criteria."
+msgstr "Désolé aucun article ne correspond à vos critères."
+
