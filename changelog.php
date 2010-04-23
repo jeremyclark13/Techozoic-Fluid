@@ -4,7 +4,7 @@
 <p>
 <h3>Version 1.8.7</h3><br />
 - Added French Translations - Thanks <a href="http://www.wolforg.eu" title= "Wolforg : CMS, Logiciels Libres & Réseaux Sociaux en Lozère" _target="blank">Wolforg</a><br />
-- Added Cufon javascript font replacement options, and two free to use on web fonts<br />
+- Added Cufon javascript font replacement options, and three free to use on web fonts<br />
 - Added option to change content area background color<br />
 - Added option to have content area background image<br />
 - Bugfix: Search results page blank cause by missing ) in translation functions<br />

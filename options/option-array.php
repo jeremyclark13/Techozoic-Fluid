@@ -390,7 +390,7 @@ $options = array (
 				"old_id" => "unused before 1.8.7",
             	"std" => "",
             	"type" => "select",
-				"options" => array("contempory","journal")),
+				"options" => array("contempory","journal","nevis")),
 
     	array(	"name" => "Color Options",
 				"type" => "header",
