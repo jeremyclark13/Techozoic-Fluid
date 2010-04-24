@@ -234,7 +234,7 @@ function techozoic_admin() {
 			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 		</form>
 	</div>
-	<div class="tech_head"><h2><?php echo $themename;?> settings</h2>
+	<div class="tech_head"><img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> settings</h2>
 	<ul id="themetabs" class="tabs">
 		<li><a href="#layout" rel="layout" rev="tech_buttons">Layout</a></li>
 		<li><a href="#nav" rel="nav" rev="tech_buttons">Navigation</a></li>
