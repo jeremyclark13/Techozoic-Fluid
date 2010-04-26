@@ -12,7 +12,8 @@
 	$tech = get_option('techozoic_options');
 	$header_folder = WP_CONTENT_DIR. "/techozoic/images/headers";
 ?>
-	<div class="tech_head"><h2><?php echo $themename;?> Header Settings</h2>
+	<div class="tech_head"><img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> Header Settings</h2>
+	<div style="clear:both;"></div>
 		<div id="headerimgs">
 		<h2>Upload Header Image</h2>
 		<p>Max Dimensions: 1000 px wide X 200 px high<br />

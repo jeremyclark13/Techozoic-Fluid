@@ -70,7 +70,10 @@ else { ?>
 <![endif]-->
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php 
+<?php if ($tech['favicon_image']) {?>
+	<link rel="icon" href="<?php echo $tech['favicon_image'];?>" type="image/x-icon" />
+	<link rel="shortcut icon" href="<?php echo $tech['favicon_image'];?>" type="image/x-icon" />
+<?php } 
 if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 wp_head(); ?>
 </head>

@@ -2,7 +2,7 @@
 //Please Do NOT edit this page.
 $themename = "Techozoic";
 $shortname = "tech";
-$tech_error = array ( "Return Error", "File Already Exists", "Incorrect File Type / File Size Limit exceeded","Folder isn't writable please check folder" .TEMPLATEPATH ."/images/ Permissions." , "File Doesn't exist.");
+$tech_error = array ( "Return Error", "File Already Exists", "Incorrect File Type / File Size Limit exceeded","Folder isn't writable please check folder that<code>" .WP_CONTENT_URL . "/techozoic/</code> exists and is writable." , "File Doesn't exist.", "Folder isn't writable please check folder<code>" .TEMPLATEPATH ."</code> Permissions.","Please only use .ico format for Fav Icon Images");
 $theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = $theme_data['Version'];
 
@@ -71,9 +71,10 @@ function techozoic_add_admin() {
 		}
 	if ( $_GET['page'] == "techozoic_style_admin" ) {		
 		if(isset($_POST['style'])){
-				$file_name = TEMPLATEPATH ."/style.css";
-				$orig_file = TEMPLATEPATH ."/reset-style.css";
-				$bu_file = TEMPLATEPATH ."/style.css.bu";
+			$file_name = TEMPLATEPATH ."/style.css";
+			$orig_file = TEMPLATEPATH ."/reset-style.css";
+			$bu_file = TEMPLATEPATH ."/style.css.bu";
+			if (is_writable($file_name)) {
 				if ($_POST['tech_style_copy']){
 					copy($file_name, $bu_file);
 					$file_open = fopen($file_name,"w");
@@ -94,8 +95,11 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 				} elseif ($_POST['tech_style_restore']){
 					copy($bu_file, $file_name);
 				}
-			header("Location: admin.php?page=techozoic_style_admin&saved=true");
+				header("Location: admin.php?page=techozoic_style_admin&saved=true");
+			} else {
+				header("Location: admin.php?page=techozoic_style_admin&message=true&error=5");
 			}
+		}
 	}	
 	if ( $_GET['page'] == "techozoic_main_admin" or $_GET['page'] == "techozoic_style_admin") {
 			$location = $_GET['page'];
@@ -147,12 +151,18 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 							if (isset($_REQUEST[$value['reset']])){
 								$image_url = "";
 							} elseif ($_REQUEST[$value['select']] != "Select Image"){
-								$image_url =  get_bloginfo('template_directory') . "/images/backgrounds/".$_REQUEST[$value['select']];
+								$image_url =  WP_CONTENT_URL . "/techozoic/images/backgrounds/".$_REQUEST[$value['select']];
 							} elseif ($_FILES[$value['id']]['size'] > 0){
 								$ID = $value['id']; // Acts as the name
 								$dir = WP_CONTENT_DIR. "/techozoic/images/backgrounds/";
 								if (is_writable($dir)) {
-									if ((($_FILES[$ID]["type"] == "image/gif") || ($_FILES[$ID]["type"] == "image/jpeg") || ($_FILES[$ID]["type"] == "image/png") || ($_FILES[$ID]["type"] == "image/pjpeg")) && ($_FILES[$ID]["size"] < 1048576)) {
+									if ((($_FILES[$ID]["type"] == "image/gif") || ($_FILES[$ID]["type"] == "image/jpeg") || ($_FILES[$ID]["type"] == "image/png") || ($_FILES[$ID]["type"] == "image/x-ico") || ($_FILES[$ID]["type"] == "image/x-icon") || ($_FILES[$ID]["type"] == "image/pjpeg")) && ($_FILES[$ID]["size"] < 1048576)) {
+										if ($ID = "favicon_image"){
+											if (($_FILES[$ID]["type"] != "image/x-ico") || ($_FILES[$ID]["type"] != "image/x-icon")){
+												$error = "6";
+												break 1;
+											}
+										}
 										if ($_FILES[$ID]["error"] > 0){
 											$error = "0";
 										} else {
@@ -347,7 +357,7 @@ function techozoic_admin() {
 	<?php			if ($settings[$id] != "") { ?>
 		<tr valign="middle">
 					<th scope="row">Selected:</th><td>
-	<span style="display:block;width:100px;height:100px;background-image:url(<?php echo $settings[$id];?>)">
+	<span id ="<?php echo $value['id'];?>_selected_bg" style="display:block;width:100px;height:100px;background-image:url(<?php echo $settings[$id];?>)">
 		</td></tr>
 		<?php				} ?>
 				<tr valign="middle"> 
@@ -358,9 +368,9 @@ function techozoic_admin() {
 		$path = WP_CONTENT_DIR. "/techozoic/images/backgrounds/";
 		$dir_handle = @opendir($path) or die("Unable to open $path");
 		while ($tech_file = readdir($dir_handle)) {
-			if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" )
+			if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" || ($value['id'] == "favicon_image" && !preg_match('/\.ico$/i', $tech_file))) {
 				continue;
-			
+			}
 	?>
 		<option><?php echo $tech_file; ?></option>
 	<?php

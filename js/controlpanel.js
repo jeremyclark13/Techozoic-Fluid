@@ -20,6 +20,7 @@ addLoadEvent(function() {
 		detectlink();
 		document.getElementById('bg_image_preview').style.display = 'none';
 		document.getElementById('content_bg_image_preview').style.display = 'none';
+		document.getElementById('favicon_image_preview').style.display = 'none';
 	}
 });
 
@@ -47,8 +48,10 @@ function image_preview(path,id){
 	var preview_image = id+"_preview_image"
 	if (id =="bg_image"){
 		var image = document.tech_options.bg_image_select[document.tech_options.bg_image_select.selectedIndex].text;
-	} else {
+	} else if (id =="content_bg_image") {
 		var image = document.tech_options.content_bg_image_select[document.tech_options.content_bg_image_select.selectedIndex].text;
+	}  else {
+		var image = document.tech_options.content_bg_image_select[document.tech_options.favicon_image_select.selectedIndex].text;
 	}
 	if (image == "Select Image") {
 		document.getElementById(preview).style.display = 'none';

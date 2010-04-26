@@ -54,6 +54,14 @@ $options = array (
             	"std" => "X,Y",
             	"options" => array("X","Y")),
 				
+		array(	"name" => "Fav Icon Image<br /><small>Fav Icon must be an .ico file<br/>Browse for a new image or chose previously uploaded image</small>",		
+            	"id" => "favicon_image",
+				"old_id" => "unused before 1.8.7",
+				"std" => "",
+				"reset" => "favicon_image_reset",
+				"select" => "favicon_image_select",
+            	"type" => "upload"),
+				
 		array(	"name" => "Fixed or Fluid Width",		
             	"id" => "page_type",
 		"old_id" => "tech_page_type",
@@ -543,7 +551,7 @@ $options = array (
              	"tab_id" => "tab4",
              	"anchor" =>"tab4"),			
 			
-    	array(	 "name" => "Home Page Ad Code<br /><small>This Ad Code will be displayed a total of 3 times.<br />Best ads are banner ads no wider than 500 pixels</small>",
+    	array(	 "name" => "Home Page Ad Code<br /><small>This Ad Code will be displayed a total of 3 times.<br />Best ads are banner ads no wider than 500 pixels<br />*Only html and javascript accepted</small>",
             	"id" => "ad_code",
 				"old_id" => "tech_ad_code",
             	"std" => "",
@@ -556,13 +564,13 @@ $options = array (
             	"std" => "3",
             	"options" => array("6", "5", "4", "3", "2", "1")),
 
-    	array(	"name" => "Home Page Header Ad Code<br /><small>This Ad Code will be displayed on the home <br />page below the header and navigation.<br />Best ads are banner ads no wider than 500 pixels</small>",
+    	array(	"name" => "Home Page Header Ad Code<br /><small>This Ad Code will be displayed on the home <br />page below the header and navigation.<br />Best ads are banner ads no wider than 500 pixels<br />*Only html and javascript accepted</small>",
             	"id" => "header_ad_code",
 				"old_id" => "tech_header_ad_code",
 				"std" => "",
             	"type" => "textarea"),
 
-    	array(	"name" => "Single Post Ad Code<br /><small>This Ad Code will be displayed on the single post page.<br />Best ads are banner ads no wider than 500 pixels</small>",
+    	array(	"name" => "Single Post Ad Code<br /><small>This Ad Code will be displayed on the single post page.<br />Best ads are banner ads no wider than 500 pixels<br />*Only html and javascript accepted</small>",
             	"id" => "sing_ad_code",
 				"old_id" => "tech_sing_ad_code",
             	"std" => "",

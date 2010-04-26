@@ -11,7 +11,7 @@
 			}
 		}
 ?>
-	<div class="tech_head"><h2><?php echo $themename;?> Style Settings</h2></div>
+	<div class="tech_head"><img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> Style Settings</h2></div>
 	<div id="style">
 <form method="post" enctype="multipart/form-data" id="tech_main" name="tech_options_style">
 <table class="optiontable">

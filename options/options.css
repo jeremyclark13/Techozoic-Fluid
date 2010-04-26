@@ -14,7 +14,8 @@ ul#themetabs li{display:inline; list-style:none; }
 ul#themetabs li a{border:1px solid #e3e3e3;background-color:#f1f1f1;-moz-border-radius-topleft:10px;-moz-border-radius-topright:10px;-webkit-border-top-right-radius:10px;-webkit-border-top-left-radius:10px;padding:5px;}
 ul#themetabs li a:hover{border:1px solid #d3d3d3;background-color:#e1e1e1;}
 ul#themetabs li a.selected{border:1px solid #d3d3d3;background-color:#e1e1e1;}
-#bg_image_preview_image,#content_bg_image_preview_image{height:100px; width:100px;display:block;}
+#bg_image_preview_image,#content_bg_image_preview_image,#favicon_image_preview_image{height:100px; width:100px;display:block;}
+#favicon_image_selected_bg{background-repeat:no-repeat !important;}
 #header_imgs{float:left;}
 #header_imgs img {border: 1px solid #ddd; margin:0 auto 10px;width:90%;height:55%;}
 #tech_main{clear:both;}

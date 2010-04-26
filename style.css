@@ -67,6 +67,10 @@ body{
 	background: transparent url(images/navbarbg.png) repeat-x left top;
 }
 
+#footercont {
+	background: transparent url(/images/bgbot.png) repeat-x left bottom;
+}
+
 .narrowcolumn{
 	float:left;
 	margin:0 1%;
@@ -300,7 +304,7 @@ Entry
 	margin-top:20px;
 }
 
-.home .narrowcolumn .entry{
+.home .narrowcolumn .entry,.home .widecolumn .entry{
 	-moz-box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
 	-webkit-box-shadow:2px 2px 6px rgba(0,0,0,0.4);
 }
@@ -404,10 +408,6 @@ Entry
 .widecolumn .attachment{
 	margin:5px 0;
 	text-align:center;
-}
-
-.widecolumn .post{
-	margin:0;
 }
 
 .widecolumn .postmetadata{
@@ -1099,6 +1099,9 @@ strong.search-excerpt {
 background: yellow; 
 }
 
+.search-terms{
+font-style:italic;
+}
 
 sub,sup{
 	color:#606e79;

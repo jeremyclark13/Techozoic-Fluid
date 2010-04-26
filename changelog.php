@@ -7,6 +7,7 @@
 - Added Cufon javascript font replacement options, and three free to use on web fonts<br />
 - Added option to change content area background color<br />
 - Added option to have content area background image<br />
+- Added option to upload favicon<br />
 - Bugfix: Search results page blank cause by missing ) in translation functions<br />
 - Added Search term highlighting<br />
 - Moved default upload location to wp-content/techozoic folder to stop theme updates deleting uploaded headers<br />
