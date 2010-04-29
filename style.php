@@ -107,6 +107,12 @@
 			$tech_blog_title_align_check = "Center";
 		break;
 	}
+	switch ($tech['nav_align']){
+		case "Center":
+			$tech['nav_align'] = 'float:left;position:relative;left:-50%';
+			$tech_nav_align_check = "Center";
+		break;
+	}
 	$tech['default_font'] = tech_font($tech['default_font']);
 	$tech['body_font'] = tech_font($tech['body_font']);
 	$tech['header_font'] = tech_font($tech['header_font']);
@@ -250,7 +256,7 @@ CSS;
 	if ($tech['column'] == 1) {
 		if ($tech['main_column_width'] == 0) 
 			$tech['main_column_width'] = 100; 
-		$tech['main_column_width'] = $tech['main_column_width'] - 5;
+		$tech['main_column_width'] = $tech['main_column_width'] - 6;
 echo <<<CSS
 #page {
 width: {$tech['page_width']}{$tech['sign']};
@@ -354,11 +360,29 @@ width:{$tech['sidebar_width']}%
 CSS;
 		}
 	}
+echo <<<CSS
+ul#nav,ul#nav2,ul#dropdown{
+{$tech['nav_align']};
+}
+CSS;
 	if ($tech['nav_button_width'] != 0) { 
 echo <<<CSS
 ul#nav li, ul#admin li, #nav2 li{
 width: {$tech['nav_button_width']}em;
 } 
+CSS;
+	}
+	if ($tech_nav_align_check == "Center") {
+echo <<<CSS
+#navwrap {
+position:relative;
+left:50%;
+}
+ul#subnav{
+position:relative;
+clear:both;
+left:-50%;
+}
 CSS;
 	}
 	switch ($tech['header']){ 

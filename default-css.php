@@ -264,6 +264,9 @@ text-decoration: underline;
 #sidenav li.current_page_item ul a, #sidenav .current-cat ul a{
 text-decoration: none;
 }
+#navwrap {
+float:left;
+}
 #navmenu {
 background:url({$home}/images/navbarbg.png) repeat-x;
 height:60px;
@@ -341,7 +344,7 @@ ul#admin {
 list-style-type:none;
 list-style-image:none;
 float:right;
-margin-top:-10px;
+margin-top:30px;
 }
 ul#nav,#dropdown,#dropdown ul {
 list-style-type:none;
@@ -352,8 +355,9 @@ margin:auto;
 }
 ul#nav2{
 height:25px;
+margin-top:0;
 }
-ul#nav, #nav2, #dropdown {
+ul#nav, ul#nav2, #dropdown {
 padding:5px 0 0;
 }
 #search {

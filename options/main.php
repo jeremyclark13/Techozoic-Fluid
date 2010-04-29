@@ -250,6 +250,7 @@ function techozoic_admin() {
 		<li><a href="#nav" rel="nav" rev="tech_buttons">Navigation</a></li>
 		<li><a href="#font" rel="font" rev="tech_buttons">Typography</a></li>
 		<li><a href="#color" rel="color" rev="tech_buttons">Color Options</a></li>
+		<li><a href="#background" rel="background" rev="tech_buttons">Backgrounds</a></li>
 		<li><a href="#tab4" rel="tab4" rev="tech_buttons">Ad Placement</a></li>
 		<li id="headersettab"><a href="#headerset" rel="headerset" rev="tech_buttons">Manual Header Settings</a></li>
 		<li><a href="#notes" rel="note" onclick="togglebuttons('hide')">Notes</a></li>

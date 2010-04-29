@@ -1,4 +1,4 @@
-<div id="navmenu">
+<div id="navwrap">
 <ul id="nav">
 <?php
 get_tech_options();
@@ -23,3 +23,4 @@ if (!$tech['nav_exclude_list']){
 echo tech_nav_link("After");
 ?>
 </ul>
+</div>

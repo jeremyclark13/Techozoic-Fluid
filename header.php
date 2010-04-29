@@ -111,6 +111,9 @@ if (!empty ($description)) { ?>
 </div>
 <hr />
 <?php 	if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
+?>
+<div id="navmenu">
+<?php
 		switch ($tech['nav_menu_type']){
 			case "Two Tier": 
 				include (TEMPLATEPATH . "/nav/twotier.php");

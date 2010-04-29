@@ -1,4 +1,4 @@
-<div id="navmenu">
+<div id="navwrap">
 <ul id="nav2">  
 <?php
 get_tech_options();
@@ -32,3 +32,4 @@ echo tech_nav_link("After");
 		</ul>  
 <?php 	} 
 ?>
+</div>
