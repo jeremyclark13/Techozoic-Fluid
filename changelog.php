@@ -2,6 +2,16 @@
 <head><title> Techozoic Change Log</title></head>
 <body>
 <p>
+<h2>Donor Thank You</h2>
+<p>Thank you to all of those that have donated towards my further development of Techozoic</p>
+<ul><li><a href="http://nicolaus.com" rel="nofollow" target="_blank">Martin Nicolaus</a></li>
+<li>Dayona Dodd</li>
+<li><a href="http://saconsultants.org/blog1/" rel="nofollow" target="_blank">Don Wilmer</a></li>
+<li>Debra Rosenberg – <a href="http://divaentertains.com/blog/" rel="nofollow" target="_blank">DivaEntertains</a></li>
+<li><a href="http://www.GetaWebSiteShell.com" rel="nofollow" target="_blank">Heather</a></li>
+</ul>
+<br />
+<h2>Change Log</h2>
 <h3>Version 1.8.7</h3><br />
 - Added French Translations - Thanks <a href="http://www.wolforg.eu" title= "Wolforg : CMS, Logiciels Libres & Réseaux Sociaux en Lozère" _target="blank">Wolforg</a><br />
 - Added Cufon javascript font replacement options, and three free to use on web fonts<br />
@@ -11,6 +21,10 @@
 - Bugfix: Search results page blank cause by missing ) in translation functions<br />
 - Added Search term highlighting<br />
 - Moved default upload location to wp-content/techozoic folder to stop theme updates deleting uploaded headers<br />
+- Added option to center navigation menu<br />
+- Fixed dropdown menu bug where specifying a fixed width wouldn't work<br />
+- Moved widget code and comment callback code into seperate files included with functions.php <br />
+- Added comment preview section at bottom of post <br />
 <h3>Version 1.8.6.1</h3><br />
 - Fixed theme activation error<br />
 <h3>Version 1.8.6</h3><br />

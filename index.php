@@ -22,7 +22,7 @@ global $tech;
 	<div style="clear:both;width:100%;margin:-20px;"></div>
 <?php 	if (have_posts()) {
 		while (have_posts()) { 
-			the_post(); 
+			the_post();
 			$tech_i = 0;
 ?>
 			<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -38,8 +38,9 @@ global $tech;
 <?php 			the_content(__('Read the remainder of this entry &raquo;') , 'techozoic'); ?>
 <?php 			if ( comments_open() ) { ?>
 				<p>
-<?php 			comments_popup_link(__('Be the first to comment' ,'techozoic'), __('1 Comment' ,'techozoic'), __ngettext('% Comment so far' , '% Comments so far',get_comments_number(),'techozoic'), 'comments-link', __('Comments Closed' ,'techozoic')); ?>
-				</p> 
+<?php 			comments_popup_link(__('Be the first to comment' ,'techozoic'), __('1 Comment. Join the Conversation' ,'techozoic'), __ngettext('% Comment so far. Join the Conversation' , '% Comments so far. Join the Conversation',get_comments_number(),'techozoic'), 'comments-link', __('Comments Closed' ,'techozoic')); ?>
+				</p>
+<?php			tech_comment_preview($post->ID,3); ?>				
 <?php			} 
 
  			$posttags = get_the_tags();

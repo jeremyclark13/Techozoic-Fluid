@@ -20,7 +20,7 @@
 	if (function_exists('wp_list_comments')) {
 		//WP 2.7 Comment Loop
 		if ( have_comments() ) { ?>
-			<h3 id="comments"><?php comments_number(__('No Comments &#187;' ,'techozoic'), __('One Comment &#187;' ,'techozoic'),  __ngettext('% Comment &#187;' , '%Comments &#187',get_comments_number(),'techozoic'));?></h3>
+			<h3 id="comments"><?php comments_number(__('No Comments' ,'techozoic'), __('One Comment' ,'techozoic'),  __ngettext('% Comment' , '% Comments',get_comments_number(),'techozoic'));?></h3>
 			<ol class="commentlist">
 <?php 				wp_list_comments('type=comment&callback=techozoic_comment'); ?>
 			</ol>

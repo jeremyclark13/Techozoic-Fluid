@@ -153,6 +153,13 @@ line-height: 1.1em;
 .entry p a:visited {
 text-decoration:underline;
 }
+ul.comment-preview li {
+font-size:.9em;
+opacity:.7;
+}
+ul.comment-preview li:hover{
+opacity:1;
+}
 .commentdiv {
 height:40px;
 width:40px;
@@ -177,9 +184,11 @@ height:35px;
 background:url({$home}/images/comment2.png) no-repeat top center;
 }
 .comments-link{
-background:transparent url(/wp-content/themes/techozoic-fluid/images/comment.gif) no-repeat scroll left top;
+background:transparent url({$home}/images/comment.gif) no-repeat scroll left top;
 font-size:1.2em;
 padding:0 0 0 18px;
+}
+.comments-link a{
 text-decoration:underline;
 }
 .commentlist cite,.commentlist cite a {
@@ -264,9 +273,6 @@ text-decoration: underline;
 #sidenav li.current_page_item ul a, #sidenav .current-cat ul a{
 text-decoration: none;
 }
-#navwrap {
-float:left;
-}
 #navmenu {
 background:url({$home}/images/navbarbg.png) repeat-x;
 height:60px;
@@ -344,7 +350,7 @@ ul#admin {
 list-style-type:none;
 list-style-image:none;
 float:right;
-margin-top:30px;
+margin-top:-10px;
 }
 ul#nav,#dropdown,#dropdown ul {
 list-style-type:none;
@@ -827,7 +833,6 @@ margin-left:0;
 padding:0 0 0 30px;
 list-style:none;
 padding-left:10px;
-text-indent:-10px;
 }
 html>body .entry li {
 margin:7px 0 8px 10px;

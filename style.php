@@ -367,7 +367,7 @@ ul#nav,ul#nav2,ul#dropdown{
 CSS;
 	if ($tech['nav_button_width'] != 0) { 
 echo <<<CSS
-ul#nav li, ul#admin li, #nav2 li{
+ul#nav li, ul#admin li, #nav2 li,#dropdown li{
 width: {$tech['nav_button_width']}em;
 } 
 CSS;
@@ -375,8 +375,12 @@ CSS;
 	if ($tech_nav_align_check == "Center") {
 echo <<<CSS
 #navwrap {
+float:left;
 position:relative;
 left:50%;
+}
+ul#admin{
+margin-top:30px !important;
 }
 ul#subnav{
 position:relative;
