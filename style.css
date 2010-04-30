@@ -33,7 +33,7 @@ body{
 }
 
 #pagel{
-	background:transparent url(images/bgl.jpg) repeat-y right top;
+	background:transparent url(images/bgl.jpg) repeat-y left top;
 }
 
 #pager{
@@ -736,7 +736,7 @@ Nav Menus
 }
 
 #navmenu{
-	background:url(images/navbarbg.jpg) repeat-x;
+	background:url(images/navbarbg.png) repeat-x;
 	height:60px;
 	margin:0 0 auto;
 	padding:0 10px;
