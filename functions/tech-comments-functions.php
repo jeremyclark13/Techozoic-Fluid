@@ -78,4 +78,3 @@ This File Contains callback functions for comment loops
 		} 
 	}//End techozoic_gravatar
 ?>
-

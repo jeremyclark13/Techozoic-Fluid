@@ -5,10 +5,24 @@ $shortname = "tech";
 $tech_error = array ( "Return Error", "File Already Exists", "Incorrect File Type / File Size Limit exceeded","Folder isn't writable please check folder that<code>" .WP_CONTENT_URL . "/techozoic/</code> exists and is writable." , "File Doesn't exist.", "Folder isn't writable please check folder<code>" .TEMPLATEPATH ."</code> Permissions.","Please only use .ico format for Fav Icon Images");
 $theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = $theme_data['Version'];
-
 function techozoic_add_admin() {
 	global $themename, $shortname, $options, $version;
 	$settings = get_option('techozoic_options');
+	if ( $_GET['page'] == "techozoic_export_admin" ) {
+		if ( 'export' == $_POST['action']) {
+			tech_export();
+		}
+		if (isset($_FILES['settings'])){
+			if ($_FILES["settings"]["error"] > 0){
+				echo "Error: " . $_FILES["settings"]["error"] . "<br />";
+			  } else{
+				$rawdata = file_get_contents($_FILES["settings"]["tmp_name"]);
+				$tech_options = unserialize($rawdata);
+				update_option('techozoic_options', $tech_options);
+				header("Location: admin.php?page=techozoic_export_admin&import=true");
+			  }
+		}
+	}
 	if ( $_GET['page'] == "techozoic_header_admin" ) {
 			if (isset($_FILES['file'])){
 			$dir = WP_CONTENT_DIR. "/techozoic/images/headers/";
@@ -222,7 +236,8 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 	add_submenu_page('techozoic_main_admin' ,$themename." General Settings", "General Settings", 'edit_themes', 'techozoic_main_admin', 'techozoic_admin');
 	add_submenu_page('techozoic_main_admin' ,$themename." Header Settings", "Header Settings", 'edit_themes', 'techozoic_header_admin', 'techozoic_header_admin');
 	add_submenu_page('techozoic_main_admin' ,$themename." Style Settings", "CSS Settings", 'edit_themes', 'techozoic_style_admin', 'techozoic_style_admin');
-}//End Function
+	add_submenu_page('techozoic_main_admin' ,$themename." Export/Import Settings", "Export/Import Settings", 'edit_themes', 'techozoic_export_admin', 'techozoic_export_admin');
+	}//End Function
 function techozoic_admin() {
     	global $themename, $shortname, $options, $tech_error;
     	if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
@@ -471,8 +486,21 @@ function techozoic_header_admin() {
 function techozoic_style_admin() {
 	include_once(TEMPLATEPATH . '/options/style-admin.php');
 }
-
+function techozoic_export_admin() {
+	include_once(TEMPLATEPATH . '/options/export-admin.php');
+}
 add_action('admin_menu', 'techozoic_add_admin'); 
+
+function tech_export(){
+	$settings = get_option('techozoic_options');
+	$file_out = serialize($settings);
+	header("Cache-Control: public, must-revalidate");
+	header("Pragma: hack"); // WTF? oh well, it works...
+	header("Content-type: text/plain; charset=ISO-8859-1");
+	header('Content-Disposition: attachment; filename="techozoic-options-'.date("Ymd").'.dat"');
+	echo $file_out;
+	exit;
+}
 
 function tech_admin_thickbox() {
 	wp_enqueue_script('thickbox');

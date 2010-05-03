@@ -23,15 +23,16 @@
 - Moved default upload location to wp-content/techozoic folder to stop theme updates deleting uploaded headers<br />
 - Added option to center navigation menu<br />
 - Fixed dropdown menu bug where specifying a fixed width wouldn't work<br />
-- Moved widget code and comment callback code into seperate files included with functions.php <br />
+- Moved widget code and comment callback code into separate files included with functions.php <br />
 - Added comment preview section at bottom of post <br />
+- Added export/import page for saving options to a downloadable file and restoring later or to another blog<br />
 <h3>Version 1.8.6.1</h3><br />
 - Fixed theme activation error<br />
 <h3>Version 1.8.6</h3><br />
 - Removed Tim thumb script causing to many errors, using browser scaled images for preview links <br />
-- Moved options to seperate menu page with sub menu pages for General, Header Images, and Style Settings<br />
+- Moved options to separate menu page with sub menu pages for General, Header Images, and Style Settings<br />
 - Major CSS cleanup for style.css<br />
-- Added option to restore original style.css if static css is used and chages have been made <br />
+- Added option to restore original style.css if static css is used and changes have been made <br />
 - Backup of current style.css file made before overwriting file<br />
 - Added option to change repeat pattern of custom page background image<br />
 - Added Widgetized footer section -Limited to 3 widgets<br />

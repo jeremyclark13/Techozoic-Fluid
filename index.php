@@ -2,7 +2,8 @@
 get_tech_options();
 global $tech;
 
-	$tech_ii = 1; 
+	$tech_ii = 1;
+	$tech_i = 0;	
 	if (!empty($tech['header_ad_code'])) { ?>
 		<div class="aligncenter">
 <?php 		echo stripslashes ($tech['header_ad_code']); ?>
@@ -23,7 +24,7 @@ global $tech;
 <?php 	if (have_posts()) {
 		while (have_posts()) { 
 			the_post();
-			$tech_i = 0;
+
 ?>
 			<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 			<div class="heading"><div class="post_date">
@@ -60,13 +61,13 @@ global $tech;
 			</div>
 			<div class="entry_spacer"></div>
 
-<?php 			if (!empty($tech['ad_code']) && $ii <= 3) {
+<?php 		if (!empty($tech['ad_code']) && $tech_ii <= 3) {
 				$tech_i++;
 				if($tech_i == $tech['ad_int']) { ?>
 					<div class="aligncenter">
 <?php 					echo stripslashes ($tech['ad_code']); ?>
 					</div>
-<?php 					$tech_i = 0; 
+<?php 				$tech_i = 0; 
 					$tech_ii++; 
 				}
 			} //End Ad Loop

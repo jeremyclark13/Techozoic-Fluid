@@ -10,7 +10,6 @@
 	if ( ! defined( 'WP_CONTENT_DIR' ) )
     		define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 	define ('WP_UPLOAD_PATH', ABSPATH . $upload_path );
-	
 	if(is_admin()) {
 		include_once (TEMPLATEPATH . "/options/option-array.php");
 		include_once(TEMPLATEPATH . '/options/main.php');

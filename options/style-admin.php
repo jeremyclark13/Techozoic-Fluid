@@ -1,4 +1,3 @@
-
 <?php
     global $themename, $shortname, $options, $tech_error;
     if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
