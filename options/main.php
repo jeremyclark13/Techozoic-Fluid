@@ -259,7 +259,9 @@ function techozoic_admin() {
 			<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 		</form>
 	</div>
-	<div class="tech_head"><img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> settings</h2>
+	<div class="tech_head">
+	<?php techozoic_top_menu();?>
+	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> General settings</h2>
 	<ul id="themetabs" class="tabs">
 		<li><a href="#layout" rel="layout" rev="tech_buttons">Layout</a></li>
 		<li><a href="#nav" rel="nav" rev="tech_buttons">Navigation</a></li>
@@ -488,6 +490,15 @@ function techozoic_style_admin() {
 }
 function techozoic_export_admin() {
 	include_once(TEMPLATEPATH . '/options/export-admin.php');
+}
+function techozoic_top_menu() {
+	echo '<ul class="subsubsub">
+		<li><a href="admin.php?page=techozoic_main_admin">General Settings</a> | </li>
+		<li><a href="admin.php?page=techozoic_header_admin">Header Settings</a> | </li>
+		<li><a href="admin.php?page=techozoic_style_admin">CSS Settings</a> | </li>
+		<li><a href="admin.php?page=techozoic_export_admin">Export/Import Settings</a></li>
+	</ul>
+	<div style="clear:both"></div>';
 }
 add_action('admin_menu', 'techozoic_add_admin'); 
 
