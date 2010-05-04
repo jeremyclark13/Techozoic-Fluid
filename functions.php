@@ -34,16 +34,8 @@
 			foreach($comment_array as $comment){
 				$output .= '<li class="comments-link">';
 				$output .= '<div class="comment-author">';
-				$output .= '<a href="';
-				$output .= get_comment_link();
-				$output .= '" title="';
-				$output .= $comment->comment_author;
-				$output .= __(' posted on ');
-				$output .= get_comment_date();
-				$output .= '">';
-				$output .= $comment->comment_author;
-				$output .= __(' posted on ');
-				$output .= get_comment_date();
+				$output .= '<a href="'. get_comment_link() .'" title="'. $comment->comment_author . __(' posted on ') . get_comment_date() .'">';
+				$output .= $comment->comment_author . __(' posted on ') . get_comment_date();
 				$output .= '</a>';
 				$output .= '</div>';
 				$output .= '<div class="comment-text">';

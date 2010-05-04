@@ -1,7 +1,7 @@
 <?php 	get_header(); 
 get_tech_options();
 global $tech;
-	if ($tech['column'] == 3 && $tech['sidebar_pos'] == "Sidebar - Content - Sidebar") {
+	if ($tech['column'] == 3 && $tech['sidebar_pos'] == "Sidebar - Content - Sidebar" && $tech['single_sidebar'] == "Yes") {
 		include (TEMPLATEPATH . '/l_sidebar.php'); 
 	}
 ?>
@@ -52,8 +52,8 @@ global $tech;
 <?php 		} //End While Loop ?>
 
 		<div class="navigation">
-		<div class="alignleft"><?php posts_nav_link('','',__('&laquo; Previous Entries' ,'techozoic')) ?></div>
-		<div class="alignright"><?php posts_nav_link('',__('Next Entries &raquo;' ,'techozoic'),'') ?></div>
+	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
+	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
 		</div>
 <?php 	} else { ?>
 		<h2 class="center"><?php _e('No posts found. Try a different search?' ,'techozoic')?></h2>
@@ -61,7 +61,7 @@ global $tech;
 ?>
 	</div>
 <?php 	get_sidebar(); 
-	if ($tech['column'] == 3 && $tech['sidebar_pos'] =="Content - Sidebar - Sidebar") {
+	if ($tech['column'] == 3 && $tech['sidebar_pos'] =="Content - Sidebar - Sidebar" && $tech['single_sidebar'] == "Yes") {
 		include (TEMPLATEPATH . '/l_sidebar.php'); 
 	}
 	get_footer(); 

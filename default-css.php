@@ -281,7 +281,6 @@ padding: 0 10px;
 }
 #dropdown, #dropdown ul {
 position:relative; 
-line-height:1.5em; 
 z-index:300;
 }
 #dropdown a {
@@ -303,7 +302,7 @@ left:-1px;
 }
 #dropdown li ul { 
 width:14.1em;
-margin-left:-25px;
+padding-left:0;
 }
 #dropdown li ul a {
 width:12em; 
@@ -318,7 +317,7 @@ width:16.3em;
 top:auto;
 }
 #dropdown li ul ul {
-left:9em; 
+left:15.5em; 
 margin:0px 0 0 10px;
 }
 #dropdown li:hover ul ul, #dropdown li:hover ul ul ul, #dropdown li:hover ul ul ul ul {
@@ -334,6 +333,10 @@ margin-right:25px;
 float:left;
 list-style:none;
 }
+#subnav {
+margin:0;
+padding-top:5px;
+}
 #subnav li {
 border-right:1px solid #ddd;
 padding:0 5px;
@@ -346,22 +349,25 @@ font-weight:bold;
 #subnav a:hover, #subnav a:active,#subnav li.current_page_item a,#subnav li.current_page_item a:visited {
 text-decoration:underline;
 }
+#navwrap{
+height: 30px;
+}
 ul#admin {
 list-style-type:none;
 list-style-image:none;
 float:right;
-margin-top:-10px;
+margin:0;
 }
 ul#nav,#dropdown,#dropdown ul {
 list-style-type:none;
 list-style-image:none;
-height:35px;
+height:30px;
 width:100%;
-margin:auto;
+margin:0 auto;
 }
 ul#nav2{
 height:25px;
-margin-top:0;
+margin:0 auto;
 }
 ul#nav, ul#nav2, #dropdown {
 padding:5px 0 0;
@@ -380,7 +386,7 @@ float:left;
 text-align:center;
 margin-right:2px;
 overflow:hidden;
-height:1.5em;
+height:16px;
 padding:3px;
 }
 ul#nav a,ul#admin a, #nav2 a,#nav2 a:visited,#dropdown a {
