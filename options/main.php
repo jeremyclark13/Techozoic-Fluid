@@ -265,6 +265,7 @@ function techozoic_admin() {
 	<ul id="themetabs" class="tabs">
 		<li><a href="#layout" rel="layout" rev="tech_buttons">Layout</a></li>
 		<li><a href="#nav" rel="nav" rev="tech_buttons">Navigation</a></li>
+		<li><a href="#social" rel="social" rev="tech_buttons">Social Media</a></li>
 		<li><a href="#font" rel="font" rev="tech_buttons">Typography</a></li>
 		<li><a href="#color" rel="color" rev="tech_buttons">Color Options</a></li>
 		<li><a href="#background" rel="background" rev="tech_buttons">Backgrounds</a></li>
@@ -472,12 +473,12 @@ function techozoic_admin() {
 		<h2>Change log</h2>
 		<a href="<?php echo get_bloginfo('template_directory')?>/changelog.php" onclick="return changelog('<?php echo get_bloginfo('template_directory')?>/changelog.php')">View Change Log</a>
 		</div>
-
+		<?php techozoic_footer(); ?>
 		</div>
 		<script type="text/javascript">
 			tabsetup();
 		</script>
-		<h4>Theme Option page for <?php echo $themename; ?>&nbsp; | &nbsp; Framework by <a href="http://clark-technet.com/" title="Jeremy Clark">Jeremy Clark</a></h4>
+		
 		</div>
 		
 <?php
@@ -499,6 +500,10 @@ function techozoic_top_menu() {
 		<li><a href="admin.php?page=techozoic_export_admin">Export/Import Settings</a></li>
 	</ul>
 	<div style="clear:both"></div>';
+}
+function techozoic_footer() {
+	echo '<h4>Theme Option page for '. $themename .'&nbsp; | &nbsp; Framework by <a href="http://clark-technet.com/" title="Jeremy Clark">Jeremy Clark</a></h4>';
+	echo '<small>Social Network Icons provided by <a href="http://komodomedia.com" target="_blank">komodomedia.com</a>';
 }
 add_action('admin_menu', 'techozoic_add_admin'); 
 

@@ -408,6 +408,15 @@ ul.comment-preview li:hover{
 	padding:2px 4px;
 }
 
+.top img{
+	opacity:.5;
+}
+.top img:hover{
+	opacity: 1;
+	-moz-box-shadow:1px 1px 3px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
 .toppost{
 	float:right;
 	margin-top:-15px;
@@ -503,6 +512,11 @@ Sidebar
 .sidebar_icon{
 	padding-right:5px;
 	text-align:right;
+}
+
+.sidebar .about_icons li{
+	display:inline;
+	margin:3px;
 }
 
 .techozoic_rss,#rss{

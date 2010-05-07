@@ -66,6 +66,10 @@ else { ?>
 <!--[if IE]>
 	<style type="text/css">
 	#headerimg{ filter:alpha(opacity=80);}
+	.top img{ filter:alpha(opacity=60);}
+	.top img:hover{ filter:alpha(opacity=100);}
+	ul.comment-preview li{ filter:alpha(opacity=70);}
+	ul.comment-preview li:hover{ filter:alpha(opacity=100);}
 	</style>
 <![endif]-->
 <link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />

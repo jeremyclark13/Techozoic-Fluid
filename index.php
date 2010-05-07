@@ -51,13 +51,8 @@ global $tech;
 ?>
 			</div>
 			<div class="top">
-			<a href="http://digg.com/submit?phase=2&amp;url=<?php echo get_permalink() ?>&amp;title=<?php print rawurlencode(the_title('', '', false)); ?>">
-			<img src="<?php bloginfo('template_directory'); ?>/images/digg.gif" title="<?php _e('DIGG this!' , 'techozoic') ?>" alt="digg" /></a>&nbsp;
-			<a href="http://del.icio.us/post?url=<?php echo get_permalink() ?>"><img src="<?php bloginfo('template_directory'); ?>/images/delicious.gif" title="<?php _e('del.icio.us this!' , techozoic) ?>" alt="del.icio.us" /></a>&nbsp;
-<?php 			if ('open' == $post->ping_status) { 
-?>				<a href="<?php trackback_url(); ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/trackback.gif" title="<?php _e('Trackback' , 'techozoic'); ?>" alt="TRACK" /></a>&nbsp;
-<?php 			} 
-?>			<a href="#top"><img src="<?php bloginfo('template_directory'); ?>/images/top.gif" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a></div>
+			<?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php bloginfo('template_directory'); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
+			</div>
 			</div>
 			<div class="entry_spacer"></div>
 

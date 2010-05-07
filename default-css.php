@@ -491,7 +491,7 @@ p {
 margin:5px;
 }
 #footerdivs {
-margin:10px auto;
+margin:10px auto 15px;
 padding-left:15%;
 text-align:left;
 }
@@ -508,7 +508,7 @@ padding:15px 0 20px;
 text-align:center;
 }
 #footer p.credit{
-padding:10px 0 15px;
+padding:15px 0 20px;
 text-align:center;
 }
 #footer ul,#footer ul li ul li {
@@ -764,6 +764,14 @@ float:right;
 -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 padding:2px 4px;
 }
+.top img{
+opacity:.5;
+}
+.top img:hover{
+opacity: 1;
+-moz-box-shadow:1px 1px 3px rgba(0, 0, 0, 0.4);
+-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
 .toppost {
 float:right;
 margin-top:-15px;
@@ -817,6 +825,10 @@ padding:4px;
 .entry ol li,.sidebar ul,.sidebar ul ol {
 margin:0;
 padding:0;
+}
+.sidebar .about_icons li{
+display:inline;
+margin:3px;
 }
 .entry form,.center {
 text-align:center;

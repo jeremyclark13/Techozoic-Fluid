@@ -143,5 +143,5 @@
 			</div>
 			</div>
 			<div style="clear:both"></div>
-		<h4>Theme Option page for <?php echo $themename; ?>&nbsp; | &nbsp; Framework by <a href="http://clark-technet.com/" title="Jeremy Clark">Jeremy Clark</a></h4>
-		</div>
+			<?php techozoic_footer(); ?>
+			</div>

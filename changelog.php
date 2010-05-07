@@ -12,6 +12,9 @@
 </ul>
 <br />
 <h2>Change Log</h2>
+<h3>Version 1.8.8</h3><br />
+- Added option to choose social network icons on home page and single post page<br />
+- Added options to display links to social network profiles in about widget<br />
 <h3>Version 1.8.7</h3><br />
 - Added French Translations - Thanks <a href="http://www.wolforg.eu" title= "Wolforg : CMS, Logiciels Libres & Réseaux Sociaux en Lozère" _target="blank">Wolforg</a><br />
 - Added Cufon javascript font replacement options, and three free to use on web fonts<br />

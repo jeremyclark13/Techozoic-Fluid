@@ -23,6 +23,60 @@
 	$version = $theme_data['Version'];
 
 /**************************************
+	Techozoic Social Media Icons Function
+	Since 1.8.8
+***************************************/	
+	function tech_social_icons($home=true){
+		global $tech;
+		global $post;
+		$home_icons = explode(',' , $tech['home_social_icons']);
+		$single_icons = explode(',' , $tech['single_social_icons']);
+		$image = get_bloginfo('template_directory')."/images/icons";
+		$link = get_permalink();
+		$short_link = get_bloginfo('url')."/?p=".$post->ID;
+		$title = $post->post_title;
+		$url_title = urlencode($post->post_title);
+		$social_links = array(
+			"Delicious" => "<a href=\"http://delicious.com/post?url={$link}&amp;title={$url_title}\" title=\"". __('del.icio.us this!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/delicious_16.png\" alt=\"Delicious This\"></a>",
+			"Digg" => "<a href=\"http://digg.com/submit?phase=2&url={$link}&amp;title={$url_title} \" title=\"". __('Digg this!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/digg_16.png\" alt=\"Digg This\"></a>",
+			"Facebook" => "<a href=\"http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}\" title=\"". __('Share on Facebook!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/facebook_16.png\" alt=\"Share on Facebook\"></a>",
+			"MySpace" => "<a href=\"http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}\" title=\"". __('Share on Myspace!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/myspace_16.png\" alt=\"Share on Myspace\"></a>",
+			"StumbleUpon" => "<a href=\"http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}\" title=\"". __('Stumble Upon this!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/stumbleupon_16.png\" alt=\"Stumble Upon This\"></a>",
+			"Twitter" => "<a href=\"http://twitter.com/home?status=Reading%20{$url_title}%20on%20{$short_link}\" title=\"". __('Tweet this!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/twitter_16.png\" alt=\"Tweet This\"></a>",
+			"RSS Icon" => "<a href=\"".get_post_comments_feed_link()."\" title=\"".__('Subscribe to Feed','techozoic')."\"><img src=\"{$image}/rss_16.png\" alt=\"".__('RSS 2.0','techozoic')."\"></a>");
+		if ($home == true){
+			foreach ($home_icons as $soc){
+				echo $social_links[$soc] ."&nbsp;";
+			}
+		} else {
+			foreach ($single_icons as $soc){
+				echo $social_links[$soc] ."&nbsp;";
+			}
+		}
+	}
+
+/**************************************
+	Techozoic About Icons Function
+	Since 1.8.8
+***************************************/
+	function tech_about_icons($fb=0,$my=0,$twitter=0){
+	global $tech;
+	$fb_profile = $tech['facebook_profile'];
+	$my_profile = $tech['myspace_profile'];
+	$twitter_profile = $tech['twitter_profile'];
+	$image = get_bloginfo('template_directory')."/images/icons";
+	if ($fb !=0){
+		echo "<li><a href=\"{$fb_profile}\" title=\"".__('Follow me on Facebook','techozoic')."\"><img src=\"{$image}/facebook_32.png\"></a></li>";
+	}
+	if ($my !=0){
+		echo "<li><a href=\"{$my_profile}\" title=\"".__('Follow me on Myspace','techozoic')."\"><img src=\"{$image}/myspace_32.png\"></a></li>";
+	}	
+	if ($twitter !=0){
+		echo "<li><a href=\"{$twitter_profile}\" title=\"".__('Follow me on Twitter','techozoic')."\"><img src=\"{$image}/twitter_32.png\"></a></li>";
+	}
+	}
+	
+/**************************************
 	Techozoic Home Page Comment Preview
 	Since 1.8.7
 ***************************************/	

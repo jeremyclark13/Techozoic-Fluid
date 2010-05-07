@@ -108,6 +108,9 @@
 			extract($args);
 			$title = apply_filters('widget_title', empty( $instance['title'] ) ? __('About Author' ,'techozoic') : $instance['title']);
 			$gravatar = $instance['gravatar'] ? '1' : '0';
+			$facebook = $instance['facebook'] ? '1' : '0';
+			$myspace = $instance['myspace'] ? '1' : '0';
+			$twitter = $instance['twitter'] ? '1' : '0';
 			$about = $instance['about'];
 			if ( !$number = (int) $instance['number'] )
 				$number = 50;
@@ -127,7 +130,10 @@
 			}
 ?>			</span><p>
 <?php			echo $about;
-?>			</p><div style="clear:both"></div>
+?>			<ul class="about_icons">
+<?php		tech_about_icons($facebook,$myspace,$twitter);
+?>			</ul>
+			</p><div style="clear:both"></div>
 <?php	  		echo $after_widget;
 		}
 
@@ -136,6 +142,9 @@
 			$instance['title'] = strip_tags($new_instance['title']);
 			$new_instance = wp_parse_args( (array) $new_instance, array( 'about' => '', 'gravatar' => 0, 'title' => '') );
 			$instance['about'] = $new_instance['about'];
+			$instance['facebook'] = $new_instance['facebook'] ? 1 : 0;
+			$instance['myspace'] = $new_instance['myspace'] ? 1 : 0;
+			$instance['twitter'] = $new_instance['twitter'] ? 1 : 0;
 			$instance['gravatar'] = $new_instance['gravatar'] ? 1 : 0;
 			$instance['number'] = (int) $new_instance['number'];
 			return $instance;
@@ -145,6 +154,9 @@
 			$instance = wp_parse_args( (array) $instance, array('about' => '', 'gravatar' => 0) );
 			$title = esc_attr( $instance['title'] );
 			$about = $instance['about'] ;
+			$facebook = $instance['facebook'] ? 'checked="checked"' : '';
+			$myspace = $instance['myspace'] ? 'checked="checked"' : '';
+			$twitter = $instance['twitter'] ? 'checked="checked"' : '';
 			$gravatar = $instance['gravatar'] ? 'checked="checked"' : '';
 			$number = isset($instance['number']) ? absint($instance['number']) : 50;
 ?>
@@ -152,6 +164,12 @@
 			<p>
 			<p><label><?php _e('Write About yourself here' ,'techozoic')?></label>
 			<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('about'); ?>" name="<?php echo $this->get_field_name('about'); ?>"><?php echo $about; ?></textarea>
+			<br />
+			<input class="checkbox" type="checkbox" <?php echo $facebook; ?> id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" /> <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Display link to Facebook Profile' ,'techozoic')?></label>
+			<br />
+			<input class="checkbox" type="checkbox" <?php echo $myspace; ?> id="<?php echo $this->get_field_id('myspace'); ?>" name="<?php echo $this->get_field_name('myspace'); ?>" /> <label for="<?php echo $this->get_field_id('myspace'); ?>"><?php _e('Display link to MySpace Profile' ,'techozoic') ?></label>
+			<br />
+			<input class="checkbox" type="checkbox" <?php echo $twitter; ?> id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" /> <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Display link to Twitter Profile' ,'techozoic')?></label>
 			<br />
 			<input class="checkbox" type="checkbox" <?php echo $gravatar; ?> id="<?php echo $this->get_field_id('gravatar'); ?>" name="<?php echo $this->get_field_name('gravatar'); ?>" /> <label for="<?php echo $this->get_field_id('gravatar'); ?>"><?php _e('Enable Gravatar' ,'techozoic') ?></label>
 			</p>
