@@ -15,6 +15,8 @@
 <h3>Version 1.8.8</h3><br />
 - Added option to choose social network icons on home page and single post page<br />
 - Added options to display links to social network profiles in about widget<br />
+- Added Norwegian Translation - Thanks <a href="http://stig.ulfsby.no/">stig.ulfsby.no</a><br />
+- Fixed error with image alignment outside of post container<br />
 <h3>Version 1.8.7</h3><br />
 - Added French Translations - Thanks <a href="http://www.wolforg.eu" title= "Wolforg : CMS, Logiciels Libres & Réseaux Sociaux en Lozère" _target="blank">Wolforg</a><br />
 - Added Cufon javascript font replacement options, and three free to use on web fonts<br />
