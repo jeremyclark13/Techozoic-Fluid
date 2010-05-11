@@ -15,7 +15,7 @@ global $tech;
 	}
 ?>
 
-	&nbsp;<div id="content" class="<?php if ($tech['home_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
+	<div id="content" class="<?php if ($tech['home_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
 	<div class="navigation">
 	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
 	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
@@ -54,7 +54,6 @@ global $tech;
 			<?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php bloginfo('template_directory'); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
 			</div>
 			</div>
-			<div class="entry_spacer"></div>
 
 <?php 		if (!empty($tech['ad_code']) && $tech_ii <= 3) {
 				$tech_i++;

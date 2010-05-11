@@ -21,15 +21,13 @@ if($tech['seo'] == On) {
 <?php 		} ?>
 	<title>
 <?php 
-	if ( is_single() ) { 
-		wp_title(''); 
+		wp_title(' | ','true','right'); 
 		if ( $cpage < 1 ) {} 
 		else { 
 			echo (' - comment page '); 
 			echo ($cpage);
-		} 
 			echo " | ";
-	} 
+		} 
 	bloginfo('name'); 
 	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; 
 	if ($paged > 1) { 

@@ -1,10 +1,11 @@
 <?php get_header(); 	
 get_tech_options();
-global $tech;
-if ($tech['single_sidebar'] == "Yes") { if ($tech['column'] == 3 && $tech['sidebar_pos'] == "Sidebar - Content - Sidebar" && $tech['single_sidebar'] == "Yes") {
-include (TEMPLATEPATH . '/l_sidebar.php'); } }?>
+global $tech;	
+if ($tech['column'] == 3 &&  $tech['home_sidebar'] == "Yes" && $tech['sidebar_pos'] == "Sidebar - Content - Sidebar") {
+		include (TEMPLATEPATH . '/l_sidebar.php'); 
+	}?>
 
-	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
+	<div id="content" class="<?php if ($tech['home_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
 
 		<?php if (have_posts()) : ?>
 
@@ -32,9 +33,9 @@ include (TEMPLATEPATH . '/l_sidebar.php'); } }?>
 
 		<?php } ?>		
 <div class="navigation">
-<div class="alignleft"><?php posts_nav_link('','',__('&laquo; Previous Entries' ,'techozoic')) ?></div>
-<div class="alignright"><?php posts_nav_link('',__('Next Entries &raquo;' ,'techozoic'),'') ?></div>
-</div>
+<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
+<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
+	</div>
 		<?php while (have_posts()) : the_post(); ?>
 		<div class="post">
 				<h3 id="post-<?php the_ID(); ?>" class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h3>
@@ -60,8 +61,8 @@ if ( function_exists('the_tags') ) :
 	
 		<?php endwhile; ?>
 <div class="navigation">
-<div class="alignleft"><?php posts_nav_link('','',__('&laquo; Previous Entries' ,'techozoic')) ?></div>
-<div class="alignright"><?php posts_nav_link('',__('Next Entries &raquo;' ,'techozoic'),'') ?></div>
+<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
+<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
 </div>
 	
 	<?php else : ?>
@@ -72,7 +73,9 @@ if ( function_exists('the_tags') ) :
 	<?php endif; ?>
 		
 	</div>
-<?php if ($tech['single_sidebar'] == "Yes" && $tech['column'] != 1) {
-get_sidebar();
-if ($tech['column'] == 3 && $tech['sidebar_pos'] =="Content - Sidebar - Sidebar") {include (TEMPLATEPATH . '/l_sidebar.php'); } } ?>
-<?php get_footer(); ?>
+<?php 	
+	if ($tech['column'] != 1 && $tech['home_sidebar'] == "Yes")  get_sidebar(); 
+	if ($tech['column'] == 3 && $tech['home_sidebar'] == "Yes" && $tech['sidebar_pos'] =="Content - Sidebar - Sidebar") {
+		include (TEMPLATEPATH . '/l_sidebar.php');
+	}
+	get_footer(); ?>

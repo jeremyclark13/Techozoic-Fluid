@@ -59,6 +59,8 @@ margin-top:4px;
 -moz-border-radius-bottomleft:5px;
 -webkit-border-bottom-left-radius:5px;
 padding:2px 4px 1px;
+float:right;
+width:100%;
 }
 .home .narrowcolumn .entry,.home .widecolumn .entry{
 -moz-box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
@@ -102,7 +104,7 @@ margin:0 0 0 auto;
 padding:10px 0 0;
 background: transparent url({$home}/images/navbarbg.png) repeat-x scroll 0 0;
 }
-#footercont {
+#footermain {
 background: transparent url({$home}/images/bgbot.png) repeat-x scroll 0 bottom;
 }
 small {
@@ -317,7 +319,7 @@ width:16.3em;
 top:auto;
 }
 #dropdown li ul ul {
-left:15.5em; 
+left:15.3em; 
 margin:0px 0 0 10px;
 }
 #dropdown li:hover ul ul, #dropdown li:hover ul ul ul, #dropdown li:hover ul ul ul ul {
@@ -431,6 +433,8 @@ background:#efefef;
 .post {
 text-align:justify;
 margin:0 0 40px;
+float:left;
+width:100%;
 }
 .post small {
 padding-top: 4px;
@@ -516,10 +520,6 @@ list-style-type:none;
 list-style-image:none;
 padding:0;
 margin-left:0;
-}
-#footer ul ul li:before {
-content:\"\\00BB \\0020\";
-padding:0;
 }
 h3.comments {
 margin:40px auto 20px;
@@ -746,13 +746,6 @@ display:block;
 text-align:center;
 margin-top:10px;
 margin-bottom:30px;
-}
-.entry_spacer {
-width:400px;
-height:0;
-border-bottom:1px solid #a4acb3;
-border-top:1px solid #eaeaea;
-margin:auto;
 }
 .top {
 float:right;

@@ -2,7 +2,7 @@
 Theme Name: Techozoic Fluid
 Theme URI: http://clark-technet.com/theme-support
 Description: Simple, fluid width, widget-ready sidebars and footer, 2 or 3 column theme.  Over 40 theme options to adjust column settings, color scheme, font, ad placement, and custom headers.  SEO optimized titles and meta information. Released under GPL License.  Visit the <a href="admin.php?page=techozoic_main_admin">theme options</a> page to setup Techozoic.  
-Version: 1.8.7
+Version: 1.8.8
 Author: Jeremy Clark
 Author URI: http://clark-technet.com
 Tags: blue, light, one-column, two-columns, three-columns, flexible-width, custom-colors, custom-header, theme-options ,left-sidebar, right-sidebar, threaded-comments, translation-ready, sticky-post
@@ -33,11 +33,11 @@ body{
 }
 
 #pagel{
-	background:transparent url(images/bgl.jpg) repeat-y left top;
+	background:transparent url(images/bgl.png) repeat-y left top;
 }
 
 #pager{
-	background:transparent url(images/bgr.jpg) repeat-y right top;
+	background:transparent url(images/bgr.png) repeat-y right top;
 }
 
 #content{
@@ -67,8 +67,8 @@ body{
 	background: transparent url(images/navbarbg.png) repeat-x left top;
 }
 
-#footercont {
-	background: transparent url(/images/bgbot.png) repeat-x left bottom;
+#footermain {
+	background: transparent url(images/bgbot.png) repeat-x left bottom;
 }
 
 .narrowcolumn{
@@ -300,13 +300,6 @@ ul.comment-preview li:hover{
 	text-decoration:underline;
 }
 
-.entry_spacer{
-	border-bottom:1px solid #a4acb3;
-	border-top:1px solid #eaeaea;
-	height:0;
-	margin:auto;
-	width:400px;
-}
 
 .heading{
 	margin-top:20px;
@@ -337,6 +330,8 @@ ul.comment-preview li:hover{
 	line-height:1.3em;
 	margin-top:4px;
 	padding:2px 4px 1px;
+	float:right;
+	width:100%;
 }
 
 .narrowcolumn .postmetadata{
@@ -347,6 +342,8 @@ ul.comment-preview li:hover{
 .post{
 	margin:0 0 40px;
 	text-align:justify;
+	float:left;
+	width:100%;
 }
 
 .post small{
@@ -406,6 +403,15 @@ ul.comment-preview li:hover{
 	float:right;
 	font-family:"Lucida Sans Unicode" , "Lucida Grande", Sans-Serif;
 	padding:2px 4px;
+}
+
+.top img{
+	opacity:.5;
+}
+.top img:hover{
+	opacity: 1;
+	-moz-box-shadow:1px 1px 3px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
 .toppost{
@@ -503,6 +509,11 @@ Sidebar
 .sidebar_icon{
 	padding-right:5px;
 	text-align:right;
+}
+
+.sidebar .about_icons li{
+	display:inline;
+	margin:3px;
 }
 
 .techozoic_rss,#rss{
@@ -679,13 +690,13 @@ Nav Menus
 	margin:auto;
 	position:absolute;
 	top:2em;
-	width:100%;
+	width:12em;
 	z-index:300;
 } 
  
 #dropdown li ul{
-	margin-left:-25px;
 	width:14.1em;
+	padding-left:0;
 }
 #dropdown li ul a{
 	border:1px solid #D3D3D3;
@@ -706,7 +717,7 @@ Nav Menus
 	top:auto;
 }
 #dropdown li ul ul{
-	left:9em;
+	left:15.3em;
 	margin:0 0 0 10px;
 }
 #dropdown li:hover ul ul, #dropdown li:hover ul ul ul, #dropdown li:hover ul ul ul ul {

@@ -3,7 +3,7 @@ get_tech_options();
 global $tech;
 ?>
 <hr />
-<div id="footercont">
+<div id="footermain">
 <div id="footer">
 <div id="footerdivs">
 <?php if ( !function_exists('dynamic_sidebar')
