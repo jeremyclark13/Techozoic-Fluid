@@ -523,6 +523,19 @@ function tech_admin_thickbox() {
 	wp_enqueue_style('thickbox');
 }
 
+function tech_menu_button_css() {
+	$path = get_bloginfo('template_directory');
+	$output ="<style type=\"text/css\">
+#adminmenu #toplevel_page_techozoic_main_admin div.wp-menu-image {	background: transparent url('{$path}/images/tech_menu.png') no-repeat scroll -1px -33px;}
+#adminmenu #toplevel_page_techozoic_main_admin div.wp-menu-image img{display:none;}
+#adminmenu #toplevel_page_techozoic_main_admin:hover div.wp-menu-image,
+#adminmenu #toplevel_page_techozoic_main_admin.wp-has-current-submenu div.wp-menu-image,
+#adminmenu #toplevel_page_techozoic_main_admin.current div.wp-menu-image {	background: transparent url('{$path}/images/tech_menu.png') no-repeat scroll -1px -1px;}
+</style>
+";
+print $output;
+}
+
 function controlpanel_css() {
 $path = get_bloginfo('template_directory');
 	$head = "<link rel='stylesheet' type='text/css' href='" . $path . "/options/options.css'/>\n";
@@ -543,6 +556,11 @@ $path = get_bloginfo('template_directory');
 	$head .= "<![endif]-->\n";
 	print $head;
 } //End Function controlpanel_css
-add_action('admin_head', 'controlpanel_css');
-add_action('admin_print_styles','tech_admin_thickbox');
+if (isset($_GET['page'])){
+	if ($_GET['page'] == "techozoic_main_admin" || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin") {
+		add_action('admin_head', 'controlpanel_css');
+		add_action('admin_print_styles','tech_admin_thickbox');
+	}
+}
+add_action('admin_head','tech_menu_button_css');
 ?>
