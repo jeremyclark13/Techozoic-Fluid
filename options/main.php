@@ -265,7 +265,7 @@ function techozoic_admin() {
 	<ul id="themetabs" class="tabs">
 		<li><a href="#layout" rel="layout" rev="tech_buttons">Layout</a></li>
 		<li><a href="#nav" rel="nav" rev="tech_buttons">Navigation</a></li>
-		<li><a href="#social" rel="social" rev="tech_buttons">Social Media</a></li>
+		<li><a href="#social" rel="social" rev="tech_buttons">Social Networks</a></li>
 		<li><a href="#font" rel="font" rev="tech_buttons">Typography</a></li>
 		<li><a href="#color" rel="color" rev="tech_buttons">Color Options</a></li>
 		<li><a href="#background" rel="background" rev="tech_buttons">Backgrounds</a></li>
@@ -295,7 +295,12 @@ function techozoic_admin() {
 			if ($value['type'] == "text") { 
 				echo $value['before'] ?>        
 				<tr valign="top"> 
-					<th scope="row"><?php echo $value['name']; ?></th>
+					<th scope="top"><?php echo $value['name']; ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 					<td>
 					<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if( $settings[$id]  != "") { echo stripslashes($settings[$id]); } else { echo $value['std']; } ?>" size="<?php echo $value['size']; ?>" <?php echo $value['java']; ?>/>
 	<?php 			echo $value['text'];
@@ -309,6 +314,11 @@ function techozoic_admin() {
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?><?php if (isset($value['image'])){ ?>
 				<br /><img src="<?php bloginfo('template_directory') ?>/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" /><?php } ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 					<td>
 						<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" <?php echo $value['java']; ?>>
 	<?php 			foreach ($value['options'] as $option) { ?>
@@ -324,6 +334,11 @@ function techozoic_admin() {
 			} elseif ($value['type'] == "checkbox") { ?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 						<td>
 		<ul>						
 		<?php 
@@ -344,6 +359,11 @@ function techozoic_admin() {
 			} elseif ($value['type'] == "wp_list") { ?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 						<td>		
 							<select  multiple="multiple" size="8" name="<?php echo $value['id']; ?>[]" id="<?php echo $value['id']; ?>" style="height:100px;">
 
@@ -369,6 +389,11 @@ function techozoic_admin() {
 		 } elseif ($value['type'] == "upload") { ?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 					 <td>
 			<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id'];?>" type="file"/>
 			</td>
@@ -387,7 +412,7 @@ function techozoic_admin() {
 		$path = WP_CONTENT_DIR. "/techozoic/images/backgrounds/";
 		$dir_handle = @opendir($path) or die("Unable to open $path");
 		while ($tech_file = readdir($dir_handle)) {
-			if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" || ($value['id'] == "favicon_image" && !preg_match('/\.ico$/i', $tech_file))) {
+			if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" || $tech_file == ".svn" || ($value['id'] == "favicon_image" && !preg_match('/\.ico$/i', $tech_file))) {
 				continue;
 			}
 	?>
@@ -411,6 +436,11 @@ function techozoic_admin() {
 			} elseif ($value['type'] == "radio") { ?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 					<td>
 	<?php 			foreach ($value['options'] as $option) { 
 					echo $option; ?><input name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php echo $option; ?>" <?php if (  $settings[$id]  == $option) { echo 'checked="checked"'; } ?> <?php echo $value['java']; ?>/>|
@@ -424,6 +454,11 @@ function techozoic_admin() {
 
 					<tr valign="top"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 					<td>
 						<textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="40" rows="10"><?php if (  $settings[$id]  != "") { echo stripslashes($settings[$id]) ; } else { echo $value['std']; } ?>
 	</textarea>

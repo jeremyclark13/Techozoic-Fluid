@@ -26,6 +26,11 @@
 				echo $value['before'] ?>        
 				<tr valign="top"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 					<td>
 					<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if( $settings[$id]  != "") { echo stripslashes($settings[$id]); } else { echo $value['std']; } ?>" size="<?php echo $value['size']; ?>" <?php echo $value['java']; ?>/>
 	<?php 			echo $value['text'];
@@ -39,6 +44,11 @@
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?><?php if (isset($value['image'])){ ?>
 				<br /><img src="<?php bloginfo('template_directory') ?>/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" /><?php } ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 					<td>
 						<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" <?php echo $value['java']; ?>>
 	<?php 			foreach ($value['options'] as $option) { ?>
@@ -54,6 +64,11 @@
 			} elseif ($value['type'] == "radio") { ?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 					<td>
 	<?php 			foreach ($value['options'] as $option) { 
 					echo $option; ?><input name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php echo $option; ?>" <?php if (  $settings[$id]  == $option) { echo 'checked="checked"'; } ?> <?php echo $value['java']; ?>/>|
@@ -67,6 +82,11 @@
 
 					<tr valign="top"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
+	<?php	if(isset($value['desc'])){?>
+				</tr>
+				<tr valign="middle"> 
+					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+	<?php 		} ?>
 					<td>
 						<textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="40" rows="10"><?php if (  $settings[$id]  != "") { echo stripslashes($settings[$id]) ; } else { echo $value['std']; } ?>
 	</textarea>
