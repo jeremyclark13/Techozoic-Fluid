@@ -156,7 +156,7 @@ $options = array (
 				"old_id" => "tech_nav_menu_type",
             	"type" => "select",
             	"std" => "Standard",
-            	"options" => array("Standard", "Two Tier", "Dropdown", /*"WP 3 Menu",*/ "Disable")),
+            	"options" => array("Standard", "Two Tier", "Dropdown", "WP 3 Menu", "Disable")),
 
 				array(	"name" => "Navigation Menu Alignment",
             	"id" => "nav_align",

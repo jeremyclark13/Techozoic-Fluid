@@ -233,9 +233,12 @@
 			exit;
 		}
 	}
-	if(function_exists('add_theme_support'))
+	if(function_exists('add_theme_support')) {
 		add_theme_support( 'post-thumbnails' );
 		//WP 2.9 Post Thumbnail Support
+		add_theme_support('nav-menus');
+		//WP 3.0 Menus	
+	}
 
 	function techozoic_enqueue() {
 		wp_enqueue_script('tech_thickbox', get_bloginfo('wpurl') . '/wp-content/themes/techozoic-fluid/js/thickbox.js',array('jquery'),'3.0' );

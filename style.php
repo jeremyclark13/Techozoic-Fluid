@@ -199,16 +199,16 @@ font-size: {$tech['post_text_font_size']}em;
 acronym,abbr,span.caps,small,.commentlist li,.trackback li,#commentform input,#commentform textarea,.sidebar {
 font-size: {$tech['small_font_size']}em;
 }
-.description, ul#nav a, ul#admin a, ul#nav li.current_page_item a:hover,#headerimg h1 a, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a {
+.description, ul#nav a, ul#admin a, ul#nav li.current_page_item a:hover,#headerimg h1 a, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a .menu a{
 color: {$tech_acc_color};
 }
 .author,#searchform #s,ul#nav li.current_page_item,#nav2 li.current_page_item,#nav2 li.current_page_parent,ul#nav2 li.current_page_ancestor, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,.postform,#TB_ajaxContent {
 background-color: {$tech_acc_color} ;
 }
-#dropdown li.current_page_item {
+#dropdown li.current_page_item, .menu li.current-menu-item  {
 border: 1px solid {$tech_acc_color};
 }
-ul#nav li,ul#admin li, #nav2 li, #dropdown li {
+ul#nav li,ul#admin li, #nav2 li, #dropdown li, .menu li {
 font-family:{$tech['body_font']}, Sans-Serif;
 background-color: {$tech_nav_bg_color};
 }
@@ -361,13 +361,13 @@ CSS;
 		}
 	}
 echo <<<CSS
-ul#nav,ul#nav2,ul#dropdown{
+ul#nav,ul#nav2,ul#dropdown,ul.menu{
 {$tech['nav_align']};
 }
 CSS;
 	if ($tech['nav_button_width'] != 0) { 
 echo <<<CSS
-ul#nav li, ul#admin li, #nav2 li,#dropdown li{
+ul#nav li, ul#admin li, #nav2 li,#dropdown li,.menu li{
 width: {$tech['nav_button_width']}em;
 } 
 CSS;

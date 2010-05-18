@@ -18,6 +18,7 @@
 - Added Norwegian Translation - Thanks <a href="http://stig.ulfsby.no/">stig.ulfsby.no</a><br />
 - Added German Translation - Thanks <a href="http://InterNet-Dienste.biz">Thomas Morvay</a><br />
 - Fixed error with image alignment outside of post container<br />
+- Added support for WordPress 3.0 menus<br />
 <h3>Version 1.8.7</h3><br />
 - Added French Translations - Thanks <a href="http://www.wolforg.eu" title= "Wolforg : CMS, Logiciels Libres & Réseaux Sociaux en Lozère" _target="blank">Wolforg</a><br />
 - Added Cufon javascript font replacement options, and three free to use on web fonts<br />

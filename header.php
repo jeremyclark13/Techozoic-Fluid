@@ -126,9 +126,9 @@ if (!empty ($description)) { ?>
 			case "Dropdown":
 				include (TEMPLATEPATH . "/nav/dropdown.php");
 				break;
-			/* case "WP 3 Menu":
+			case "WP 3 Menu":
 				include (TEMPLATEPATH . "/nav/wp3.php");
-				break; */
+				break;
 		}
 	}
 if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {

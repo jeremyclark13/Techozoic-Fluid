@@ -1,1 +1,3 @@
-<?php wp_nav_menu( 'sort_column=menu_order&class=nav' ); ?>
+<div id="navwrap">
+<?php wp_nav_menu( array('container' =>'')); ?>
+</div>
