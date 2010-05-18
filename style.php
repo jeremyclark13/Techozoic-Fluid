@@ -199,7 +199,7 @@ font-size: {$tech['post_text_font_size']}em;
 acronym,abbr,span.caps,small,.commentlist li,.trackback li,#commentform input,#commentform textarea,.sidebar {
 font-size: {$tech['small_font_size']}em;
 }
-.description, ul#nav a, ul#admin a, ul#nav li.current_page_item a:hover,#headerimg h1 a, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a .menu a{
+.description, ul#nav a, ul#admin a, ul#nav li.current_page_item a:hover,#headerimg h1 a, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a, .menu a{
 color: {$tech_acc_color};
 }
 .author,#searchform #s,ul#nav li.current_page_item,#nav2 li.current_page_item,#nav2 li.current_page_parent,ul#nav2 li.current_page_ancestor, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,.postform,#TB_ajaxContent {
