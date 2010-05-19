@@ -70,7 +70,6 @@ else { ?>
 	ul.comment-preview li:hover{ filter:alpha(opacity=100);}
 	</style>
 <![endif]-->
-<link rel="alternate" type="application/rss+xml" title="<?php bloginfo('name'); ?> RSS Feed" href="<?php bloginfo('rss2_url'); ?>" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ($tech['favicon_image']) {?>
 	<link rel="icon" href="<?php echo $tech['favicon_image'];?>" type="image/x-icon" />

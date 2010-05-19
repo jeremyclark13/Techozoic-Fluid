@@ -21,6 +21,20 @@
 	$tech = get_option('techozoic_options');
 	$theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 	$version = $theme_data['Version'];
+	
+/**************************************
+	Techozoic Automatic Feed Link Checking
+	Since 1.8.8
+***************************************/	
+function	tech_feed_link(){
+	if(function_exists(current_theme_supports)){
+		if(!current_theme_supports('automatic-feed-links')){ 
+			echo '<link rel="alternate" type="application/rss+xml" title="'. get_bloginfo('name'). ' RSS Feed 1" href="'. get_bloginfo('rss2_url') .'" />';
+		}
+	} else {
+		echo '<link rel="alternate" type="application/rss+xml" title="'. get_bloginfo('name'). ' RSS Feed 2" href="'. get_bloginfo('rss2_url') .'" />';
+	}
+}
 
 /**************************************
 	Techozoic Social Media Icons Function
@@ -238,6 +252,8 @@
 		//WP 2.9 Post Thumbnail Support
 		add_theme_support('nav-menus');
 		//WP 3.0 Menus	
+		add_theme_support('automatic-feed-links');
+		//WP Auto Feed Links
 	}
 
 	function techozoic_enqueue() {
@@ -443,7 +459,7 @@ function get_tech_options() {
 	if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ){
 	        add_action( 'admin_notices', 'techozoic_show_notice' );  // Shows custom theme activation notice with links to option page and changelog
 	}
-	if ($tech['nav_menu_type'] == "Dropdown"){	
+	if ($tech['nav_menu_type'] == "Dropdown" || $tech['nav_menu_type'] == "WP 3 Menu"){	
 		add_action('wp_print_styles','dropdown_js');
 	}
 	if ($tech['cufon_font'] == "Enable") {
@@ -452,9 +468,10 @@ function get_tech_options() {
 	}
 	add_action('admin_menu', 'create_meta_box');  // Creates custom meta box for disabling sidebar on page by page basis
 	add_action('save_post', 'save_postdata');  // Saves meta box data to postmeta table
-	add_filter('query_vars', 'add_new_var_to_wp');
-	add_action('template_redirect', 'techozoic_css_display');
-	add_action('wp_head', 'first_run_options');
-	add_action('admin_head', 'first_run_options');
-	add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets');
+	add_filter('query_vars', 'add_new_var_to_wp'); //ADD css query variable for calling dynamic css
+	add_action('template_redirect', 'techozoic_css_display'); //Outputs dynamic style.php and then exits to stop additional processing
+	add_action('wp_head', 'tech_feed_link'); //Tests if WP 3.0 automatic_feed_link is available if not echos feed link to wp_head
+	add_action('wp_head', 'first_run_options'); //Calls tech_init.php which sets up default options in database and creates folder to hold custom images
+	add_action('admin_head', 'first_run_options'); //Same as above but works for the admin side
+	add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets'); //Add Techozoic dashboard widget with info for theme and donate button
 ?>
