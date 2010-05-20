@@ -26,14 +26,17 @@
 	Techozoic Automatic Feed Link Checking
 	Since 1.8.8
 ***************************************/	
-function	tech_feed_link(){
-	if(function_exists(current_theme_supports)){
-		if(!current_theme_supports('automatic-feed-links')){ 
-			echo '<link rel="alternate" type="application/rss+xml" title="'. get_bloginfo('name'). ' RSS Feed 1" href="'. get_bloginfo('rss2_url') .'" />';
+function tech_feed_link(){
+	global $wp_version;
+	$default_feed_link = '<link rel="alternate" type="application/rss+xml" title="'. get_bloginfo('name'). ' RSS Feed" href="'. get_bloginfo('rss2_url') .'" />';
+	if($wp_version < 3){ 
+		if(function_exists(automatic_feed_links)){
+			$output .= automatic_feed_links();
+		} else {
+			$output .= $default_feed_link;
 		}
-	} else {
-		echo '<link rel="alternate" type="application/rss+xml" title="'. get_bloginfo('name'). ' RSS Feed 2" href="'. get_bloginfo('rss2_url') .'" />';
 	}
+	echo $output;
 }
 
 /**************************************
