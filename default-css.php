@@ -79,7 +79,6 @@ padding-top:5px;
 .tagcont {
 float:left;
 width:30%;
-height:150px;
 margin:2% 1%;
 }
 .tags {
