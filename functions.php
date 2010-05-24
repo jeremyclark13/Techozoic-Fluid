@@ -11,6 +11,17 @@
     		define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 	define ('WP_UPLOAD_PATH', ABSPATH . $upload_path );
 	if(is_admin()) {
+		if ( $_GET['page'] == "techozoic_main_admin"  || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin" ){
+			$dir = WP_CONTENT_DIR. "/techozoic";
+			if (!is_writable($dir)) {
+				function techozoic_error_message() {
+					$dir = WP_CONTENT_DIR. "/techozoic";
+					$message = "<div class=\"updated fade\">". __("Please make sure <strong>${dir}</strong> exists and is writable.",'techozoic'). "</div>";
+					echo $message;
+				}	
+				add_action( 'admin_notices','techozoic_error_message'); 
+			}
+		}
 		include_once (TEMPLATEPATH . "/options/option-array.php");
 		include_once(TEMPLATEPATH . '/options/main.php');
 	}
@@ -132,7 +143,7 @@ function tech_feed_link(){
 	}
 
 /**************************************
-	Techozoic Cufon Font Replacment
+	Techozoic Cufon Font Replacement
 	Since 1.8.7
 ***************************************/
 	function tech_cufon_script() {
@@ -162,7 +173,7 @@ function tech_feed_link(){
 	}
 
 /**************************************
-	Techozoic Cufon Font Replacment
+	Techozoic Cufon Font Replacement
 	END
 ***************************************/	
 
@@ -286,8 +297,10 @@ function tech_feed_link(){
 
 function first_run_options() {
 	global $version;
+	$header_folder = WP_CONTENT_DIR. "/techozoic/images/headers";
+	$background_folder = WP_CONTENT_DIR. "/techozoic/images/backgrounds";
   	$check = get_option('techozoic_activation_check');
-  	if ($check != $version) {
+  	if ($check != $version || !file_exists($header_folder) || !file_exists($background_folder)) {
 		include_once (TEMPLATEPATH . '/options/tech-init.php');
     		// Add marker so it doesn't run in future
   		add_option('techozoic_activation_check', $version);

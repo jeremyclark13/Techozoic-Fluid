@@ -410,16 +410,18 @@ function techozoic_admin() {
 		<option>Select Image</option>
 	<?php
 		$path = WP_CONTENT_DIR. "/techozoic/images/backgrounds/";
-		$dir_handle = @opendir($path) or die("Unable to open $path");
-		while ($tech_file = readdir($dir_handle)) {
-			if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" || $tech_file == ".svn" || ($value['id'] == "favicon_image" && !preg_match('/\.ico$/i', $tech_file))) {
-				continue;
-			}
+		if (file_exists($path)){
+			$dir_handle = @opendir($path);
+			while ($tech_file = readdir($dir_handle)) {
+				if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" || $tech_file == ".svn" || ($value['id'] == "favicon_image" && !preg_match('/\.ico$/i', $tech_file))) {
+					continue;
+				}
 	?>
-		<option><?php echo $tech_file; ?></option>
+				<option><?php echo $tech_file; ?></option>
 	<?php
-		} //End While Loop
-		closedir($dir_handle); 
+			}	 //End While Loop
+			closedir($dir_handle); 
+		} //End if folder eixists check
 	?></select>
 	</td></tr>
 				<tr valign="middle" id="<?php echo $value['id']?>_preview">
@@ -546,7 +548,7 @@ function tech_export(){
 	$settings = get_option('techozoic_options');
 	$file_out = serialize($settings);
 	header("Cache-Control: public, must-revalidate");
-	header("Pragma: hack"); // WTF? oh well, it works...
+	header("Pragma: hack"); 
 	header("Content-type: text/plain; charset=ISO-8859-1");
 	header('Content-Disposition: attachment; filename="techozoic-options-'.date("Ymd").'.dat"');
 	echo $file_out;
