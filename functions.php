@@ -301,7 +301,9 @@ function first_run_options() {
 	$background_folder = WP_CONTENT_DIR. "/techozoic/images/backgrounds";
   	$check = get_option('techozoic_activation_check');
   	if ($check != $version || !file_exists($header_folder) || !file_exists($background_folder)) {
-		include_once (TEMPLATEPATH . '/options/tech-init.php');
+		include(TEMPLATEPATH . '/options/tech-init.php');
+		tech_update_options();
+		tech_create_folders();
     		// Add marker so it doesn't run in future
   		add_option('techozoic_activation_check', $version);
 		update_option('techozoic_activation_check', $version);

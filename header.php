@@ -6,7 +6,11 @@
 <?php 
 get_tech_options();
 global $tech;
-$tech_disable_nav = get_post_meta($post->ID, "Nav_value", $single = true);
+if ( is_singular() ){
+	$tech_disable_nav = get_post_meta($post->ID, "Nav_value", $single = true);
+} else {
+	$tech_disable_nav = "unset";
+}
 if($tech['seo'] == On) { 
 	if(is_single()) { 
 		if ( have_posts() ) { 

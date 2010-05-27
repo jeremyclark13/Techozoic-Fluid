@@ -100,8 +100,10 @@
 		}
 	}
 	while ($file = readdir($dir_handle)) {
-		if($file == "." || $file == ".." || $file == "index.php" )
+		if($file == "." || $file == ".." || $file == "index.php" || $file == ".svn" )
 			continue;
+			$img_full_path = $path . '/' . $file;
+			$img_info = getimagesize($img_full_path);
 			$delvars [] = $file;
 			if(($i % 2)==0)
 				$alt = "filealt";
@@ -115,10 +117,15 @@
 			}
 
 			
-?>				<div class="filediv <?php echo $alt; ?>"><h3> <?php echo $file; ?> </h3>
-				<div id="<?php echo $divid; ?>" class="current"><?php if(tech_check_header($file,$file_path)){ echo "<h3><span>" . tech_check_header($file,$file_path) . "</span></h3>" ;}?></div>
+?>				<div class="filediv <?php echo $alt; ?>">
+				<div id="<?php echo $divid; ?>" class="current">
+					<?php if(tech_check_header($file,$file_path)){ echo "<h3><span>" . tech_check_header($file,$file_path) . "</span></h3>" ;}?>
+				</div> 
+				<h3> <?php echo $file; ?> </h3>
 				<a href="<?php echo $file_path; ?>" class="thickbox" rel="headers" title="<?php echo $file; echo tech_check_header($file,$file_path);?>">		<img src="<?php echo $file_path;?>" alt="Click for full size preview of <?php echo $file;?>" />
 				</a>
+				<br />
+				<span class="img_meta">Width: <?php echo $img_info[0];?>px &nbsp;| Height: <?php echo $img_info[1];?>px</span>
 				<br /><div class="header_buttons">
 				<form method="post" name="tech_header_select" >
 				<span class="tech_submit submit save">
