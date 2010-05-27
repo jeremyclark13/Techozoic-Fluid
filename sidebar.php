@@ -4,15 +4,17 @@ global $tech;
 ?>
 	<div id="r_sidebar" class="sidebar">
 <?php 	if ($tech['nav_menu_type'] != "Sidebar") {
-		$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
-		if ($children) { ?>
-			<ul>
-				<li><h2><?php _e('Pages Below Current' ,'techozoic')?></h2>
-				<ul><?php echo $children; ?></ul>
-				</li>
-			</ul>
-<?php 		} 
-	}
+		if(is_page()) {
+			$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
+			if ($children) { ?>
+				<ul>
+					<li><h2><?php _e('Pages Below Current' ,'techozoic')?></h2>
+					<ul><?php echo $children; ?></ul>
+					</li>
+				</ul>
+<?php	 		} 
+			}
+		}
 ?>
 	<ul>
 			

@@ -10,9 +10,7 @@ global $tech;
 		</div>
 <?php 		$tech_ii++; 
 	}
-	if ($tech['column'] == 3 &&  $tech['home_sidebar'] == "Yes" && $tech['sidebar_pos'] == "Sidebar - Content - Sidebar") {
-		include (TEMPLATEPATH . '/l_sidebar.php'); 
-	}
+	if ($tech['home_sidebar'] == "Yes")  tech_show_sidebar("l");
 ?>
 
 	<div id="content" class="<?php if ($tech['home_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
@@ -78,9 +76,6 @@ global $tech;
 <?php 	} ?>
 
 	</div>
-<?php 	if ($tech['column'] != 1 && $tech['home_sidebar'] == "Yes")  get_sidebar(); ?>
-<?php 	if ($tech['column'] == 3 && $tech['home_sidebar'] == "Yes" && $tech['sidebar_pos'] =="Content - Sidebar - Sidebar") {
-		include (TEMPLATEPATH . '/l_sidebar.php');
-	}
+<?php 	if ($tech['home_sidebar'] == "Yes")  tech_show_sidebar("r");
 	get_footer(); 
 ?>

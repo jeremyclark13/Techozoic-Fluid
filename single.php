@@ -3,11 +3,7 @@ get_tech_options();
 global $tech;
 $tech_disable_sidebar = get_post_meta($post->ID, "Sidebar_value", $single = true);
 $tech_disable_nav = get_post_meta($post->ID, "Nav_value", $single = true);
-if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { 
-	if ($tech['column'] == 3 && $tech['sidebar_pos'] == "Sidebar - Content - Sidebar" && $tech['single_sidebar'] == "Yes") {
-		include (TEMPLATEPATH . '/l_sidebar.php'); 
-	} 
-}?>
+if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { tech_show_sidebar("l");} ?>
 <div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { echo "narrow"; }else {echo "wide";}?>column">
 <?php 
 if (have_posts()) {
@@ -60,10 +56,5 @@ if (have_posts()) {
 } //End If loop
 ?>	</div>
 <?php 
-if ($tech['single_sidebar'] == "Yes" && $tech['column'] != 1 && $tech_disable_sidebar != "checked") {
-	get_sidebar();
-	if ($tech['column'] == 3 && $tech['sidebar_pos'] =="Content - Sidebar - Sidebar") {
-		include (TEMPLATEPATH . '/l_sidebar.php'); 
-	} 
-} 
+if ($tech['single_sidebar'] == "Yes"  && $tech_disable_sidebar != "checked") { tech_show_sidebar("r"); }
 get_footer(); ?>

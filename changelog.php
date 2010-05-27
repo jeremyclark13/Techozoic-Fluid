@@ -18,6 +18,10 @@
 - Added Norwegian Translation - Thanks <a href="http://stig.ulfsby.no/">stig.ulfsby.no</a><br />
 - Added German Translation - Thanks <a href="http://InterNet-Dienste.biz">Thomas Morvay</a><br />
 - Fixed error with image alignment outside of post container<br />
+- Fixed error with Tag archive containters being too small<br />
+- Fixed error with some plugins causing post meta info to be read in header causing problems with disabling sidebar and nav menus<br />
+- Added 3 new layouts - Sidebar - Sidebar - Content, Content - Sidebar, Sidebar - Content<br />
+- Added function for outputing sidebars depending on layout options<br />
 - Added support for WordPress 3.0 menus<br />
 <h3>Version 1.8.7</h3><br />
 - Added French Translations - Thanks <a href="http://www.wolforg.eu" title= "Wolforg : CMS, Logiciels Libres & Réseaux Sociaux en Lozère" _target="blank">Wolforg</a><br />

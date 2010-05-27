@@ -1,9 +1,7 @@
 <?php get_header(); 	
 get_tech_options();
 global $tech;	
-if ($tech['column'] == 3 &&  $tech['home_sidebar'] == "Yes" && $tech['sidebar_pos'] == "Sidebar - Content - Sidebar") {
-		include (TEMPLATEPATH . '/l_sidebar.php'); 
-	}?>
+	if ($tech['home_sidebar'] == "Yes")  tech_show_sidebar("l");?>
 
 	<div id="content" class="<?php if ($tech['home_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
 
@@ -73,9 +71,5 @@ if ( function_exists('the_tags') ) :
 	<?php endif; ?>
 		
 	</div>
-<?php 	
-	if ($tech['column'] != 1 && $tech['home_sidebar'] == "Yes")  get_sidebar(); 
-	if ($tech['column'] == 3 && $tech['home_sidebar'] == "Yes" && $tech['sidebar_pos'] =="Content - Sidebar - Sidebar") {
-		include (TEMPLATEPATH . '/l_sidebar.php');
-	}
+<?php 	if ($tech['home_sidebar'] == "Yes")  tech_show_sidebar("r");
 	get_footer(); ?>

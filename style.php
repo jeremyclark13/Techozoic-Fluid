@@ -281,6 +281,7 @@ CSS;
 		}
 		$tech['main_column_width'] = $tech['main_column_width'] - 5;
 		$tech['sidebar_width'] = $tech['sidebar_width'] - 3;
+		if ($tech['sidebar_pos'] =='Content - Sidebar') {
 echo <<<CSS
 #page {
 width: {$tech['page_width']}{$tech['sign']};
@@ -297,6 +298,24 @@ padding:10px 2% 0 1%;
 width:{$tech['sidebar_width']}%
 }
 CSS;
+			} else { 
+echo <<<CSS
+#page {
+width: {$tech['page_width']}{$tech['sign']};
+}
+.narrowcolumn {
+float:left;
+margin:0;
+padding:0 3% 20px 2%;
+width:{$tech['main_column_width']}%;
+}
+#l_sidebar {
+float:left;
+padding:10px 1% 0 2%;
+width:{$tech['sidebar_width']}%
+}
+CSS;
+		}
 	} else {
 		if ($tech['main_column_width'] == 0 && $tech['sidebar_width'] != 0) {
 			$tech['main_column_width'] = 96 - ($tech['sidebar_width'] * 2);
@@ -333,7 +352,7 @@ padding:10px 2% 0 0;
 width:{$tech['sidebar_width']}%
 }
 CSS;
-		} else { 
+		} elseif ($tech['sidebar_pos'] =='Sidebar - Content - Sidebar') { 
 echo <<<CSS
 #page {
 width: {$tech['page_width']}{$tech['sign']}
@@ -346,6 +365,31 @@ width:{$tech['main_column_width']}%;
 }
 #r_sidebar {
 float:right;
+padding:10px 2% 0 0;
+width:{$tech['sidebar_width']}%
+}
+CSS;
+$tech['sidebar_width'] = $tech['sidebar_width'] - 2;
+echo <<<CSS
+#l_sidebar {
+float:left;
+padding:10px 0 0 2%;
+width:{$tech['sidebar_width']}%
+}
+CSS;
+		} else {
+echo <<<CSS
+#page {
+width: {$tech['page_width']}{$tech['sign']}
+}
+.narrowcolumn {
+float:left;
+margin:0 1%;
+padding:0 0 20px 0;
+width:{$tech['main_column_width']}%;
+}
+#r_sidebar {
+float:left;
 padding:10px 2% 0 0;
 width:{$tech['sidebar_width']}%
 }

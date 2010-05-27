@@ -5,15 +5,8 @@
 	$version = $theme_data['Version'];
 	
 	if(function_exists('register_sidebar')){
-	if (isset($tech['column'])){
-		if($tech['column'] > 1) {register_sidebar(array('name'=>__('Right Sidebar','techozoic')));}
-		if($tech['column'] == 3) {register_sidebar(array('name'=>__('Left Sidebar','techozoic')));}
-	} else {
-		register_sidebar(array('name'=>__('Right Sidebar','techozoic')));
-		register_sidebar(array('name'=>__('Left Sidebar','techozoic')));
-
-	}// End check if tech column set
-	
+	register_sidebar(array('name'=>__('Right Sidebar','techozoic')));
+	register_sidebar(array('name'=>__('Left Sidebar','techozoic')));
 	register_sidebar(array(
 		'name'=>__('Footer - Limit 3 Widgets','techozoic'),
 		'before_widget' => '<div class="footercont"><ul><li>',

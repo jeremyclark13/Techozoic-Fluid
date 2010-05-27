@@ -210,17 +210,31 @@ function pagewidth(form){
 	var c = c - 1;
 	var b = b * c;
 	if (c == 2) { 
-		document.tech_options.sidebar_pos.disabled = false;
 		document.tech_options.sidebar_width.disabled = false;
 		document.getElementById('sidebar_s').innerHTML = 's';
+		form.sidebar_pos.disabled=false;
+		form.sidebar_pos.options[0].disabled=true;
+		form.sidebar_pos.options[1].disabled=false;
+		form.sidebar_pos.options[2].disabled=false;
+		form.sidebar_pos.options[3].disabled=false;
+		form.sidebar_pos.options[4].disabled=true;
+		form.sidebar_pos.options[5].disabled=true;
+		form.sidebar_pos.options[6].disabled=true;
 	} else if (c == 1) {
-		document.tech_options.sidebar_pos.disabled = true;
 		document.tech_options.sidebar_width.disabled = false;
 		document.getElementById('sidebar_s').innerHTML = '';
+		form.sidebar_pos.disabled=false;
+		form.sidebar_pos.options[0].disabled=true;
+		form.sidebar_pos.options[1].disabled=true;
+		form.sidebar_pos.options[2].disabled=true;
+		form.sidebar_pos.options[3].disabled=true;
+		form.sidebar_pos.options[4].disabled=true;
+		form.sidebar_pos.options[5].disabled=false;
+		form.sidebar_pos.options[6].disabled=false;
 	} else {
-		document.tech_options.sidebar_pos.disabled = true;
 		document.tech_options.sidebar_width.disabled = true;
 		document.getElementById('sidebar_s').innerHTML = '';
+		form.sidebar_pos.disabled=true;
 	}
 	form.total.value = a + b ;
 	if (form.total.value > 100) { 

@@ -204,6 +204,10 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 						} else {
 						$settings[$k] = $v;
 						}
+					} elseif ($_GET['page'] == "techozoic_main_admin"){
+						if ($type == "wp_list" || $type == "checkbox"){
+							$settings[$k] = "";
+						}
 					}
 				}
 				$settings['test'] = "set";

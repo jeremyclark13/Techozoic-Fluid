@@ -32,6 +32,50 @@
 	$tech = get_option('techozoic_options');
 	$theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 	$version = $theme_data['Version'];
+
+/**************************************
+	Techozoic Sidebar Display Function
+	Since 1.8.8
+***************************************/
+function tech_show_sidebar($loc) {
+	global $tech;
+	switch ($tech['sidebar_pos']) {
+		case "Sidebar - Content - Sidebar":
+			$left = 1;
+			$right = 1;
+		break;
+		case "Content - Sidebar - Sidebar":
+			$left = 0;
+			$right = 2;
+		break;
+		case "Sidebar - Sidebar - Content":
+			$left = 2;
+			$right = 0;
+		break;
+		case "Content - Sidebar":
+			$left = 0;
+			$right = 1;
+		break;
+		case "Sidebar - Content":
+			$left = 1;
+			$right = 0;
+		break;
+	}
+	if ($loc == "l" && $left > 0){
+		include (TEMPLATEPATH . '/l_sidebar.php');
+		if ($left > 1){
+			get_sidebar();
+		}
+	}
+	if ($loc == "r" && $right > 0){
+		get_sidebar();
+		if ($right > 1){
+			include (TEMPLATEPATH . '/l_sidebar.php');
+		}
+	}
+}	
+	
+	
 	
 /**************************************
 	Techozoic Automatic Feed Link Checking

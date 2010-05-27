@@ -16,13 +16,12 @@ $options = array (
             	"java" => "onchange=\"pagewidth(this.form)\"",
             	"options" => array("3", "2", "1")),
 
-		array(	"name" => __("Three Column Content Layout","techozoic"),
-            	"image" => "images/layout.jpg",
+		array(	"name" => __("Column Layout","techozoic"),
 				"old_id" => "tech_sidebar_pos",
             	"id" => "sidebar_pos",
             	"type" => "select",
             	"std" => "Sidebar - Content - Sidebar",
-            	"options" => array("Sidebar - Content - Sidebar", "Content - Sidebar - Sidebar")),
+            	"options" => array("-- 3 Column Layouts","Sidebar - Content - Sidebar", "Content - Sidebar - Sidebar","Sidebar - Sidebar - Content","-- 2 Column Layouts","Content - Sidebar", "Sidebar - Content")),
 	
 		array(	"name" => __("Fixed or Fluid Width","techozoic"),		
             	"id" => "page_type",
@@ -355,7 +354,7 @@ $options = array (
             	"type" => "text"),
 
 		array(	"name" => __("Header Font","techozoic"),
-				"desc" => "<div class=\"fonts\"><span class=\"trebuchet\">Trebuchet</span> | <span class=\"verdana\">Verdana</span> | <span class=\"georgia\">Georgia</span> | <span class=\"tahoma\">Tahoma</span>   <span class=\"arial\">Arial</span> | <span class=\"times\">Times New Roman</span> | <span class=\"lucida\">Lucida Sans Unicode</span></div> | <span class=\"impact\">Impact</span></div>",
+				"desc" => "<div class=\"fonts\"><span class=\"trebuchet\">Trebuchet</span> | <span class=\"verdana\">Verdana</span> | <span class=\"georgia\">Georgia</span> | <span class=\"tahoma\">Tahoma</span>  | <span class=\"arial\">Arial</span> | <span class=\"times\">Times New Roman</span> | <span class=\"lucida\">Lucida Sans Unicode</span> | <span class=\"impact\">Impact</span></div>",
             	"id" => "header_font",
 				"old_id" => "tech_header_font",
             	"type" => "select",
@@ -364,7 +363,7 @@ $options = array (
             	"options" => array("Trebuchet MS", "Verdana", "Georgia", "Tahoma", "Arial", "Times New Roman","Lucida Sans Unicode","Impact")),
 
 		array(	"name" => __("Post Body Font","techozoic"),
-				"desc" => "<div class=\"fonts\"><span class=\"trebuchet\">Trebuchet</span> | <span class=\"verdana\">Verdana</span> | <span class=\"georgia\">Georgia</span> | <span class=\"tahoma\">Tahoma</span>   <span class=\"arial\">Arial</span> | <span class=\"times\">Times New Roman</span> | <span class=\"lucida\">Lucida Sans Unicode</span></div> | <span class=\"impact\">Impact</span>",
+				"desc" => "<div class=\"fonts\"><span class=\"trebuchet\">Trebuchet</span> | <span class=\"verdana\">Verdana</span> | <span class=\"georgia\">Georgia</span> | <span class=\"tahoma\">Tahoma</span>  | <span class=\"arial\">Arial</span> | <span class=\"times\">Times New Roman</span> | <span class=\"lucida\">Lucida Sans Unicode</span> | <span class=\"impact\">Impact</span></div>",
             	"id" => "body_font",
 				"old_id" => "tech_body_font",
             	"type" => "select",
@@ -373,7 +372,7 @@ $options = array (
             	"options" => array("Trebuchet MS", "Verdana", "Georgia", "Tahoma", "Arial", "Times New Roman","Lucida Sans Unicode","Impact")),
 
 		array(	"name" => __("Default Page Font","techozoic"),
-				"desc" => "<div class=\"fonts\"><span class=\"trebuchet\">Trebuchet</span> | <span class=\"verdana\">Verdana</span> | <span class=\"georgia\">Georgia</span> | <span class=\"tahoma\">Tahoma</span>   <span class=\"arial\">Arial</span> | <span class=\"times\">Times New Roman</span> | <span class=\"lucida\">Lucida Sans Unicode</span></div> | <span class=\"impact\">Impact</span>",
+				"desc" => "<div class=\"fonts\"><span class=\"trebuchet\">Trebuchet</span> | <span class=\"verdana\">Verdana</span> | <span class=\"georgia\">Georgia</span> | <span class=\"tahoma\">Tahoma</span>  | <span class=\"arial\">Arial</span> | <span class=\"times\">Times New Roman</span> | <span class=\"lucida\">Lucida Sans Unicode</span> | <span class=\"impact\">Impact</span></div>",
             	"id" => "default_font",
 				"old_id" => "tech_default_font",
 				"type" => "select",

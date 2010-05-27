@@ -7,18 +7,18 @@ you'll get a tag cloud displaying on a page.
 
 	<div id="content" class="widecolumn">
 <div class="post">	
-<h2 class="center">Tag Archive</h2><br />
+<h2 class="center"><?php _e("Tag Archive","techozoic");?></h2><br />
 	<?php wp_tag_cloud(''); ?>
-<div class="navigation">
-			<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
-			<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
-		</div>
+	<div class="navigation">
+	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
+	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
+	</div>
 <div style="clear:both"></div>
 <?php if (have_posts()) : ?>
 
 		<?php while (have_posts()) : the_post(); ?>
 <div class="tagcont">
-			<h2 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title(); ?>"><?php the_title(); ?></a></h2>
+			<h2 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h2>
 
 			<div class="entry">
 				<?php the_excerpt(); ?>
@@ -26,10 +26,10 @@ you'll get a tag cloud displaying on a page.
 </div>
 	<?php endwhile; ?>
 	<?php endif; ?>
-<div class="navigation">
-			<div class="alignleft"><?php next_posts_link('&laquo; Older Entries') ?></div>
-			<div class="alignright"><?php previous_posts_link('Newer Entries &raquo;') ?></div>
-		</div>
+	<div class="navigation">
+	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
+	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
+	</div>
 
 
 </div>
