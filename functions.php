@@ -132,20 +132,20 @@ function tech_feed_link(){
 	Since 1.8.8
 ***************************************/
 	function tech_about_icons($fb=0,$my=0,$twitter=0){
-	global $tech;
-	$fb_profile = $tech['facebook_profile'];
-	$my_profile = $tech['myspace_profile'];
-	$twitter_profile = $tech['twitter_profile'];
-	$image = get_bloginfo('template_directory')."/images/icons";
-	if ($fb !=0){
-		echo "<li><a href=\"{$fb_profile}\" title=\"".__('Follow me on Facebook','techozoic')."\"><img src=\"{$image}/facebook_32.png\"></a></li>";
-	}
-	if ($my !=0){
-		echo "<li><a href=\"{$my_profile}\" title=\"".__('Follow me on Myspace','techozoic')."\"><img src=\"{$image}/myspace_32.png\"></a></li>";
-	}	
-	if ($twitter !=0){
-		echo "<li><a href=\"{$twitter_profile}\" title=\"".__('Follow me on Twitter','techozoic')."\"><img src=\"{$image}/twitter_32.png\"></a></li>";
-	}
+		global $tech;
+		$fb_profile = $tech['facebook_profile'];
+		$my_profile = $tech['myspace_profile'];
+		$twitter_profile = $tech['twitter_profile'];
+		$image = get_bloginfo('template_directory')."/images/icons";
+		if ($fb !=0){
+			echo "<li><a href=\"{$fb_profile}\" title=\"".__('Follow me on Facebook','techozoic')."\"><img src=\"{$image}/facebook_32.png\"></a></li>";
+		}
+		if ($my !=0){
+			echo "<li><a href=\"{$my_profile}\" title=\"".__('Follow me on Myspace','techozoic')."\"><img src=\"{$image}/myspace_32.png\"></a></li>";
+		}	
+		if ($twitter !=0){
+			echo "<li><a href=\"{$twitter_profile}\" title=\"".__('Follow me on Twitter','techozoic')."\"><img src=\"{$image}/twitter_32.png\"></a></li>";
+		}
 	}
 	
 /**************************************
@@ -481,14 +481,6 @@ function get_tech_options() {
 	$tech = get_option('techozoic_options');
 	return $tech;
 }
-  // credit to yoast.com
-  function delete_comment_link($id) {
-	  if (current_user_can('edit_post')) {
-	    global $post;
-	    echo ' | <a href="'.admin_url("comment.php?action=cdc&c=$id&redirect_to=/".$post->post_name."/").'">'. __("Delete" ,'techozoic').'</a> ';
-	    echo '| <a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id&redirect_to=/".$post->post_name."/").'">'.__("Spam" ,'techozoic').'</a>';
-	  }
-	}
 
 	if ($tech['thickbox'] =="On"){
 	

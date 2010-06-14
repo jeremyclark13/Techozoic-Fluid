@@ -4,6 +4,15 @@ This File Contains callback functions for comment loops
 ******************************************/
 	global $tech;
 	$tech = get_option('techozoic_options');
+	 
+	 // credit to yoast.com
+function delete_comment_link($id,$post_name) {
+	  if (current_user_can('edit_post')) {
+	    echo ' | <a href="'.admin_url("comment.php?action=cdc&c=$id&redirect_to=/".$post_name."/").'">'. __("Delete" ,'techozoic').'</a> ';
+	    echo '| <a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id&redirect_to=/".$post_name."/").'">'.__("Spam" ,'techozoic').'</a>';
+	  }
+}
+
 	if ( function_exists('wp_list_comments')) {
 		// WP 2.7+ Function
 		add_filter('get_comments_number', 'comment_count', 0);
@@ -15,6 +24,7 @@ This File Contains callback functions for comment loops
 		}
 		function techozoic_comment($comment, $args, $depth) {
 	       		$GLOBALS['comment'] = $comment;
+				global $post;
 ?>
 			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID( ); ?>">
 			<div id="comment-<?php comment_ID( ); ?>">
@@ -25,7 +35,12 @@ This File Contains callback functions for comment loops
 <?php			}
 ?>
 			<br />
-			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('l, F jS Y') ?> at <?php comment_time() ?></a>&nbsp;|&nbsp;<?php edit_comment_link(__('Edit' ,'techozoic'),'',''); delete_comment_link(get_comment_ID())?></small>
+			<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('l, F jS Y') ?> at <?php comment_time() ?></a>&nbsp;|&nbsp;<?php edit_comment_link(__('Edit' ,'techozoic'),'','');
+			if($post->post_type == 'post'){
+				delete_comment_link($comment->comment_ID,$post->post_name);
+				}
+			?>
+			</small>
 
 <?php 			comment_text() 
 ?>

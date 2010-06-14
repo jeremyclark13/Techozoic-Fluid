@@ -14,9 +14,9 @@
 <?php			return;
 			}
 		}
+	}
 		/* This variable is for alternating comment background */
 		$oddcomment = 'class="alt" ';
-	}
 	if (function_exists('wp_list_comments')) {
 		//WP 2.7 Comment Loop
 		if ( have_comments() ) { ?>
@@ -32,6 +32,7 @@
 			<div class="alignright"><?php next_comments_link() ?></div>
 			</div>
  <?php 		} // this is displayed if there are no comments so far 
+
 			if ('open' == $post->comment_status) {
 				// If comments are open, but there are no comments.
 			} else { ?><p class="nocomments"><?php _e('Comments are closed.','techozoic')?></p>
@@ -91,7 +92,7 @@
 <?php 					} /* end for each comment */ ?>
 				</ol>
 <?php 			} 
-		} else { // this is displayed if there are no comments so far 
+		} else { // this is displayed if there are no comments so far
 			if ('open' == $post->comment_status) {  ?> 
 				<!-- If comments are open, but there are no comments. -->
 <?php 			} else { // comments are closed ?>
