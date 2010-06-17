@@ -111,9 +111,11 @@ if (!empty ($description)) { ?>
 </div>
 </div>
 </div>
-<div id="search">
-<?php include (TEMPLATEPATH . "/searchform.php"); ?>
-</div>
+<?php if ($tech['search_box'] == "Yes") {?>
+	<div id="search">
+	<?php include (TEMPLATEPATH . "/searchform.php"); ?>
+	</div>
+<?php } ?>
 <hr />
 <?php 	if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
 ?>

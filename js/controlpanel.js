@@ -164,14 +164,23 @@ function detectlink() {
 	}
 }
 
+function upload(form,option_name){
+	if (document.getElementById(option_name).value == "") {
+	}else {
+		form.save_button.value = "Save/Upload";
+	}
+}
+
 function textsize(form){
 	var bodyfont = form.body_font_size.value;
 	var headingfont = form.header_font[form.header_font.selectedIndex].text;
 	var postbodyfont = form.body_font[form.body_font.selectedIndex].text;
+	var navfont = form.nav_font[form.nav_font.selectedIndex].text;
 	var defaultfont = form.default_font[form.default_font.selectedIndex].text;
 	document.getElementById('main_heading_font_size_out').style.fontSize = bodyfont+"px";
 	document.getElementById('post_heading_font_size_out').style.fontSize = bodyfont+"px";
 	document.getElementById('side_heading_font_size_out').style.fontSize = bodyfont+"px";
+	document.getElementById('nav_text_font_size_out').style.fontSize = bodyfont+"px";
 	document.getElementById('post_text_font_size_out').style.fontSize = bodyfont+"px";
 	document.getElementById('small_font_size_out').style.fontSize = bodyfont+"px";
 	document.getElementById('main_heading_font_size').style.fontSize = form.main_heading_font_size.value+"em";
@@ -180,6 +189,8 @@ function textsize(form){
 	document.getElementById('post_heading_font_size').style.fontFamily = headingfont;
 	document.getElementById('side_heading_font_size').style.fontSize = form.side_heading_font_size.value+"em";
 	document.getElementById('side_heading_font_size').style.fontFamily = headingfont;
+	document.getElementById('nav_text_font_size').style.fontSize = form.nav_text_font_size.value+"em";
+	document.getElementById('nav_text_font_size').style.fontFamily = navfont;
 	document.getElementById('post_text_font_size').style.fontSize = form.post_text_font_size.value+"em";
 	document.getElementById('post_text_font_size').style.fontFamily = postbodyfont;
 	document.getElementById('small_font_size').style.fontSize = form.small_font_size.value+"em";

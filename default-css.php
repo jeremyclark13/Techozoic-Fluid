@@ -393,7 +393,6 @@ padding:3px;
 ul#nav a,ul#admin a, #nav2 a,#nav2 a:visited,#dropdown a,.menu a {
 text-decoration:none;
 font-weight:bolder;
-font-size:1.3em;
 line-height: 16px;
 }
 ul#nav li, #nav2 li, #dropdown li, .menu li{

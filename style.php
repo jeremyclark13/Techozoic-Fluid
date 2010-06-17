@@ -116,6 +116,7 @@
 	$tech['default_font'] = tech_font($tech['default_font']);
 	$tech['body_font'] = tech_font($tech['body_font']);
 	$tech['header_font'] = tech_font($tech['header_font']);
+	$tech['nav_font'] = tech_font($tech['nav_font']);
 	$cufon_header_size = $tech['main_heading_font_size'] ;
 	$cufon_sidebar_size = "1.6";
 	$tech_color_scheme = $tech['color_scheme'];
@@ -209,7 +210,8 @@ background-color: {$tech_acc_color} ;
 border: 1px solid {$tech_acc_color};
 }
 ul#nav li,ul#admin li, #nav2 li, #dropdown li, .menu li {
-font-family:{$tech['body_font']}, Sans-Serif;
+font-family:{$tech['nav_font']}, Sans-Serif;
+font-size:{$tech['nav_text_font_size']}em;
 background-color: {$tech_nav_bg_color};
 }
 .post_date {

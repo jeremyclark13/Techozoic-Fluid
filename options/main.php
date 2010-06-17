@@ -399,7 +399,7 @@ function techozoic_admin() {
 					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					 <td>
-			<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id'];?>" type="file"/>
+			<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id'];?>" type="file" <?php echo $value['java']; ?>/>
 			</td>
 		</tr>
 	<?php			if ($settings[$id] != "") { ?>
@@ -484,7 +484,7 @@ function techozoic_admin() {
 	<div class="tech_bottom2">
 		<a name="submit"></a>
 		<span class="tech_submit submit save">
-			<input name="save" type="submit" value="Save changes" />    
+			<input name="save" id="save_button" type="submit" value="Save changes" />    
 			<input type="hidden" name="action" value="save" />
 		</span>
 		</form>
