@@ -19,6 +19,7 @@ ul#themetabs li a.selected{border:1px solid #d3d3d3;background-color:#e1e1e1;}
 #header_imgs{float:left;}
 #header_imgs img {border: 1px solid #ddd; margin:0 auto 10px;width:90%;height:55%;}
 #tech_main{clear:both;}
+#tech_main textarea {width:100%}
 #style textarea {width:90%;}
 #total{background-color:#DDD;}
 #loading{display:none;margin: 0 50%;}

@@ -189,7 +189,7 @@ function textsize(form){
 	document.getElementById('post_heading_font_size').style.fontFamily = headingfont;
 	document.getElementById('side_heading_font_size').style.fontSize = form.side_heading_font_size.value+"em";
 	document.getElementById('side_heading_font_size').style.fontFamily = headingfont;
-	document.getElementById('nav_text_font_size').style.fontSize = form.nav_text_font_size.value+"em";
+	document.getElementById('nav_text_font_size').style.fontSize = form.nav_text_font_size.value+"px";
 	document.getElementById('nav_text_font_size').style.fontFamily = navfont;
 	document.getElementById('post_text_font_size').style.fontSize = form.post_text_font_size.value+"em";
 	document.getElementById('post_text_font_size').style.fontFamily = postbodyfont;

@@ -209,9 +209,9 @@ background-color: {$tech_acc_color} ;
 #dropdown li.current_page_item, .menu li.current-menu-item  {
 border: 1px solid {$tech_acc_color};
 }
-ul#nav li,ul#admin li, #nav2 li, #dropdown li, .menu li {
+ul#nav li,ul#admin li, #nav2 li, ul#dropdown, .menu li{
 font-family:{$tech['nav_font']}, Sans-Serif;
-font-size:{$tech['nav_text_font_size']}em;
+font-size:{$tech['nav_text_font_size']}px;
 background-color: {$tech_nav_bg_color};
 }
 .post_date {

@@ -12,12 +12,11 @@ global $tech;
 </div>
 <div style="clear:both"></div>
 	<p class="credit">
-<?php 	bloginfo('name'); ?> | Techozoic  
-<?php	echo $tech['ver']. " ";
-	_e('by' ,techozoic);?><a href="http://clark-technet.com/"> Jeremy Clark</a>. | <a href="#top"><?php _e('Top' ,techozoic)?></a><br /><small>
+
+	<?php	wp_footer(); ?>
+<br /><small>
 <?php printf(__('%1$d mySQL queries in %2$s seconds.','techozoic'), get_num_queries(),timer_stop(0)); ?>
 </small>
-<?php	wp_footer(); ?>
 	</p>
 </div><!--footer-->
 </div><!--footercont"-->

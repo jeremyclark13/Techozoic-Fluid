@@ -23,6 +23,9 @@
 - Added 3 new layouts - Sidebar - Sidebar - Content, Content - Sidebar, Sidebar - Content<br />
 - Added function for outputing sidebars depending on layout options<br />
 - Added support for WordPress 3.0 menus<br />
+- Added Options for adjust size and family of Nav Menu Fonts<br />
+- Added option to rearrange footer text with shortcodes<br />
+- Added option to disable search box in header area.<br />
 <h3>Version 1.8.7</h3><br />
 - Added French Translations - Thanks <a href="http://www.wolforg.eu" title= "Wolforg : CMS, Logiciels Libres & Réseaux Sociaux en Lozère" _target="blank">Wolforg</a><br />
 - Added Cufon javascript font replacement options, and three free to use on web fonts<br />

@@ -34,6 +34,19 @@
 	$version = $theme_data['Version'];
 
 /**************************************
+	Techozoic Footer Text Function
+	Since 1.8.8
+***************************************/	
+function tech_footer_text(){
+	global $tech, $version;
+	$string = $tech['footer_text'];
+	$shortcode = array('/%BLOGNAME%/i','/%THEMENAME%/i','/%THEMEVER%/i','/%THEMEAUTHOR%/i','/%TOP%/i','/%COPYRIGHT%/i');
+	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy '. date(Y));
+	echo preg_replace($shortcode, $output, $string);
+}
+
+	
+/**************************************
 	Techozoic Sidebar Display Function
 	Since 1.8.8
 ***************************************/
@@ -313,14 +326,12 @@ function tech_feed_link(){
 		add_theme_support('automatic-feed-links');
 		//WP Auto Feed Links
 	}
-	
 	if(function_exists('register_nav_menus')) {
 		register_nav_menus( array(
 			'primary' => __( 'Header Navigation', 'techozoic' ),
 			'sidebar' => __( 'Sidebar Navigation', 'techozoic'),
 		) );
 	}
-
 	function techozoic_enqueue() {
 		wp_enqueue_script('tech_thickbox', get_bloginfo('wpurl') . '/wp-content/themes/techozoic-fluid/js/thickbox.js',array('jquery'),'3.0' );
 	}
@@ -527,7 +538,8 @@ function get_tech_options() {
 		add_action('template_redirect', 'tech_cufon_script');  // Calls script to add Cufon font replacement scripts See - http://cufon.shoqolate.com/
 		add_action('wp_head', 'tech_cufon_options');
 	}
-	add_action('admin_menu', 'create_meta_box');  // Creates custom meta box for disabling sidebar on page by page basis
+	add_action('wp_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
+	add_action('admin_menu', 'create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis
 	add_action('save_post', 'save_postdata');  // Saves meta box data to postmeta table
 	add_filter('query_vars', 'add_new_var_to_wp'); //ADD css query variable for calling dynamic css
 	add_action('template_redirect', 'techozoic_css_display'); //Outputs dynamic style.php and then exits to stop additional processing

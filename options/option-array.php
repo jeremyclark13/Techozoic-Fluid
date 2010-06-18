@@ -144,6 +144,14 @@ $options = array (
             	"type" => "radio",
             	"std" => "Single Post Title",
             	"options" => array("Single Post Title", "Always Blog Title")),
+				
+		array(	"name" => __("Custom Footer Text","techozoic"),
+				"desc" => __("Text displayed in footer.  Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br />* <small>Donations are appreciated if link isn't displayed</small>","techozoic"),
+            	"id" => "footer_text",
+				"old_id" => "unused before 1.8.8",
+            	"std" => "%BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP%",
+            	"size" => "100",
+            	"type" => "textarea"),				
 
     	array(	"name" => __("Static CSS","techozoic"),
 				"desc" => __("For Advanced Users who would like to edit the style.css file directly. Setting this to static will stop using the Dynamic style.php in favor of the static style.css  If you would like the changes you've made already to transfer then below  is the CSS being used currently and allow you to copy and paste to the style.css file.","techozoic"),
@@ -194,7 +202,7 @@ $options = array (
             	"type" => "text"),
 
 		array(	"name" => __("Navigation Menu Exclusion","techozoic"),
-				"desc" => __("Choose which pages to exclude from all Navigation Menus. <strong>Hold CTRL to select/deselect multiple pages.</strong>","techozoic"),
+				"desc" => __("<strong>Choose which pages to exclude from all Navigation Menus. Hold CTRL to select multiple pages.</strong>","techozoic"),
             	"id" => "nav_exclude_list",
 				"old_id" => "unused before 1.8.4",
             	"std" => "",
@@ -348,7 +356,7 @@ $options = array (
 				"string" => "num",
             	"std" => "1.3",
             	"size" => "2",
-            	"text" => "em",
+            	"text" => "<strong>px</strong>",
             	"java" => "onchange=\"textsize(this.form);\"",
             	"type" => "text"),				
 				
@@ -714,7 +722,7 @@ $options = array (
             	"id" => "facebook_profile",
 				"old_id" => "unused before 1.8.8",
             	"std" => "",
-				"size" => "20",
+				"size" => "30",
             	"type" => "text"),
 				
     	array(	"name" => __("MySpace Profile","techozoic"),
@@ -722,7 +730,7 @@ $options = array (
             	"id" => "myspace_profile",
 				"old_id" => "unused before 1.8.8",
             	"std" => "",
-				"size" => "20",
+				"size" => "30",
             	"type" => "text"),
 				
     	array(	"name" => __("Twitter Profile","techozoic"),
@@ -730,7 +738,7 @@ $options = array (
             	"id" => "twitter_profile",
 				"old_id" => "unused before 1.8.8",
             	"std" => "",
-				"size" => "20",
+				"size" => "30",
             	"type" => "text"),
 
 		array( 	"name" => __("Standard Header Settings","techozoic"),
