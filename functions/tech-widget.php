@@ -29,11 +29,16 @@
 			$c = $instance['cats'] ? '1' : '0';
 			$p = $instance['pages'] ? '1' : '0';
 			$s = $instance['separate'] ? '1' : '0';
+			$wp3 = $instance['wp3_menu'] ? '1' : '0';
 			echo $before_widget;
 			global $post;
 			if ( $title)
-			echo $before_title . $title . $after_title
-?>			<ul id="sidenav">
+			echo $before_title . $title . $after_title;
+			if ($wp3) {		
+				wp_nav_menu( array('container' =>'','theme_location'=>'sidebar','menu_class' => 'sidenav')); 
+			} else {
+?>
+			<ul class="sidenav">
 <?php			if ($s) { 
 				echo '<li class="navhead"><h3>'. __('Pages' ,'techozoic').'</h3></li>';
  			} 
@@ -56,35 +61,40 @@
 				wp_list_categories('title_li='); 
 				}
 ?>			</ul>
-<?php	  		echo $after_widget;
+<?php	 } 		
+			echo $after_widget;
 		}
 
 		function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
-			$new_instance = wp_parse_args( (array) $new_instance, array( 'cats' => 0, 'pages' => 0,'separate' => 0, 'title' => '') );
+			$new_instance = wp_parse_args( (array) $new_instance, array( 'cats' => 0, 'pages' => 0,'separate' => 0, 'title' => '','wp3_menu' => '0') );
 			$instance['title'] = strip_tags($new_instance['title']);
 			$instance['cats'] = $new_instance['cats'] ? 1 : 0;
 			$instance['pages'] = $new_instance['pages'] ? 1 : 0;
 			$instance['separate'] = $new_instance['separate'] ? 1 : 0;
+			$instance['wp3_menu'] = $new_instance['wp3_menu'] ? 1 : 0;
 
 			return $instance;
 		}
 
 		function form( $instance ) {
-			$instance = wp_parse_args( (array) $instance, array('cats' => 0, 'pages' => 1,'separate' => 0, 'title' => '') );
+			$instance = wp_parse_args( (array) $instance, array('cats' => 0, 'pages' => 1,'separate' => 0, 'title' => '','wp3_menu' => '0') );
 			$title = esc_attr( $instance['title'] );
 			$cats = $instance['cats'] ? 'checked="checked"' : '';
 			$pages = $instance['pages'] ? 'checked="checked"' : '';
 			$separate = $instance['separate'] ? 'checked="checked"' : '';
+			$wp3 = $instance['wp3_menu'] ? 'checked="checked"' : '';
 ?>
 			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
 			<p>
-			<p>
+			<input class="checkbox" type="checkbox" <?php echo $wp3; ?> id="<?php echo $this->get_field_id('wp3_menu'); ?>" name="<?php echo $this->get_field_name('wp3_menu'); ?>" /> <label for="<?php echo $this->get_field_id('wp3_menu'); ?>"><?php _e('Use WordPress 3.0 Menu' ,'techozoic')?></label>
+			<br />
 			<input class="checkbox" type="checkbox" <?php echo $pages; ?> id="<?php echo $this->get_field_id('pages'); ?>" name="<?php echo $this->get_field_name('pages'); ?>" /> <label for="<?php echo $this->get_field_id('cats'); ?>"><?php _e('Include Pages in Menu' ,'techozoic')?></label>
 			<br />
 			<input class="checkbox" type="checkbox" <?php echo $cats; ?> id="<?php echo $this->get_field_id('cats'); ?>" name="<?php echo $this->get_field_name('cats'); ?>" /> <label for="<?php echo $this->get_field_id('cats'); ?>"><?php _e('Include Categories in Menu' ,'techozoic') ?></label>
 			<br />
 			<input class="checkbox" type="checkbox" <?php echo $separate; ?> id="<?php echo $this->get_field_id('separate'); ?>" name="<?php echo $this->get_field_name('separate'); ?>" /> <label for="<?php echo $this->get_field_id('separate'); ?>"><?php _e('Separate Pages and Categories' ,'techozoic')?></label>
+			<br />
 			</p>
 <?php
 		}

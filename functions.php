@@ -313,6 +313,13 @@ function tech_feed_link(){
 		add_theme_support('automatic-feed-links');
 		//WP Auto Feed Links
 	}
+	
+	if(function_exists('register_nav_menus')) {
+		register_nav_menus( array(
+			'primary' => __( 'Header Navigation', 'techozoic' ),
+			'sidebar' => __( 'Sidebar Navigation', 'techozoic'),
+		) );
+	}
 
 	function techozoic_enqueue() {
 		wp_enqueue_script('tech_thickbox', get_bloginfo('wpurl') . '/wp-content/themes/techozoic-fluid/js/thickbox.js',array('jquery'),'3.0' );

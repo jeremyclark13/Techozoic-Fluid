@@ -5,6 +5,11 @@
 $home = get_bloginfo('template_directory');
 echo " 
 /*Default Sytle*/
+.post_comment_cont{
+clear:both;
+margin:3px;
+padding:5px 0 3px;
+}
 #crumbs{
 font-size:1.2em;
 margin: 0px 20px 5px;
@@ -262,16 +267,16 @@ padding:0;
 .navhead h3 {
 margin:5px 10px 0;
 }
-#sidenav .page_item ul, #sidenav ul.children {
+.sidenav .page_item ul, .sidenav ul.children {
 display:none;
 }
-#sidenav .current_page_item ul,#sidenav .current_page_parent ul, #sidenav .current_page_ancestor ul, #sidenav .current-cat ul.children, #sidenav .current-cat-parent ul.children {
+.sidenav .current_page_item ul,.sidenav .current_page_parent ul, .sidenav .current_page_ancestor ul, .sidenav .current-cat ul.children, .sidenav .current-cat-parent ul.children {
 display:block !important;
 }
-#sidenav li.current_page_item a, #sidenav li.current-cat a{
+.sidenav li.current_page_item a, .sidenav li.current-cat a, .sidenav li.current-menu-item a{
 text-decoration: underline;
 }
-#sidenav li.current_page_item ul a, #sidenav .current-cat ul a{
+.sidenav li.current_page_item ul a, .sidenav .current-cat ul a{
 text-decoration: none;
 }
 #navmenu {

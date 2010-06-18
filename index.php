@@ -36,9 +36,9 @@ global $tech;
 <?php 			if(function_exists('the_post_thumbnail')) { the_post_thumbnail(); }?>
 <?php 			the_content(__('Read the remainder of this entry &raquo;') , 'techozoic'); ?>
 <?php 			if ( comments_open() ) { ?>
-				<p>
+				<div class="post_comment_cont">
 <?php 			comments_popup_link(__('Be the first to comment' ,'techozoic'), __('1 Comment. Join the Conversation' ,'techozoic'), __ngettext('% Comment so far. Join the Conversation' , '% Comments so far. Join the Conversation',get_comments_number(),'techozoic'), 'comments-link', __('Comments Closed' ,'techozoic')); ?>
-				</p>
+				</div>
 <?php			tech_comment_preview($post->ID,3); ?>				
 <?php			} 
 

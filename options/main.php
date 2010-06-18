@@ -370,11 +370,10 @@ function techozoic_admin() {
 	<?php 		} ?>
 						<td>		
 							<select  multiple="multiple" size="8" name="<?php echo $value['id']; ?>[]" id="<?php echo $value['id']; ?>" style="height:100px;">
-
 	<?php 					if ($value['list'] == "pages"){			
 					$pages = get_pages(); 
 							$ch_values=explode(',',$settings[$id]); foreach ($pages as $pagg) { ?>
-					<option<?php if ( in_array($pagg->ID,$ch_values)) { echo ' selected="selected"'; }?> value="<?php echo $pagg->ID; ?>"><?php echo $pagg->post_title; ?></option>
+								<option<?php if ( in_array($pagg->ID,$ch_values)) { echo ' selected="selected"'; }?> value="<?php echo $pagg->ID; ?>"><?php echo $pagg->post_title; ?></option>
 	<?php 				} //End foreach loop
 				} else {
 					$cats = get_categories(); 

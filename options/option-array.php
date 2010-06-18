@@ -194,7 +194,7 @@ $options = array (
             	"type" => "text"),
 
 		array(	"name" => __("Navigation Menu Exclusion","techozoic"),
-				"desc" => __("<strong>Choose which pages to exclude from all Navigation Menus. Hold CTRL to select multiple pages.</strong>","techozoic"),
+				"desc" => __("Choose which pages to exclude from all Navigation Menus. <strong>Hold CTRL to select/deselect multiple pages.</strong>","techozoic"),
             	"id" => "nav_exclude_list",
 				"old_id" => "unused before 1.8.4",
             	"std" => "",
