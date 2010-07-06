@@ -7,7 +7,7 @@ if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { te
 	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { echo "narrow"; }else {echo "wide";}?>column">
 <?php	if (strlen(wp_title('', false))>0) {
 ?>		<h2 class="post_title">
-		<?php wp_title('', display); 
+		<?php wp_title('', 'display'); 
 ?>		</h2>
 <?php 	}
 	if (have_posts()) { 
@@ -18,7 +18,7 @@ if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { te
 			<div class="singlepost entry">
 <?php 			if(function_exists('the_post_thumbnail')) the_post_thumbnail(); 
  			the_content('<p class="serif">'.__('Read the rest of this page','techozoic'). '&raquo;</p>'); 
-			link_pages('<p><strong>'.__('Pages:','techozoic').'</strong> ', '</p>', 'number'); 
+			wp_link_pages('<p><strong>'.__('Pages:','techozoic').'</strong> ', '</p>', 'number'); 
 ?>
 			</div>
 			</div>

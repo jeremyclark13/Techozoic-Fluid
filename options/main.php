@@ -8,7 +8,7 @@ $version = $theme_data['Version'];
 function techozoic_add_admin() {
 	global $themename, $shortname, $options, $version;
 	$settings = get_option('techozoic_options');
-	if ( $_GET['page'] == "techozoic_export_admin" ) {
+	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_export_admin" ) {
 		if ( 'export' == $_POST['action']) {
 			tech_export();
 		}
@@ -23,7 +23,7 @@ function techozoic_add_admin() {
 			  }
 		}
 	}
-	if ( $_GET['page'] == "techozoic_header_admin" ) {
+	if ( isset($_GET['page']) &&$_GET['page'] == "techozoic_header_admin" ) {
 			if (isset($_FILES['file'])){
 			$dir = WP_CONTENT_DIR. "/techozoic/images/headers/";
 			if (is_writable($dir)) {
@@ -83,7 +83,7 @@ function techozoic_add_admin() {
 			header("Location: admin.php?page=techozoic_header_admin");
 			}
 		}
-	if ( $_GET['page'] == "techozoic_style_admin" ) {		
+	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_style_admin" ) {		
 		if(isset($_POST['style'])){
 			$file_name = TEMPLATEPATH ."/style.css";
 			$orig_file = TEMPLATEPATH ."/reset-style.css";
@@ -115,13 +115,16 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 			}
 		}
 	}	
-	if ( $_GET['page'] == "techozoic_main_admin" or $_GET['page'] == "techozoic_style_admin") {
+	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_main_admin" or isset($_GET['page']) && $_GET['page'] == "techozoic_style_admin") {
 			$location = $_GET['page'];
-		   	if ( 'save' == $_POST['action'] ) {
+		   	if ( isset($_POST['action']) && 'save' == $_POST['action'] ) {
 				foreach ($options as $value) {
-					$k = $value['id'];
-					$st = $value['string'];
-					$type = $value['type'];
+					$k = "";
+					$st = "";
+					$type = "";
+					if (isset($value['id'])) $k = $value['id'];
+					if (isset($value['string'])) $st = $value['string'];
+					if (isset($value['type'])) $type = $value['type'];
 					$v = "";
 					if (isset($_POST[$k]) or isset($_REQUEST[$value['reset']]) or isset($_REQUEST[$value['select']]) or $_FILES[$value['id']]['size'] > 0 ){
 						if(($type == "wp_list") and is_array($_POST[$k])){ 
@@ -222,7 +225,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 					header("Location: admin.php?page=$location&saved=true");
 					die;
 				}
-        	} else if( 'reset' == $_POST['action'] ) {
+        	} else if( isset($_POST['action']) && 'reset' == $_POST['action'] ) {
 				foreach ($options as $value) {
 				$k = $value['id'];
 				$v = $value['std'];
@@ -244,9 +247,9 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 	}//End Function
 function techozoic_admin() {
     	global $themename, $shortname, $options, $tech_error;
-    	if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    	if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong> </p></div>';
-		if ( $_REQUEST['message'] ) {
+    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
+    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong> </p></div>';
+		if ( isset($_REQUEST['message']) && $_REQUEST['message'] ) {
 			if ($_REQUEST['error']) {
 				echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';
 				} else { 
@@ -281,23 +284,24 @@ function techozoic_admin() {
 <?php 
 	$settings = get_option('techozoic_options');
 	foreach ($options as $value) {
-		if ($value['display'] != "style"){
-			$id = $value['id'];
-			$std = $value['std'];
+		if (isset($value['display']) && $value['display'] == "style"){ }
+		else {
+			if (isset($value['id'])) $id = $value['id'];
+			if (isset($value['std'])) $std = $value['std'];
 			if ($value['type'] == "header") { 
-				if ($value['position'] == "1") { ?>
-					<div id="<?php echo $value['tab_id']; ?>" class="tabbercontent">
+				if (isset($value['position']) && $value['position'] == "1") { ?>
+					<div id="<?php if (isset($value['tab_id'])) echo $value['tab_id']; ?>" class="tabbercontent">
 					<table class="optiontable">
 	<?php 			} else { ?>
 					</table>
 					</div>
-					<div id="<?php echo $value['tab_id']; ?>" class="tabbercontent">
+					<div id="<?php if (isset($value['tab_id'])) echo $value['tab_id']; ?>" class="tabbercontent">
 					<table class="optiontable">
 	<?php 			} ?>
-				<tr valign="middle"><td colspan="2"><h3><a name="<?php echo $value['anchor']; ?>"></a><?php echo $value['name']; ?></h3></td></tr>
+				<tr valign="middle"><td colspan="2"><h3><a name="<?php if (isset($value['anchor'])) echo $value['anchor']; ?>"></a><?php echo $value['name']; ?></h3></td></tr>
 	<?php 		} 
 			if ($value['type'] == "text") { 
-				echo $value['before'] ?>        
+				if(isset($value['before'])) echo $value['before'] ?>        
 				<tr valign="top"> 
 					<th scope="top"><?php echo $value['name']; ?></th>
 	<?php	if(isset($value['desc'])){?>
@@ -306,14 +310,14 @@ function techozoic_admin() {
 					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					<td>
-					<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if( $settings[$id]  != "") { echo stripslashes($settings[$id]); } else { echo $value['std']; } ?>" size="<?php echo $value['size']; ?>" <?php echo $value['java']; ?>/>
-	<?php 			echo $value['text'];
-				echo $value['tooltip']; ?>    
+					<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if( $settings[$id]  != "") { echo stripslashes($settings[$id]); } else { echo $value['std']; } ?>" size="<?php echo $value['size']; ?>" <?php if(isset($value['java'])) echo $value['java']; ?>/>
+	<?php 			if (isset($value['text'])) echo $value['text'];
+				if(isset($value['tooltip'])) echo $value['tooltip']; ?>    
 				</td>
 				</tr>
 				<tr><td colspan="2"><hr /></td></tr>
-	<?php 			echo $value['after']; 
-				echo $value['last']; 
+	<?php 			if(isset($value['after'])) echo $value['after']; 
+				if(isset($value['last'])) echo $value['last']; 
 			} elseif ($value['type'] == "select") { ?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?><?php if (isset($value['image'])){ ?>
@@ -324,7 +328,7 @@ function techozoic_admin() {
 					<td style="50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					<td>
-						<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" <?php echo $value['java']; ?>>
+						<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" <?php if(isset($value['java'])) echo $value['java']; ?>>
 	<?php 			foreach ($value['options'] as $option) { ?>
 							<option<?php if ( $settings[$id]  == $option) { echo ' selected="selected"'; }?>><?php echo $option; ?></option>
 	<?php 			} ?>
@@ -332,8 +336,8 @@ function techozoic_admin() {
 					</td>
 					</tr>
 				<tr><td colspan="2"><hr /></td></tr>
-	<?php 			echo $value['after'];
-				echo $value['last'];
+	<?php 			if(isset($value['after'])) echo $value['after'];
+				if(isset($value['last'])) echo $value['last'];
 
 			} elseif ($value['type'] == "checkbox") { ?>
 				<tr valign="middle"> 
@@ -357,8 +361,8 @@ function techozoic_admin() {
 		</tr>
 	<tr><td colspan=2><hr /></td></tr>
 	
-	<?php 			echo $value['after'];
-				echo $value['last'];
+	<?php 			if (isset($value['after'])) echo $value['after']; 
+				if (isset($value['last'])) echo $value['last'];
 
 			} elseif ($value['type'] == "wp_list") { ?>
 				<tr valign="middle"> 
@@ -398,7 +402,7 @@ function techozoic_admin() {
 					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					 <td>
-			<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id'];?>" type="file" <?php echo $value['java']; ?>/>
+			<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id'];?>" type="file" <?php if(isset($value['java'])) echo $value['java']; ?>/>
 			</td>
 		</tr>
 	<?php			if ($settings[$id] != "") { ?>
@@ -435,8 +439,8 @@ function techozoic_admin() {
 			<tr valign="middle"> 
 					<th scope="row">Reset - Check and Save Options to Clear</th><td><input name="<?php echo $value['id'];?>_reset" type="checkbox" /></td></tr>
 				<tr><td colspan="2"><hr /></td></tr>
-	<?php 			echo $value['after'];
-				echo $value['last'];
+	<?php 			if (isset($value['after'])) echo $value['after']; 
+				if (isset($value['last'])) echo $value['last'];
 		
 			} elseif ($value['type'] == "radio") { ?>
 				<tr valign="middle"> 
@@ -448,13 +452,13 @@ function techozoic_admin() {
 	<?php 		} ?>
 					<td>
 	<?php 			foreach ($value['options'] as $option) { 
-					echo $option; ?><input name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php echo $option; ?>" <?php if (  $settings[$id]  == $option) { echo 'checked="checked"'; } ?> <?php echo $value['java']; ?>/>|
+					echo $option; ?><input name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php echo $option; ?>" <?php if (  $settings[$id]  == $option) { echo 'checked="checked"'; } ?> <?php if(isset($value['java'])) echo $value['java']; ?>/>|
 	<?php 			} ?>
 					</td>
 					</tr>
 				<tr><td colspan="2"><hr /></td></tr>
-	<?php 			echo $value['after']; 
-				echo $value['last'];
+	<?php 			if (isset($value['after'])) echo $value['after']; 
+				if (isset($value['last'])) echo $value['last'];
 			} elseif ($value['type'] == "textarea") { ?>
 
 					<tr valign="top"> 
@@ -471,8 +475,8 @@ function techozoic_admin() {
 					</td>
 					</tr>
 				<tr><td colspan="2"><hr /></td></tr>
-	<?php 			echo $value['after']; 
-				echo $value['last'];
+	<?php 			if (isset($value['after'])) echo $value['after']; 
+				if (isset($value['last'])) echo $value['last'];
 			} 
 		}//End If
 	}//End foreach loop 
@@ -542,8 +546,9 @@ function techozoic_top_menu() {
 	<div style="clear:both"></div>';
 }
 function techozoic_footer() {
+global $themename;
 	echo '<h4>Theme Option page for '. $themename .'&nbsp; | &nbsp; Framework by <a href="http://clark-technet.com/" title="Jeremy Clark">Jeremy Clark</a></h4>';
-	echo '<small>Social Network Icons provided by <a href="http://komodomedia.com" target="_blank">komodomedia.com</a>';
+	echo '<small>Social Network Icons provided by <a href="http://komodomedia.com" target="_blank">komodomedia.com</a></small>';
 }
 add_action('admin_menu', 'techozoic_add_admin'); 
 

@@ -107,6 +107,7 @@ function resetcolor(num){
 		document.tech_options.cust_link_color1.value = '597EAA';
 		document.tech_options.cust_link_hov_color1.value = '114477';
 		document.tech_options.cust_text_color1.value = '2C4353';
+		document.tech_options.cust_link_visit_color1.value = '2C4353';
 		document.tech_options.cust_post_bg_color1.value = 'E3E3E3';
 		document.tech_options.cust_nav_bg_color1.value = 'E3E3E3';
 		document.tech_options.cust_content_bg_color1.value = 'F7F7F7';
@@ -116,6 +117,7 @@ function resetcolor(num){
 		document.tech_options.cust_link_color2.value = '597EAA';
 		document.tech_options.cust_link_hov_color2.value = '114477';
 		document.tech_options.cust_text_color2.value = '2C4353';
+		document.tech_options.cust_link_visit_color2.value = '2C4353';
 		document.tech_options.cust_post_bg_color2.value = 'E3E3E3';
 		document.tech_options.cust_nav_bg_color2.value = 'E3E3E3';
 		document.tech_options.cust_content_bg_color2.value = 'F7F7F7';

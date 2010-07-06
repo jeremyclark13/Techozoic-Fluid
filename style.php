@@ -54,23 +54,25 @@
 	$tech['blog_title_cursor'] = '';
 	$tech['header_align'] = strtolower($tech['header_align']);
 	$bg_image_repeat = explode(',', $tech['bg_image_repeat']);
+	$tech_bg_repeat = "";
 	if (in_array("X" , $bg_image_repeat)) {
 		$tech_bg_repeat = "-x";
 	}
 	if (in_array("Y" , $bg_image_repeat)) {
 		if ($tech_bg_repeat == "-x"){
-			unset($tech_bg_repeat);
+			$tech_bg_repeat = "";
 		} else {
 			$tech_bg_repeat = "-y";
 		}
 	}
 	$content_bg_image_repeat = explode(',', $tech['content_bg_image_repeat']);
+	$tech_content_bg_repeat = "";
 	if (in_array("X" , $content_bg_image_repeat)) {
 		$tech_content_bg_repeat = "-x";
 	}
 	if (in_array("Y" , $content_bg_image_repeat)) {
 		if ($tech_content_bg_repeat == "-x"){
-			unset($tech_content_bg_repeat);
+			$tech_content_bg_repeat = "";
 		} else {
 			$tech_content_bg_repeat = "-y";
 		}
@@ -95,6 +97,8 @@
 	if ($tech['page_type'] == 'Fluid Width' && $tech['page_width'] > 101)  $tech['page_width'] = '100';
 	if ($tech['blog_title'] == 'No')  $tech['blog_title_display'] = 'display:none';
 	if ($tech['blog_title_text'] == 'Single Post Title') $tech['blog_title_cursor'] = 'cursor:default;';
+	$tech_blog_title_align_check ="";
+	$tech_nav_align_check ="";
 	switch ($tech['blog_title_align']){
 		case "Left":
 			$tech['blog_title_align'] = 'float:left;margin-left:10px';
@@ -121,10 +125,10 @@
 	$cufon_sidebar_size = "1.6";
 	$tech_color_scheme = $tech['color_scheme'];
 	$tech_default_color = array(
-		"Blue" => 	array ('#A0B3C2','#A0B3C2','#597EAA','#114477','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7'),
-		"Khaki" => 	array ('#c7c69a','#c7c69a','#6E0405','#B53839','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7'),
-		"Red" => 	array ('#AB2222','#AB2222','#D33535','#B53839','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7'),
-		"Grunge" => 	array ('#534E3E','#534E3E','#78BFBF','#78BFBF','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7')
+		"Blue" => 	array ('#A0B3C2','#A0B3C2','#597EAA','#114477','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7'),
+		"Khaki" => 	array ('#c7c69a','#c7c69a','#6E0405','#B53839','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7'),
+		"Red" => 	array ('#AB2222','#AB2222','#D33535','#B53839','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7'),
+		"Grunge" => 	array ('#534E3E','#534E3E','#78BFBF','#78BFBF','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7')
 	);
 	$tech_color_names = array('Blue','Khaki','Red','Grunge');
 	if (in_array($tech['color_scheme'], $tech_color_names)){
@@ -132,15 +136,17 @@
 		$tech_acc_color = 	$tech_default_color[$tech_color_scheme][1];
 		$tech_link_color = 	$tech_default_color[$tech_color_scheme][2];
 		$tech_link_hov_color = 	$tech_default_color[$tech_color_scheme][3];
-		$tech_text_color = 	$tech_default_color[$tech_color_scheme][4];
-		$tech_nav_bg_color = 	$tech_default_color[$tech_color_scheme][5];
-		$tech_post_bg_color = 	$tech_default_color[$tech_color_scheme][6];
-		$tech_content_bg_color =$tech_default_color[$tech_color_scheme][7];
+		$tech_visit_link_color = 	$tech_default_color[$tech_color_scheme][4];
+		$tech_text_color = 	$tech_default_color[$tech_color_scheme][5];
+		$tech_nav_bg_color = 	$tech_default_color[$tech_color_scheme][6];
+		$tech_post_bg_color = 	$tech_default_color[$tech_color_scheme][7];
+		$tech_content_bg_color =$tech_default_color[$tech_color_scheme][8];
 	} elseif ($tech['color_scheme'] == 'Custom 1'){
 		$tech_bg_color = 	tech_color_verify($tech['cust_bg_color1']);
 		$tech_acc_color =	tech_color_verify($tech['cust_acc_color1']);
 		$tech_link_color = 	tech_color_verify($tech['cust_link_color1']);
 		$tech_link_hov_color = 	tech_color_verify($tech['cust_link_hov_color1']);
+		$tech_visit_link_color = 	tech_color_verify($tech['cust_link_visit_color1']);
 		$tech_text_color =	tech_color_verify($tech['cust_text_color1']);
 		$tech_nav_bg_color =	tech_color_verify($tech['cust_nav_bg_color1']);
 		$tech_post_bg_color = 	tech_color_verify($tech['cust_post_bg_color1']);
@@ -150,6 +156,7 @@
 		$tech_acc_color =	tech_color_verify($tech['cust_acc_color2']);
 		$tech_link_color = 	tech_color_verify($tech['cust_link_color2']);
 		$tech_link_hov_color = 	tech_color_verify($tech['cust_link_hov_color2']);
+		$tech_visit_link_color = 	tech_color_verify($tech['cust_link_visit_color2']);		
 		$tech_text_color = 	tech_color_verify($tech['cust_text_color2']);
 		$tech_nav_bg_color =	tech_color_verify($tech['cust_nav_bg_color2']);
 		$tech_post_bg_color = 	tech_color_verify($tech['cust_post_bg_color2']);
@@ -223,7 +230,7 @@ border-top:1px {$tech_acc_color} solid;
 .tags {
 border-bottom:1px {$tech_acc_color} solid;
 }
-#content,h2,h2 a,h2 a:visited,h3,h3 a,h3 a:visited,a:visited,h4,h5{
+#content,h2,h2 a,h2 a:visited,h3,h3 a,h3 a:visited,h4,h5{
 color:{$tech_text_color};
 }
 a,h2 a:hover,h3 a:hover,.commentdiv a,.date_post,#searchform #s,#user_login,#user_pass,.postform,.commentdiv span, #sidenav a:visited {
@@ -233,6 +240,9 @@ text-decoration:none;
 a:hover,#headerimg h1 a:hover {
 color:{$tech_link_hov_color}; 
 text-decoration:underline;
+}
+a:visited{
+color:{$tech_visit_link_color};
 }
 ul#nav li.current_page_item a:hover, ul#nav2 li.current_page_item a:hover, ul#nav2 li.current_page_parent a:hover {
 color:{$tech_acc_color};

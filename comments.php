@@ -20,7 +20,7 @@
 	if (function_exists('wp_list_comments')) {
 		//WP 2.7 Comment Loop
 		if ( have_comments() ) { ?>
-			<h3 id="comments"><?php comments_number(__('No Comments' ,'techozoic'), __('One Comment' ,'techozoic'),  __ngettext('% Comment' , '% Comments',get_comments_number(),'techozoic'));?></h3>
+			<h3 id="comments"><?php comments_number(__('No Comments' ,'techozoic'), __('One Comment' ,'techozoic'),  _n('% Comment' , '% Comments',get_comments_number(),'techozoic'));?></h3>
 			<ol class="commentlist">
 <?php 				wp_list_comments('type=comment&callback=techozoic_comment'); ?>
 			</ol>
@@ -47,7 +47,7 @@
 		/* This variable is for alternating comment background */
 		$oddcomment = 'alt';
 		if ($comments) { ?>
-			<h3 id="comments"><?php printf(__('%1$s to %2$s &#8221;','techozoic'),comments_number(__('No Comments &#187;' ,'techozoic'), __('One Comment &#187;' ,'techozoic'),  __ngettext('% Comment &#187;' , '%Comments &#187',get_comments_number(),'techozoic')), get_the_title())?></h3> 
+			<h3 id="comments"><?php printf(__('%1$s to %2$s &#8221;','techozoic'),comments_number(__('No Comments &#187;' ,'techozoic'), __('One Comment &#187;' ,'techozoic'),  _n('% Comment &#187;' , '%Comments &#187',get_comments_number(),'techozoic')), get_the_title())?></h3> 
 			<ol class="commentlist">
 <?php 				foreach ( $tech_comments as $comment ) { ?>
 					<li class="<?php echo $oddcomment; ?> <?php if ($comment->user_id == '1') echo 'author'; ?>" id="comment-<?php comment_ID() ?>">

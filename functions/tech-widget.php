@@ -128,7 +128,7 @@
 			echo $before_title . $title . $after_title;
 ?>			<span class="alignleft">
 <?php			if ($gravatar) { 
-				$email = get_bloginfo(admin_email); 
+				$email = get_bloginfo('admin_email'); 
 				echo get_avatar( $email, $number ); 
 			}
 ?>			</span><p>

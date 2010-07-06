@@ -354,7 +354,7 @@ $options = array (
             	"id" => "nav_text_font_size",
 				"old_id" => "unused before 1.8.8",
 				"string" => "num",
-            	"std" => "1.3",
+            	"std" => "13",
             	"size" => "2",
             	"text" => "<strong>px</strong>",
             	"java" => "onchange=\"textsize(this.form);\"",
@@ -561,7 +561,16 @@ $options = array (
             	"java" => " class=\"color\"",
             	"size" => "8",
             	"type" => "text"),
-
+				
+    	array(	"name" => __("Visited Link Color","techozoic"),
+				"desc" => __("Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
+            	"id" => "cust_link_visit_color1",
+				"old_id" => "unused before 1.8.8.1",
+            	"std" => "#2C4353",
+            	"java" => " class=\"color\"",
+            	"size" => "8",
+            	"type" => "text"),
+				
     	array(	"name" => __("Nav Button Background Color","techozoic"),
 				"desc" => __("Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
             	"id" => "cust_nav_bg_color1",
@@ -636,6 +645,15 @@ $options = array (
 				"size" => "8",
             	"type" => "text"),
 
+    	array(	"name" => __("Visited Link Color","techozoic"),
+				"desc" => __("Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
+            	"id" => "cust_link_visit_color2",
+				"old_id" => "unused before 1.8.8.1",
+            	"std" => "#2C4353",
+            	"java" => " class=\"color\"",
+            	"size" => "8",
+            	"type" => "text"),				
+				
     	array(	"name" => __("Nav Button Background Color","techozoic"),
 				"desc" => __("Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
             	"id" => "cust_nav_bg_color2",

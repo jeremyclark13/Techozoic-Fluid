@@ -5,18 +5,18 @@
 <meta http-equiv="content-language" content="en" />
 <?php 
 get_tech_options();
-global $tech;
+global $tech, $cpage;
 if ( is_singular() ){
 	$tech_disable_nav = get_post_meta($post->ID, "Nav_value", $single = true);
 } else {
 	$tech_disable_nav = "unset";
 }
-if($tech['seo'] == On) { 
+if($tech['seo'] == 'On') { 
 	if(is_single()) { 
 		if ( have_posts() ) { 
 			while ( have_posts() ) { 
 				the_post(); ?>
-				<meta name="description" content="<?php $excerpt = strip_tags(get_the_excerpt()); echo $excerpt; if ( $cpage < 1 ) {} else { echo (' - comment page '); echo ($cpage);} ?>" />
+				<meta name="description" content="<?php $excerpt = strip_tags(get_the_excerpt()); echo $excerpt; if ( $cpage < 1 ) {} else { echo (' - comment page '); if ( isset($cpage)) {echo ($cpage);}} ?>" />
 				<meta name="keywords" content="<?php foreach((get_the_category()) as $category) { echo $category->cat_name . ','; } $posttags = get_the_tags();if ($posttags) {foreach($posttags as $tag) {echo $tag->name . ','; } } ?>" />
 <?php 			} 
 		} 
@@ -29,7 +29,9 @@ if($tech['seo'] == On) {
 		if ( $cpage < 1 ) {} 
 		else { 
 			echo (' - comment page '); 
-			echo ($cpage);
+			if ( isset($cpage)){ 
+				echo $cpage;
+			}
 			echo " | ";
 		} 
 	bloginfo('name'); 
@@ -55,7 +57,7 @@ else { ?>
 		echo '</style>';
 		} else {
 ?>
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('home') ?>/?techozoic_css=css"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('url') ?>/?techozoic_css=css"/>
 <?php 	}
 	} else {
 ?>
@@ -100,7 +102,7 @@ if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { ?>
 } ?></h1>
 <?php 
 if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { 
-	$description = "<a href=\"".get_bloginfo('home')."\">".get_bloginfo('name')."</a>"; } 
+	$description = "<a href=\"".get_bloginfo('url')."\">".get_bloginfo('name')."</a>"; } 
 else {	
 	$description = get_bloginfo('description');
 }

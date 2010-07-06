@@ -1,5 +1,5 @@
 <?php
-	load_theme_textdomain( 'techozoic', TEMPLATEPATH.'/languages' );
+	load_theme_textdomain( 'techozoic', TEMPLATEPATH.'/languages');
 	$locale = get_locale();
 	$locale_file = TEMPLATEPATH."/languages/$locale.php";
 	if ( is_readable($locale_file) )
@@ -11,15 +11,17 @@
     		define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 	define ('WP_UPLOAD_PATH', ABSPATH . $upload_path );
 	if(is_admin()) {
-		if ( $_GET['page'] == "techozoic_main_admin"  || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin" ){
-			$dir = WP_CONTENT_DIR. "/techozoic";
-			if (!is_writable($dir)) {
-				function techozoic_error_message() {
-					$dir = WP_CONTENT_DIR. "/techozoic";
-					$message = "<div class=\"updated fade\">". __("Please make sure <strong>${dir}</strong> exists and is writable.",'techozoic'). "</div>";
-					echo $message;
-				}	
-				add_action( 'admin_notices','techozoic_error_message'); 
+		if (isset($_GET['page'])) {
+			if ( $_GET['page'] == "techozoic_main_admin"  || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin" ){
+				$dir = WP_CONTENT_DIR. "/techozoic";
+				if (!is_writable($dir)) {
+					function techozoic_error_message() {
+						$dir = WP_CONTENT_DIR. "/techozoic";
+						$message = "<div class=\"updated fade\">". __("Please make sure <strong>${dir}</strong> exists and is writable.",'techozoic'). "</div>";
+						echo $message;
+					}	
+					add_action( 'admin_notices','techozoic_error_message'); 
+				}
 			}
 		}
 		include_once (TEMPLATEPATH . "/options/option-array.php");
@@ -41,7 +43,7 @@ function tech_footer_text(){
 	global $tech, $version;
 	$string = $tech['footer_text'];
 	$shortcode = array('/%BLOGNAME%/i','/%THEMENAME%/i','/%THEMEVER%/i','/%THEMEAUTHOR%/i','/%TOP%/i','/%COPYRIGHT%/i');
-	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy '. date(Y));
+	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy '. date('Y'));
 	echo preg_replace($shortcode, $output, $string);
 }
 
@@ -96,6 +98,7 @@ function tech_show_sidebar($loc) {
 ***************************************/	
 function tech_feed_link(){
 	global $wp_version;
+	$output = "";
 	$default_feed_link = '<link rel="alternate" type="application/rss+xml" title="'. get_bloginfo('name'). ' RSS Feed" href="'. get_bloginfo('rss2_url') .'" />';
 	if($wp_version < 3){ 
 		if(function_exists(automatic_feed_links)){
@@ -167,6 +170,7 @@ function tech_feed_link(){
 ***************************************/	
 	function tech_comment_preview($ID,$num){
 		global $comment;
+		$output = "";
 		$comment_array = get_comments(array('post_id'=>$ID,'number'=>$num/*,'type'=>'comment','status'='approved'*/));
 		if ($comment_array) {
 			$output .=	'<ul class="comment-preview">';
@@ -389,7 +393,7 @@ function tech_nav_link($where){
 			}
 			$i++;
 		}
-	return $link;
+	if (isset($link)) return $link;
 	}
 }
 
