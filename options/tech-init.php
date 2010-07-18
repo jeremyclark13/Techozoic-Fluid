@@ -14,6 +14,7 @@ function tech_create_folders(){
 			while ($tech_file = readdir($dir_handle)) {
 				if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" )
 					continue;
+					
 					$orig_file = TEMPLATEPATH ."/images/".$type."/".$tech_file;
 					$dest_file = WP_CONTENT_DIR. "/techozoic/images/".$type."/".$tech_file;
 					if (!file_exists($dest_file)){
