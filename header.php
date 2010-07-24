@@ -142,7 +142,7 @@ if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
 	if ($tech['dashboard_link'] == "On") {
 		if (is_user_logged_in()){ ?>
 			<ul id="admin"><li><a href="<?php echo bloginfo('wpurl'); ?>/wp-admin" alt="admin"><?php _e('Dashboard' ,'techozoic')?></a></li>
-			<li><a href="<?php if (function_exists(wp_logout_url)) { echo wp_logout_url();} else { bloginfo('siteurl'); ?>/wp-login.php?action=logout&amp;redirect_to=<?php echo "http://".$_SERVER["SERVER_NAME"].$_SERVER['REQUEST_URI']; }?>" alt="logout"><?php _e('Log Out' ,'techozoic')?></a></li></ul>
+			<li><a href="<?php if (function_exists('wp_logout_url')) { echo wp_logout_url();} else { bloginfo('siteurl'); ?>/wp-login.php?action=logout&amp;redirect_to=<?php echo "http://".$_SERVER["SERVER_NAME"].$_SERVER['REQUEST_URI']; }?>" alt="logout"><?php _e('Log Out' ,'techozoic')?></a></li></ul>
 <?php 
 		} else { ?>
 			<ul id="admin"><li>

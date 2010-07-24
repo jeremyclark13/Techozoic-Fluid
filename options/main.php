@@ -9,7 +9,7 @@ function techozoic_add_admin() {
 	global $themename, $shortname, $options, $version;
 	$settings = get_option('techozoic_options');
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_export_admin" ) {
-		if ( 'export' == $_POST['action']) {
+		if ( isset($_POST['action']) && $_POST['action'] == 'export') {
 			tech_export();
 		}
 		if (isset($_FILES['settings'])){
@@ -117,16 +117,20 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 	}	
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_main_admin" or isset($_GET['page']) && $_GET['page'] == "techozoic_style_admin") {
 			$location = $_GET['page'];
-		   	if ( isset($_POST['action']) && 'save' == $_POST['action'] ) {
+		   	if ( isset($_POST['action']) && $_POST['action'] == 'save' ) {
 				foreach ($options as $value) {
 					$k = "";
 					$st = "";
 					$type = "";
+					$reset = "";
+					$select ="";
 					if (isset($value['id'])) $k = $value['id'];
 					if (isset($value['string'])) $st = $value['string'];
 					if (isset($value['type'])) $type = $value['type'];
+					if (isset($value['reset'])) $reset = $value['reset'];
+					if (isset($value['select'])) $select = $value['select'];
 					$v = "";
-					if (isset($_POST[$k]) or isset($_REQUEST[$value['reset']]) or isset($_REQUEST[$value['select']]) or $_FILES[$value['id']]['size'] > 0 ){
+					if (isset($_POST[$k]) or isset($_REQUEST[$reset]) or isset($_REQUEST[$select]) or $_FILES[$value['id']]['size'] > 0 ){
 						if(($type == "wp_list") and is_array($_POST[$k])){ 
 							$_POST[$k] = implode(',',$_POST[$k]); //This will take from the array and make one string
 							$v = $_POST[$k];
@@ -517,7 +521,6 @@ function techozoic_admin() {
 		<h2>Change log</h2>
 		<a href="<?php echo get_bloginfo('template_directory')?>/changelog.php" onclick="return changelog('<?php echo get_bloginfo('template_directory')?>/changelog.php')">View Change Log</a>
 		</div>
-		<?php techozoic_footer(); ?>
 		</div>
 		<script type="text/javascript">
 			tabsetup();
@@ -547,8 +550,8 @@ function techozoic_top_menu() {
 }
 function techozoic_footer() {
 global $themename;
-	echo '<h4>Theme Option page for '. $themename .'&nbsp; | &nbsp; Framework by <a href="http://clark-technet.com/" title="Jeremy Clark">Jeremy Clark</a></h4>';
-	echo '<small>Social Network Icons provided by <a href="http://komodomedia.com" target="_blank">komodomedia.com</a></small>';
+	echo 'Theme Option page for '. $themename .'&nbsp;|&nbsp; Framework by <a href="http://clark-technet.com/" title="Jeremy Clark">Jeremy Clark</a> | ';
+	echo 'Social Network Icons provided by <a href="http://komodomedia.com" target="_blank">komodomedia.com</a>';
 }
 add_action('admin_menu', 'techozoic_add_admin'); 
 
@@ -605,6 +608,7 @@ if (isset($_GET['page'])){
 	if ($_GET['page'] == "techozoic_main_admin" || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin") {
 		add_action('admin_head', 'controlpanel_css');
 		add_action('admin_print_styles','tech_admin_thickbox');
+		add_filter('admin_footer_text','techozoic_footer');
 	}
 }
 add_action('admin_head','tech_menu_button_css');

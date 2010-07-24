@@ -1,8 +1,8 @@
 <?php
     	global $themename, $shortname, $options, $tech_error;
-    	if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    	if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong> </p></div>';
-		if ( $_REQUEST['message'] ) {
+    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
+    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong> </p></div>';
+		if ( isset($_REQUEST['message']) && $_REQUEST['message'] ) {
 			if ($_REQUEST['error']) {
 				echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';
 				} else { 
@@ -149,6 +149,4 @@
 			</div>
 			</div>
 			</div>
-			<div style="clear:both"></div>
-			<?php techozoic_footer(); ?>
 			</div>

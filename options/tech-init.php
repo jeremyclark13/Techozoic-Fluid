@@ -12,7 +12,7 @@ function tech_create_folders(){
 		$path = TEMPLATEPATH ."/images/".$type."/";
 		$dir_handle = @opendir($path) or die("Unable to open $path");
 			while ($tech_file = readdir($dir_handle)) {
-				if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" )
+				if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" || $tech_file == ".svn" )
 					continue;
 					
 					$orig_file = TEMPLATEPATH ."/images/".$type."/".$tech_file;
@@ -36,9 +36,12 @@ function tech_update_options(){
 			if ($old_options = get_option('techozoic_options')) {
 				foreach ($options as $value) {
 					$old_options = get_option('techozoic_options');
-					$k = $value['id'];
-					$s = $value['std'];
-					$old = $value['old_id'];
+					$k = "";
+					$s = "";
+					$old = "";
+					if (isset($value['id'])) $k = $value['id'];
+					if (isset($value['std'])) $s = $value['std'];
+					if (isset($value['old_id'])) $old = $value['old_id'];
 					$v = $s;
 					if (isset($old_options[$old])){
 						$v = $old_options[$old];
@@ -52,9 +55,12 @@ function tech_update_options(){
 				update_option('techozoic_options', $new_options);
 			} else {	
 				foreach ($options as $value) {
-					$k = $value['id'];
-					$v = $value['std'];
-					$old = $value['old_id'];
+					$k = "";
+					$v = "";
+					$old = "";
+					if (isset($value['id'])) $k = $value['id'];
+					if (isset($value['std'])) $v = $value['std'];
+					if (isset($value['old_id'])) $old = $value['old_id'];
 					if( $existing = get_option($old)){
 						$new_options[$k] = $existing;
 						delete_option($old);

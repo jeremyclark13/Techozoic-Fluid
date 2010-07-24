@@ -5,6 +5,9 @@
 $home = get_bloginfo('template_directory');
 echo " 
 /*Default Sytle*/
+.cufon-loading #headerimg h1,.cufon-loading .sidebar h2,.cufon-loading .sidebar h3,.cufon-loading #footer h2 ,.cufon-loading .post_title {
+	visibility: hidden !important;
+}
 .post_comment_cont{
 clear:both;
 margin:3px;

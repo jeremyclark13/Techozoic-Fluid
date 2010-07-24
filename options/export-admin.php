@@ -1,6 +1,6 @@
 <?php    	
 	global $themename, $shortname, $options, $tech_error;
-    if ( $_REQUEST['import'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings imported.</strong></p></div>';
+    if ( isset($_REQUEST['import']) && $_REQUEST['import'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings imported.</strong></p></div>';
 ?>
 	<div class="tech_head">
 	<?php techozoic_top_menu(); ?>
@@ -23,6 +23,5 @@
 			<input type="submit" name="submit" value="Import Settings" />
 		</span><br /><br />
 	</form>
-			<div style="clear:both"></div>
-		<?php techozoic_footer(); ?>
+
 </div>

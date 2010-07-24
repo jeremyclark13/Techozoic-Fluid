@@ -1,14 +1,14 @@
 <?php
     global $themename, $shortname, $options, $tech_error;
-    if ( $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    if ( $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong> </p></div>';
-	if ( $_REQUEST['message'] ) {
-		if ($_REQUEST['error']) {
-			echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';
-			} else { 
-			echo '<div id="message" class="updated fade"><p><strong>Image Uploaded</strong> </p></div>';
+    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
+    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong> </p></div>';
+		if ( isset($_REQUEST['message']) && $_REQUEST['message'] ) {
+			if ($_REQUEST['error']) {
+				echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';
+				} else { 
+				echo '<div id="message" class="updated fade"><p><strong>Image Uploaded</strong> </p></div>';
+				}
 			}
-		}
 ?>
 	<div class="tech_head">
 	<?php techozoic_top_menu(); ?>
@@ -19,11 +19,12 @@
 <?php 
 	$settings = get_option('techozoic_options');
 	foreach ($options as $value) {
-		if ($value['display'] == "style"){
-			$id = $value['id'];
-			$std = $value['std'];
+		if (isset($value['display']) && $value['display']  == "style"){
+			if (isset($value['id'])) $id = $value['id'];
+			if (isset($value['std'])) $std = $value['std'];
 			if ($value['type'] == "text") { 
-				echo $value['before'] ?>        
+				if(isset($value['before'])) echo $value['before']; 
+ ?>        
 				<tr valign="top"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
 	<?php	if(isset($value['desc'])){?>
@@ -32,14 +33,14 @@
 					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					<td>
-					<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if( $settings[$id]  != "") { echo stripslashes($settings[$id]); } else { echo $value['std']; } ?>" size="<?php echo $value['size']; ?>" <?php echo $value['java']; ?>/>
+					<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if( $settings[$id]  != "") { echo stripslashes($settings[$id]); } else { echo $value['std']; } ?>" size="<?php echo $value['size']; ?>" <?php if(isset($value['java'])) echo $value['java']; ?>/>
 	<?php 			echo $value['text'];
 				echo $value['tooltip']; ?>    
 				</td>
 				</tr>
 				<tr><td colspan="2"><hr /></td></tr>
-	<?php 			echo $value['after']; 
-				echo $value['last']; 
+	<?php if(isset($value['after'])) echo $value['after']; 
+				if(isset($value['last'])) echo $value['last']; 
 			} elseif ($value['type'] == "select") { ?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?><?php if (isset($value['image'])){ ?>
@@ -50,7 +51,7 @@
 					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					<td>
-						<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" <?php echo $value['java']; ?>>
+						<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" <?php if(isset($value['java'])) echo $value['java']; ?>>
 	<?php 			foreach ($value['options'] as $option) { ?>
 							<option<?php if ( $settings[$id]  == $option) { echo ' selected="selected"'; }?>><?php echo $option; ?></option>
 	<?php 			} ?>
@@ -58,8 +59,8 @@
 					</td>
 					</tr>
 				<tr><td colspan="2"><hr /></td></tr>
-	<?php 			echo $value['after'];
-				echo $value['last'];
+	<?php 			if(isset($value['after'])) echo $value['after']; 
+				if(isset($value['last'])) echo $value['last']; 
 
 			} elseif ($value['type'] == "radio") { ?>
 				<tr valign="middle"> 
@@ -71,13 +72,13 @@
 	<?php 		} ?>
 					<td>
 	<?php 			foreach ($value['options'] as $option) { 
-					echo $option; ?><input name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php echo $option; ?>" <?php if (  $settings[$id]  == $option) { echo 'checked="checked"'; } ?> <?php echo $value['java']; ?>/>|
+					echo $option; ?><input name="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php echo $option; ?>" <?php if (  $settings[$id]  == $option) { echo 'checked="checked"'; } ?> <?php if(isset($value['java'])) echo $value['java']; ?>/>|
 	<?php 			} ?>
 					</td>
 					</tr>
 				<tr><td colspan="2"><hr /></td></tr>
-	<?php 			echo $value['after']; 
-				echo $value['last'];
+	<?php 			if(isset($value['after'])) echo $value['after']; 
+				if(isset($value['last'])) echo $value['last']; 
 			} elseif ($value['type'] == "textarea") { ?>
 
 					<tr valign="top"> 
@@ -94,10 +95,20 @@
 					</td>
 					</tr>
 				<tr><td colspan="2"><hr /></td></tr>
-	<?php 			echo $value['after']; 
-				echo $value['last'];
+	<?php 			if(isset($value['after'])) echo $value['after']; 
+				if(isset($value['last'])) echo $value['last']; 
 			} 
-		} else {}
+		} else {
+			if (isset($value['id'])){
+				if (isset($value['id'])) $id = $value['id'];
+				if (isset($value['std'])) $std = $value['std'];
+				if ($value['id'] == 'favicon_image' or $value['id'] == 'bg_image' or $value['id'] == 'content_bg_image') { 
+				} else {
+?>				
+					<input type="hidden" name="<?php echo $value['id'];?>" value="<?php if (  $settings[$id]  != "") { echo stripslashes($settings[$id]) ; } else { echo $value['std']; }?>">
+<?php			}
+			}
+		}
 	}//End foreach loop 
 ?>
 </table>
@@ -155,5 +166,4 @@ $dir = TEMPLATEPATH;
 </form>
 <div style="clear:both"></div>
 </div>
-		<?php techozoic_footer(); ?>
 		</div>

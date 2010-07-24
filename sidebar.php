@@ -21,15 +21,15 @@ global $tech;
 <?php 	if (is_category()) { ?>
 		<li><p><?php printf(__('You are currently browsing the archives for the %s category.','techozoic'), single_cat_title('',false)); ?> </p></li>
 <?php 	} elseif (is_day()) { ?>
-		<li><p><?php printf(__('You are currently browsing the %1$s archives for %2$s.','techozoic'),'<a href="'.get_bloginfo("home") .'">'.bloginfo("name").'</a>', get_the_time("l, F jS, Y")); ?></p></li>
+		<li><p><?php printf(__('You are currently browsing the %1$s archives for %2$s.','techozoic'),'<a href="'.get_bloginfo('url') .'">'.bloginfo("name").'</a>', get_the_time("l, F jS, Y")); ?></p></li>
 <?php 	} elseif (is_month()) { ?>
-		<li><p><?php printf(__('You are currently browsing the %1$s archives for %2$s.','techozoic'),'<a href="'.get_bloginfo("home") .'">'.bloginfo("name").'</a>', get_the_time("F, Y")); ?></p></li>
+		<li><p><?php printf(__('You are currently browsing the %1$s archives for %2$s.','techozoic'),'<a href="'.get_bloginfo('url') .'">'.bloginfo("name").'</a>', get_the_time("F, Y")); ?></p></li>
 <?php 	} elseif (is_year()) { ?>
-		<li><p><?php printf(__('You are currently browsing the %1$s archives for %2$s.','techozoic'),'<a href="'.get_bloginfo("home") .'">'.bloginfo("name").'</a>', get_the_time("Y")); ?></p></li>
+		<li><p><?php printf(__('You are currently browsing the %1$s archives for %2$s.','techozoic'),'<a href="'.get_bloginfo('url') .'">'.bloginfo("name").'</a>', get_the_time("Y")); ?></p></li>
 <?php 	} elseif (is_search()) { ?>
-		<li><p><?php printf(__('You have searched the %1$s archives for %2$s.','techozoic'),'<a href="'.get_bloginfo("home") .'">'.get_bloginfo("name").'</a>','<strong>\'' .wp_specialchars($s).'\'</strong>')?></p></li>
+		<li><p><?php printf(__('You have searched the %1$s archives for %2$s.','techozoic'),'<a href="'.get_bloginfo('url') .'">'.get_bloginfo("name").'</a>','<strong>\'' .wp_specialchars($s).'\'</strong>')?></p></li>
 <?php 	} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-		<li><p><?php printf(__('You are currently browsing the %1$s archives.','techozoic'),'<a href="'.get_bloginfo("home") .'">'.bloginfo("name").'</a>'); ?></p></li>
+		<li><p><?php printf(__('You are currently browsing the %1$s archives.','techozoic'),'<a href="'.get_bloginfo('url') .'">'.bloginfo("name").'</a>'); ?></p></li>
 <?php 	} 
 	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Right Sidebar','techozoic')) ) { ?>
 		<li id="rss"><h2 class="widgettitle"><?php _e('Syndicate','techozoic')?></h2>

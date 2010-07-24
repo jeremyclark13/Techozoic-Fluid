@@ -448,7 +448,7 @@ $options = array (
 				"old_id" => "unused before 1.8.7",
             	"std" => "",
             	"type" => "select",
-				"options" => array("contempory","journal","nevis")),
+				"options" => array("contempory","journal","nevis","quicksand")),
 
     	array(	"name" => __("Custom Backgrounds","techozoic"),
 				"type" => "header",

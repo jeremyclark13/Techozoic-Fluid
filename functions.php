@@ -218,6 +218,8 @@ function tech_feed_link(){
 
 	function tech_cufon_options() {
 		global $tech;
+		$list ="";
+		$head = "";
 		if (strstr($tech['cufon_font_headings'], 'Main Blog Title')){
 			$list .="#headerimg h1 ,";
 		}
