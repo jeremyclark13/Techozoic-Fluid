@@ -32,7 +32,7 @@ $options = array (
             	"options" => array("Fixed Width", "Fluid Width")),
 
 		array(	"name" => __("Page Width","techozoic"),
-            	"desc"=> __("Fluid Width - Percentage of Total Screen Size  Fixed Width - Width in number of pixels","techozoic"),
+            	"desc"=> __("Fluid Width - Percentage of Total Screen Size  <br />Fixed Width - Width in number of pixels","techozoic"),
 				"id" => "page_width",
 				"old_id" => "tech_page_width",
 				"string" => "num",				
@@ -181,7 +181,7 @@ $options = array (
             	"id" => "nav_menu_type",
 				"old_id" => "tech_nav_menu_type",
             	"type" => "select",
-            	"std" => "Standard",
+            	"std" => "WP 3 Menu",
             	"options" => array("Standard", "Two Tier", "Dropdown", "WP 3 Menu", "Disable")),
 
 		array(	"name" => __("Navigation Menu Alignment","techozoic"),
@@ -250,7 +250,7 @@ $options = array (
             	"options" => array("Before","After")),
 				
 		array(	"name" => __("Custom Navigation Link","techozoic"),
-				"desc" => __("Link should be entered in this form","techozoic") . "  <strong>Link Name|http://www.link.com</strong></small>  <input type=\"button\" value=\"".__("Add Link","techozoic")."\" onclick=\"addlink(2);\" class=\"aligncenter\" />",
+				"desc" => __("Link should be entered in this form","techozoic") . "  <strong>Link Name|http://www.link.com</strong></small>  <br /><input type=\"button\" value=\"".__("Add Link","techozoic")."\" onclick=\"addlink(2);\" class=\"aligncenter\" />",
             	"id" => "nav_link_1",
 				"old_id" => "unused before 1.8.4",
 				"before" => "</table><h3> Custom Navigation Links</h3><div id=\"nav_link_div_1\"><table class=\"optiontable\">",
@@ -261,7 +261,7 @@ $options = array (
             	"type" => "text"),
 				
 		array(	"name" => __("Custom Navigation Link","techozoic"),
-				"desc" => __("Link should be entered in this form","techozoic") ."  <strong>Link Name|http://www.link.com</strong></small>  <input type=\"button\" value=\"".__("Add Link","techozoic")."\" onclick=\"addlink(3);\" class=\"aligncenter\" /> <input type=\"button\" value=\"".__("Remove Link","techozoic")."\" onclick=\"dellink(2);\" class=\"aligncenter\" />",
+				"desc" => __("Link should be entered in this form","techozoic") ."  <strong>Link Name|http://www.link.com</strong></small>  <br /><input type=\"button\" value=\"".__("Add Link","techozoic")."\" onclick=\"addlink(3);\" class=\"aligncenter\" /> <input type=\"button\" value=\"".__("Remove Link","techozoic")."\" onclick=\"dellink(2);\" class=\"aligncenter\" />",
             	"id" => "nav_link_2",
 				"old_id" => "unused before 1.8.4",
 				"before" => "</table><div id=\"nav_link_div_2\"><table class=\"optiontable\">",
@@ -272,7 +272,7 @@ $options = array (
             	"type" => "text"),
 				
 		array(	"name" => __("Custom Navigation Link","techozoic"),
-				"desc" => __("Link should be entered in this form","techozoic") ."  <strong>Link Name|http://www.link.com</strong></small>  <input type=\"button\" value=\"".__("Add Link","techozoic")."\" onclick=\"addlink(4);\" class=\"aligncenter\" /> <input type=\"button\" value=\"".__("Remove Link","techozoic")."\" onclick=\"dellink(3);\" class=\"aligncenter\" />",
+				"desc" => __("Link should be entered in this form","techozoic") ."  <strong>Link Name|http://www.link.com</strong></small>  <br /><input type=\"button\" value=\"".__("Add Link","techozoic")."\" onclick=\"addlink(4);\" class=\"aligncenter\" /> <input type=\"button\" value=\"".__("Remove Link","techozoic")."\" onclick=\"dellink(3);\" class=\"aligncenter\" />",
 				"id" => "nav_link_3",
 				"old_id" => "unused before 1.8.4",
 				"before" => "</table><div id=\"nav_link_div_3\"><table class=\"optiontable\">",
@@ -283,7 +283,7 @@ $options = array (
             	"type" => "text"),
 				
 		array(	"name" => __("Custom Navigation Link","techozoic"),
-				"desc" => __("Link should be entered in this form","techozoic") ."  <strong>Link Name|http://www.link.com</strong></small>  <input type=\"button\" value=\"".__("Add Link","techozoic")."\" onclick=\"addlink(5);\" class=\"aligncenter\" /> <input type=\"button\" value=\"".__("Remove Link","techozoic")."\" onclick=\"dellink(4);\" class=\"aligncenter\" />",
+				"desc" => __("Link should be entered in this form","techozoic") ."  <strong>Link Name|http://www.link.com</strong></small>  <br /><input type=\"button\" value=\"".__("Add Link","techozoic")."\" onclick=\"addlink(5);\" class=\"aligncenter\" /> <input type=\"button\" value=\"".__("Remove Link","techozoic")."\" onclick=\"dellink(4);\" class=\"aligncenter\" />",
 				"id" => "nav_link_4",
 				"old_id" => "unused before 1.8.4",
 				"before" => "</table><div id=\"nav_link_div_4\"><table class=\"optiontable\">",
@@ -294,7 +294,7 @@ $options = array (
             	"type" => "text"),
 				
 		array(	"name" => __("Custom Navigation Link","techozoic"),
-				"desc" => __("Link should be entered in this form","techozoic") ."  <strong>Link Name|http://www.link.com</strong></small>  <input type=\"button\" value=\"".__("Remove Link","techozoic")."\" onclick=\"dellink(5);\" class=\"aligncenter\" />",
+				"desc" => __("Link should be entered in this form","techozoic") ."  <strong>Link Name|http://www.link.com</strong></small> <br /> <input type=\"button\" value=\"".__("Remove Link","techozoic")."\" onclick=\"dellink(5);\" class=\"aligncenter\" />",
 				"id" => "nav_link_5",
 				"old_id" => "unused before 1.8.4",
 				"before" => "</table><div id=\"nav_link_div_5\"><table class=\"optiontable\">",

@@ -13,10 +13,10 @@
 	if(is_admin()) {
 		if (isset($_GET['page'])) {
 			if ( $_GET['page'] == "techozoic_main_admin"  || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin" ){
-				$dir = WP_CONTENT_DIR. "/techozoic";
+				$dir = TEMPLATEPATH . "/uploads";
 				if (!is_writable($dir)) {
 					function techozoic_error_message() {
-						$dir = WP_CONTENT_DIR. "/techozoic";
+						$dir = TEMPLATEPATH . "/uploads";
 						$message = "<div class=\"updated fade\">". __("Please make sure <strong>${dir}</strong> exists and is writable.",'techozoic'). "</div>";
 						echo $message;
 					}	
@@ -35,6 +35,52 @@
 	$theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 	$version = $theme_data['Version'];
 
+	if (!isset($content_width)) {
+		$content_width = tech_content_width();
+	}
+
+/**************************************
+	Techozoic Navigation Selection Function
+	Since 1.8.8
+***************************************/		
+	
+function tech_nav_select(){
+	global $tech;
+	switch ($tech['nav_menu_type']){
+		case "Two Tier":
+			$var = "twotier";
+			break;
+		case "Standard":
+			$var = "standard";
+			break;
+		case "Dropdown":
+			$var = "dropdown";
+			break;
+		case "WP 3 Menu":
+			$var = "wp3";
+			break;
+		}
+	return $var;
+}
+	
+/**************************************
+	Techozoic $content_width Function
+	Since 1.8.8
+***************************************/	
+function tech_content_width(){
+	global $tech;
+	$p_width = $tech['page_width'];
+	$c_width = $tech['main_column_width'];
+	$page = $tech['page_type'];
+	if ($page = "Fixed Width" && $p_width != 0 && $c_width != 0) {
+		$c_width = $c_width /100;
+		$output = $p_width * $c_width;
+	} else {
+		$output = 400;
+	}
+	return $output;
+}	
+	
 /**************************************
 	Techozoic Footer Text Function
 	Since 1.8.8
@@ -77,7 +123,11 @@ function tech_show_sidebar($loc) {
 		break;
 	}
 	if ($loc == "l" && $left > 0){
-		include (TEMPLATEPATH . '/l_sidebar.php');
+		if (function_exists('get_template_part')) {
+			get_template_part('sidebar','left');
+		} else {
+			include (TEMPLATEPATH . "/sidebar-left.php"); 
+		}
 		if ($left > 1){
 			get_sidebar();
 		}
@@ -85,7 +135,11 @@ function tech_show_sidebar($loc) {
 	if ($loc == "r" && $right > 0){
 		get_sidebar();
 		if ($right > 1){
-			include (TEMPLATEPATH . '/l_sidebar.php');
+			if (function_exists('get_template_part')) {
+				get_template_part('sidebar','left');
+			} else {
+				include (TEMPLATEPATH . "/sidebar-left.php"); 
+			}
 		}
 	}
 }	
@@ -261,7 +315,7 @@ function tech_feed_link(){
 		)
 	);
 
-	function new_meta_boxes() {
+	function tech_new_meta_boxes() {
 		global $post, $new_meta_boxes;
 		foreach($new_meta_boxes as $meta_box) {
 			$meta_box_value = get_post_meta($post->ID, $meta_box['name'].'_value', true);
@@ -275,14 +329,14 @@ function tech_feed_link(){
 		}
 	}
  
-	function create_meta_box() {
+	function tech_create_meta_box() {
 		if ( function_exists('add_meta_box') ) {
-			add_meta_box( 'techozoic-meta-boxes', 'Techozoic Options', 'new_meta_boxes', 'post', 'side', 'low' );
-			add_meta_box( 'techozoic-meta-boxes', 'Techozoic Options', 'new_meta_boxes', 'page', 'side', 'low' );
+			add_meta_box( 'techozoic-meta-boxes', 'Techozoic Options', 'tech_new_meta_boxes', 'post', 'side', 'low' );
+			add_meta_box( 'techozoic-meta-boxes', 'Techozoic Options', 'tech_new_meta_boxes', 'page', 'side', 'low' );
 		}
 	}
 
-	function save_postdata( $post_id ) {
+	function tech_save_postdata( $post_id ) {
 		global $post, $new_meta_boxes;
 		foreach($new_meta_boxes as $meta_box) {
 			// Verify NONCE
@@ -313,7 +367,7 @@ function tech_feed_link(){
 	END
 ***************************************/
 
-	function add_new_var_to_wp($public_query_vars) {
+	function tech_new_var($public_query_vars) {
 		$public_query_vars[] = 'techozoic_css';
 		return $public_query_vars;
 	}
@@ -327,7 +381,7 @@ function tech_feed_link(){
 	if(function_exists('add_theme_support')) {
 		add_theme_support( 'post-thumbnails' );
 		//WP 2.9 Post Thumbnail Support
-		add_theme_support('nav-menus');
+		add_theme_support('menus');
 		//WP 3.0 Menus	
 		add_theme_support('automatic-feed-links');
 		//WP Auto Feed Links
@@ -342,7 +396,7 @@ function tech_feed_link(){
 		wp_enqueue_script('tech_thickbox', get_bloginfo('wpurl') . '/wp-content/themes/techozoic-fluid/js/thickbox.js',array('jquery'),'3.0' );
 	}
 
-	function my_custom_dashboard_widgets() {
+	function tech_dashboard_widgets() {
 	   	global $wp_meta_boxes;
 	   	wp_add_dashboard_widget('techozoic_dashboard_widget', 'Techozoic Theme Setup', 'techozoic_dashboard_widget');
 	}
@@ -363,10 +417,10 @@ function tech_feed_link(){
 <?php
 	}
 
-function first_run_options() {
+function tech_first_run_options() {
 	global $version;
-	$header_folder = WP_CONTENT_DIR. "/techozoic/images/headers";
-	$background_folder = WP_CONTENT_DIR. "/techozoic/images/backgrounds";
+	$header_folder = TEMPLATEPATH. "/uploads/images/headers";
+	$background_folder = TEMPlATEPATH. "/uploads/images/backgrounds";
   	$check = get_option('techozoic_activation_check');
   	if ($check != $version || !file_exists($header_folder) || !file_exists($background_folder)) {
 		include(TEMPLATEPATH . '/options/tech-init.php');
@@ -378,7 +432,7 @@ function first_run_options() {
   	}
 }//End first_run_options
 
-function dropdown_js(){
+function tech_dropdown_js(){
 	wp_enqueue_script('dropdown', get_bloginfo('wpurl') . '/wp-content/themes/techozoic-fluid/js/dropdown.js',array('jquery'),'3.0' );
 }//End Dropdown_js
 
@@ -508,7 +562,7 @@ function get_tech_options() {
 
 	if ($tech['thickbox'] =="On"){
 	
-		function thickbox_image_paths() {
+		function tech_thickbox_image_paths() {
 			$thickbox_path = get_option('siteurl') . '/wp-includes/js/thickbox/';
 			echo "<script type=\"text/javascript\">\n";
 			echo "	var tb_pathToImage = \"${thickbox_path}loadingAnimation.gif\";\n";
@@ -529,7 +583,7 @@ function get_tech_options() {
 			return str_replace('%ID%', $post->ID, $content);
 		}
 
-		add_action('wp_footer', 'thickbox_image_paths');
+		add_action('wp_footer', 'tech_thickbox_image_paths');
 		add_filter('the_content', 'tech_thickbox', 65 );
 		add_action('wp_print_styles','tech_enque_thickbox');
 	} // End if thickbox check
@@ -538,19 +592,19 @@ function get_tech_options() {
 	        add_action( 'admin_notices', 'techozoic_show_notice' );  // Shows custom theme activation notice with links to option page and changelog
 	}
 	if ($tech['nav_menu_type'] == "Dropdown" || $tech['nav_menu_type'] == "WP 3 Menu"){	
-		add_action('wp_print_styles','dropdown_js');
+		add_action('wp_print_styles','tech_dropdown_js');
 	}
 	if ($tech['cufon_font'] == "Enable") {
 		add_action('template_redirect', 'tech_cufon_script');  // Calls script to add Cufon font replacement scripts See - http://cufon.shoqolate.com/
 		add_action('wp_head', 'tech_cufon_options');
 	}
-	add_action('wp_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
-	add_action('admin_menu', 'create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis
-	add_action('save_post', 'save_postdata');  // Saves meta box data to postmeta table
-	add_filter('query_vars', 'add_new_var_to_wp'); //ADD css query variable for calling dynamic css
+	add_action('tech_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
+	add_action('admin_menu', 'tech_create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis
+	add_action('save_post', 'tech_save_postdata');  // Saves meta box data to postmeta table
+	add_filter('query_vars', 'tech_new_var'); //ADD css query variable for calling dynamic css
 	add_action('template_redirect', 'techozoic_css_display'); //Outputs dynamic style.php and then exits to stop additional processing
 	add_action('wp_head', 'tech_feed_link'); //Tests if WP 3.0 automatic_feed_link is available if not echos feed link to wp_head
-	add_action('wp_head', 'first_run_options'); //Calls tech_init.php which sets up default options in database and creates folder to hold custom images
-	add_action('admin_head', 'first_run_options'); //Same as above but works for the admin side
-	add_action('wp_dashboard_setup', 'my_custom_dashboard_widgets'); //Add Techozoic dashboard widget with info for theme and donate button
+	add_action('wp_head', 'tech_first_run_options'); //Calls tech_init.php which sets up default options in database and creates folder to hold custom images
+	add_action('admin_head', 'tech_first_run_options'); //Same as above but works for the admin side
+	add_action('wp_dashboard_setup', 'tech_dashboard_widgets'); //Add Techozoic dashboard widget with info for theme and donate button
 ?>

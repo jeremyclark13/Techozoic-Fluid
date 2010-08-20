@@ -1,14 +1,12 @@
 <?php 
 	global $tech;
 	$tech = get_option('techozoic_options');
-	if ($tech['head_css'] == "no"){
-		if(!headers_sent()) {
-			header('Content-type: text/css');   
-			header("Cache-Control: must-revalidate"); 
-			$offset = 72000 ; 
-			$ExpStr = 'Expires: ' . gmdate("D, d M Y H:i:s", time() + $offset) . ' GMT'; 
-			header($ExpStr);
-		}
+	if(!headers_sent()) {
+		header('Content-type: text/css');   
+		header("Cache-Control: must-revalidate"); 
+		$offset = 72000 ; 
+		$ExpStr = 'Expires: ' . gmdate("D, d M Y H:i:s", time() + $offset) . ' GMT'; 
+		header($ExpStr);
 	}
 	// Setup Custom Function
 	function sanitize_text($text) {

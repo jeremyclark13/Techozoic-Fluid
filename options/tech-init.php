@@ -1,7 +1,7 @@
 <?php
 function tech_create_folders(){
-	$header_folder = WP_CONTENT_DIR. "/techozoic/images/headers";
-	$background_folder = WP_CONTENT_DIR. "/techozoic/images/backgrounds";
+	$header_folder = TEMPLATEPATH . "/uploads/images/headers";
+	$background_folder = TEMPLATEPATH . "/uploads/images/backgrounds";
 	if (!file_exists($header_folder)){
 		mkdir($header_folder,0775, true);
 	}
@@ -14,9 +14,8 @@ function tech_create_folders(){
 			while ($tech_file = readdir($dir_handle)) {
 				if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" || $tech_file == ".svn" )
 					continue;
-					
 					$orig_file = TEMPLATEPATH ."/images/".$type."/".$tech_file;
-					$dest_file = WP_CONTENT_DIR. "/techozoic/images/".$type."/".$tech_file;
+					$dest_file = TEMPLATEPATH . "/uploads/images/".$type."/".$tech_file;
 					if (!file_exists($dest_file)){
 						copy($orig_file,$dest_file);
 					}
@@ -25,7 +24,7 @@ function tech_create_folders(){
 	}		
 	tech_move_images('headers');
 	tech_move_images('backgrounds');
-	copy(TEMPLATEPATH.'/rotate.php', WP_CONTENT_DIR.'/techozoic/rotate.php');
+	copy(TEMPLATEPATH.'/rotate.php', TEMPLATEPATH . '/uploads/rotate.php');
 }
 function tech_update_options(){
 	global $themename, $options, $version;

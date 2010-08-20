@@ -50,15 +50,9 @@ else { ?>
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 <?php 
 	if ($tech['static_css'] == "Dynamic") {
-		if ($tech['head_css'] != "no"){ ?>
-			<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/style.css" />
-		<style>
-<?php 		include_once (TEMPLATEPATH . '/style.php');
-		echo '</style>';
-		} else {
 ?>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('url') ?>/?techozoic_css=css"/>
-<?php 	}
+<?php
 	} else {
 ?>
 		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/style.css" />
@@ -115,7 +109,12 @@ if (!empty ($description)) { ?>
 </div>
 <?php if ($tech['search_box'] == "Yes") {?>
 	<div id="search">
-	<?php include (TEMPLATEPATH . "/searchform.php"); ?>
+	<?php 
+		if (function_exists('get_search_form')) {
+			get_search_form();
+		} else {
+			include (TEMPLATEPATH . "/searchform.php"); 
+		}?>
 	</div>
 <?php } ?>
 <hr />
@@ -123,19 +122,10 @@ if (!empty ($description)) { ?>
 ?>
 <div id="navmenu">
 <?php
-		switch ($tech['nav_menu_type']){
-			case "Two Tier": 
-				include (TEMPLATEPATH . "/nav/twotier.php");
-				break;
-			case "Standard":
-				include (TEMPLATEPATH . "/nav/standard.php");
-				break;
-			case "Dropdown":
-				include (TEMPLATEPATH . "/nav/dropdown.php");
-				break;
-			case "WP 3 Menu":
-				include (TEMPLATEPATH . "/nav/wp3.php");
-				break;
+	if (function_exists('get_template_part')) {
+				get_template_part('nav',tech_nav_select());
+		} else {
+			include (TEMPLATEPATH . "/nav-".tech_nav_select()."php"); 
 		}
 	}
 if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {

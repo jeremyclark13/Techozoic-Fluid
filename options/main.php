@@ -172,14 +172,14 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 							if (isset($_REQUEST[$value['reset']])){
 								$image_url = "";
 							} elseif ($_REQUEST[$value['select']] != "Select Image"){
-								$image_url =  WP_CONTENT_URL . "/techozoic/images/backgrounds/".$_REQUEST[$value['select']];
+								$image_url =  get_bloginfo('template_directory'). "/uploads/images/backgrounds/".$_REQUEST[$value['select']];
 							} elseif ($_FILES[$value['id']]['size'] > 0){
 								$ID = $value['id']; // Acts as the name
-								$dir = WP_CONTENT_DIR. "/techozoic/images/backgrounds/";
+								$dir = TEMPLATEPATH. "/uploads/images/backgrounds/";
 								if (is_writable($dir)) {
 									if ((($_FILES[$ID]["type"] == "image/gif") || ($_FILES[$ID]["type"] == "image/jpeg") || ($_FILES[$ID]["type"] == "image/png") || ($_FILES[$ID]["type"] == "image/x-ico") || ($_FILES[$ID]["type"] == "image/x-icon") || ($_FILES[$ID]["type"] == "image/pjpeg")) && ($_FILES[$ID]["size"] < 1048576)) {
 										if ($ID = "favicon_image"){
-											if (($_FILES[$ID]["type"] != "image/x-ico") || ($_FILES[$ID]["type"] != "image/x-icon")){
+											if (($_FILES[$ID]["type"] != "image/x-ico") || ($_FILES[$ID]["type"] != "image/x-icon") || ($_FILES[$ID]["type"] != "image/icon")){
 												$error = "6";
 												break 1;
 											}
@@ -201,7 +201,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 								} else {
 									$error = "3";
 								}
-								$image_url =  WP_CONTENT_URL . "/techozoic/images/backgrounds/".$_FILES[$ID]['name'];
+								$image_url =  get_bloginfo('template_directory'). "/uploads/images/backgrounds/".$_FILES[$ID]['name'];
 							}
 						} 
 					
@@ -417,10 +417,10 @@ function techozoic_admin() {
 		<?php				} ?>
 				<tr valign="middle"> 
 					<th scope="row">Choose Existing</th><td>
-		<select name="<?php echo $value['id']; ?>_select" id="<?php echo $value['id']; ?>_select" onchange="image_preview('<?php echo WP_CONTENT_URL ?>','<?php echo $value['id']?>')">
+		<select name="<?php echo $value['id']; ?>_select" id="<?php echo $value['id']; ?>_select" onchange="image_preview('<?php bloginfo('template_directory') ?>','<?php echo $value['id']?>')">
 		<option>Select Image</option>
 	<?php
-		$path = WP_CONTENT_DIR. "/techozoic/images/backgrounds/";
+		$path = TEMPLATEPATH. "/uploads/images/backgrounds/";
 		if (file_exists($path)){
 			$dir_handle = @opendir($path);
 			while ($tech_file = readdir($dir_handle)) {
@@ -549,11 +549,10 @@ function techozoic_top_menu() {
 	<div style="clear:both"></div>';
 }
 function techozoic_footer() {
-global $themename;
+	global $themename;
 	echo 'Theme Option page for '. $themename .'&nbsp;|&nbsp; Framework by <a href="http://clark-technet.com/" title="Jeremy Clark">Jeremy Clark</a> | ';
 	echo 'Social Network Icons provided by <a href="http://komodomedia.com" target="_blank">komodomedia.com</a>';
 }
-add_action('admin_menu', 'techozoic_add_admin'); 
 
 function tech_export(){
 	$settings = get_option('techozoic_options');
@@ -584,13 +583,16 @@ function tech_menu_button_css() {
 print $output;
 }
 
-function controlpanel_css() {
+function tech_admin_js() {
+	wp_enqueue_script('controlpanel', get_bloginfo('template_directory') . '/js/controlpanel.js');
+	wp_enqueue_script('tabcontent', get_bloginfo('template_directory') . '/js/tabcontent.js');
+	wp_enqueue_script('jscolor', get_bloginfo('template_directory') . '/js/jscolor/jscolor.js');
+	wp_enqueue_style('options', get_bloginfo('template_directory') . '/options/options.css');
+}
+
+function tech_controlpanel_head_css() {
 $path = get_bloginfo('template_directory');
-	$head = "<link rel='stylesheet' type='text/css' href='" . $path . "/options/options.css'/>\n";
-	$head .= "<script type='text/javascript' src='" . $path . "/js/controlpanel.js'></script>\n";
-	$head .= "<script type='text/javascript' src='" . $path . "/js/tabcontent.js'></script>\n";
-	$head .= "<script type='text/javascript' src='" . $path . "/js/jscolor/jscolor.js'></script>\n";
-	$head .= "<script type='text/javascript'>\n";
+	$head = "<script type='text/javascript'>\n";
 	$head .= "document.write('<style type=\"text/css\"> #tech_buttons{display:none}</style>');\n</script>\n";
 	$head .= "<!--[if IE 8]>\n";
 	$head .= "<style type=\"text/css\">\n";
@@ -606,10 +608,12 @@ $path = get_bloginfo('template_directory');
 } //End Function controlpanel_css
 if (isset($_GET['page'])){
 	if ($_GET['page'] == "techozoic_main_admin" || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin") {
-		add_action('admin_head', 'controlpanel_css');
+		add_action('admin_head', 'tech_controlpanel_head_css');
+		add_action('admin_print_styles', 'tech_admin_js');		
 		add_action('admin_print_styles','tech_admin_thickbox');
 		add_filter('admin_footer_text','techozoic_footer');
 	}
 }
+add_action('admin_menu', 'techozoic_add_admin'); 
 add_action('admin_head','tech_menu_button_css');
 ?>

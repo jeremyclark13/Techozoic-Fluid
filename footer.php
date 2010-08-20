@@ -13,7 +13,7 @@ global $tech;
 <div style="clear:both"></div>
 	<p class="credit">
 
-	<?php	wp_footer(); ?>
+	<?php	do_action('tech_footer'); ?>
 <br /><small>
 <?php printf(__('%1$d mySQL queries in %2$s seconds.','techozoic'), get_num_queries(),timer_stop(0)); ?>
 </small>
@@ -23,5 +23,6 @@ global $tech;
 </div><!--pager-->
 </div><!--pagel-->
 </div><!--page-->
+	<?php	wp_footer(); ?>
 </body>
 </html>

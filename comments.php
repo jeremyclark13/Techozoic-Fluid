@@ -33,9 +33,9 @@
 			</div>
  <?php 		} // this is displayed if there are no comments so far 
 
-			if ('open' == $post->comment_status) {
-				// If comments are open, but there are no comments.
-			} else { ?><p class="nocomments"><?php _e('Comments are closed.','techozoic')?></p>
+			if ('closed' == $post->comment_status && !is_page()) {
+			// If comments are open, but there are no comments.
+?>				<p class="nocomments"><?php _e('Comments are closed.','techozoic')?></p>
 <?php	 	}
 			
 	} else {
@@ -104,7 +104,11 @@
 
 		} // 2.6 and older Comment Loop end 
 
-		if ('open' == $post->comment_status) { ?>
+	if ('open' == $post->comment_status) { 
+		if (function_exists('comment_form')) {
+			comment_form();
+		} else {
+?>
 		<div id="respond">
 <?php 		if (function_exists('cancel_comment_reply_link')) { 
 ?>
@@ -145,5 +149,6 @@
 			</form>
 			</div>
 <?php 		} // If registration required and not logged in 
+		} //End if function comment_form exists check
 	} //End if comment open 
 ?>
