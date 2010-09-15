@@ -114,6 +114,9 @@
 			$tech['nav_align'] = 'float:left;position:relative;left:-50%';
 			$tech_nav_align_check = "Center";
 		break;
+		case "Left":
+			$tech['nav_align'] = '';
+		break;
 	}
 	$tech['default_font'] = tech_font($tech['default_font']);
 	$tech['body_font'] = tech_font($tech['body_font']);
@@ -162,11 +165,11 @@
 	}
 	$tech_sidebar_h3_font_size = $tech['side_heading_font_size'] - .4;
 	$tech_wp_content = WP_CONTENT_URL;
-	$header_folder = WP_CONTENT_DIR. "/techozoic/images/headers";
+	$header_folder = TEMPLATEPATH. "/uploads/images/headers";
 	if (!file_exists($header_folder)){
 		$home = get_bloginfo('template_directory');
 	} else {
-		$home = WP_CONTENT_URL ."/techozoic";
+		$home = get_bloginfo('template_directory') ."/uploads";
 	}
 echo <<<CSS
 /*Techozoic {$tech['ver']}*/
@@ -202,7 +205,7 @@ font-size: {$tech_sidebar_h3_font_size}em;
 #content {
 font-size: {$tech['post_text_font_size']}em;
 }
-acronym,abbr,span.caps,small,.commentlist li,.trackback li,#commentform input,#commentform textarea,.sidebar {
+acronym,abbr,span.caps,small,.trackback li,#commentform input,#commentform textarea,.sidebar {
 font-size: {$tech['small_font_size']}em;
 }
 .description, ul#nav a, ul#admin a, ul#nav li.current_page_item a:hover,#headerimg h1 a, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a, .menu li a, .menu li.current-menu-item a{
@@ -214,7 +217,7 @@ background-color: {$tech_acc_color} ;
 #dropdown li.current_page_item, .menu li.current-menu-item  {
 border: 1px solid {$tech_acc_color};
 }
-ul#nav li,ul#admin li, #nav2 li, ul#dropdown, .menu li{
+ul#nav li,ul#admin li, #nav2 li, ul#dropdown li, .menu li{
 font-family:{$tech['nav_font']}, Sans-Serif;
 font-size:{$tech['nav_text_font_size']}px;
 background-color: {$tech_nav_bg_color};

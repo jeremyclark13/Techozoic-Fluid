@@ -4,6 +4,7 @@
 #adminmenu #toplevel_page_techozoic_main_admin.wp-has-current-submenu div.wp-menu-image,
 #adminmenu #toplevel_page_techozoic_main_admin.current div.wp-menu-image {	background: transparent url('../images/tech_menu.png') no-repeat scroll -1px -1px;}
 #headersettab{display:none !important;}
+#tech_buttons{clear:both;}
 .tech_wrap{width:95%;}
 .tech_bottom{position:relative;left:8%;width:180px;height:35px;background-color:#e3e3e3;-moz-border-radius:5px;-webkit-border-radius: 5px;opacity:0.7;filter:alpha(opacity=70);}
 .tech_bottom2{position:relative;left:8%;width:180px;height:35px;margin-top:-35px;}
@@ -48,3 +49,5 @@ ul#themetabs li a.selected{border:1px solid #d3d3d3;background-color:#e1e1e1;}
 .times{font-family:"Times New Roman","Times"}
 .lucida{font-family:"Lucida Sans Unicode","Lucida Grande"}
 .impact{font-family:"Impact", "Charcoal", "sans-serif";}
+.tech_links_box{float:right;width:15%;margin: 0 1%}
+.tech_form_wrap{float:left;width: 82%;}

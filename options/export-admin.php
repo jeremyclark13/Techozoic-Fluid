@@ -6,6 +6,8 @@
 	<?php techozoic_top_menu(); ?>
 	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> Export/Import Settings</h2>
 	<div style="clear:both;"></div>
+		<?php techozoic_links_box();?>
+		<div class="tech_form_wrap">
 	<h3>Export Settings</h3>
 	<p>Here you can export your current Techozoic settings, this is useful if you plan on copying your current layout to another blog using Techozoic.</p>
 	<form method="post">
@@ -23,5 +25,5 @@
 			<input type="submit" name="submit" value="Import Settings" />
 		</span><br /><br />
 	</form>
-
+	</div>
 </div>

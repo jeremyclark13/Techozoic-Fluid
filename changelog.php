@@ -12,7 +12,9 @@
 </ul>
 <br />
 <h2>Change Log</h2>
-<h3>Version 1.8.8</h3><br />
+<h3>Version 1.9</h3><br />
+- Major code cleanup and validation.<br />
+--No longer using any deprecated funtions but still maintain backwards compatibilty with older version of WordPress <br />
 - Added option to choose social network icons on home page and single post page<br />
 - Added options to display links to social network profiles in about widget<br />
 - Added Norwegian Translation - Thanks <a href="http://stig.ulfsby.no/">stig.ulfsby.no</a><br />

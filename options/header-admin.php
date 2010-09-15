@@ -10,20 +10,21 @@
 				}
 			}
 	$tech = get_option('techozoic_options');
-	$header_folder = WP_CONTENT_DIR. "/techozoic/images/headers";
+	$header_folder = TEMPLATEPATH. "/uploads/images/headers";
 ?>
 	<div class="tech_head">
 	<?php techozoic_top_menu();?>
 	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> Header Settings</h2>
 	<div style="clear:both;"></div>
-		<div id="headerimgs">
+		<?php techozoic_links_box();?>
+	<div class="tech_form_wrap">
 		<h3>Upload Header Image</h3>
 		<p>Max Dimensions: 1000 px wide X 200 px high<br />
 		Supported format: jpg, jpeg, gif, png <br />
 		<em>Recommend format:</em> jpg, jpeg, png<br />
 		After image is uploaded it will appear in the list below and can be selected in the list below to be used as the Header Image.</p>
 <?php
-	$dir = WP_CONTENT_DIR. "/techozoic/images/headers/";
+	$dir = TEMPLATEPATH. "/uploads/images/headers/";
 		if (is_writable($dir)) {
 ?>
 			<form enctype="multipart/form-data" encoding="multipart/form-data" method="post">
@@ -52,6 +53,9 @@
 		</form>
 		<br />
 		<br />
+		</div>
+			<div style="clear:both;"></div>
+		<div id="headerimgs">
 		<h3>Header Images:</h3>
 		<div id="header_imgs">
 			<div class="filediv small">
@@ -79,7 +83,7 @@
 		
 <?php 
 	if (file_exists($header_folder)){
-		$path = WP_CONTENT_DIR. "/techozoic/images/headers/";
+		$path = TEMPLATEPATH. "/uploads/images/headers/";
 	} else {
 		$path = TEMPLATEPATH . "/images/headers/";
 	}
@@ -111,7 +115,7 @@
 				$alt = "";
 			$divid = substr($file, 0,strrpos($file,'.'));
 			if (file_exists($header_folder)){
-				$file_path = WP_CONTENT_URL . "/techozoic/images/headers/" . $file;
+				$file_path = get_bloginfo('template_directory') . "/uploads/images/headers/" . $file;
 			} else {
 				$file_path = get_bloginfo('template_directory') . "/images/headers/" . $file;
 			}

@@ -25,7 +25,7 @@ function techozoic_add_admin() {
 	}
 	if ( isset($_GET['page']) &&$_GET['page'] == "techozoic_header_admin" ) {
 			if (isset($_FILES['file'])){
-			$dir = WP_CONTENT_DIR. "/techozoic/images/headers/";
+			$dir = TEMPLATEPATH. "/uploads/images/headers/";
 			if (is_writable($dir)) {
 				if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/pjpeg")) && ($_FILES["file"]["size"] < 1048576)) {
 						if ($_FILES["file"]["error"] > 0){
@@ -55,12 +55,12 @@ function techozoic_add_admin() {
 					$settings['header_image_url'] = '';
 				} else {
 					$settings['header'] = 'Defined Here';
-					$settings['header_image_url'] = WP_CONTENT_URL . "/techozoic/images/headers/" . $_POST['header_select'];
+					$settings['header_image_url'] = get_bloginfo('template_directory') . "/uploads/images/headers/" . $_POST['header_select'];
 				}
 			update_option('techozoic_options', $settings);
 			header("Location: admin.php?page=techozoic_header_admin&saved=true");	
 			} elseif(isset($_POST['tech_header_delete'])) {
-				$path = WP_CONTENT_DIR. "/techozoic/images/headers/";
+				$path = TEMPLATEPATH. "/uploads/images/headers/";
 				$dir_handle = @opendir($path) or die("Unable to open $path");
 				$delvars = array();
 				while ($file = readdir($dir_handle)) {
@@ -69,7 +69,7 @@ function techozoic_add_admin() {
 					$delvars [] = $file;
 				}
 				closedir($dir_handle);
-				$header= WP_CONTENT_DIR. "/techozoic/images/headers/" . $_POST['header_delete'];
+				$header= TEMPLATEPATH. "/uploads/images/headers/" . $_POST['header_delete'];
 				if (in_array($_POST['header_delete'],$delvars)){
 					unlink($header);
 				} else {
@@ -178,12 +178,6 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 								$dir = TEMPLATEPATH. "/uploads/images/backgrounds/";
 								if (is_writable($dir)) {
 									if ((($_FILES[$ID]["type"] == "image/gif") || ($_FILES[$ID]["type"] == "image/jpeg") || ($_FILES[$ID]["type"] == "image/png") || ($_FILES[$ID]["type"] == "image/x-ico") || ($_FILES[$ID]["type"] == "image/x-icon") || ($_FILES[$ID]["type"] == "image/pjpeg")) && ($_FILES[$ID]["size"] < 1048576)) {
-										if ($ID = "favicon_image"){
-											if (($_FILES[$ID]["type"] != "image/x-ico") || ($_FILES[$ID]["type"] != "image/x-icon") || ($_FILES[$ID]["type"] != "image/icon")){
-												$error = "6";
-												break 1;
-											}
-										}
 										if ($_FILES[$ID]["error"] > 0){
 											$error = "0";
 										} else {
@@ -282,8 +276,9 @@ function techozoic_admin() {
 		<li><a href="#background" rel="background" rev="tech_buttons">Backgrounds</a></li>
 		<li><a href="#tab4" rel="tab4" rev="tech_buttons">Ad Placement</a></li>
 		<li id="headersettab"><a href="#headerset" rel="headerset" rev="tech_buttons">Manual Header Settings</a></li>
-		<li><a href="#notes" rel="note" onclick="togglebuttons('hide')">Notes</a></li>
 	</ul>
+	<?php techozoic_links_box();?>
+	<div class="tech_form_wrap">
 	<form method="post" enctype="multipart/form-data" id="tech_main" name="tech_options">
 <?php 
 	$settings = get_option('techozoic_options');
@@ -485,6 +480,7 @@ function techozoic_admin() {
 		}//End If
 	}//End foreach loop 
 ?>
+</div>
 	<div id="tech_buttons">
 	<div class="tech_bottom">
 	</div>
@@ -503,31 +499,12 @@ function techozoic_admin() {
 		</form>
 	</div>
 	</div>
-		<div id="note" class="tabbercontent">
-		<a name="note"></a>
-		<h2>Notes</h2>
-		<a name="3"></a><h3>SEO Features:</h3>
-		<p>Duplicate Content Fix - for comment pagination <br />Meta Keywords include tags and categories<br /> Meta Description from post excerpt on single page view</p>
-		<a name="1"></a><h3>Rotating through all header images:</h3>
-		<p>You may also add your own images to have them displayed randomly.  If you place your images in the <em>wp-content/themes/techozoic-fluid/images/headers/</em> folder they will be displayed along with the other images at random.  The best dimensions for your images are 1000px Wide X 200px High.</p>
-		<a name="2"></a><h3>Header Images</h3>
-		<p><strong><a href="admin.php?page=techozoic_header_admin">New Header Image selection and uploading</a></strong>.  <br/>You can now upload your custom headers and select them from this page.  You just need to upload using the form and then select the header from the list.  <br />You can display your own header image permanently by specifying the full url to the image.  Please remember it is bad practice to <a href="http://en.wikipedia.org/wiki/Inline_linking">hotlink</a> to an image, so please upload the image before linking.</p>
-		<a name="4"></a><h3>Proper CSS Structure</h3>
-		<p><code>#id {color:#ffffff;}</code><br />
-		<code>.class {color:#ffffff;}</code><br />
-		<a href="http://www.w3schools.com/Css/default.asp">W3Schools Resource</a></p>
-		<h3>Having Problems</h3>
-		<p>Feel free to visit my <a href="http://clark-technet.com/theme-support/techozoic">support forum</a>.</p>
-		<h2>Change log</h2>
-		<a href="<?php echo get_bloginfo('template_directory')?>/changelog.php" onclick="return changelog('<?php echo get_bloginfo('template_directory')?>/changelog.php')">View Change Log</a>
-		</div>
-		</div>
+	</div>
 		<script type="text/javascript">
 			tabsetup();
 		</script>
 		
 		</div>
-		
 <?php
 } //End function mytheme_admin()
 function techozoic_header_admin() {
@@ -547,6 +524,56 @@ function techozoic_top_menu() {
 		<li><a href="admin.php?page=techozoic_export_admin">Export/Import Settings</a></li>
 	</ul>
 	<div style="clear:both"></div>';
+}
+function techozoic_links_box() {
+	$output ='	<div class="tech_links_box">';
+		// Get RSS Feed(s)
+		$feed_address = "http://techozoic.clark-technet.com/category/news/feed";
+		$feed_items = 5;
+		$tech_changelog = get_bloginfo('template_directory') . '/changelog.php';
+		$output .= "<h3>Techozoic News</h3>";
+		include_once(ABSPATH . WPINC . '/feed.php');
+		// Get a SimplePie feed object from the specified feed source.
+		$rss = fetch_feed($feed_address);
+		if (!is_wp_error( $rss ) ) {
+			// Checks that the object is created correctly 
+			// Figure out how many total items there are, but limit it to $feed_items. 
+			 $maxitems = $rss->get_item_quantity($feed_items); 
+
+			// Build an array of all the items, starting with element 0 (first element).
+			$rss_items = $rss->get_items(0, $maxitems); 
+		}
+
+
+		$output .='<ul>';
+		if ($maxitems == 0) {
+			$output .= '<li>No News.</li>';
+		} else {
+			// Loop through each feed item and display each item as a hyperlink.
+			foreach ( $rss_items as $item ) { 
+				$output .= "<li>
+					<a href='{$item->get_permalink()}'>
+					{$item->get_title()}</a>
+				</li>";
+			}
+			$output.='</ul>';
+		}
+	$output .="<h3>Techozoic Links</h3>
+	<ul>
+		<li>
+			<a href='http://clark-technet.com/theme-support/techozoic'>Support Forum</a>
+		</li>
+		<li>
+			<a href='http://techozoic.clark-technet.com/documentation/'>Documentation</a>
+		</li>
+		<li>
+			<a href='http://techozoic.clark-technet.com/documentation/faq/'>FAQ</a>
+		</li>
+		<li>
+			<a href='$tech_changelog' onclick='return changelog(\"$tech_changelog\")'>Change Log</a>
+		</li>
+	</div>";
+	echo $output;
 }
 function techozoic_footer() {
 	global $themename;

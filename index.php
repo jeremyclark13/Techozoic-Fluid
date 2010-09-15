@@ -28,7 +28,7 @@ global $tech;
 			<div class="heading"><div class="post_date">
 			<div class="date_post"><?php the_time('j') ?></div>
 			<div class="month_post"><?php the_time('M') ?></div></div>
-			<div class="commentdiv"><h2><?php comments_popup_link('0', '1', '%'); ?></h2></div>	
+			<div class="commentdiv"><h2><?php comments_popup_link('0', '1', '%','comment_num',''); ?></h2></div>	
 			<h2 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h2>	
 			<small><?php _e('By') ?> <?php the_author() ?>&nbsp;|&nbsp;<?php printf(__('Filed in %s' , 'techozoic'), get_the_category_list(', ')) ?><?php edit_post_link(__('&nbsp;|&nbsp; Edit.','techozoic'), '', ''); ?></small>
 			</div><div style="clear:both"></div>

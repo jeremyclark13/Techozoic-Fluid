@@ -40,20 +40,15 @@ global $tech;
 				<small><?php the_time('l, F jS, Y') ?></small>
 				
 				<div class="entry">
-					<?php the_content() ?>
-<?php
-if (function_exists('get_the_tags')) :
-	$tag = get_the_tags();
-endif;
-if ( function_exists('the_tags') ) : 
-	if (strlen($tag)>0) :
-?>
-<p><?php the_tags(); ?></p>
-	<?php endif; ?>		
-<?php endif; ?>	
+					<?php the_content(); 
+				$posttags = get_the_tags();
+				if (!empty($posttags)) { ?>
+					<div class="tags"><small><?php the_tags(); ?></small></div>
+				<?php 
+				}  ?>
 				</div>
 		
-				<p class="postmetadata"><?php printf(__('Posted in %s' ,'techozoic'), get_the_category_list(', '));?> | <?php edit_post_link(__('Edit' ,'techozoic'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;' ,'techozoic'), __('1 Comment &#187;' ,'techozoic'), __ngettext('% Comment &#187;' , '% Comments &#187',get_comments_number(),'techozoic')); ?></p> 
+				<p class="postmetadata"><?php printf(__('Posted in %s' ,'techozoic'), get_the_category_list(', '));?> | <?php edit_post_link(__('Edit' ,'techozoic'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;' ,'techozoic'), __('1 Comment &#187;' ,'techozoic'), _n('% Comment &#187;' , '% Comments &#187',get_comments_number(),'techozoic')); ?></p> 
 
 			</div>
 	

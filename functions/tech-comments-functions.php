@@ -8,8 +8,8 @@ This File Contains callback functions for comment loops
 	 // credit to yoast.com
 function delete_comment_link($id,$post_name) {
 	  if (current_user_can('edit_post')) {
-	    echo ' | <a href="'.admin_url("comment.php?action=cdc&c=$id&redirect_to=/".$post_name."/").'">'. __("Delete" ,'techozoic').'</a> ';
-	    echo '| <a href="'.admin_url("comment.php?action=cdc&dt=spam&c=$id&redirect_to=/".$post_name."/").'">'.__("Spam" ,'techozoic').'</a>';
+	    echo ' | <a href="'.admin_url("comment.php?action=cdc&amp;c=$id&redirect_to=/".$post_name."/").'">'. __("Delete" ,'techozoic').'</a> ';
+	    echo '| <a href="'.admin_url("comment.php?action=cdc&amp;dt=spam&amp;c=$id&amp;redirect_to=/".$post_name."/").'">'.__("Spam" ,'techozoic').'</a>';
 	  }
 }
 

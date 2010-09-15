@@ -1,11 +1,13 @@
 /*  
 Theme Name: Techozoic Fluid
 Theme URI: http://clark-technet.com/theme-support
-Description: Simple, fluid width, widget-ready sidebars and footer, 2 or 3 column theme.  Over 40 theme options to adjust column settings, color scheme, font, ad placement, and custom headers.  SEO optimized titles and meta information. Released under GPL License.  Visit the <a href="admin.php?page=techozoic_main_admin">theme options</a> page to setup Techozoic.  
-Version: 1.8.8.4
+Description: Simple, fluid width, widget-ready sidebars and footer, 2 or 3 column theme.  Over 40 theme options to adjust column settings, color scheme, font, ad placement, and custom headers.  SEO optimized titles and meta information.  Visit the <a href="admin.php?page=techozoic_main_admin">theme options</a> page to setup Techozoic.  
+Version: 1.9
 Author: Jeremy Clark
 Author URI: http://clark-technet.com
 Tags: blue, light, one-column, two-columns, three-columns, flexible-width, custom-colors, custom-header, theme-options ,left-sidebar, right-sidebar, threaded-comments, translation-ready, sticky-post
+License: GNU General Public License v2.0 
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 /*************************************
@@ -314,6 +316,11 @@ ul.comment-preview li:hover{
 .home .narrowcolumn .entry,.home .widecolumn .entry{
 	-moz-box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
 	-webkit-box-shadow:2px 2px 6px rgba(0,0,0,0.4);
+}
+
+.page .narrowcolumn .entry,.page .widecolumn .entry{
+	-moz-box-shadow:none !important;
+	-webkit-box-shadow:none !important;
 }
 
 .month_post{
@@ -652,7 +659,7 @@ h3.comments{
 Nav Menus
  *************************************/
 
-#dropdown{
+#dropdown, .menu{
 	height:35px;
 	line-height:1.5em;
 	list-style-image:none;
@@ -664,8 +671,8 @@ Nav Menus
 	z-index:300;
 }
 
-#dropdown a{
-	color:#A0B3C2;
+#dropdown a, .menu a{
+	color:#A0B3C2 !important;
 	display:block;
 	font-size:1.3em;
 	font-weight:bolder;
@@ -673,7 +680,7 @@ Nav Menus
 	text-decoration:none;
 }
 
-#dropdown li{
+#dropdown li, .menu li{
 	-moz-border-radius-topleft:5px;
 	-moz-border-radius-topright:5px;
 	-webkit-border-top-left-radius:5px;
@@ -685,7 +692,7 @@ Nav Menus
 	position:relative;
 } 
  
-#dropdown ul{
+#dropdown ul, .menu ul{
 	display:none;
 	height:35px;
 	left:-1px;
@@ -695,42 +702,37 @@ Nav Menus
 	margin:auto;
 	position:absolute;
 	top:2em;
-	width:12em;
+	width:210px;
 	z-index:300;
 } 
  
-#dropdown li ul{
-	width:14.1em;
+#dropdown li ul ,.menu li ul{ 
+	width:210px;
 	padding-left:0;
 }
-#dropdown li ul a{
-	border:1px solid #D3D3D3;
+#dropdown li ul a ,.menu li ul a{
+	width:202px; 
+	height:auto; 
 	float:left;
-	height:auto;
-	width:12em;
+	border:1px solid #D3D3D3;
 }
-
-#dropdown li ul li{
-	-moz-border-radius-topleft:0;
-	-moz-border-radius-topright:0;
-	-webkit-border-top-left-radius:0;
-	-webkit-border-top-right-radius:0;
-	width:16.3em;
+#dropdown li ul li,.menu li ul li{
+	width:210px;
 }
-
-#dropdown ul ul{
+#dropdown ul ul,.menu ul ul{
 	top:auto;
 }
-#dropdown li ul ul{
-	left:15.3em;
-	margin:0 0 0 10px;
+#dropdown li ul ul,.menu li ul ul{
+	left:200px; 
+	margin:0px 0 0 10px;
 }
-#dropdown li:hover ul ul, #dropdown li:hover ul ul ul, #dropdown li:hover ul ul ul ul {
+#dropdown li:hover ul ul, #dropdown li:hover ul ul ul, #dropdown li:hover ul ul ul ul, .menu li:hover ul ul, .menu li:hover ul ul ul, .menu li:hover ul ul ul ul {
 	display:none;
 }
-#dropdown li:hover ul, #dropdown li li:hover ul, #dropdown li li li:hover ul, #dropdown li li li li:hover ul {
+#dropdown li:hover ul, #dropdown li li:hover ul, #dropdown li li li:hover ul, #dropdown li li li li:hover ul, .menu li:hover ul, .menu li li:hover ul, .menu li li li:hover ul, .menu li li li li:hover ul  {
 	display:block;
 } 
+
 
 #dropdown li.current_page_item{
 	border:1px solid #A0B3C2;

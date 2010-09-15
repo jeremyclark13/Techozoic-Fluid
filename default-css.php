@@ -1,7 +1,9 @@
 <?php
-//This file contains all the non variable styles
-//This file can be edited
-//DO NOT delete the echo statement below 
+/****************************
+	This file contains all the non variable styles
+	This file can be edited
+	DO NOT delete the echo statement below
+*****************************/ 
 $home = get_bloginfo('template_directory');
 echo " 
 /*Default Sytle*/
@@ -73,6 +75,10 @@ width:100%;
 .home .narrowcolumn .entry,.home .widecolumn .entry{
 -moz-box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
 -webkit-box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+}
+.page .narrowcolumn .entry,.page .widecolumn .entry{
+-moz-box-shadow: none !important;
+-webkit-box-shadow: none !important;
 }
 .widecolumn {
 line-height:1.6em;
@@ -168,6 +174,9 @@ opacity:.7;
 }
 ul.comment-preview li:hover{
 opacity:1;
+}
+.commentdiv h2{
+color:transparent;
 }
 .commentdiv {
 height:40px;
@@ -290,7 +299,7 @@ padding: 0 10px;
 }
 #dropdown, #dropdown ul, .menu, .menu ul {
 position:relative; 
-z-index:300;
+z-index:10;
 }
 #dropdown a, .menu a {
 display:block; 
@@ -420,7 +429,7 @@ ul#admin li {
 -webkit-border-bottom-right-radius:5px;
 -webkit-border-bottom-left-radius:5px;
 }
-ul#nav li.current_page_item, #dropdown li.current_page_item,. menu li.current-menu-item {
+ul#nav li.current_page_item, #dropdown li.current_page_item, .menu li.current-menu-item {
 border-bottom:1px dotted;
 }
 ul#nav li.current_page_item a ,#nav2 li.current_page_item a,#nav2 li.current_page_parent a, #nav2 li.current_page_ancestor a{

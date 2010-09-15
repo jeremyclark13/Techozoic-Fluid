@@ -19,7 +19,7 @@ if (have_posts()) {
 		<div class="toppost">
 		<a href="<?php bloginfo('url'); ?>"><img src="<?php bloginfo('template_directory'); ?>/images/icons/home.png" border="0" alt="Home" title="<?php printf(__('Go back to %s','techozoic'), get_bloginfo('name')); ?>" /></a>&nbsp;<?php tech_social_icons($home=false); ?>
 		</div>
-	
+<?php do_action('tech_before_sing_content');?>	
 		<div class="singlepost entry">
 <?php 		if(function_exists('the_post_thumbnail')) { the_post_thumbnail(); }?>
 <?php 		the_content('<p class="serif">'.__('Read the rest of this entry','techozoic'). '&raquo;</p>'); 
@@ -46,6 +46,7 @@ if (have_posts()) {
 		</small>
 		</p>
 		</div>
+<?php do_action('tech_after_sing_content');?>
 		</div>
 <?php 		comments_template(); 
 		} //End While Loop 

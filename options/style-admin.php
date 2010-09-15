@@ -13,6 +13,8 @@
 	<div class="tech_head">
 	<?php techozoic_top_menu(); ?>
 	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> Style Settings</h2></div>
+	<?php techozoic_links_box();?>
+	<div class="tech_form_wrap">
 	<div id="style">
 <form method="post" enctype="multipart/form-data" id="tech_main" name="tech_options_style">
 <table class="optiontable">
@@ -130,6 +132,7 @@
 		</form>
 	</div>
 	</div>
+	</div>
 <?php		
 
 function get_include_contents($filename) {
@@ -159,10 +162,11 @@ $dir = TEMPLATEPATH;
 <input name="tech_style_restore" type="submit" value="Restore Style.css backup" /> 
 <input name="tech_style_copy_reset" type="submit" value="Reset Style.css" />	
 </span>
+<div style="clear:both;"></div>
 <?php 	} else {
 		echo "<div class=\"updated fade\">Please make sure <strong>". TEMPLATEPATH . "</strong> is writable to enable automatic copying of stylesheet.</div>"; 
 	}?>
-<textarea cols="100" rows="20" onclick="javascript:select();" name="style" readonly="readonly"><?php echo $string;?></textarea>
+<textarea cols="100" rows="20" onclick="javascript:select();" name="style" readonly="readonly" style="width:90%;"><?php echo $string;?></textarea>
 </form>
 <div style="clear:both"></div>
 </div>
