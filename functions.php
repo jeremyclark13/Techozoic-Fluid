@@ -171,11 +171,15 @@ function tech_feed_link(){
 function tech_social_icons($home=true){
 	global $tech;
 	global $post;
+	if (function_exists('home_url')) {
+		$short_link = home_url()."/?p=".$post->ID;
+	} else {
+		$short_link = get_bloginfo('url')."/?p=".$post->ID;
+	}
 	$home_icons = explode(',' , $tech['home_social_icons']);
 	$single_icons = explode(',' , $tech['single_social_icons']);
 	$image = get_bloginfo('template_directory')."/images/icons";
 	$link = get_permalink();
-	$short_link = get_bloginfo('url')."/?p=".$post->ID;
 	$title = $post->post_title;
 	$url_title = urlencode($post->post_title);
 	$social_links = array(
@@ -528,7 +532,11 @@ function tech_breadcrumbs() {
 		echo '<div id="crumbs">';
  
 		global $post;
-		$home = get_bloginfo('url');
+		if (function_exists('home_url')) {
+			$home = home_url();
+		} else {
+			$home = get_bloginfo('url');
+		}
 		echo '<a href="' . $home . '">' . $name . '</a> ' . $delimiter . ' ';
  
 		if ( is_category() ) {

@@ -10,7 +10,7 @@ if ($tech['nav_home_text']) {
 }
 $home_link = get_option('show_on_front');
 if ($home_link == "posts" && $tech['nav_home_link'] == "Yes") {?>
-	<li class="<?php if (is_home()) echo'current_page_item' ?>"><a href="<?php bloginfo('url'); ?>" title="<?php echo $home_text;?>"><?php echo $home_text;?></a></li>
+	<li class="<?php if (is_home()) echo'current_page_item' ?>"><a href="<?php if (function_exists('home_url')) { echo home_url(); } else { bloginfo('url'); } ?>" title="<?php echo $home_text;?>"><?php echo $home_text;?></a></li>
 <?php 
 echo tech_nav_link("Before");
 }

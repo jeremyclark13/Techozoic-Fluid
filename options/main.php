@@ -23,6 +23,19 @@ function techozoic_add_admin() {
 			  }
 		}
 	}
+	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_delete_admin" ) {
+		if( isset($_POST['action']) && 'delete-settings' == $_REQUEST['action'] ) {
+			delete_option($shortname.'_options');
+			delete_option($shortname.'_activation_check');
+			update_option('template', 'default');
+			update_option('stylesheet', 'default');
+			delete_option('current_theme');
+			$theme = get_current_theme();
+			do_action('switch_theme', $theme);
+			header("Location: themes.php");
+			die;
+		}
+	}
 	if ( isset($_GET['page']) &&$_GET['page'] == "techozoic_header_admin" ) {
 			if (isset($_FILES['file'])){
 			$dir = TEMPLATEPATH. "/uploads/images/headers/";
@@ -242,6 +255,8 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 	add_submenu_page('techozoic_main_admin' ,$themename." Header Settings", "Header Settings", 'edit_themes', 'techozoic_header_admin', 'techozoic_header_admin');
 	add_submenu_page('techozoic_main_admin' ,$themename." Style Settings", "CSS Settings", 'edit_themes', 'techozoic_style_admin', 'techozoic_style_admin');
 	add_submenu_page('techozoic_main_admin' ,$themename." Export/Import Settings", "Export/Import Settings", 'edit_themes', 'techozoic_export_admin', 'techozoic_export_admin');
+	add_submenu_page('techozoic_main_admin' ,$themename." Delete Settings", "Delete Theme Settings", 'edit_themes', 'techozoic_delete_admin', 'techozoic_delete_admin');
+
 	}//End Function
 function techozoic_admin() {
     	global $themename, $shortname, $options, $tech_error;
@@ -516,6 +531,9 @@ function techozoic_style_admin() {
 function techozoic_export_admin() {
 	include_once(TEMPLATEPATH . '/options/export-admin.php');
 }
+function techozoic_delete_admin() {
+	include_once(TEMPLATEPATH . '/options/delete-admin.php');
+}
 function techozoic_top_menu() {
 	echo '<ul class="subsubsub">
 		<li><a href="admin.php?page=techozoic_main_admin">General Settings</a> | </li>
@@ -634,7 +652,7 @@ $path = get_bloginfo('template_directory');
 	print $head;
 } //End Function controlpanel_css
 if (isset($_GET['page'])){
-	if ($_GET['page'] == "techozoic_main_admin" || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin") {
+	if ($_GET['page'] == "techozoic_main_admin" || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin" || $_GET['page'] == "techozoic_delete_admin"){
 		add_action('admin_head', 'tech_controlpanel_head_css');
 		add_action('admin_print_styles', 'tech_admin_js');		
 		add_action('admin_print_styles','tech_admin_thickbox');

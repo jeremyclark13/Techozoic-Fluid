@@ -25,7 +25,10 @@ if($tech['seo'] == 'On') {
 <?php 		} ?>
 	<title>
 <?php 
-		wp_title(' | ','true','right'); 
+	if (is_day() || is_month() || is_year()) { 
+		_e('Archive for ' ,'techozoic');
+	}		
+	 	wp_title(' - ','true','right'); 
 		if ( $cpage < 1 ) {} 
 		else { 
 			echo (' - comment page '); 
@@ -51,7 +54,7 @@ else { ?>
 <?php 
 	if ($tech['static_css'] == "Dynamic") {
 ?>
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('url') ?>/?techozoic_css=css"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php if (function_exists('home_url')) { echo home_url(); } else { bloginfo('url'); }?>/?techozoic_css=css"/>
 <?php
 	} else {
 ?>
@@ -91,12 +94,18 @@ wp_head(); ?>
 if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { ?>
 	<a><?php wp_title('',true,''); ?></a><?php 
 } else { ?>
-	<a href="<?php echo get_option('home'); ?>/"><?php bloginfo('name'); ?></a>
+	<a href="<?php if (function_exists('home_url')) { echo home_url(); } else { bloginfo('url'); } ?>/"><?php bloginfo('name'); ?></a>
 <?php 
 } ?></h1>
 <?php 
 if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { 
-	$description = "<a href=\"".get_bloginfo('url')."\">".get_bloginfo('name')."</a>"; } 
+	$description = "<a href=\"";
+	if (function_exists('home_url')) { 
+		$description .= home_url() ; 
+	} else { 
+		$description .= get_bloginfo('url'); 
+	}
+	$description .= "\">".get_bloginfo('name')."</a>"; } 
 else {	
 	$description = get_bloginfo('description');
 }
@@ -132,7 +141,7 @@ if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
 	if ($tech['dashboard_link'] == "On") {
 		if (is_user_logged_in()){ ?>
 			<ul id="admin"><li><a href="<?php echo bloginfo('wpurl'); ?>/wp-admin" alt="admin"><?php _e('Dashboard' ,'techozoic')?></a></li>
-			<li><a href="<?php if (function_exists('wp_logout_url')) { echo wp_logout_url();} else { bloginfo('siteurl'); ?>/wp-login.php?action=logout&amp;redirect_to=<?php echo "http://".$_SERVER["SERVER_NAME"].$_SERVER['REQUEST_URI']; }?>" alt="logout"><?php _e('Log Out' ,'techozoic')?></a></li></ul>
+			<li><a href="<?php if (function_exists('wp_logout_url')) { echo wp_logout_url();} else { if (function_exists('site_url')) { echo site_url(); } else { bloginfo('siteurl'); } ?>/wp-login.php?action=logout&amp;redirect_to=<?php echo "http://".$_SERVER["SERVER_NAME"].$_SERVER['REQUEST_URI']; }?>" alt="logout"><?php _e('Log Out' ,'techozoic')?></a></li></ul>
 <?php 
 		} else { ?>
 			<ul id="admin"><li>

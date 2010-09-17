@@ -68,6 +68,11 @@ function verify(){
 	return confirm(msg);
 }
 
+function delsettings(){
+	msg = "This is irreversable. \nAll settings will be erased.\nContinue?";
+	return confirm(msg);
+}
+
 function delverify(){
 	msg = "Are you sure you want to delete this file?\nContinue?";
 	return confirm(msg);
