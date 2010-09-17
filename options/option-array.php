@@ -146,7 +146,7 @@ $options = array (
             	"options" => array("Single Post Title", "Always Blog Title")),
 				
 		array(	"name" => __("Custom Footer Text","techozoic"),
-				"desc" => __("Text displayed in footer.  Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br />* <small>Donations are appreciated if link isn't displayed</small>","techozoic"),
+				"desc" => __("Text displayed in footer.  Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br />","techozoic"),
             	"id" => "footer_text",
 				"old_id" => "unused before 1.8.8",
             	"std" => "%BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP%",
