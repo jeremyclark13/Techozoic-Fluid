@@ -108,7 +108,7 @@ function techozoic_add_admin() {
 					$_POST['style'] = "/*  
 Theme Name: Techozoic Fluid
 Theme URI: http://clark-technet.com/theme-support
-Description: Simple, fluid width, widget-ready, 2 or 3 column tech theme.  Theme Option panel with over 40 options to adjust column settings, color scheme, font, ad placement, and custom headers.  SEO optimized titles and meta information. Released under GPL License.  Visit the <a href=\"?page=controlpanel.php\">theme options</a> page to setup Techozoic.  
+Description: Simple, fluid width, widget-ready, 2 or 3 column tech theme.  Theme Option panel with over 70 options to adjust column settings, color scheme, font, ad placement, and custom headers.  SEO optimized titles and meta information. Released under GPL License.  Visit the <a href=\"?page=controlpanel.php\">theme options</a> page to setup Techozoic.  
 Version: " . $version . "
 Author: Jeremy Clark
 Author URI: http://clark-technet.com

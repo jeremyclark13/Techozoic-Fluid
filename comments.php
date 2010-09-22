@@ -133,9 +133,9 @@
 				<p><?php printf(__('Logged in as %s','techozoic'), '<a href="' .get_option('siteurl') .'/wp-admin/profile.php">' . $user_identity . '</a>.')?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?action=logout" title="<?php _e('Log out of this account', 'techozoic')?>"><?php _e('Logout','techozoic')?> &raquo;</a></p>
 <?php 			} else { ?>
 				<p><input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" size="22" tabindex="1" />
-				<label for="author"><small><?php _e('Name','techozoic')?> <?php if ($req) _e('(required)','techzoic'); ?></small></label></p>
+				<label for="author"><small><?php _e('Name','techozoic')?> <?php if ($req) _e('(required)','techozoic'); ?></small></label></p>
 				<p><input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="22" tabindex="2" />
-				<label for="email"><small><?php _e('Mail (will not be published)','techozoic')?> <?php if ($req) _e('(required)','techzoic');; ?></small></label></p>
+				<label for="email"><small><?php _e('Mail (will not be published)','techozoic')?> <?php if ($req) _e('(required)','techozoic');; ?></small></label></p>
 				<p><input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="22" tabindex="3" />
 				<label for="url"><small><?php _e('Website','techozoic')?></small></label></p>
 

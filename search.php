@@ -16,7 +16,7 @@ global $tech;
 ?>
 		</span> &mdash;
 <?php	echo $count . ' ';
-		_e('articles'); 
+		_e('articles','techozoic'); 
 		wp_reset_query(); ?>
 		</h2>
 		<div class="navigation">

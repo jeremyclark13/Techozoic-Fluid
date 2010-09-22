@@ -235,7 +235,7 @@ function tech_comment_preview($ID,$num){
 		foreach($comment_array as $comment){
 			$output .= '<li class="comments-link">';
 			$output .= '<div class="comment-author">';
-			$output .= '<a href="'. get_comment_link() .'" title="'. $comment->comment_author . __(' posted on ') . get_comment_date() .'">';
+			$output .= '<a href="'. get_comment_link() .'" title="'. $comment->comment_author . __(' posted on ','techozoic') . get_comment_date() .'">';
 			$output .= $comment->comment_author . __(' posted on ') . get_comment_date();
 			$output .= '</a>';
 			$output .= '</div>';
@@ -607,7 +607,7 @@ function tech_breadcrumbs() {
 	 
 		if ( get_query_var('paged') ) {
 		  if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-		  echo __('Page') . ' ' . get_query_var('paged');
+		  echo __('Page' , 'techozoic') . ' ' . get_query_var('paged');
 		  if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 		}
  

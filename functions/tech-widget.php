@@ -85,7 +85,7 @@
 			$separate = $instance['separate'] ? 'checked="checked"' : '';
 			$wp3 = $instance['wp3_menu'] ? 'checked="checked"' : '';
 ?>
-			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','techozoic'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
 			<p>
 			<input class="checkbox" type="checkbox" <?php echo $wp3; ?> id="<?php echo $this->get_field_id('wp3_menu'); ?>" name="<?php echo $this->get_field_name('wp3_menu'); ?>" /> <label for="<?php echo $this->get_field_id('wp3_menu'); ?>"><?php _e('Use WordPress 3.0 Menu' ,'techozoic')?></label>
 			<br />
@@ -163,7 +163,7 @@
 			$gravatar = $instance['gravatar'] ? 'checked="checked"' : '';
 			$number = isset($instance['number']) ? absint($instance['number']) : 50;
 ?>
-			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','techozoic'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
 			<p>
 			<p><label><?php _e('Write About yourself here' ,'techozoic')?></label>
 			<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('about'); ?>" name="<?php echo $this->get_field_name('about'); ?>"><?php echo $about; ?></textarea>
@@ -222,7 +222,7 @@
 			$instance = wp_parse_args( (array) $instance, array('title' => '') );
 			$title = esc_attr( $instance['title'] );
 ?>
-			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title'); ?>:</label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title','techozoic'); ?>:</label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
 <?php
 		}
@@ -265,7 +265,7 @@
 			$instance = wp_parse_args( (array) $instance, array('title' => '') );
 			$title = esc_attr( $instance['title'] );
 ?>
-			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:' ,'techozoic'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
 <?php
 		}
