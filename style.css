@@ -251,6 +251,7 @@ Entry
 
 ul.comment-preview li {
 	font-size:.9em;
+	list-style:none;
 	opacity:.7;
 }
 ul.comment-preview li:hover{
@@ -1032,6 +1033,13 @@ Footer
 #footer ul ul li:before {
 	content:"\00BB \0020";
 	padding:0;
+}
+#footer ul.footernav {
+	margin:-5px 0 0;
+	padding:0 0 15px;
+}
+#footer ul.footernav li{
+	display: inline;
 }
 
 /*************************************

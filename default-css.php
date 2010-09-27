@@ -530,7 +530,7 @@ padding:15px 0 20px;
 text-align:center;
 }
 #footer p.credit{
-padding:15px 0 20px;
+padding:15px 0 10px;
 text-align:center;
 }
 #footer ul,#footer ul li ul li {
@@ -538,6 +538,13 @@ list-style-type:none;
 list-style-image:none;
 padding:0;
 margin-left:0;
+}
+#footer ul.footernav {
+margin:-5px 0 0;
+padding:0 0 15px;
+}
+ul.footernav li{
+display: inline;
 }
 h3.comments {
 margin:40px auto 20px;
@@ -606,7 +613,7 @@ display:inline;
 list-style-type:none;
 list-style-image:none;
 }
-.sidebar ul li {
+.sidebar ul li, ul.comment-preview li {
 list-style-type:none;
 list-style-image:none;
 margin-bottom:8px;
@@ -819,7 +826,7 @@ font-weight:700;
 h1,h1 a,h1 a:hover,h1 a:visited,h2,h2 a,h2 a:hover,h2 a:visited,h3,h3 a,h3 a:hover,h3 a:visited,.sidebar h2,#wp-calendar caption,cite {
 text-decoration:none;
 }
-.commentlist li.pingback,hr {
+.commentlist li.pingback {
 display:none;
 }
 .sidebar form {
@@ -856,15 +863,6 @@ width:140px;
 .singlepost {
 background-color:transparent !important;
 border-top:none !important;
-}
-html>body .entry ul {
-margin-left:0;
-padding:0 0 0 30px;
-list-style:none;
-padding-left:10px;
-}
-html>body .entry li {
-margin:7px 0 8px 10px;
 }
 *html .post_date {background-image: none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( sizingMethod='scale', src='{$home}/images/datebg.png');}
 *html .commentdiv a{background-image: none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( sizingMethod='scale', src='{$home}/images/comment.png');}

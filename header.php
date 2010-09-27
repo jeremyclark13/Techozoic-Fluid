@@ -126,7 +126,6 @@ if (!empty ($description)) { ?>
 		}?>
 	</div>
 <?php } ?>
-<hr />
 <?php 	if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
 ?>
 <div id="navmenu">

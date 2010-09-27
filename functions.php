@@ -445,6 +445,7 @@ if(function_exists('register_nav_menus')) {
 	register_nav_menus( array(
 		'primary' => __( 'Header Navigation', 'techozoic' ),
 		'sidebar' => __( 'Sidebar Navigation', 'techozoic'),
+		'footer' => __('Footer Navigation', 'techozoic'),
 	) );
 }
 function techozoic_enqueue() {

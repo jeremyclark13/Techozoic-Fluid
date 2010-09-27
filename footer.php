@@ -2,7 +2,6 @@
 get_tech_options();
 global $tech;
 ?>
-<hr />
 <div id="footermain">
 <div id="footer">
 <div id="footerdivs">
@@ -12,9 +11,15 @@ global $tech;
 </div>
 <div style="clear:both"></div>
 	<p class="credit">
+	<?php	do_action('tech_footer'); 
+	?>
+		</p>
+		<?php 
+			if (has_nav_menu( 'footer' ) ) {		
+				wp_nav_menu( array('container' =>'','theme_location'=>'footer','menu_class' => 'footernav aligncenter','after' => ' | ','depth' => '1'));
+			}
+	?>
 
-	<?php	do_action('tech_footer'); ?>
-	</p>
 </div><!--footer-->
 </div><!--footercont"-->
 </div><!--pager-->

@@ -12,6 +12,10 @@
 </ul>
 <br />
 <h2>Change Log</h2>
+<h3>Version 1.9.1</h3><br />
+- Fixed error on search results and 404 page if sidebars where used on single pages <br />
+- Adjusted Techozoic Navigation widget if a menu is assigned to the Sideber Navigation location it always displayed<br />
+- Added Footer Navigation Section for footer links <br />
 <h3>Version 1.9</h3><br />
 - Major code cleanup and validation.<br />
 --No longer using any deprecated funtions but still maintain backwards compatibilty with older version of WordPress <br />
