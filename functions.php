@@ -88,8 +88,8 @@ function tech_content_width(){
 function tech_footer_text(){
 	global $tech, $version;
 	$string = $tech['footer_text'];
-	$shortcode = array('/%BLOGNAME%/i','/%THEMENAME%/i','/%THEMEVER%/i','/%THEMEAUTHOR%/i','/%TOP%/i','/%COPYRIGHT%/i');
-	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy '. date('Y'));
+	$shortcode = array('/%BLOGNAME%/i','/%THEMENAME%/i','/%THEMEVER%/i','/%THEMEAUTHOR%/i','/%TOP%/i','/%COPYRIGHT%/i','/%MYSQL%/i');
+	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy '. date('Y'),sprintf(__('%1$d mySQL queries in %2$s seconds.','techozoic'), get_num_queries(),timer_stop(0)));
 	echo preg_replace($shortcode, $output, $string);
 }
 

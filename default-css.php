@@ -493,6 +493,9 @@ margin-top:20px;
 .widecolumn .postmetadata {
 margin:30px 0;
 }
+.search .postmetadata {
+margin: 5px 0;
+}
 .widecolumn .smallattachment {
 text-align:center;
 float:left;

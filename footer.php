@@ -14,9 +14,6 @@ global $tech;
 	<p class="credit">
 
 	<?php	do_action('tech_footer'); ?>
-<br /><small>
-<?php printf(__('%1$d mySQL queries in %2$s seconds.','techozoic'), get_num_queries(),timer_stop(0)); ?>
-</small>
 	</p>
 </div><!--footer-->
 </div><!--footercont"-->

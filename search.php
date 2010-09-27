@@ -1,13 +1,11 @@
 <?php 	get_header(); 
 get_tech_options();
 global $tech;
-	if ($tech['column'] == 3 && $tech['sidebar_pos'] == "Sidebar - Content - Sidebar" && $tech['single_sidebar'] == "Yes") {
-		include (TEMPLATEPATH . '/l_sidebar.php'); 
-	}
+if ($tech['single_sidebar'] == "Yes")  tech_show_sidebar("l");
 ?>
 	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
 <?php 	if (have_posts()) { ?>
-		<h2 class="pagetitle"><?php _e('Search Results for ' ,techozoic);?><span class="search-terms">
+		<h2 class="pagetitle"><?php _e('Search Results for ' ,'techozoic');?><span class="search-terms">
 <?php	/* Search Count */ 
 		$allsearch = &new WP_Query("s=$s&showposts=-1"); 
 		$key = wp_specialchars($s, 1); 
@@ -37,17 +35,13 @@ global $tech;
 			<?php echo $excerpt;?>
 			</div>
 			<small><?php the_time('l, F jS, Y') ?>
-<?php			if (function_exists('get_the_tags')) {
-				$tag = get_the_tags();
-			}
-			if ( function_exists('the_tags') ) { 
-				if (strlen($tag)>0) {
-?>
+<?php	 	$posttags = get_the_tags();
+			if (!empty($posttags)) { ?>
 				<p><?php the_tags(); ?></p>
-<?php 				} 
-			} 
-?>			</small>
-			<p class="postmetadata"><?php printf(__('Posted in %s' ,'techozoic'),get_the_category_list(', '));?> | <?php edit_post_link(__('Edit' ,'techozoic'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;' ,'techozoic'), __('1 Comment &#187;' ,'techozoic'), __ngettext('% Comment &#187;' , '%Comments &#187',get_comments_number(),'techozoic')); ?></p> 
+<?php 		} 
+?>				
+			</small>
+			<p class="postmetadata"><?php printf(__('Posted in %s' ,'techozoic'),get_the_category_list(', '));?> | <?php edit_post_link(__('Edit' ,'techozoic'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &raquo;' ,'techozoic'), __('1 Comment &raquo;' ,'techozoic'), _n('% Comment &raquo;' , '% Comments &raquo;',get_comments_number(),'techozoic'), '', __('Comments Off' ,'techozoic')); ?></p> 
 			</div>
 <?php 		} //End While Loop ?>
 
@@ -60,9 +54,6 @@ global $tech;
 <?php 	} //End If Loop
 ?>
 	</div>
-<?php 	get_sidebar(); 
-	if ($tech['column'] == 3 && $tech['sidebar_pos'] =="Content - Sidebar - Sidebar" && $tech['single_sidebar'] == "Yes") {
-		include (TEMPLATEPATH . '/l_sidebar.php'); 
-	}
-	get_footer(); 
+<?php 	if ($tech['single_sidebar'] == "Yes")  tech_show_sidebar("r");
+		get_footer(); 
 ?>

@@ -8,11 +8,7 @@ get_header();
 		</div>
 <?php 
 	}
-	if ($tech['single_sidebar'] == "Yes") { 
-		if ($tech['column'] == 3 && $tech['sidebar_pos'] == "Sidebar - Content - Sidebar" && $tech['single_sidebar'] == "Yes") {
-			include (TEMPLATEPATH . '/l_sidebar.php'); 
-		} 
-	}
+	if ($tech['single_sidebar'] == "Yes")  tech_show_sidebar("l");
 ?>
 
 	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
@@ -25,10 +21,5 @@ get_header();
   </ul>
 	</div>
 
-<?php 	if ($tech['single_sidebar'] == "Yes" && $techcolumn != 1) {
-		get_sidebar();
-		if ($tech['column'] == 3 && $tech['sidebar_pos'] =="Content - Sidebar - Sidebar") {
-			include (TEMPLATEPATH . '/l_sidebar.php'); 
-		} 
-	}
+<?php 	if ($tech['single_sidebar'] == "Yes")  tech_show_sidebar("r");
 	get_footer(); ?>
