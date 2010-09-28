@@ -1,4 +1,7 @@
 <?php
+/******************************************
+Widget registration and custom widgets defined here
+******************************************/
 	global $tech;
 	$tech = get_option('techozoic_options');
 	$theme_data = get_theme_data(TEMPLATEPATH . '/style.css');

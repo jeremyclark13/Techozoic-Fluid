@@ -16,6 +16,10 @@
 - Fixed error on search results and 404 page if sidebars where used on single pages <br />
 - Adjusted Techozoic Navigation widget if a menu is assigned to the Sideber Navigation location it always displayed<br />
 - Added Footer Navigation Section for footer links <br />
+- Added Option to disable drop shadow for post and header <br />
+- Added Left and Right header widget areas<br />
+- Completely localized admin screens look in languages folder for .pot file to translate<br />
+- Reworked header for better flow under side borders<br />
 <h3>Version 1.9</h3><br />
 - Major code cleanup and validation.<br />
 --No longer using any deprecated funtions but still maintain backwards compatibilty with older version of WordPress <br />
