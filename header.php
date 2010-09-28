@@ -83,10 +83,13 @@ wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <a name="top"></a>
-<div id="page">
-<div id="pagel">
-<div id="pager">
 <div id="header">
+<div class="hleft">
+<?php	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Left Header','techozoic')) ) { } ?>
+</div>
+<div class="hright">
+<?php	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Right Header','techozoic')) ) { } ?>
+</div>
 <div id="headerimgwrap">
 <div id="headerimg">
 <h1>
@@ -115,7 +118,14 @@ if (!empty ($description)) { ?>
 } ?>
 </div>
 </div>
+<div id="headerl">
+<div id="headerr">
 </div>
+</div>
+</div>
+<div id="page">
+<div id="pagel">
+<div id="pager">
 <?php if ($tech['search_box'] == "Yes") {?>
 	<div id="search">
 	<?php 

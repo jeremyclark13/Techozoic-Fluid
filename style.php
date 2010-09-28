@@ -171,12 +171,27 @@
 	} else {
 		$home = get_bloginfo('template_directory') ."/uploads";
 	}
+	$tech_drop_shadow_classes = ".noclass";
+	if ($tech['drop_shadow']){
+		$tech_drop_shadow = explode( ',' , $tech['drop_shadow']);
+		$tech_drop_shadow_class_map = array(
+		"Header Text" => "#headerimg",
+		"Post Boxes" => ".home .narrowcolumn .entry, .home .widecolumn .entry, .top"
+		);
+		foreach ($tech_drop_shadow as $tds){
+			$tech_drop_shadow_classes .= ",". $tech_drop_shadow_class_map[$tds];
+		}
+	}
+
 echo <<<CSS
 /*Techozoic {$tech['ver']}*/
 
 /*Variable Styles*/
 #page{ 
 background:{$tech_content_bg_color} url({$tech['content_bg_image']}) repeat{$tech_content_bg_repeat} top left;
+}
+#header{
+background-color:{$tech_content_bg_color};
 }
 body{
 font-family:{$tech['default_font']}, Sans-Serif;
@@ -252,9 +267,17 @@ color:{$tech_acc_color};
 {$tech['blog_title_display']};
 {$tech['blog_title_align']};
 }
+#headerr, #headerl{
+height: {$tech['header_height']}px;
+}
 .single #headerimg h1 a:hover {
 {$tech['blog_title_cursor']}
 text-decoration:none;
+}
+{$tech_drop_shadow_classes}{
+-moz-box-shadow:none !important;
+-webkit-box-shadow: none !important;
+opacity:1 !important;
 }
 CSS;
 	if ($tech_blog_title_align_check == "Center") {
@@ -271,7 +294,7 @@ CSS;
 			$tech['main_column_width'] = 100; 
 		$tech['main_column_width'] = $tech['main_column_width'] - 6;
 echo <<<CSS
-#page {
+#page, #header {
 width: {$tech['page_width']}{$tech['sign']};
 }
 .narrowcolumn {
@@ -296,7 +319,7 @@ CSS;
 		$tech['sidebar_width'] = $tech['sidebar_width'] - 3;
 		if ($tech['sidebar_pos'] =='Content - Sidebar') {
 echo <<<CSS
-#page {
+#page, #header {
 width: {$tech['page_width']}{$tech['sign']};
 }
 .narrowcolumn {
@@ -313,7 +336,7 @@ width:{$tech['sidebar_width']}%
 CSS;
 			} else { 
 echo <<<CSS
-#page {
+#page, #header {
 width: {$tech['page_width']}{$tech['sign']};
 }
 .narrowcolumn {
@@ -344,7 +367,7 @@ CSS;
 		$tech['sidebar_width'] = $tech['sidebar_width'] - 2;
 		if ($tech['sidebar_pos'] =='Content - Sidebar - Sidebar') {
 echo <<<CSS
-#page {
+#page, #header {
 width: {$tech['page_width']}{$tech['sign']}
 }
 .narrowcolumn {
@@ -367,7 +390,7 @@ width:{$tech['sidebar_width']}%
 CSS;
 		} elseif ($tech['sidebar_pos'] =='Sidebar - Content - Sidebar') { 
 echo <<<CSS
-#page {
+#page, #header {
 width: {$tech['page_width']}{$tech['sign']}
 }
 .narrowcolumn {
@@ -392,7 +415,7 @@ width:{$tech['sidebar_width']}%
 CSS;
 		} else {
 echo <<<CSS
-#page {
+#page, #header {
 width: {$tech['page_width']}{$tech['sign']}
 }
 .narrowcolumn {
@@ -446,28 +469,38 @@ left:-50%;
 }
 CSS;
 	}
+	$tech_hwidget_height = $tech['header_height'] - 10;
 	switch ($tech['header']){ 
 		case "Defined Here": 
 echo <<<CSS
 #header {
-background:url({$tech['header_image_url']}) no-repeat bottom {$tech['header_align']};
+background:url({$tech['header_image_url']}) no-repeat bottom {$tech['header_align']} {$tech_content_bg_color};
 height: {$tech['header_height']}px;
+}
+.hleft, .hright {
+height: {$tech_hwidget_height}px;
 }
 CSS;
 		break;
 		case "Rotate":
 echo <<<CSS
 #header {
-background:url({$home}/rotate.php) no-repeat bottom {$tech['header_align']};
+background:url({$home}/rotate.php) no-repeat bottom {$tech['header_align']} {$tech_content_bg_color};
 height: 200px;
+}
+.hleft, .hright {
+height: 190px;
 }
 CSS;
 		break;
 		case "Landscape":
 echo <<<CSS
 #header {
-background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat bottom {$tech['header_align']};
+background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat bottom {$tech['header_align']} {$tech_content_bg_color};
 height: 170px;
+}
+.hleft, .hright {
+height: 160px;
 }
 CSS;
 		break;
@@ -476,13 +509,19 @@ echo <<<CSS
 #header {
 height: {$tech['header_height']}px;
 }
+.hleft, .hright {
+height: {$tech_hwidget_height}px;
+}
 CSS;
 		break;
 		default:
 echo <<<CSS
 #header {
-background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat bottom {$tech['header_align']};
+background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat bottom {$tech['header_align']} {$tech_content_bg_color};
 height: {$tech['header_height']}px;
+}
+.hleft, .hright {
+height: {$tech_hwidget_height}px;
 }
 CSS;
 		break;

@@ -151,7 +151,15 @@ $options = array (
 				"old_id" => "unused before 1.8.8",
             	"std" => "%BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% <br /> <small>%MYSQL%</small>",
             	"size" => "100",
-            	"type" => "textarea"),				
+            	"type" => "textarea"),
+				
+		array("name" => __("Drop Shadow Boxes","techozoic"),
+				"desc" => __("Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safarai.","techozoic"),
+            	"id" => "drop_shadow",
+				"old_id" => "unused before 1.9.1",
+            	"std" => "",
+            	"type" => "checkbox",
+				"options" => array("Header Text", "Post Boxes")),
 
     	array(	"name" => __("Static CSS","techozoic"),
 				"desc" => __("For Advanced Users who would like to edit the style.css file directly. Setting this to static will stop using the Dynamic style.php in favor of the static style.css  If you would like the changes you've made already to transfer then below  is the CSS being used currently and allow you to copy and paste to the style.css file.","techozoic"),

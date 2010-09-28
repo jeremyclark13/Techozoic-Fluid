@@ -1,28 +1,28 @@
 <?php    	
 	global $themename, $shortname, $options, $tech_error;
-    if ( isset($_REQUEST['import']) && $_REQUEST['import'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings imported.</strong></p></div>';
+    if ( isset($_REQUEST['import']) && $_REQUEST['import'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__("%s settings imported.","techozoic"),$themename) . '</strong></p></div>';
 ?>
 	<div class="tech_head">
 	<?php techozoic_top_menu(); ?>
-	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> Export/Import Settings</h2>
+	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php printf(__("%s Export/Import Settings","techozoic"),$themename);?></h2>
 	<div style="clear:both;"></div>
 		<?php techozoic_links_box();?>
 		<div class="tech_form_wrap">
-	<h3>Export Settings</h3>
-	<p>Here you can export your current Techozoic settings, this is useful if you plan on copying your current layout to another blog using Techozoic.</p>
+	<h3><?php _e('Export Settings','techozoic')?></h3>
+	<p><?php _e('Here you can export your current Techozoic settings, this is useful if you plan on copying your current layout to another blog using Techozoic.','techozoic')?></p>
 	<form method="post">
 		<span class="tech_submit submit save">
-			<input name="export" type="submit" value="Export Settings" />
+			<input name="export" type="submit" value="<?php _e('Export Settings','techozoic')?>" />
 			<input type="hidden" name="action" value="export" />
 		</span>
 	</form>	
 	<div style="clear:both"></div>
-	<h3> Import Settings</h3>
-	<p>If you have an export file from Techozoic you can upload it here.  (This will overwrite any current changes)</p>
+	<h3> <?php _e('Import Settings','techozoic')?></h3>
+	<p><?php _e('If you have an export file from Techozoic you can upload it here.  (This will overwrite any current changes)','techozoic')?></p>
 	<form enctype="multipart/form-data" encoding="multipart/form-data" method="post">
 		<input type="file" name="settings" /><br />
 		<span class="tech_submit submit save">
-			<input type="submit" name="submit" value="Import Settings" />
+			<input type="submit" name="submit" value="<?php _e('Import Settings','techozoic')?>" />
 		</span><br /><br />
 	</form>
 	</div>

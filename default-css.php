@@ -272,9 +272,36 @@ font-style:normal;
 text-transform:capitalize;
 }
 #header {
-width:97%;
 margin:0 auto;
 padding:0;
+min-width: 760px;
+}
+#headerl{
+background:url('{$home}/images/bgl.png') repeat-y scroll left top transparent;
+width 100%;
+}
+#headerr{
+background:url('{$home}/images/bgr.png') repeat-y scroll right top transparent;
+width 100%;
+}
+.hleft{
+float:left;
+margin: 5px 10px;
+overflow:hidden;
+}
+.hright{
+float:right;
+margin: 5px 10px;
+overflow: hidden;
+}
+.hwidget ul {
+list-style:none;
+padding-left:0;
+}
+.hwidget{
+margin: 2px;
+padding: 3px;
+text-align: left;
 }
 .navhead h3 {
 margin:5px 10px 0;

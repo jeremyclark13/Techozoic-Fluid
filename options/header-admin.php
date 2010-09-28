@@ -1,12 +1,12 @@
 <?php
     	global $themename, $shortname, $options, $tech_error;
-    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong> </p></div>';
+    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings saved","techozoic"), $themename) . '</strong></p></div>';
+    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings reset","techozoic"), $themename) . '</strong> </p></div>';
 		if ( isset($_REQUEST['message']) && $_REQUEST['message'] ) {
-			if ( isset($_REQUEST['error']) && $_REQUEST['error'] ) {
+			if ($_REQUEST['error']) {
 				echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';
 				} else { 
-				echo '<div id="message" class="updated fade"><p><strong>Image Uploaded</strong> </p></div>';
+				echo '<div id="message" class="updated fade"><p><strong>' . __("Image Uploaded","techozoic") . '</strong> </p></div>';
 				}
 			}
 	$tech = get_option('techozoic_options');
@@ -14,15 +14,15 @@
 ?>
 	<div class="tech_head">
 	<?php techozoic_top_menu();?>
-	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> Header Settings</h2>
+	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename . " " . __("Header Settings","techozoic")?></h2>
 	<div style="clear:both;"></div>
 		<?php techozoic_links_box();?>
 	<div class="tech_form_wrap">
-		<h3>Upload Header Image</h3>
-		<p>Max Dimensions: 1000 px wide X 200 px high<br />
-		Supported format: jpg, jpeg, gif, png <br />
-		<em>Recommend format:</em> jpg, jpeg, png<br />
-		After image is uploaded it will appear in the list below and can be selected in the list below to be used as the Header Image.</p>
+		<h3><?php _e('Upload Header Image','techozoic')?></h3>
+		<p><?php _e('Max Dimensions: 1000 px wide X 200 px high','techozoic')?><br />
+		<?php _e('Supported format: jpg, jpeg, gif, png','techozoic')?> <br />
+		<em><?php _e('Recommend format:</em> jpg, jpeg, png','techozoic')?><br />
+		<?php _e('After image is uploaded it will appear in the list below and can be selected in the list below to be used as the Header Image.','techozoic')?></p>
 <?php
 	$dir = TEMPLATEPATH. "/uploads/images/headers/";
 		if (is_writable($dir)) {
@@ -30,17 +30,17 @@
 			<form enctype="multipart/form-data" encoding="multipart/form-data" method="post">
 				<input type="file" name="file" /><br />
 				<span class="tech_submit submit save">
-				<input type="submit" name="submit" value="Upload" />
+				<input type="submit" name="submit" value="<?php _e('Upload','techozoic')?>" />
 				</span><br /><br />
 			</form>
 <?php 		} else { 
-			echo "<div class=\"updated fade\">Please make sure <strong>". $dir . "</strong> is writable to enable upload of headers.</div>"; 
+			echo "<div class=\"updated fade\">" . sprintf(__('Please make sure <strong>%s</strong> is writable to enable upload of headers.','techozoic'),$dir) . "</div>"; 
 	}?>
-		<h3>Header Image Settings</h3>
+		<h3><?php _e('Header Image Settings','techozoic')?></h3>
 		<form method="post" name="tech_header_height">
 		<table>
-		<tr><td>Height of Container: </td><td><input name="header_height" id="header_height_2" type="text" value="<?php echo stripslashes($tech['header_height']);?>" size="5" />px</td></tr>
-		<tr><td>Header Image Alignment: </td><td><select name="header_align" id="header_align_2">
+		<tr><td><?php _e('Height of Container:','techozoic')?> </td><td><input name="header_height" id="header_height_2" type="text" value="<?php echo stripslashes($tech['header_height']);?>" size="5" />px</td></tr>
+		<tr><td><?php _e('Header Image Alignment:','techozoic')?> </td><td><select name="header_align" id="header_align_2">
                 <option <?php if ( $tech['header_align']  == "Left") { echo ' selected="selected"'; }?>>Left</option>
 				<option <?php if ( $tech['header_align']  == "Right") { echo ' selected="selected"'; }?>>Right</option>
 				<option <?php if ( $tech['header_align']  == "Center") { echo ' selected="selected"'; }?>>Center</option>
@@ -48,7 +48,7 @@
 			</td></tr>
 		</table>
 		<span class="tech_submit submit save">
-		<input name="tech_header_height" type="submit" value="Save Settings" />
+		<input name="tech_header_height" type="submit" value="<?php _e('Save Settings','techozoic')?>" />
 		</span>
 		</form>
 		<br />
@@ -56,25 +56,25 @@
 		</div>
 			<div style="clear:both;"></div>
 		<div id="headerimgs">
-		<h3>Header Images:</h3>
+		<h3><?php _e('Header Images:','techozoic')?></h3>
 		<div id="header_imgs">
 			<div class="filediv small">
-				<h3>Rotate Through All Headers</h3>
+				<h3><?php _e('Rotate Through All Headers','techozoic')?></h3>
 				<div id="rotate" class="current"><?php if(tech_check_header("Rotate.jpg","rotate")){ echo "<h3><span>" . tech_check_header("Rotate.jpg","rotate") . "</span></h3>" ;}?></div>
 				<form method="post" name="tech_header_select" >
 				<span class="tech_submit submit save">
-				<input name="tech_header_select" type="submit" value="Rotate" />
+				<input name="tech_header_select" type="submit" value="<?php _e('Rotate','techozoic')?>" />
 				<input type="hidden" name="header_select" value="Rotate.jpg" />
 				</span>
 				</form>
 				<br />
 			</div>
 			<div class="filediv filealt small">
-				<h3>No Header Image</h3>
+				<h3><?php _e('No Header Image','techozoic')?></h3>
 				<div id="none" class="current"><?php if(tech_check_header("none.jpg","none")){ echo "<h3><span>" . tech_check_header("none.jpg","none") . "</span></h3>" ;}?></div>
 				<form method="post" name="tech_header_select" >
 				<span class="tech_submit submit save">
-				<input name="tech_header_select" type="submit" value="No Header Image" />
+				<input name="tech_header_select" type="submit" value="<?php _e('No Header Image','techozoic')?>" />
 				<input type="hidden" name="header_select" value="none.jpg" />
 				</span>
 				</form>
@@ -96,11 +96,11 @@
 		if (in_array($file, $default_headers) ){
 			$file = substr($file, 0,strrpos($file,'.'));
 			if ($tech['header'] == $file){
-				return " - Current Selected Header";
+				return __(" - Current Selected Header","techozoic");
 			}	
 		}
 		if ($tech['header_image_url'] == $file_path) {
-			return " - Current Selected Header";
+			return  __(" - Current Selected Header","techozoic");
 		}
 	}
 	while ($file = readdir($dir_handle)) {
@@ -126,20 +126,20 @@
 					<?php if(tech_check_header($file,$file_path)){ echo "<h3><span>" . tech_check_header($file,$file_path) . "</span></h3>" ;}?>
 				</div> 
 				<h3> <?php echo $file; ?> </h3>
-				<a href="<?php echo $file_path; ?>" class="thickbox" rel="headers" title="<?php echo $file; echo tech_check_header($file,$file_path);?>">		<img src="<?php echo $file_path;?>" alt="Click for full size preview of <?php echo $file;?>" />
+				<a href="<?php echo $file_path; ?>" class="thickbox" rel="headers" title="<?php echo $file; echo tech_check_header($file,$file_path);?>">		<img src="<?php echo $file_path;?>" alt="<?php _e('Click for full size preview of','techozoic') ?> <?php echo $file;?>" />
 				</a>
 				<br />
-				<span class="img_meta">Width: <?php echo $img_info[0];?>px &nbsp;| Height: <?php echo $img_info[1];?>px</span>
+				<span class="img_meta"><?php _e('Width:','techozoic') ?> <?php echo $img_info[0];?>px &nbsp;| <?php _e('Height:','techozoic') ?> <?php echo $img_info[1];?>px</span>
 				<br /><div class="header_buttons">
 				<form method="post" name="tech_header_select" >
 				<span class="tech_submit submit save">
-				<input name="tech_header_select" type="submit" value="Select This Header" />
+				<input name="tech_header_select" type="submit" value="<?php _e('Select This Header','techozoic') ?>" />
 				<input type="hidden" name="header_select" value="<?php echo $file ;?>" />
 				</span>
 				</form>
 				<form method="post" name="tech_header_delete" onsubmit="return delverify()">
 				<span class="tech_submit submit reset">
-				<input name="tech_header_delete" type="submit" value="Delete This Header" /> 
+				<input name="tech_header_delete" type="submit" value="<?php _e('Delete This Header','techozoic') ?>" /> 
 				<input type="hidden" name="header_delete" value="<?php echo $file ;?>" />
 				</span>
 				</form>

@@ -2,7 +2,7 @@
 //Please Do NOT edit this page.
 $themename = "Techozoic";
 $shortname = "tech";
-$tech_error = array ( "Return Error", "File Already Exists", "Incorrect File Type / File Size Limit exceeded","Folder isn't writable please check folder that<code>" .WP_CONTENT_URL . "/techozoic/</code> exists and is writable." , "File Doesn't exist.", "Folder isn't writable please check folder<code>" .TEMPLATEPATH ."</code> Permissions.","Please only use .ico format for Fav Icon Images");
+$tech_error = array ( __("Return Error","techozoic"), __("File Already Exists","techozoic"), __("Incorrect File Type / File Size Limit exceeded","techozoic"),sprintf(__("Folder isn't writable please check folder that<code>%s/uploads/</code> exists and is writable." ,"techozoic"), TEMPLATEPATH), __("File Doesn't exist.","techozoic"), sprintf(__("Folder isn't writable please check folder<code>%s</code> Permissions.","techozoic"),TEMPLATEPATH),__("Please only use .ico format for Fav Icon Images","techozoic"));
 $theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = $theme_data['Version'];
 function techozoic_add_admin() {
@@ -251,22 +251,22 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 			}
     	}
 	add_menu_page($themename." Options", "Techozoic", 'edit_themes', 'techozoic_main_admin','','',61);
-	add_submenu_page('techozoic_main_admin' ,$themename." General Settings", "General Settings", 'edit_themes', 'techozoic_main_admin', 'techozoic_admin');
-	add_submenu_page('techozoic_main_admin' ,$themename." Header Settings", "Header Settings", 'edit_themes', 'techozoic_header_admin', 'techozoic_header_admin');
-	add_submenu_page('techozoic_main_admin' ,$themename." Style Settings", "CSS Settings", 'edit_themes', 'techozoic_style_admin', 'techozoic_style_admin');
-	add_submenu_page('techozoic_main_admin' ,$themename." Export/Import Settings", "Export/Import Settings", 'edit_themes', 'techozoic_export_admin', 'techozoic_export_admin');
-	add_submenu_page('techozoic_main_admin' ,$themename." Delete Settings", "Delete Theme Settings", 'edit_themes', 'techozoic_delete_admin', 'techozoic_delete_admin');
+	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s General Settings","techozoic"),$themename), __("General Settings","techozoic"), 'edit_themes', 'techozoic_main_admin', 'techozoic_admin');
+	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Header Settings","techozoic"),$themename), __("Header Settings","techozoic"), 'edit_themes', 'techozoic_header_admin', 'techozoic_header_admin');
+	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Style Settings","techozoic"),$themename), __("CSS Settings","techozoic"), 'edit_themes', 'techozoic_style_admin', 'techozoic_style_admin');
+	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Export/Import Settings","techozoic"),$themename), __("Export/Import Settings","techozoic"), 'edit_themes', 'techozoic_export_admin', 'techozoic_export_admin');
+	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Delete Settings","techozoic"),$themename), __("Delete Theme Settings","techozoic"), 'edit_themes', 'techozoic_delete_admin', 'techozoic_delete_admin');
 
 	}//End Function
 function techozoic_admin() {
     	global $themename, $shortname, $options, $tech_error;
-    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
-    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong> </p></div>';
+    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings saved","techozoic"), $themename) . '</strong></p></div>';
+    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings reset","techozoic"), $themename) . '</strong> </p></div>';
 		if ( isset($_REQUEST['message']) && $_REQUEST['message'] ) {
 			if ($_REQUEST['error']) {
 				echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';
 				} else { 
-				echo '<div id="message" class="updated fade"><p><strong>Image Uploaded</strong> </p></div>';
+				echo '<div id="message" class="updated fade"><p><strong>' . __("Image Uploaded","techozoic") . '</strong> </p></div>';
 				}
 			}
 		?>
@@ -283,14 +283,14 @@ function techozoic_admin() {
 	<?php techozoic_top_menu();?>
 	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> General settings</h2>
 	<ul id="themetabs" class="tabs">
-		<li><a href="#layout" rel="layout" rev="tech_buttons">Layout</a></li>
-		<li><a href="#nav" rel="nav" rev="tech_buttons">Navigation</a></li>
-		<li><a href="#social" rel="social" rev="tech_buttons">Social Networks</a></li>
-		<li><a href="#font" rel="font" rev="tech_buttons">Typography</a></li>
-		<li><a href="#color" rel="color" rev="tech_buttons">Color Options</a></li>
-		<li><a href="#background" rel="background" rev="tech_buttons">Backgrounds</a></li>
-		<li><a href="#tab4" rel="tab4" rev="tech_buttons">Ad Placement</a></li>
-		<li id="headersettab"><a href="#headerset" rel="headerset" rev="tech_buttons">Manual Header Settings</a></li>
+		<li><a href="#layout" rel="layout" rev="tech_buttons"><?php _e("Layout","techozoic");?></a></li>
+		<li><a href="#nav" rel="nav" rev="tech_buttons"><?php _e("Navigation","techozoic");?></a></li>
+		<li><a href="#social" rel="social" rev="tech_buttons"><?php _e("Social Networks","techozoic");?></a></li>
+		<li><a href="#font" rel="font" rev="tech_buttons"><?php _e("Typography","techozoic");?></a></li>
+		<li><a href="#color" rel="color" rev="tech_buttons"><?php _e("Color Options","techozoic");?></a></li>
+		<li><a href="#background" rel="background" rev="tech_buttons"><?php _e("Backgrounds","techozoic");?></a></li>
+		<li><a href="#tab4" rel="tab4" rev="tech_buttons"><?php _e("Ad Placement","techozoic");?></a></li>
+		<li id="headersettab"><a href="#headerset" rel="headerset" rev="tech_buttons"><?php _e("Manual Header Settings","techozoic");?></a></li>
 	</ul>
 	<?php techozoic_links_box();?>
 	<div class="tech_form_wrap">
@@ -446,12 +446,12 @@ function techozoic_admin() {
 	?></select>
 	</td></tr>
 				<tr valign="middle" id="<?php echo $value['id']?>_preview">
-					<th scope="row">Preview:</th><td>
+					<th scope="row"><?php _e("Preview:","techozoic");?></th><td>
 					<span id="<?php echo $value['id']?>_preview_image"></span>
 		</td></tr>
 
 			<tr valign="middle"> 
-					<th scope="row">Reset - Check and Save Options to Clear</th><td><input name="<?php echo $value['id'];?>_reset" type="checkbox" /></td></tr>
+					<th scope="row"><?php _e("Reset - Check and Save Options to Clear","techozoic") ?></th><td><input name="<?php echo $value['id'];?>_reset" type="checkbox" /></td></tr>
 				<tr><td colspan="2"><hr /></td></tr>
 	<?php 			if (isset($value['after'])) echo $value['after']; 
 				if (isset($value['last'])) echo $value['last'];
@@ -502,13 +502,13 @@ function techozoic_admin() {
 	<div class="tech_bottom2">
 		<a name="submit"></a>
 		<span class="tech_submit submit save">
-			<input name="save" id="save_button" type="submit" value="Save changes" />    
+			<input name="save" id="save_button" type="submit" value="<?php _e("Save changes","techozoic");?>" />    
 			<input type="hidden" name="action" value="save" />
 		</span>
 		</form>
 		<form method="post" onsubmit="return verify()">
 			<span class="tech_submit submit reset">
-				<input name="reset" type="submit" value="Reset" />
+				<input name="reset" type="submit" value="<?php _e("Reset","techozoic");?>" />
 				<input type="hidden" name="action" value="reset" />
 			</span>
 		</form>
@@ -536,10 +536,10 @@ function techozoic_delete_admin() {
 }
 function techozoic_top_menu() {
 	echo '<ul class="subsubsub">
-		<li><a href="admin.php?page=techozoic_main_admin">General Settings</a> | </li>
-		<li><a href="admin.php?page=techozoic_header_admin">Header Settings</a> | </li>
-		<li><a href="admin.php?page=techozoic_style_admin">CSS Settings</a> | </li>
-		<li><a href="admin.php?page=techozoic_export_admin">Export/Import Settings</a></li>
+		<li><a href="admin.php?page=techozoic_main_admin">' . __("General Settings","techozoic") . '</a> | </li>
+		<li><a href="admin.php?page=techozoic_header_admin">' . __("Header Settings","techozoic") . '</a> | </li>
+		<li><a href="admin.php?page=techozoic_style_admin">' . __("CSS Settings","techozoic") . '</a> | </li>
+		<li><a href="admin.php?page=techozoic_export_admin">' . __("Export/Import Settings","techozoic") . '</a></li>
 	</ul>
 	<div style="clear:both"></div>';
 }
@@ -549,7 +549,7 @@ function techozoic_links_box() {
 		$feed_address = "http://techozoic.clark-technet.com/category/news/feed";
 		$feed_items = 5;
 		$tech_changelog = get_bloginfo('template_directory') . '/changelog.php';
-		$output .= "<h3>Techozoic News</h3>";
+		$output .= "<h3>" . __('Techozoic Links','techozoic') . "</h3>";
 		include_once(ABSPATH . WPINC . '/feed.php');
 		// Get a SimplePie feed object from the specified feed source.
 		$rss = fetch_feed($feed_address);
@@ -565,7 +565,7 @@ function techozoic_links_box() {
 
 		$output .='<ul>';
 		if ($maxitems == 0) {
-			$output .= '<li>No News.</li>';
+			$output .= '<li>' . __("No News.","techozoic") . '</li>';
 		} else {
 			// Loop through each feed item and display each item as a hyperlink.
 			foreach ( $rss_items as $item ) { 
@@ -576,27 +576,27 @@ function techozoic_links_box() {
 			}
 			$output.='</ul>';
 		}
-	$output .="<h3>Techozoic Links</h3>
+	$output .="<h3>" . __('Techozoic Links','techozoic') . "</h3>
 	<ul>
 		<li>
-			<a href='http://clark-technet.com/theme-support/techozoic'>Support Forum</a>
+			<a href='http://clark-technet.com/theme-support/techozoic'>" . __('Support Forum','techozoic') . "</a>
 		</li>
 		<li>
-			<a href='http://techozoic.clark-technet.com/documentation/'>Documentation</a>
+			<a href='http://techozoic.clark-technet.com/documentation/'>" . __('Documentation','techozoic') . "</a>
 		</li>
 		<li>
-			<a href='http://techozoic.clark-technet.com/documentation/faq/'>FAQ</a>
+			<a href='http://techozoic.clark-technet.com/documentation/faq/'>" . __('FAQ','techozoic') . "</a>
 		</li>
 		<li>
-			<a href='$tech_changelog' onclick='return changelog(\"$tech_changelog\")'>Change Log</a>
+			<a href='$tech_changelog' onclick='return changelog(\"$tech_changelog\")'>" . __('Change Log','techozoic') . "</a>
 		</li>
 	</div>";
 	echo $output;
 }
 function techozoic_footer() {
 	global $themename;
-	echo 'Theme Option page for '. $themename .'&nbsp;|&nbsp; Framework by <a href="http://clark-technet.com/" title="Jeremy Clark">Jeremy Clark</a> | ';
-	echo 'Social Network Icons provided by <a href="http://komodomedia.com" target="_blank">komodomedia.com</a>';
+	echo  __("Theme Option page for","techozoic") . " " . $themename .'&nbsp;|&nbsp; ' . __("Framework by","techozoic") . ' <a href="http://clark-technet.com/" title="Jeremy Clark">Jeremy Clark</a> | ';
+	echo __("Social Network Icons provided by","techozoic") . ' <a href="http://komodomedia.com" target="_blank">komodomedia.com</a>';
 }
 
 function tech_export(){

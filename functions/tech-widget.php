@@ -14,6 +14,21 @@
 		'before_title' => '<h2 class="widgettitle">',
 		'after_title' => '</h2>',
 	));
+	register_sidebar(array(
+		'name'=>__('Right Header','techozoic'),
+		'before_widget' => '<div class="hwidget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>',
+	));
+	register_sidebar(array(
+		'name'=>__('Left Header','techozoic'),
+		'before_widget' => '<div class="hwidget">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>',
+	));
+	
 	
 	class Techozoic_Nav_Widget extends WP_Widget {
 
