@@ -8,7 +8,7 @@ if ($tech['single_sidebar'] == "Yes")  tech_show_sidebar("l");
 		<h2 class="pagetitle"><?php _e('Search Results for ' ,'techozoic');?><span class="search-terms">
 <?php	/* Search Count */ 
 		$allsearch = &new WP_Query("s=$s&showposts=-1"); 
-		$key = wp_specialchars($s, 1); 
+		$key = esc_html($s); 
 		$count = $allsearch->post_count; 
 		echo $key; 
 ?>

@@ -32,7 +32,7 @@ if (function_exists('home_url')) {
 <?php 	} elseif (is_year()) { ?>
 		<li><p><?php printf(__('You are currently browsing the %1$s archives for %2$s.','techozoic'),$home_url, get_the_time("Y")); ?></p></li>
 <?php 	} elseif (is_search()) { ?>
-		<li><p><?php printf(__('You have searched the %1$s archives for %2$s.','techozoic'),$home_url,'<strong>\'' .wp_specialchars($s).'\'</strong>')?></p></li>
+		<li><p><?php printf(__('You have searched the %1$s archives for %2$s.','techozoic'),$home_url,'<strong>\'' .esc_html($s).'\'</strong>')?></p></li>
 <?php 	} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 		<li><p><?php printf(__('You are currently browsing the %1$s archives.','techozoic'),$home_url); ?></p></li>
 <?php 	} 
