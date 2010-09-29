@@ -236,7 +236,7 @@ function tech_comment_preview($ID,$num){
 			$output .= '<li class="comments-link">';
 			$output .= '<div class="comment-author">';
 			$output .= '<a href="'. get_comment_link() .'" title="'. $comment->comment_author . __(' posted on ','techozoic') . get_comment_date() .'">';
-			$output .= $comment->comment_author . __(' posted on ') . get_comment_date();
+			$output .= $comment->comment_author . __(' posted on ','techozoic') . get_comment_date();
 			$output .= '</a>';
 			$output .= '</div>';
 			$output .= '<div class="comment-text">';

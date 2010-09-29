@@ -288,11 +288,13 @@ width 100%;
 float:left;
 margin: 5px 10px;
 overflow:hidden;
+width:25%;
 }
 .hright{
 float:right;
 margin: 5px 10px;
 overflow: hidden;
+width:25%;
 }
 .hwidget ul {
 list-style:none;
