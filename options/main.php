@@ -281,7 +281,7 @@ function techozoic_admin() {
 	</div>
 	<div class="tech_head">
 	<?php techozoic_top_menu();?>
-	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php echo $themename;?> General settings</h2>
+	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php sprintf(__("%s General Settings","techozoic"),$themename);?></h2>
 	<ul id="themetabs" class="tabs">
 		<li><a href="#layout" rel="layout" rev="tech_buttons"><?php _e("Layout","techozoic");?></a></li>
 		<li><a href="#nav" rel="nav" rev="tech_buttons"><?php _e("Navigation","techozoic");?></a></li>
