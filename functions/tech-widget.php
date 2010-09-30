@@ -8,28 +8,37 @@ Widget registration and custom widgets defined here
 	$version = $theme_data['Version'];
 	
 	if(function_exists('register_sidebar')){
-	register_sidebar(array('name'=>__('Right Sidebar','techozoic')));
-	register_sidebar(array('name'=>__('Left Sidebar','techozoic')));
+	register_sidebar(array(
+		'name'=>__('Right Sidebar','techozoic'),
+		'id'=> 'right_sidebar'
+		));
+	register_sidebar(array(
+		'name'=>__('Left Sidebar','techozoic'),
+		'id'=> 'left_sidebar'
+		));
 	register_sidebar(array(
 		'name'=>__('Footer - Limit 3 Widgets','techozoic'),
+		'id'=> 'tech_footer',
 		'before_widget' => '<div class="footercont"><ul><li>',
 		'after_widget' => '</li></ul></div>',
 		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => '</h2>',
+		'after_title' => '</h2>'
 	));
 	register_sidebar(array(
 		'name'=>__('Right Header','techozoic'),
+		'id'=> 'right_header',
 		'before_widget' => '<div class="hwidget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => '</h2>',
+		'after_title' => '</h2>'
 	));
 	register_sidebar(array(
 		'name'=>__('Left Header','techozoic'),
+		'id'=> 'left_header',
 		'before_widget' => '<div class="hwidget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => '</h2>',
+		'after_title' => '</h2>'
 	));
 	
 	

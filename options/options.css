@@ -25,6 +25,8 @@ ul#themetabs li a.selected{border:1px solid #d3d3d3;background-color:#e1e1e1;}
 #total{background-color:#DDD;}
 #loading{display:none;margin: 0 50%;}
 #javasubmit{display:none;}
+.optiontable th {text-align: left;}
+.optiontable td {padding: 0 5px;}
 .rotate{height:85px;}
 .filediv{border:1px solid #E3E3E3;float:left;margin:2px;padding:0 0 25px 10px;width:45%;height:190px;margin-right:3%;min-width:360px;}
 .filealt{float:left;}

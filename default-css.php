@@ -2,7 +2,7 @@
 /****************************
 	This file contains all the non variable styles
 	This file can be edited
-	DO NOT delete the echo statement below
+	DO NOT delete next two lines
 *****************************/ 
 $home = get_bloginfo('template_directory');
 echo " 
@@ -286,15 +286,14 @@ width 100%;
 }
 .hleft{
 float:left;
-margin: 5px 10px;
+margin: 5px 3% 5px 10px;
 overflow:hidden;
-width:25%;
+
 }
 .hright{
 float:right;
-margin: 5px 10px;
+margin: 5px 10px 5px 3%;
 overflow: hidden;
-width:25%;
 }
 .hwidget ul {
 list-style:none;

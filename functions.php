@@ -38,7 +38,7 @@
 	if (!isset($content_width)) {
 		$content_width = tech_content_width();
 	}
-
+	
 /**************************************
 	Techozoic Navigation Selection Function
 	Since 1.8.8

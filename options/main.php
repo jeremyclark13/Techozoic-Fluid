@@ -260,8 +260,8 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 	}//End Function
 function techozoic_admin() {
     	global $themename, $shortname, $options, $tech_error;
-    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings saved","techozoic"), $themename) . '</strong></p></div>';
-    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings reset","techozoic"), $themename) . '</strong> </p></div>';
+    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__("%s settings saved","techozoic"), $themename) . '</strong></p></div>';
+    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__("%s settings reset","techozoic"), $themename) . '</strong> </p></div>';
 		if ( isset($_REQUEST['message']) && $_REQUEST['message'] ) {
 			if ($_REQUEST['error']) {
 				echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';
@@ -281,7 +281,7 @@ function techozoic_admin() {
 	</div>
 	<div class="tech_head">
 	<?php techozoic_top_menu();?>
-	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php sprintf(__("%s General Settings","techozoic"),$themename);?></h2>
+	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php printf(__("%s General Settings","techozoic"),$themename);?></h2>
 	<ul id="themetabs" class="tabs">
 		<li><a href="#layout" rel="layout" rev="tech_buttons"><?php _e("Layout","techozoic");?></a></li>
 		<li><a href="#nav" rel="nav" rev="tech_buttons"><?php _e("Navigation","techozoic");?></a></li>
@@ -321,7 +321,7 @@ function techozoic_admin() {
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
-					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+					<td style="width:50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					<td>
 					<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" type="<?php echo $value['type']; ?>" value="<?php if( $settings[$id]  != "") { echo stripslashes($settings[$id]); } else { echo $value['std']; } ?>" size="<?php echo $value['size']; ?>" <?php if(isset($value['java'])) echo $value['java']; ?>/>
@@ -339,7 +339,7 @@ function techozoic_admin() {
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
-					<td style="50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+					<td style="50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					<td>
 						<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" <?php if(isset($value['java'])) echo $value['java']; ?>>
@@ -359,7 +359,7 @@ function techozoic_admin() {
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
-					<td style="50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+					<td style="50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 						<td>
 		<ul>						
@@ -384,7 +384,7 @@ function techozoic_admin() {
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
-					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+					<td style="width:50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 						<td>		
 							<select  multiple="multiple" size="8" name="<?php echo $value['id']; ?>[]" id="<?php echo $value['id']; ?>" style="height:100px;">
@@ -413,7 +413,7 @@ function techozoic_admin() {
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
-					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+					<td style="width:50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					 <td>
 			<input name="<?php echo $value['id']; ?>" id="<?php echo $value['id'];?>" type="file" <?php if(isset($value['java'])) echo $value['java']; ?>/>
@@ -462,7 +462,7 @@ function techozoic_admin() {
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
-					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+					<td style="width:50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					<td>
 	<?php 			foreach ($value['options'] as $option) { 
@@ -480,7 +480,7 @@ function techozoic_admin() {
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
-					<td style="width:50%;text-align:center;" valign="top"><small><?php echo $value['desc']?></small></td>
+					<td style="width:50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					<td>
 						<textarea name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" cols="40" rows="10"><?php if (  $settings[$id]  != "") { echo stripslashes($settings[$id]) ; } else { echo $value['std']; } ?>

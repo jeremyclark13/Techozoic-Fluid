@@ -84,12 +84,17 @@ wp_head(); ?>
 <body <?php body_class(); ?>>
 <a name="top"></a>
 <div id="header">
-<div class="hleft">
-<?php	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Left Header','techozoic')) ) { } ?>
-</div>
-<div class="hright">
-<?php	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Right Header','techozoic')) ) { } ?>
-</div>
+<?php if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'left_header' ) ){
+	echo '<div class="hleft">'. "\n";
+	dynamic_sidebar( 'left_header' );
+	echo '</div>' . "\n";
+}	
+if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'right_header' ) ){
+	echo '<div class="hright">' . "\n";
+	dynamic_sidebar( 'right_header' );
+	echo '</div>' . "\n";
+}
+?>
 <div id="headerimgwrap">
 <div id="headerimg">
 <h1>
@@ -126,7 +131,7 @@ if (!empty ($description)) { ?>
 <div id="page">
 <div id="pagel">
 <div id="pager">
-<?php if ($tech['search_box'] == "Yes") {?>
+<?php if ($tech['search_box'] == "Yes" && !is_active_sidebar( 'right_header' )) {?>
 	<div id="search">
 	<?php 
 		if (function_exists('get_search_form')) {

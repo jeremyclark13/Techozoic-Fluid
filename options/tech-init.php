@@ -1,4 +1,8 @@
 <?php
+/*************************************************
+Tech Init script creates upload folder and moves images.
+Pulls options from existing Techozoic options table and adds defaults for new options .
+*************************************************/
 function tech_create_folders(){
 	$header_folder = TEMPLATEPATH . "/uploads/images/headers";
 	$background_folder = TEMPLATEPATH . "/uploads/images/backgrounds";

@@ -1,5 +1,7 @@
 <?php
-//This file holds the options array for use in the controlpanel.php and theme-init.php files.
+/*************************************************
+Holds all options for Admin panel and Init script
+*************************************************/
 $options = array (
 	array(	"name" => __("Layout","techozoic"),
               	"type" => "header",
@@ -43,7 +45,8 @@ $options = array (
             	"tooltip" => " <small><span id=\"page_width_error\"></span></small>",
             	"type" => "text"),
 
-		array(	"name" => __("Main Column <small>(Post Content)</small> Width - Percentage of Page Width","techozoic"),
+		array(	"name" => __("Main Column Width - <small>(Post Content)</small> ","techozoic"),
+				"desc"=> __("Percentage of Page Width"),
             	"id" => "main_column_width",
 				"old_id" => "tech_main_column_width",
 				"string" => "num",				
@@ -115,7 +118,7 @@ $options = array (
             	"options" => array("On", "Off")),
 
     	array(	"name" => __("Display Search box in header","techozoic"),
-				"desc" => __("Set to no if you don't want the search box to show in the header area","techozoic"),
+				"desc" => __("Set to no if you don't want the search box to show in the header area.  If widgets are assigned to Right Header search box is automatically disabled.","techozoic"),
             	"id" => "search_box",
 				"old_id" => "unused before 1.8.8",
             	"type" => "radio",
@@ -154,7 +157,7 @@ $options = array (
             	"type" => "textarea"),
 				
 		array("name" => __("Drop Shadow Boxes","techozoic"),
-				"desc" => __("Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safarai.","techozoic"),
+				"desc" => __("Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safari.","techozoic"),
             	"id" => "drop_shadow",
 				"old_id" => "unused before 1.9.1",
             	"std" => "",
