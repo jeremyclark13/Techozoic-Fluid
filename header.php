@@ -121,26 +121,13 @@ if (!empty ($description)) { ?>
 	<span class="description"><?php echo $description; ?></span>
 <?php 
 } ?>
-</div>
-</div>
+</div><!--end headerimg-->
+</div><!--end headerimgwrap-->
+
 <div id="headerl">
 <div id="headerr">
-</div>
-</div>
-</div>
-<div id="page">
-<div id="pagel">
-<div id="pager">
-<?php if ($tech['search_box'] == "Yes" && !is_active_sidebar( 'right_header' )) {?>
-	<div id="search">
-	<?php 
-		if (function_exists('get_search_form')) {
-			get_search_form();
-		} else {
-			include (TEMPLATEPATH . "/searchform.php"); 
-		}?>
-	</div>
-<?php } ?>
+</div><!--end headerr-->
+
 <?php 	if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
 ?>
 <div id="navmenu">
@@ -176,13 +163,29 @@ if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
 		<input type="hidden" name="redirect_to" value="<?php echo "http://".$_SERVER["SERVER_NAME"].$_SERVER['REQUEST_URI']; ?>" />
 		<input type="hidden" name="testcookie" value="1" />
 		</form>
-		</div>
-		</div>
+		</div><!--end aligncenter-->
+		</div><!--end loginthick-->
 <?php 	}
 	}
 ?>
-</div>
+</div><!--end navmenu-->
 <?php }
 if ($tech['breadcrumbs'] == "On"){
 	tech_breadcrumbs();
 }?>
+</div><!--end headerl-->
+</div><!--end header-->
+
+<div id="page">
+<div id="pagel">
+<div id="pager">
+<?php if ($tech['search_box'] == "Yes" && !is_active_sidebar( 'right_header' )) {?>
+	<div id="search">
+	<?php 
+		if (function_exists('get_search_form')) {
+			get_search_form();
+		} else {
+			include (TEMPLATEPATH . "/searchform.php"); 
+		}?>
+	</div>
+<?php } ?>

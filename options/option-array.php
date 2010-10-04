@@ -152,7 +152,7 @@ $options = array (
 				"desc" => __("Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link.","techozoic"),
             	"id" => "footer_text",
 				"old_id" => "unused before 1.8.8",
-            	"std" => "%BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% <br /> <small>%MYSQL%</small>",
+            	"std" => "%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% <br /> <small>%MYSQL%</small>",
             	"size" => "100",
             	"type" => "textarea"),
 				
@@ -162,7 +162,7 @@ $options = array (
 				"old_id" => "unused before 1.9.1",
             	"std" => "",
             	"type" => "checkbox",
-				"options" => array("Header Text", "Post Boxes")),
+				"options" => array("Header Text", "Post Boxes", "Images")),
 
     	array(	"name" => __("Static CSS","techozoic"),
 				"desc" => __("For Advanced Users who would like to edit the style.css file directly. Setting this to static will stop using the Dynamic style.php in favor of the static style.css  If you would like the changes you've made already to transfer then below  is the CSS being used currently and allow you to copy and paste to the style.css file.","techozoic"),
@@ -791,6 +791,14 @@ $options = array (
             	"type" => "select",
             	"std" => "Center",
             	"options" => array("Left","Right","Center")),
+				
+		array(	"name" => __("Header Image Vertical Alignment","techozoic"),
+				"desc"=> __("Align header to the Left, Right, or Center the image in the Header Container","techozoic"),
+            	"id" => "header_v_align",
+				"old_id" => "unused before 1.9.1",
+            	"type" => "select",
+            	"std" => "Center",
+            	"options" => array("Top","Center","Bottom")),
 
     	array(	"name" => __("Header Container Height","techozoic"),
 				"desc"=> __("Adjust the size of the container holding the header image<a href=\"javascript:tabchange(6)\">*(see notes)</a>  Default Height: 200px","techozoic"),

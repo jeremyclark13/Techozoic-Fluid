@@ -40,10 +40,16 @@
 		<form method="post" name="tech_header_height">
 		<table>
 		<tr><td><?php _e('Height of Container:','techozoic')?> </td><td><input name="header_height" id="header_height_2" type="text" value="<?php echo stripslashes($tech['header_height']);?>" size="5" />px</td></tr>
-		<tr><td><?php _e('Header Image Alignment:','techozoic')?> </td><td><select name="header_align" id="header_align_2">
+		<tr><td><?php _e('Header Image Horizontal Alignment:','techozoic')?> </td><td><select name="header_align" id="header_align_2">
                 <option <?php if ( $tech['header_align']  == "Left") { echo ' selected="selected"'; }?>>Left</option>
 				<option <?php if ( $tech['header_align']  == "Right") { echo ' selected="selected"'; }?>>Right</option>
 				<option <?php if ( $tech['header_align']  == "Center") { echo ' selected="selected"'; }?>>Center</option>
+            </select>
+			</td></tr>
+				<tr><td><?php _e('Header Image Vertical Alignment:','techozoic')?> </td><td><select name="header_v_align" id="header_v_align_2">
+                <option <?php if ( $tech['header_v_align']  == "Top") { echo ' selected="selected"'; }?>>Top</option>
+				<option <?php if ( $tech['header_v_align']  == "Center") { echo ' selected="selected"'; }?>>Center</option>
+				<option <?php if ( $tech['header_v_align']  == "Bottom") { echo ' selected="selected"'; }?>>Bottom</option>
             </select>
 			</td></tr>
 		</table>

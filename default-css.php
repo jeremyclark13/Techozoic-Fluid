@@ -46,7 +46,6 @@ padding:8px;
 }
 body {
 color:#333;
-text-align:center;
 margin:0;
 padding:0;
 }
@@ -62,6 +61,7 @@ background:transparent url({$home}/images/bgl.png) repeat-y left top;
 }
 #pager {
 background:transparent url({$home}/images/bgr.png) repeat-y right top;
+padding-top:15px;
 }
 .narrowcolumn .entry,.widecolumn .entry {
 line-height:1.3em;
@@ -288,12 +288,13 @@ width 100%;
 float:left;
 margin: 5px 3% 5px 10px;
 overflow:hidden;
-
+width:25%;
 }
 .hright{
 float:right;
 margin: 5px 10px 5px 3%;
 overflow: hidden;
+width:25%;
 }
 .hwidget ul {
 list-style:none;
@@ -322,7 +323,7 @@ text-decoration: none;
 #navmenu {
 background:url({$home}/images/navbarbg.png) repeat-x;
 height:60px;
-margin:0 0 auto;
+margin:-30px 0 auto;
 padding: 0 10px;
 }
 #dropdown, #dropdown ul, .menu, .menu ul {
@@ -420,10 +421,11 @@ padding:5px 0 0;
 #search {
 display:block;
 float:right;
+clear:right;
 border-right:none;
 font-size:1.3em;
 font-weight:bolder;
-margin:-40px 10px 0 0;
+margin:-80px 10px 0 0;
 }
 ul#nav li,ul#admin li, #nav2 li {
 display:inline;

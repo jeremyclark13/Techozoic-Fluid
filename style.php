@@ -51,6 +51,7 @@
 	$tech['blog_title_display'] = '';
 	$tech['blog_title_cursor'] = '';
 	$tech['header_align'] = strtolower($tech['header_align']);
+	$tech['header_v_align'] = strtolower($tech['header_v_align']);
 	$bg_image_repeat = explode(',', $tech['bg_image_repeat']);
 	$tech_bg_repeat = "";
 	if (in_array("X" , $bg_image_repeat)) {
@@ -176,7 +177,8 @@
 		$tech_drop_shadow = explode( ',' , $tech['drop_shadow']);
 		$tech_drop_shadow_class_map = array(
 		"Header Text" => "#headerimg",
-		"Post Boxes" => ".home .narrowcolumn .entry, .home .widecolumn .entry, .top"
+		"Post Boxes" => ".home .narrowcolumn .entry, .home .widecolumn .entry, .top",
+		"Images" => ".entry img, .entrytext img"
 		);
 		foreach ($tech_drop_shadow as $tds){
 			$tech_drop_shadow_classes .= ",". $tech_drop_shadow_class_map[$tds];
@@ -469,12 +471,12 @@ left:-50%;
 }
 CSS;
 	}
-	$tech_hwidget_height = $tech['header_height'] - 10;
+	$tech_hwidget_height = $tech['header_height'] - 40;
 	switch ($tech['header']){ 
 		case "Defined Here": 
 echo <<<CSS
 #header {
-background:url({$tech['header_image_url']}) no-repeat bottom {$tech['header_align']} {$tech_content_bg_color};
+background:url({$tech['header_image_url']}) no-repeat {$tech['header_v_align']} {$tech['header_align']} {$tech_content_bg_color};
 height: {$tech['header_height']}px;
 }
 .hleft, .hright {
@@ -485,22 +487,22 @@ CSS;
 		case "Rotate":
 echo <<<CSS
 #header {
-background:url({$home}/rotate.php) no-repeat bottom {$tech['header_align']} {$tech_content_bg_color};
+background:url({$home}/rotate.php) no-repeat {$tech['header_v_align']} {$tech['header_align']} {$tech_content_bg_color};
 height: 200px;
 }
 .hleft, .hright {
-height: 190px;
+height: 160px;
 }
 CSS;
 		break;
 		case "Landscape":
 echo <<<CSS
 #header {
-background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat bottom {$tech['header_align']} {$tech_content_bg_color};
+background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat {$tech['header_v_align']} {$tech['header_align']} {$tech_content_bg_color};
 height: 170px;
 }
 .hleft, .hright {
-height: 160px;
+height: 110px;
 }
 CSS;
 		break;
@@ -517,7 +519,7 @@ CSS;
 		default:
 echo <<<CSS
 #header {
-background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat bottom {$tech['header_align']} {$tech_content_bg_color};
+background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat {$tech['header_v_align']} {$tech['header_align']} {$tech_content_bg_color};
 height: {$tech['header_height']}px;
 }
 .hleft, .hright {

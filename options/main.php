@@ -92,6 +92,7 @@ function techozoic_add_admin() {
 			}  elseif (isset($_POST['tech_header_height'])){
 				$settings['header_height'] = preg_replace('/[^0-9.]/', '', $_POST['header_height']);
 				$settings['header_align'] = $_POST['header_align'];
+				$settings['header_v_align'] = $_POST['header_v_align'];
 				update_option('techozoic_options', $settings);
 			header("Location: admin.php?page=techozoic_header_admin");
 			}
