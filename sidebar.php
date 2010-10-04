@@ -8,19 +8,6 @@ if (function_exists('home_url')) {
 }
 ?>
 	<div id="r_sidebar" class="sidebar">
-<?php 	if ($tech['nav_menu_type'] != "Sidebar") {
-		if(is_page()) {
-			$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
-			if ($children) { ?>
-				<ul>
-					<li><h2><?php _e('Pages Below Current' ,'techozoic')?></h2>
-					<ul><?php echo $children; ?></ul>
-					</li>
-				</ul>
-<?php	 		} 
-			}
-		}
-?>
 	<ul>
 			
 <?php 	if (is_category()) { ?>
@@ -36,7 +23,19 @@ if (function_exists('home_url')) {
 <?php 	} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 		<li><p><?php printf(__('You are currently browsing the %1$s archives.','techozoic'),$home_url); ?></p></li>
 <?php 	} 
-	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Right Sidebar','techozoic')) ) { ?>
+	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Right Sidebar','techozoic')) ) { 
+	
+	if ($tech['nav_menu_type'] != "Sidebar") {
+		if(is_page()) {
+			$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
+			if ($children) { ?>
+					<li><h2 class="widgettitle"><?php _e('Pages Below Current' ,'techozoic')?></h2>
+					<ul><?php echo $children; ?></ul>
+					</li>
+<?php	 		} 
+			}
+		}
+?>
 		<li id="rss"><h2 class="widgettitle"><?php _e('Syndicate','techozoic')?></h2>
 		<ul>
 			<li><a href="<?php bloginfo('rss2_url'); ?>"><?php _e('RSS 2.0','techozoic')?></a></li>

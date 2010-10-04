@@ -41,6 +41,82 @@ Widget registration and custom widgets defined here
 		'after_title' => '</h2>'
 	));
 	
+
+	
+	class Techozoic_Font_Size_Widget extends WP_Widget {
+
+		function Techozoic_Font_Size_Widget() {
+			$widget_ops = array('classname' => 'techozoic_font_size', 'description' => __( 'Techozoic Font Size Control Widget' , 'techozoic') );
+			$this->WP_Widget('techozoic_font_size', __('Techozoic Font Size' , 'techozoic'), $widget_ops);
+		}
+
+		function widget( $args, $instance ) {
+			global $tech;
+			extract($args);
+			$title = apply_filters('widget_title', empty( $instance['title'] ) ? __('Resize Text'  , 'techozoic') : $instance['title']);
+			echo $before_widget;
+			echo '<a href="#" class="fontsizeminus">A-</a> |
+				<a href="#" class="fontreset">A</a> | 
+				<a href="#" class="fontsizeplus">A+</a>';
+			echo $after_widget;
+		}
+
+		function update( $new_instance, $old_instance ) {
+			$instance = $old_instance;
+			$new_instance = wp_parse_args( (array) $new_instance, array( 'title' => '') );
+			$instance['title'] = strip_tags($new_instance['title']);
+			return $instance;
+		}
+
+		function form( $instance ) {
+			$instance = wp_parse_args( (array) $instance, array( 'title' => '') );
+			$title = esc_attr( $instance['title'] );
+?>
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','techozoic'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+<?php
+		}
+	} //End Class Techozoic_Page_Widget
+	
+		class Techozoic_Page_Widget extends WP_Widget {
+
+		function Techozoic_Page_Widget() {
+			$widget_ops = array('classname' => 'techozoic_page', 'description' => __( 'Techozoic Child Page menu displays child pages below current page.' , 'techozoic') );
+			$this->WP_Widget('techozoic_page', __('Techozoic Child Page' , 'techozoic'), $widget_ops);
+		}
+
+		function widget( $args, $instance ) {
+			global $tech;
+			extract($args);
+			$title = apply_filters('widget_title', empty( $instance['title'] ) ? __('Pages Below Current'  , 'techozoic') : $instance['title']);
+			echo $before_widget;
+			global $post;
+			if(is_page()) {
+				$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
+				if ($children) {
+					if ( $title) {
+						echo $before_title . $title . $after_title;
+						}
+					echo "<ul>$children</ul>";
+				} 
+			}		
+			echo $after_widget;
+		}
+
+		function update( $new_instance, $old_instance ) {
+			$instance = $old_instance;
+			$new_instance = wp_parse_args( (array) $new_instance, array( 'title' => '') );
+			$instance['title'] = strip_tags($new_instance['title']);
+			return $instance;
+		}
+
+		function form( $instance ) {
+			$instance = wp_parse_args( (array) $instance, array('title' => '',) );
+			$title = esc_attr( $instance['title'] );
+?>
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','techozoic'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+<?php
+		}
+	} //End Class Techozoic_Page_Widget
 	
 	class Techozoic_Nav_Widget extends WP_Widget {
 
@@ -298,6 +374,8 @@ Widget registration and custom widgets defined here
 	
 		//Register Widgets for Sidebars
 		register_widget('Techozoic_Nav_Widget');
+		register_widget('Techozoic_Page_Widget');
+		register_widget('Techozoic_Font_Size_Widget');
 		register_widget('Techozoic_About_Widget');
 		register_widget('Techozoic_Meta_Widget');
 		register_widget('Techozoic_RSS_Widget');

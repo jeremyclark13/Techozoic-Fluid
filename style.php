@@ -200,6 +200,9 @@ font-family:{$tech['default_font']}, Sans-Serif;
 font-size: {$tech['body_font_size']}px;
 background:{$tech_bg_color} url({$tech['bg_image']}) repeat{$tech_bg_repeat} top left;
 }
+.techozoic_font_size{
+font-size: {$tech['body_font_size']}px;
+}
 .narrowcolumn .entry,.widecolumn .entry,.top {
 font-family:{$tech['body_font']}, Sans-Serif;
 background-color:{$tech_post_bg_color};
@@ -225,19 +228,18 @@ font-size: {$tech['post_text_font_size']}em;
 acronym,abbr,span.caps,small,.trackback li,#commentform input,#commentform textarea,.sidebar {
 font-size: {$tech['small_font_size']}em;
 }
-.description, ul#nav a, ul#admin a, ul#nav li.current_page_item a:hover,#headerimg h1 a, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a, .menu li a, .menu li.current-menu-item a{
+.description, ul#nav a, ul#admin a, #dropdown li.current_page_item a:hover, .menu li.current-menu-item a:hover, #dropdown li.current_page_item ul a, .menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover,#headerimg h1 a, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a, .menu li a, .menu li.current-menu-item a{
 color: {$tech_acc_color};
 }
-.author,#searchform #s,ul#nav li.current_page_item,#nav2 li.current_page_item,#nav2 li.current_page_parent,ul#nav2 li.current_page_ancestor, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,.postform,#TB_ajaxContent {
+.author,#searchform #s,ul#nav li.current_page_item,#nav2 li.current_page_item,#nav2 li.current_page_parent,ul#nav2 li.current_page_ancestor,#dropdown li.current_page_item, .menu li.current-menu-item, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,.postform,#TB_ajaxContent {
 background-color: {$tech_acc_color} ;
 }
-#dropdown li.current_page_item, .menu li.current-menu-item  {
-border: 1px solid {$tech_acc_color};
-}
 ul#nav li,ul#admin li, #nav2 li, ul#dropdown li, .menu li{
-font-family:{$tech['nav_font']}, Sans-Serif;
-font-size:{$tech['nav_text_font_size']}px;
 background-color: {$tech_nav_bg_color};
+}
+ul#nav li,ul#admin li, #nav2 li, ul#dropdown li a, .menu li a{
+font-family:{$tech['nav_font']}, Sans-Serif;
+font-size:{$tech['nav_text_font_size']}em;
 }
 .post_date {
 background-color:{$tech_acc_color};
@@ -251,8 +253,12 @@ border-bottom:1px {$tech_acc_color} solid;
 #content,h2,h2 a,h2 a:visited,h3,h3 a,h3 a:visited,h4,h5{
 color:{$tech_text_color};
 }
-a,h2 a:hover,h3 a:hover,.commentdiv a,.date_post,#searchform #s,#user_login,#user_pass,.postform,.commentdiv span, #sidenav a:visited {
+a,h2 a:hover,h3 a:hover,.commentdiv a, .commentdiv a:visited,#user_login,#user_pass,.postform,.commentdiv span, #sidenav a:visited {
 color:{$tech_link_color}; 
+text-decoration:none;
+}
+.date_post,#searchform #s {
+color:{$tech_post_bg_color}; 
 text-decoration:none;
 }
 a:hover,#headerimg h1 a:hover {

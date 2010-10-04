@@ -7,9 +7,13 @@
 $home = get_bloginfo('template_directory');
 echo " 
 /*Default Sytle*/
-.cufon-loading #headerimg h1,.cufon-loading .sidebar h2,.cufon-loading .sidebar h3,.cufon-loading #footer h2 ,.cufon-loading .post_title {
+.cufon-loading #headerimg h1,.cufon-loading .sidebar h2,.cufon-loading h1,.cufon-loading h2,.cufon-loading h3,.cufon-loading h4,.cufon-loading h5,.cufon-loading .sidebar h3,.cufon-loading #footer h2 ,.cufon-loading .post_title {
 	visibility: hidden !important;
 }
+.fontsizeminus{font-size:6px;}
+.fontreset{font-size: 12px;}
+.fontsizeplus{font-size: 18px;}
+
 .post_comment_cont{
 clear:both;
 margin:3px;
@@ -191,6 +195,8 @@ padding-top:6px;
 width:40px;
 height:35px;
 font-size:18px;
+font-weight:700;
+text-decoration:none;
 background:url({$home}/images/comment2.png) no-repeat top center;
 }
 .commentdiv span {
@@ -278,11 +284,11 @@ min-width: 760px;
 }
 #headerl{
 background:url('{$home}/images/bgl.png') repeat-y scroll left top transparent;
-width 100%;
+width: 100%;
 }
 #headerr{
 background:url('{$home}/images/bgr.png') repeat-y scroll right top transparent;
-width 100%;
+width: 100%;
 }
 .hleft{
 float:left;
@@ -371,6 +377,8 @@ display:none;
 }
 #dropdown li:hover ul, #dropdown li li:hover ul, #dropdown li li li:hover ul, #dropdown li li li li:hover ul, .menu li:hover ul, .menu li li:hover ul, .menu li li li:hover ul, .menu li li li li:hover ul  {
 display:block;
+-moz-box-shadow:none;
+-webkit-box-shadow:none;
 } 
 #nav2 li {
 margin-right:25px;
@@ -462,10 +470,10 @@ ul#admin li {
 ul#nav li.current_page_item, #dropdown li.current_page_item, .menu li.current-menu-item {
 border-bottom:1px dotted;
 }
-ul#nav li.current_page_item a ,#nav2 li.current_page_item a,#nav2 li.current_page_parent a, #nav2 li.current_page_ancestor a{
+ul#nav li.current_page_item a ,#nav2 li.current_page_item a,#nav2 li.current_page_parent a, #nav2 li.current_page_ancestor a,#dropdown li.current_page_item a, .menu li.current-menu-item a{
 color:#f7f7f7;
 }
-ul#nav li:hover,#nav2 li:hover, #nav2 li:active {
+ul#nav li:hover,#nav2 li:hover, #nav2 li:active, #dropdown li:hover, .menu li:hover {
 background:#efefef;
 -moz-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
 -webkit-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
@@ -594,7 +602,7 @@ p img {
 max-width:100%;
 padding:2px;
 }
-.wp-caption {
+.wp-caption, .gallery-caption {
 background-color:#f7f7f7;
 -moz-border-radius:3px;
 -webkit-border-radius:3px;

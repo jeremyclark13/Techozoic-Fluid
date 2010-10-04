@@ -321,7 +321,7 @@ $options = array (
              	"anchor" => "font"),
 	 
 		array(	"name" => __("Base Font Size","techozoic"),
-				"desc" => __("Default text","techozoic"),
+				"desc" => __("Default text.  <br />For more info on text size: <a href='http://www.w3schools.com/css/css_font.asp' title='W3Schools' target='_blank'> W3Schools Text Size</a>","techozoic"),
             	"id" => "body_font_size",
 				"old_id" => "tech_body_font_size",
 				"string" => "num",
@@ -365,9 +365,9 @@ $options = array (
             	"id" => "nav_text_font_size",
 				"old_id" => "unused before 1.8.8",
 				"string" => "num",
-            	"std" => "13",
+            	"std" => "1.3",
             	"size" => "2",
-            	"text" => "<strong>px</strong>",
+            	"text" => "em",
             	"java" => "onchange=\"textsize(this.form);\"",
             	"type" => "text"),				
 				
@@ -450,7 +450,7 @@ $options = array (
 				"old_id" => "unused before 1.8.7",
             	"std" => "",
             	"type" => "checkbox",
-				"options" => array("Main Blog Title","Sidebar Titles","Post Titles")),
+				"options" => array("Main Blog Title","Sidebar Titles","Post Titles","H1 Headings","H2 Headings","H3 Headings","H4 Headings","H5 Headings")),
 				
 		array("name" => __("Cufon Font Replacement","techozoic"),
 				"desc" => __("Choose the Font you would like to replace with. More coming in later versions.","techozoic"),

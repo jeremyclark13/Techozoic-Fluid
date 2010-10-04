@@ -38,6 +38,17 @@
 	if (!isset($content_width)) {
 		$content_width = tech_content_width();
 	}
+
+/**************************************
+	Techozoic Font Resize Script	
+	Since 1.9.1
+***************************************/
+	
+function tech_font_size_script() {
+	$script_dir = get_bloginfo('template_directory').'/js/';
+	wp_register_script('font-size', $script_dir .'font-resize.js', array('jquery'), '1.0');
+	wp_enqueue_script('font-size');
+}
 	
 /**************************************
 	Techozoic Navigation Selection Function
@@ -76,7 +87,7 @@ function tech_content_width(){
 		$c_width = $c_width /100;
 		$output = $p_width * $c_width;
 	} else {
-		$output = 400;
+		$output = 500;
 	}
 	return $output;
 }	
@@ -276,21 +287,24 @@ function tech_cufon_script() {
 
 function tech_cufon_options() {
 	global $tech;
-	$list ="";
-	$head = "";
-	if (strstr($tech['cufon_font_headings'], 'Main Blog Title')){
-		$list .="#headerimg h1 ,";
+	$list = "";
+	$headings = explode( ',' , $tech['cufon_font_headings']);
+	$class = array(
+		'Main Blog Title' => '#headerimg h1',
+		'Sidebar Titles' => '.sidebar h2, .sidebar h3, #footer h2',
+		'Post Titles' => '.post_title', 
+		'H1 Headings' => 'h1', 
+		'H2 Headings' => 'h2', 
+		'H3 Headings' => 'h3',
+		'H4 Headings' => 'h4',
+		'H5 Headings' => 'h5');
+	foreach ($headings as $head){
+		$list .= $class[$head] . ',';
 	}
-	if (strstr($tech['cufon_font_headings'], 'Sidebar Titles')){
-		$list .=" .sidebar h2, .sidebar h3, #footer h2 ,";
-	}
-	if (strstr($tech['cufon_font_headings'], 'Post Titles')){
-		$list .=".post_title ,";
-	}
-	$head .= "<script type='text/javascript'>\n";
-	$head .= "Cufon.replace('". $list ."',{hover:true});";
-	$head .= "</script>\n";
-	print $head;
+	$output = "<script type='text/javascript'>\n
+	Cufon.replace('". $list ."',{hover:true});\n
+	</script>\n";
+	print $output;
 }
 
 /**************************************
@@ -436,8 +450,6 @@ function techozoic_css_display(){
 if(function_exists('add_theme_support')) {
 	add_theme_support( 'post-thumbnails' );
 	//WP 2.9 Post Thumbnail Support
-	add_theme_support('menus');
-	//WP 3.0 Menus	
 	add_theme_support('automatic-feed-links');
 	//WP Auto Feed Links
 }
@@ -658,7 +670,9 @@ if ($tech['cufon_font'] == "Enable") {
 	add_action('template_redirect', 'tech_cufon_script');  // Calls script to add Cufon font replacement scripts See - http://cufon.shoqolate.com/
 	add_action('wp_head', 'tech_cufon_options');
 }
-
+if ( is_active_widget(false ,false, 'techozoic_font_size') ) {
+	add_action('template_redirect', 'tech_font_size_script');
+}	
 add_action('tech_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
 add_action('admin_menu', 'tech_create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis
 add_action('save_post', 'tech_save_postdata');  // Saves meta box data to postmeta table
