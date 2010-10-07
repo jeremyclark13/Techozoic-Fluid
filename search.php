@@ -5,7 +5,7 @@ if ($tech['single_sidebar'] == "Yes")  tech_show_sidebar("l");
 ?>
 	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
 <?php 	if (have_posts()) { ?>
-		<h2 class="pagetitle"><?php _e('Search Results for ' ,'techozoic');?><span class="search-terms">
+		<h1 class="pagetitle"><?php _e('Search Results for ' ,'techozoic');?><span class="search-terms">
 <?php	/* Search Count */ 
 		$allsearch = &new WP_Query("s=$s&showposts=-1"); 
 		$key = esc_html($s); 
@@ -16,7 +16,7 @@ if ($tech['single_sidebar'] == "Yes")  tech_show_sidebar("l");
 <?php	echo $count . ' ';
 		_e('articles','techozoic'); 
 		wp_reset_query(); ?>
-		</h2>
+		</h1>
 		<div class="navigation">
 	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
 	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>

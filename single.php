@@ -15,7 +15,8 @@ if (have_posts()) {
 		</div>
 		<div style="clear:both"></div>
 		<div class="post" id="post-<?php the_ID(); ?>">
-		<h2 class="post_title"><a href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h2><small><?php printf(__('By %s','techozoic'), get_the_author()); ?>.  <?php printf(__('Filed in %s','techozoic'),get_the_category_list(', ')) ?>&nbsp; | &nbsp;<?php edit_post_link(__('Edit','techozoic'), '', ''); ?>&nbsp;<br /><?php the_tags(); ?></small>
+		<h1 class="post_title"><a href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h1>
+		<small><?php printf(__('By %s','techozoic'), get_the_author()); ?>.  <?php printf(__('Filed in %s','techozoic'),get_the_category_list(', ')) ?>&nbsp; | &nbsp;<?php edit_post_link(__('Edit','techozoic'), '', ''); ?>&nbsp;<br /><?php the_tags(); ?></small>
 		<div class="toppost">
 		<a href="<?php if (function_exists('home_url')) { echo home_url(); } else { bloginfo('url'); } ?>"><img src="<?php bloginfo('template_directory'); ?>/images/icons/home.png" border="0" alt="Home" title="<?php printf(__('Go back to %s','techozoic'), get_bloginfo('name')); ?>" /></a>&nbsp;<?php tech_social_icons($home=false); ?>
 		</div>

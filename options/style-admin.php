@@ -171,3 +171,4 @@ $dir = TEMPLATEPATH;
 <div style="clear:both"></div>
 </div>
 		</div>
+		<div style="height:50px;clear:both"></div>

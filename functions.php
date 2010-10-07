@@ -111,45 +111,47 @@ function tech_footer_text(){
 ***************************************/
 function tech_show_sidebar($loc) {
 	global $tech;
-	switch ($tech['sidebar_pos']) {
-		case "Sidebar - Content - Sidebar":
-			$left = 1;
-			$right = 1;
-		break;
-		case "Content - Sidebar - Sidebar":
-			$left = 0;
-			$right = 2;
-		break;
-		case "Sidebar - Sidebar - Content":
-			$left = 2;
-			$right = 0;
-		break;
-		case "Content - Sidebar":
-			$left = 0;
-			$right = 1;
-		break;
-		case "Sidebar - Content":
-			$left = 1;
-			$right = 0;
-		break;
-	}
-	if ($loc == "l" && $left > 0){
-		if (function_exists('get_template_part')) {
-			get_template_part('sidebar','left');
-		} else {
-			include (TEMPLATEPATH . "/sidebar-left.php"); 
+	if ($tech['column'] > 1) {
+		switch ($tech['sidebar_pos']) {
+			case "Sidebar - Content - Sidebar":
+				$left = 1;
+				$right = 1;
+			break;
+			case "Content - Sidebar - Sidebar":
+				$left = 0;
+				$right = 2;
+			break;
+			case "Sidebar - Sidebar - Content":
+				$left = 2;
+				$right = 0;
+			break;
+			case "Content - Sidebar":
+				$left = 0;
+				$right = 1;
+			break;
+			case "Sidebar - Content":
+				$left = 1;
+				$right = 0;
+			break;
 		}
-		if ($left > 1){
-			get_sidebar();
-		}
-	}
-	if ($loc == "r" && $right > 0){
-		get_sidebar();
-		if ($right > 1){
+		if ($loc == "l" && $left > 0){
 			if (function_exists('get_template_part')) {
 				get_template_part('sidebar','left');
 			} else {
 				include (TEMPLATEPATH . "/sidebar-left.php"); 
+			}
+			if ($left > 1){
+				get_sidebar();
+			}
+		}
+		if ($loc == "r" && $right > 0){
+			get_sidebar();
+			if ($right > 1){
+				if (function_exists('get_template_part')) {
+					get_template_part('sidebar','left');
+				} else {
+					include (TEMPLATEPATH . "/sidebar-left.php"); 
+				}
 			}
 		}
 	}
@@ -290,7 +292,7 @@ function tech_cufon_options() {
 	$list = "";
 	$headings = explode( ',' , $tech['cufon_font_headings']);
 	$class = array(
-		'Main Blog Title' => '#headerimg h1',
+		'Main Blog Title' => '.blog_title',
 		'Sidebar Titles' => '.sidebar h2, .sidebar h3, #footer h2',
 		'Post Titles' => '.post_title', 
 		'H1 Headings' => 'h1', 
@@ -435,7 +437,6 @@ function tech_save_postdata( $post_id ) {
 	Techozoic Custom Meta Box
 	END
 ***************************************/
-
 function tech_new_var($public_query_vars) {
 	$public_query_vars[] = 'techozoic_css';
 	return $public_query_vars;
@@ -447,6 +448,7 @@ function techozoic_css_display(){
 		exit;
 	}
 }
+
 if(function_exists('add_theme_support')) {
 	add_theme_support( 'post-thumbnails' );
 	//WP 2.9 Post Thumbnail Support
@@ -510,7 +512,7 @@ function tech_first_run_options() {
 }//End first_run_options
 
 function tech_dropdown_js(){
-	wp_enqueue_script('dropdown', get_bloginfo('template_url') . 'js/dropdown.js',array('jquery'),'3.0' );
+	wp_enqueue_script('dropdown', get_bloginfo('template_url') . '/js/dropdown.js',array('jquery'),'3.0' );
 }//End Dropdown_js
 
 function tech_nav_link($where){

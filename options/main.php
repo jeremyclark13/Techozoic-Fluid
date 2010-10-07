@@ -71,6 +71,7 @@ function techozoic_add_admin() {
 					$settings['header_image_url'] = get_bloginfo('template_directory') . "/uploads/images/headers/" . $_POST['header_select'];
 				}
 			update_option('techozoic_options', $settings);
+			include(TEMPLATEPATH .'/options/css-build.php');
 			header("Location: admin.php?page=techozoic_header_admin&saved=true");	
 			} elseif(isset($_POST['tech_header_delete'])) {
 				$path = TEMPLATEPATH. "/uploads/images/headers/";
@@ -94,6 +95,7 @@ function techozoic_add_admin() {
 				$settings['header_align'] = $_POST['header_align'];
 				$settings['header_v_align'] = $_POST['header_v_align'];
 				update_option('techozoic_options', $settings);
+				include(TEMPLATEPATH .'/options/css-build.php');
 			header("Location: admin.php?page=techozoic_header_admin");
 			}
 		}
@@ -175,11 +177,13 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 							}
 						} elseif (($type == 'select') || ($type == 'radio')) {
 							$array = $value['options'];
-							if (in_array($_POST[$k], $array)){
-								$v = $_POST[$k];
-							} else {
-								$v = $value['std'];
-							}
+							if (isset($_POST[$k])){
+								if (in_array($_POST[$k], $array)){
+									$v = $_POST[$k];
+								} else {
+									$v = $value['std'];
+								}
+							} 
 						} elseif ($type == "upload") {
 							unset($v);
 							$image_url = $settings[$k];
@@ -230,6 +234,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 				$settings['ver'] = $version;
 				$settings['total'] = $settings['main_column_width'] + (($settings['column'] - 1) * $settings['sidebar_width']);
 				update_option('techozoic_options', $settings);
+				include(TEMPLATEPATH .'/options/css-build.php');
 				if (isset($error)){
 					header("Location: admin.php?page=$location&message=true&error=".$error."");
 					die;
@@ -247,6 +252,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 				$new_options['head_css'] = "no";
 				$new_options['ver'] = $version;
 				update_option('techozoic_options', $new_options);
+				include(TEMPLATEPATH .'/options/css-build.php');
 				header("Location: admin.php?page=$location&reset=true");
 				die;
 			}
@@ -531,6 +537,7 @@ function techozoic_admin() {
 		</script>
 		
 		</div>
+		<div style="height:50px;clear:both"></div>
 <?php
 } //End function mytheme_admin()
 function techozoic_header_admin() {

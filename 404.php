@@ -13,7 +13,7 @@ get_header();
 
 	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
 
-		<h2 class="center"><?php _e('Error 404 - Not Found' ,'techozoic') ?></h2>
+		<h2 class="aligncenter"><?php _e('Error 404 - Not Found' ,'techozoic') ?></h2>
 
 <h3><?php _e('Browse Archives' ,'techozoic')?></h3>
   <ul>

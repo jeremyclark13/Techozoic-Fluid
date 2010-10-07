@@ -54,7 +54,9 @@ jQuery(document).ready(function () {
 	jQuery('a.fontreset').click(function () {
 		
 		//set the default font size	
-		 elm.css({'fontSize' : reset});		
+		elm.css({'fontSize' : reset});
+		 //reset size var to default
+		size = str_replace(reset, 'px', '');		 
 	});
 		
 });

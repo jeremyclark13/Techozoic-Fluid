@@ -19,7 +19,7 @@ Widget registration and custom widgets defined here
 	register_sidebar(array(
 		'name'=>__('Footer - Limit 3 Widgets','techozoic'),
 		'id'=> 'tech_footer',
-		'before_widget' => '<div class="footercont"><ul><li>',
+		'before_widget' => '<div class="footercont"><ul><li class="widget %2$s">',
 		'after_widget' => '</li></ul></div>',
 		'before_title' => '<h2 class="widgettitle">',
 		'after_title' => '</h2>'
@@ -27,7 +27,7 @@ Widget registration and custom widgets defined here
 	register_sidebar(array(
 		'name'=>__('Right Header','techozoic'),
 		'id'=> 'right_header',
-		'before_widget' => '<div class="hwidget">',
+		'before_widget' => '<div class="hwidget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widgettitle">',
 		'after_title' => '</h2>'
@@ -35,7 +35,7 @@ Widget registration and custom widgets defined here
 	register_sidebar(array(
 		'name'=>__('Left Header','techozoic'),
 		'id'=> 'left_header',
-		'before_widget' => '<div class="hwidget">',
+		'before_widget' => '<div class="hwidget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widgettitle">',
 		'after_title' => '</h2>'
@@ -87,11 +87,18 @@ Widget registration and custom widgets defined here
 		function widget( $args, $instance ) {
 			global $tech;
 			extract($args);
-			$title = apply_filters('widget_title', empty( $instance['title'] ) ? __('Pages Below Current'  , 'techozoic') : $instance['title']);
+			$title = apply_filters('widget_title', empty( $instance['title'] ) ? __('Sub Pages'  , 'techozoic') : $instance['title']);
 			echo $before_widget;
 			global $post;
 			if(is_page()) {
-				$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
+				if(!$post->post_parent){
+						$children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
+					} else {
+						if($post->ancestors){
+							$ancestors = end($post->ancestors);
+							$children = wp_list_pages("title_li=&child_of=".$ancestors."&echo=0");
+						}
+					}
 				if ($children) {
 					if ( $title) {
 						echo $before_title . $title . $after_title;

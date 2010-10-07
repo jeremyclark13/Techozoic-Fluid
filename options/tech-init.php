@@ -76,5 +76,6 @@ function tech_update_options(){
 				$new_options['ver'] = $version;
 				add_option( 'techozoic_options', $new_options );
 			}
+			include(TEMPLATEPATH .'/options/css-build.php');
 	}
 ?>

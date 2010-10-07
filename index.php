@@ -13,7 +13,7 @@ global $tech;
 	if ($tech['home_sidebar'] == "Yes")  tech_show_sidebar("l");
 ?>
 
-	<div id="content" class="<?php if ($tech['home_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
+	<div id="content" class="<?php if ($tech['home_sidebar'] != "Yes" || $tech['column'] === 1) { echo "wide"; }else {echo "narrow";}?>column">
 	<div class="navigation">
 	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
 	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>

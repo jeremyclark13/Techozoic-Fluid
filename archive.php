@@ -36,7 +36,7 @@ global $tech;
 	</div>
 		<?php while (have_posts()) : the_post(); ?>
 		<div class="post">
-				<h3 id="post-<?php the_ID(); ?>" class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h3>
+				<h2 id="post-<?php the_ID(); ?>" class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h2>
 				<small><?php the_time('l, F jS, Y') ?></small>
 				
 				<div class="entry">

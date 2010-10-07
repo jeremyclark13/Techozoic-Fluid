@@ -97,15 +97,22 @@ if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'right_header' ) )
 ?>
 <div id="headerimgwrap">
 <div id="headerimg">
-<h1>
-<?php 
+<?php if(is_single() || is_page()) { 
+	echo "<span class=\"blog_title\">";
+} else { 
+	echo "<h1 class=\"blog_title\">";
+} 
 if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { ?>
 	<a><?php wp_title('',true,''); ?></a><?php 
 } else { ?>
 	<a href="<?php if (function_exists('home_url')) { echo home_url(); } else { bloginfo('url'); } ?>/"><?php bloginfo('name'); ?></a>
 <?php 
-} ?></h1>
-<?php 
+} 
+if(is_single() || is_page()) { 
+	echo "</span>"; 
+} else { 
+	echo "</h1>";
+} 
 if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { 
 	$description = "<a href=\"";
 	if (function_exists('home_url')) { 

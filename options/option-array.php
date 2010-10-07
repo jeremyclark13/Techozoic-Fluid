@@ -23,7 +23,7 @@ $options = array (
             	"id" => "sidebar_pos",
             	"type" => "select",
             	"std" => "Sidebar - Content - Sidebar",
-            	"options" => array("-- 3 Column Layouts","Sidebar - Content - Sidebar", "Content - Sidebar - Sidebar","Sidebar - Sidebar - Content","-- 2 Column Layouts","Content - Sidebar", "Sidebar - Content")),
+            	"options" => array("-- 3 Column Layouts","Sidebar - Content - Sidebar", "Content - Sidebar - Sidebar","Sidebar - Sidebar - Content","-- 2 Column Layouts","Content - Sidebar", "Sidebar - Content","No Sidebars")),
 	
 		array(	"name" => __("Fixed or Fluid Width","techozoic"),		
             	"id" => "page_type",
@@ -147,6 +147,14 @@ $options = array (
             	"type" => "radio",
             	"std" => "Single Post Title",
             	"options" => array("Single Post Title", "Always Blog Title")),
+				
+    	array( 	"name" => __("Blog Title Box Styling","techozoic"),
+				"desc" => __("Styling of box around the Blog Title <br />- On: White rounded box with transparency <br />- Off: Title and tagline text only.","techozoic"),
+            	"id" => "blog_title_box",
+				"old_id" => "unused before 1.9.1",
+            	"type" => "radio",
+            	"std" => "On",
+            	"options" => array("On", "Off")),
 				
 		array(	"name" => __("Custom Footer Text","techozoic"),
 				"desc" => __("Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link.","techozoic"),

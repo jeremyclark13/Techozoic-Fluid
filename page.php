@@ -6,9 +6,9 @@ if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { te
 ?>
 	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { echo "narrow"; }else {echo "wide";}?>column">
 <?php	if (strlen(wp_title('', false))>0) {
-?>		<h2 class="post_title">
+?>		<h1 class="post_title">
 		<?php wp_title('', 'display'); 
-?>		</h2>
+?>		</h1>
 <?php 	}
 	if (have_posts()) { 
 		while (have_posts()) { 
