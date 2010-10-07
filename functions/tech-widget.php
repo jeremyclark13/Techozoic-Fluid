@@ -169,7 +169,7 @@ Widget registration and custom widgets defined here
 
 		function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
-			$new_instance = wp_parse_args( (array) $new_instance, array( 'cats' => 0, 'pages' => 0,'separate' => 0, 'title' => '') );
+			$new_instance = wp_parse_args( (array) $new_instance, array( 'cats' => 0, 'pages' => 1,'separate' => 0, 'title' => '') );
 			$instance['title'] = strip_tags($new_instance['title']);
 			$instance['cats'] = $new_instance['cats'] ? 1 : 0;
 			$instance['pages'] = $new_instance['pages'] ? 1 : 0;
@@ -244,7 +244,7 @@ Widget registration and custom widgets defined here
 		function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
 			$instance['title'] = strip_tags($new_instance['title']);
-			$new_instance = wp_parse_args( (array) $new_instance, array( 'about' => '', 'gravatar' => 0, 'title' => '') );
+			$new_instance = wp_parse_args( (array) $new_instance, array( 'about' => '', 'gravatar' => 0, 'title' => '', 'facebook' => 1 , 'myspace' => 1 , 'twitter' => 1, 'number' => 50) );
 			$instance['about'] = $new_instance['about'];
 			$instance['facebook'] = $new_instance['facebook'] ? 1 : 0;
 			$instance['myspace'] = $new_instance['myspace'] ? 1 : 0;
@@ -255,7 +255,7 @@ Widget registration and custom widgets defined here
 		}
 
 		function form( $instance ) {
-			$instance = wp_parse_args( (array) $instance, array('about' => '', 'gravatar' => 0) );
+			$instance = wp_parse_args( (array) $instance, array('about' => '', 'gravatar' => 0, 'title' => '', 'facebook' => 1 , 'myspace' => 1 , 'twitter' => 1, 'number'=> 50) );
 			$title = esc_attr( $instance['title'] );
 			$about = $instance['about'] ;
 			$facebook = $instance['facebook'] ? 'checked="checked"' : '';

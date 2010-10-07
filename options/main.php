@@ -6,7 +6,7 @@ $tech_error = array ( __("Return Error","techozoic"), __("File Already Exists","
 $theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = $theme_data['Version'];
 function techozoic_add_admin() {
-	global $themename, $shortname, $options, $version;
+	global $themename, $shortname, $options, $version, $wp_version;
 	$settings = get_option('techozoic_options');
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_export_admin" ) {
 		if ( isset($_POST['action']) && $_POST['action'] == 'export') {
@@ -251,12 +251,22 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 				die;
 			}
     	}
-	add_menu_page($themename." Options", "Techozoic", 'edit_themes', 'techozoic_main_admin','','',61);
-	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s General Settings","techozoic"),$themename), __("General Settings","techozoic"), 'edit_themes', 'techozoic_main_admin', 'techozoic_admin');
-	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Header Settings","techozoic"),$themename), __("Header Settings","techozoic"), 'edit_themes', 'techozoic_header_admin', 'techozoic_header_admin');
-	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Style Settings","techozoic"),$themename), __("CSS Settings","techozoic"), 'edit_themes', 'techozoic_style_admin', 'techozoic_style_admin');
-	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Export/Import Settings","techozoic"),$themename), __("Export/Import Settings","techozoic"), 'edit_themes', 'techozoic_export_admin', 'techozoic_export_admin');
-	add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Delete Settings","techozoic"),$themename), __("Delete Theme Settings","techozoic"), 'edit_themes', 'techozoic_delete_admin', 'techozoic_delete_admin');
+	if($wp_version >= 3){ 
+		add_menu_page( sprintf(__("%s Options", "techozoic"),$themename), $themename, 'edit_theme_options', 'techozoic_main_admin','','',61);
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s General Settings","techozoic"),$themename), __("General Settings","techozoic"), 'edit_theme_options', 'techozoic_main_admin', 'techozoic_admin');
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Header Settings","techozoic"),$themename), __("Header Settings","techozoic"), 'edit_theme_options', 'techozoic_header_admin', 'techozoic_header_admin');
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Style Settings","techozoic"),$themename), __("CSS Settings","techozoic"), 'edit_theme_options', 'techozoic_style_admin', 'techozoic_style_admin');
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Export/Import Settings","techozoic"),$themename), __("Export/Import Settings","techozoic"), 'edit_theme_options', 'techozoic_export_admin', 'techozoic_export_admin');
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Delete Settings","techozoic"),$themename), __("Delete Theme Settings","techozoic"), 'edit_theme_options', 'techozoic_delete_admin', 'techozoic_delete_admin');
+	} else {
+		add_menu_page( sprintf(__("%s Options", "techozoic"),$themename), $themename, 'edit_themes', 'techozoic_main_admin','','',61);
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s General Settings","techozoic"),$themename), __("General Settings","techozoic"), 'edit_themes', 'techozoic_main_admin', 'techozoic_admin');
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Header Settings","techozoic"),$themename), __("Header Settings","techozoic"), 'edit_themes', 'techozoic_header_admin', 'techozoic_header_admin');
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Style Settings","techozoic"),$themename), __("CSS Settings","techozoic"), 'edit_themes', 'techozoic_style_admin', 'techozoic_style_admin');
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Export/Import Settings","techozoic"),$themename), __("Export/Import Settings","techozoic"), 'edit_themes', 'techozoic_export_admin', 'techozoic_export_admin');
+		add_submenu_page('techozoic_main_admin' ,sprintf(__("%s Delete Settings","techozoic"),$themename), __("Delete Theme Settings","techozoic"), 'edit_themes', 'techozoic_delete_admin', 'techozoic_delete_admin');
+	}
+	
 
 	}//End Function
 function techozoic_admin() {
@@ -544,13 +554,13 @@ function techozoic_top_menu() {
 	</ul>
 	<div style="clear:both"></div>';
 }
-function techozoic_links_box() {
-	$output ='	<div class="tech_links_box">';
+function techozoic_links_box($class="tech_links_box") {
+	$output ='	<div class="' . $class . '">';
 		// Get RSS Feed(s)
 		$feed_address = "http://techozoic.clark-technet.com/category/news/feed";
 		$feed_items = 5;
 		$tech_changelog = get_bloginfo('template_directory') . '/changelog.php';
-		$output .= "<h3>" . __('Techozoic Links','techozoic') . "</h3>";
+		$output .= "<h3>" . __('Techozoic News','techozoic') . "</h3>";
 		include_once(ABSPATH . WPINC . '/feed.php');
 		// Get a SimplePie feed object from the specified feed source.
 		$rss = fetch_feed($feed_address);
@@ -633,6 +643,9 @@ function tech_admin_js() {
 	wp_enqueue_script('controlpanel', get_bloginfo('template_directory') . '/js/controlpanel.js');
 	wp_enqueue_script('tabcontent', get_bloginfo('template_directory') . '/js/tabcontent.js');
 	wp_enqueue_script('jscolor', get_bloginfo('template_directory') . '/js/jscolor/jscolor.js');
+}
+
+function tech_admin_css(){
 	wp_enqueue_style('options', get_bloginfo('template_directory') . '/options/options.css');
 }
 
@@ -660,6 +673,7 @@ if (isset($_GET['page'])){
 		add_filter('admin_footer_text','techozoic_footer');
 	}
 }
+add_action('admin_print_styles', 'tech_admin_css');	
 add_action('admin_menu', 'techozoic_add_admin'); 
 add_action('admin_head','tech_menu_button_css');
 ?>

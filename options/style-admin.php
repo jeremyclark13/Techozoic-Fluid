@@ -1,7 +1,7 @@
 <?php
     	global $themename, $shortname, $options, $tech_error;
-    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings saved","techozoic"), $themename) . '</strong></p></div>';
-    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings reset","techozoic"), $themename) . '</strong> </p></div>';
+    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__("%s settings saved","techozoic"), $themename) . '</strong></p></div>';
+    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__("%s settings reset","techozoic"), $themename) . '</strong> </p></div>';
 		if ( isset($_REQUEST['message']) && $_REQUEST['message'] ) {
 			if ($_REQUEST['error']) {
 				echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';

@@ -461,7 +461,7 @@ if(function_exists('register_nav_menus')) {
 	) );
 }
 function techozoic_enqueue() {
-	wp_enqueue_script('tech_thickbox', get_bloginfo('wpurl') . '/wp-content/themes/techozoic-fluid/js/thickbox.js',array('jquery'),'3.0' );
+	wp_enqueue_script('tech_thickbox', get_bloginfo('template_url') . 'js/thickbox.js',array('jquery'),'3.0' );
 }
 
 function tech_dashboard_widgets() {
@@ -470,19 +470,27 @@ function tech_dashboard_widgets() {
 }
 
 function techozoic_dashboard_widget() { ?>
-   	<p><?php _e('Thank you for using the Techozoic Theme.  ' ,'techozoic'); 
-		if (current_user_can('install_themes')) { 
-			printf(__('Visit the %s to start customizing Techozoic.  ' ,'techozoic'),'<a href="admin.php?page=techozoic_main_admin" title="' . __("options page" ,"techozoic").'">'.__("options page" ,"techozoic").'</a>'); 
-			} 
-		printf(__('If your having problems or would like to suggest a new feature, please visit the %s.' ,'techozoic'), '<a href="http://clark-technet.com/theme-support/techozoic/" title="' .__('Support Forum' ,'techozoic').'"> '.__('support forum' ,'techozoic').'</a>')?>
-		<br />
+   	<div style="float:left;width: 46%;margin:1% 10px;">
+	<div class="alignleft">
 		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 		<input type="hidden" name="cmd" value="_s-xclick">
 		<input type="hidden" name="hosted_button_id" value="10999960">
 		<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
 		<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 		</form>
+		</div>
+		<p>
+		<?php _e('Thank you for using the Techozoic Theme.  ' ,'techozoic'); 
+		if (current_user_can('install_themes')) { 
+			printf(__('Visit the %s to start customizing Techozoic.  ' ,'techozoic'),'<a href="admin.php?page=techozoic_main_admin" title="' . __("options page" ,"techozoic").'">'.__("options page" ,"techozoic").'</a>'); 
+			} 
+		printf(__('If your having problems or would like to suggest a new feature, please visit the %s.' ,'techozoic'), '<a href="http://clark-technet.com/theme-support/techozoic/" title="' .__('Support Forum' ,'techozoic').'"> '.__('support forum' ,'techozoic').'</a>')?>
 		</p>
+		</div>
+		<?php techozoic_links_box('tech_links_front'); ?>
+		<div class="clear"> </div>
+		<h5 style="margin:8px 0 0;"><?php _e('Techozoic Settings Pages','techozoic'); ?></h5>
+		<?php echo techozoic_top_menu(); ?>
 <?php
 }
 
@@ -502,7 +510,7 @@ function tech_first_run_options() {
 }//End first_run_options
 
 function tech_dropdown_js(){
-	wp_enqueue_script('dropdown', get_bloginfo('wpurl') . '/wp-content/themes/techozoic-fluid/js/dropdown.js',array('jquery'),'3.0' );
+	wp_enqueue_script('dropdown', get_bloginfo('template_url') . 'js/dropdown.js',array('jquery'),'3.0' );
 }//End Dropdown_js
 
 function tech_nav_link($where){
