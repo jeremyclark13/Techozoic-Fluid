@@ -140,6 +140,7 @@ Header
 	margin: 5px 3% 5px 10px;
 	overflow:hidden;
 	width:25%;
+	height: 160px;
 }
 
 .hright{
@@ -147,6 +148,7 @@ Header
 	margin: 5px 10px 5px 3%;
 	overflow: hidden;
 	width:25%;
+	height: 160px;
 }
 
 .hwidget ul {
@@ -172,43 +174,44 @@ Header
 /*************************************
 Headings
  *************************************/
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5,.blog_title{
 	color:#2C4353;
 	font-family:Verdana, Sans-Serif;
 	text-decoration:none;
 }
 
-h1{
+h1,.blog_title{
 	font-size:3em;
 	font-weight:700;
 	line-height:1.3em;
 	margin:0;
 }
 
-h1 a,h1 a:hover,h1 a:visited{
-	text-decoration:none;
+h1 a,h1 a:hover,h1 a:visited,.blog_title a,.blog_title a:hover,.blog_title a:visited{
+	text-decoration:none !important;
 }
 
-#headerimg h1{
+.blog_title{
 	text-align:left;
+	display:block;
 }
 
-#headerimg h1 a{
-	color:#A0B3C2;
+.blog_title a,.blog_title a:visited{
+	color:#A0B3C2 !important;
 	padding:5px;
 }
 
-#headerimg h1 a:hover{
+.blog_title a:hover{
 	color:#147;
 	text-decoration:underline;
 }
 
-.single #headerimg h1 a:hover{
+.single .blog_tile a:hover{
 	cursor:default;
 	text-decoration:none;
 }
 
-h2{
+h2,.post_title{
 	font-size:2em;
 	font-weight:700;
 	letter-spacing:-0.9px;
@@ -386,6 +389,9 @@ ul.comment-preview li:hover{
 	width:100%;
 }
 
+.sticky .entry, .sticky .top {
+	background-color:#D1D1D1 !important;
+}
 .narrowcolumn .postmetadata{
 	padding-top:5px;
 	text-align:center;
@@ -711,7 +717,7 @@ Nav Menus
 	padding:5px 0 0;
 	position:relative;
 	width:100%;
-	z-index:300;
+	z-index:10;
 }
 
 #dropdown a, .menu a{
@@ -721,6 +727,10 @@ Nav Menus
 	font-weight:bolder;
 	padding:3px;
 	text-decoration:none;
+}
+
+#dropdown a:hover, .menu a:hover{
+	text-decoration:none !important;
 }
 
 #dropdown li, .menu li{

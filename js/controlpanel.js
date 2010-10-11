@@ -212,6 +212,21 @@ function header(form){
 	} 
 }
 
+function sidebarwidth(form){
+	for (var i=0; i < document.tech_options.sidebar_pos.length; i++){
+		if (document.tech_options.sidebar_pos[i].selected){
+			var sidebar_width = document.tech_options.sidebar_pos[i].value;   
+		} 
+	}
+	if (sidebar_width == "Sidebar - Content") {
+		document.tech_options.l_sidebar_width.disabled = false;
+		document.tech_options.r_sidebar_width.disabled = true;
+	} else {
+		document.tech_options.l_sidebar_width.disabled = true;
+		document.tech_options.r_sidebar_width.disabled = false;
+	}
+}
+
 function pagewidth(form){
 	for (var i=0; i < document.tech_options.column.length; i++){
 		if (document.tech_options.column[i].checked){
@@ -224,12 +239,13 @@ function pagewidth(form){
 		} 
 	}
 	var a = (form.main_column_width.value != '') ? eval(form.main_column_width.value) : 0;
-	var b = (form.sidebar_width.value != '') ? eval(form.sidebar_width.value) : 0;
+	var left = (form.l_sidebar_width.value != '') ? eval(form.l_sidebar_width.value) : 0;
+	var right = (form.r_sidebar_width.value != '') ? eval(form.r_sidebar_width.value) : 0;
 	var c = c - 1;
-	var b = b * c;
+	var b = left + right;
 	if (c == 2) { 
-		document.tech_options.sidebar_width.disabled = false;
-		document.getElementById('sidebar_s').innerHTML = 's';
+		document.tech_options.l_sidebar_width.disabled = false;
+		document.tech_options.r_sidebar_width.disabled = false;
 		form.sidebar_pos.options[1].selected=true;
 		form.sidebar_pos.disabled=false;
 		form.sidebar_pos.options[0].disabled=true;
@@ -241,8 +257,8 @@ function pagewidth(form){
 		form.sidebar_pos.options[6].disabled=true;
 		form.sidebar_pos.options[7].disabled=true;
 	} else if (c == 1) {
-		document.tech_options.sidebar_width.disabled = false;
-		document.getElementById('sidebar_s').innerHTML = '';
+		document.tech_options.l_sidebar_width.disabled = true;
+		document.tech_options.r_sidebar_width.disabled = false;
 		form.sidebar_pos.options[5].selected=true;
 		form.sidebar_pos.disabled=false;
 		form.sidebar_pos.options[0].disabled=true;
@@ -254,8 +270,8 @@ function pagewidth(form){
 		form.sidebar_pos.options[6].disabled=false;
 		form.sidebar_pos.options[7].disabled=true;
 	} else {
-		document.tech_options.sidebar_width.disabled = true;
-		document.getElementById('sidebar_s').innerHTML = '';
+		document.tech_options.l_sidebar_width.disabled = true;
+		document.tech_options.r_sidebar_width.disabled = true;
 		form.sidebar_pos.options[7].selected=true;
 		form.sidebar_pos.disabled=false;
 		form.sidebar_pos.options[0].disabled=true;

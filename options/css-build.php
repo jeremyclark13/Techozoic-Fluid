@@ -186,7 +186,7 @@ font-size: {$tech['body_font_size']}px;
 font-family:{$tech['body_font']}, Sans-Serif;
 background-color:{$tech_post_bg_color};
 }
-h1,h2,h3,h4,h5{
+h1,h2,h3,h4,h5,.blog_title{
 font-family:{$tech['header_font']}, Sans-Serif;
 }
 .blog_title{
@@ -197,6 +197,7 @@ font-size: {$tech['post_heading_font_size']}em;
 }
 .widgettitle {
 font-size: {$tech['side_heading_font_size']}em;
+margin: 1px 0;
 }
 .sidebar h3 {
 font-size: {$tech_sidebar_h3_font_size}em;
@@ -297,19 +298,19 @@ width:{$tech['main_column_width']}%;
 }
 CSS;
 	} else if ($tech['column'] == 2) {
-		if ($tech['main_column_width'] == 0 && $tech['sidebar_width'] != 0) {
-			$tech['main_column_width'] = 97 - $tech['sidebar_width'];
-		} elseif ($tech['main_column_width'] == 0){
-			$tech['main_column_width'] = 70;
-		}
-		if ($tech['sidebar_width'] == 0 && $tech['main_column_width'] != 70) {  
-			$tech['sidebar_width'] = 96 - $tech['main_column_width'];
-		} elseif ($tech['sidebar_width'] == 0){
-			$tech['sidebar_width'] = 23;
-		}
-		$tech['main_column_width'] = $tech['main_column_width'] - 5;
-		$tech['sidebar_width'] = $tech['sidebar_width'] - 3;
 		if ($tech['sidebar_pos'] =='Content - Sidebar') {
+			if ($tech['main_column_width'] == 0 && $tech['r_sidebar_width'] != 0 ) {
+				$tech['main_column_width'] = 97 - $tech['r_sidebar_width'];
+			} elseif ($tech['main_column_width'] == 0){
+				$tech['main_column_width'] = 70;
+			}
+			if ($tech['r_sidebar_width'] == 0 && $tech['main_column_width'] != 70) {  
+				$tech['r_sidebar_width'] = 96 - $tech['main_column_width'];
+			} elseif ($tech['sidebar_width'] == 0){
+				$tech['r_sidebar_width'] = 23;
+			}
+			$tech['main_column_width'] = $tech['main_column_width'] - 5;
+			$tech['r_sidebar_width'] = $tech['r_sidebar_width'] - 3;
 echo <<<CSS
 #page, #header {
 width: {$tech['page_width']}{$tech['sign']};
@@ -323,10 +324,22 @@ width:{$tech['main_column_width']}%;
 #r_sidebar {
 float:right;
 padding:10px 2% 0 1%;
-width:{$tech['sidebar_width']}%
+width:{$tech['r_sidebar_width']}%
 }
 CSS;
-			} else { 
+		} else { 
+			if ($tech['main_column_width'] == 0 && $tech['l_sidebar_width'] != 0 ) {
+				$tech['main_column_width'] = 97 - $tech['l_sidebar_width'];
+			} elseif ($tech['main_column_width'] == 0){
+				$tech['main_column_width'] = 70;
+			}
+			if ($tech['l_sidebar_width'] == 0 && $tech['main_column_width'] != 70) {  
+				$tech['l_sidebar_width'] = 96 - $tech['main_column_width'];
+			} elseif ($tech['sidebar_width'] == 0){
+				$tech['l_sidebar_width'] = 23;
+			}
+			$tech['main_column_width'] = $tech['main_column_width'] - 5;
+			$tech['l_sidebar_width'] = $tech['l_sidebar_width'] - 3;
 echo <<<CSS
 #page, #header {
 width: {$tech['page_width']}{$tech['sign']};
@@ -340,23 +353,26 @@ width:{$tech['main_column_width']}%;
 #l_sidebar {
 float:left;
 padding:10px 1% 0 2%;
-width:{$tech['sidebar_width']}%
+width:{$tech['l_sidebar_width']}%
 }
 CSS;
 		}
 	} else {
-		if ($tech['main_column_width'] == 0 && $tech['sidebar_width'] != 0) {
-			$tech['main_column_width'] = 96 - ($tech['sidebar_width'] * 2);
+		if ($tech['main_column_width'] == 0 && $tech['l_sidebar_width'] != 0 && $tech['r_sidebar_width'] != 0) {
+			$tech['main_column_width'] = 96 - ($tech['l_sidebar_width'] + $tech['r_sidebar_width']);
 		} elseif ($tech['main_column_width'] == 0) {
 			$tech['main_column_width'] = 55;
 		}
-		if ($tech['sidebar_width'] == 0 && $tech['main_column_width'] != 55) {  
-			$tech['sidebar_width'] = (98 - $tech['main_column_width']) / 2;
-		} elseif ($tech['sidebar_width'] == 0) {
-			$tech['sidebar_width'] = 22;
+		if ($tech['l_sidebar_width'] == 0 && $tech['r_sidebar_width'] == 0 && $tech['main_column_width'] != 55) {  
+			$tech['l_sidebar_width'] = (98 - $tech['main_column_width']) / 2;
+			$tech['r_sidebar_width'] = (98 - $tech['main_column_width']) / 2;
+		} elseif ($tech['l_sidebar_width'] == 0 && $tech['r_sidebar_width'] == 0) {
+			$tech['l_sidebar_width'] = 22;
+			$tech['r_sidebar_width'] = 22;
 		} 
 		$tech['main_column_width'] = $tech['main_column_width'] - 2;
-		$tech['sidebar_width'] = $tech['sidebar_width'] - 2;
+		$tech['l_sidebar_width'] = $tech['l_sidebar_width'] - 2;
+		$tech['r_sidebar_width'] = $tech['r_sidebar_width'] - 2;
 		if ($tech['sidebar_pos'] =='Content - Sidebar - Sidebar') {
 echo <<<CSS
 #page, #header {
@@ -371,13 +387,13 @@ width:{$tech['main_column_width']}%;
 #l_sidebar {
 float:right;
 padding:10px 0 0 2%;
-width:{$tech['sidebar_width']}%
+width:{$tech['l_sidebar_width']}%
 }
 #r_sidebar {
 float:right;
 clear:right;
 padding:10px 2% 0 0;
-width:{$tech['sidebar_width']}%
+width:{$tech['r_sidebar_width']}%
 }
 CSS;
 		} elseif ($tech['sidebar_pos'] =='Sidebar - Content - Sidebar') { 
@@ -394,15 +410,15 @@ width:{$tech['main_column_width']}%;
 #r_sidebar {
 float:right;
 padding:10px 2% 0 0;
-width:{$tech['sidebar_width']}%
+width:{$tech['r_sidebar_width']}%
 }
 CSS;
-$tech['sidebar_width'] = $tech['sidebar_width'] - 2;
+$tech['l_sidebar_width'] = $tech['l_sidebar_width'] - 2;
 echo <<<CSS
 #l_sidebar {
 float:left;
 padding:10px 0 0 2%;
-width:{$tech['sidebar_width']}%
+width:{$tech['l_sidebar_width']}%
 }
 CSS;
 		} else {
@@ -419,15 +435,15 @@ width:{$tech['main_column_width']}%;
 #r_sidebar {
 float:left;
 padding:10px 2% 0 0;
-width:{$tech['sidebar_width']}%
+width:{$tech['r_sidebar_width']}%
 }
 CSS;
-$tech['sidebar_width'] = $tech['sidebar_width'] - 2;
+$tech['l_sidebar_width'] = $tech['l_sidebar_width'] - 2;
 echo <<<CSS
 #l_sidebar {
 float:left;
 padding:10px 0 0 2%;
-width:{$tech['sidebar_width']}%
+width:{$tech['l_sidebar_width']}%
 }
 CSS;
 		}
@@ -847,6 +863,7 @@ width:20%;
 .hwidget ul {
 list-style:none;
 padding-left:0;
+margin: 2px 3px;
 }
 .hwidget{
 margin: 2px;
@@ -871,7 +888,7 @@ text-decoration: none;
 #navmenu {
 background:url({$img_path}/images/navbarbg.png) repeat-x;
 height:60px;
-margin:-30px 0 auto;
+margin:-30px 0 -20px;
 padding: 0 10px;
 }
 #dropdown, #dropdown ul, .menu, .menu ul {

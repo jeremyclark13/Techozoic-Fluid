@@ -25,13 +25,13 @@ function techozoic_add_admin() {
 	}
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_delete_admin" ) {
 		if( isset($_POST['action']) && 'delete-settings' == $_REQUEST['action'] ) {
-			delete_option($shortname.'_options');
-			delete_option($shortname.'_activation_check');
+			delete_option('techozoic_options');
+			delete_option('techozoic_activation_check');
+			delete_option('tech_styles');
 			update_option('template', 'default');
 			update_option('stylesheet', 'default');
 			delete_option('current_theme');
-			$theme = get_current_theme();
-			do_action('switch_theme', $theme);
+			do_action('switch_theme', 'default');
 			header("Location: themes.php");
 			die;
 		}

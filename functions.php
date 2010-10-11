@@ -1,4 +1,18 @@
 <?php
+/**************************************
+	Loads dynamic styles if get variable is set to css
+	Rebuilds styles stored in database if set to build
+	Since 1.9.1
+***************************************/
+	if (isset($_GET['techozoic_css'])){
+		if ($_GET['techozoic_css'] == 'css'){
+			include_once (TEMPLATEPATH . '/style.php');
+			exit;
+		} elseif ($_GET['techozoic_css'] == 'build') {
+			include_once(TEMPLATEPATH . '/options/css-build.php');
+		}
+	}
+	//Continue Normal Functions
 	load_theme_textdomain( 'techozoic', TEMPLATEPATH.'/languages');
 	$locale = get_locale();
 	$locale_file = TEMPLATEPATH."/languages/$locale.php";
@@ -28,17 +42,39 @@
 		include_once(TEMPLATEPATH . '/options/main.php');
 	}
 	// Include other custom functions files
-	include(TEMPLATEPATH.'/functions/tech-widget.php');
-	include(TEMPLATEPATH.'/functions/tech-comments-functions.php');
+	//A custom.php file can be added and included without being overwritten by theme updates
+	include(TEMPLATEPATH . '/functions/tech-widget.php');
+	include(TEMPLATEPATH . '/functions/tech-comments-functions.php');
+	if(file_exists(TEMPLATEPATH . '/functions/custom.php')){
+		include(TEMPLATEPATH . '/functions/custom.php');
+	}
 	global $tech;
-	$tech = get_option('techozoic_options');
+	if ($tech = get_option('techozoic_options') ){
+		$tech = get_option('techozoic_options');
+	} else {
+		include_once(TEMPLATEPATH . '/options/tech-init.php');
+		$tech = tech_temp_options();
+	}
 	$theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 	$version = $theme_data['Version'];
 
 	if (!isset($content_width)) {
 		$content_width = tech_content_width();
 	}
-
+	
+/**************************************
+	Techozoic WP 3 menu fallback
+	Since 1.9.1
+***************************************/
+	
+function tech_menu_fallback(){
+	$output = ' <ul id="dropdown"> ';
+	$clean_page_list = wp_list_pages('sort_column=menu_order&title_li=&echo=0');
+	$clean_page_list = preg_replace('/title=\"(.*?)\"/','',$clean_page_list);
+	$output .= $clean_page_list;
+	$output .= '</ul>';
+	echo $output;
+}	
 /**************************************
 	Techozoic Font Resize Script	
 	Since 1.9.1
@@ -70,7 +106,7 @@ function tech_nav_select(){
 		case "WP 3 Menu":
 			$var = "wp3";
 			break;
-		}
+	}
 	return $var;
 }
 	
@@ -437,17 +473,6 @@ function tech_save_postdata( $post_id ) {
 	Techozoic Custom Meta Box
 	END
 ***************************************/
-function tech_new_var($public_query_vars) {
-	$public_query_vars[] = 'techozoic_css';
-	return $public_query_vars;
-}
-function techozoic_css_display(){
-	$css = get_query_var('techozoic_css');
-	if ($css == 'css'){
-		include_once (TEMPLATEPATH . '/style.php');
-		exit;
-	}
-}
 
 if(function_exists('add_theme_support')) {
 	add_theme_support( 'post-thumbnails' );
@@ -502,7 +527,7 @@ function tech_first_run_options() {
 	$background_folder = TEMPLATEPATH. "/uploads/images/backgrounds";
   	$check = get_option('techozoic_activation_check');
   	if ($check != $version || !file_exists($header_folder) || !file_exists($background_folder)) {
-		include(TEMPLATEPATH . '/options/tech-init.php');
+		include_once(TEMPLATEPATH . '/options/tech-init.php');
 		tech_update_options();
 		tech_create_folders();
     		// Add marker so it doesn't run in future
@@ -686,10 +711,10 @@ if ( is_active_widget(false ,false, 'techozoic_font_size') ) {
 add_action('tech_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
 add_action('admin_menu', 'tech_create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis
 add_action('save_post', 'tech_save_postdata');  // Saves meta box data to postmeta table
-add_filter('query_vars', 'tech_new_var'); //ADD css query variable for calling dynamic css
-add_action('template_redirect', 'techozoic_css_display'); //Outputs dynamic style.php and then exits to stop additional processing
 add_action('wp_head', 'tech_feed_link'); //Tests if WP 3.0 automatic_feed_link is available if not echos feed link to wp_head
-add_action('wp_head', 'tech_first_run_options'); //Calls tech_init.php which sets up default options in database and creates folder to hold custom images
-add_action('admin_head', 'tech_first_run_options'); //Same as above but works for the admin side
+if ( !isset($_GET['preview'])){ //Doesn't run when previewing the theme before activating the theme
+	add_action('wp_head', 'tech_first_run_options'); //Calls tech_init.php which sets up default options in database and creates folder to hold custom images
+	add_action('admin_head', 'tech_first_run_options'); //Same as above but works for the admin side
+}
 add_action('wp_dashboard_setup', 'tech_dashboard_widgets'); //Add Techozoic dashboard widget with info for theme and donate button
 ?>

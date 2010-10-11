@@ -52,15 +52,12 @@ else { ?>
 } ?>
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 <?php 
-	if ($tech['static_css'] == "Dynamic") {
-?>
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php if (function_exists('home_url')) { echo home_url(); } else { bloginfo('url'); }?>/?techozoic_css=css"/>
+	if ($tech['static_css'] == "Static" || isset($_GET['preview']) ) { ?>
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/style.css" />
 <?php
-	} else {
-?>
-		<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/style.css" />
-<?php }
-?>
+	} else { ?>
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php if (function_exists('home_url')) { echo home_url(); } else { bloginfo('url'); }?>/?techozoic_css=css"/>
+<?php } ?>
 <!--[if IE 6]>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/ie6.css" />
 <![endif]-->
