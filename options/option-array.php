@@ -755,7 +755,7 @@ $options = array (
 				"old_id" => "unused before 1.8.8",
             	"std" => "Delicious,Digg,RSS Icon",
             	"type" => "checkbox",
-				"options" => array("Delicious","Digg","Facebook","MySpace","StumbleUpon","Twitter","RSS Icon")),
+				"options" => array("Delicious","Digg","Facebook","LinkedIn","MySpace","NewsVine","StumbleUpon","Twitter","Reddit","RSS Icon")),
 				
 		array("name" => __("Single Page Social Media Icons","techozoic"),
 				"desc" => __("Choose which social media icons you would like displayed on the single post page.","techozoic"),
@@ -763,7 +763,7 @@ $options = array (
 				"old_id" => "unused before 1.8.8",
             	"std" => "Delicious,Digg,RSS Icon",
             	"type" => "checkbox",
-				"options" => array("Delicious","Digg","Facebook","MySpace","StumbleUpon","Twitter","RSS Icon")),
+				"options" => array("Delicious","Digg","Facebook","LinkedIn","MySpace","NewsVine","StumbleUpon","Twitter","Reddit","RSS Icon")),
 				
     	array(	"name" => __("Facebook Profile","techozoic"),
 				"desc"=> __("Used for the About widget Must be full link to profile page","techozoic"),

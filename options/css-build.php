@@ -571,7 +571,7 @@ echo <<<CSS
 	visibility: hidden !important;
 }
 .fontsizeminus{
-font-size:6px;
+font-size:8px;
 }
 .fontreset{
 font-size: 12px;

@@ -231,14 +231,19 @@ function tech_social_icons($home=true){
 	$link = get_permalink();
 	$title = $post->post_title;
 	$url_title = urlencode($post->post_title);
+	$excerpt = urlencode($post->post_excerpt);
+	$home_title = urlencode(get_bloginfo( 'name' ));
 	$social_links = array(
-		"Delicious" => "<a href=\"http://delicious.com/post?url={$link}&amp;title={$url_title}\" title=\"". __('del.icio.us this!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/delicious_16.png\" alt=\"Delicious This\" /></a>",
-		"Digg" => "<a href=\"http://digg.com/submit?phase=2&amp;url={$link}&amp;title={$url_title} \" title=\"". __('Digg this!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/digg_16.png\" alt=\"Digg This\"/></a>",
-		"Facebook" => "<a href=\"http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}\" title=\"". __('Share on Facebook!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/facebook_16.png\" alt=\"Share on Facebook\"/></a>",
-		"MySpace" => "<a href=\"http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}\" title=\"". __('Share on Myspace!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/myspace_16.png\" alt=\"Share on Myspace\"/></a>",
-		"StumbleUpon" => "<a href=\"http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}\" title=\"". __('Stumble Upon this!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/stumbleupon_16.png\" alt=\"Stumble Upon This\"/></a>",
-		"Twitter" => "<a href=\"http://twitter.com/home?status=Reading%20{$url_title}%20on%20{$short_link}\" title=\"". __('Tweet this!','techozoic')."\" target=\"_blank\"><img src=\"{$image}/twitter_16.png\" alt=\"Tweet This\"/></a>",
-		"RSS Icon" => "<a href=\"".get_post_comments_feed_link()."\" title=\"".__('Subscribe to Feed','techozoic')."\"><img src=\"{$image}/rss_16.png\" alt=\"".__('RSS 2.0','techozoic')."\"/></a>");
+		"Delicious" => "<a href=\"http://delicious.com/post?url={$link}&amp;title={$url_title}\" title=\"" .  __('del.icio.us this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/delicious_16.png\" alt=\"" .  __('del.icio.us this!','techozoic') . "\" /></a>",
+		"Digg" => "<a href=\"http://digg.com/submit?phase=2&amp;url={$link}&amp;title={$url_title} \" title=\"" .  __('Digg this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/digg_16.png\" alt=\"" .  __('Digg this!','techozoic') . "\"/></a>",
+		"Facebook" => "<a href=\"http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Facebook!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/facebook_16.png\" alt=\"" .  __('Share on Facebook!','techozoic') . "\"/></a>",
+		"LinkedIn" => "<a href =\"http://www.linkedin.com/shareArticle?mini=true&url={$link}&title={$url_title}&summary={$excerpt}&source={$home_title}\" title=\"" .  __('Share on LinkedIn!','techozoic') . "target=\"_blank\"><img src=\"{$image}/linkedin_16.png\" alt=\"" .  __('Share on LinkedIn!','techozoic') . "\" /></a>",
+		"MySpace" => "<a href=\"http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Myspace!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/myspace_16.png\" alt=\"" .  __('Share on Myspace!','techozoic') . "\"/></a>",
+		"NewsVine" => "<a href=\"http://www.newsvine.com/_tools/seed&amp;save?u={$link}\" title=\"" .  __('Share on NewsVine!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/newsvine_16.png\" alt=\"" .  __('Share on NewsVine!','techozoic') . "\"/></a>",
+		"StumbleUpon" => "<a href=\"http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}\" title=\"" .  __('Stumble Upon this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/stumbleupon_16.png\" alt=\"" .  __('Stumble Upon this!','techozoic') . "\"/></a>",
+		"Twitter" => "<a href=\"http://twitter.com/home?status=Reading%20{$url_title}%20on%20{$short_link}\" title=\"" .  __('Tweet this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/twitter_16.png\" alt=\"" .  __('Tweet this!','techozoic') . "\"/></a>",
+		"Reddit" => "<a href=\"http://reddit.com/submit?url={$link}&amp;title={$url_title}\" title=\"" .  __('Share on Reddit!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/reddit_16.png\" alt=\"" .  __('Share on Reddit!','techozoic') . "\" /></a>",
+		"RSS Icon" => "<a href=\"".get_post_comments_feed_link()."\" title=\"".__('Subscribe to Feed','techozoic')."\"><img src=\"{$image}/rss_16.png\" alt=\"" . __('RSS 2.0','techozoic') . "\"/></a>");
 	if ($home == true){
 		foreach ($home_icons as $soc){
 			echo $social_links[$soc] ."&nbsp;";
@@ -610,8 +615,9 @@ function tech_breadcrumbs() {
 		} elseif ( is_year() ) {
 		  echo $currentBefore . get_the_time('Y') . $currentAfter;
 	 
-		} elseif ( is_single() ) {
-		  $cat = get_the_category(); $cat = $cat[0];
+		} elseif ( is_single() && !is_attachment() ) {
+		  $cat = get_the_category(); 
+		  $cat = $cat[0];
 		  echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
 		  echo $currentBefore;
 		  the_title();

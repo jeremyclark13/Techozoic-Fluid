@@ -52,7 +52,7 @@ else { ?>
 } ?>
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 <?php 
-	if ($tech['static_css'] == "Static" || isset($_GET['preview']) ) { ?>
+	if ($tech['static_css'] == "Static" || (isset($_GET['stylesheet']) && $_GET['stylesheet'] = 'techozoic-fluid') ) { ?>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/style.css" />
 <?php
 	} else { ?>
@@ -75,7 +75,7 @@ else { ?>
 	<link rel="icon" href="<?php echo $tech['favicon_image'];?>" type="image/x-icon" />
 	<link rel="shortcut icon" href="<?php echo $tech['favicon_image'];?>" type="image/x-icon" />
 <?php } 
-if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
 wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
