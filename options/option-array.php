@@ -112,7 +112,7 @@ $options = array (
             	"std" => "No",
             	"options" => array("Yes", "No")),
 
-    	array(  "name" => __("SEO Features<a href=\"javascript:tabchange(6)\">*(see notes)</a>","techozoic"),
+    	array(  "name" => __("SEO Features","techozoic"),
 				"desc" => __("Disable this if any SEO plugins are used","techozoic"),
             	"id" => "seo",
 				"old_id" => "techseo",
@@ -795,7 +795,7 @@ $options = array (
              	"anchor" =>"headerset"),	
 
 		array(	"name" => __("Header Image","techozoic"),
-				"desc" => __("<strong> Use the <a href=\"admin.php?page=techozoic_header_admin\">Header Image page</a> to upload custom headers and choose header image.</strong> If errors occur use dropdown menu  Select Rotate to rotate through all images <a href=\"javascript:tabchange(6)\">*(see notes)</a> ,   or select Defined Here and input URL below","techozoic"),
+				"desc" => __("<strong> Use the <a href=\"admin.php?page=techozoic_header_admin\">Header Image page</a> to upload custom headers and choose header image.</strong> If errors occur use dropdown menu  Select Rotate to rotate through all images,   or select Defined Here and input URL below","techozoic"),
             	"id" => "header",
 				"old_id" => "techheader",
             	"type" => "select",
@@ -820,7 +820,7 @@ $options = array (
             	"options" => array("Top","Center","Bottom")),
 
     	array(	"name" => __("Header Container Height","techozoic"),
-				"desc"=> __("Adjust the size of the container holding the header image<a href=\"javascript:tabchange(6)\">*(see notes)</a>  Default Height: 200px","techozoic"),
+				"desc"=> __("Adjust the size of the container holding the header image  Default Height: 200px","techozoic"),
             	"id" => "header_height",
 				"old_id" => "unused before 1.8.4",
             	"std" => "200",
@@ -829,7 +829,7 @@ $options = array (
             	"type" => "text"),				
 				
     	array(	"name" => __("Header Image URL","techozoic"),
-				"desc" => __("Needs to be full path the header image  Example: <em>http://www.example.com/header.jpg</em> <a href=\"javascript:tabchange(6)\">*(see notes)</a>  Max Height: 200px","techozoic"),
+				"desc" => __("Needs to be full path the header image  Example: <em>http://www.example.com/header.jpg</em>  Max Height: 200px","techozoic"),
             	"id" => "header_image_url",
 				"old_id" => "tech_header_image_url",
             	"std" => "http://",
