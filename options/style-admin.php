@@ -122,12 +122,14 @@
 		<span class="tech_submit submit save">
 			<input name="save" type="submit" value="<?php _e("Save changes","techozoic");?>" />    
 			<input type="hidden" name="action" value="save" />
+			<?php wp_nonce_field('techozoic_form_submit','techozioc_nonce_field_submit'); ?>			
 		</span>
 		</form>
 		<form method="post" onsubmit="return verify()">
 			<span class="tech_submit submit reset">
 				<input name="reset" type="submit" value="<?php _e("Reset","techozoic");?>" />
 				<input type="hidden" name="action" value="reset" />
+				<?php wp_nonce_field('techozoic_form_reset','techozioc_nonce_field_reset'); ?>
 			</span>
 		</form>
 	</div>
@@ -167,6 +169,7 @@ $dir = TEMPLATEPATH;
 		echo "<div class=\"updated fade\">" . sprintf(__('Please make sure <strong>%s</strong> is writable to enable automatic copying of stylesheet.','techozoic'),TEMPLATEPATH) . "</div>"; 
 	}?>
 <textarea cols="100" rows="20" onclick="javascript:select();" name="style" readonly="readonly" style="width:90%;"><?php echo $string;?></textarea>
+<?php wp_nonce_field('techozoic_form_style','techozioc_nonce_field_style'); ?>
 </form>
 <div style="clear:both"></div>
 </div>

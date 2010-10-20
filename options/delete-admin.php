@@ -13,6 +13,7 @@
 				<span class="tech_submit submit save">
 					<input name="delete" type="submit" value="<?php _e('Delete Settings','techozoic') ?>" style="color:#b00;"/>
 					<input type="hidden" name="action" value="delete-settings" />
+					<?php wp_nonce_field('techozoic_form_delete','techozioc_nonce_field_delete'); ?>
 				</span>
 			</form>	
 		</div>

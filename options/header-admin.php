@@ -3,7 +3,7 @@
     	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings saved","techozoic"), $themename) . '</strong></p></div>';
     	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings reset","techozoic"), $themename) . '</strong> </p></div>';
 		if ( isset($_REQUEST['message']) && $_REQUEST['message'] ) {
-			if ($_REQUEST['error']) {
+			if (isset($_REQUEST['error']) && $_REQUEST['error'] ) {
 				echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';
 				} else { 
 				echo '<div id="message" class="updated fade"><p><strong>' . __("Image Uploaded","techozoic") . '</strong> </p></div>';
@@ -11,6 +11,8 @@
 			}
 	$tech = get_option('techozoic_options');
 	$header_folder = TEMPLATEPATH. "/uploads/images/headers";
+	$header_select_nonce = wp_create_nonce  ('header-select');
+	$header_delete_nonce = wp_create_nonce  ('header-deleet');
 ?>
 	<div class="tech_head">
 	<?php techozoic_top_menu();?>
@@ -31,6 +33,7 @@
 				<input type="file" name="file" /><br />
 				<span class="tech_submit submit save">
 				<input type="submit" name="submit" value="<?php _e('Upload','techozoic')?>" />
+				<?php wp_nonce_field('techozoic_form_upload','techozioc_nonce_field_upload'); ?>
 				</span><br /><br />
 			</form>
 <?php 		} else { 
@@ -55,6 +58,7 @@
 		</table>
 		<span class="tech_submit submit save">
 		<input name="tech_header_height" type="submit" value="<?php _e('Save Settings','techozoic')?>" />
+		<?php wp_nonce_field('techozoic_form_submit','techozioc_nonce_field_submit'); ?>		
 		</span>
 		</form>
 		<br />
@@ -71,6 +75,7 @@
 				<span class="tech_submit submit save">
 				<input name="tech_header_select" type="submit" value="<?php _e('Rotate','techozoic')?>" />
 				<input type="hidden" name="header_select" value="Rotate.jpg" />
+				<input type="hidden" name="techozioc_nonce_field_header_select" value="<?php echo $header_select_nonce;?>" />
 				</span>
 				</form>
 				<br />
@@ -82,6 +87,7 @@
 				<span class="tech_submit submit save">
 				<input name="tech_header_select" type="submit" value="<?php _e('No Header Image','techozoic')?>" />
 				<input type="hidden" name="header_select" value="none.jpg" />
+				<input type="hidden" name="techozioc_nonce_field_header_select" value="<?php echo $header_select_nonce;?>" />
 				</span>
 				</form>
 				<br />
@@ -141,12 +147,14 @@
 				<span class="tech_submit submit save">
 				<input name="tech_header_select" type="submit" value="<?php _e('Select This Header','techozoic') ?>" />
 				<input type="hidden" name="header_select" value="<?php echo $file ;?>" />
+				<input type="hidden" name="techozioc_nonce_field_header_select" value="<?php echo $header_select_nonce;?>" />
 				</span>
 				</form>
 				<form method="post" name="tech_header_delete" onsubmit="return delverify()">
 				<span class="tech_submit submit reset">
 				<input name="tech_header_delete" type="submit" value="<?php _e('Delete This Header','techozoic') ?>" /> 
 				<input type="hidden" name="header_delete" value="<?php echo $file ;?>" />
+				<input type="hidden" name="techozioc_nonce_field_header_delete" value="<?php echo $header_delete_nonce;?>" />				
 				</span>
 				</form>
 				</div>

@@ -14,6 +14,7 @@
 		<span class="tech_submit submit save">
 			<input name="export" type="submit" value="<?php _e('Export Settings','techozoic')?>" />
 			<input type="hidden" name="action" value="export" />
+			<?php wp_nonce_field('techozoic_form_export','techozioc_nonce_field_export'); ?>
 		</span>
 	</form>	
 	<div style="clear:both"></div>
@@ -23,6 +24,7 @@
 		<input type="file" name="settings" /><br />
 		<span class="tech_submit submit save">
 			<input type="submit" name="submit" value="<?php _e('Import Settings','techozoic')?>" />
+			<?php wp_nonce_field('techozoic_form_import','techozioc_nonce_field_import'); ?>
 		</span><br /><br />
 	</form>
 	</div>

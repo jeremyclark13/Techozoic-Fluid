@@ -9,10 +9,10 @@ function techozoic_add_admin() {
 	global $themename, $shortname, $options, $version, $wp_version;
 	$settings = get_option('techozoic_options');
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_export_admin" ) {
-		if ( isset($_POST['action']) && $_POST['action'] == 'export') {
+		if ( isset($_POST['action']) && $_POST['action'] == 'export' && check_admin_referer('techozoic_form_export','techozioc_nonce_field_export') ) {
 			tech_export();
 		}
-		if (isset($_FILES['settings'])){
+		if (isset($_FILES['settings']) && check_admin_referer('techozoic_form_import','techozioc_nonce_field_import') ){
 			if ($_FILES["settings"]["error"] > 0){
 				echo "Error: " . $_FILES["settings"]["error"] . "<br />";
 			  } else{
@@ -24,7 +24,7 @@ function techozoic_add_admin() {
 		}
 	}
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_delete_admin" ) {
-		if( isset($_POST['action']) && 'delete-settings' == $_REQUEST['action'] ) {
+		if( isset($_POST['action']) && 'delete-settings' == $_REQUEST['action'] && check_admin_referer('techozoic_form_delete','techozioc_nonce_field_delete') ) {
 			delete_option('techozoic_options');
 			delete_option('techozoic_activation_check');
 			delete_option('tech_styles');
@@ -37,7 +37,7 @@ function techozoic_add_admin() {
 		}
 	}
 	if ( isset($_GET['page']) &&$_GET['page'] == "techozoic_header_admin" ) {
-			if (isset($_FILES['file'])){
+		if (isset($_FILES['file']) && check_admin_referer('techozoic_form_upload','techozioc_nonce_field_upload') ){
 			$dir = TEMPLATEPATH. "/uploads/images/headers/";
 			if (is_writable($dir)) {
 				if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/pjpeg")) && ($_FILES["file"]["size"] < 1048576)) {
@@ -60,7 +60,7 @@ function techozoic_add_admin() {
 				header("Location: admin.php?page=techozoic_header_admin&message=true&error=3");
 				}
 			}
-			if (isset($_POST['tech_header_select'])){
+			if (isset($_POST['tech_header_select']) && wp_verify_nonce($_POST['techozioc_nonce_field_header_select'], 'header-select')){
 				$default_headers = array ("Rotate.jpg" ,"none.jpg", "Random_Lines_1.jpg", "Random_Lines_2.jpg", "Landscape.jpg", "Technology.jpg", "Grunge.jpg");
 				if (in_array($_POST['header_select'], $default_headers)){
 					$_POST['header_select'] = substr($_POST['header_select'], 0,strrpos($_POST['header_select'],'.'));
@@ -73,7 +73,7 @@ function techozoic_add_admin() {
 			update_option('techozoic_options', $settings);
 			include(TEMPLATEPATH .'/options/css-build.php');
 			header("Location: admin.php?page=techozoic_header_admin&saved=true");	
-			} elseif(isset($_POST['tech_header_delete'])) {
+			} elseif(isset($_POST['tech_header_delete']) && ! wp_verify_nonce($_POST['techozioc_nonce_field_header_delete'], 'header-delete')) {
 				$path = TEMPLATEPATH. "/uploads/images/headers/";
 				$dir_handle = @opendir($path) or die("Unable to open $path");
 				$delvars = array();
@@ -90,7 +90,7 @@ function techozoic_add_admin() {
 					header("Location: admin.php?page=techozoic_header_admin&message=true&error=4");
 				}
 			header("Location: admin.php?page=techozoic_header_admin");
-			}  elseif (isset($_POST['tech_header_height'])){
+			}  elseif (isset($_POST['tech_header_height']) && check_admin_referer('techozoic_form_submit','techozioc_nonce_field_submit') ){
 				$settings['header_height'] = preg_replace('/[^0-9.]/', '', $_POST['header_height']);
 				$settings['header_align'] = $_POST['header_align'];
 				$settings['header_v_align'] = $_POST['header_v_align'];
@@ -100,7 +100,7 @@ function techozoic_add_admin() {
 			}
 		}
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_style_admin" ) {		
-		if(isset($_POST['style'])){
+		if(isset($_POST['style']) && check_admin_referer('techozoic_form_style','techozioc_nonce_field_style') ){
 			$file_name = TEMPLATEPATH ."/style.css";
 			$orig_file = TEMPLATEPATH ."/reset-style.css";
 			$bu_file = TEMPLATEPATH ."/style.css.bu";
@@ -133,7 +133,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 	}	
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_main_admin" or isset($_GET['page']) && $_GET['page'] == "techozoic_style_admin") {
 			$location = $_GET['page'];
-		   	if ( isset($_POST['action']) && $_POST['action'] == 'save' ) {
+		   	if ( isset($_POST['action']) && $_POST['action'] == 'save' && check_admin_referer('techozoic_form_submit','techozioc_nonce_field_submit') ) {
 				foreach ($options as $value) {
 					$k = "";
 					$st = "";
@@ -232,7 +232,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 				$settings['test'] = "set";
 				$settings['head_css'] = "no";
 				$settings['ver'] = $version;
-				$settings['total'] = $settings['main_column_width'] + (($settings['column'] - 1) * $settings['sidebar_width']);
+				$settings['total'] = $settings['main_column_width'] + ($settings['l_sidebar_width'] + $settings['r_sidebar_width']);
 				update_option('techozoic_options', $settings);
 				include(TEMPLATEPATH .'/options/css-build.php');
 				if (isset($error)){
@@ -242,7 +242,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 					header("Location: admin.php?page=$location&saved=true");
 					die;
 				}
-        	} else if( isset($_POST['action']) && 'reset' == $_POST['action'] ) {
+        	} else if( isset($_POST['action']) && 'reset' == $_POST['action'] && check_admin_referer('techozoic_form_reset','techozioc_nonce_field_reset') ) {
 				foreach ($options as $value) {
 				$k = $value['id'];
 				$v = $value['std'];
@@ -521,12 +521,14 @@ function techozoic_admin() {
 		<span class="tech_submit submit save">
 			<input name="save" id="save_button" type="submit" value="<?php _e("Save changes","techozoic");?>" />    
 			<input type="hidden" name="action" value="save" />
+			<?php wp_nonce_field('techozoic_form_submit','techozioc_nonce_field_submit'); ?>
 		</span>
 		</form>
 		<form method="post" onsubmit="return verify()">
 			<span class="tech_submit submit reset">
 				<input name="reset" type="submit" value="<?php _e("Reset","techozoic");?>" />
 				<input type="hidden" name="action" value="reset" />
+				<?php wp_nonce_field('techozoic_form_reset','techozioc_nonce_field_reset'); ?>
 			</span>
 		</form>
 	</div>
