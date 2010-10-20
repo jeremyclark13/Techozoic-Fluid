@@ -513,7 +513,7 @@ function techozoic_dashboard_widget() { ?>
 		</div>
 		<p>
 		<?php _e('Thank you for using the Techozoic Theme.  ' ,'techozoic'); 
-		if (current_user_can('install_themes')) { 
+		if (current_user_can('edit_theme') || current_user_can('edit_theme_options')) { 
 			printf(__('Visit the %s to start customizing Techozoic.  ' ,'techozoic'),'<a href="admin.php?page=techozoic_main_admin" title="' . __("options page" ,"techozoic").'">'.__("options page" ,"techozoic").'</a>'); 
 			} 
 		printf(__('If your having problems or would like to suggest a new feature, please visit the %s.' ,'techozoic'), '<a href="http://clark-technet.com/theme-support/techozoic/" title="' .__('Support Forum' ,'techozoic').'"> '.__('support forum' ,'techozoic').'</a>')?>
@@ -521,9 +521,11 @@ function techozoic_dashboard_widget() { ?>
 		</div>
 		<?php techozoic_links_box('tech_links_front'); ?>
 		<div class="clear"> </div>
+		<?php if (current_user_can('edit_theme') || current_user_can('edit_theme_options')) { ?>
 		<h5 style="margin:8px 0 0;"><?php _e('Techozoic Settings Pages','techozoic'); ?></h5>
-		<?php echo techozoic_top_menu(); ?>
-<?php
+		<?php
+			echo techozoic_top_menu(); 
+		}
 }
 
 function tech_first_run_options() {

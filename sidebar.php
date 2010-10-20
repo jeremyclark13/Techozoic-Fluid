@@ -24,7 +24,14 @@ if (function_exists('home_url')) {
 		<li><p><?php printf(__('You are currently browsing the %1$s archives.','techozoic'),$home_url); ?></p></li>
 <?php 	} 
 	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Right Sidebar','techozoic')) ) { 
-	
+		global $user_ID; 
+		if( $user_ID ) {
+			if( current_user_can('edit_themes') ) { ?>
+			<li><h2 class="widgettitle"><?php _e('Default Widgets' ,'techozoic')?></h2>
+				<?php printf(__('Widgets below are default.  These will be replaced when customizing using %s Widget Admin</a>','techozoic'),'<a href="' . get_bloginfo('wpurl') . '/wp-admin/widgets.php" title="' . __('Widgets','techozoic') . '">'); ?>
+			</li>
+<?php		}
+		}
 	if ($tech['nav_menu_type'] != "Sidebar") {
 		if(is_page()) {
 			$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');

@@ -8,11 +8,11 @@ $version = $theme_data['Version'];
 function techozoic_add_admin() {
 	global $themename, $shortname, $options, $version, $wp_version, $techozoic_menu_hook;
 	$settings = get_option('techozoic_options');
-	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_export_admin" ) {
+	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_export_admin"  && tech_can_edit() ) {
 		if ( isset($_POST['action']) && $_POST['action'] == 'export' && check_admin_referer('techozoic_form_export','techozioc_nonce_field_export') ) {
 			tech_export();
 		}
-		if (isset($_FILES['settings']) && check_admin_referer('techozoic_form_import','techozioc_nonce_field_import') ){
+		if (isset($_FILES['settings']) && check_admin_referer('techozoic_form_import','techozioc_nonce_field_import') && tech_can_edit() ){
 			if ($_FILES["settings"]["error"] > 0){
 				echo "Error: " . $_FILES["settings"]["error"] . "<br />";
 			  } else{
@@ -24,7 +24,7 @@ function techozoic_add_admin() {
 		}
 	}
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_delete_admin" ) {
-		if( isset($_POST['action']) && 'delete-settings' == $_REQUEST['action'] && check_admin_referer('techozoic_form_delete','techozioc_nonce_field_delete') ) {
+		if( isset($_POST['action']) && 'delete-settings' == $_REQUEST['action'] && check_admin_referer('techozoic_form_delete','techozioc_nonce_field_delete')  && tech_can_edit() ) {
 			delete_option('techozoic_options');
 			delete_option('techozoic_activation_check');
 			delete_option('tech_styles');
@@ -37,7 +37,7 @@ function techozoic_add_admin() {
 		}
 	}
 	if ( isset($_GET['page']) &&$_GET['page'] == "techozoic_header_admin" ) {
-		if (isset($_FILES['file']) && check_admin_referer('techozoic_form_upload','techozioc_nonce_field_upload') ){
+		if (isset($_FILES['file']) && check_admin_referer('techozoic_form_upload','techozioc_nonce_field_upload')  && tech_can_edit() ){
 			$dir = TEMPLATEPATH. "/uploads/images/headers/";
 			if (is_writable($dir)) {
 				if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/pjpeg")) && ($_FILES["file"]["size"] < 1048576)) {
@@ -60,7 +60,7 @@ function techozoic_add_admin() {
 				header("Location: admin.php?page=techozoic_header_admin&message=true&error=3");
 				}
 			}
-			if (isset($_POST['tech_header_select']) && wp_verify_nonce($_POST['techozioc_nonce_field_header_select'], 'header-select')){
+			if (isset($_POST['tech_header_select']) && wp_verify_nonce($_POST['techozioc_nonce_field_header_select'], 'header-select')  && tech_can_edit() ){
 				$default_headers = array ("Rotate.jpg" ,"none.jpg", "Random_Lines_1.jpg", "Random_Lines_2.jpg", "Landscape.jpg", "Technology.jpg", "Grunge.jpg");
 				if (in_array($_POST['header_select'], $default_headers)){
 					$_POST['header_select'] = substr($_POST['header_select'], 0,strrpos($_POST['header_select'],'.'));
@@ -73,7 +73,7 @@ function techozoic_add_admin() {
 			update_option('techozoic_options', $settings);
 			include(TEMPLATEPATH .'/options/css-build.php');
 			header("Location: admin.php?page=techozoic_header_admin&saved=true");	
-			} elseif(isset($_POST['tech_header_delete']) && ! wp_verify_nonce($_POST['techozioc_nonce_field_header_delete'], 'header-delete')) {
+			} elseif(isset($_POST['tech_header_delete']) && ! wp_verify_nonce($_POST['techozioc_nonce_field_header_delete'], 'header-delete')  && tech_can_edit() ) {
 				$path = TEMPLATEPATH. "/uploads/images/headers/";
 				$dir_handle = @opendir($path) or die("Unable to open $path");
 				$delvars = array();
@@ -90,7 +90,7 @@ function techozoic_add_admin() {
 					header("Location: admin.php?page=techozoic_header_admin&message=true&error=4");
 				}
 			header("Location: admin.php?page=techozoic_header_admin");
-			}  elseif (isset($_POST['tech_header_height']) && check_admin_referer('techozoic_form_submit','techozioc_nonce_field_submit') ){
+			}  elseif (isset($_POST['tech_header_height']) && check_admin_referer('techozoic_form_submit','techozioc_nonce_field_submit')  && tech_can_edit() ){
 				$settings['header_height'] = preg_replace('/[^0-9.]/', '', $_POST['header_height']);
 				$settings['header_align'] = $_POST['header_align'];
 				$settings['header_v_align'] = $_POST['header_v_align'];
@@ -100,7 +100,7 @@ function techozoic_add_admin() {
 			}
 		}
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_style_admin" ) {		
-		if(isset($_POST['style']) && check_admin_referer('techozoic_form_style','techozioc_nonce_field_style') ){
+		if(isset($_POST['style']) && check_admin_referer('techozoic_form_style','techozioc_nonce_field_style')  && tech_can_edit() ){
 			$file_name = TEMPLATEPATH ."/style.css";
 			$orig_file = TEMPLATEPATH ."/reset-style.css";
 			$bu_file = TEMPLATEPATH ."/style.css.bu";
@@ -133,7 +133,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 	}	
 	if ( isset($_GET['page']) && $_GET['page'] == "techozoic_main_admin" or isset($_GET['page']) && $_GET['page'] == "techozoic_style_admin") {
 			$location = $_GET['page'];
-		   	if ( isset($_POST['action']) && $_POST['action'] == 'save' && check_admin_referer('techozoic_form_submit','techozioc_nonce_field_submit') ) {
+		   	if ( isset($_POST['action']) && $_POST['action'] == 'save' && check_admin_referer('techozoic_form_submit','techozioc_nonce_field_submit')  && tech_can_edit() ) {
 				foreach ($options as $value) {
 					$k = "";
 					$st = "";
@@ -242,7 +242,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 					header("Location: admin.php?page=$location&saved=true");
 					die;
 				}
-        	} else if( isset($_POST['action']) && 'reset' == $_POST['action'] && check_admin_referer('techozoic_form_reset','techozioc_nonce_field_reset') ) {
+        	} else if( isset($_POST['action']) && 'reset' == $_POST['action'] && check_admin_referer('techozoic_form_reset','techozioc_nonce_field_reset')  && tech_can_edit() ) {
 				foreach ($options as $value) {
 				$k = $value['id'];
 				$v = $value['std'];
@@ -554,6 +554,19 @@ function techozoic_export_admin() {
 function techozoic_delete_admin() {
 	include_once(TEMPLATEPATH . '/options/delete-admin.php');
 }
+function tech_can_edit() {
+	global $user_id, $wp_version;
+	if($wp_version >= 3){
+		if (!current_user_can('edit_theme_options') ){
+			die('You do not have permission to edit these options.  Please go back');
+		}
+	} else {
+		if (!current_user_can('edit_theme') ){
+			die('You do not have permission to edit these options.  Please go back');
+		}
+	}
+	return true;
+}	
 function techozoic_help($contextual_help, $screen_id, $screen) {
 	global $techozoic_menu_hook;
 	if (in_array($screen_id , $techozoic_menu_hook) ) {

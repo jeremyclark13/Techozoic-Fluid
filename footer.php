@@ -6,7 +6,7 @@ global $tech;
 <div id="footer">
 <div id="footerdivs">
 <?php if ( !function_exists('dynamic_sidebar')
-        || !dynamic_sidebar('Footer - Limit 3 Widgets') ) : ?>
+        || !dynamic_sidebar('Footer') ) : ?>
 <?php endif; ?>
 </div>
 <div style="clear:both"></div>

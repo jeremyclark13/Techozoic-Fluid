@@ -17,7 +17,8 @@ Widget registration and custom widgets defined here
 		'id'=> 'left_sidebar'
 		));
 	register_sidebar(array(
-		'name'=>__('Footer - Limit 3 Widgets','techozoic'),
+		'name'=>__('Footer','techozoic'),
+		'description' => __('Limit 3 widgets can be assigned to footer area','techozoic'),
 		'id'=> 'tech_footer',
 		'before_widget' => '<div class="footercont"><ul><li class="widget %2$s">',
 		'after_widget' => '</li></ul></div>',
@@ -26,6 +27,7 @@ Widget registration and custom widgets defined here
 	));
 	register_sidebar(array(
 		'name'=>__('Right Header','techozoic'),
+		'description' => __('Area to the right side of the header','techozoic'),
 		'id'=> 'right_header',
 		'before_widget' => '<div class="hwidget %2$s">',
 		'after_widget' => '</div>',
@@ -34,6 +36,7 @@ Widget registration and custom widgets defined here
 	));
 	register_sidebar(array(
 		'name'=>__('Left Header','techozoic'),
+		'description' => __('Area to the left side of the header','techozoic'),
 		'id'=> 'left_header',
 		'before_widget' => '<div class="hwidget %2$s">',
 		'after_widget' => '</div>',
