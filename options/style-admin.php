@@ -120,7 +120,7 @@
 	<div class="tech_bottom2">
 		<a name="submit"></a>
 		<span class="tech_submit submit save">
-			<input name="save" type="submit" value="<?php _e("Save changes","techozoic");?>" />    
+			<input class="button-primary" name="save" type="submit" value="<?php _e("Save changes","techozoic");?>" />    
 			<input type="hidden" name="action" value="save" />
 			<?php wp_nonce_field('techozoic_form_submit','techozioc_nonce_field_submit'); ?>			
 		</span>
@@ -160,9 +160,9 @@ $dir = TEMPLATEPATH;
 	if (is_writable($dir)) {
 ?>
 <span class="tech_submit submit save">
-<input name="tech_style_copy" type="submit" value="<?php _e("Copy to Style.css","techozoic") ?>" />
-<input name="tech_style_restore" type="submit" value="<?php _e("Restore Style.css backup","techozoic") ?>" /> 
-<input name="tech_style_copy_reset" type="submit" value="<?php _e("Reset Style.css","techozoic") ?>" />	
+<input class="button-primary" name="tech_style_copy" type="submit" value="<?php _e("Copy to Style.css","techozoic") ?>" />
+<input class="button-primary" name="tech_style_restore" type="submit" value="<?php _e("Restore Style.css backup","techozoic") ?>" /> 
+<input class="button-primary" name="tech_style_copy_reset" type="submit" value="<?php _e("Reset Style.css","techozoic") ?>" />	
 </span>
 <div style="clear:both;"></div>
 <?php 	} else {

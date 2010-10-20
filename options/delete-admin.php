@@ -11,7 +11,7 @@
 			<p><?php _e('Clicking this button below will remove all theme settings from database and deactivate the theme.  <strong>This is irreversible.</strong>','techozoic') ?></p>
 			<form method="post" onsubmit="return delsettings()">
 				<span class="tech_submit submit save">
-					<input name="delete" type="submit" value="<?php _e('Delete Settings','techozoic') ?>" style="color:#b00;"/>
+					<input name="delete" class="button-primary" type="submit" value="<?php _e('Delete Settings','techozoic') ?>"/>
 					<input type="hidden" name="action" value="delete-settings" />
 					<?php wp_nonce_field('techozoic_form_delete','techozioc_nonce_field_delete'); ?>
 				</span>

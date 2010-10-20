@@ -32,7 +32,7 @@
 			<form enctype="multipart/form-data" encoding="multipart/form-data" method="post">
 				<input type="file" name="file" /><br />
 				<span class="tech_submit submit save">
-				<input type="submit" name="submit" value="<?php _e('Upload','techozoic')?>" />
+				<input class="button-primary" type="submit" name="submit" value="<?php _e('Upload','techozoic')?>" />
 				<?php wp_nonce_field('techozoic_form_upload','techozioc_nonce_field_upload'); ?>
 				</span><br /><br />
 			</form>
@@ -57,7 +57,7 @@
 			</td></tr>
 		</table>
 		<span class="tech_submit submit save">
-		<input name="tech_header_height" type="submit" value="<?php _e('Save Settings','techozoic')?>" />
+		<input class="button-primary" name="tech_header_height" type="submit" value="<?php _e('Save Settings','techozoic')?>" />
 		<?php wp_nonce_field('techozoic_form_submit','techozioc_nonce_field_submit'); ?>		
 		</span>
 		</form>
