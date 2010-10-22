@@ -61,7 +61,7 @@
 	if (!isset($content_width)) {
 		$content_width = tech_content_width();
 	}
-	
+
 /**************************************
 	Techozoic WP 3 menu fallback
 	Since 1.9.1
@@ -119,7 +119,7 @@ function tech_content_width(){
 	$p_width = $tech['page_width'];
 	$c_width = $tech['main_column_width'];
 	$page = $tech['page_type'];
-	if ($page = "Fixed Width" && $p_width != 0 && $c_width != 0) {
+	if ($page == "Fixed Width" && $p_width != 0 && $c_width != 0) {
 		$c_width = $c_width /100;
 		$output = $p_width * $c_width;
 	} else {
@@ -136,7 +136,7 @@ function tech_footer_text(){
 	global $tech, $version;
 	$string = $tech['footer_text'];
 	$shortcode = array('/%BLOGNAME%/i','/%THEMENAME%/i','/%THEMEVER%/i','/%THEMEAUTHOR%/i','/%TOP%/i','/%COPYRIGHT%/i','/%MYSQL%/i');
-	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy '. date('Y'),sprintf(__('%1$d mySQL queries in %2$s seconds.','techozoic'), get_num_queries(),timer_stop(0)));
+	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy; '. date('Y'),sprintf(__('%1$d mySQL queries in %2$s seconds.','techozoic'), get_num_queries(),timer_stop(0)));
 	echo preg_replace($shortcode, $output, $string);
 }
 

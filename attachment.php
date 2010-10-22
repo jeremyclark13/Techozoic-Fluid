@@ -1,52 +1,135 @@
-<?php get_header(); ?>
+<?php get_header();
+get_tech_options();
+global $tech;
+if ($tech['single_sidebar'] == "Yes") { tech_show_sidebar("l");} ?>
 
-	<div id="content" class="widecolumn">
+<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
 				
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<?php 
+if (have_posts()) {
+	while (have_posts()) {
+		the_post(); ?>
 	
-<?php $attachment_link = wp_get_attachment_link($post->ID, true, array(450, 800)); // This also populates the iconsize for the next line ?>
-<?php $_post = &get_post($post->ID); $classname = 'smallattachment'; // This lets us style narrow icons specially ?>
-		<div class="post" id="post-<?php the_ID(); ?>">
-			<h2><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <a href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h2>
+		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+			<h2><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'techozoic' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <a href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h2>
 			<div class="entry text">
-				<p class="<?php echo $classname; ?>"><?php echo $attachment_link; ?><br /><?php echo basename($post->guid); ?></p>
-
-				<?php the_content('<p class="serif">'.__('Read the rest of this entry' ,'techozoic').'&raquo;</p>'); ?>
 	
-				<?php wp_link_pages('<p><strong>'.__('Pages' ,'techozoic').':</strong>', '</p>', 'number'); ?>
+<?php 
+		if ( wp_attachment_is_image() ) { ?>
+			<div id="main_image">
+				<a href="<?php echo wp_get_attachment_url($post->ID);?>" title="<?php _e('View Full Size','techozoic');?>">
+				<?php echo wp_get_attachment_image( $post->ID, array( $content_width, 9999 ) ); ?>
+				<span class="pic_info">
+<?php		
+					$metadata = wp_get_attachment_metadata();
+					$date_format = get_option('date_format');
+					$camera = $metadata['image_meta']; ?>
+					<strong><?php _e('Exif Information','techozoic');?></strong>
+					<br />
+					<?php _e('Size:', 'techozoic');
+					printf(__('%1$s &times; %2s','techozoic'), $metadata['width'], $metadata['height'] );
+					echo " <br />";
+					 _e('Camera:','techozoic'); 
+					 echo $camera['camera']; 
+					echo " <br />";
+					 _e('Taken:','techozoic');
+					 echo date($date_format ,$camera['created_timestamp']); 
+					echo " <br />";
+					 _e('Aperture:','techozoic'); 
+					 echo$camera['aperture']; 
+					echo " <br />";
+					 _e('ISO:','techozoic'); 
+					 echo$camera['iso']; 
+					echo " <br />";
+					 _e('Shutter Speed:','techozoic'); 
+					 echo$camera['shutter_speed']; 
+					echo " <br />"; 
+?>
+					<strong><?php _e('Click for original image','techozoic');?></strong>
+				</span>
+				</a>
+			</div><!--#main_image-->
+<?php
+		}	 
+		
+		the_content('<p class="serif">'.__('Read the rest of this entry' ,'techozoic').'&raquo;</p>'); 
+		
+		if ( wp_attachment_is_image() ) {
+	        $attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
+			foreach ( $attachments as $k => $attachment ) {
+					if ( $attachment->ID == $post->ID )
+	                        break;
+	        }
+	        $k++;
+	        // If there is more than 1 image attachment in a gallery
+	        if ( count( $attachments ) > 1 ) {
+	                if ( isset( $attachments[ $k ] ) ) {
+	                        $next_attachment_url = get_attachment_link( $attachments[ $k ]->ID );
+							$next_attachment_image = wp_get_attachment_image ( $attachments[ $k ]->ID , array( 100, 9999));
+	                }
+					if ( isset( $attachments[ $k - 2] ) ){
+							$prev_attachment_url = get_attachment_link( $attachments[ $k - 2 ]->ID );
+							$prev_attachment_image = wp_get_attachment_image ( $attachments[ $k - 2 ]->ID , array( 100, 9999));
+					}
+	        } 
+	?>			
+			<div id="pic-navigation" >
+<?php 		
+			if(isset($prev_attachment_url)){
+				echo '<div class="pic-previous"><a href="' . $prev_attachment_url . '" title="' . __('Previous Image','techozoic') . '">' . $prev_attachment_image . '</a></div>';
+			}
+			if(isset($next_attachment_url)){
+				echo '<div class="pic-next"><a href="' . $next_attachment_url . '" title="' . __('Next Image','techozoic') . '">' . $next_attachment_image . '</a></div>';
+			}
+?>
+			</div><!--#pic-navigation-->
+			<div style="clear:both"></div>
+<?php
+		} else { ?>
+			<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
+<?php 
+		} 
+		
+		wp_link_pages('<p><strong>'.__('Pages' ,'techozoic').':</strong>', '</p>', 'number'); ?>
 	
-				<p class="postmetadata alt">
+		<p class="postmetadata alt">
 		<small>
-		<?php printf(__('This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed.','techozoic'), get_the_time('l, F jS, Y'), get_the_time(), get_the_category_list(', '), "<a href=\"".get_post_comments_feed_link()."\">".__('RSS 2.0','techozoic')."</a>"); ?>				
-<?php 		if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
-			// Both Comments and Pings are open ?>
-			<?php printf(__('You can %1$s or %2$s from your own site.','techozoic'),'<a href="#respond">'. __('leave a response','techozoic').'</a>', '<a href="'. get_trackback_url() .'" rel="trackback">'. __('trackback','techozoic').'</a>')?>
-<?php 		} elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
-			// Only Pings are Open ?>
-			<?php printf(__('Responses are currently closed, but you can %s from your site.','techozoic'),'<a href="'. get_trackback_url().'" rel="trackback">'.__('trackback','techozoic').'</a>'); ?>
-<?php 		} elseif (('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
-			// Comments are open, Pings are not ?>
-			<?php _e('You can skip to the end and leave a response. Pinging is currently not allowed.','techozoic')?>
-<?php 		} elseif (!('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
-			// Neither Comments, nor Pings are open ?>
-			<?php _e('Both comments and pings are currently closed.','techozoic')?>			
-<?php 		} 
+<?php 
+		printf(__('This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed.','techozoic'), get_the_time('l, F jS, Y'), get_the_time(), get_the_category_list(', '), "<a href=\"".get_post_comments_feed_link()."\">".__('RSS 2.0','techozoic')."</a>"); 			
+ 		if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
+			// Both Comments and Pings are open 
+			printf(__('You can %1$s or %2$s from your own site.','techozoic'),'<a href="#respond">'. __('leave a response','techozoic').'</a>', '<a href="'. get_trackback_url() .'" rel="trackback">'. __('trackback','techozoic').'</a>');
+ 		} elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
+			// Only Pings are Open 
+			printf(__('Responses are currently closed, but you can %s from your site.','techozoic'),'<a href="'. get_trackback_url().'" rel="trackback">'.__('trackback','techozoic').'</a>');
+ 		} elseif (('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
+			// Comments are open, Pings are not 
+			_e('You can skip to the end and leave a response. Pinging is currently not allowed.','techozoic');
+		} elseif (!('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
+			// Neither Comments, nor Pings are open 
+			_e('Both comments and pings are currently closed.','techozoic');			
+		} 
 		edit_post_link('&nbsp;'.__('  Edit this entry.','techozoic'),'',''); 
 ?>
 		</small>
-				</p>
+		</p>
 	
-			</div>
-		</div>
+			</div><!--.entrytext-->
+		</div><!--#post-???-->
 		
-	<?php comments_template(); ?>
+<?php 
+		comments_template(); 
 	
-	<?php endwhile; else: ?>
-	
+		} //Endwhile
+	} else {
+?>
 		<p><?php _e('Sorry, no attachments matched your criteria.' ,'techozoic')?></p>
 	
-<?php endif; ?>
-	
-	</div>
+<?php 
+	}//End if 
+?>
+</div><!--#content-->
 
-<?php get_footer(); ?>
+<?php 
+if ($tech['single_sidebar'] == "Yes" ) { tech_show_sidebar("r"); }
+get_footer(); ?>

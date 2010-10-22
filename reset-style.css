@@ -1092,6 +1092,50 @@ Footer
 }
 
 /*************************************
+Image Gallery Page
+*************************************/
+#main_image{ 
+	position:relative
+}
+#main_image a .pic_info {
+	display:none;
+}
+#main_image a:hover .pic_info{
+	display: block;
+	background: #111;
+	filter:alpha(opacity=75);
+	opacity:.75;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; /*--IE 8 Transparency--*/
+	color: #fff;
+	position: absolute;
+	padding: 10px;
+	bottom: 10px;
+	left: 45%;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+}
+
+.pic_info {
+	margin:auto;
+	text-align: left;
+}
+#pic-navigation{
+	clear:both;
+	width: 90%;
+	margin:auto;
+}
+.pic-previous{
+	float:left;
+	background: url(images/gallery_prev.png) no-repeat scroll left center transparent;
+	padding-left:40px;
+}
+.pic-next{
+	float:right;
+	background: url(images/gallery_next.png) no-repeat scroll right center transparent;
+	padding-right:40px;
+}
+
+/*************************************
 Misc Tags
  *************************************/
 

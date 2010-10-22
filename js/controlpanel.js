@@ -220,11 +220,11 @@ function sidebarwidth(form){
 		} 
 	}
 	if (sidebar_width == "Sidebar - Content") {
-		document.tech_options.l_sidebar_width.disabled = false;
-		document.tech_options.r_sidebar_width.disabled = true;
+		document.tech_options.l_sidebar_width.readOnly= false;
+		document.tech_options.r_sidebar_width.readOnly = true;
 	} else if (sidebar_width == "Content - Sidebar") {
-		document.tech_options.l_sidebar_width.disabled = true;
-		document.tech_options.r_sidebar_width.disabled = false;
+		document.tech_options.l_sidebar_width.readOnly = true;
+		document.tech_options.r_sidebar_width.readOnly = false;
 	}
 	pagewidth(form)
 }
@@ -266,8 +266,8 @@ function pagewidth(form){
 	var c = c - 1;
 	if (c == 2) { 
 		var b = left + right;
-		document.tech_options.l_sidebar_width.disabled = false;
-		document.tech_options.r_sidebar_width.disabled = false;
+		document.tech_options.l_sidebar_width.readOnly = false;
+		document.tech_options.r_sidebar_width.readOnly = false;
 		form.sidebar_pos.disabled=false;
 		form.sidebar_pos.options[0].disabled=true;
 		form.sidebar_pos.options[1].disabled=false;
@@ -294,8 +294,8 @@ function pagewidth(form){
 		form.sidebar_pos.options[7].disabled=true;
 	} else {
 		var b = 0;
-		document.tech_options.l_sidebar_width.disabled = true;
-		document.tech_options.r_sidebar_width.disabled = true;
+		document.tech_options.l_sidebar_width.readOnly = true;
+		document.tech_options.r_sidebar_width.readOnly = true;
 		form.sidebar_pos.disabled=false;
 		form.sidebar_pos.options[0].disabled=true;
 		form.sidebar_pos.options[1].disabled=true;
