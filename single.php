@@ -22,7 +22,7 @@ if (have_posts()) {
 		</div>
 <?php do_action('tech_before_sing_content');?>	
 		<div class="singlepost entry">
-<?php 		if(function_exists('the_post_thumbnail')) { the_post_thumbnail(); }?>
+<?php 		if(function_exists('the_post_thumbnail')) { the_post_thumbnail('single-post-thunbnail'); }?>
 <?php 		the_content('<p class="serif">'.__('Read the rest of this entry','techozoic'). '&raquo;</p>'); 
 		wp_link_pages(); 
 ?>

@@ -33,7 +33,7 @@ global $tech;
 			<small><?php _e('By' , 'techozoic') ?> <?php the_author() ?>&nbsp;|&nbsp;<?php printf(__('Filed in %s' , 'techozoic'), get_the_category_list(', ')) ?><?php edit_post_link(__('&nbsp;|&nbsp; Edit.','techozoic'), '', ''); ?></small>
 			</div><div style="clear:both"></div>
 			<div class="entry">
-<?php 			if(function_exists('the_post_thumbnail')) { the_post_thumbnail(); }?>
+<?php 			if(function_exists('the_post_thumbnail')) { the_post_thumbnail('thumbnail'); }?>
 <?php 			the_content(__('Read the remainder of this entry &raquo;'  , 'techozoic')); ?>
 <?php 			if ( comments_open()  && empty($post->post_password) ) { ?>
 				<div class="post_comment_cont">

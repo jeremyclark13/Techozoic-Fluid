@@ -24,26 +24,30 @@ if (have_posts()) {
 					$metadata = wp_get_attachment_metadata();
 					$date_format = get_option('date_format');
 					$camera = $metadata['image_meta']; ?>
-					<strong><?php _e('Exif Information','techozoic');?></strong>
+					<strong><?php _e('Image Information','techozoic');?></strong>
 					<br />
-					<?php _e('Size:', 'techozoic');
-					printf(__('%1$s &times; %2s','techozoic'), $metadata['width'], $metadata['height'] );
+<?php			printf(__('Size: %1$s &times; %2s','techozoic'), $metadata['width'], $metadata['height'] );
 					echo " <br />";
-					 _e('Camera:','techozoic'); 
-					 echo $camera['camera']; 
-					echo " <br />";
-					 _e('Taken:','techozoic');
-					 echo date($date_format ,$camera['created_timestamp']); 
-					echo " <br />";
-					 _e('Aperture:','techozoic'); 
-					 echo$camera['aperture']; 
-					echo " <br />";
-					 _e('ISO:','techozoic'); 
-					 echo$camera['iso']; 
-					echo " <br />";
-					 _e('Shutter Speed:','techozoic'); 
-					 echo$camera['shutter_speed']; 
-					echo " <br />"; 
+					if ($camera['camera'] != ""){
+						 printf(__('Camera: %s','techozoic'), $camera['camera'] );
+						echo " <br />";
+					}
+					if ($camera['created_timestamp'] != 0){
+						printf(__('Taken: %s','techozoic'), date($date_format ,$camera['created_timestamp'] ) ); 
+						echo " <br />";
+					}
+					if ($camera['aperture'] != 0){
+						 printf(__('Aperture: %s','techozoic'), $camera['aperture'] );
+						echo " <br />";
+					}
+					if ($camera['iso'] != 0){
+						 printf(__('ISO: %s','techozoic'), $camera['iso'] );
+						echo " <br />";
+					}
+					if ($camera['shutter_speed'] != 0){
+						 printf(__('Shutter Speed: %s','techozoic'), $camera['shutter_speed'] ); 
+						echo " <br />"; 
+					}
 ?>
 					<strong><?php _e('Click for original image','techozoic');?></strong>
 				</span>
@@ -83,15 +87,13 @@ if (have_posts()) {
 			}
 ?>
 			</div><!--#pic-navigation-->
-			<div style="clear:both"></div>
 <?php
 		} else { ?>
 			<a href="<?php echo wp_get_attachment_url(); ?>" title="<?php echo esc_attr( get_the_title() ); ?>" rel="attachment"><?php echo basename( get_permalink() ); ?></a>
 <?php 
 		} 
-		
 		wp_link_pages('<p><strong>'.__('Pages' ,'techozoic').':</strong>', '</p>', 'number'); ?>
-	
+		<div style="clear:both;margin-bottom:10px"></div>	
 		<p class="postmetadata alt">
 		<small>
 <?php 

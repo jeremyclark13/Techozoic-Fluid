@@ -481,6 +481,7 @@ function tech_save_postdata( $post_id ) {
 
 if(function_exists('add_theme_support')) {
 	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'single-post-thumbnail', $content_width, 9999 ); 
 	//WP 2.9 Post Thumbnail Support
 	add_theme_support('automatic-feed-links');
 	//WP Auto Feed Links

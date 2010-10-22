@@ -13,10 +13,11 @@
 <br />
 <h2>Change Log</h2>
 <h3>Version 1.9.2</h3><br />
-
+- Fixed error with 2 column setting defaulting to Content - Sidebar even after saving.<br />
+- Updated attachment.php page for better gallery intergration. <br />
 <h3>Version 1.9.1</h3><br />
 - Dynamic Styles now stored in database instead of calculated on every page load.<br />
-- Changed out style.php is called from functions.php<br />
+- Changed how style.php is called from functions.php<br />
 - Added option for specifing different widths for left and right sidebars<br />
 - Added font resize widget<br />
 - Fixed error on search results and 404 page if sidebars where used on single pages <br />
