@@ -15,7 +15,7 @@ $options = array (
 				"old_id" => "techcolumn",
             	"type" => "radio",
             	"std" => "3",
-            	"java" => "onchange=\"pagewidth(this.form)\"",
+            	"java" => "onchange=\"colselect(this.form)\"",
             	"options" => array("3", "2", "1")),
 
 		array(	"name" => __("Column Layout","techozoic"),

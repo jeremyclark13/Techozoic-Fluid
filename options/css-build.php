@@ -301,12 +301,12 @@ CSS;
 		if ($tech['sidebar_pos'] =='Content - Sidebar') {
 			if ($tech['main_column_width'] == 0 && $tech['r_sidebar_width'] != 0 ) {
 				$tech['main_column_width'] = 97 - $tech['r_sidebar_width'];
-			} elseif ($tech['main_column_width'] == 0){
+			} elseif ($tech['main_column_width'] == 0 ){
 				$tech['main_column_width'] = 70;
 			}
 			if ($tech['r_sidebar_width'] == 0 && $tech['main_column_width'] != 70) {  
 				$tech['r_sidebar_width'] = 96 - $tech['main_column_width'];
-			} elseif ($tech['sidebar_width'] == 0){
+			} elseif ($tech['r_sidebar_width'] == 0){
 				$tech['r_sidebar_width'] = 23;
 			}
 			$tech['main_column_width'] = $tech['main_column_width'] - 5;
@@ -1106,6 +1106,24 @@ margin:5px 5px 5px 0;
 .widecolumn .attachment {
 text-align:center;
 margin:5px 0;
+}
+.pic_info {
+margin:auto;
+text-align: left;
+}
+ul.image_meta{
+list-style:none;
+}
+.pic-previous{
+float:left;
+}
+.pic-next{
+float:right;
+}
+#pic-navigation{
+clear:both;
+width: 90%;
+margin:auto;
 }
 .postmetadata {
 clear:left;

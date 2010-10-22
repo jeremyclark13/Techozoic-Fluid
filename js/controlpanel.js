@@ -17,6 +17,7 @@ addLoadEvent(function() {
 		textsize(page);
 		pagewidth(page);
 		colorhide(page);
+		sidebarwidth(page)
 		detectlink();
 		document.getElementById('bg_image_preview').style.display = 'none';
 		document.getElementById('content_bg_image_preview').style.display = 'none';
@@ -221,12 +222,28 @@ function sidebarwidth(form){
 	if (sidebar_width == "Sidebar - Content") {
 		document.tech_options.l_sidebar_width.disabled = false;
 		document.tech_options.r_sidebar_width.disabled = true;
-	} else {
+	} else if (sidebar_width == "Content - Sidebar") {
 		document.tech_options.l_sidebar_width.disabled = true;
 		document.tech_options.r_sidebar_width.disabled = false;
 	}
+	pagewidth(form)
 }
-
+function colselect(form){
+	for (var i=0; i < document.tech_options.column.length; i++){
+		if (document.tech_options.column[i].checked){
+			var c = document.tech_options.column[i].value;   
+		} 
+	}
+	var c = c - 1;
+	if (c == 2) {
+		form.sidebar_pos.options[1].selected=true;
+	} else if (c == 1) {
+		form.sidebar_pos.options[5].selected=true;
+	} else {
+		form.sidebar_pos.options[7].selected=true;
+	}
+	sidebarwidth(form);
+}
 function pagewidth(form){
 	for (var i=0; i < document.tech_options.column.length; i++){
 		if (document.tech_options.column[i].checked){
@@ -238,15 +255,19 @@ function pagewidth(form){
 			var d = document.tech_options.page_type[i2].value;   
 		} 
 	}
+	for (var i3=0; i3 < document.tech_options.sidebar_pos.length; i3++){
+		if (document.tech_options.sidebar_pos[i3].selected){
+			var sidebar_width = document.tech_options.sidebar_pos[i3].value;   
+		} 
+	}	
 	var a = (form.main_column_width.value != '') ? eval(form.main_column_width.value) : 0;
 	var left = (form.l_sidebar_width.value != '') ? eval(form.l_sidebar_width.value) : 0;
 	var right = (form.r_sidebar_width.value != '') ? eval(form.r_sidebar_width.value) : 0;
 	var c = c - 1;
-	var b = left + right;
 	if (c == 2) { 
+		var b = left + right;
 		document.tech_options.l_sidebar_width.disabled = false;
 		document.tech_options.r_sidebar_width.disabled = false;
-		form.sidebar_pos.options[1].selected=true;
 		form.sidebar_pos.disabled=false;
 		form.sidebar_pos.options[0].disabled=true;
 		form.sidebar_pos.options[1].disabled=false;
@@ -257,9 +278,11 @@ function pagewidth(form){
 		form.sidebar_pos.options[6].disabled=true;
 		form.sidebar_pos.options[7].disabled=true;
 	} else if (c == 1) {
-		document.tech_options.l_sidebar_width.disabled = true;
-		document.tech_options.r_sidebar_width.disabled = false;
-		form.sidebar_pos.options[5].selected=true;
+		if (sidebar_width == "Sidebar - Content") {
+			var b = left;
+		} else {
+			var b = right;
+		}
 		form.sidebar_pos.disabled=false;
 		form.sidebar_pos.options[0].disabled=true;
 		form.sidebar_pos.options[1].disabled=true;
@@ -270,9 +293,9 @@ function pagewidth(form){
 		form.sidebar_pos.options[6].disabled=false;
 		form.sidebar_pos.options[7].disabled=true;
 	} else {
+		var b = 0;
 		document.tech_options.l_sidebar_width.disabled = true;
 		document.tech_options.r_sidebar_width.disabled = true;
-		form.sidebar_pos.options[7].selected=true;
 		form.sidebar_pos.disabled=false;
 		form.sidebar_pos.options[0].disabled=true;
 		form.sidebar_pos.options[1].disabled=true;
