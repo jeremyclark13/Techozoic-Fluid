@@ -70,6 +70,13 @@ else { ?>
 	ul.comment-preview li:hover{ filter:alpha(opacity=100);}
 	</style>
 <![endif]-->
+<!--[if IE 7]>
+	<style type="text/css">
+	#l_sidebar{ padding-top: 30px; }
+	#content { padding-top: 30px; }
+	#r_sidebar { padding-top: 30px; }
+	</style>
+<![endif]-->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <?php if ($tech['favicon_image']) {?>
 	<link rel="icon" href="<?php echo $tech['favicon_image'];?>" type="image/x-icon" />

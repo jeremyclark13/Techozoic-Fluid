@@ -230,14 +230,18 @@ function tech_social_icons($home=true){
 	$image = get_bloginfo('template_directory')."/images/icons";
 	$link = get_permalink();
 	$title = $post->post_title;
+	$email_title = preg_replace('/&/i', 'and',$title);
 	$url_title = urlencode($post->post_title);
-	$excerpt = urlencode($post->post_excerpt);
+	$excerpt = urlencode(wp_trim_excerpt($post->post_excerpt));
+	$excerpt_mail = wp_trim_excerpt($post->post_excerpt);
+	$excerpt_mail = preg_replace("/&#?[a-z0-9]{2,8};/i","",$excerpt_mail);
 	$home_title = urlencode(get_bloginfo( 'name' ));
 	$social_links = array(
 		"Delicious" => "<a href=\"http://delicious.com/post?url={$link}&amp;title={$url_title}\" title=\"" .  __('del.icio.us this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/delicious_16.png\" alt=\"" .  __('del.icio.us this!','techozoic') . "\" /></a>",
 		"Digg" => "<a href=\"http://digg.com/submit?phase=2&amp;url={$link}&amp;title={$url_title} \" title=\"" .  __('Digg this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/digg_16.png\" alt=\"" .  __('Digg this!','techozoic') . "\"/></a>",
+		"Email" => "<a href=\"mailto:?subject={$email_title}&amp;body={$excerpt_mail} {$link}\" title=\"" .  __('Share this by email.','techozoic') . "\"><img src=\"{$image}/email_16.png\" alt=\"" .  __('Share this by email.','techozoic') . "\"/></a>",
 		"Facebook" => "<a href=\"http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Facebook!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/facebook_16.png\" alt=\"" .  __('Share on Facebook!','techozoic') . "\"/></a>",
-		"LinkedIn" => "<a href =\"http://www.linkedin.com/shareArticle?mini=true&url={$link}&title={$url_title}&summary={$excerpt}&source={$home_title}\" title=\"" .  __('Share on LinkedIn!','techozoic') . "target=\"_blank\"><img src=\"{$image}/linkedin_16.png\" alt=\"" .  __('Share on LinkedIn!','techozoic') . "\" /></a>",
+		"LinkedIn" => "<a href =\"http://www.linkedin.com/shareArticle?mini=true&amp;url={$link}&amp;title={$url_title}&amp;summary={$excerpt}&amp;source={$home_title}\" title=\"" .  __('Share on LinkedIn!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/linkedin_16.png\" alt=\"" .  __('Share on LinkedIn!','techozoic') . "\" /></a>",
 		"MySpace" => "<a href=\"http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Myspace!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/myspace_16.png\" alt=\"" .  __('Share on Myspace!','techozoic') . "\"/></a>",
 		"NewsVine" => "<a href=\"http://www.newsvine.com/_tools/seed&amp;save?u={$link}\" title=\"" .  __('Share on NewsVine!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/newsvine_16.png\" alt=\"" .  __('Share on NewsVine!','techozoic') . "\"/></a>",
 		"StumbleUpon" => "<a href=\"http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}\" title=\"" .  __('Stumble Upon this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/stumbleupon_16.png\" alt=\"" .  __('Stumble Upon this!','techozoic') . "\"/></a>",

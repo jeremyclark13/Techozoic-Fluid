@@ -1,6 +1,7 @@
 <?php get_header(); 	
 get_tech_options();
-global $tech;	
+global $tech;
+$date_format = get_option('date_format');	
 	if ($tech['home_sidebar'] == "Yes")  tech_show_sidebar("l");?>
 
 	<div id="content" class="<?php if ($tech['home_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
@@ -37,7 +38,7 @@ global $tech;
 		<?php while (have_posts()) : the_post(); ?>
 		<div class="post">
 				<h2 id="post-<?php the_ID(); ?>" class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h2>
-				<small><?php the_time('l, F jS, Y') ?></small>
+				<small><?php the_time($date_format) ?></small>
 				
 				<div class="entry">
 					<?php the_content(); 

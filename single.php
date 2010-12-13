@@ -1,10 +1,11 @@
 <?php get_header();
 get_tech_options();
 global $tech;
+$date_format = get_option('date_format');
 $tech_disable_sidebar = get_post_meta($post->ID, "Sidebar_value", $single = true);
 $tech_disable_nav = get_post_meta($post->ID, "Nav_value", $single = true);
-if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { tech_show_sidebar("l");} ?>
-<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { echo "narrow"; }else {echo "wide";}?>column">
+if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { tech_show_sidebar("l");} ?>
+<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { echo "narrow"; }else {echo "wide";}?>column">
 <?php 
 if (have_posts()) {
 	while (have_posts()) {
@@ -28,7 +29,7 @@ if (have_posts()) {
 ?>
 		<p class="postmetadata alt">
 		<small>
-		<?php printf(__('This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed.','techozoic'), get_the_time('l, F jS, Y'), get_the_time(), get_the_category_list(', '), "<a href=\"".get_post_comments_feed_link()."\">".__('RSS 2.0','techozoic')."</a>"); ?>				
+		<?php printf(__('This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed.','techozoic'), get_the_time($date_format), get_the_time(), get_the_category_list(', '), "<a href=\"".get_post_comments_feed_link()."\">".__('RSS 2.0','techozoic')."</a>"); ?>				
 <?php 		if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
 			// Both Comments and Pings are open ?>
 			<?php printf(__('You can %1$s or %2$s from your own site.','techozoic'),'<a href="#respond">'. __('leave a response','techozoic').'</a>', '<a href="'. get_trackback_url() .'" rel="trackback">'. __('trackback','techozoic').'</a>')?>
@@ -58,5 +59,5 @@ if (have_posts()) {
 } //End If loop
 ?>	</div>
 <?php 
-if ($tech['single_sidebar'] == "Yes"  && $tech_disable_sidebar != "checked") { tech_show_sidebar("r"); }
+if ($tech['single_sidebar'] == "Yes"  && $tech_disable_sidebar != "on") { tech_show_sidebar("r"); }
 get_footer(); ?>

@@ -44,18 +44,21 @@ body{
 #content{
 	color:#2C4353;
 	font-size:1em;
+	margin-top: 30px;
 }
 
 #r_sidebar{
 	float:right;
 	padding:10px 2% 0 0;
 	width:20%;
+	margin: 20px 0 0 0;
 }
 
 #l_sidebar{
 	float:left;
 	padding:10px 0 0 2%;
 	width:18%;
+	margin: 20px 0 0 0;
 }
 
 #footer{
@@ -104,6 +107,7 @@ Header
 	padding:0;
 	width:95%;
 	min-width: 760px;
+	position: relative;
 }
 
 #headerimg{
@@ -127,6 +131,9 @@ Header
 	background:url(images/bgl.png) repeat-y scroll left top transparent;
 	width: 100%;
 	height: 200px;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #headerr{
@@ -1209,7 +1216,7 @@ ol li{
 }
 
 p{
-	margin:5px;
+	margin:5px 5px 10px;
 }
 
 p img{

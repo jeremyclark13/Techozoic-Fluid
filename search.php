@@ -1,6 +1,7 @@
 <?php 	get_header(); 
 get_tech_options();
 global $tech;
+$date_format = get_option('date_format');
 if ($tech['single_sidebar'] == "Yes")  tech_show_sidebar("l");
 ?>
 	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
@@ -34,7 +35,7 @@ if ($tech['single_sidebar'] == "Yes")  tech_show_sidebar("l");
 			<div class="entry">
 			<?php echo $excerpt;?>
 			</div>
-			<small><?php the_time('l, F jS, Y') ?>
+			<small><?php the_time($date_format) ?>
 <?php	 	$posttags = get_the_tags();
 			if (!empty($posttags)) { ?>
 				<p><?php the_tags(); ?></p>

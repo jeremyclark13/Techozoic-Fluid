@@ -1,10 +1,10 @@
 <?php 	get_header(); 
 get_tech_options();
 global $tech;
-$tech_disable_sidebar = get_post_meta($post->ID, "sidebar_value", $single = true);
-if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { tech_show_sidebar("l");} 
+$tech_disable_sidebar = get_post_meta($post->ID, "Sidebar_value", $single = true);
+if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { tech_show_sidebar("l");} 
 ?>
-	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { echo "narrow"; }else {echo "wide";}?>column">
+	<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { echo "narrow"; }else {echo "wide";}?>column">
 <?php	if (strlen(wp_title('', false))>0) {
 ?>		<h1 class="post_title">
 		<?php wp_title('', 'display'); 
@@ -29,6 +29,6 @@ if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "checked") { te
 <?php 	comments_template(); 
 ?>	</div>
 <?php
-	if ($tech['single_sidebar'] == "Yes"  && $tech_disable_sidebar != "checked") { tech_show_sidebar("r"); }
+	if ($tech['single_sidebar'] == "Yes"  && $tech_disable_sidebar != "on") { tech_show_sidebar("r"); }
 	get_footer(); 
 ?>

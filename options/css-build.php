@@ -269,7 +269,7 @@ CSS;
 echo <<<CSS
 #headerimgwrap {
 float:left;
-position:relative;
+position:absolute;
 left:15%;
 }
 CSS;
@@ -277,7 +277,7 @@ CSS;
 echo <<<CSS
 #headerimgwrap {
 float:left;
-position:relative;
+position:absolute;
 left:50%;
 }
 CSS;
@@ -497,13 +497,13 @@ CSS;
 echo <<<CSS
 #header {
 background:url({$home}/rotate.php) no-repeat {$tech['header_v_align']} {$tech['header_align']} {$tech_content_bg_color};
-height: 200px;
+height: {$tech['header_height']}px;
 
 }#headerr, #headerl{
-height: 200px;
+height: {$tech['header_height']}px;
 }
 .hleft, .hright {
-height: 160px;
+height: {$tech_hwidget_height}px;
 }
 CSS;
 		break;
@@ -631,7 +631,6 @@ background:transparent url({$img_path}/images/bgl.png) repeat-y left top;
 }
 #pager {
 background:transparent url({$img_path}/images/bgr.png) repeat-y right top;
-padding-top:15px;
 }
 .narrowcolumn .entry,.widecolumn .entry {
 line-height:1.3em;
@@ -653,8 +652,8 @@ width:100%;
 .widecolumn {
 line-height:1.6em;
 width:80%;
-margin:5px auto 0;
-padding:10px 0 20px;
+margin:0 auto 0;
+padding:20px 0 20px;
 }
 .narrowcolumn .postmetadata {
 text-align:center;
@@ -684,7 +683,7 @@ clear:both;
 height:auto;
 width:100%;
 margin:0 0 0 auto;
-padding:10px 0 0;
+padding:20px 0 0;
 background: transparent url({$img_path}/images/navbarbg.png) repeat-x scroll 0 0;
 }
 #footermain {
@@ -839,10 +838,14 @@ margin:0 auto;
 padding:0;
 min-width: 760px;
 text-align:left;
+position:relative;
 }
 #headerl{
 background:url('{$img_path}/images/bgl.png') repeat-y scroll left top transparent;
 width: 100%;
+postition:absolute;
+left: 0;
+top: 0;
 }
 #headerr{
 background:url('{$img_path}/images/bgr.png') repeat-y scroll right top transparent;
@@ -993,6 +996,7 @@ border-right:none;
 font-size:1.3em;
 font-weight:bolder;
 margin:-80px 10px 0 0;
+position: relative;
 }
 ul#nav li,ul#admin li, #nav2 li {
 display:inline;
@@ -1145,7 +1149,7 @@ left: 45%;
 clear:left;
 }
 p {
-margin:5px;
+margin:5px 5px 10px;
 }
 #footerdivs {
 margin:10px auto 15px;
@@ -1195,7 +1199,7 @@ text_decoration:none;
 padding:5px;
 }
 #headerimgwrap {
-position: relative;
+position: absolute;
 top: 20%;
 }
 p img {
@@ -1408,7 +1412,7 @@ border:none;
 display:block;
 text-align:center;
 margin-top:10px;
-margin-bottom:30px;
+margin-bottom:10px;
 }
 .top {
 float:right;

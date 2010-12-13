@@ -18,7 +18,7 @@ global $tech;
 	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
 	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
 	</div>
-	<div style="clear:both;width:100%;margin:-20px;"></div>
+
 <?php 	if (have_posts()) {
 		while (have_posts()) { 
 			the_post();

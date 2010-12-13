@@ -106,7 +106,7 @@
 
 	if ('open' == $post->comment_status) { 
 		if (function_exists('comment_form')) {
-			comment_form();
+			comment_form(array('comment_notes_after' => ' '));
 		} else {
 ?>
 		<div id="respond">

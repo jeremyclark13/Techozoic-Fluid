@@ -13,6 +13,9 @@
 <br />
 <h2>Change Log</h2>
 <h3>Version 1.9.2</h3><br />
+- Fixed IE 7 layout error when blog title box was aligned left.<br />
+- Fixed localization for date formats - format now pulled from blog options instead of hardcoded.<br />
+- Added new social media networks (LinkedIn and email post).<br />
 - Fixed error with 2 column setting defaulting to Content - Sidebar even after saving.<br />
 - Updated attachment.php page for better gallery intergration. <br />
 <h3>Version 1.9.1</h3><br />
