@@ -66,6 +66,10 @@ function tech_update_options(){
 			}
 			$new_options['test'] = "set";
 			$new_options['ver'] = $version;
+			if ($new_options['nav_text_font_size'] > 2){
+				//Fixes problem with extremely large fonts after switching to using em instead of px in 1.9
+				$new_options['nav_text_font_size'] = 1.3;
+			}
 			update_option('techozoic_options', $new_options);
 		} else {	
 			foreach ($options as $value) {

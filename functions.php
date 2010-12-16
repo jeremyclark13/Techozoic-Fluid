@@ -218,8 +218,7 @@ function tech_feed_link(){
 	Since 1.8.8
 ***************************************/	
 function tech_social_icons($home=true){
-	global $tech;
-	global $post;
+	global $tech, $post;
 	if (function_exists('home_url')) {
 		$short_link = home_url()."/?p=".$post->ID;
 	} else {
