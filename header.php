@@ -75,6 +75,10 @@ else { ?>
 	#l_sidebar{ padding-top: 30px; }
 	#content { padding-top: 30px; }
 	#r_sidebar { padding-top: 30px; }
+	#headerimgwrap{ position:absolute;left:20%}
+	.hleft{position:absolute;}
+	.hright{position:absolute; right:0;}
+	
 	</style>
 <![endif]-->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />

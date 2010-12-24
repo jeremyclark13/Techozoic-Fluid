@@ -1199,7 +1199,7 @@ text_decoration:none;
 padding:5px;
 }
 #headerimgwrap {
-position: absolute;
+position: relative;
 top: 20%;
 }
 p img {

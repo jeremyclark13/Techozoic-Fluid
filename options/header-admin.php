@@ -12,7 +12,7 @@
 	$tech = get_option('techozoic_options');
 	$header_folder = TEMPLATEPATH. "/uploads/images/headers";
 	$header_select_nonce = wp_create_nonce  ('header-select');
-	$header_delete_nonce = wp_create_nonce  ('header-deleet');
+	$header_delete_nonce = wp_create_nonce  ('header-delete');
 ?>
 	<div class="tech_head">
 	<?php techozoic_top_menu();?>
