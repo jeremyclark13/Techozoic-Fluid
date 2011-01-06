@@ -483,7 +483,15 @@ $options = array (
     	array(	"name" => __("Custom Backgrounds","techozoic"),
 				"type" => "header",
               	"tab_id" => "background",
-				"anchor" =>"background"),				
+				"anchor" =>"background"),
+
+		array(	"name" => __("Image Storage Location","techozoic"),
+				"desc" => __("Choose where to store custom background and custom header images.<br /><strong>wp-content</strong> will store in wp-content/techozoic<br /><strong>theme</strong> will store in the theme directory under the uploads folder", "techozoic"),
+            	"id" => "image_location",
+				"old_id" => "unused before 1.9.3",
+            	"type" => "radio",
+            	"std" => "theme",
+            	"options" => array("wp-content","theme")),				
 				
 		array(	"name" => __("Page Background Image","techozoic"),
 				"desc" => __("Use a tiled image for best results Browse for a new image or chose previously uploaded image.  After choosing press Save to upload.","techozoic"),		
@@ -827,7 +835,7 @@ $options = array (
 				"text" => "px",
 				"size" => "5",
             	"type" => "text"),				
-				
+
     	array(	"name" => __("Header Image URL","techozoic"),
 				"desc" => __("Needs to be full path the header image  Example: <em>http://www.example.com/header.jpg</em>  Max Height: 200px","techozoic"),
             	"id" => "header_image_url",

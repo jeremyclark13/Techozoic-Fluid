@@ -12,6 +12,11 @@
 </ul>
 <br />
 <h2>Change Log</h2>
+<h3>Version 1.9.3</h3><br />
+- Removed deprecated comment function.<br />
+- Fixed problem with header folder upload permissions<br />
+- Added option to change image upload location, images can now be stored in wp-content directory to prevent removal with theme updates.<br />
+
 <h3>Version 1.9.2</h3><br />
 - Fixed IE 7 layout error when blog title box was aligned left.<br />
 - Fixed localization for date formats - format now pulled from blog options instead of hardcoded.<br />

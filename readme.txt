@@ -30,6 +30,10 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+= Version 1.9.3 =
+* Removed deprecated comment function.
+* Fixed problem with header folder upload permissions
+* Added option to change image upload location, images can now be stored in wp-content directory to prevent removal with theme updates.
 
 = Version 1.9.2 =
 * Fixed IE 7 layout error when blog title box was aligned left.

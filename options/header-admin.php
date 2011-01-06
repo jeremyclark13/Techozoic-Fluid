@@ -1,7 +1,7 @@
 <?php
     	global $themename, $shortname, $options, $tech_error;
-    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings saved","techozoic"), $themename) . '</strong></p></div>';
-    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__(" settings reset","techozoic"), $themename) . '</strong> </p></div>';
+    	if ( isset($_REQUEST['saved']) && $_REQUEST['saved'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__("%s settings saved","techozoic"), $themename) . '</strong></p></div>';
+    	if ( isset($_REQUEST['reset']) && $_REQUEST['reset'] ) echo '<div id="message" class="updated fade"><p><strong>'. sprintf(__("%s settings reset","techozoic"), $themename) . '</strong> </p></div>';
 		if ( isset($_REQUEST['message']) && $_REQUEST['message'] ) {
 			if (isset($_REQUEST['error']) && $_REQUEST['error'] ) {
 				echo '<div id="message" class="updated fade"><p><strong>'. $tech_error[$_REQUEST['error']] .' </strong> </p></div>';
@@ -10,7 +10,11 @@
 				}
 			}
 	$tech = get_option('techozoic_options');
-	$header_folder = TEMPLATEPATH. "/uploads/images/headers";
+	if ($tech['image_location'] == 'theme') {
+		$header_folder = TEMPLATEPATH . "/uploads/images/headers";
+	} else {
+		$header_folder = WP_CONTENT_DIR . "/techozoic/images/headers";
+	}
 	$header_select_nonce = wp_create_nonce  ('header-select');
 	$header_delete_nonce = wp_create_nonce  ('header-delete');
 ?>
@@ -39,6 +43,19 @@
 <?php 		} else { 
 			echo "<div class=\"updated fade\">" . sprintf(__('Please make sure <strong>%s</strong> is writable to enable upload of headers.','techozoic'),$dir) . "</div>"; 
 	}?>
+		<h3><?php _e('Image Upload Location','techozoic')?></h3>
+		<form method="post" name="tech_image_location">
+		<table>
+		<tr><td><input type="radio" <?php if ( $tech['image_location']  == "wp-content") { echo ' checked="checked"'; }?> value="wp-content" name="image_location" / > <?php _e('<code>wp-content/techozoic</code> folder' , 'techozoic'); ?> </td></tr>
+		<tr><td><input type="radio" <?php if ( $tech['image_location']  == "theme") { echo ' checked="checked"'; }?> value="theme" name="image_location" / > <?php _e('<code>wp-content/themes/techozoic-fluid/uploads</code> folder' , 'techozoic'); ?> </td></tr>
+		</table>
+		<span class="tech_submit submit save">
+		<input class="button-primary" name="tech_image_location" type="submit" value="<?php _e('Save Settings','techozoic')?>" />
+		<?php wp_nonce_field('techozoic_form_submit','techozioc_nonce_field_submit'); ?>		
+		</span>
+		</form>
+		<br />
+		<br />
 		<h3><?php _e('Header Image Settings','techozoic')?></h3>
 		<form method="post" name="tech_header_height">
 		<table>
@@ -95,13 +112,20 @@
 		
 <?php 
 	if (file_exists($header_folder)){
-		$path = TEMPLATEPATH. "/uploads/images/headers/";
+		$path = $header_folder;
 	} else {
+		include_once(TEMPLATEPATH . '/options/tech-init.php');
+		if ($tech['image_location'] == 'theme') {
+			tech_create_folders(TEMPLATEPATH . '/uploads');
+		} else {
+			tech_create_folders(WP_CONTENT_DIR . '/techozoic');
+		}
 		$path = TEMPLATEPATH . "/images/headers/";
 	}
 	$dir_handle = @opendir($path) or die("Unable to open $path");
 	$i = 1;
 	$delvars = array();
+	
 	function tech_check_header($file , $file_path){
 		global $tech;
 		$default_headers = array ("Rotate.jpg" , "Random_Lines_1.jpg", "Random_Lines_2.jpg", "Landscape.jpg", "Technology.jpg", "Grunge.jpg","none.jpg");
@@ -115,6 +139,7 @@
 			return  __(" - Current Selected Header","techozoic");
 		}
 	}
+	
 	while ($file = readdir($dir_handle)) {
 		if($file == "." || $file == ".." || $file == "index.php" || $file == ".svn" )
 			continue;
@@ -127,11 +152,14 @@
 				$alt = "";
 			$divid = substr($file, 0,strrpos($file,'.'));
 			if (file_exists($header_folder)){
-				$file_path = get_bloginfo('template_directory') . "/uploads/images/headers/" . $file;
+				if ($tech['image_location'] == 'wp-content') {
+					$file_path = WP_CONTENT_URL. "/techozoic/images/headers/" . $file;
+				} else {
+					$file_path = get_bloginfo('template_directory') . "/uploads/images/headers/" . $file;
+				}
 			} else {
 				$file_path = get_bloginfo('template_directory') . "/images/headers/" . $file;
 			}
-
 			
 ?>				<div class="filediv <?php echo $alt; ?>">
 				<div id="<?php echo $divid; ?>" class="current">

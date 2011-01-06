@@ -24,6 +24,7 @@
 	if ( ! defined( 'WP_CONTENT_DIR' ) )
     		define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
 	define ('WP_UPLOAD_PATH', ABSPATH . $upload_path );
+	
 	if(is_admin()) {
 		if (isset($_GET['page'])) {
 			if ( $_GET['page'] == "techozoic_main_admin"  || $_GET['page'] == "techozoic_header_admin" || $_GET['page'] == "techozoic_style_admin" || $_GET['page'] == "techozoic_export_admin" ){
@@ -540,7 +541,7 @@ function tech_first_run_options() {
   	if ($check != $version || !file_exists($header_folder) || !file_exists($background_folder)) {
 		include_once(TEMPLATEPATH . '/options/tech-init.php');
 		tech_update_options();
-		tech_create_folders();
+		tech_create_folders(TEMPLATEPATH . '/uploads');
     		// Add marker so it doesn't run in future
   		add_option('techozoic_activation_check', $version);
 		update_option('techozoic_activation_check', $version);

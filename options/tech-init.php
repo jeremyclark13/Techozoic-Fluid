@@ -3,7 +3,7 @@
 Tech Init script creates upload folder and moves images.
 Pulls options from existing Techozoic options table and adds defaults for new options .
 *************************************************/
-function tech_create_folders(){
+function tech_create_folders($path){
 
 	function chmodr($path, $filemode) {
 		if (!is_dir($path))
@@ -31,10 +31,10 @@ function tech_create_folders(){
 	}
 
 	$tech_folders = array (
-		TEMPLATEPATH . "/uploads",
-		TEMPLATEPATH . "/uploads/images",
-		TEMPLATEPATH . "/uploads/images/headers",
-		TEMPLATEPATH . "/uploads/images/backgrounds"
+		$path,
+		$path . "/images",
+		$path . "/images/headers",
+		$path . "/images/backgrounds"
 		);
 		
 	function tech_loop_mkdir($dir_array){
@@ -51,24 +51,25 @@ function tech_create_folders(){
 
 	tech_loop_mkdir($tech_folders);
 
-	function tech_move_images($type){
-		$path = TEMPLATEPATH ."/images/".$type."/";
-		$dir_handle = @opendir($path) or die("Unable to open $path");
+	function tech_move_images($type,$path){
+		$dir = TEMPLATEPATH ."/images/".$type."/";
+		$dir_handle = @opendir($dir) or die("Unable to open $dir");
 			while ($tech_file = readdir($dir_handle)) {
 				if($tech_file == "." || $tech_file == ".." || $tech_file == "index.php" || $tech_file == ".svn" )
 					continue;
 					$orig_file = TEMPLATEPATH ."/images/".$type."/".$tech_file;
-					$dest_file = TEMPLATEPATH . "/uploads/images/".$type."/".$tech_file;
+					$dest_file = $path . "/images/".$type."/".$tech_file;
 					if (!file_exists($dest_file)){
 						copy($orig_file,$dest_file);
 					}
 			} //End While Loop
 		closedir($dir_handle);
-	}		
-	tech_move_images('headers');
-	tech_move_images('backgrounds');
-	copy(TEMPLATEPATH.'/rotate.php', TEMPLATEPATH . '/uploads/rotate.php');
+	}
+	tech_move_images('headers' , $path);
+	tech_move_images('backgrounds', $path);
+	copy(TEMPLATEPATH.'/rotate.php', $path . '/rotate.php');
 }
+
 function tech_update_options(){
 	global $themename, $options, $version;
 	$themename = "Techozoic";

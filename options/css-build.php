@@ -149,7 +149,11 @@
 	if (!file_exists($header_folder)){
 		$home = get_bloginfo('template_directory');
 	} else {
-		$home = get_bloginfo('template_directory') ."/uploads";
+		if ($tech['image_location'] == 'theme') {
+			$home = get_bloginfo('template_directory') ."/uploads";
+		} else {
+			$home = WP_CONTENT_URL . "/techozoic/";
+		}
 	}
 	$tech_drop_shadow_classes = ".noclass";
 	if ($tech['drop_shadow']){

@@ -3,7 +3,7 @@
 <?php 	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Left Sidebar','techozoic')) ) {
 		global $user_ID; 
 		if( $user_ID ) {
-			if( current_user_can('edit_themes') ) { ?>
+			if( current_user_can('edit_themes') || current_user_can('edit_theme_options') ) { ?>
 			<li><h2 class="widgettitle"><?php _e('Default Widgets' ,'techozoic')?></h2>
 				<?php printf(__('Widgets below are default.  These will be replaced when customizing using %s Widget Admin</a>','techozoic'),'<a href="' . get_bloginfo('wpurl') . '/wp-admin/widgets.php" title="' . __('Widgets','techozoic') . '">'); ?>
 			</li>

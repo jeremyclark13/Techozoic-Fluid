@@ -60,7 +60,7 @@ function image_preview(path,id){
 	} else {
 		document.getElementById(preview).style.display = '';
 		document.getElementById(preview_image).style.display = 'block';
-		document.getElementById(preview_image).style.backgroundImage = "url(" + path + "/uploads/images/backgrounds/" + image + ")"; 
+		document.getElementById(preview_image).style.backgroundImage = "url(" + path + image + ")"; 
 		}
 	}
 

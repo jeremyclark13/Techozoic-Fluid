@@ -17,8 +17,6 @@
 	}
 		/* This variable is for alternating comment background */
 		$oddcomment = 'class="alt" ';
-	if (function_exists('wp_list_comments')) {
-		//WP 2.7 Comment Loop
 		if ( have_comments() ) { ?>
 			<h3 id="comments"><?php comments_number(__('No Comments' ,'techozoic'), __('One Comment' ,'techozoic'),  _n('% Comment' , '% Comments',get_comments_number(),'techozoic'));?></h3>
 			<ol class="commentlist">
@@ -38,72 +36,6 @@
 ?>				<p class="nocomments"><?php _e('Comments are closed.','techozoic')?></p>
 <?php	 	}
 			
-	} else {
-		//WP 2.6 and older Comment Loop
- 		// Do not delete these lines
-		global $tech_comments;
-		global $tech_trackbacks;
-		split_comments( $comments );
-		/* This variable is for alternating comment background */
-		$oddcomment = 'alt';
-		if ($comments) { ?>
-			<h3 id="comments"><?php printf(__('%1$s to %2$s &#8221;','techozoic'),comments_number(__('No Comments &#187;' ,'techozoic'), __('One Comment &#187;' ,'techozoic'),  _n('% Comment &#187;' , '%Comments &#187',get_comments_number(),'techozoic')), get_the_title())?></h3> 
-			<ol class="commentlist">
-<?php 				foreach ( $tech_comments as $comment ) { ?>
-					<li class="<?php echo $oddcomment; ?> <?php if ($comment->user_id == '1') echo 'author'; ?>" id="comment-<?php comment_ID() ?>">
-<?php 					techozoic_gravatar(); 
-?>
-					<?php printf(__('Comment by %s','techozoic'),'<em>'.get_comment_author_link().'</em>:'); ?>
-<?php 					if ($comment->comment_approved == '0') { ?>
-						<em><?php _e('Your comment is awaiting moderation.','techozoic')?></em>
-<?php 					} 
-?>
-					<br />
-					<small class="commentmetadata"><a href="#comment-<?php comment_ID() ?>" title=""><?php comment_date('l, F jS Y') ?> @ <?php comment_time() ?></a> <?php edit_comment_link(__('Edit','techozoic'),'',''); ?></small>
-<?php 					comment_text() ?>
-					</li>
-<?php 					/* Changes every other comment to a different class */	
-					if ('alt' == $oddcomment) $oddcomment = '';
-					else $oddcomment = 'alt';
-				} /* end for each comment */ ?>
-			</ol>
-<?php 			if ( count( $tech_trackbacks ) > 0 ) { ?>
-				<h3><?php _e('TrackBacks / PingBacks','techozoic')?></h3>
-				<ol class="trackback">
-<?php 					foreach ( $tech_trackbacks as $comment ) {
-						if ( $comment->comment_type == 'trackback') { 
-						$tbtype = 'tb'; 
-					} else { 
-						$tbtype = 'pb'; 
-					} 
-?>
-					<li class="<?php echo $tbtype; ?>" id="comment-<?php comment_ID() ?>">
-<?php 					if ( $tbtype == 'tb') { ?>
-						<?php _e('TrackBack','techozoic')?>
-<?php 					} else { ?>
-						<?php _e('PingBack','techozoic')?>
-<?php 					} 
-?>					<br />
- 					<em><?php comment_author_link() ?></em>
-<?php 					if ($comment->comment_approved == '0') { ?>
-						<em><?php _e('Your comment is awaiting moderation.','techozoic')?></em>
-<?php 					} ?>
-					</li>
-<?php 					} /* end for each comment */ ?>
-				</ol>
-<?php 			} 
-		} else { // this is displayed if there are no comments so far
-			if ('open' == $post->comment_status) {  ?> 
-				<!-- If comments are open, but there are no comments. -->
-<?php 			} else { // comments are closed ?>
-				<!-- If comments are closed. -->
-				<p class="nocomments"><?php _e('Comments are closed.','techozoic')?></p></div>
-<?php 			}
-
-			} 
-
-		} // 2.6 and older Comment Loop end 
-
 	if ('open' == $post->comment_status) { 
 		if (function_exists('comment_form')) {
 			comment_form(array('comment_notes_after' => ' '));

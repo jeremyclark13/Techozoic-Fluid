@@ -2,7 +2,7 @@
 //Please Do NOT edit this page.
 $themename = "Techozoic";
 $shortname = "tech";
-$tech_error = array ( __("Return Error","techozoic"), __("File Already Exists","techozoic"), __("Incorrect File Type / File Size Limit exceeded","techozoic"),sprintf(__("Folder isn't writable please check folder that<code>%s/uploads/</code> exists and is writable." ,"techozoic"), TEMPLATEPATH), __("File Doesn't exist.","techozoic"), sprintf(__("Folder isn't writable please check folder<code>%s</code> Permissions.","techozoic"),TEMPLATEPATH),__("Please only use .ico format for Fav Icon Images","techozoic"));
+$tech_error = array ( __("Return Error","techozoic"), __("File Already Exists","techozoic"), __("Incorrect File Type / File Size Limit exceeded","techozoic"),sprintf(__("Folder isn't writable please check folder that upload path exists and is writable." ,"techozoic")), __("File Doesn't exist.","techozoic"), sprintf(__("Folder isn't writable please check folder image upload folder Permissions.","techozoic")),__("Please only use .ico format for Fav Icon Images","techozoic"));
 $theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = $theme_data['Version'];
 function techozoic_add_admin() {
@@ -38,7 +38,11 @@ function techozoic_add_admin() {
 	}
 	if ( isset($_GET['page']) &&$_GET['page'] == "techozoic_header_admin" ) {
 		if (isset($_FILES['file']) && check_admin_referer('techozoic_form_upload','techozioc_nonce_field_upload')  && tech_can_edit() ){
-			$dir = TEMPLATEPATH. "/uploads/images/headers/";
+			if ($settings['image_location'] == 'theme'){
+				$dir = TEMPLATEPATH. "/uploads/images/headers/";
+			} else {
+				$dir = WP_CONTENT_DIR . "/techozoic/images/headers/";
+			}
 			if (is_writable($dir)) {
 				if ((($_FILES["file"]["type"] == "image/gif") || ($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/png") || ($_FILES["file"]["type"] == "image/pjpeg")) && ($_FILES["file"]["size"] < 1048576)) {
 						if ($_FILES["file"]["error"] > 0){
@@ -48,8 +52,8 @@ function techozoic_add_admin() {
 								if (file_exists($dir . $_FILES["file"]["name"])) {
 									header("Location: admin.php?page=techozoic_header_admin&message=true&error=1");
 								} else {
-									move_uploaded_file($_FILES["file"]["tmp_name"], 
-									$dir . $_FILES["file"]["name"]);
+									move_uploaded_file($_FILES["file"]["tmp_name"], $dir . $_FILES["file"]["name"]);
+									chmod($dir . $_FILES["file"]["name"], 0775);
 									header("Location: admin.php?page=techozoic_header_admin&message=true");
 								}
 							}
@@ -68,13 +72,21 @@ function techozoic_add_admin() {
 					$settings['header_image_url'] = '';
 				} else {
 					$settings['header'] = 'Defined Here';
-					$settings['header_image_url'] = get_bloginfo('template_directory') . "/uploads/images/headers/" . $_POST['header_select'];
+					if ($settings['image_location'] == 'theme'){
+						$settings['header_image_url'] = get_bloginfo('template_directory') . "/uploads/images/headers/" . $_POST['header_select'];
+					} else {
+						$settings['header_image_url'] = WP_CONTENT_URL . "/techozoic/images/headers/" . $_POST['header_select'];
+					}
 				}
 			update_option('techozoic_options', $settings);
 			include(TEMPLATEPATH .'/options/css-build.php');
 			header("Location: admin.php?page=techozoic_header_admin&saved=true");	
-			} elseif(isset($_POST['tech_header_delete']) && ! wp_verify_nonce($_POST['techozioc_nonce_field_header_delete'], 'header-delete')  && tech_can_edit() ) {
-				$path = TEMPLATEPATH. "/uploads/images/headers/";
+			} elseif(isset($_POST['tech_header_delete']) && wp_verify_nonce($_POST['techozioc_nonce_field_header_delete'], 'header-delete')  && tech_can_edit() ) {
+				if ($settings['image_location'] == 'theme'){
+					$path = TEMPLATEPATH. "/uploads/images/headers/";
+				} else {
+					$path = WP_CONTENT_DIR . "/techozoic/images/headers/";
+				}
 				$dir_handle = @opendir($path) or die("Unable to open $path");
 				$delvars = array();
 				while ($file = readdir($dir_handle)) {
@@ -83,7 +95,7 @@ function techozoic_add_admin() {
 					$delvars [] = $file;
 				}
 				closedir($dir_handle);
-				$header= TEMPLATEPATH. "/uploads/images/headers/" . $_POST['header_delete'];
+				$header = $path . $_POST['header_delete'];
 				if (in_array($_POST['header_delete'],$delvars)){
 					unlink($header);
 				} else {
@@ -94,6 +106,17 @@ function techozoic_add_admin() {
 				$settings['header_height'] = preg_replace('/[^0-9.]/', '', $_POST['header_height']);
 				$settings['header_align'] = $_POST['header_align'];
 				$settings['header_v_align'] = $_POST['header_v_align'];
+				update_option('techozoic_options', $settings);
+				include(TEMPLATEPATH .'/options/css-build.php');
+			header("Location: admin.php?page=techozoic_header_admin");
+			}  elseif (isset($_POST['tech_image_location']) && check_admin_referer('techozoic_form_submit','techozioc_nonce_field_submit')  && tech_can_edit() ){
+				$settings['image_location'] = $_POST['image_location'];
+				include_once(TEMPLATEPATH . '/options/tech-init.php');
+				if ($_POST['image_location'] == 'theme') {
+					tech_create_folders(TEMPLATEPATH . '/uploads');
+				} else {
+					tech_create_folders(WP_CONTENT_DIR . '/techozoic');
+				}
 				update_option('techozoic_options', $settings);
 				include(TEMPLATEPATH .'/options/css-build.php');
 			header("Location: admin.php?page=techozoic_header_admin");
@@ -183,17 +206,33 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 								} else {
 									$v = $value['std'];
 								}
-							} 
+								if ($k == 'image_location'){
+									include_once(TEMPLATEPATH . '/options/tech-init.php');
+									if ($_POST['image_location'] == 'theme') {
+										tech_create_folders(TEMPLATEPATH . '/uploads');
+									} else {
+										tech_create_folders(WP_CONTENT_DIR . '/techozoic');
+									}
+								}
+							}
 						} elseif ($type == "upload") {
 							unset($v);
 							$image_url = $settings[$k];
 							if (isset($_REQUEST[$value['reset']])){
 								$image_url = "";
 							} elseif ($_REQUEST[$value['select']] != "Select Image"){
-								$image_url =  get_bloginfo('template_directory'). "/uploads/images/backgrounds/".$_REQUEST[$value['select']];
+								if ($settings['image_location'] == 'theme'){
+									$image_url =  get_bloginfo('template_directory'). "/uploads/images/backgrounds/" . $_REQUEST[$value['select']];
+								} else {
+									$image_url = WP_CONTENT_URL . "/techozoic/images/backgrounds/" . $_REQUEST[$value['select']];
+								}
 							} elseif ($_FILES[$value['id']]['size'] > 0){
 								$ID = $value['id']; // Acts as the name
-								$dir = TEMPLATEPATH. "/uploads/images/backgrounds/";
+								if ($settings['image_location'] == 'theme'){
+									$dir = TEMPLATEPATH . "/uploads/images/backgrounds/";
+								} else {
+									$dir = WP_CONTENT_DIR . "/techozoic/images/backgrounds/";
+								}
 								if (is_writable($dir)) {
 									if ((($_FILES[$ID]["type"] == "image/gif") || ($_FILES[$ID]["type"] == "image/jpeg") || ($_FILES[$ID]["type"] == "image/png") || ($_FILES[$ID]["type"] == "image/x-ico") || ($_FILES[$ID]["type"] == "image/x-icon") || ($_FILES[$ID]["type"] == "image/pjpeg")) && ($_FILES[$ID]["size"] < 1048576)) {
 										if ($_FILES[$ID]["error"] > 0){
@@ -213,7 +252,11 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 								} else {
 									$error = "3";
 								}
-								$image_url =  get_bloginfo('template_directory'). "/uploads/images/backgrounds/".$_FILES[$ID]['name'];
+								if ($settings['image_location'] == 'theme'){
+									$image_url =  get_bloginfo('template_directory'). "/uploads/images/backgrounds/" . $_FILES[$ID]['name'];
+								} else {
+									$image_url = WP_CONTENT_URL . "/uploads/images/backgrounds/" . $_FILES[$ID]['name'];
+								}
 							}
 						} 
 					
@@ -424,7 +467,12 @@ function techozoic_admin() {
 
 	<?php
 				
-		 } elseif ($value['type'] == "upload") { ?>
+		 } elseif ($value['type'] == "upload") { 
+		 if ($settings['image_location'] == 'theme'){
+			$url_path = get_bloginfo('template_directory') . "/uploads/images/backgrounds/";
+		} else {
+			$url_path = WP_CONTENT_URL . "/techozoic/images/backgrounds/";
+		}?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?></th>
 	<?php	if(isset($value['desc'])){?>
@@ -444,10 +492,15 @@ function techozoic_admin() {
 		<?php				} ?>
 				<tr valign="middle"> 
 					<th scope="row">Choose Existing</th><td>
-		<select name="<?php echo $value['id']; ?>_select" id="<?php echo $value['id']; ?>_select" onchange="image_preview('<?php bloginfo('template_directory') ?>','<?php echo $value['id']?>')">
+		<select name="<?php echo $value['id']; ?>_select" id="<?php echo $value['id']; ?>_select" onchange="image_preview('<?php echo $url_path ?>','<?php echo $value['id']?>')">
 		<option>Select Image</option>
 	<?php
-		$path = TEMPLATEPATH. "/uploads/images/backgrounds/";
+		if ($settings['image_location'] == 'theme'){
+			$path = TEMPLATEPATH. "/uploads/images/backgrounds/";
+		} else {
+			$path = WP_CONTENT_DIR . "/techozoic/images/backgrounds/";
+		}
+
 		if (file_exists($path)){
 			$dir_handle = @opendir($path);
 			while ($tech_file = readdir($dir_handle)) {
