@@ -64,6 +64,24 @@
 	}
 
 /**************************************
+	Techozoic comment number correction
+	since 1.9.3
+***************************************/
+
+// http://www.wpbeginner.com/wp-tutorials/display-the-most-accurate-comment-count-in-wordpress/
+function tech_comment_count( $count ) {  
+	if ( ! is_admin() ) {
+		global $id;
+		$comments_by_type = &separate_comments(get_comments('status=approve&post_id=' . $id));
+		return count($comments_by_type['comment']);
+	} else {
+	return $count;
+	}
+}
+add_filter('get_comments_number', 'tech_comment_count', 0);
+	
+	
+/**************************************
 	Techozoic WP 3 menu fallback
 	Since 1.9.1
 ***************************************/
