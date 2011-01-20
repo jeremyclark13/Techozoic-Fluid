@@ -16,6 +16,8 @@
 - Removed deprecated comment function.<br />
 - Fixed problem with header folder upload permissions<br />
 - Added option to change image upload location, images can now be stored in wp-content directory to prevent removal with theme updates.<br />
+- Added border to top of header, and spacing to better frame theme.<br />
+- Added option to use Google Fonts.<br />
 
 <h3>Version 1.9.2</h3><br />
 - Fixed IE 7 layout error when blog title box was aligned left.<br />

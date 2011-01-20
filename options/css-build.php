@@ -33,6 +33,14 @@
 		return $font;
 	}
 	
+	function tech_google_font_family($where) {
+		global $tech;
+		$classes = explode( ',' , $tech['font_headings']);
+		if (in_array($where, $classes)){
+			return str_replace('+', ' ', $tech['google_font_family']) . ', ';
+		}
+	}
+	
 	function tech_color_verify($color){
 		if ($color){
 			if ($color[0] != '#')
@@ -98,10 +106,18 @@
 			$tech['nav_align'] = '';
 		break;
 	}
+	
 	$tech['default_font'] = tech_font($tech['default_font']);
 	$tech['body_font'] = tech_font($tech['body_font']);
-	$tech['header_font'] = tech_font($tech['header_font']);
 	$tech['nav_font'] = tech_font($tech['nav_font']);
+	$tech_blog_title_font = tech_google_font_family('Main Blog Title') .  tech_font($tech['header_font']);
+	$tech_h1_font = tech_google_font_family('H1 Headings') . tech_font($tech['header_font']);
+	$tech_h2_font = tech_google_font_family('H2 Headings') . tech_font($tech['header_font']);
+	$tech_h3_font = tech_google_font_family('H3 Headings') . tech_font($tech['header_font']);
+	$tech_h4_font = tech_google_font_family('H4 Headings') . tech_font($tech['header_font']);
+	$tech_h5_font = tech_google_font_family('H5 Headings') . tech_font($tech['header_font']);
+	$tech_sidebar_font = tech_google_font_family('Sidebar Titles') . tech_font($tech['sidebar_font']);
+	$tech_post_title_font = tech_google_font_family('Post Titles') . tech_font($tech['header_font']);
 	$cufon_header_size = $tech['main_heading_font_size'] ;
 	$cufon_sidebar_size = "1.6";
 	$tech_color_scheme = $tech['color_scheme'];
@@ -190,8 +206,29 @@ font-size: {$tech['body_font_size']}px;
 font-family:{$tech['body_font']}, Sans-Serif;
 background-color:{$tech_post_bg_color};
 }
-h1,h2,h3,h4,h5,.blog_title{
-font-family:{$tech['header_font']}, Sans-Serif;
+h1{
+font-family:{$tech_h1_font}, Sans-Serif;
+}
+h2{
+font-family:{$tech_h2_font}, Sans-Serif;
+}
+h3{
+font-family:{$tech_h3_font}, Sans-Serif;
+}
+h4{
+font-family:{$tech_h4_font}, Sans-Serif;
+}
+h5{
+font-family:{$tech_h5_font}, Sans-Serif;
+}
+.blog_title{
+font-family:{$tech_blog_title_font}, Sans-Serif;
+}
+.post_title{
+font-family:{$tech_post_title_font}, Sans-Serif;
+}
+.sidebar h2, .sidebar h3, #footer h2{
+font-family:{$tech_sidebar_font}, Sans-Serif;
 }
 .blog_title{
 font-size: {$tech['main_heading_font_size']}em;
@@ -583,6 +620,9 @@ font-size: 12px;
 .fontsizeplus{
 font-size: 18px;
 }
+#l_sidebar, #content, #r_sidebar { 
+padding-top: 30px; 
+}
 .post_comment_cont{
 clear:both;
 margin:3px;
@@ -627,7 +667,7 @@ text-align:center;
 border:none;
 text-align:left;
 min-width:760px;
-margin:auto;
+margin:0 auto 10px;
 padding:0;
 }
 #pagel{
@@ -838,11 +878,15 @@ font-style:normal;
 text-transform:capitalize;
 }
 #header {
-margin:0 auto;
+margin:10px auto 0;
 padding:0;
 min-width: 760px;
 text-align:left;
 position:relative;
+}
+#header_top{
+background:transparent url({$img_path}/images/bgtop.png) repeat-x left top;
+height: 100%;
 }
 #headerl{
 background:url('{$img_path}/images/bgl.png') repeat-y scroll left top transparent;

@@ -456,20 +456,12 @@ $options = array (
             	"options" => array("Trebuchet MS", "Verdana", "Georgia", "Tahoma", "Arial", "Times New Roman","Lucida Sans Unicode","Impact")),
 				
 		array("name" => __("Cufon Font Replacement","techozoic"),
-				"desc" =>__("Visit this <a href=\"http://cufon.shoqolate.com/generate/\">link</a> to find out about Cufon.","techozoic"),
+				"desc" =>__("Visit this <a href=\"http://cufon.shoqolate.com/generate/\">link</a> to find out about Cufon.  <strong>Cufon will be phased out in favor of <a href='http://code.google.com/webfonts'>Google Fonts</a></strong>","techozoic"),
             	"id" => "cufon_font",
 				"old_id" => "unused before 1.8.7",
             	"std" => "Disable",
             	"type" => "radio",
 				"options" => array("Enable","Disable")),
-				
-		array("name" => __("Cufon Font Replacement","techozoic"),
-				"desc"=>__("Check which headings you would like replaced.","techozoic"),
-            	"id" => "cufon_font_headings",
-				"old_id" => "unused before 1.8.7",
-            	"std" => "",
-            	"type" => "checkbox",
-				"options" => array("Main Blog Title","Sidebar Titles","Post Titles","H1 Headings","H2 Headings","H3 Headings","H4 Headings","H5 Headings")),
 				
 		array("name" => __("Cufon Font Replacement","techozoic"),
 				"desc" => __("Choose the Font you would like to replace with. More coming in later versions.","techozoic"),
@@ -480,6 +472,30 @@ $options = array (
             	"type" => "select",
 				"options" => array("contempory","journal","nevis","quicksand")),
 
+		array("name" => __("Google Font Replacement","techozoic"),
+				"desc" =>__("Enable this to use the Google Font API to add new fonts.","techozoic"),
+            	"id" => "google_font",
+				"old_id" => "unused before 1.8.7",
+            	"std" => "Disable",
+            	"type" => "radio",
+				"options" => array("Enable","Disable")),
+				
+		array("name" => __("Goolge Fonts","techozoic"),
+				"desc" => __("Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After clicking on the font to use, locate the <strong>Font API parameter name</strong> ex: Walter+Turncoat.  This should be added to the text box.","techozoic"),
+            	"id" => "google_font_family",
+				"old_id" => "unused before 1.9.3",
+            	"std" => "",
+            	"type" => "text"),				
+				
+		array("name" => __("Font Replacement","techozoic"),
+				"desc"=>__("Check which headings you would like replaced.","techozoic"),
+            	"id" => "font_headings",
+				"old_id" => "cufon_font_headings",
+            	"std" => "",
+            	"type" => "checkbox",
+				"options" => array("Main Blog Title","Sidebar Titles","Post Titles","H1 Headings","H2 Headings","H3 Headings","H4 Headings","H5 Headings")),
+					
+				
     	array(	"name" => __("Custom Backgrounds","techozoic"),
 				"type" => "header",
               	"tab_id" => "background",

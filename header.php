@@ -71,9 +71,6 @@ else { ?>
 <![endif]-->
 <!--[if IE 7]>
 	<style type="text/css">
-	#l_sidebar{ padding-top: 30px; }
-	#content { padding-top: 30px; }
-	#r_sidebar { padding-top: 30px; }
 	#headerimgwrap{ position:absolute;left:20%}
 	.hleft{position:absolute;}
 	.hright{position:absolute; right:0;}
@@ -91,6 +88,7 @@ wp_head(); ?>
 <body <?php body_class(); ?>>
 <a name="top"></a>
 <div id="header">
+<div id="header_top">
 <?php if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'left_header' ) ){
 	echo '<div class="hleft">'. "\n";
 	dynamic_sidebar( 'left_header' );
@@ -188,7 +186,9 @@ if ($tech['breadcrumbs'] == "On"){
 	tech_breadcrumbs();
 }?>
 </div><!--end headerl-->
+</div><!--end header_top-->
 </div><!--end header-->
+
 
 <div id="page">
 <div id="pagel">

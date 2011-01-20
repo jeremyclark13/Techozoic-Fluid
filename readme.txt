@@ -34,6 +34,8 @@ Installation can be done automatically through the Install Themes feature or man
 * Removed deprecated comment function.
 * Fixed problem with header folder upload permissions
 * Added option to change image upload location, images can now be stored in wp-content directory to prevent removal with theme updates.
+* Added border to top of header, and spacing to better frame theme.
+* Added option to use Google Fonts.
 
 = Version 1.9.2 =
 * Fixed IE 7 layout error when blog title box was aligned left.

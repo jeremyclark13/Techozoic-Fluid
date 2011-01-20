@@ -64,6 +64,16 @@
 	}
 
 /**************************************
+	Techozoic Google Font Replacement
+	Since 1.9.3
+***************************************/
+function tech_google_font() {
+	global $tech;
+	wp_enqueue_style('google_fonts' , "http://fonts.googleapis.com/css?family={$tech['google_font_family']}", '', '', 'screen');
+	}
+
+	
+/**************************************
 	Techozoic comment number correction
 	since 1.9.3
 ***************************************/
@@ -153,7 +163,7 @@ function tech_content_width(){
 ***************************************/	
 function tech_footer_text(){
 	global $tech, $version;
-	$string = $tech['footer_text'];
+	$string = stripslashes($tech['footer_text']);
 	$shortcode = array('/%BLOGNAME%/i','/%THEMENAME%/i','/%THEMEVER%/i','/%THEMEAUTHOR%/i','/%TOP%/i','/%COPYRIGHT%/i','/%MYSQL%/i');
 	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy; '. date('Y'),sprintf(__('%1$d mySQL queries in %2$s seconds.','techozoic'), get_num_queries(),timer_stop(0)));
 	echo preg_replace($shortcode, $output, $string);
@@ -353,7 +363,7 @@ function tech_cufon_script() {
 function tech_cufon_options() {
 	global $tech;
 	$list = "";
-	$headings = explode( ',' , $tech['cufon_font_headings']);
+	$headings = explode( ',' , $tech['font_headings']);
 	$class = array(
 		'Main Blog Title' => '.blog_title',
 		'Sidebar Titles' => '.sidebar h2, .sidebar h3, #footer h2',
@@ -731,6 +741,9 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ){
 }
 if ($tech['nav_menu_type'] == "Dropdown" || $tech['nav_menu_type'] == "WP 3 Menu"){	
 	add_action('wp_print_styles','tech_dropdown_js');
+}
+if ($tech['google_font'] == "Enable") {
+	add_action('wp_print_styles','tech_google_font');
 }
 if ($tech['cufon_font'] == "Enable") {
 	add_action('template_redirect', 'tech_cufon_script');  // Calls script to add Cufon font replacement scripts See - http://cufon.shoqolate.com/

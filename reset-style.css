@@ -26,7 +26,7 @@ body{
 #page{
 	background-color:#F7F7F7;
 	border:none;
-	margin:auto;
+	margin:0 auto 10px;
 	min-width:760px;
 	padding:0;
 	text-align:left;
@@ -103,11 +103,16 @@ Header
 #header{
 	background:url(images/headers/Grunge.jpg) no-repeat bottom center #f7f7f7;
 	height:200px;
-	margin:0 auto;
+	margin:10px auto 0;
 	padding:0;
 	width:95%;
 	min-width: 760px;
 	position: relative;
+}
+
+#header_top{
+	background:transparent url(images/bgtop.png) repeat-x left top;
+	height: 100%;
 }
 
 #headerimg{
