@@ -2,7 +2,7 @@
 Contributors: jeremyclark13
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817
 Tags: blue, light, one-column, two-columns, three-columns, flexible-width, custom-colors, custom-header, theme-options ,left-sidebar, right-sidebar, threaded-comments, translation-ready, sticky-post
-Requires at least: 2.8
+Requires at least: 3.0
 Tested up to: 3.1
 Stable tag: trunk
 
@@ -36,6 +36,9 @@ Installation can be done automatically through the Install Themes feature or man
 * Added option to change image upload location, images can now be stored in wp-content directory to prevent removal with theme updates.
 * Added border to top of header, and spacing to better frame theme.
 * Added option to use Google Fonts.
+* Added post formating options including where excerpt should be used, and where to display social media icons.
+* Moved options page under the Appearence menu as per Theme Review Guidelines.
+* Added links for all image sizes to gallery pages.
 
 = Version 1.9.2 =
 * Fixed IE 7 layout error when blog title box was aligned left.

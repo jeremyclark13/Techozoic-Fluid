@@ -18,9 +18,9 @@
 	$header_select_nonce = wp_create_nonce  ('header-select');
 	$header_delete_nonce = wp_create_nonce  ('header-delete');
 ?>
-	<div class="tech_head">
-	<?php techozoic_top_menu();?>
-	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php printf(__("%s Header Settings","techozoic"),$themename);?></h2>
+	<div class="tech_head tech_wrap">
+	<?php techozoic_admin_tabs('header');?>
+	<h2 style="border:none;"><?php printf(__("%s Header Settings","techozoic"),$themename);?></h2>
 	<div style="clear:both;"></div>
 		<?php techozoic_links_box();?>
 	<div class="tech_form_wrap">

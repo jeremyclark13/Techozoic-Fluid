@@ -21,8 +21,17 @@ you'll get a tag cloud displaying on a page.
 			<h2 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h2>
 
 			<div class="entry">
-				<?php the_excerpt(); ?>
+<?php 			if (tech_excerpt('Tag Archive')){
+					the_excerpt();
+				} else {
+					the_content(__('Read the remainder of this entry &raquo;'  , 'techozoic')); 
+				}?>
 			</div>
+<?php		if (tech_icons('Tag Archive')){	?>	
+				<div class="top">
+				<?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php bloginfo('template_directory'); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
+				</div>
+<?php		}?>
 </div>
 	<?php endwhile; ?>
 	<?php endif; ?>

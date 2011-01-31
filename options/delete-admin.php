@@ -1,9 +1,9 @@
 <?php    	
 	global $themename, $shortname, $options, $tech_error;
 ?>
-	<div class="tech_head">
-		<?php techozoic_top_menu(); ?>
-		<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2><?php printf(__("%s Delete Settings","techozoic"),$themename);?></h2>
+	<div class="tech_head tech_wrap">
+		<?php techozoic_admin_tabs('delete'); ?>
+		<h2 style="border:none"><?php printf(__("%s Delete Settings","techozoic"),$themename);?></h2>
 		<div style="clear:both;"></div>
 			<?php techozoic_links_box();?>
 		<div class="tech_form_wrap">

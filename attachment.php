@@ -52,6 +52,10 @@ if (have_posts()) {
 					<strong><?php _e('Click for original image','techozoic');?></strong>
 				</span>
 				</a>
+				<br />
+				<div class="image_sizes">
+				<?php printf( __( 'Additional sizes: %s', 'techozoic' ), tech_image_links() ); ?>
+				</div>
 			</div><!--#main_image-->
 <?php
 		}	 
@@ -59,6 +63,7 @@ if (have_posts()) {
 		the_content('<p class="serif">'.__('Read the rest of this entry' ,'techozoic').'&raquo;</p>'); 
 		
 		if ( wp_attachment_is_image() ) {
+		
 	        $attachments = array_values( get_children( array( 'post_parent' => $post->post_parent, 'post_status' => 'inherit', 'post_type' => 'attachment', 'post_mime_type' => 'image', 'order' => 'ASC', 'orderby' => 'menu_order ID' ) ) );
 			foreach ( $attachments as $k => $attachment ) {
 					if ( $attachment->ID == $post->ID )

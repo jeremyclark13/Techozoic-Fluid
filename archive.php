@@ -41,14 +41,22 @@ $date_format = get_option('date_format');
 				<small><?php the_time($date_format) ?></small>
 				
 				<div class="entry">
-					<?php the_content(); 
+<?php 			if ( ( is_category() && tech_excerpt('Category Archive') ) || ( is_year() && tech_excerpt('Yearly Archive') ) || ( is_month() && tech_excerpt('Monthly Archive') ) ){
+					the_excerpt();
+				} else {
+					the_content(__('Read the remainder of this entry &raquo;'  , 'techozoic')); 
+				}
 				$posttags = get_the_tags();
 				if (!empty($posttags)) { ?>
 					<div class="tags"><small><?php the_tags(); ?></small></div>
 				<?php 
 				}  ?>
 				</div>
-		
+<?php			if ( ( is_category() && tech_icons('Category Archive') ) || ( is_year() && tech_icons('Yearly Archive') ) || ( is_month() && tech_icons('Monthly Archive') ) ){?>
+				<div class="top">
+				<?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php bloginfo('template_directory'); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
+				</div>
+<?php			}?>
 				<p class="postmetadata"><?php printf(__('Posted in %s' ,'techozoic'), get_the_category_list(', '));?> | <?php edit_post_link(__('Edit' ,'techozoic'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;' ,'techozoic'), __('1 Comment &#187;' ,'techozoic'), _n('% Comment &#187;' , '% Comments &#187',get_comments_number(),'techozoic')); ?></p> 
 
 			</div>

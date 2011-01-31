@@ -15,14 +15,14 @@ if($tech['seo'] == 'On') {
 		if ( have_posts() ) { 
 			while ( have_posts() ) { 
 				the_post(); ?>
-				<meta name="description" content="<?php $excerpt = strip_tags(get_the_excerpt()); echo $excerpt; if ( $cpage < 1 ) {} else { echo (' - comment page '); if ( isset($cpage)) {echo ($cpage);}} ?>" />
-				<meta name="keywords" content="<?php foreach((get_the_category()) as $category) { echo $category->cat_name . ','; } $posttags = get_the_tags();if ($posttags) {foreach($posttags as $tag) {echo $tag->name . ','; } } ?>" />
+<meta name="description" content="<?php $excerpt = strip_tags(get_the_excerpt()); echo $excerpt; if ( $cpage < 1 ) {} else { echo (' - comment page '); if ( isset($cpage)) {echo ($cpage);}} ?>" />
+<meta name="keywords" content="<?php foreach((get_the_category()) as $category) { echo $category->cat_name . ','; } $posttags = get_the_tags();if ($posttags) {foreach($posttags as $tag) {echo $tag->name . ','; } } ?>" />
 <?php 			} 
 		} 
 	} elseif(is_home()) { ?>
-		<meta name="description" content="<?php bloginfo('description'); ?>" />
+<meta name="description" content="<?php bloginfo('description'); ?>" />
 <?php 		} ?>
-	<title>
+<title>
 <?php 
 	if (is_day() || is_month() || is_year()) { 
 		_e('Archive for ' ,'techozoic');
@@ -41,12 +41,11 @@ if($tech['seo'] == 'On') {
 	if ($paged > 1) { 
 		echo " - Page $paged"; 
 	} ?>
-	</title>
+</title>
 <?php 
 }//End tech_seo
 else { ?>
-	<meta name="description" content="<?php bloginfo('description'); ?>" />
-	<title><?php bloginfo('name'); ?></title>
+<title><?php wp_title(' - ','true','right') . bloginfo('name'); ?></title>
 <?php 
 } ?>
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->

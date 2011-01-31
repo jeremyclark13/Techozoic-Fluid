@@ -62,7 +62,57 @@
 	if (!isset($content_width)) {
 		$content_width = tech_content_width();
 	}
+	
+/**************************************
+	Techozoic All Image Size Links
+	Since 1.9.3
+***************************************/
+// Thanks Justin Tadlock http://justintadlock.com/archives/2011/01/28/linking-to-all-image-sizes-in-wordpress	
+function tech_image_links() {        
+	if ( !wp_attachment_is_image( get_the_ID() ) ){
+		return;
+	}
+	$links = array();
+	$sizes = get_intermediate_image_sizes();
+	$sizes[] = 'full';
+	foreach ( $sizes as $size ) {
+		$image = wp_get_attachment_image_src( get_the_ID(), $size );
+		if ( !empty( $image ) && ( true == $image[3] || 'full' == $size ) ) {
+			$links[] = "<a class='image-size-link' href='{$image[0]}'>{$image[1]} &times; {$image[2]}</a>";
+		}
+	}
+	return join( ' <span class="sep">|</span> ', $links );
+}
+	
+/**************************************
+	Techozoic Excerpt Functions
+	Since 1.9.3
+***************************************/
+function tech_excerpt($where){
+	global $tech;
+	$locs = explode(',' , $tech['excerpt_location']);
+	if (in_array($where, $locs)){ 
+		return true;
+	} else {
+		return false;
+	}
+}
 
+function tech_icons($where){
+	global $tech;
+	$locs = explode(',' , $tech['post_social_media_location']);
+	if (in_array($where, $locs)){ 
+		return true;
+	} else {
+		return false;
+	}
+}
+	
+function tech_excerpt_filter($text){ 
+	global $post;
+	return str_replace('[...]', '<a href="'. get_permalink($post->ID) . '">' . ' [&hellip; ' . __('Read More', 'techozoic') . ']' . '</a>', $text);  
+}  
+	
 /**************************************
 	Techozoic Google Font Replacement
 	Since 1.9.3
@@ -751,7 +801,8 @@ if ($tech['cufon_font'] == "Enable") {
 }
 if ( is_active_widget(false ,false, 'techozoic_font_size') ) {
 	add_action('template_redirect', 'tech_font_size_script');
-}	
+}
+add_filter('the_excerpt', 'tech_excerpt_filter'); // Replaces [...] at end of excerpt with link to single post page.	
 add_action('tech_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
 add_action('admin_menu', 'tech_create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis
 add_action('save_post', 'tech_save_postdata');  // Saves meta box data to postmeta table

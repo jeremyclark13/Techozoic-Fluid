@@ -1,7 +1,7 @@
 /*  
 Theme Name: Techozoic Fluid
 Theme URI: http://clark-technet.com/theme-support
-Description: Simple, fluid width, widget-ready sidebars and footer, 2 or 3 column theme.  Over 70 theme options to adjust column settings, color scheme, font, ad placement, and custom headers.  SEO optimized titles and meta information.  Visit the <a href="admin.php?page=techozoic_main_admin">theme options</a> page to setup Techozoic.  
+Description: Advanced, fluid width 2 or 3 column theme with widgetized sidebar, footer, and header areas.  Theme option pages to adjust everything from layout settings, color scheme, typography, ad placement, and custom headers.  SEO optimized titles and meta description and keyword fields.  Builtin social bookmarking, choose from 10 different popular social network and bookmarking sites to include.  Visit the <a href="themes.php?page=techozoic">theme options</a> page to setup Techozoic.  
 Version: 1.9.3
 Author: Jeremy Clark
 Author URI: http://clark-technet.com
@@ -44,19 +44,19 @@ body{
 #content{
 	color:#2C4353;
 	font-size:1em;
-	margin-top: 30px;
+	padding-top: 30px;
 }
 
 #r_sidebar{
 	float:right;
-	padding:10px 2% 0 0;
+	padding:30px 2% 0 0;
 	width:20%;
 	margin: 20px 0 0 0;
 }
 
 #l_sidebar{
 	float:left;
-	padding:10px 0 0 2%;
+	padding:30px 0 0 2%;
 	width:18%;
 	margin: 20px 0 0 0;
 }
@@ -367,12 +367,12 @@ ul.comment-preview li:hover{
 	margin-top:20px;
 }
 
-.home .narrowcolumn .entry,.home .widecolumn .entry{
+.home .narrowcolumn .entry, .home .widecolumn .entry, .archive .entry{
 	-moz-box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
 	-webkit-box-shadow:2px 2px 6px rgba(0,0,0,0.4);
 }
 
-.page .narrowcolumn .entry,.page .widecolumn .entry{
+.page .narrowcolumn .entry, .page .widecolumn .entry{
 	-moz-box-shadow:none !important;
 	-webkit-box-shadow:none !important;
 }
@@ -388,7 +388,7 @@ ul.comment-preview li:hover{
 	width:40px;
 }
 
-.narrowcolumn .entry,.widecolumn .entry{
+.narrowcolumn .entry, .widecolumn .entry{
 	-moz-border-radius-bottomleft:5px;
 	-webkit-border-bottom-left-radius:5px;
 	background-color:#E3E3E3;
@@ -435,7 +435,7 @@ ul.comment-preview li:hover{
 	color:#777;
 }
 
-.postmetadata ul,.postmetadata li{
+.postmetadata ul, .postmetadata li{
 	display:inline;
 	list-style-image:none;
 	list-style-type:none;
@@ -512,11 +512,15 @@ ul.comment-preview li:hover{
 Sidebar
  *************************************/
 
-.sidenav .current_page_item ul,.sidenav .current_page_parent ul,.sidenav .current_page_ancestor ul,.sidenav .current-cat ul.children,.sidenav .current-cat-parent ul.children{
+.sidenav .current_page_item ul, 
+.sidenav .current_page_parent ul,
+.sidenav .current_page_ancestor ul,
+.sidenav .current-cat ul.children,
+.sidenav .current-cat-parent ul.children{
 	display:block !important;
 }
 
-.sidenav .page_item ul,.sidenav ul.children{
+.sidenav .page_item ul, .sidenav ul.children{
 	display:none;
 }
 
@@ -525,11 +529,14 @@ Sidebar
 	text-decoration:none;
 }
 
-.sidenav li.current_page_item a,.sidenav li.current-cat a, a,.sidenav li.current-menu-item a{
+.sidenav li.current_page_item a,
+.sidenav li.current-cat a, 
+a,
+.sidenav li.current-menu-item a{
 	text-decoration:underline;
 }
 
-.sidenav li.current_page_item ul a,.sidenav .current-cat ul a{
+.sidenav li.current_page_item ul a, .sidenav .current-cat ul a{
 	text-decoration:none;
 }
 
@@ -554,7 +561,7 @@ Sidebar
 	padding:0;
 }
 
-.sidebar ul p,.sidebar ul select{
+.sidebar ul p, .sidebar ul select{
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	margin:5px 0 8px;
@@ -574,7 +581,7 @@ Sidebar
 	margin:0 0 0 10px;
 }
 
-.sidebar ul,.sidebar ul ol{
+.sidebar ul, .sidebar ul ol{
 	margin:0;
 	padding:0;
 }
@@ -589,7 +596,7 @@ Sidebar
 	margin:3px;
 }
 
-.techozoic_rss,#rss{
+.techozoic_rss, #rss{
 	background:url(images/syndicatebg.png) no-repeat top center;
 }
 
@@ -630,7 +637,7 @@ Comments
 	padding:10px;
 }
 
-.author,.bypostauthor{
+.author, .bypostauthor{
 	background-color:#ddd;
 	border-top:1px #000 dotted;
 }
@@ -645,7 +652,7 @@ Comments
 	margin:0 5px 0 0;
 }
 
-.commentlist cite,.commentlist cite a{
+.commentlist cite, .commentlist cite a{
 	font-size:1.1em;
 	font-style:normal;
 	font-weight:700;
@@ -674,7 +681,7 @@ Comments
 	padding-left:10px;
 }
 
-.commentlist,.trackback{
+.commentlist, .trackback{
 	padding:0;
 	text-align:justify;
 }
@@ -771,33 +778,44 @@ Nav Menus
 	z-index:300;
 } 
  
-#dropdown li ul ,.menu li ul{ 
+#dropdown li ul , .menu li ul{ 
 	width:210px;
 	padding-left:0;
 }
-#dropdown li ul a ,.menu li ul a{
+#dropdown li ul a , .menu li ul a{
 	width:202px; 
 	height:auto; 
 	float:left;
 	border:1px solid #D3D3D3;
 }
-#dropdown li ul li,.menu li ul li{
+#dropdown li ul li, .menu li ul li{
 	width:210px;
 }
-#dropdown ul ul,.menu ul ul{
+#dropdown ul ul, .menu ul ul{
 	top:auto;
 }
-#dropdown li ul ul,.menu li ul ul{
+#dropdown li ul ul, .menu li ul ul{
 	left:200px; 
 	margin:0px 0 0 10px;
 }
-#dropdown li:hover ul ul, #dropdown li:hover ul ul ul, #dropdown li:hover ul ul ul ul, .menu li:hover ul ul, .menu li:hover ul ul ul, .menu li:hover ul ul ul ul {
+#dropdown li:hover ul ul, 
+#dropdown li:hover ul ul ul, 
+#dropdown li:hover ul ul ul ul, 
+.menu li:hover ul ul, 
+.menu li:hover ul ul ul, 
+.menu li:hover ul ul ul ul {
 	display:none;
 }
-#dropdown li:hover ul, #dropdown li li:hover ul, #dropdown li li li:hover ul, #dropdown li li li li:hover ul, .menu li:hover ul, .menu li li:hover ul, .menu li li li:hover ul, .menu li li li li:hover ul  {
+#dropdown li:hover ul, 
+#dropdown li li:hover ul, 
+#dropdown li li li:hover ul, 
+#dropdown li li li li:hover ul, 
+.menu li:hover ul, 
+.menu li li:hover ul, 
+.menu li li li:hover ul, 
+.menu li li li li:hover ul  {
 	display:block;
 } 
-
 
 #dropdown li.current_page_item{
 	border:1px solid #A0B3C2;
@@ -814,7 +832,9 @@ Nav Menus
 	text-decoration:none;
 }
 
-#nav2 li.current_page_item,#nav2 li.current_page_parent,ul#nav2 li.current_page_ancestor{
+#nav2 li.current_page_item,
+#nav2 li.current_page_parent,
+ul#nav2 li.current_page_ancestor{
 	background-color:#A0B3C2;
 }
 
@@ -831,7 +851,10 @@ Nav Menus
 	text-decoration:none;
 }
 
-#subnav a:hover,#subnav a:active,#subnav li.current_page_item a,#subnav li.current_page_item a:visited{
+#subnav a:hover,
+#subnav a:active,
+#subnav li.current_page_item a,
+#subnav li.current_page_item a:visited{
 	text-decoration:underline;
 }
 
@@ -859,21 +882,21 @@ ul#nav{
 	width:100%;
 }
 
-ul#nav a,ul#admin a,#nav2 a{
+ul#nav a, ul#admin a, #nav2 a{
 	color:#A0B3C2;
 	font-size:1.3em;
 	font-weight:bolder;
 	text-decoration:none;
 }
 
-ul#nav li,#nav2 li{
+ul#nav li, #nav2 li{
 	-moz-border-radius-topleft:5px;
 	-moz-border-radius-topright:5px;
 	-webkit-border-top-left-radius:5px;
 	-webkit-border-top-right-radius:5px;
 }	
 
-ul#nav li,ul#admin li,#nav2 li{
+ul#nav li, ul#admin li, #nav2 li{
 	background-color:#E3E3E3;
 	display:inline;
 	float:left;
@@ -896,15 +919,21 @@ ul#nav li.current_page_item{
 	border-bottom:1px dotted;
 }
 
-ul#nav li.current_page_item a,#nav2 li.current_page_item a,#nav2 li.current_page_parent a,#nav2 li.current_page_ancestor a{
+ul#nav li.current_page_item a,
+#nav2 li.current_page_item a,
+#nav2 li.current_page_parent a,
+#nav2 li.current_page_ancestor a{
 	color:#f7f7f7;
 }
 
-ul#nav li.current_page_item a:hover,#nav2 li.current_page_item a:hover,ul#nav2 li.current_page_item a:hover,ul#nav2 li.current_page_parent a:hover{
+ul#nav li.current_page_item a:hover,
+#nav2 li.current_page_item a:hover,
+ul#nav2 li.current_page_item a:hover,
+ul#nav2 li.current_page_parent a:hover{
 	color:#A0B3C2;
 }
 
-ul#nav li:hover,#nav2 li:hover,#nav2 li:active{
+ul#nav li:hover, #nav2 li:hover, #nav2 li:active{
 	-moz-box-shadow:2px -1px 2px rgba(0, 0, 0, 0.3);
 	-webkit-box-shadow:2px -1px 2px rgba(0, 0, 0, 0.3);
 	background:#efefef;
@@ -979,7 +1008,7 @@ Forms
 	width:150px;
 }
 
-#searchsubmit,#catsubmit,#wp-submit{
+#searchsubmit, #catsubmit, #wp-submit{
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	background-color:#EEEDED;
@@ -990,7 +1019,9 @@ Forms
 	padding:1px;
 }
 
-#searchsubmit:hover,#catsubmit:hover,#wp-submit:hover{
+#searchsubmit:hover,
+#catsubmit:hover,
+#wp-submit:hover{
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	background-color:#A0B3C2;
@@ -1002,7 +1033,7 @@ Forms
 	padding:1px;
 }
 
-#user_login,#user_pass{
+#user_login, #user_pass{
 	-moz-border-radius:3px;
 	-webkit-border-radius:3px;
 	background-color:#f7f7f7;
@@ -1084,7 +1115,7 @@ Footer
 	text-align:center;
 }
 
-#footer ul,#footer ul li ul li {
+#footer ul, #footer ul li ul li {
 	list-style-type:none;
 	list-style-image:none;
 	padding:0;
@@ -1160,7 +1191,6 @@ Misc Tags
 .fontsizeplus{
 	font-size: 18px;
 }
-
 
 a{
 	color:#597EAA;

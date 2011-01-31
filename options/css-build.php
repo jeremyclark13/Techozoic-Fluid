@@ -176,11 +176,23 @@
 		$tech_drop_shadow = explode( ',' , $tech['drop_shadow']);
 		$tech_drop_shadow_class_map = array(
 		"Header Text" => "#headerimg",
-		"Post Boxes" => ".home .narrowcolumn .entry, .home .widecolumn .entry, .top",
+		"Post Boxes" => ".home .narrowcolumn .entry, .home .widecolumn .entry, .top, .archive .entry",
 		"Images" => ".entry img, .entrytext img"
 		);
 		foreach ($tech_drop_shadow as $tds){
 			$tech_drop_shadow_classes .= ",". $tech_drop_shadow_class_map[$tds];
+		}
+	}
+	$tech_post_bg_color_classes = ".noclass";
+	if ($tech['post_background_location']){
+		$tech_post_bg_color_loc = explode( ',' , $tech['post_background_location']);
+		$tech_post_bg_color_class_map = array(
+		"Main Page" => '.home .narrowcolumn .entry, home .widecolumn .entry, .top', 
+		"Single Post" => '.singlepost', 
+		"Archive Pages" => '.narrowcolumn .entry, .widecolumn .entry, .top'
+		);
+		foreach ($tech_post_bg_color_loc as $tpbc){
+			$tech_post_bg_color_classes .= ",". $tech_post_bg_color_class_map[$tpbc];
 		}
 	}
 ob_start();
@@ -202,8 +214,10 @@ background:{$tech_bg_color} url({$tech['bg_image']}) repeat{$tech_bg_repeat} top
 .techozoic_font_size{
 font-size: {$tech['body_font_size']}px;
 }
-.narrowcolumn .entry,.widecolumn .entry,.top {
+.narrowcolumn .entry,.widecolumn .entry, .top {
 font-family:{$tech['body_font']}, Sans-Serif;
+}
+{$tech_post_bg_color_classes}{
 background-color:{$tech_post_bg_color};
 }
 h1{
@@ -265,7 +279,7 @@ font-size:{$tech['nav_text_font_size']}em;
 .post_date {
 background-color:{$tech_acc_color};
 }
-.narrowcolumn .entry,.widecolumn .entry,.tags {
+.narrowcolumn .entry,.widecolumn .entry, .tags {
 border-top:1px {$tech_acc_color} solid;
 }
 .tags {
@@ -685,7 +699,7 @@ padding:2px 4px 1px;
 float:right;
 width:100%;
 }
-.home .narrowcolumn .entry,.home .widecolumn .entry{
+.home .narrowcolumn .entry,.home .widecolumn .entry, .archive .entry{
 -moz-box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
 -webkit-box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
@@ -1157,12 +1171,12 @@ margin:5px 0;
 margin:auto;
 text-align: left;
 }
-.pic-previous{
+.pic-previous a{
 float:left;
 background: url({$img_path}/images/gallery_prev.png) no-repeat scroll left center transparent;
 padding-left:40px;
 }
-.pic-next{
+.pic-next a{
 background: url({$img_path}/images/gallery_next.png) no-repeat scroll right center transparent;
 padding-right:40px;
 float:right;
@@ -1539,10 +1553,6 @@ select {
 width:140px;
 -moz-border-radius: 3px;
 -webkit-border-radius: 3px;
-}
-.singlepost {
-background-color:transparent !important;
-border-top:none !important;
 }
 *html .post_date {background-image: none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( sizingMethod='scale', src='{$img_path}/images/datebg.png');}
 *html .commentdiv a{background-image: none;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader( sizingMethod='scale', src='{$img_path}/images/comment.png');}
