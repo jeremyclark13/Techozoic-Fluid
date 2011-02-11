@@ -39,6 +39,7 @@ Installation can be done automatically through the Install Themes feature or man
 * Added post formating options including where excerpt should be used, and where to display social media icons.
 * Moved options page under the Appearence menu as per Theme Review Guidelines.
 * Added links for all image sizes to gallery pages.
+* Added option to make custom background colors transparent.
 
 = Version 1.9.2 =
 * Fixed IE 7 layout error when blog title box was aligned left.
@@ -79,7 +80,7 @@ Installation can be done automatically through the Install Themes feature or man
 * Added option to disable search box in header area.
 
 = Version 1.8.7 =
-* Added French Translations * Thanks [Wolforg](http://www.wolforg.eu "Wolforg : CMS, Logiciels Libres & Réseaux Sociaux en Lozère")
+* Added French Translations * Thanks [Wolforg](http://www.wolforg.eu "Wolforg : CMS, Logiciels Libres & Rï¿½seaux Sociaux en Lozï¿½re")
 * Added Cufon javascript font replacement options, and three free to use on web fonts
 * Added option to change content area background color
 * Added option to have content area background image

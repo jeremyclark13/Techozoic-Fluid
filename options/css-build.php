@@ -127,38 +127,50 @@
 		"Red" => 	array ('#AB2222','#AB2222','#D33535','#B53839','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7'),
 		"Grunge" => 	array ('#534E3E','#534E3E','#78BFBF','#78BFBF','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7')
 	);
-	$tech_color_names = array('Blue','Khaki','Red','Grunge');
-	if (in_array($tech['color_scheme'], $tech_color_names)){
-		$tech_bg_color = 	$tech_default_color[$tech_color_scheme][0];
-		$tech_acc_color = 	$tech_default_color[$tech_color_scheme][1];
-		$tech_link_color = 	$tech_default_color[$tech_color_scheme][2];
-		$tech_link_hov_color = 	$tech_default_color[$tech_color_scheme][3];
-		$tech_visit_link_color = 	$tech_default_color[$tech_color_scheme][4];
-		$tech_text_color = 	$tech_default_color[$tech_color_scheme][5];
-		$tech_nav_bg_color = 	$tech_default_color[$tech_color_scheme][6];
-		$tech_post_bg_color = 	$tech_default_color[$tech_color_scheme][7];
-		$tech_content_bg_color =$tech_default_color[$tech_color_scheme][8];
-	} elseif ($tech['color_scheme'] == 'Custom 1'){
-		$tech_bg_color = 	tech_color_verify($tech['cust_bg_color1']);
-		$tech_acc_color =	tech_color_verify($tech['cust_acc_color1']);
-		$tech_link_color = 	tech_color_verify($tech['cust_link_color1']);
-		$tech_link_hov_color = 	tech_color_verify($tech['cust_link_hov_color1']);
-		$tech_visit_link_color = 	tech_color_verify($tech['cust_link_visit_color1']);
-		$tech_text_color =	tech_color_verify($tech['cust_text_color1']);
-		$tech_nav_bg_color =	tech_color_verify($tech['cust_nav_bg_color1']);
-		$tech_post_bg_color = 	tech_color_verify($tech['cust_post_bg_color1']);
-		$tech_content_bg_color =tech_color_verify($tech['cust_content_bg_color1']);
-	} else {
-		$tech_bg_color = 	tech_color_verify($tech['cust_bg_color2']);
-		$tech_acc_color =	tech_color_verify($tech['cust_acc_color2']);
-		$tech_link_color = 	tech_color_verify($tech['cust_link_color2']);
-		$tech_link_hov_color = 	tech_color_verify($tech['cust_link_hov_color2']);
-		$tech_visit_link_color = 	tech_color_verify($tech['cust_link_visit_color2']);		
-		$tech_text_color = 	tech_color_verify($tech['cust_text_color2']);
-		$tech_nav_bg_color =	tech_color_verify($tech['cust_nav_bg_color2']);
-		$tech_post_bg_color = 	tech_color_verify($tech['cust_post_bg_color2']);
-		$tech_content_bg_color =tech_color_verify($tech['cust_content_bg_color2']);
-	}
+        $tech_color_names = array('Blue','Khaki','Red','Grunge');
+        if (in_array($tech['color_scheme'], $tech_color_names)){
+            $tech_bg_color =            $tech_default_color[$tech_color_scheme][0];
+            $tech_acc_color =           $tech_default_color[$tech_color_scheme][1];
+            $tech_link_color =          $tech_default_color[$tech_color_scheme][2];
+            $tech_link_hov_color = 	$tech_default_color[$tech_color_scheme][3];
+            $tech_visit_link_color = 	$tech_default_color[$tech_color_scheme][4];
+            $tech_text_color =          $tech_default_color[$tech_color_scheme][5];
+            $tech_nav_bg_color = 	$tech_default_color[$tech_color_scheme][6];
+            $tech_post_bg_color = 	$tech_default_color[$tech_color_scheme][7];
+            $tech_content_bg_color =    $tech_default_color[$tech_color_scheme][8];
+        } elseif ($tech['color_scheme'] == 'Custom 1'){
+            $tech_bg_color =            tech_color_verify($tech['cust_bg_color1']);
+            $tech_bg_trans =            $tech['cust_bg_trans1'];
+            $tech_acc_color =           tech_color_verify($tech['cust_acc_color1']);
+            $tech_link_color =          tech_color_verify($tech['cust_link_color1']);
+            $tech_link_hov_color =      tech_color_verify($tech['cust_link_hov_color1']);
+            $tech_visit_link_color =    tech_color_verify($tech['cust_link_visit_color1']);
+            $tech_text_color =          tech_color_verify($tech['cust_text_color1']);
+            $tech_nav_bg_color =        tech_color_verify($tech['cust_nav_bg_color1']);
+            $tech_nav_bg_trans =        $tech['cust_nav_bg_trans1'];
+            $tech_post_bg_color =       tech_color_verify($tech['cust_post_bg_color1']);
+            $tech_post_bg_trans =       $tech['cust_post_bg_trans1'];
+            $tech_content_bg_color =    tech_color_verify($tech['cust_content_bg_color1']);
+            $tech_content_bg_trans =    $tech['cust_content_bg_trans1'];
+        } else {
+            $tech_bg_color =            tech_color_verify($tech['cust_bg_color2']);
+            $tech_bg_trans =            $tech['cust_bg_trans2'];
+            $tech_acc_color =           tech_color_verify($tech['cust_acc_color2']);
+            $tech_link_color =          tech_color_verify($tech['cust_link_color2']);
+            $tech_link_hov_color = 	tech_color_verify($tech['cust_link_hov_color2']);
+            $tech_visit_link_color = 	tech_color_verify($tech['cust_link_visit_color2']);
+            $tech_text_color =          tech_color_verify($tech['cust_text_color2']);
+            $tech_nav_bg_color =	tech_color_verify($tech['cust_nav_bg_color2']);
+            $tech_nav_bg_trans =        $tech['cust_nav_bg_trans2'];
+            $tech_post_bg_color = 	tech_color_verify($tech['cust_post_bg_color2']);
+            $tech_post_bg_trans =       $tech['cust_post_bg_trans2'];
+            $tech_content_bg_color =    tech_color_verify($tech['cust_content_bg_color2']);
+            $tech_content_bg_trans =    $tech['cust_content_bg_trans2'];
+        }
+        if ($tech_bg_trans == 'On') $tech_bg_color = 'transparent';
+        if ($tech_nav_bg_trans == 'On')  $tech_nav_bg_color = 'transparent';
+        if ($tech_post_bg_trans == 'On')  $tech_post_bg_color = 'transparent';
+        if ($tech_content_bg_trans == 'On') $tech_content_bg_color = 'transparent';
 	$tech_sidebar_h3_font_size = $tech['side_heading_font_size'] - .4;
 	$tech_wp_content = WP_CONTENT_URL;
 	$header_folder = TEMPLATEPATH. "/uploads/images/headers";
@@ -266,7 +278,7 @@ font-size: {$tech['small_font_size']}em;
 .description, ul#nav a, ul#admin a, #dropdown li.current_page_item a:hover, .menu li.current-menu-item a:hover, #dropdown li.current_page_item ul a, .menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover,.blog_title a,.blog_title a:visited, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a, .menu li a, .menu li.current-menu-item a{
 color: {$tech_acc_color};
 }
-.author,#searchform #s,ul#nav li.current_page_item,#nav2 li.current_page_item,#nav2 li.current_page_parent,ul#nav2 li.current_page_ancestor,#dropdown li.current_page_item, .menu li.current-menu-item, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,.postform,#TB_ajaxContent {
+.author,#searchform #s, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,.postform,#TB_ajaxContent {
 background-color: {$tech_acc_color} ;
 }
 ul#nav li,ul#admin li, #nav2 li, ul#dropdown li, .menu li{
@@ -276,6 +288,23 @@ ul#nav li,ul#admin li, #nav2 li, ul#dropdown li a, .menu li a{
 font-family:{$tech['nav_font']}, Sans-Serif;
 font-size:{$tech['nav_text_font_size']}em;
 }
+CSS;
+if($tech_nav_bg_trans != 'On') {
+echo <<<CSS
+ul#nav li.current_page_item,#nav2 li.current_page_item,#nav2 li.current_page_parent,ul#nav2 li.current_page_ancestor,#dropdown li.current_page_item, .menu li.current-menu-item {
+background-color: {$tech_acc_color} ;
+}
+ul#nav li:hover,#nav2 li:hover, #nav2 li:active, #dropdown li:hover, .menu li:hover {
+background:#efefef;
+-moz-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
+-webkit-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
+}
+ul#nav li.current_page_item a ,#nav2 li.current_page_item a,#nav2 li.current_page_parent a, #nav2 li.current_page_ancestor a,#dropdown li.current_page_item a, .menu li.current-menu-item a{
+color:#f7f7f7;
+}
+CSS;
+}
+echo <<<CSS
 .post_date {
 background-color:{$tech_acc_color};
 }
@@ -1095,14 +1124,6 @@ ul#admin li {
 ul#nav li.current_page_item, #dropdown li.current_page_item, .menu li.current-menu-item {
 border-bottom:1px dotted;
 }
-ul#nav li.current_page_item a ,#nav2 li.current_page_item a,#nav2 li.current_page_parent a, #nav2 li.current_page_ancestor a,#dropdown li.current_page_item a, .menu li.current-menu-item a{
-color:#f7f7f7;
-}
-ul#nav li:hover,#nav2 li:hover, #nav2 li:active, #dropdown li:hover, .menu li:hover {
-background:#efefef;
--moz-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
--webkit-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
-}
 ul#admin li:hover{
 background:#efefef;
 -moz-box-shadow:2px 1px 3px rgba(0, 0, 0, 0.3);
@@ -1211,7 +1232,7 @@ left: 45%;
 clear:left;
 }
 p {
-margin:5px 5px 10px;
+margin:5px 5px 1em;
 }
 #footerdivs {
 margin:10px auto 15px;
