@@ -2,9 +2,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-11 14:41-0500\n"
+"POT-Creation-Date: 2011-02-11 23:29-0500\n"
 "PO-Revision-Date: \n"
-"Last-Translator: Jeremy Clark <jeremy@clark-technet.com>\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -14,2753 +14,2235 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Poedit-SearchPath-0: C:\\Documents and Settings\\jeremy.WES.BCSBOE\\Desktop\\techozoic-fluid\n"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/404.php:16
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/404.php:16
 msgid "Error 404 - Not Found"
 msgstr "Error 404 - Not Found"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/404.php:18
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/404.php:18
 msgid "Browse Archives"
 msgstr "Browse Archives"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:12
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:13
 #, php-format
 msgid "Archive for the %s Category"
 msgstr "Archive for the %s Category"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:15
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:18
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:21
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:16
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:19
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:22
 #, php-format
 msgid "Archive for %s"
 msgstr "Archive for %s"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:24
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:25
 msgid "Search Results"
 msgstr "Search Results"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:27
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:28
 msgid "Author Archive"
 msgstr "Author Archive"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:30
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:31
 msgid "Blog Archives"
 msgstr "Blog Archives"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:34
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:57
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:18
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:70
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:35
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:66
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:18
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:76
 msgid "&laquo; Older Entries"
 msgstr "&laquo; Older Entries"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:35
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:58
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:19
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:71
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:36
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:67
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:19
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:77
 msgid "Newer Entries &raquo;"
 msgstr "Newer Entries &raquo;"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:39
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:10
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:32
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:40
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:14
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:32
 #, php-format
 msgid "Permanent Link to %s"
 msgstr "Permanent Link to %s"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:51
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:47
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:40
+msgid "Read the remainder of this entry &raquo;"
+msgstr "Read the remainder of this entry &raquo;"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:57
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:57
+msgid "To the top"
+msgstr "To the top"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:60
 #, php-format
 msgid "Posted in %s"
 msgstr "Posted in %s"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:51
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:62
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:60
 msgid "Edit"
 msgstr "Edit"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:51
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:50
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:60
 msgid "No Comments &#187;"
 msgstr "No Comments &#187;"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:51
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:60
 msgid "1 Comment &#187;"
 msgstr "1 Comment &#187;"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:51
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:50
-msgid "% Comment &#187;"
-msgid_plural "% Comments &#187"
-msgstr[0] "% Comment &#187;"
-msgstr[1] "% Comments &#187"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/archive.php:63
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:74
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:72
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:80
 msgid "Not Found"
 msgstr "Not Found"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:14
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:14
+#, fuzzy, php-format
+msgid "Return to %s"
+msgstr "Return Error"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:20
+msgid "View Full Size"
+msgstr "View Full Size"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:27
+msgid "Image Information"
+msgstr "Image Information"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:29
+#, php-format
+msgid "Size: %1$s &times; %2s"
+msgstr "Size: %1$s &times; %2s"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:32
+#, php-format
+msgid "Camera: %s"
+msgstr "Camera: %s"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:36
+#, php-format
+msgid "Taken: %s"
+msgstr "Taken: %s"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:40
+#, php-format
+msgid "Aperture: %s"
+msgstr "Aperture: %s"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:44
+#, php-format
+msgid "ISO: %s"
+msgstr "ISO: %s"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:48
+#, php-format
+msgid "Shutter Speed: %s"
+msgstr "Shutter Speed: %s"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:52
+msgid "Click for original image"
+msgstr "Click for original image"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:57
+#, php-format
+msgid "Additional sizes: %s"
+msgstr "Additional sizes: %s"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:63
 msgid "Read the rest of this entry"
 msgstr "Read the rest of this entry"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:88
+msgid "Previous Image"
+msgstr "Previous Image"
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:16
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:91
+#, fuzzy
+msgid "Next Image"
+msgstr "No Header Image"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:100
 msgid "Pages"
 msgstr "Pages"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:20
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:105
 #, php-format
 msgid "This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed."
 msgstr "This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:20
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:205
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:105
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:315
 msgid "RSS 2.0"
 msgstr "RSS 2.0"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:23
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:108
 #, php-format
 msgid "You can %1$s or %2$s from your own site."
 msgstr "You can %1$s or %2$s from your own site."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:23
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:108
 msgid "leave a response"
 msgstr "leave a response"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:23
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:26
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:108
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:111
 msgid "trackback"
 msgstr "trackback"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:26
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:111
 #, php-format
 msgid "Responses are currently closed, but you can %s from your site."
 msgstr "Responses are currently closed, but you can %s from your site."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:29
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:114
 msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
 msgstr "You can skip to the end and leave a response. Pinging is currently not allowed."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:32
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:117
 msgid "Both comments and pings are currently closed."
 msgstr "Both comments and pings are currently closed."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:34
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:119
 msgid "  Edit this entry."
 msgstr "  Edit this entry."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/attachment.php:46
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:133
 msgid "Sorry, no attachments matched your criteria."
 msgstr "Sorry, no attachments matched your criteria."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:3
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:3
 msgid "Please do not load this page directly. Thanks!"
 msgstr "Please do not load this page directly. Thanks!"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:6
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:13
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:6
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:13
 msgid "This post is password protected. Enter the password to view comments."
 msgstr "This post is password protected. Enter the password to view comments."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:23
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:21
 msgid "No Comments"
 msgstr "No Comments"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:23
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:21
 msgid "One Comment"
 msgstr "One Comment"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:23
-msgid "% Comment"
-msgid_plural "% Comments"
-msgstr[0] "% Comment"
-msgstr[1] "% Comments"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:38
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:100
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:36
 msgid "Comments are closed."
 msgstr "Comments are closed."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:50
-#, php-format
-msgid "%1$s to %2$s &#8221;"
-msgstr "%1$s to %2$s &#8221;"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:50
-msgid "One Comment &#187;"
-msgstr "One Comment &#187;"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:56
-#, php-format
-msgid "Comment by %s"
-msgstr "Comment by %s"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:58
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:89
-msgid "Your comment is awaiting moderation."
-msgstr "Your comment is awaiting moderation."
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:71
-msgid "TrackBacks / PingBacks"
-msgstr "TrackBacks / PingBacks"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:82
-msgid "TrackBack"
-msgstr "TrackBack"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:84
-msgid "PingBack"
-msgstr "PingBack"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:122
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:124
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:54
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:56
 msgid "Leave a Reply"
 msgstr "Leave a Reply"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:122
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:54
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Leave a Reply to %s"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:128
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:60
 #, php-format
 msgid "You must be %s to post a comment."
 msgstr "You must be %s to post a comment."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:128
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:60
 msgid "logged in"
 msgstr "logged in"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:133
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:65
 #, php-format
 msgid "Logged in as %s"
 msgstr "Logged in as %s"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:133
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:65
 msgid "Log out of this account"
 msgstr "Log out of this account"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:133
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:65
 msgid "Logout"
 msgstr "Logout"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:136
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:68
 msgid "Name"
 msgstr "Name"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:136
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:138
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:68
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:70
 msgid "(required)"
 msgstr "(required)"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:138
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:70
 msgid "Mail (will not be published)"
 msgstr "Mail (will not be published)"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:140
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:72
 msgid "Website"
 msgstr "Website"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/comments.php:145
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:77
 msgid "Submit Comment"
 msgstr "Submit Comment"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:100
+msgid "Read More"
+msgstr "Read More"
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:103
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:205
 msgid "Top"
 msgstr "Top"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:103
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:205
 #, php-format
 msgid "%1$d mySQL queries in %2$s seconds."
 msgstr "%1$d mySQL queries in %2$s seconds."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:199
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:305
 msgid "del.icio.us this!"
 msgstr "del.icio.us this!"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:200
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:306
 msgid "Digg this!"
 msgstr "Digg this!"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:307
+msgid "Share this by email."
+msgstr "Share this by email."
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:201
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:308
 msgid "Share on Facebook!"
 msgstr "Share on Facebook!"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:202
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:309
+#, fuzzy
+msgid "Share on LinkedIn!"
+msgstr "Share on Myspace!"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:310
 msgid "Share on Myspace!"
 msgstr "Share on Myspace!"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:203
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:311
+#, fuzzy
+msgid "Share on NewsVine!"
+msgstr "Share on Myspace!"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:312
 msgid "Stumble Upon this!"
 msgstr "Stumble Upon this!"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:204
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:313
 msgid "Tweet this!"
 msgstr "Tweet this!"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:205
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:314
+#, fuzzy
+msgid "Share on Reddit!"
+msgstr "Share on Myspace!"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:315
 msgid "Subscribe to Feed"
 msgstr "Subscribe to Feed"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:228
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:338
 msgid "Follow me on Facebook"
 msgstr "Follow me on Facebook"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:231
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:341
 msgid "Follow me on Myspace"
 msgstr "Follow me on Myspace"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:234
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:344
 msgid "Follow me on Twitter"
 msgstr "Follow me on Twitter"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:251
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:252
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:361
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:362
 msgid " posted on "
 msgstr " posted on "
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:271
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:381
 #, php-format
 msgid "Theme activated! This theme contains <a href=\"%s\">theme options</a> and <a href=\"%s\">custom sidebar widgets</a>.<br />&nbsp; See <a href=\"%s\">Change Log</a>."
 msgstr "Theme activated! This theme contains <a href=\"%s\">theme options</a> and <a href=\"%s\">custom sidebar widgets</a>.<br />&nbsp; See <a href=\"%s\">Change Log</a>."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:460
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:560
 msgid "Header Navigation"
 msgstr "Header Navigation"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:461
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:561
 msgid "Sidebar Navigation"
 msgstr "Sidebar Navigation"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:462
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:562
 msgid "Footer Navigation"
 msgstr "Footer Navigation"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:485
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:585
 msgid "Thank you for using the Techozoic Theme.  "
 msgstr "Thank you for using the Techozoic Theme.  "
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:487
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:587
 #, php-format
 msgid "Visit the %s to start customizing Techozoic.  "
 msgstr "Visit the %s to start customizing Techozoic.  "
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:487
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:587
 msgid "options page"
 msgstr "options page"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:489
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:589
 #, php-format
 msgid "If your having problems or would like to suggest a new feature, please visit the %s."
 msgstr "If your having problems or would like to suggest a new feature, please visit the %s."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:489
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:589
 msgid "Support Forum"
 msgstr "Support Forum"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:489
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:589
 msgid "support forum"
 msgstr "support forum"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:494
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:595
 #, fuzzy
 msgid "Techozoic Settings Pages"
 msgstr "Techozoic Meta"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:548
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/nav-dropdown.php:9
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/nav-standard.php:9
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/nav-twotier.php:9
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:650
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/nav-dropdown.php:9
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/nav-standard.php:9
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/nav-twotier.php:9
 msgid "Home"
 msgstr "Home"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:572
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:674
 msgid "Archive for category &#39;"
 msgstr "Archive for category &#39;"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:615
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:718
 msgid "Search results for &#39;"
 msgstr "Search results for &#39;"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:618
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:721
 msgid "Posts tagged &#39;"
 msgstr "Posts tagged &#39;"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:625
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:728
 msgid "Articles posted by "
 msgstr "Articles posted by "
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:628
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:731
 msgid "Error 404"
 msgstr "Error 404"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions.php:633
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:736
 msgid "Page"
 msgstr "Page"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/header.php:29
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:28
 msgid "Archive for "
 msgstr "Archive for "
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/header.php:151
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:155
 msgid "Dashboard"
 msgstr "Dashboard"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/header.php:152
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:156
 msgid "Log Out"
 msgstr "Log Out"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/header.php:158
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/header.php:160
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:162
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:164
 msgid "Login"
 msgstr "Login"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/header.php:167
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:171
 msgid "Username: "
 msgstr "Username: "
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/header.php:168
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:172
 msgid "Password: "
 msgstr "Password: "
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/header.php:169
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:173
 msgid "Log in"
 msgstr "Log in"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:32
+msgid "Read More &hellip;"
+msgstr "Read More &hellip;"
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:33
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:33
 msgid "By"
 msgstr "By"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:33
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:33
 #, php-format
 msgid "Filed in %s"
 msgstr "Filed in %s"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:33
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:33
 msgid "&nbsp;|&nbsp; Edit."
 msgstr "&nbsp;|&nbsp; Edit."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:37
-msgid "Read the remainder of this entry &raquo;"
-msgstr "Read the remainder of this entry &raquo;"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:40
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:44
 msgid "Be the first to comment"
 msgstr "Be the first to comment"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:40
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:44
 msgid "1 Comment. Join the Conversation"
 msgstr "1 Comment. Join the Conversation"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:40
-msgid "% Comment so far. Join the Conversation"
-msgid_plural "% Comments so far. Join the Conversation"
-msgstr[0] "% Comment so far. Join the Conversation"
-msgstr[1] "% Comments so far. Join the Conversation"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:40
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:44
 msgid "Comments Closed"
 msgstr "Comments Closed"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:52
-msgid "To the top"
-msgstr "To the top"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/index.php:75
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:81
 msgid "Sorry, but you are looking for something that isn't here"
 msgstr "Sorry, but you are looking for something that isn't here"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/page.php:20
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/page.php:20
 msgid "Read the rest of this page"
 msgstr "Read the rest of this page"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/page.php:21
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/page.php:21
 msgid "Pages:"
 msgstr "Pages:"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/page.php:27
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/page.php:27
 msgid "Edit this page."
 msgstr "Edit this page."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/search.php:8
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:9
 msgid "Search Results for "
 msgstr "Search Results for "
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/search.php:17
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:18
 msgid "articles"
 msgstr "articles"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/search.php:44
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:45
 msgid "No Comments &raquo;"
 msgstr "No Comments &raquo;"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/search.php:44
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:45
 msgid "1 Comment &raquo;"
 msgstr "1 Comment &raquo;"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/search.php:44
-msgid "% Comment &raquo;"
-msgid_plural "% Comments &raquo;"
-msgstr[0] "% Comment &raquo;"
-msgstr[1] "% Comments &raquo;"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/search.php:44
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:45
 msgid "Comments Off"
 msgstr "Comments Off"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/search.php:53
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:54
 msgid "No posts found. Try a different search?"
 msgstr "No posts found. Try a different search?"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/searchform.php:2
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/searchform.php:2
 msgid "Search: Type and Enter"
 msgstr "Search: Type and Enter"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/searchform.php:4
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:50
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/searchform.php:4
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:57
 msgid "Go"
 msgstr "Go"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar-left.php:3
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:16
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:3
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:16
 msgid "Left Sidebar"
 msgstr "Left Sidebar"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar-left.php:4
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:309
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:7
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:30
+#, fuzzy
+msgid "Default Widgets"
+msgstr "Default Page Font"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:8
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:31
+#, php-format
+msgid "Widgets below are default.  These will be replaced when customizing using %s Widget Admin</a>"
+msgstr "Widgets below are default.  These will be replaced when customizing using %s Widget Admin</a>"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:8
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:31
+#, fuzzy
+msgid "Widgets"
+msgstr "Width:"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:13
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:312
 msgid "Meta"
 msgstr "Meta"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar-left.php:7
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:314
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:16
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:317
 msgid "This page validates as XHTML 1.0 Transitional"
 msgstr "This page validates as XHTML 1.0 Transitional"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar-left.php:7
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:314
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:16
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:317
 msgid "Valid XHTML"
 msgstr "Valid XHTML"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar-left.php:8
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:17
 msgid "Valid CSS"
 msgstr "Valid CSS"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar-left.php:9
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:315
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:18
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:318
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar-left.php:18
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:27
 msgid "Tags"
 msgstr "Tags"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:14
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:14
 #, php-format
 msgid "You are currently browsing the archives for the %s category."
 msgstr "You are currently browsing the archives for the %s category."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:16
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:18
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:20
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:16
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:18
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:20
 #, php-format
 msgid "You are currently browsing the %1$s archives for %2$s."
 msgstr "You are currently browsing the %1$s archives for %2$s."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:22
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:22
 #, php-format
 msgid "You have searched the %1$s archives for %2$s."
 msgstr "You have searched the %1$s archives for %2$s."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:24
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:24
 #, php-format
 msgid "You are currently browsing the %1$s archives."
 msgstr "You are currently browsing the %1$s archives."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:26
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:12
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:26
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:12
 msgid "Right Sidebar"
 msgstr "Right Sidebar"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:32
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:39
 msgid "Pages Below Current"
 msgstr "Pages Below Current"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:39
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:353
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:46
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:356
 msgid "Syndicate"
 msgstr "Syndicate"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:43
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:359
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:50
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:362
 msgid "Comments"
 msgstr "Comments"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:47
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:167
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:54
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:170
 msgid "Categories"
 msgstr "Categories"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/sidebar.php:54
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:61
 msgid "Blogroll"
 msgstr "Blogroll"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/single.php:19
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/single.php:20
 #, php-format
 msgid "By %s"
 msgstr "By %s"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/single.php:21
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/single.php:22
 #, php-format
 msgid "Go back to %s"
 msgstr "Go back to %s"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/single.php:56
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/single.php:57
 msgid "Sorry, no posts matched your criteria."
 msgstr "Sorry, no posts matched your criteria."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/tag.php:10
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/tag.php:10
 msgid "Tag Archive"
 msgstr "Tag Archive"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-comments-functions.php:11
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:11
 msgid "Delete"
 msgstr "Delete"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-comments-functions.php:12
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:12
 msgid "Spam"
 msgstr "Spam"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-comments-functions.php:57
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:32
+#, php-format
+msgid "Comment by %s"
+msgstr "Comment by %s"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:34
+msgid "Your comment is awaiting moderation."
+msgstr "Your comment is awaiting moderation."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:57
 #, php-format
 msgid "Ping from %s"
 msgstr "Ping from %s"
 
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:20
-msgid "Footer - Limit 3 Widgets"
-msgstr "Footer - Limit 3 Widgets"
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:20
+msgid "Footer"
+msgstr "Footer"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:21
+msgid "Limit 3 widgets can be assigned to footer area"
+msgstr "Limit 3 widgets can be assigned to footer area"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:28
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:29
 msgid "Right Header"
 msgstr "Right Header"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:30
+msgid "Area to the right side of the header"
+msgstr "Area to the right side of the header"
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:36
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:38
 msgid "Left Header"
 msgstr "Left Header"
 
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:49
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:39
+msgid "Area to the left side of the header"
+msgstr "Area to the left side of the header"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:52
 msgid "Techozoic Font Size Control Widget"
 msgstr "Techozoic Font Size Control Widget"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:50
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:53
 #, fuzzy
 msgid "Techozoic Font Size"
 msgstr "Techozoic About"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:56
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:59
 #, fuzzy
 msgid "Resize Text"
 msgstr "Reset"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:75
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:123
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:195
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:274
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:376
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:78
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:126
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:198
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:277
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:379
 msgid "Title:"
 msgstr "Title:"
 
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:83
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:86
 msgid "Techozoic Child Page menu displays child pages below current page."
 msgstr "Techozoic Child Page menu displays child pages below current page."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:84
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:87
 #, fuzzy
 msgid "Techozoic Child Page"
 msgstr "Techozoic Meta"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:90
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:93
 #, fuzzy
 msgid "Sub Pages"
 msgstr "Pages"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:131
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:134
 msgid "Techozoic Sidebar Navigation Menu - option to add categories to navigation"
 msgstr "Techozoic Sidebar Navigation Menu - option to add categories to navigation"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:132
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:135
 msgid "Techozoic Navigation"
 msgstr "Techozoic Navigation"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:138
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:304
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:193
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:141
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:394
 msgid "Navigation"
 msgstr "Navigation"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:197
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:200
 msgid "Include Pages in Menu"
 msgstr "Include Pages in Menu"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:199
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:202
 msgid "Include Categories in Menu"
 msgstr "Include Categories in Menu"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:201
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:204
 msgid "Separate Pages and Categories"
 msgstr "Separate Pages and Categories"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:214
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:217
 msgid "Author information Widget - Enter short blurb about yourself"
 msgstr "Author information Widget - Enter short blurb about yourself"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:215
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:218
 msgid "Techozoic About"
 msgstr "Techozoic About"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:220
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:223
 msgid "About Author"
 msgstr "About Author"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:276
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:279
 msgid "Write About yourself here"
 msgstr "Write About yourself here"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:279
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:282
 msgid "Display link to Facebook Profile"
 msgstr "Display link to Facebook Profile"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:281
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:284
 msgid "Display link to MySpace Profile"
 msgstr "Display link to MySpace Profile"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:283
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:286
 msgid "Display link to Twitter Profile"
 msgstr "Display link to Twitter Profile"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:285
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:288
 msgid "Enable Gravatar"
 msgstr "Enable Gravatar"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:287
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:290
 msgid "Size of Gravatar"
 msgstr "Size of Gravatar"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:289
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:292
 msgid "Between 25 and 100 Pixels"
 msgstr "Between 25 and 100 Pixels"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:298
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:301
 msgid "Meta Information as well as Dashboard and Log In/Out Links"
 msgstr "Meta Information as well as Dashboard and Log In/Out Links"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:299
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:302
 msgid "Techozoic Meta"
 msgstr "Techozoic Meta"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:333
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:336
 msgid "Title"
 msgstr "Title"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:342
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:345
 msgid "Link to RSS feed for blog as well as comment RSS feed"
 msgstr "Link to RSS feed for blog as well as comment RSS feed"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/functions/tech-widget.php:343
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:346
 msgid "Techozoic RSS"
 msgstr "Techozoic RSS"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/delete-admin.php:6
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:266
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:273
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/delete-admin.php:6
 #, php-format
 msgid "%s Delete Settings"
 msgstr "%s Delete Settings"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/delete-admin.php:10
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/delete-admin.php:14
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/delete-admin.php:10
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/delete-admin.php:14
 msgid "Delete Settings"
 msgstr "Delete Settings"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/delete-admin.php:11
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/delete-admin.php:11
 msgid "Clicking this button below will remove all theme settings from database and deactivate the theme.  <strong>This is irreversible.</strong>"
 msgstr "Clicking this button below will remove all theme settings from database and deactivate the theme.  <strong>This is irreversible.</strong>"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/export-admin.php:3
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:3
 #, php-format
 msgid "%s settings imported."
 msgstr "%s settings imported."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/export-admin.php:7
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:265
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:272
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:7
 #, php-format
 msgid "%s Export/Import Settings"
 msgstr "%s Export/Import Settings"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/export-admin.php:11
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/export-admin.php:15
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:11
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:15
 msgid "Export Settings"
 msgstr "Export Settings"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/export-admin.php:12
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:12
 msgid "Here you can export your current Techozoic settings, this is useful if you plan on copying your current layout to another blog using Techozoic."
 msgstr "Here you can export your current Techozoic settings, this is useful if you plan on copying your current layout to another blog using Techozoic."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/export-admin.php:20
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/export-admin.php:25
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:21
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:26
 msgid "Import Settings"
 msgstr "Import Settings"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/export-admin.php:21
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:22
 msgid "If you have an export file from Techozoic you can upload it here.  (This will overwrite any current changes)"
 msgstr "If you have an export file from Techozoic you can upload it here.  (This will overwrite any current changes)"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:3
-msgid " settings saved"
-msgstr " settings saved"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:4
-msgid " settings reset"
-msgstr " settings reset"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:9
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:286
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:9
-msgid "Image Uploaded"
-msgstr "Image Uploaded"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:17
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:263
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:270
-#, php-format
-msgid "%s Header Settings"
-msgstr "%s Header Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:21
-msgid "Upload Header Image"
-msgstr "Upload Header Image"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:22
-msgid "Max Dimensions: 1000 px wide X 200 px high"
-msgstr "Max Dimensions: 1000 px wide X 200 px high"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:23
-msgid "Supported format: jpg, jpeg, gif, png"
-msgstr "Supported format: jpg, jpeg, gif, png"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:24
-msgid "Recommend format:</em> jpg, jpeg, png"
-msgstr "Recommend format:</em> jpg, jpeg, png"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:25
-msgid "After image is uploaded it will appear in the list below and can be selected in the list below to be used as the Header Image."
-msgstr "After image is uploaded it will appear in the list below and can be selected in the list below to be used as the Header Image."
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:33
-msgid "Upload"
-msgstr "Upload"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:37
-#, php-format
-msgid "Please make sure <strong>%s</strong> is writable to enable upload of headers."
-msgstr "Please make sure <strong>%s</strong> is writable to enable upload of headers."
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:39
-msgid "Header Image Settings"
-msgstr "Header Image Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:42
-msgid "Height of Container:"
-msgstr "Height of Container:"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:43
-#, fuzzy
-msgid "Header Image Horizontal Alignment:"
-msgstr "Header Image Alignment:"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:49
-#, fuzzy
-msgid "Header Image Vertical Alignment:"
-msgstr "Header Image Alignment:"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:57
-msgid "Save Settings"
-msgstr "Save Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:65
-msgid "Header Images:"
-msgstr "Header Images:"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:68
-msgid "Rotate Through All Headers"
-msgstr "Rotate Through All Headers"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:72
-msgid "Rotate"
-msgstr "Rotate"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:79
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:83
-msgid "No Header Image"
-msgstr "No Header Image"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:105
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:109
-msgid " - Current Selected Header"
-msgstr " - Current Selected Header"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:135
-msgid "Click for full size preview of"
-msgstr "Click for full size preview of"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:138
-msgid "Width:"
-msgstr "Width:"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:138
-msgid "Height:"
-msgstr "Height:"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:142
-msgid "Select This Header"
-msgstr "Select This Header"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/header-admin.php:148
-msgid "Delete This Header"
-msgstr "Delete This Header"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:5
-msgid "Return Error"
-msgstr "Return Error"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:5
-msgid "File Already Exists"
-msgstr "File Already Exists"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:5
-msgid "Incorrect File Type / File Size Limit exceeded"
-msgstr "Incorrect File Type / File Size Limit exceeded"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:5
-#, php-format
-msgid "Folder isn't writable please check folder that<code>%s/uploads/</code> exists and is writable."
-msgstr "Folder isn't writable please check folder that<code>%s/uploads/</code> exists and is writable."
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:5
-msgid "File Doesn't exist."
-msgstr "File Doesn't exist."
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:5
-#, php-format
-msgid "Folder isn't writable please check folder<code>%s</code> Permissions."
-msgstr "Folder isn't writable please check folder<code>%s</code> Permissions."
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:5
-msgid "Please only use .ico format for Fav Icon Images"
-msgstr "Please only use .ico format for Fav Icon Images"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:261
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:268
-#, fuzzy, php-format
-msgid "%s Options"
-msgstr "Color Options"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:262
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:269
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:301
-#, php-format
-msgid "%s General Settings"
-msgstr "%s General Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:262
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:269
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:557
-msgid "General Settings"
-msgstr "General Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:263
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:270
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:558
-msgid "Header Settings"
-msgstr "Header Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:264
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:271
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:15
-#, php-format
-msgid "%s Style Settings"
-msgstr "%s Style Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:264
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:271
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:559
-msgid "CSS Settings"
-msgstr "CSS Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:265
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:272
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:560
-msgid "Export/Import Settings"
-msgstr "Export/Import Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:266
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:273
-msgid "Delete Theme Settings"
-msgstr "Delete Theme Settings"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:280
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:3
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:3
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:369
 #, fuzzy, php-format
 msgid "%s settings saved"
 msgstr " settings saved"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:281
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:4
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:4
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:370
 #, fuzzy, php-format
 msgid "%s settings reset"
 msgstr " settings reset"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:303
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:6
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:9
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:375
+msgid "Image Uploaded"
+msgstr "Image Uploaded"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:23
+#, php-format
+msgid "%s Header Settings"
+msgstr "%s Header Settings"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:27
+msgid "Upload Header Image"
+msgstr "Upload Header Image"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:28
+msgid "Max Dimensions: 1000 px wide X 200 px high"
+msgstr "Max Dimensions: 1000 px wide X 200 px high"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:29
+msgid "Supported format: jpg, jpeg, gif, png"
+msgstr "Supported format: jpg, jpeg, gif, png"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:30
+msgid "Recommend format:</em> jpg, jpeg, png"
+msgstr "Recommend format:</em> jpg, jpeg, png"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:31
+msgid "After image is uploaded it will appear in the list below and can be selected in the list below to be used as the Header Image."
+msgstr "After image is uploaded it will appear in the list below and can be selected in the list below to be used as the Header Image."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:39
+msgid "Upload"
+msgstr "Upload"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:44
+#, php-format
+msgid "Please make sure <strong>%s</strong> is writable to enable upload of headers."
+msgstr "Please make sure <strong>%s</strong> is writable to enable upload of headers."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:46
+#, fuzzy
+msgid "Image Upload Location"
+msgstr "Image Uploaded"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:49
+msgid "<code>wp-content/techozoic</code> folder"
+msgstr "<code>wp-content/techozoic</code> folder"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:50
+msgid "<code>wp-content/themes/techozoic-fluid/uploads</code> folder"
+msgstr "<code>wp-content/themes/techozoic-fluid/uploads</code> folder"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:53
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:77
+msgid "Save Settings"
+msgstr "Save Settings"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:59
+msgid "Header Image Settings"
+msgstr "Header Image Settings"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:62
+msgid "Height of Container:"
+msgstr "Height of Container:"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:63
+#, fuzzy
+msgid "Header Image Horizontal Alignment:"
+msgstr "Header Image Alignment:"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:69
+#, fuzzy
+msgid "Header Image Vertical Alignment:"
+msgstr "Header Image Alignment:"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:86
+msgid "Header Images:"
+msgstr "Header Images:"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:89
+msgid "Rotate Through All Headers"
+msgstr "Rotate Through All Headers"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:93
+msgid "Rotate"
+msgstr "Rotate"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:101
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:105
+msgid "No Header Image"
+msgstr "No Header Image"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:135
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:139
+msgid " - Current Selected Header"
+msgstr " - Current Selected Header"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:169
+msgid "Click for full size preview of"
+msgstr "Click for full size preview of"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:172
+msgid "Width:"
+msgstr "Width:"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:172
+msgid "Height:"
+msgstr "Height:"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:176
+msgid "Select This Header"
+msgstr "Select This Header"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:183
+msgid "Delete This Header"
+msgstr "Delete This Header"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
+msgid "Return Error"
+msgstr "Return Error"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
+msgid "File Already Exists"
+msgstr "File Already Exists"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
+msgid "Incorrect File Type / File Size Limit exceeded"
+msgstr "Incorrect File Type / File Size Limit exceeded"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
+#, fuzzy
+msgid "Folder isn't writable please check folder that upload path exists and is writable."
+msgstr "Folder isn't writable please check folder that<code>%s/uploads/</code> exists and is writable."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
+msgid "File Doesn't exist."
+msgstr "File Doesn't exist."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
+#, fuzzy
+msgid "Folder isn't writable please check folder image upload folder Permissions."
+msgstr "Folder isn't writable please check folder<code>%s</code> Permissions."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
+msgid "Please only use .ico format for Fav Icon Images"
+msgstr "Please only use .ico format for Fav Icon Images"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:336
+#, fuzzy, php-format
+msgid "Techozoic %s Settings"
+msgstr "Techozoic Meta"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:336
+#, fuzzy
+msgid "Techozoic Settings"
+msgstr "Techozoic Meta"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:390
+#, php-format
+msgid "%s General Settings"
+msgstr "%s General Settings"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:392
 msgid "Layout"
 msgstr "Layout"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:393
+msgid "Post"
+msgstr "Post"
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:305
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:395
 msgid "Social Networks"
 msgstr "Social Networks"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:306
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:326
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:396
 msgid "Typography"
 msgstr "Typography"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:307
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:514
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:397
 msgid "Color Options"
 msgstr "Color Options"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:308
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:398
 msgid "Backgrounds"
 msgstr "Backgrounds"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:309
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:695
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:399
 msgid "Ad Placement"
 msgstr "Ad Placement"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:310
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:400
 msgid "Manual Header Settings"
 msgstr "Manual Header Settings"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:466
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:566
 msgid "Preview:"
 msgstr "Preview:"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:471
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:571
 msgid "Reset - Check and Save Options to Clear"
 msgstr "Reset - Check and Save Options to Clear"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:522
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:123
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:622
 msgid "Save changes"
 msgstr "Save changes"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:528
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:129
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:629
 msgid "Reset"
 msgstr "Reset"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:679
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:683
+msgid "You do not have permission to edit these options.  Please go back"
+msgstr "You do not have permission to edit these options.  Please go back"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:694
+msgid "Help for Techozoic can be obtained in a number of ways.  Please use the links below for help."
+msgstr "Help for Techozoic can be obtained in a number of ways.  Please use the links below for help."
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:570
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:696
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:751
+msgid "Documentation"
+msgstr "Documentation"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:697
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:754
+msgid "FAQ"
+msgstr "FAQ"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:707
+msgid "General Settings"
+msgstr "General Settings"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:708
+msgid "Header Settings"
+msgstr "Header Settings"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:709
+msgid "CSS Settings"
+msgstr "CSS Settings"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:710
+msgid "Export/Import Settings"
+msgstr "Export/Import Settings"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:720
 #, fuzzy
 msgid "Techozoic News"
 msgstr "Techozoic Meta"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:586
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:733
 msgid "No News."
 msgstr "No News."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:597
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:745
 msgid "Techozoic Links"
 msgstr "Techozoic Links"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:603
-msgid "Documentation"
-msgstr "Documentation"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:606
-msgid "FAQ"
-msgstr "FAQ"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:609
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:757
 msgid "Change Log"
 msgstr "Change Log"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:616
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:764
 msgid "Theme Option page for"
 msgstr "Theme Option page for"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:616
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:764
 msgid "Framework by"
 msgstr "Framework by"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/main.php:617
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:765
 msgid "Social Network Icons provided by"
 msgstr "Social Network Icons provided by"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:13
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:13
 msgid "Number of Columns"
 msgstr "Number of Columns"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:21
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:21
 msgid "Column Layout"
 msgstr "Column Layout"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:28
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:29
 msgid "Fixed or Fluid Width"
 msgstr "Fixed or Fluid Width"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:36
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:37
 msgid "Page Width"
 msgstr "Page Width"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:37
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:38
 msgid "Fluid Width - Percentage of Total Screen Size  <br />Fixed Width - Width in number of pixels"
 msgstr "Fluid Width - Percentage of Total Screen Size  <br />Fixed Width - Width in number of pixels"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:48
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:49
 #, fuzzy
 msgid "Main Column Width - <small>(Post Content)</small> "
 msgstr "Main Column <small>(Post Content)</small> Width - Percentage of Page Width"
 
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:49
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:50
 msgid "Percentage of Page Width"
 msgstr "Percentage of Page Width"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:59
-msgid "Sidebar<span id=\"sidebar_s\">s</span> Width - Percentage of Page Width"
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:60
+#, fuzzy
+msgid "Left Sidebar Width - <small>Percentage of Page Width</small>"
 msgstr "Sidebar<span id=\"sidebar_s\">s</span> Width - Percentage of Page Width"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:69
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:70
+#, fuzzy
+msgid "Right Sidebar Width - <small>Percentage of Page Width</small>"
+msgstr "Sidebar<span id=\"sidebar_s\">s</span> Width - Percentage of Page Width"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:80
 msgid "Total Content Width"
 msgstr "Total Content Width"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:70
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:81
 msgid "If Javascript is disabled this field will not update"
 msgstr "If Javascript is disabled this field will not update"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:80
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:91
 msgid "Fav Icon Image"
 msgstr "Fav Icon Image"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:81
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:92
 msgid "Fav Icon must be an .ico file.  Browse for a new image or chose previously uploaded image.  After choosing press Save to upload."
 msgstr "Fav Icon must be an .ico file.  Browse for a new image or chose previously uploaded image.  After choosing press Save to upload."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:90
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:101
 msgid "Display Sidebars on Blog Home Page"
 msgstr "Display Sidebars on Blog Home Page"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:97
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:108
 msgid "Display Sidebars on Single Post Pages"
 msgstr "Display Sidebars on Single Post Pages"
 
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:104
-msgid "SEO Features<a href=\"javascript:tabchange(6)\">*(see notes)</a>"
-msgstr "SEO Features<a href=\"javascript:tabchange(6)\">*(see notes)</a>"
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:115
+msgid "SEO Features"
+msgstr "SEO Features"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:105
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:116
 msgid "Disable this if any SEO plugins are used"
 msgstr "Disable this if any SEO plugins are used"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:112
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:123
 msgid "Thickbox on Images"
 msgstr "Thickbox on Images"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:113
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:124
 msgid "Use Thickbox to automatically overlay images on pages</small>"
 msgstr "Use Thickbox to automatically overlay images on pages</small>"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:120
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:131
 msgid "Display Search box in header"
 msgstr "Display Search box in header"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:121
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:132
 #, fuzzy
 msgid "Set to no if you don't want the search box to show in the header area.  If widgets are assigned to Right Header search box is automatically disabled."
 msgstr "Set to no if you don't want the search box to show in the header area"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:128
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:139
 msgid "Display Blog Title and Tagline in header"
 msgstr "Display Blog Title and Tagline in header"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:129
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:140
 msgid "Set to no if your custom header image already has your blog title and tagline"
 msgstr "Set to no if your custom header image already has your blog title and tagline"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:136
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:147
 msgid "Blog Title and Tagline Horizontal Alignment"
 msgstr "Blog Title and Tagline Horizontal Alignment"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:143
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:154
 msgid "Single Page Header Title Text"
 msgstr "Single Page Header Title Text"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:144
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:155
 msgid "Show the Post title as the main heading and the the Blog title as the tagline on single pages.   Always Blog Title will only display the Blog Title and Tagline set in the General Options of the Blog."
 msgstr "Show the Post title as the main heading and the the Blog title as the tagline on single pages.   Always Blog Title will only display the Blog Title and Tagline set in the General Options of the Blog."
 
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:151
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:162
 msgid "Blog Title Box Styling"
 msgstr "Blog Title Box Styling"
 
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:152
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:163
 msgid "Styling of box around the Blog Title <br />- On: White rounded box with transparency <br />- Off: Title and tagline text only."
 msgstr "Styling of box around the Blog Title <br />- On: White rounded box with transparency <br />- Off: Title and tagline text only."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:159
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:170
 msgid "Custom Footer Text"
 msgstr "Custom Footer Text"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:160
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:171
 msgid "Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link."
 msgstr "Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:167
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:178
 msgid "Drop Shadow Boxes"
 msgstr "Drop Shadow Boxes"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:168
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:179
 #, fuzzy
 msgid "Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safari."
 msgstr "Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safarai."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:175
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:150
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:186
+#, fuzzy
+msgid "Post Settings"
+msgstr "Export Settings"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:191
+msgid "Excerpt Location"
+msgstr "Excerpt Location"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:192
+msgid "Check where excerpts should be used instead of full post content.  If an area isn't checked then the full post is displayed."
+msgstr "Check where excerpts should be used instead of full post content.  If an area isn't checked then the full post is displayed."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:199
+#, fuzzy
+msgid "Background Color"
+msgstr "Body Background Color"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:200
+msgid "Check where background color for posts defined on the color tab should be applied."
+msgstr "Check where background color for posts defined on the color tab should be applied."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:207
+#, fuzzy
+msgid "Social Media Icons"
+msgstr "Single Page Social Media Icons"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:208
+msgid "Check where Social Media Icons will be displayed."
+msgstr "Check where Social Media Icons will be displayed."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:215
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:152
 msgid "Static CSS"
 msgstr "Static CSS"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:176
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:216
 msgid "For Advanced Users who would like to edit the style.css file directly. Setting this to static will stop using the Dynamic style.php in favor of the static style.css  If you would like the changes you've made already to transfer then below  is the CSS being used currently and allow you to copy and paste to the style.css file."
 msgstr "For Advanced Users who would like to edit the style.css file directly. Setting this to static will stop using the Dynamic style.php in favor of the static style.css  If you would like the changes you've made already to transfer then below  is the CSS being used currently and allow you to copy and paste to the style.css file."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:184
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:224
 msgid "Custom CSS"
 msgstr "Custom CSS"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:185
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:225
 msgid "<strong>No HTML allowed</strong> Here you can enter your own CSS.  Please keep in mind proper CSS structure."
 msgstr "<strong>No HTML allowed</strong> Here you can enter your own CSS.  Please keep in mind proper CSS structure."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:198
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:238
 msgid "Navigation Menu Type"
 msgstr "Navigation Menu Type"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:199
-msgid "Standard - Pages listed in horizontal menu in a single tier Two Tier - Parent pages listed in horizontal menu with any sub-pages listed in lower menu Disable the horizontal menu and visit the <a href=\"widgets.php\">widgets</a> page to add  the Techozoic Sidebar Navigation widget"
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:239
+#, fuzzy
+msgid "Standard - Pages listed in horizontal menu in a single tier | Two Tier - Parent pages listed in horizontal menu with any sub-pages listed in lower menu | Disable the horizontal menu and visit the <a href=\"widgets.php\">widgets</a> page to add  the Techozoic Sidebar Navigation widget"
 msgstr "Standard - Pages listed in horizontal menu in a single tier Two Tier - Parent pages listed in horizontal menu with any sub-pages listed in lower menu Disable the horizontal menu and visit the <a href=\"widgets.php\">widgets</a> page to add  the Techozoic Sidebar Navigation widget"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:206
-msgid "Navigation Menu Alignment"
-msgstr "Navigation Menu Alignment"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:213
-msgid "Navigation Button Width"
-msgstr "Navigation Button Width"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:214
-msgid "Set to <strong>0</strong> for variable sized buttons"
-msgstr "Set to <strong>0</strong> for variable sized buttons"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:223
-msgid "Navigation Menu Exclusion"
-msgstr "Navigation Menu Exclusion"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:224
-msgid "<strong>Choose which pages to exclude from all Navigation Menus. Hold CTRL to select multiple pages.</strong>"
-msgstr "<strong>Choose which pages to exclude from all Navigation Menus. Hold CTRL to select multiple pages.</strong>"
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:231
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:246
 msgid "Log In/Out Links"
 msgstr "Log In/Out Links"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:232
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:247
 msgid "Enable Dashboard and Log in/out links."
 msgstr "Enable Dashboard and Log in/out links."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:239
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:254
 msgid "Breadcrumbs"
 msgstr "Breadcrumbs"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:240
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:255
 msgid "Enable Breadcrumb navigation.  Useful with Sidebar Nav Widget."
 msgstr "Enable Breadcrumb navigation.  Useful with Sidebar Nav Widget."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:247
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:262
+msgid "Navigation Menu Alignment"
+msgstr "Navigation Menu Alignment"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:269
+msgid "Navigation Button Width"
+msgstr "Navigation Button Width"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:270
+msgid "Set to <strong>0</strong> for variable sized buttons"
+msgstr "Set to <strong>0</strong> for variable sized buttons"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:279
+msgid "Navigation Menu Exclusion"
+msgstr "Navigation Menu Exclusion"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:280
+msgid "<strong>Choose which pages to exclude from all Navigation Menus. Hold CTRL to select multiple pages.</strong>"
+msgstr "<strong>Choose which pages to exclude from all Navigation Menus. Hold CTRL to select multiple pages.</strong>"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:287
 msgid "Display Home Link"
 msgstr "Display Home Link"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:248
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:288
 msgid "Display the link back to the Blog Home"
 msgstr "Display the link back to the Blog Home"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:255
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:295
 msgid "Text for Home Link"
 msgstr "Text for Home Link"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:256
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:296
 msgid "Text displayed for the link to the blog home"
 msgstr "Text displayed for the link to the blog home"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:263
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:303
 msgid "Display Custom Links"
 msgstr "Display Custom Links"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:264
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:304
 msgid "Before or After default links"
 msgstr "Before or After default links"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:271
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:282
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:293
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:304
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:315
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:311
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:322
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:333
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:344
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:355
 msgid "Custom Navigation Link"
 msgstr "Custom Navigation Link"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:272
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:283
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:294
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:305
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:316
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:312
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:323
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:334
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:345
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:356
 msgid "Link should be entered in this form"
 msgstr "Link should be entered in this form"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:272
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:283
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:294
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:305
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:312
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:323
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:334
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:345
 msgid "Add Link"
 msgstr "Add Link"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:283
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:294
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:305
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:316
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:323
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:334
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:345
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:356
 msgid "Remove Link"
 msgstr "Remove Link"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:331
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:371
 msgid "Base Font Size"
 msgstr "Base Font Size"
 
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:332
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:372
 msgid "Default text.  <br />For more info on text size: <a href='http://www.w3schools.com/css/css_font.asp' title='W3Schools' target='_blank'> W3Schools Text Size</a>"
 msgstr "Default text.  <br />For more info on text size: <a href='http://www.w3schools.com/css/css_font.asp' title='W3Schools' target='_blank'> W3Schools Text Size</a>"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:342
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:382
 msgid "Main Heading Font"
 msgstr "Main Heading Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:352
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:392
 msgid "Post Heading Font"
 msgstr "Post Heading Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:362
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:402
 msgid "Sidebar Heading Font"
 msgstr "Sidebar Heading Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:372
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:412
 msgid "Nav Menu Text Font"
 msgstr "Nav Menu Text Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:382
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:422
 msgid "Post Text Font"
 msgstr "Post Text Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:392
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:432
 msgid "Metadata Font"
 msgstr "Metadata Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:402
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:442
 msgid "Header Font"
 msgstr "Header Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:411
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:451
 msgid "Post Body Font"
 msgstr "Post Body Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:420
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:460
 msgid "Sidebar Font"
 msgstr "Sidebar Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:429
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:469
 msgid "Nav Menu Font"
 msgstr "Nav Menu Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:438
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:478
 msgid "Default Page Font"
 msgstr "Default Page Font"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:447
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:455
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:463
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:487
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:495
 msgid "Cufon Font Replacement"
 msgstr "Cufon Font Replacement"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:448
-msgid "Visit this <a href=\"http://cufon.shoqolate.com/generate/\">link</a> to find out about Cufon."
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:488
+#, fuzzy
+msgid "Visit this <a href=\"http://cufon.shoqolate.com/generate/\">link</a> to find out about Cufon.  <strong>Cufon will be phased out in favor of <a href='http://code.google.com/webfonts'>Google Fonts</a></strong>"
 msgstr "Visit this <a href=\"http://cufon.shoqolate.com/generate/\">link</a> to find out about Cufon."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:456
-msgid "Check which headings you would like replaced."
-msgstr "Check which headings you would like replaced."
-
-# @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:464
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:496
 msgid "Choose the Font you would like to replace with. More coming in later versions."
 msgstr "Choose the Font you would like to replace with. More coming in later versions."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:472
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:504
+#, fuzzy
+msgid "Google Font Replacement"
+msgstr "Cufon Font Replacement"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:505
+msgid "Enable this to use the Google Font API to add new fonts."
+msgstr "Enable this to use the Google Font API to add new fonts."
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:512
+msgid "Goolge Fonts"
+msgstr "Goolge Fonts"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:513
+msgid "Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After clicking on the font to use, locate the <strong>Font API parameter name</strong> ex: Walter+Turncoat.  This should be added to the text box."
+msgstr "Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After clicking on the font to use, locate the <strong>Font API parameter name</strong> ex: Walter+Turncoat.  This should be added to the text box."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:519
+#, fuzzy
+msgid "Font Replacement"
+msgstr "Cufon Font Replacement"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:520
+msgid "Check which headings you would like replaced."
+msgstr "Check which headings you would like replaced."
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:527
 msgid "Custom Backgrounds"
 msgstr "Custom Backgrounds"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:532
+msgid "Image Storage Location"
+msgstr "Image Storage Location"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:533
+msgid "Choose where to store custom background and custom header images.<br /><strong>wp-content</strong> will store in wp-content/techozoic<br /><strong>theme</strong> will store in the theme directory under the uploads folder"
+msgstr "Choose where to store custom background and custom header images.<br /><strong>wp-content</strong> will store in wp-content/techozoic<br /><strong>theme</strong> will store in the theme directory under the uploads folder"
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:477
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:540
 msgid "Page Background Image"
 msgstr "Page Background Image"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:478
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:496
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:541
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:559
 msgid "Use a tiled image for best results Browse for a new image or chose previously uploaded image.  After choosing press Save to upload."
 msgstr "Use a tiled image for best results Browse for a new image or chose previously uploaded image.  After choosing press Save to upload."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:487
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:550
 msgid "Page Background Image Repeat"
 msgstr "Page Background Image Repeat"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:488
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:506
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:551
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:569
 msgid "X is Horizontal, Y is Vertical, both repeat tiled pattern"
 msgstr "X is Horizontal, Y is Vertical, both repeat tiled pattern"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:495
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:558
 msgid "Content Background Image"
 msgstr "Content Background Image"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:505
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:568
 msgid "Content Background Image Repeat"
 msgstr "Content Background Image Repeat"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:519
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:582
 msgid "Prebuilt Color Scheme"
 msgstr "Prebuilt Color Scheme"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:520
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:583
 msgid "Choose Custom 1 or 2 to specify your own scheme Two Custom options are provided to save two custom color schemes"
 msgstr "Choose Custom 1 or 2 to specify your own scheme Two Custom options are provided to save two custom color schemes"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:529
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:612
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:592
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:707
 msgid "Body Background Color"
 msgstr "Body Background Color"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:530
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:540
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:549
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:558
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:567
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:576
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:585
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:594
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:603
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:613
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:623
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:632
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:641
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:650
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:659
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:668
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:677
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:686
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:593
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:611
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:628
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:637
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:646
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:655
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:664
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:673
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:690
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:708
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:726
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:743
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:752
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:761
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:770
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:779
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:788
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:805
 msgid "Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>"
 msgstr "Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:602
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:619
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:681
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:698
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:717
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:734
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:796
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:813
+msgid "Transparent"
+msgstr "Transparent"
+
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:603
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:718
+msgid "Check to not apply any color to the body background."
+msgstr "Check to not apply any color to the body background."
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:539
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:622
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:610
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:725
 msgid "Content Background Color"
 msgstr "Content Background Color"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:620
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:735
+msgid "Check to not apply any color to the content background."
+msgstr "Check to not apply any color to the content background."
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:548
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:631
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:627
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:742
 msgid "Accent Color"
 msgstr "Accent Color"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:557
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:640
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:636
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:751
 msgid "Text Color"
 msgstr "Text Color"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:566
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:649
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:645
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:760
 msgid "Link Color"
 msgstr "Link Color"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:575
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:658
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:654
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:769
 msgid "Link Hover Color"
 msgstr "Link Hover Color"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:584
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:667
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:663
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:778
 msgid "Visited Link Color"
 msgstr "Visited Link Color"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:593
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:676
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:672
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:787
 msgid "Nav Button Background Color"
 msgstr "Nav Button Background Color"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:682
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:797
+msgid "Check to not apply any color to the nav button background."
+msgstr "Check to not apply any color to the nav button background."
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:602
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:685
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:689
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:804
 msgid "Post Background Color"
 msgstr "Post Background Color"
 
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:699
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:814
+msgid "Check to not apply any color to the post background."
+msgstr "Check to not apply any color to the post background."
+
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:609
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:692
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:704
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:819
 msgid "Reset Colors"
 msgstr "Reset Colors"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:700
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:827
 msgid "Home Page Ad Code"
 msgstr "Home Page Ad Code"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:701
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:828
 msgid "This Ad Code will be displayed a total of 3 times. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted"
 msgstr "This Ad Code will be displayed a total of 3 times. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:707
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:834
 msgid "Number of Posts Between Ad Units"
 msgstr "Number of Posts Between Ad Units"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:714
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:841
 msgid "Home Page Header Ad Code"
 msgstr "Home Page Header Ad Code"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:715
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:842
 msgid "This Ad Code will be displayed on the home  page below the header and navigation. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted"
 msgstr "This Ad Code will be displayed on the home  page below the header and navigation. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:721
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:848
 msgid "Single Post Ad Code"
 msgstr "Single Post Ad Code"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:722
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:849
 msgid "This Ad Code will be displayed on the single post page. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted"
 msgstr "This Ad Code will be displayed on the single post page. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:728
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:855
 msgid "Single Post Ad Position"
 msgstr "Single Post Ad Position"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:729
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:856
 msgid "Above or below the post content on single page"
 msgstr "Above or below the post content on single page"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:736
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:863
 msgid "Social Networking"
 msgstr "Social Networking"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:741
-msgid "Home Page Social Network Icons"
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:868
+#, fuzzy
+msgid "Home/Archive Page Social Network Icons"
 msgstr "Home Page Social Network Icons"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:742
-msgid "Choose which social network icons you would like displayed below the post."
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:869
+#, fuzzy
+msgid "Choose which social network icons you would like displayed below the post on the Home/Archive pages."
 msgstr "Choose which social network icons you would like displayed below the post."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:749
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:876
 msgid "Single Page Social Media Icons"
 msgstr "Single Page Social Media Icons"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:750
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:877
 msgid "Choose which social media icons you would like displayed on the single post page."
 msgstr "Choose which social media icons you would like displayed on the single post page."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:757
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:884
 msgid "Facebook Profile"
 msgstr "Facebook Profile"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:758
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:766
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:774
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:885
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:893
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:901
 msgid "Used for the About widget Must be full link to profile page"
 msgstr "Used for the About widget Must be full link to profile page"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:765
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:892
 msgid "MySpace Profile"
 msgstr "MySpace Profile"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:773
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:900
 msgid "Twitter Profile"
 msgstr "Twitter Profile"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:781
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:908
 msgid "Standard Header Settings"
 msgstr "Standard Header Settings"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:786
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:913
 msgid "Header Image"
 msgstr "Header Image"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:787
-msgid "<strong> Use the <a href=\"admin.php?page=techozoic_header_admin\">Header Image page</a> to upload custom headers and choose header image.</strong> If errors occur use dropdown menu  Select Rotate to rotate through all images <a href=\"javascript:tabchange(6)\">*(see notes)</a> ,   or select Defined Here and input URL below"
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:914
+#, fuzzy
+msgid "<strong> Use the <a href=\"admin.php?page=techozoic_header_admin\">Header Image page</a> to upload custom headers and choose header image.</strong> If errors occur use dropdown menu  Select Rotate to rotate through all images,   or select Defined Here and input URL below"
 msgstr "<strong> Use the <a href=\"admin.php?page=techozoic_header_admin\">Header Image page</a> to upload custom headers and choose header image.</strong> If errors occur use dropdown menu  Select Rotate to rotate through all images <a href=\"javascript:tabchange(6)\">*(see notes)</a> ,   or select Defined Here and input URL below"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:795
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:922
 msgid "Header Image Alignment"
 msgstr "Header Image Alignment"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:796
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:804
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:923
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:931
 msgid "Align header to the Left, Right, or Center the image in the Header Container"
 msgstr "Align header to the Left, Right, or Center the image in the Header Container"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:803
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:930
 #, fuzzy
 msgid "Header Image Vertical Alignment"
 msgstr "Header Image Alignment"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:811
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:938
 msgid "Header Container Height"
 msgstr "Header Container Height"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:812
-msgid "Adjust the size of the container holding the header image<a href=\"javascript:tabchange(6)\">*(see notes)</a>  Default Height: 200px"
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:939
+#, fuzzy
+msgid "Adjust the size of the container holding the header image  Default Height: 200px"
 msgstr "Adjust the size of the container holding the header image<a href=\"javascript:tabchange(6)\">*(see notes)</a>  Default Height: 200px"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:820
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:947
 msgid "Header Image URL"
 msgstr "Header Image URL"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/option-array.php:821
-msgid "Needs to be full path the header image  Example: <em>http://www.example.com/header.jpg</em> <a href=\"javascript:tabchange(6)\">*(see notes)</a>  Max Height: 200px"
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:948
+#, fuzzy
+msgid "Needs to be full path the header image  Example: <em>http://www.example.com/header.jpg</em>  Max Height: 200px"
 msgstr "Needs to be full path the header image  Example: <em>http://www.example.com/header.jpg</em> <a href=\"javascript:tabchange(6)\">*(see notes)</a>  Max Height: 200px"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:151
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:15
+#, php-format
+msgid "%s Style Settings"
+msgstr "%s Style Settings"
+
+# @ techozoic
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:153
 msgid "If you have set the Static CSS option to Static you may chose to either copy and paste this code from here to the style.css file using the WordPress code editor or use the button below to automatically overwrite the style.css with the contents below."
 msgstr "If you have set the Static CSS option to Static you may chose to either copy and paste this code from here to the style.css file using the WordPress code editor or use the button below to automatically overwrite the style.css with the contents below."
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:152
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:154
 msgid "A backup file is created as style.css.bu if any errors occur.  Also the original style.css can be restored by clicking Reset Style.css. <strong>-Use at your own risk</strong>.<br /><small>All changes made to style.css file are overwritten with theme updates"
 msgstr "A backup file is created as style.css.bu if any errors occur.  Also the original style.css can be restored by clicking Reset Style.css. <strong>-Use at your own risk</strong>.<br /><small>All changes made to style.css file are overwritten with theme updates"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:161
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:163
 msgid "Copy to Style.css"
 msgstr "Copy to Style.css"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:162
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:164
 msgid "Restore Style.css backup"
 msgstr "Restore Style.css backup"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:163
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:165
 msgid "Reset Style.css"
 msgstr "Reset Style.css"
 
 # @ techozoic
-#: C:\Documents
-#: and
-#: Settings\jeremy.WES.BCSBOE\Desktop\techozoic-fluid/techozoic-fluid/options/style-admin.php:167
+#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:169
 #, php-format
 msgid "Please make sure <strong>%s</strong> is writable to enable automatic copying of stylesheet."
 msgstr "Please make sure <strong>%s</strong> is writable to enable automatic copying of stylesheet."
 
+# @ techozoic
+#~ msgid "% Comment &#187;"
+#~ msgid_plural "% Comments &#187"
+#~ msgstr[0] "% Comment &#187;"
+#~ msgstr[1] "% Comments &#187"
+# @ techozoic
+#~ msgid "% Comment"
+#~ msgid_plural "% Comments"
+#~ msgstr[0] "% Comment"
+#~ msgstr[1] "% Comments"
+# @ techozoic
+#~ msgid "%1$s to %2$s &#8221;"
+#~ msgstr "%1$s to %2$s &#8221;"
+# @ techozoic
+#~ msgid "One Comment &#187;"
+#~ msgstr "One Comment &#187;"
+# @ techozoic
+#~ msgid "TrackBacks / PingBacks"
+#~ msgstr "TrackBacks / PingBacks"
+# @ techozoic
+#~ msgid "TrackBack"
+#~ msgstr "TrackBack"
+# @ techozoic
+#~ msgid "PingBack"
+#~ msgstr "PingBack"
+# @ techozoic
+#~ msgid "% Comment so far. Join the Conversation"
+#~ msgid_plural "% Comments so far. Join the Conversation"
+#~ msgstr[0] "% Comment so far. Join the Conversation"
+#~ msgstr[1] "% Comments so far. Join the Conversation"
+# @ techozoic
+#~ msgid "% Comment &raquo;"
+#~ msgid_plural "% Comments &raquo;"
+#~ msgstr[0] "% Comment &raquo;"
+#~ msgstr[1] "% Comments &raquo;"
+# @ techozoic
+#~ msgid "Footer - Limit 3 Widgets"
+#~ msgstr "Footer - Limit 3 Widgets"
+# @ techozoic
+#~ msgid " settings saved"
+#~ msgstr " settings saved"
+# @ techozoic
+#~ msgid " settings reset"
+#~ msgstr " settings reset"
+# @ techozoic
+#, fuzzy
+#~ msgid "%s Options"
+#~ msgstr "Color Options"
