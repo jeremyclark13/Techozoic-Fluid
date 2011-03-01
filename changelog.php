@@ -22,6 +22,8 @@
 - Moved options page under the Appearence menu as per Theme Review Guidelines.<br />
 - Added links for all image sizes to gallery pages.<br />
 - Added option to make custom background colors transparent.<br />
+- Added shortcode processing on ad settings.<br />
+- Fixed error with background repetition.<br />
 
 <h3>Version 1.9.2</h3><br />
 - Fixed IE 7 layout error when blog title box was aligned left.<br />

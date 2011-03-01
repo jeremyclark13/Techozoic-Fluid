@@ -825,7 +825,7 @@ $options = array (
                 "anchor" =>"tab4"),
 
         array(	 "name" => __("Home Page Ad Code","techozoic"),
-                "desc"=>__("This Ad Code will be displayed a total of 3 times. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted","techozoic"),
+                "desc"=>__("This Ad Code will be displayed a total of 3 times. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>","techozoic"),
                 "id" => "ad_code",
                 "old_id" => "tech_ad_code",
                 "std" => "",
@@ -839,14 +839,14 @@ $options = array (
                 "options" => array("6", "5", "4", "3", "2", "1")),
 
         array(	"name" => __("Home Page Header Ad Code","techozoic"),
-                "desc" => __("This Ad Code will be displayed on the home  page below the header and navigation. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted","techozoic"),
+                "desc" => __("This Ad Code will be displayed on the home  page below the header and navigation. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>","techozoic"),
                 "id" => "header_ad_code",
                 "old_id" => "tech_header_ad_code",
                 "std" => "",
                 "type" => "textarea"),
 
         array(	"name" => __("Single Post Ad Code","techozoic"),
-                "desc"=> __("This Ad Code will be displayed on the single post page. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted","techozoic"),
+                "desc"=> __("This Ad Code will be displayed on the single post page. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>","techozoic"),
                 "id" => "sing_ad_code",
                 "old_id" => "tech_sing_ad_code",
                 "std" => "",

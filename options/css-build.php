@@ -54,27 +54,27 @@
 	$tech['header_align'] = strtolower($tech['header_align']);
 	$tech['header_v_align'] = strtolower($tech['header_v_align']);
 	$bg_image_repeat = explode(',', $tech['bg_image_repeat']);
-	$tech_bg_repeat = "";
+	$tech_bg_repeat = "no-repeat";
 	if (in_array("X" , $bg_image_repeat)) {
-		$tech_bg_repeat = "-x";
+		$tech_bg_repeat = "repeat-x";
 	}
 	if (in_array("Y" , $bg_image_repeat)) {
-		if ($tech_bg_repeat == "-x"){
-			$tech_bg_repeat = "";
+		if ($tech_bg_repeat == "repeat-x"){
+			$tech_bg_repeat = "repeat";
 		} else {
-			$tech_bg_repeat = "-y";
+			$tech_bg_repeat = "repeat-y";
 		}
 	}
 	$content_bg_image_repeat = explode(',', $tech['content_bg_image_repeat']);
-	$tech_content_bg_repeat = "";
+	$tech_content_bg_repeat = "no-repeat";
 	if (in_array("X" , $content_bg_image_repeat)) {
-		$tech_content_bg_repeat = "-x";
+		$tech_content_bg_repeat = "repeat-x";
 	}
 	if (in_array("Y" , $content_bg_image_repeat)) {
-		if ($tech_content_bg_repeat == "-x"){
-			$tech_content_bg_repeat = "";
+		if ($tech_content_bg_repeat == "repeat-x"){
+			$tech_content_bg_repeat = "repeat";
 		} else {
-			$tech_content_bg_repeat = "-y";
+			$tech_content_bg_repeat = "repeat-y";
 		}
 	}
 	
@@ -200,8 +200,8 @@
 		$tech_post_bg_color_loc = explode( ',' , $tech['post_background_location']);
 		$tech_post_bg_color_class_map = array(
 		"Main Page" => '.home .narrowcolumn .entry, home .widecolumn .entry, .top', 
-		"Single Post" => '.singlepost', 
-		"Archive Pages" => '.narrowcolumn .entry, .widecolumn .entry, .top'
+		"Single Post" => '.post .singlepost',
+		"Archive Pages" => '.archive .narrowcolumn .entry, .archive .widecolumn .entry, .top'
 		);
 		foreach ($tech_post_bg_color_loc as $tpbc){
 			$tech_post_bg_color_classes .= ",". $tech_post_bg_color_class_map[$tpbc];
@@ -213,7 +213,7 @@ echo <<<CSS
 
 /*Variable Styles*/
 #page{ 
-background:{$tech_content_bg_color} url({$tech['content_bg_image']}) repeat{$tech_content_bg_repeat} top left;
+background:{$tech_content_bg_color} url({$tech['content_bg_image']}) {$tech_content_bg_repeat} top left;
 }
 #header{
 background-color:{$tech_content_bg_color};
@@ -221,7 +221,7 @@ background-color:{$tech_content_bg_color};
 body{
 font-family:{$tech['default_font']}, Sans-Serif;
 font-size: {$tech['body_font_size']}px;
-background:{$tech_bg_color} url({$tech['bg_image']}) repeat{$tech_bg_repeat} top left;
+background:{$tech_bg_color} url({$tech['bg_image']}) {$tech_bg_repeat} top left;
 }
 .techozoic_font_size{
 font-size: {$tech['body_font_size']}px;
@@ -231,6 +231,7 @@ font-family:{$tech['body_font']}, Sans-Serif;
 }
 {$tech_post_bg_color_classes}{
 background-color:{$tech_post_bg_color};
+border-top:1px {$tech_acc_color} solid;
 }
 h1{
 font-family:{$tech_h1_font}, Sans-Serif;
@@ -307,9 +308,6 @@ CSS;
 echo <<<CSS
 .post_date {
 background-color:{$tech_acc_color};
-}
-.narrowcolumn .entry,.widecolumn .entry, .tags {
-border-top:1px {$tech_acc_color} solid;
 }
 .tags {
 border-bottom:1px {$tech_acc_color} solid;

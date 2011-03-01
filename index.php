@@ -6,7 +6,8 @@ global $tech;
 	$tech_i = 0;	
 	if (!empty($tech['header_ad_code'])) { ?>
 		<div class="aligncenter">
-<?php 		echo stripslashes ($tech['header_ad_code']); ?>
+<?php 		$tech_header_ad_code = stripslashes ($tech['header_ad_code']);
+                echo do_shortcode($tech_header_ad_code);?>
 		</div>
 <?php 		$tech_ii++; 
 	}
@@ -63,7 +64,8 @@ global $tech;
 				$tech_i++;
 				if($tech_i == $tech['ad_int']) { ?>
 					<div class="aligncenter">
-<?php 					echo stripslashes ($tech['ad_code']); ?>
+<?php 					$tech_ad_code = stripslashes ($tech['ad_code']);
+                                        echo do_shortcode($tech_ad_code); ?>
 					</div>
 <?php 				$tech_i = 0; 
 					$tech_ii++; 

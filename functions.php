@@ -261,23 +261,6 @@ function tech_show_sidebar($loc) {
 	
 	
 	
-/**************************************
-	Techozoic Automatic Feed Link Checking
-	Since 1.8.8
-***************************************/	
-function tech_feed_link(){
-	global $wp_version;
-	$output = "";
-	$default_feed_link = '<link rel="alternate" type="application/rss+xml" title="'. get_bloginfo('name'). ' RSS Feed" href="'. get_bloginfo('rss2_url') .'" />';
-	if($wp_version < 3){ 
-		if(function_exists(automatic_feed_links)){
-			$output .= automatic_feed_links();
-		} else {
-			$output .= $default_feed_link;
-		}
-	}
-	echo $output;
-}
 
 /**************************************
 	Techozoic Social Media Icons Function
@@ -793,7 +776,6 @@ add_filter('the_excerpt', 'tech_excerpt_filter'); // Replaces [...] at end of ex
 add_action('tech_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
 add_action('admin_menu', 'tech_create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis
 add_action('save_post', 'tech_save_postdata');  // Saves meta box data to postmeta table
-add_action('wp_head', 'tech_feed_link'); //Tests if WP 3.0 automatic_feed_link is available if not echos feed link to wp_head
 if ( !isset($_GET['preview'])){ //Doesn't run when previewing the theme before activating the theme
 	add_action('wp_head', 'tech_first_run_options'); //Calls tech_init.php which sets up default options in database and creates folder to hold custom images
 	add_action('admin_head', 'tech_first_run_options'); //Same as above but works for the admin side

@@ -21,7 +21,7 @@ if($tech['seo'] == 'On') {
 		} 
 	} elseif(is_home()) { ?>
 <meta name="description" content="<?php bloginfo('description'); ?>" />
-<?php 		} ?>
+<?php 	} ?>
 <title>
 <?php 
 	if (is_day() || is_month() || is_year()) { 
@@ -54,7 +54,7 @@ else { ?>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/style.css" />
 <?php
 	} else { ?>
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php if (function_exists('home_url')) { echo home_url(); } else { bloginfo('url'); }?>/?techozoic_css=css"/>
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo home_url(); ?>/?techozoic_css=css"/>
 <?php } ?>
 <!--[if IE 6]>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/ie6.css" />
@@ -109,7 +109,7 @@ if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'right_header' ) )
 if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { ?>
 	<a><?php wp_title('',true,''); ?></a><?php 
 } else { ?>
-	<a href="<?php if (function_exists('home_url')) { echo home_url(); } else { bloginfo('url'); } ?>/"><?php bloginfo('name'); ?></a>
+	<a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
 <?php 
 } 
 if(is_single() || is_page()) { 
@@ -118,13 +118,7 @@ if(is_single() || is_page()) {
 	echo "</h1>";
 } 
 if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { 
-	$description = "<a href=\"";
-	if (function_exists('home_url')) { 
-		$description .= home_url() ; 
-	} else { 
-		$description .= get_bloginfo('url'); 
-	}
-	$description .= "\">".get_bloginfo('name')."</a>"; } 
+	$description = "<a href=\"" . home_url() . "\">" . get_bloginfo('name') . "</a>"; }
 else {	
 	$description = get_bloginfo('description');
 }
@@ -143,17 +137,13 @@ if (!empty ($description)) { ?>
 ?>
 <div id="navmenu">
 <?php
-	if (function_exists('get_template_part')) {
-				get_template_part('nav',tech_nav_select());
-		} else {
-			include (TEMPLATEPATH . "/nav-".tech_nav_select()."php"); 
-		}
-	}
-if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
+	get_template_part('nav',tech_nav_select());
+}
+        if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
 	if ($tech['dashboard_link'] == "On") {
-		if (is_user_logged_in()){ ?>
-			<ul id="admin"><li><a href="<?php echo bloginfo('wpurl'); ?>/wp-admin" alt="admin"><?php _e('Dashboard' ,'techozoic')?></a></li>
-			<li><a href="<?php if (function_exists('wp_logout_url')) { echo wp_logout_url();} else { if (function_exists('site_url')) { echo site_url(); } else { bloginfo('siteurl'); } ?>/wp-login.php?action=logout&amp;redirect_to=<?php echo "http://".$_SERVER["SERVER_NAME"].$_SERVER['REQUEST_URI']; }?>" alt="logout"><?php _e('Log Out' ,'techozoic')?></a></li></ul>
+		if (is_user_logged_in()) { ?>
+			<ul id="admin"><li><a href="<?php echo site_url(); ?>/wp-admin" title="<?php _e('Dashboard' ,'techozoic')?>"><?php _e('Dashboard' ,'techozoic')?></a></li>
+			<li><a href="<?php echo wp_logout_url(); ?>" title="<?php _e('Log Out' ,'techozoic')?>"><?php _e('Log Out' ,'techozoic')?></a></li></ul>
 <?php 
 		} else { ?>
 			<ul id="admin"><li>
@@ -161,13 +151,13 @@ if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
 ?>
 			<a href="#TB_inline?height=120&amp;width=120&amp;inlineId=loginthick" class="thickbox" title="Login"><?php _e('Login' ,'techozoic')?></a>
 <?php 	} else { 
-?>			<a href="<?php echo wp_login_url();?>" title="Login"><?php _e('Login' ,'techozoic')?></a>
+?>			<a href="<?php echo wp_login_url();?>" title="<?php _e('Login' ,'techozoic')?>"><?php _e('Login' ,'techozoic')?></a>
 <?php 	}
 ?>
 		</li></ul>
 		<div id="loginthick" style="display:none">
 		<div class="aligncenter">
-		<form action="<?php bloginfo('wpurl'); ?>/wp-login.php" method="post" id="loginform">
+		<form action="<?php echo site_url(); ?>/wp-login.php" method="post" id="loginform">
 		<label><?php _e('Username: ' ,'techozoic')?><br /><input type="text" id="user_login" class="text" name="log"/></label><br />
 		<label><?php _e('Password: ' ,'techozoic')?><br /><input type="password" id="user_pass" class="text" name="pwd"/></label><br />
 		<input type="submit" id="wp-submit" value="<?php _e('Log in' ,'techozoic')?>" />
@@ -192,13 +182,8 @@ if ($tech['breadcrumbs'] == "On"){
 <div id="page">
 <div id="pagel">
 <div id="pager">
-<?php if ($tech['search_box'] == "Yes" && !is_active_sidebar( 'right_header' )) {?>
+<?php if ($tech['search_box'] == "Yes" && !is_active_sidebar( 'right_header' )) { ?>
 	<div id="search">
-	<?php 
-		if (function_exists('get_search_form')) {
-			get_search_form();
-		} else {
-			include (TEMPLATEPATH . "/searchform.php"); 
-		}?>
+	<?php get_search_form(); ?>
 	</div>
 <?php } ?>

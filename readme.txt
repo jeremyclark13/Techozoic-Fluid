@@ -16,7 +16,7 @@ Over 70 theme options to adjust column settings, color scheme, font, ad placemen
 Installation can be done automatically through the Install Themes feature or manually by following instructions below.
 
 1. Upload `techozoic-fluid.zip` to the `/wp-content/themes/` directory
-1. Choose the theme from the 'Appearence menu in WordPress
+1. Choose the theme from the 'Appearance menu in WordPress
 1. Visit the Techozoic Settings pages to configure all the theme options.
 
 == Frequently Asked Questions ==
@@ -37,9 +37,11 @@ Installation can be done automatically through the Install Themes feature or man
 * Added border to top of header, and spacing to better frame theme.
 * Added option to use Google Fonts.
 * Added post formating options including where excerpt should be used, and where to display social media icons.
-* Moved options page under the Appearence menu as per Theme Review Guidelines.
+* Moved options page under the Appearance menu as per Theme Review Guidelines.
 * Added links for all image sizes to gallery pages.
 * Added option to make custom background colors transparent.
+* Added shortcode processing on ad settings.
+* Fixed error with background repetition.
 
 = Version 1.9.2 =
 * Fixed IE 7 layout error when blog title box was aligned left.

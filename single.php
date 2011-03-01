@@ -6,7 +6,13 @@ $tech_disable_sidebar = get_post_meta($post->ID, "Sidebar_value", $single = true
 $tech_disable_nav = get_post_meta($post->ID, "Nav_value", $single = true);
 if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { tech_show_sidebar("l");} ?>
 <div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { echo "narrow"; }else {echo "wide";}?>column">
-<?php 
+<?php
+    if (!empty($tech['sing_ad_code']) && $tech['sing_ad_pos'] == "Above") { ?>
+        <div class="aligncenter">
+            <?php $tech_sing_ad_code = stripslashes ($tech['sing_ad_code']);
+            echo do_shortcode($tech_sing_ad_code);?>
+        </div>
+<?php }
 if (have_posts()) {
 	while (have_posts()) {
 		the_post(); ?>
@@ -50,7 +56,14 @@ if (have_posts()) {
 		</div>
 <?php do_action('tech_after_sing_content');?>
 		</div>
-<?php 		comments_template(); 
+<?php
+    if (!empty($tech['sing_ad_code']) && $tech['sing_ad_pos'] == "Below") { ?>
+        <div class="aligncenter">
+            <?php $tech_sing_ad_code = stripslashes ($tech['sing_ad_code']);
+            echo do_shortcode($tech_sing_ad_code);?>
+        </div>
+<?php }
+	comments_template(); 
 		} //End While Loop 
 } else { 
 ?>

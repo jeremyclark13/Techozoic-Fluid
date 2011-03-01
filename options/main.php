@@ -179,7 +179,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 					if (isset($value['reset'])) $reset = $value['reset'];
 					if (isset($value['select'])) $select = $value['select'];
 					$v = "";
-					if (isset($_POST[$id]) or isset($_REQUEST[$reset]) or isset($_REQUEST[$select]) or $_FILES[$id]['size'] > 0 ){
+					if (($type != 'header') && (isset($_POST[$id]) or isset($_REQUEST[$reset]) or isset($_REQUEST[$select]) or $_FILES[$id]['size'] > 0 )){
 						if($type == "wp_list"){
 							if (is_array($_POST[$id])){ 
 								$_POST[$id] = implode(',',$_POST[$id]); //This will take from the array and make one string
@@ -248,7 +248,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 									$dir = WP_CONTENT_DIR . "/techozoic/images/backgrounds/";
 								}
 								if (is_writable($dir)) {
-									if ((($_FILES[$file_id]["type"] == "image/gif") || ($_FILES[$file_id]["type"] == "image/jpeg") || ($_FILES[$file_id]["type"] == "image/png") || ($_FILES[$file_id]["type"] == "image/x-ico") || ($_FILES[$file_id]["type"] == "image/x-icon") || ($_FILES[$file_id]["type"] == "image/pjpeg")) && ($_FILES[$file_id]["size"] < 1048576)) {
+									if ((($_FILES[$file_id]["type"] == "image/gif") || ($_FILES[$file_id]["type"] == "image/jpeg") || ($_FILES[$file_id]["type"] == "image/png") || ($_FILES[$file_id]["type"] == "image/x-ico") || ($_FILES[$file_id]["type"] == "image/x-icon") || ($_FILES[$file_id]["type"] == "image/pjpeg"))) {
 										if ($_FILES[$file_id]["error"] > 0){
 											$error = "0";
 										} else {
@@ -283,7 +283,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 						}
 					} elseif ($_GET['page'] == "techozoic"){
 						if ($type == "wp_list" || $type == "checkbox"){
-							$settings[$id] = "";
+                                                    $settings[$id] = "";
 						}
 					}
 				} //End foreach loop
@@ -446,7 +446,7 @@ function techozoic_general_admin() {
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
-					<td style="50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
+					<td style="width:50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 					<td>
 						<select name="<?php echo $value['id']; ?>" id="<?php echo $value['id']; ?>" <?php if(isset($value['java'])) echo $value['java']; ?>>
@@ -466,7 +466,7 @@ function techozoic_general_admin() {
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
-					<td style="50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
+					<td style="width:50%;text-align:justify;" valign="top"><small><?php echo $value['desc']?></small></td>
 	<?php 		} ?>
 						<td>
 		<ul>						
@@ -534,7 +534,7 @@ function techozoic_general_admin() {
 	<?php			if ($settings[$id] != "") { ?>
 		<tr valign="middle">
 					<th scope="row">Selected:</th><td>
-	<span id ="<?php echo $value['id'];?>_selected_bg" style="display:block;width:100px;height:100px;background-image:url(<?php echo $settings[$id];?>)">
+	<span id ="<?php echo $value['id'];?>_selected_bg" style="display:block;width:100px;height:100px;background-image:url(<?php echo $settings[$id];?>)" />
 		</td></tr>
 		<?php				} ?>
 				<tr valign="middle"> 
