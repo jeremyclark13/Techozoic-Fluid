@@ -51,7 +51,7 @@ else { ?>
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 <?php 
 	if ($tech['static_css'] == "Static" || (isset($_GET['stylesheet']) && $_GET['stylesheet'] = 'techozoic-fluid') ) { ?>
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/style.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri(); ?>/style.css" />
 <?php
 	} else { ?>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo home_url(); ?>/?techozoic_css=css"/>

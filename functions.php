@@ -147,7 +147,7 @@ function tech_menu_fallback(){
 ***************************************/
 	
 function tech_font_size_script() {
-	$script_dir = get_bloginfo('template_directory').'/js/';
+	$script_dir = get_template_directory_uri() . '/js/';
 	wp_register_script('font-size', $script_dir .'font-resize.js', array('jquery'), '1.0');
 	wp_enqueue_script('font-size');
 }
@@ -268,14 +268,10 @@ function tech_show_sidebar($loc) {
 ***************************************/	
 function tech_social_icons($home=true){
 	global $tech, $post;
-	if (function_exists('home_url')) {
-		$short_link = home_url()."/?p=".$post->ID;
-	} else {
-		$short_link = get_bloginfo('url')."/?p=".$post->ID;
-	}
+	$short_link = home_url()."/?p=".$post->ID;
 	$home_icons = explode(',' , $tech['home_social_icons']);
 	$single_icons = explode(',' , $tech['single_social_icons']);
-	$image = get_bloginfo('template_directory')."/images/icons";
+	$image = get_template_directory_uri() . "/images/icons";
 	$link = get_permalink();
 	$title = $post->post_title;
 	$email_title = preg_replace('/&/i', 'and',$title);
@@ -316,7 +312,7 @@ function tech_about_icons($fb=0,$my=0,$twitter=0){
 	$fb_profile = $tech['facebook_profile'];
 	$my_profile = $tech['myspace_profile'];
 	$twitter_profile = $tech['twitter_profile'];
-	$image = get_bloginfo('template_directory')."/images/icons";
+	$image = get_template_directory_uri() . "/images/icons";
 	if ($fb !=0){
 		echo "<li><a href=\"{$fb_profile}\" title=\"".__('Follow me on Facebook','techozoic')."\"><img src=\"{$image}/facebook_32.png\"></a></li>";
 	}
@@ -361,7 +357,7 @@ function tech_comment_preview($ID,$num){
 ***************************************/
 function techozoic_show_notice() { ?>
     <div id="message" class="updated fade">
-		<p><?php printf( __( 'Theme activated! This theme contains <a href="%s">theme options</a> and <a href="%s">custom sidebar widgets</a>.<br />&nbsp; See <a href="%s">Change Log</a>.', 'techozoic' ), admin_url( 'admin.php?page=techozoic_main_admin' ), admin_url( 'widgets.php' ) , get_bloginfo('template_directory')."/changelog.php\" onclick=\"return changelog('". get_bloginfo('template_directory')."/changelog.php')\"") ?></p>
+		<p><?php printf( __( 'Theme activated! This theme contains <a href="%s">theme options</a> and <a href="%s">custom sidebar widgets</a>.<br />&nbsp; See <a href="%s">Change Log</a>.', 'techozoic' ), admin_url( 'admin.php?page=techozoic_main_admin' ), admin_url( 'widgets.php' ) , get_template_directory_uri() . "/changelog.php\" onclick=\"return changelog('". get_template_directory_uri() ."/changelog.php')\"") ?></p>
     </div>
     <style type="text/css">#message2, #message0 { display: none; }</style>
     <?php
@@ -373,7 +369,7 @@ function techozoic_show_notice() { ?>
 ***************************************/
 function tech_cufon_script() {
 	global $tech;
-	$script_dir = get_bloginfo('template_directory').'/js/';
+	$script_dir = get_template_directory_uri() . '/js/';
 	$tech_adv_font = $tech['cufon_font_list'];
 	wp_register_script('cufon', $script_dir .'cufon-yui.js', array('jquery'), '1.0');
 	wp_enqueue_script('tech_font', $script_dir .'cufon_fonts/'. $tech_adv_font.'.font.js', array('jquery','cufon'), '1.0');
@@ -546,7 +542,7 @@ if(function_exists('register_nav_menus')) {
 	) );
 }
 function techozoic_enqueue() {
-	wp_enqueue_script('tech_thickbox', get_bloginfo('template_url') . 'js/thickbox.js',array('jquery'),'3.0' );
+	wp_enqueue_script('tech_thickbox', get_template_directory_uri() . 'js/thickbox.js',array('jquery'),'3.0' );
 }
 
 function tech_dashboard_widgets() {
@@ -597,7 +593,7 @@ function tech_first_run_options() {
 }//End first_run_options
 
 function tech_dropdown_js(){
-	wp_enqueue_script('dropdown', get_bloginfo('template_url') . '/js/dropdown.js',array('jquery'),'3.0' );
+	wp_enqueue_script('dropdown', get_template_directory_uri() . '/js/dropdown.js',array('jquery'),'3.0' );
 }//End Dropdown_js
 
 function tech_nav_link($where){
@@ -640,11 +636,7 @@ function tech_breadcrumbs() {
 		echo '<div id="crumbs">';
  
 		global $post;
-		if (function_exists('home_url')) {
-			$home = home_url();
-		} else {
-			$home = get_bloginfo('url');
-		}
+		$home = home_url();
 		echo '<a href="' . $home . '">' . $name . '</a> ' . $delimiter . ' ';
  
 		if ( is_category() ) {
