@@ -167,8 +167,9 @@
             $tech_content_bg_color =    tech_color_verify($tech['cust_content_bg_color2']);
             $tech_content_bg_trans =    $tech['cust_content_bg_trans2'];
         }
+        $tech_nav_ul_bg_color = $tech_nav_bg_color;
         if ($tech_bg_trans == 'On') $tech_bg_color = 'transparent';
-        if ($tech_nav_bg_trans == 'On')  $tech_nav_bg_color = 'transparent';
+        if ($tech_nav_bg_trans == 'On') $tech_nav_bg_color = 'transparent';
         if ($tech_post_bg_trans == 'On')  $tech_post_bg_color = 'transparent';
         if ($tech_content_bg_trans == 'On') $tech_content_bg_color = 'transparent';
 	$tech_sidebar_h3_font_size = $tech['side_heading_font_size'] - .4;
@@ -233,6 +234,9 @@ font-family:{$tech['body_font']}, Sans-Serif;
 background-color:{$tech_post_bg_color};
 border-top:1px {$tech_acc_color} solid;
 }
+.top{
+border:none;
+}
 h1{
 font-family:{$tech_h1_font}, Sans-Serif;
 }
@@ -289,6 +293,9 @@ ul#nav li,ul#admin li, #nav2 li, ul#dropdown li a, .menu li a{
 font-family:{$tech['nav_font']}, Sans-Serif;
 font-size:{$tech['nav_text_font_size']}em;
 }
+.menu ul.sub-menu li{
+background-color: {$tech_nav_ul_bg_color};
+}
 CSS;
 if($tech_nav_bg_trans != 'On') {
 echo <<<CSS
@@ -303,6 +310,12 @@ box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
 }
 ul#nav li.current_page_item a ,#nav2 li.current_page_item a,#nav2 li.current_page_parent a, #nav2 li.current_page_ancestor a,#dropdown li.current_page_item a, .menu li.current-menu-item a{
 color:#f7f7f7;
+}
+ul#admin li:hover{
+background:#efefef;
+box-shadow:2px 1px 3px rgba(0, 0, 0, 0.3);
+-moz-box-shadow:2px 1px 3px rgba(0, 0, 0, 0.3);
+-webkit-box-shadow:2px 1px 3px rgba(0, 0, 0, 0.3);
 }
 CSS;
 }
@@ -1136,12 +1149,7 @@ border-bottom-left-radius:5px;
 ul#nav li.current_page_item, #dropdown li.current_page_item, .menu li.current-menu-item {
 border-bottom:1px dotted;
 }
-ul#admin li:hover{
-background:#efefef;
-box-shadow:2px 1px 3px rgba(0, 0, 0, 0.3);
--moz-box-shadow:2px 1px 3px rgba(0, 0, 0, 0.3);
--webkit-box-shadow:2px 1px 3px rgba(0, 0, 0, 0.3);
-}
+
 .post_title{
 letter-spacing:-0.9px;
 margin:0;
