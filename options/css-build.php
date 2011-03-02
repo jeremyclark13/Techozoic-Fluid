@@ -360,6 +360,7 @@ text-decoration:none;
 box-shadow:none !important;
 -webkit-box-shadow: none !important;
 opacity:1 !important;
+border: none !important;
 }
 CSS;
 	if ($tech_blog_title_align_check == "Center" && is_active_sidebar( 'left_header' ) ){
