@@ -79,7 +79,7 @@ function techozoic_add_admin() {
 				} else {
 					$settings['header'] = 'Defined Here';
 					if ($settings['image_location'] == 'theme'){
-						$settings['header_image_url'] = get_bloginfo('template_directory') . "/uploads/images/headers/" . $_POST['header_select'];
+						$settings['header_image_url'] = get_template_directory_uri() . "/uploads/images/headers/" . $_POST['header_select'];
 					} else {
 						$settings['header_image_url'] = WP_CONTENT_URL . "/techozoic/images/headers/" . $_POST['header_select'];
 					}
@@ -236,7 +236,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 								$image_url = "";
 							} elseif ($_REQUEST[$value['select']] != "Select Image"){
 								if ($settings['image_location'] == 'theme'){
-									$image_url =  get_bloginfo('template_directory'). "/uploads/images/backgrounds/" . $_REQUEST[$value['select']];
+									$image_url =  get_template_directory_uri() . "/uploads/images/backgrounds/" . $_REQUEST[$value['select']];
 								} else {
 									$image_url = WP_CONTENT_URL . "/techozoic/images/backgrounds/" . $_REQUEST[$value['select']];
 								}
@@ -268,7 +268,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 									$error = "3";
 								}
 								if ($settings['image_location'] == 'theme'){
-									$image_url =  get_bloginfo('template_directory'). "/uploads/images/backgrounds/" . $_FILES[$file_id]['name'];
+									$image_url =  get_template_directory_uri() . "/uploads/images/backgrounds/" . $_FILES[$file_id]['name'];
 								} else {
 									$image_url = WP_CONTENT_URL . "/techozoic/images/backgrounds/" . $_FILES[$file_id]['name'];
 								}
@@ -387,7 +387,7 @@ function techozoic_general_admin() {
 		</form>
 	</div>
 	<div class="tech_head">
-	<img src="<?php echo get_bloginfo('template_directory')?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2 style="border:none;"><?php printf(__("%s General Settings","techozoic"),$themename);?></h2>
+	<img src="<?php echo get_template_directory_uri(); ?>/images/techozoic-logo.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;"><h2 style="border:none;"><?php printf(__("%s General Settings","techozoic"),$themename);?></h2>
 	<ul id="themetabs" class="tabs">
 		<li><a href="#layout" rel="layout" rev="tech_buttons"><?php _e("Layout","techozoic");?></a></li>
 		<li><a href="#post" rel="post" rev="tech_buttons"><?php _e("Post","techozoic");?></a></li>
@@ -442,7 +442,7 @@ function techozoic_general_admin() {
 			} elseif ($value['type'] == "select") { ?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?><?php if (isset($value['image'])){ ?>
-				<br /><img src="<?php bloginfo('template_directory') ?>/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" /><?php } ?></th>
+				<br /><img src="<?php echo get_template_directory_uri(); ?>/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" /><?php } ?></th>
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 
@@ -516,7 +516,7 @@ function techozoic_general_admin() {
 				
 		 } elseif ($value['type'] == "upload") { 
 		 if ($settings['image_location'] == 'theme'){
-			$url_path = get_bloginfo('template_directory') . "/uploads/images/backgrounds/";
+			$url_path = get_template_directory_uri() . "/uploads/images/backgrounds/";
 		} else {
 			$url_path = WP_CONTENT_URL . "/techozoic/images/backgrounds/";
 		}?>
@@ -653,7 +653,7 @@ function techozoic_admin_tabs( $current = 'general' ) {
             $links[] = "<a class='nav-tab' href='?page=techozoic&tab=$tab'>$name</a>";
         endif;
     endforeach;
-	echo '<img src="' . get_bloginfo('template_directory') . '/images/techozoic-logo-small.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;">';
+	echo '<img src="' . get_template_directory_uri() . '/images/techozoic-logo-small.png" alt="Techozoic Fluid Logo" class="alignleft" style="margin-right:5px;">';
     echo '<h2>';
     foreach ( $links as $link )
         echo $link;
@@ -689,7 +689,7 @@ function tech_can_edit() {
 function techozoic_help($contextual_help, $screen_id, $screen) {
 	global $techozoic_menu_hook;
 	if (in_array($screen_id , $techozoic_menu_hook) ) {
-		$tech_changelog = get_bloginfo('template_directory') . '/changelog.php';
+		$tech_changelog = get_template_directory_uri() . '/changelog.php';
 		$contextual_help = "
 		<p>" . __('Help for Techozoic can be obtained in a number of ways.  Please use the links below for help.','techozoic') . "</p>
 <p> <a href='http://clark-technet.com/theme-support/techozoic'>" . __('Support Forum','techozoic') . "</a> |
@@ -716,7 +716,7 @@ function techozoic_links_box($class="tech_links_box") {
 		// Get RSS Feed(s)
 		$feed_address = "http://techozoic.clark-technet.com/category/news/feed";
 		$feed_items = 5;
-		$tech_changelog = get_bloginfo('template_directory') . '/changelog.php';
+		$tech_changelog = get_template_directory_uri() . '/changelog.php';
 		$output .= "<h3>" . __('Techozoic News','techozoic') . "</h3>";
 		include_once(ABSPATH . WPINC . '/feed.php');
 		// Get a SimplePie feed object from the specified feed source.
@@ -782,7 +782,7 @@ function tech_admin_thickbox() {
 }
 
 function tech_menu_button_css() {
-	$path = get_bloginfo('template_directory');
+	$path = get_template_directory_uri();
 	$output ="<style type=\"text/css\">
 #adminmenu #toplevel_page_techozoic_main_admin div.wp-menu-image {	background: transparent url('{$path}/images/tech_menu.png') no-repeat scroll -1px -33px;}
 #adminmenu #toplevel_page_techozoic_main_admin div.wp-menu-image img{display:none;}
@@ -795,17 +795,17 @@ print $output;
 }
 
 function tech_admin_js() {
-	wp_enqueue_script('controlpanel', get_bloginfo('template_directory') . '/js/controlpanel.js');
-	wp_enqueue_script('tabcontent', get_bloginfo('template_directory') . '/js/tabcontent.js');
-	wp_enqueue_script('jscolor', get_bloginfo('template_directory') . '/js/jscolor/jscolor.js');
+	wp_enqueue_script('controlpanel', get_template_directory_uri() . '/js/controlpanel.js');
+	wp_enqueue_script('tabcontent', get_template_directory_uri() . '/js/tabcontent.js');
+	wp_enqueue_script('jscolor', get_template_directory_uri() . '/js/jscolor/jscolor.js');
 }
 
 function tech_admin_css(){
-	wp_enqueue_style('options', get_bloginfo('template_directory') . '/options/options.css');
+	wp_enqueue_style('options', get_template_directory_uri() . '/options/options.css');
 }
 
 function tech_controlpanel_head_css() {
-$path = get_bloginfo('template_directory');
+$path = get_template_directory_uri();
 	$head = "<script type='text/javascript'>\n";
 	$head .= "document.write('<style type=\"text/css\"> #tech_buttons{display:none}</style>');\n</script>\n";
 	$head .= "<!--[if IE 8]>\n";

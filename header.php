@@ -57,7 +57,7 @@ else { ?>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo home_url(); ?>/?techozoic_css=css"/>
 <?php } ?>
 <!--[if IE 6]>
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php bloginfo('template_directory') ?>/ie6.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri() ?>/ie6.css" />
 <![endif]-->
 <!--[if IE]>
 	<style type="text/css">

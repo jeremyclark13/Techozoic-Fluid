@@ -46,7 +46,7 @@
 			} elseif ($value['type'] == "select") { ?>
 				<tr valign="middle"> 
 					<th scope="row"><?php echo $value['name']; ?><?php if (isset($value['image'])){ ?>
-				<br /><img src="<?php bloginfo('template_directory') ?>/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" /><?php } ?></th>
+				<br /><img src="<?php echo get_template_directory_uri(); ?>/<?php echo $value['image']; ?>" alt="<?php echo $value['name']; ?>" /><?php } ?></th>
 	<?php	if(isset($value['desc'])){?>
 				</tr>
 				<tr valign="middle"> 

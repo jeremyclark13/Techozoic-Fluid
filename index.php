@@ -55,7 +55,7 @@ global $tech;
 			</div>
 <?php		if (tech_icons('Main Page')){	?>	
 				<div class="top">
-				<?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php bloginfo('template_directory'); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
+				<?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
 				</div>
 <?php		}?>
 			</div>

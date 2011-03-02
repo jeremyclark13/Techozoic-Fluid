@@ -155,10 +155,10 @@
 				if ($tech['image_location'] == 'wp-content') {
 					$file_path = WP_CONTENT_URL. "/techozoic/images/headers/" . $file;
 				} else {
-					$file_path = get_bloginfo('template_directory') . "/uploads/images/headers/" . $file;
+					$file_path = get_template_directory_uri() . "/uploads/images/headers/" . $file;
 				}
 			} else {
-				$file_path = get_bloginfo('template_directory') . "/images/headers/" . $file;
+				$file_path = get_template_directory_uri() . "/images/headers/" . $file;
 			}
 			
 ?>				<div class="filediv <?php echo $alt; ?>">

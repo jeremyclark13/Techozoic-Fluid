@@ -54,7 +54,7 @@ $date_format = get_option('date_format');
 				</div>
 <?php			if ( ( is_category() && tech_icons('Category Archive') ) || ( is_year() && tech_icons('Yearly Archive') ) || ( is_month() && tech_icons('Monthly Archive') ) ){?>
 				<div class="top">
-				<?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php bloginfo('template_directory'); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
+				<?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
 				</div>
 <?php			}?>
 				<p class="postmetadata"><?php printf(__('Posted in %s' ,'techozoic'), get_the_category_list(', '));?> | <?php edit_post_link(__('Edit' ,'techozoic'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;' ,'techozoic'), __('1 Comment &#187;' ,'techozoic'), _n('% Comment &#187;' , '% Comments &#187',get_comments_number(),'techozoic')); ?></p> 

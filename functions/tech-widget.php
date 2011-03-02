@@ -157,7 +157,7 @@ Widget registration and custom widgets defined here
 			if ($p) { 
 				$home_link = get_option('show_on_front');
 				if ($home_link == "posts") {?>
-					<li class="<?php if (is_home()) echo'current_page_item' ?>"><a href="<?php bloginfo('url'); ?>" title="<?php _e('Home' ,'techozoic')?>"><?php _e('Home' ,'techozoic')?></a></li>
+					<li class="<?php if (is_home()) echo'current_page_item' ?>"><a href="<?php echo home_url(); ?>" title="<?php _e('Home' ,'techozoic')?>"><?php _e('Home' ,'techozoic')?></a></li>
 <?php					} else {};
 					if (!$tech['nav_exclude_list']){
 						wp_list_pages('title_li=');

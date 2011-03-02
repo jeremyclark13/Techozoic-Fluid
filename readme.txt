@@ -31,6 +31,7 @@ Installation can be done automatically through the Install Themes feature or man
 
 == Changelog ==
 = Version 1.9.3 =
+* WordPress 3.0+ now required as per Theme Review Guidelines
 * Removed deprecated comment function.
 * Fixed problem with header folder upload permissions
 * Added option to change image upload location, images can now be stored in wp-content directory to prevent removal with theme updates.

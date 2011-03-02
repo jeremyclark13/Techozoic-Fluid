@@ -1,11 +1,8 @@
 <?php 
 get_tech_options();
 global $tech;
-if (function_exists('home_url')) { 
-	$home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>'; 
-} else { 
-	$home_url = '<a href="' . get_bloginfo('url') . '">' . get_bloginfo("name") . '</a>'; 
-}
+$home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>'; 
+
 ?>
 	<div id="r_sidebar" class="sidebar">
 	<ul>
@@ -28,7 +25,7 @@ if (function_exists('home_url')) {
 		if( $user_ID ) {
 			if( current_user_can('edit_themes') || current_user_can('edit_theme_options') ) { ?>
 			<li><h2 class="widgettitle"><?php _e('Default Widgets' ,'techozoic')?></h2>
-				<?php printf(__('Widgets below are default.  These will be replaced when customizing using %s Widget Admin</a>','techozoic'),'<a href="' . get_bloginfo('wpurl') . '/wp-admin/widgets.php" title="' . __('Widgets','techozoic') . '">'); ?>
+				<?php printf(__('Widgets below are default.  These will be replaced when customizing using %s Widget Admin</a>','techozoic'),'<a href="' . site_url() . '/wp-admin/widgets.php" title="' . __('Widgets','techozoic') . '">'); ?>
 			</li>
 <?php		}
 		}
@@ -52,7 +49,7 @@ if (function_exists('home_url')) {
 		</ul>
 		</li>
 		<li><h2 class="widgettitle"><?php _e('Categories','techozoic')?></h2>
-			<form action="<?php bloginfo('url'); ?>" method="get">
+			<form action="<?php echo home_url(); ?>" method="get">
 <?php 			wp_dropdown_categories('show_count=1&hierarchical=1&orderby=name'); ?>
    			<input type="submit" name="submit" value="<?php _e('Go' ,'techozoic')?>" id="catsubmit" style="margin-bottom:7px;"/>
    			</form>

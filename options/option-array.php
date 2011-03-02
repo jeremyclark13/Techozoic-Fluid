@@ -586,7 +586,7 @@ $options = array (
                 "type" => "select",
                 "java" => "onchange=\"colorhide(this.form)\"",
                 "std" => "Custom 1",
-                "after" => "</table><div id=\"loading\"><img src=\"" . get_bloginfo('template_directory') ."/images/ajax-loader.gif\" alt=\"loading\"/></div><table class=\"optiontable\">",
+                "after" => "</table><div id=\"loading\"><img src=\"" . get_template_directory_uri() ."/images/ajax-loader.gif\" alt=\"loading\"/></div><table class=\"optiontable\">",
                 "options" => array("Custom 1","Custom 2", "Blue", "Khaki", "Red", "Grunge")),
 
         array(	"name" => __("Body Background Color","techozoic"),
