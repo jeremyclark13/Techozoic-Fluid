@@ -106,7 +106,8 @@ function tech_excerpt_filter($text){
 ***************************************/
 function tech_google_font() {
 	global $tech;
-	wp_enqueue_style('google_fonts' , "http://fonts.googleapis.com/css?family={$tech['google_font_family']}", '', '', 'screen');
+        $tech_google_font_decoration = str_ireplace(',', '', $tech['google_font_decoration']);
+	wp_enqueue_style('google_fonts' , "http://fonts.googleapis.com/css?family={$tech['google_font_family']}:{$tech_google_font_decoration}", '', '', 'screen');
 	}
 
 	

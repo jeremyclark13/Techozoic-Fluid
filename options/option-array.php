@@ -516,6 +516,15 @@ $options = array (
                 "std" => "",
                 "type" => "text"),
 
+            array("name" => __("Goolge Font - Font Decoration","techozoic"),
+                "desc" => __("Some Goolge Fonts have additional variants for <strong>Bold</strong> and <em>Italic</em>.  If the font chosen has these variants check the boxes for which decoration to apply to the Google Font.  Both can be checked for <strong><em>Bold & Italic</em></strong>.","techozoic"),
+                "id" => "google_font_decoration",
+                "old_id" => "unused before 1.9.3",
+                "std" => "",
+                "type" => "checkbox",
+                "options" => array("bold","italic")),
+
+
         array("name" => __("Font Replacement","techozoic"),
                 "desc"=>__("Check which headings you would like replaced.","techozoic"),
                 "id" => "font_headings",
