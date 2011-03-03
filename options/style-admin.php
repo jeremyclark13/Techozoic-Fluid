@@ -107,7 +107,7 @@
 				if ($value['id'] == 'favicon_image' or $value['id'] == 'bg_image' or $value['id'] == 'content_bg_image') { 
 				} else {
 ?>				
-					<input type="hidden" name="<?php echo $value['id'];?>" value="<?php echo stripslashes($settings[$id]); ?>">
+					<input type="hidden" name="<?php echo $value['id'];?>" value="<?php echo htmlentities(stripslashes($settings[$id]),ENT_QUOTES); ?>">
 <?php			}
 			}
 		}
