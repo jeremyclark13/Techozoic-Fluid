@@ -6,7 +6,7 @@ $tech_error = array ( __("Return Error","techozoic"), __("File Already Exists","
 $theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = $theme_data['Version'];
 function techozoic_add_admin() {
-	global $themename, $shortname, $options, $version, $wp_version;
+	global $themename, $shortname, $options, $version, $wp_version, $techozoic_menu_hook;
 	$tabs = array( 'general' => 'General', 'header' => 'Header', 'style' =>'Style', 'export' =>'Import/Export', 'delete'=>'Delete' );
 	if (isset($_GET['tab'])){
 		$current_title = $tabs[ $_GET['tab'] ];
@@ -22,7 +22,7 @@ function techozoic_add_admin() {
 			if ($_FILES["settings"]["error"] > 0){
 				echo "Error: " . $_FILES["settings"]["error"] . "<br />";
 			  } else{
-				$rawdata = file_get_contents($_FILES["settings"]["tmp_name"]);
+				$rawdata = implode('', file($_FILES["settings"]["tmp_name"]));
 				$tech_options = unserialize($rawdata);
 				update_option('techozoic_options', $tech_options);
 				header("Location: themes.php?page=techozoic&tab=export&import=true");
@@ -127,39 +127,7 @@ function techozoic_add_admin() {
 				include(TEMPLATEPATH .'/options/css-build.php');
 			header("Location: themes.php?page=techozoic&tab=header");
 			}
-		}
-	if ( isset($_GET['tab']) && $_GET['tab'] == "style" ) {		
-		if(isset($_POST['style']) && check_admin_referer('techozoic_form_style','techozioc_nonce_field_style')  && tech_can_edit() ){
-			$file_name = TEMPLATEPATH ."/style.css";
-			$orig_file = TEMPLATEPATH ."/reset-style.css";
-			$bu_file = TEMPLATEPATH ."/style.css.bu";
-			if (is_writable($file_name)) {
-				if ($_POST['tech_style_copy']){
-					copy($file_name, $bu_file);
-					$file_open = fopen($file_name,"w");
-					$_POST['style'] = "/*  
-Theme Name: Techozoic Fluid
-Theme URI: http://clark-technet.com/theme-support
-Description: Advanced, fluid width 2 or 3 column theme with widgetized sidebar, footer, and header areas.  Theme option pages to adjust everything from layout settings, color scheme, typography, ad placement, and custom headers.  SEO optimized titles and meta description and keyword fields.  Builtin social bookmarking, choose from 10 different popular social network and bookmarking sites to include.  Visit the <a href=\"themes.php?page=techozoic\">theme options</a> page to setup Techozoic.  
-Version: " . $version . "
-Author: Jeremy Clark
-Author URI: http://clark-technet.com
-Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, custom-header, theme-options ,left-sidebar, right-sidebar, threaded-comments, translation-ready, sticky-post
-*/\n" . $_POST['style'];
-					$_POST['style'] = stripslashes($_POST['style']);
-					fwrite($file_open, $_POST['style']);
-					fclose($file_open);
-				} elseif ($_POST['tech_style_copy_reset']){
-					copy($orig_file, $file_name);
-				} elseif ($_POST['tech_style_restore']){
-					copy($bu_file, $file_name);
-				}
-				header("Location: themes.php?page=techozoic&tab=style&saved=true");
-			} else {
-				header("Location: themes.php?page=techozoic&tab=style&message=true&error=5");
-			}
-		}
-	}	
+		}	
 	if ( isset($_GET['page']) && ($_GET['page'] == "techozoic" or (isset($_GET['tab']) && $_GET['tab'] == "style") ) ) {
 			if ( isset( $_GET['tab'] ) ){
 				$location = '&tab=' . $_GET['tab'];
@@ -223,9 +191,13 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 								if ($id == 'image_location'){
 									include_once(TEMPLATEPATH . '/options/tech-init.php');
 									if ($_POST['image_location'] == 'theme') {
-										tech_create_folders(TEMPLATEPATH . '/uploads');
+                                                                                if (!file_exists(TEMPLATEPATH . '/uploads')){
+                                                                                    tech_create_folders(TEMPLATEPATH . '/uploads');
+                                                                                }
 									} else {
-										tech_create_folders(WP_CONTENT_DIR . '/techozoic');
+                                                                                if (!file_exists(WP_CONTENT_DIR . '/techozoic')){
+                                                                                    tech_create_folders(WP_CONTENT_DIR . '/techozoic');
+                                                                                }
 									}
 								}
 							}
@@ -316,7 +288,7 @@ Tags: blue, light, two-columns, three-columns, flexible-width, custom-colors, cu
 			}
     	}
 		
-		add_theme_page(sprintf(__('Techozoic %s Settings','techozoic'), $current_title),__('Techozoic Settings','techozoic'),'edit_theme_options','techozoic','techozoic_admin_page');
+		$techozoic_menu_hook = add_theme_page(sprintf(__('Techozoic %s Settings','techozoic'), $current_title),__('Techozoic Settings','techozoic'),'edit_theme_options','techozoic','techozoic_admin_page');
 
 	}//End Function
 function techozoic_admin_page(){
@@ -671,7 +643,7 @@ function tech_can_edit() {
 
 function techozoic_help($contextual_help, $screen_id, $screen) {
 	global $techozoic_menu_hook;
-	if (in_array($screen_id , $techozoic_menu_hook) ) {
+	if ($screen_id == $techozoic_menu_hook) {
 		$tech_changelog = get_template_directory_uri() . '/changelog.php';
 		$contextual_help = "
 		<p>" . __('Help for Techozoic can be obtained in a number of ways.  Please use the links below for help.','techozoic') . "</p>
@@ -764,18 +736,6 @@ function tech_admin_thickbox() {
 	wp_enqueue_style('thickbox');
 }
 
-function tech_menu_button_css() {
-	$path = get_template_directory_uri();
-	$output ="<style type=\"text/css\">
-#adminmenu #toplevel_page_techozoic_main_admin div.wp-menu-image {	background: transparent url('{$path}/images/tech_menu.png') no-repeat scroll -1px -33px;}
-#adminmenu #toplevel_page_techozoic_main_admin div.wp-menu-image img{display:none;}
-#adminmenu #toplevel_page_techozoic_main_admin:hover div.wp-menu-image,
-#adminmenu #toplevel_page_techozoic_main_admin.wp-has-current-submenu div.wp-menu-image,
-#adminmenu #toplevel_page_techozoic_main_admin.current div.wp-menu-image {	background: transparent url('{$path}/images/tech_menu.png') no-repeat scroll -1px -1px;}
-</style>
-";
-print $output;
-}
 
 function tech_admin_js() {
 	wp_enqueue_script('controlpanel', get_template_directory_uri() . '/js/controlpanel.js');
@@ -814,5 +774,4 @@ if (isset($_GET['page'])){
 add_action('contextual_help', 'techozoic_help', 10, 3);
 add_action('admin_print_styles', 'tech_admin_css');	
 add_action('admin_menu', 'techozoic_add_admin'); 
-add_action('admin_head','tech_menu_button_css');
 ?>

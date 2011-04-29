@@ -124,7 +124,7 @@ else {
 }
 if (!empty ($description)) { ?>
 	<span class="description"><?php echo $description; ?></span>
-<?php 
+<?php
 } ?>
 </div><!--end headerimg-->
 </div><!--end headerimgwrap-->

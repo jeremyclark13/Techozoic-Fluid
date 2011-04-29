@@ -59,15 +59,16 @@ function tech_create_folders($path){
 					continue;
 					$orig_file = TEMPLATEPATH ."/images/".$type."/".$tech_file;
 					$dest_file = $path . "/images/".$type."/".$tech_file;
-					if (!file_exists($dest_file)){
+					if (!file_exists($dest_file) || !file_exists($path . "/images/")){
 						copy($orig_file,$dest_file);
+                                                chmod($dest_file, 0775);
 					}
 			} //End While Loop
 		closedir($dir_handle);
 	}
-	tech_move_images('headers' , $path);
-	tech_move_images('backgrounds', $path);
-	copy(TEMPLATEPATH.'/rotate.php', $path . '/rotate.php');
+        tech_move_images('headers' , $path);
+        tech_move_images('backgrounds', $path);
+        copy(TEMPLATEPATH.'/rotate.php', $path . '/rotate.php');
 }
 
 function tech_update_options(){

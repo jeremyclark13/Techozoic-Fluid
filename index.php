@@ -40,11 +40,11 @@ global $tech;
 				} else {
 					the_content(__('Read the remainder of this entry &raquo;'  , 'techozoic')); 
 				}?>
-<?php 			if ( comments_open()  && empty($post->post_password) ) { ?>
+<?php 			if ( comments_open()  && empty($post->post_password) && ($tech['comment_preview'] == "Enable")) { ?>
 				<div class="post_comment_cont">
 <?php 			comments_popup_link(__('Be the first to comment' ,'techozoic'), __('1 Comment. Join the Conversation' ,'techozoic'), _n('% Comment so far. Join the Conversation' , '% Comments so far. Join the Conversation',get_comments_number(),'techozoic'), 'comments-link', __('Comments Closed' ,'techozoic')); ?>
 				</div>
-<?php			tech_comment_preview($post->ID,3); ?>				
+<?php			tech_comment_preview($post->ID); ?>				
 <?php			} 
 
  			$posttags = get_the_tags();

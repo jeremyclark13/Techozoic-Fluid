@@ -329,10 +329,10 @@ function tech_about_icons($fb=0,$my=0,$twitter=0){
 	Techozoic Home Page Comment Preview
 	Since 1.8.7
 ***************************************/	
-function tech_comment_preview($ID,$num){
-	global $comment;
+function tech_comment_preview($ID){
+	global $comment, $tech;
 	$output = "";
-	$comment_array = get_comments(array('post_id'=>$ID,'number'=>$num,'type'=>'comment','status'=>'approve'));
+	$comment_array = get_comments(array('post_id'=>$ID,'number'=>$tech['comment_preview_num'],'type'=>'comment','status'=>'approve'));
 	if ($comment_array) {
 		$output .=	'<ul class="comment-preview">';
 		foreach($comment_array as $comment){
@@ -564,7 +564,7 @@ function techozoic_dashboard_widget() { ?>
 		<p>
 		<?php _e('Thank you for using the Techozoic Theme.  ' ,'techozoic'); 
 		if (current_user_can('edit_theme') || current_user_can('edit_theme_options')) { 
-			printf(__('Visit the %s to start customizing Techozoic.  ' ,'techozoic'),'<a href="admin.php?page=techozoic_main_admin" title="' . __("options page" ,"techozoic").'">'.__("options page" ,"techozoic").'</a>'); 
+			printf(__('Visit the %s to start customizing Techozoic.  ' ,'techozoic'),'<a href="themes.php?page=techozoic" title="' . __("options page" ,"techozoic").'">'.__("options page" ,"techozoic").'</a>'); 
 			} 
 		printf(__('If your having problems or would like to suggest a new feature, please visit the %s.' ,'techozoic'), '<a href="http://clark-technet.com/theme-support/techozoic/" title="' .__('Support Forum' ,'techozoic').'"> '.__('support forum' ,'techozoic').'</a>')?>
 		</p>

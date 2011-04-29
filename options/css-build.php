@@ -1,17 +1,6 @@
 <?php 
 	global $tech;
 	$tech = get_option('techozoic_options');
-	// Setup Custom Function
-	function sanitize_text($text) {
-		$text = stripslashes($text);
-		$text = preg_replace('/<(.|\n)*?>/i', '', $text);
-		return $text;
-	}
-	function sanitize_num($text) {
-		$text = stripslashes($text);
-		$text = preg_replace('/[^0-9]/', '', $text);
-		return $text;
-	}
 	function tech_font($font) {
 		switch ($font){
 			case "Trebuchet MS":
@@ -208,8 +197,8 @@
 			$tech_post_bg_color_classes .= ",". $tech_post_bg_color_class_map[$tpbc];
 		}
 	}
-ob_start();
-echo <<<CSS
+
+$css_var =  <<<CSS
 /*Techozoic {$tech['ver']}*/
 
 /*Variable Styles*/
@@ -280,35 +269,35 @@ font-size: {$tech['post_text_font_size']}em;
 acronym,abbr,span.caps,small,.trackback li,#commentform input,#commentform textarea,.sidebar {
 font-size: {$tech['small_font_size']}em;
 }
-.description, ul#nav a, ul#admin a, #dropdown li.current_page_item a:hover, .menu li.current-menu-item a:hover, #dropdown li.current_page_item ul a, .menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover,.blog_title a,.blog_title a:visited, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a, .menu li a, .menu li.current-menu-item a{
+.description, ul#nav a, ul#admin a, #dropdown li.current_page_item a:hover, .menu li.current-menu-item a:hover, #dropdown li.current_page_item ul a, .menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover,.blog_title a,.blog_title a:visited, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a, #navmenu .menu li a, #navmenu .menu li.current-menu-item a{
 color: {$tech_acc_color};
 }
 .author,#searchform #s, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,.postform,#TB_ajaxContent {
 background-color: {$tech_acc_color} ;
 }
-ul#nav li,ul#admin li, #nav2 li, ul#dropdown li, .menu li{
+ul#nav li,ul#admin li, #nav2 li, ul#dropdown li, #navmenu .menu li{
 background-color: {$tech_nav_bg_color};
 }
-ul#nav li,ul#admin li, #nav2 li, ul#dropdown li a, .menu li a{
+ul#nav li,ul#admin li, #nav2 li, ul#dropdown li a, #navmenu .menu li a{
 font-family:{$tech['nav_font']}, Sans-Serif;
 font-size:{$tech['nav_text_font_size']}em;
 }
-.menu ul.sub-menu li{
+#navmenu .menu ul.sub-menu li{
 background-color: {$tech_nav_ul_bg_color};
 }
 CSS;
 if($tech_nav_bg_trans != 'On') {
-echo <<<CSS
-ul#nav li.current_page_item,#nav2 li.current_page_item,#nav2 li.current_page_parent,ul#nav2 li.current_page_ancestor,#dropdown li.current_page_item, .menu li.current-menu-item {
+$css_var .=  <<<CSS
+ul#nav li.current_page_item,#nav2 li.current_page_item,#nav2 li.current_page_parent,ul#nav2 li.current_page_ancestor,#dropdown li.current_page_item, #navmenu .menu li.current-menu-item {
 background-color: {$tech_acc_color} ;
 }
-ul#nav li:hover,#nav2 li:hover, #nav2 li:active, #dropdown li:hover, .menu li:hover {
+ul#nav li:hover,#nav2 li:hover, #nav2 li:active, #dropdown li:hover, #navmenu .menu li:hover {
 background:#efefef;
 box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
 -moz-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
 -webkit-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
 }
-ul#nav li.current_page_item a ,#nav2 li.current_page_item a,#nav2 li.current_page_parent a, #nav2 li.current_page_ancestor a,#dropdown li.current_page_item a, .menu li.current-menu-item a{
+ul#nav li.current_page_item a ,#nav2 li.current_page_item a,#nav2 li.current_page_parent a, #nav2 li.current_page_ancestor a,#dropdown li.current_page_item a, #navmenu .menu li.current-menu-item a{
 color:#f7f7f7;
 }
 ul#admin li:hover{
@@ -319,7 +308,7 @@ box-shadow:2px 1px 3px rgba(0, 0, 0, 0.3);
 }
 CSS;
 }
-echo <<<CSS
+$css_var .= <<<CSS
 .post_date {
 background-color:{$tech_acc_color};
 }
@@ -364,7 +353,7 @@ border: none !important;
 }
 CSS;
 	if ($tech_blog_title_align_check == "Center" && is_active_sidebar( 'left_header' ) ){
-echo <<<CSS
+$css_var .= <<<CSS
 #headerimgwrap {
 float:left;
 position:absolute;
@@ -372,7 +361,7 @@ left:15%;
 }
 CSS;
 	} else if ($tech_blog_title_align_check == "Center" && !is_active_sidebar( 'left_header' ) ){
-echo <<<CSS
+$css_var .= <<<CSS
 #headerimgwrap {
 float:left;
 position:absolute;
@@ -384,7 +373,7 @@ CSS;
 		if ($tech['main_column_width'] == 0) 
 			$tech['main_column_width'] = 100; 
 		$tech['main_column_width'] = $tech['main_column_width'] - 6;
-echo <<<CSS
+$css_var .= <<<CSS
 #page, #header {
 width: {$tech['page_width']}{$tech['sign']};
 }
@@ -409,7 +398,7 @@ CSS;
 			}
 			$tech['main_column_width'] = $tech['main_column_width'] - 5;
 			$tech['r_sidebar_width'] = $tech['r_sidebar_width'] - 3;
-echo <<<CSS
+$css_var .= <<<CSS
 #page, #header {
 width: {$tech['page_width']}{$tech['sign']};
 }
@@ -438,7 +427,7 @@ CSS;
 			}
 			$tech['main_column_width'] = $tech['main_column_width'] - 5;
 			$tech['l_sidebar_width'] = $tech['l_sidebar_width'] - 3;
-echo <<<CSS
+$css_var .= <<<CSS
 #page, #header {
 width: {$tech['page_width']}{$tech['sign']};
 }
@@ -472,7 +461,7 @@ CSS;
 		$tech['l_sidebar_width'] = $tech['l_sidebar_width'] - 2;
 		$tech['r_sidebar_width'] = $tech['r_sidebar_width'] - 2;
 		if ($tech['sidebar_pos'] =='Content - Sidebar - Sidebar') {
-echo <<<CSS
+$css_var .= <<<CSS
 #page, #header {
 width: {$tech['page_width']}{$tech['sign']}
 }
@@ -495,7 +484,7 @@ width:{$tech['r_sidebar_width']}%
 }
 CSS;
 		} elseif ($tech['sidebar_pos'] =='Sidebar - Content - Sidebar') { 
-echo <<<CSS
+$css_var .= <<<CSS
 #page, #header {
 width: {$tech['page_width']}{$tech['sign']}
 }
@@ -512,7 +501,7 @@ width:{$tech['r_sidebar_width']}%
 }
 CSS;
 $tech['l_sidebar_width'] = $tech['l_sidebar_width'] - 2;
-echo <<<CSS
+$css_var .= <<<CSS
 #l_sidebar {
 float:left;
 padding:10px 0 0 2%;
@@ -520,7 +509,7 @@ width:{$tech['l_sidebar_width']}%
 }
 CSS;
 		} else {
-echo <<<CSS
+$css_var .= <<<CSS
 #page, #header {
 width: {$tech['page_width']}{$tech['sign']}
 }
@@ -537,7 +526,7 @@ width:{$tech['r_sidebar_width']}%
 }
 CSS;
 $tech['l_sidebar_width'] = $tech['l_sidebar_width'] - 2;
-echo <<<CSS
+$css_var .= <<<CSS
 #l_sidebar {
 float:left;
 padding:10px 0 0 2%;
@@ -546,20 +535,20 @@ width:{$tech['l_sidebar_width']}%
 CSS;
 		}
 	}
-echo <<<CSS
+$css_var .= <<<CSS
 ul#nav,ul#nav2,ul#dropdown,ul.menu{
 {$tech['nav_align']};
 }
 CSS;
 	if ($tech['nav_button_width'] != 0) { 
-echo <<<CSS
-ul#nav li, ul#admin li, #nav2 li,#dropdown li,.menu li{
+$css_var .= <<<CSS
+ul#nav li, ul#admin li, #nav2 li,#dropdown li, #navmenu .menu li{
 width: {$tech['nav_button_width']}em;
 } 
 CSS;
 	}
 	if ($tech_nav_align_check == "Center") {
-echo <<<CSS
+$css_var .= <<<CSS
 #navwrap {
 float:left;
 position:relative;
@@ -578,7 +567,7 @@ CSS;
 	$tech_hwidget_height = $tech['header_height'] - 40;
 	switch ($tech['header']){ 
 		case "Defined Here": 
-echo <<<CSS
+$css_var .= <<<CSS
 #header {
 background:url({$tech['header_image_url']}) no-repeat {$tech['header_v_align']} {$tech['header_align']} {$tech_content_bg_color};
 height: {$tech['header_height']}px;
@@ -592,7 +581,7 @@ height: {$tech_hwidget_height}px;
 CSS;
 		break;
 		case "Rotate":
-echo <<<CSS
+$css_var .= <<<CSS
 #header {
 background:url({$home}/rotate.php) no-repeat {$tech['header_v_align']} {$tech['header_align']} {$tech_content_bg_color};
 height: {$tech['header_height']}px;
@@ -606,7 +595,7 @@ height: {$tech_hwidget_height}px;
 CSS;
 		break;
 		case "Landscape":
-echo <<<CSS
+$css_var .= <<<CSS
 #header {
 background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat {$tech['header_v_align']} {$tech['header_align']} {$tech_content_bg_color};
 height: 170px;
@@ -620,7 +609,7 @@ height: 110px;
 CSS;
 		break;
 		case "none":
-echo <<<CSS
+$css_var .= <<<CSS
 #header, #headerr, #headerl {
 height: {$tech['header_height']}px;
 }
@@ -630,7 +619,7 @@ height: {$tech_hwidget_height}px;
 CSS;
 		break;
 		default:
-echo <<<CSS
+$css_var .= <<<CSS
 #header {
 background:url({$home}/images/headers/{$tech['header']}.jpg) no-repeat {$tech['header_v_align']} {$tech['header_align']} {$tech_content_bg_color};
 height: {$tech['header_height']}px;
@@ -646,7 +635,7 @@ CSS;
 	}
 	
 if ($tech['blog_title_box'] == "On") {
-echo <<<CSS
+$css_var .= <<<CSS
 #headerimg {
 background-color:#f7f7f7;
 -moz-opacity:0.85;
@@ -665,7 +654,7 @@ border-top:1px solid #444444;
 CSS;
 }
 $img_path = get_template_directory_uri();
-echo <<<CSS
+$css_var .= <<<CSS
 /*Default Sytle*/
 .cufon-loading .blog_title,.cufon-loading .sidebar h2,.cufon-loading h1,.cufon-loading h2,.cufon-loading h3,.cufon-loading h4,.cufon-loading h5,.cufon-loading .sidebar h3,.cufon-loading #footer h2 ,.cufon-loading .post_title {
 	visibility: hidden !important;
@@ -1008,12 +997,12 @@ padding: 0 10px;
 position:relative; 
 z-index:10;
 }
-#dropdown a, .menu a {
+#dropdown a, #navmenu .menu a {
 display:block; 
 padding:3px; 
 text-decoration:none;
 }
-#dropdown li,.menu li{
+#dropdown li, #navmenu .menu li{
 float:left; 
 position:relative;
 margin-right:2px
@@ -1024,30 +1013,30 @@ display:none;
 width:210px; 
 left:-1px;
 }
-#dropdown li ul ,.menu li ul{ 
+#dropdown li ul , #navmenu .menu li ul{ 
 width:210px;
 padding-left:0;
 }
-#dropdown li ul a ,.menu li ul a{
+#dropdown li ul a , #navmenu .menu li ul a{
 width:202px; 
 height:auto; 
 float:left;
 border:1px solid #D3D3D3;
 }
-#dropdown li ul li,.menu li ul li{
+#dropdown li ul li, #navmenu .menu li ul li{
 width:210px;
 }
 #dropdown ul ul,.menu ul ul{
 top:auto;
 }
-#dropdown li ul ul,.menu li ul ul{
+#dropdown li ul ul, #navmenu .menu li ul ul{
 left:200px; 
 margin:0px 0 0 10px;
 }
-#dropdown li:hover ul ul, #dropdown li:hover ul ul ul, #dropdown li:hover ul ul ul ul, .menu li:hover ul ul, .menu li:hover ul ul ul, .menu li:hover ul ul ul ul {
+#dropdown li:hover ul ul, #dropdown li:hover ul ul ul, #dropdown li:hover ul ul ul ul, #navmenu .menu li:hover ul ul, #navmenu .menu li:hover ul ul ul, #navmenu .menu li:hover ul ul ul ul {
 display:none;
 }
-#dropdown li:hover ul, #dropdown li li:hover ul, #dropdown li li li:hover ul, #dropdown li li li li:hover ul, .menu li:hover ul, .menu li li:hover ul, .menu li li li:hover ul, .menu li li li li:hover ul  {
+#dropdown li:hover ul, #dropdown li li:hover ul, #dropdown li li li:hover ul, #dropdown li li li li:hover ul, #navmenu #navmenu .menu li:hover ul, #navmenu .menu li li:hover ul, #navmenu .menu li li li:hover ul, #navmenu .menu li li li li:hover ul  {
 display:block;
 box-shadow:none;
 -moz-box-shadow:none;
@@ -1118,20 +1107,20 @@ overflow:hidden;
 height:16px;
 padding:3px;
 }
-ul#nav a,ul#admin a, #nav2 a,#nav2 a:visited,#dropdown a,.menu a {
+ul#nav a,ul#admin a, #nav2 a,#nav2 a:visited,#dropdown a,#navmenu .menu a {
 text-decoration:none;
 font-weight:bolder;
 line-height: 16px;
 }
-ul#nav li, #nav2 li, #dropdown li, .menu li{
+ul#nav li, #nav2 li, #dropdown li, #navmenu .menu li{
 border-top-right-radius:5px;
--border-top-left-radius:5px;
+border-top-left-radius:5px;
 -moz-border-radius-topright:5px;
 -moz-border-radius-topleft:5px;
 -webkit-border-top-right-radius:5px;
 -webkit-border-top-left-radius:5px;
 }
-#dropdown li ul li,.menu li ul li{
+#dropdown li ul li,#navmenu .menu li ul li{
 border-top-right-radius:0px;
 border-top-left-radius:0px;
 -moz-border-radius-topright:0px;
@@ -1147,7 +1136,7 @@ border-bottom-left-radius:5px;
 -webkit-border-bottom-right-radius:5px;
 -webkit-border-bottom-left-radius:5px;
 }
-ul#nav li.current_page_item, #dropdown li.current_page_item, .menu li.current-menu-item {
+ul#nav li.current_page_item, #dropdown li.current_page_item, #navmenu .menu li.current-menu-item {
 border-bottom:1px dotted;
 }
 
@@ -1626,10 +1615,9 @@ border-radius: 3px;
 CSS;
 
 /*Custom Styles Defined In Options*/
-echo $tech['custom_styles'];
+$css_var .= $tech['custom_styles'];
 
-$tech_style_contents = ob_get_contents();
-ob_end_clean();
+$tech_style_contents = $css_var;
 if ($existing = get_option('tech_styles')){
 	update_option('tech_styles',$tech_style_contents);
 } else {

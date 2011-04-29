@@ -135,40 +135,29 @@
 	</div>
 	</div>
 	</div>
-<?php		
-
-function get_include_contents($filename) {
-    if (is_file($filename)) {
-        ob_start();
-        include $filename;
-        $contents = ob_get_contents();
-        ob_end_clean();
-        return $contents;
-    }
-    return false;
-}
-$string = get_include_contents(TEMPLATEPATH .'/style.php');
-?>
 <h2><?php _e("Static CSS","techozoic") ?></h2>
-<p> <?php _e("If you have set the Static CSS option to Static you may chose to either copy and paste this code from here to the style.css file using the WordPress code editor or use the button below to automatically overwrite the style.css with the contents below.","techozoic") ?> </p>
-<p><?php _e("A backup file is created as style.css.bu if any errors occur.  Also the original style.css can be restored by clicking Reset Style.css. <strong>-Use at your own risk</strong>.<br /><small>All changes made to style.css file are overwritten with theme updates","techozoic") ?></small>
-</p>
+<p> <?php _e("If you have set the Static CSS option to Static you may chose to either copy and paste this code from here to the style.css file using the WordPress code editor or using FTP.","techozoic") ?> </p>
+
 
 <form method="post" onsubmit="return stylecopy()">
 <?php
-$dir = TEMPLATEPATH;
-	if (is_writable($dir)) {
+//$dir = TEMPLATEPATH;
+//	if (is_writable($dir)) {
 ?>
+<!-- Disabled due to WP Theme Guidelines Plugin will maintain functionality
 <span class="tech_submit submit save">
 <input class="button-primary" name="tech_style_copy" type="submit" value="<?php _e("Copy to Style.css","techozoic") ?>" />
 <input class="button-primary" name="tech_style_restore" type="submit" value="<?php _e("Restore Style.css backup","techozoic") ?>" /> 
 <input class="button-primary" name="tech_style_copy_reset" type="submit" value="<?php _e("Reset Style.css","techozoic") ?>" />	
 </span>
 <div style="clear:both;"></div>
-<?php 	} else {
-		echo "<div class=\"updated fade\">" . sprintf(__('Please make sure <strong>%s</strong> is writable to enable automatic copying of stylesheet.','techozoic'),TEMPLATEPATH) . "</div>"; 
-	}?>
-<textarea cols="100" rows="20" onclick="javascript:select();" name="style" readonly="readonly" style="width:90%;"><?php echo $string;?></textarea>
+-->
+<?php
+// 	} else {
+	//	echo "<div class=\"updated fade\">" . sprintf(__('Please make sure <strong>%s</strong> is writable to enable automatic copying of stylesheet.','techozoic'),TEMPLATEPATH) . "</div>";
+	//}
+?>
+<textarea cols="100" rows="20" onclick="javascript:select();" name="style" readonly="readonly" style="width:90%;"><?php include(TEMPLATEPATH .'/style.php');?></textarea>
 <?php wp_nonce_field('techozoic_form_style','techozioc_nonce_field_style'); ?>
 </form>
 <div style="clear:both"></div>
