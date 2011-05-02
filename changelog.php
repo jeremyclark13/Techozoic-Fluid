@@ -12,6 +12,13 @@
 </ul>
 <br />
 <h2>Change Log</h2>
+<h3>Version 1.9.4</h3><br />
+- Removed unneeded backwards compatibility code.<br />
+- Fixed error with deleted headers returning when saving options.<br />
+- Removed additional code deemed unsafe by theme review guidelines.<br />
+- Added Options for controlling comment preview on home page.<br />
+- Removed unneeded navigation options.<br />
+- Fixed dashboard widget path to options page.<br />
 <h3>Version 1.9.3</h3><br />
 - <strong>WordPress 3.0+ now required as per Theme Review Guidelines</strong><br />
 - Removed deprecated comment function.<br />

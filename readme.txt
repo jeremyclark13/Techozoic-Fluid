@@ -30,6 +30,15 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+
+= Version 1.9.4 = 
+* Removed unneeded backwards compatibility code.
+* Fixed error with deleted headers returning when saving options.
+* Removed additional code deemed unsafe by theme review guidelines.
+* Added Options for controlling comment preview on home page.
+* Removed unneeded navigation options.
+* Fixed dashboard widget path to options page.
+
 = Version 1.9.3 =
 * WordPress 3.0+ now required as per Theme Review Guidelines
 * Removed deprecated comment function.
