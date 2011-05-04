@@ -1,4 +1,18 @@
 <?php
+/**
+ * Theme Functions
+ *
+ * Holds functions used in various areas of theme.
+ *
+ * @package      Techozoic Fluid
+ * @author       Jeremy Clark <jeremy@clark-technet.com>
+ * @copyright    Copyright (c) 2011, Jeremy Clark
+ * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since        1.0
+ *
+ */
+
+
 /**************************************
 	Loads dynamic styles if get variable is set to css
 	Rebuilds styles stored in database if set to build
@@ -50,11 +64,20 @@
 		$content_width = tech_content_width();
 	}
 	
-/**************************************
-	Techozoic All Image Size Links
-	Since 1.9.3
-***************************************/
-// Thanks Justin Tadlock http://justintadlock.com/archives/2011/01/28/linking-to-all-image-sizes-in-wordpress	
+        
+/**
+ * Techozoic All Image Size Links
+ *
+ * Used to output links to all available images sizes of wp_attachment
+ * Code adapted from Justin Tadlock 
+ * http://justintadlock.com/archives/2011/01/28/linking-to-all-image-sizes-in-wordpress
+ * 
+ * @return    string    Joined array of all image size links.
+ *
+ * @access    public
+ * @since     1.9.3
+ */
+	
 function tech_image_links() {        
 	if ( !wp_attachment_is_image( get_the_ID() ) ){
 		return;
@@ -70,11 +93,19 @@ function tech_image_links() {
 	}
 	return join( ' <span class="sep">|</span> ', $links );
 }
-	
-/**************************************
-	Techozoic Excerpt Functions
-	Since 1.9.3
-***************************************/
+
+/**
+ * Techozoic excerpt location
+ *
+ * Used to check whether current page type is in excerpt locations set in options
+ * 
+ * @param       string  Current page type
+ * @return      bool    Return if current page is in excerpt_location array    
+ *
+ * @access    public
+ * @since     1.9.3
+ */
+
 function tech_excerpt($where){
 	global $tech;
 	$locs = explode(',' , $tech['excerpt_location']);
@@ -85,6 +116,18 @@ function tech_excerpt($where){
 	}
 }
 
+/**
+ * Techozoic social icons location
+ *
+ * Used to check whether current page type is in post social media locations set in options
+ * 
+ * @param       string  Current page type
+ * @return      bool    Return if current page is in post_social_media_location array    
+ *
+ * @access    public
+ * @since     1.9.3
+ */
+
 function tech_icons($where){
 	global $tech;
 	$locs = explode(',' , $tech['post_social_media_location']);
@@ -94,16 +137,34 @@ function tech_icons($where){
 		return false;
 	}
 }
-	
+
+/**
+ * Techozoic excerpt filter
+ *
+ * Filter that replaces ellipses with proper html ententity and link to single post page
+ * 
+ * @param       string  exceprt text
+ * @return      string    string replaced excerpt text    
+ *
+ * @access    private
+ * @since     1.9.3
+ */
+
 function tech_excerpt_filter($text){ 
 	global $post;
 	return str_replace('[...]', '<a href="'. get_permalink($post->ID) . '">' . ' [&hellip; ' . __('Read More', 'techozoic') . ']' . '</a>', $text);  
 }  
 	
-/**************************************
-	Techozoic Google Font Replacement
-	Since 1.9.3
-***************************************/
+/**
+ * Techozoic google font 
+ *
+ * Enqueues google font stylesheet based on google_fonts option
+ *    
+ *
+ * @access    private
+ * @since     1.9.3
+ */
+
 function tech_google_font() {
 	global $tech;
         $tech_google_font_decoration = str_ireplace(',', '', $tech['google_font_decoration']);
@@ -111,12 +172,21 @@ function tech_google_font() {
 	}
 
 	
-/**************************************
-	Techozoic comment number correction
-	since 1.9.3
-***************************************/
+/**
+ * Techozoic comment count
+ *
+ * Filter that displays correct comment count.
+ * http://www.wpbeginner.com/wp-tutorials/display-the-most-accurate-comment-count-in-wordpress/
+ * 
+ * 
+ * @param       string  filter variable
+ * @return      string    correct comment count   
+ *
+ * @access    private
+ * @since     1.9.3
+ */
 
-// http://www.wpbeginner.com/wp-tutorials/display-the-most-accurate-comment-count-in-wordpress/
+ 
 function tech_comment_count( $count ) {  
 	if ( ! is_admin() ) {
 		global $id;
@@ -126,13 +196,17 @@ function tech_comment_count( $count ) {
 	return $count;
 	}
 }
-add_filter('get_comments_number', 'tech_comment_count', 0);
 	
-	
-/**************************************
-	Techozoic WP 3 menu fallback
-	Since 1.9.1
-***************************************/
+/**
+ * Techozoic WP 3 menu fallback
+ *
+ * Callback for use in wp_nav_menu when no menu is assigned.
+ *   
+ *
+ * @access    private
+ * @since     1.9.1
+ */	
+
 	
 function tech_menu_fallback(){
 	$output = ' <ul id="dropdown"> ';
@@ -141,11 +215,18 @@ function tech_menu_fallback(){
 	$output .= $clean_page_list;
 	$output .= '</ul>';
 	echo $output;
-}	
-/**************************************
-	Techozoic Font Resize Script	
-	Since 1.9.1
-***************************************/
+}
+
+/**
+ * Techozoic Font Resize Script
+ *
+ * Enqueues and register font resize script used for Techozoic font resize widget.
+ *  
+ *
+ * @access    private
+ * @since     1.9.1
+ */
+
 	
 function tech_font_size_script() {
 	$script_dir = get_template_directory_uri() . '/js/';
@@ -153,10 +234,18 @@ function tech_font_size_script() {
 	wp_enqueue_script('font-size');
 }
 	
-/**************************************
-	Techozoic Navigation Selection Function
-	Since 1.8.8
-***************************************/		
+/**
+ * Techozoic Navigation Selection Function
+ *
+ * Used to determine which navigation template to use based on user options.  Used
+ * with get_template_part as the name parameter to get correct template.
+ * 
+ * @return      string    returns text of menu type based on options   
+ *
+ * @access    public
+ * @since     1.8.8
+ */
+	
 	
 function tech_nav_select(){
 	global $tech;
@@ -176,11 +265,21 @@ function tech_nav_select(){
 	}
 	return $var;
 }
+
+/**
+ * Techozoic $content_width Function
+ *
+ * Sets $content_width variable used for image sizes by WordPress based on whether the
+ * options are set to fixed or fluid width.  If set to fluid width, set to 500 otherwise
+ * width is calculated from fixed widths set.
+ * 
+ * @return      int     content width   
+ *
+ * @access    private
+ * @since     1.8.8
+ */
+
 	
-/**************************************
-	Techozoic $content_width Function
-	Since 1.8.8
-***************************************/	
 function tech_content_width(){
 	global $tech;
 	$p_width = $tech['page_width'];
@@ -194,11 +293,17 @@ function tech_content_width(){
 	}
 	return $output;
 }	
-	
-/**************************************
-	Techozoic Footer Text Function
-	Since 1.8.8
-***************************************/	
+
+/**
+ * Techozoic footer text function
+ *
+ * Used to replace shortcodes used in footer_text option with correct values.
+ * 
+ *
+ * @access    public
+ * @since     1.8.8
+ */
+
 function tech_footer_text(){
 	global $tech, $version;
 	$string = stripslashes($tech['footer_text']);
@@ -207,11 +312,18 @@ function tech_footer_text(){
 	echo preg_replace($shortcode, $output, $string);
 }
 
-	
-/**************************************
-	Techozoic Sidebar Display Function
-	Since 1.8.8
-***************************************/
+/**
+ * Techozoic Sidebar Display Function
+ *
+ * Determine which sidebar template should be shown based on options.
+ * 
+ * 
+ * @param       string  location of current template function called from 
+ *
+ * @access    public
+ * @since     1.8.8
+ */
+
 function tech_show_sidebar($loc) {
 	global $tech;
 	if ($tech['column'] > 1) {
@@ -261,12 +373,18 @@ function tech_show_sidebar($loc) {
 }	
 	
 	
-	
+/**
+ * Techozoic Social Media Icons Function
+ *
+ * Echos the social media icon links and images as set in options.
+ * 
+ * 
+ * @param       bool    function called from home page or single page
+ *
+ * @access    public
+ * @since     1.8.8
+ */	
 
-/**************************************
-	Techozoic Social Media Icons Function
-	Since 1.8.8
-***************************************/	
 function tech_social_icons($home=true){
 	global $tech, $post;
 	$short_link = home_url()."/?p=".$post->ID;
@@ -304,10 +422,20 @@ function tech_social_icons($home=true){
 	}
 }
 
-/**************************************
-	Techozoic About Icons Function
-	Since 1.8.8
-***************************************/
+/**
+ * Techozoic About Icons Function
+ *
+ * Used to display social media profile links for Techozoic About widget.
+ * 
+ * 
+ * @param       int     if facebook profile link is checked
+ * @param       int     if myspace profile link is checked
+ * @param       int     if twitter profile link is checked  
+ *
+ * @access    public
+ * @since     1.8.8
+ */
+
 function tech_about_icons($fb=0,$my=0,$twitter=0){
 	global $tech;
 	$fb_profile = $tech['facebook_profile'];
@@ -324,11 +452,19 @@ function tech_about_icons($fb=0,$my=0,$twitter=0){
 		echo "<li><a href=\"{$twitter_profile}\" title=\"".__('Follow me on Twitter','techozoic')."\"><img src=\"{$image}/twitter_32.png\"></a></li>";
 	}
 }
-	
-/**************************************
-	Techozoic Home Page Comment Preview
-	Since 1.8.7
-***************************************/	
+
+/**
+ * Techozoic Home Page Comment Preview
+ *
+ * Comment preview section on home page.  Pull comment excerpt for approved comments
+ * displays in an unordered list at bottom of each post. 
+ * 
+ * @param       string  id of current post to pull comments for
+ *
+ * @access    public
+ * @since     1.8.7
+ */
+
 function tech_comment_preview($ID){
 	global $comment, $tech;
 	$output = "";
@@ -351,18 +487,34 @@ function tech_comment_preview($ID){
 	}
 	print $output;
 }
-	
-/**************************************
-	Techozoic Custom Activation Message
-	Since 1.8.6
-***************************************/
+
+/**
+ * Techozoic Custom Activation Message
+ *
+ * Used to show a custom activation message with links to theme options page and
+ * change log.    
+ *
+ * @access    private
+ * @since     1.8.6
+ */
+
 function techozoic_show_notice() { ?>
     <div id="message" class="updated fade">
-		<p><?php printf( __( 'Theme activated! This theme contains <a href="%s">theme options</a> and <a href="%s">custom sidebar widgets</a>.<br />&nbsp; See <a href="%s">Change Log</a>.', 'techozoic' ), admin_url( 'admin.php?page=techozoic_main_admin' ), admin_url( 'widgets.php' ) , get_template_directory_uri() . "/changelog.php\" onclick=\"return changelog('". get_template_directory_uri() ."/changelog.php')\"") ?></p>
+		<p><?php printf( __( 'Theme activated! This theme contains <a href="%s">theme options</a> and <a href="%s">custom sidebar widgets</a>.<br />&nbsp; See <a href="%s">Change Log</a>.', 'techozoic' ), admin_url( 'themes.php?page=techozoic' ), admin_url( 'widgets.php' ) , get_template_directory_uri() . "/changelog.php\" onclick=\"return changelog('". get_template_directory_uri() ."/changelog.php')\"") ?></p>
     </div>
     <style type="text/css">#message2, #message0 { display: none; }</style>
     <?php
 }
+
+/**
+ * Techozoic Cufon Font Replacement
+ *
+ * Registers and enqueues cufon scripts based on user options. 
+ * 
+ *
+ * @access    private
+ * @since     1.8.7
+ */
 
 /**************************************
 	Techozoic Cufon Font Replacement
@@ -376,6 +528,16 @@ function tech_cufon_script() {
 	wp_enqueue_script('tech_font', $script_dir .'cufon_fonts/'. $tech_adv_font.'.font.js', array('jquery','cufon'), '1.0');
 	wp_enqueue_script('fontscall', $script_dir .'fontscall.js', array('jquery', 'cufon'), '1.0', true);	
 }
+
+/**
+ * Techozoic cufon options
+ *
+ * Converts user readable options into class names and outputs the cufon replacement
+ * on those classes.    
+ *
+ * @access    public
+ * @since     1.8.7
+ */
 
 function tech_cufon_options() {
 	global $tech;
@@ -398,17 +560,7 @@ function tech_cufon_options() {
 	</script>\n";
 	print $output;
 }
-
-/**************************************
-	Techozoic Cufon Font Replacement
-	END
-***************************************/	
-
-/**************************************
-	Techozoic Custom Meta Box
-	Since 1.8.6
-***************************************/
-
+	
 $meta_box = array(
     'id' => 'tech-meta-box',
     'title' => 'Techozoic Options',
@@ -432,6 +584,15 @@ $meta_box = array(
     )
 );
 	
+/**
+ * Techozoic meta boxes
+ *
+ * Used to output meta box for disabling the navigation menu and sidebars
+ * on single pages/posts 
+ *
+ * @access    private
+ * @since     1.8.6
+ */
 
 function tech_new_meta_boxes() {
     global $meta_box, $post;
@@ -482,11 +643,33 @@ function tech_new_meta_boxes() {
 
 }
  
+/**
+ * Techozoic create meta boxes
+ *
+ * Creates the meta boxes setup in tech_new_meta_boxes function
+ *    
+ *
+ * @access    private
+ * @since     1.8.6
+ */
+
 function tech_create_meta_box() {
 	global $meta_box;
 	add_meta_box($meta_box['id'], $meta_box['title'], 'tech_new_meta_boxes', 'post', $meta_box['context'], $meta_box['priority']);
 	add_meta_box($meta_box['id'], $meta_box['title'], 'tech_new_meta_boxes', 'page', $meta_box['context'], $meta_box['priority']);
 }
+
+/**
+ * Techozoic save metabox data
+ *
+ * Verifies the nonce of the meta box form and saves the option to the database using
+ * the update_post_meta function.
+ * 
+ * @param       string  post id of current post being edited
+ *
+ * @access    private
+ * @since     1.8.6
+ */
 
 function tech_save_postdata( $post_id ) {
     global $meta_box;
@@ -523,10 +706,6 @@ function tech_save_postdata( $post_id ) {
 		}
 	}
 }
-/**************************************
-	Techozoic Custom Meta Box
-	END
-***************************************/
 
 if(function_exists('add_theme_support')) {
 	add_theme_support( 'post-thumbnails' );
@@ -542,14 +721,31 @@ if(function_exists('register_nav_menus')) {
 		'footer' => __('Footer Navigation', 'techozoic'),
 	) );
 }
-function techozoic_enqueue() {
-	wp_enqueue_script('tech_thickbox', get_template_directory_uri() . 'js/thickbox.js',array('jquery'),'3.0' );
-}
+
+/**
+ * Techozoic add dashboard widget
+ *
+ * Add dashboard widget defined in techozoic_dashboard_widget.
+ *
+ * @access    private
+ */
 
 function tech_dashboard_widgets() {
    	global $wp_meta_boxes;
    	wp_add_dashboard_widget('techozoic_dashboard_widget', 'Techozoic Theme Setup', 'techozoic_dashboard_widget');
 }
+
+/**
+ * Techozoic dashboard widget content
+ *
+ * Adds dashboard widget with links to options pages, support, documentation, and
+ * donate links.
+ * 
+ *  
+ *
+ * @access    private
+ * @since     1.9.3
+ */
 
 function techozoic_dashboard_widget() { ?>
    	<div style="float:left;width: 46%;margin:1% 10px;">
@@ -578,6 +774,14 @@ function techozoic_dashboard_widget() { ?>
 		}
 }
 
+/**
+ * Techozoic first run options
+ *
+ * Creates default options if none are set and creates folders for image uploads
+ * 
+ * @access    private
+ */
+
 function tech_first_run_options() {
 	global $version;
 	$header_folder = TEMPLATEPATH. "/uploads/images/headers";
@@ -593,42 +797,33 @@ function tech_first_run_options() {
   	}
 }//End first_run_options
 
+/**
+ * Techozoic dropdown javascript
+ *
+ * Enqueues javascript used for cross browser compatiblity with dropdown navigation
+ * menus.
+ * 
+ * @access private 
+ */
+
 function tech_dropdown_js(){
 	wp_enqueue_script('dropdown', get_template_directory_uri() . '/js/dropdown.js',array('jquery'),'3.0' );
 }//End Dropdown_js
 
-function tech_nav_link($where){
-	global $tech;
-	if ($tech['nav_cust_link_display'] == $where) {
-		$i = 1;
-		while ($i < 6) {
-			$link_var = 'nav_link_'.$i;
-			$link_var = $tech[$link_var];
-			if ($link_var){
-				$link_parts = explode("|",$link_var);
-				$link .= "<li><a href=\"$link_parts[1]\" title=\"$link_parts[0]\">$link_parts[0]</a></li>";
-			}
-			$i++;
-		}
-	if (isset($link)) return $link;
-	}
-}
-
-/**************************************
-	Techozoic Breadcrumb Navigation
-	Since 1.8.5
-***************************************/
+/**
+ * Techozoic breadcrumb navigation
+ *
+ * Displays breadcrumb navigation if option is set.
+ * 
+ * @access    public
+ */
 
 function tech_breadcrumbs() {
 	// Thanks to dimox for the code
 	//http://dimox.net/wordpress-breadcrumbs-without-a-plugin/
 	global $tech;
 	$delimiter = '&raquo;';
-	if ($tech['nav_home_text']) { 
-		$name = $tech['nav_home_text'] ;
-	} else {
-		$name =  __('Home' ,'techozoic');
-	}
+	$name =  __('Home' ,'techozoic');
 	$currentBefore = '<span class="current">';
 	$currentAfter = '</span>';
 	 
@@ -717,10 +912,30 @@ function tech_breadcrumbs() {
  
 	}
 }
+
+/**
+ * Techozoic get options
+ *
+ * Pull options out of database and returns them.
+ * 
+ * @return      string    array of set options   
+ *
+ * @access    public
+ */
+
 function get_tech_options() {
 	$tech = get_option('techozoic_options');
 	return $tech;
 }
+
+/**
+ * Techozoic thickbox image paths
+ *
+ * Fixes paths to loading and close images used with thickbox. 
+ * 
+ *
+ * @access    private
+ */
 
 function tech_thickbox_image_paths() {
 	$thickbox_path = get_option('siteurl') . '/wp-includes/js/thickbox/';
@@ -730,10 +945,32 @@ function tech_thickbox_image_paths() {
 	echo "</script>\n";
 }
 
+/**
+ * Techozoic enqueue thickbox
+ *
+ * Enqueues thickbox script and stylesheet to be added to wp_head
+ * 
+ *
+ * @access    private
+ */
+
 function tech_enque_thickbox() {
 	wp_enqueue_script('thickbox');
 	wp_enqueue_style('thickbox');
 }
+
+/**
+ * Techozoic thickbox
+ *
+ * Replaces img links with img links with thickbox class and rel for grouping images
+ * based on post id.
+ * 
+ * @param       string  post content
+ * @return      string  string replaced post content   
+ *
+ * @access    private
+ * @since     1.9.3
+ */
 
 function tech_thickbox($content) {
 	global $post;
@@ -765,6 +1002,7 @@ if ($tech['cufon_font'] == "Enable") {
 if ( is_active_widget(false ,false, 'techozoic_font_size') ) {
 	add_action('template_redirect', 'tech_font_size_script');
 }
+add_filter('get_comments_number', 'tech_comment_count', 0);
 add_filter('the_excerpt', 'tech_excerpt_filter'); // Replaces [...] at end of excerpt with link to single post page.	
 add_action('tech_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
 add_action('admin_menu', 'tech_create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis

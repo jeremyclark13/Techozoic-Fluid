@@ -142,6 +142,7 @@ Widget registration and custom widgets defined here
 			$c = $instance['cats'] ? '1' : '0';
 			$p = $instance['pages'] ? '1' : '0';
 			$s = $instance['separate'] ? '1' : '0';
+                        
 			echo $before_widget;
 			global $post;
 			if ( $title)
@@ -179,29 +180,29 @@ Widget registration and custom widgets defined here
 
 		function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
-			$new_instance = wp_parse_args( (array) $new_instance, array( 'cats' => 0, 'pages' => 1,'separate' => 0, 'title' => '') );
+			$new_instance = wp_parse_args( (array) $new_instance, array( 'title' => '') );
 			$instance['title'] = strip_tags($new_instance['title']);
-			$instance['cats'] = $new_instance['cats'] ? 1 : 0;
-			$instance['pages'] = $new_instance['pages'] ? 1 : 0;
-			$instance['separate'] = $new_instance['separate'] ? 1 : 0;
+			$instance['cats'] = !empty($new_instance['cats']) ? 1 : 0;
+			$instance['pages'] = !empty($new_instance['pages']) ? 1 : 0;
+			$instance['separate'] = !empty($new_instance['separate']) ? 1 : 0;
 
 			return $instance;
 		}
 
 		function form( $instance ) {
-			$instance = wp_parse_args( (array) $instance, array('cats' => 0, 'pages' => 1,'separate' => 0, 'title' => '',) );
+			$instance = wp_parse_args( (array) $instance, array('title' => '',) );
 			$title = esc_attr( $instance['title'] );
-			$cats = $instance['cats'] ? 'checked="checked"' : '';
-			$pages = $instance['pages'] ? 'checked="checked"' : '';
-			$separate = $instance['separate'] ? 'checked="checked"' : '';
+			$cats = isset($instance['cats']) ? (bool) $instance['cats'] : false;
+			$pages = isset($instance['pages']) ? (bool) $instance['pages'] : true;
+			$separate = isset($instance['separate']) ? (bool) $instance['separate'] : false;
 ?>
 			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','techozoic'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
 			<p>
-			<input class="checkbox" type="checkbox" <?php echo $pages; ?> id="<?php echo $this->get_field_id('pages'); ?>" name="<?php echo $this->get_field_name('pages'); ?>" /> <label for="<?php echo $this->get_field_id('cats'); ?>"><?php _e('Include Pages in Menu' ,'techozoic')?></label>
+			<input class="checkbox" type="checkbox" <?php checked($pages); ?> id="<?php echo $this->get_field_id('pages'); ?>" name="<?php echo $this->get_field_name('pages'); ?>" /> <label for="<?php echo $this->get_field_id('cats'); ?>"><?php _e('Include Pages in Menu' ,'techozoic')?></label>
 			<br />
-			<input class="checkbox" type="checkbox" <?php echo $cats; ?> id="<?php echo $this->get_field_id('cats'); ?>" name="<?php echo $this->get_field_name('cats'); ?>" /> <label for="<?php echo $this->get_field_id('cats'); ?>"><?php _e('Include Categories in Menu' ,'techozoic') ?></label>
+			<input class="checkbox" type="checkbox" <?php checked($cats); ?> id="<?php echo $this->get_field_id('cats'); ?>" name="<?php echo $this->get_field_name('cats'); ?>" /> <label for="<?php echo $this->get_field_id('cats'); ?>"><?php _e('Include Categories in Menu' ,'techozoic') ?></label>
 			<br />
-			<input class="checkbox" type="checkbox" <?php echo $separate; ?> id="<?php echo $this->get_field_id('separate'); ?>" name="<?php echo $this->get_field_name('separate'); ?>" /> <label for="<?php echo $this->get_field_id('separate'); ?>"><?php _e('Separate Pages and Categories' ,'techozoic')?></label>
+			<input class="checkbox" type="checkbox" <?php checked($separate); ?> id="<?php echo $this->get_field_id('separate'); ?>" name="<?php echo $this->get_field_name('separate'); ?>" /> <label for="<?php echo $this->get_field_id('separate'); ?>"><?php _e('Separate Pages and Categories' ,'techozoic')?></label>
 			<br />
 			<hr />
 			<small>Note if a menu is assigned to Sidebar Navigation Location it is always displayed</small>
@@ -254,24 +255,24 @@ Widget registration and custom widgets defined here
 		function update( $new_instance, $old_instance ) {
 			$instance = $old_instance;
 			$instance['title'] = strip_tags($new_instance['title']);
-			$new_instance = wp_parse_args( (array) $new_instance, array( 'about' => '', 'gravatar' => 0, 'title' => '', 'facebook' => 1 , 'myspace' => 1 , 'twitter' => 1, 'number' => 50) );
+			$new_instance = wp_parse_args( (array) $new_instance, array( 'about' => '', 'title' => '', 'number' => 50) );
 			$instance['about'] = $new_instance['about'];
-			$instance['facebook'] = $new_instance['facebook'] ? 1 : 0;
-			$instance['myspace'] = $new_instance['myspace'] ? 1 : 0;
-			$instance['twitter'] = $new_instance['twitter'] ? 1 : 0;
-			$instance['gravatar'] = $new_instance['gravatar'] ? 1 : 0;
+			$instance['facebook'] = !empty($new_instance['facebook']) ? 1 : 0;
+			$instance['myspace'] = !empty($new_instance['myspace']) ? 1 : 0;
+			$instance['twitter'] = !empty($new_instance['twitter']) ? 1 : 0;
+			$instance['gravatar'] = !empty($new_instance['gravatar']) ? 1 : 0;
 			$instance['number'] = (int) $new_instance['number'];
 			return $instance;
 		}
 
 		function form( $instance ) {
-			$instance = wp_parse_args( (array) $instance, array('about' => '', 'gravatar' => 0, 'title' => '', 'facebook' => 1 , 'myspace' => 1 , 'twitter' => 1, 'number'=> 50) );
+			$instance = wp_parse_args( (array) $instance, array('about' => '', 'title' => '', 'number'=> 50) );
 			$title = esc_attr( $instance['title'] );
 			$about = $instance['about'] ;
-			$facebook = $instance['facebook'] ? 'checked="checked"' : '';
-			$myspace = $instance['myspace'] ? 'checked="checked"' : '';
-			$twitter = $instance['twitter'] ? 'checked="checked"' : '';
-			$gravatar = $instance['gravatar'] ? 'checked="checked"' : '';
+			$facebook = isset($instance['facebook']) ? (bool) $instance['facebook'] : false;
+			$myspace = isset($instance['myspace']) ? (bool) $instance['myspace'] : false;
+			$twitter = isset($instance['twitter']) ? (bool) $instance['twitter'] : false;
+			$gravatar = isset($instance['gravatar']) ? (bool) $instance['gravatar'] : false;
 			$number = isset($instance['number']) ? absint($instance['number']) : 50;
 ?>
 			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','techozoic'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
@@ -279,13 +280,13 @@ Widget registration and custom widgets defined here
 			<p><label><?php _e('Write About yourself here' ,'techozoic')?></label>
 			<textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('about'); ?>" name="<?php echo $this->get_field_name('about'); ?>"><?php echo $about; ?></textarea>
 			<br />
-			<input class="checkbox" type="checkbox" <?php echo $facebook; ?> id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" /> <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Display link to Facebook Profile' ,'techozoic')?></label>
+			<input class="checkbox" type="checkbox" <?php checked($facebook); ?> id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" /> <label for="<?php echo $this->get_field_id('facebook'); ?>"><?php _e('Display link to Facebook Profile' ,'techozoic')?></label>
 			<br />
-			<input class="checkbox" type="checkbox" <?php echo $myspace; ?> id="<?php echo $this->get_field_id('myspace'); ?>" name="<?php echo $this->get_field_name('myspace'); ?>" /> <label for="<?php echo $this->get_field_id('myspace'); ?>"><?php _e('Display link to MySpace Profile' ,'techozoic') ?></label>
+			<input class="checkbox" type="checkbox" <?php checked($myspace); ?> id="<?php echo $this->get_field_id('myspace'); ?>" name="<?php echo $this->get_field_name('myspace'); ?>" /> <label for="<?php echo $this->get_field_id('myspace'); ?>"><?php _e('Display link to MySpace Profile' ,'techozoic') ?></label>
 			<br />
-			<input class="checkbox" type="checkbox" <?php echo $twitter; ?> id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" /> <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Display link to Twitter Profile' ,'techozoic')?></label>
+			<input class="checkbox" type="checkbox" <?php checked($twitter); ?> id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" /> <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Display link to Twitter Profile' ,'techozoic')?></label>
 			<br />
-			<input class="checkbox" type="checkbox" <?php echo $gravatar; ?> id="<?php echo $this->get_field_id('gravatar'); ?>" name="<?php echo $this->get_field_name('gravatar'); ?>" /> <label for="<?php echo $this->get_field_id('gravatar'); ?>"><?php _e('Enable Gravatar' ,'techozoic') ?></label>
+			<input class="checkbox" type="checkbox" <?php checked($gravatar); ?> id="<?php echo $this->get_field_id('gravatar'); ?>" name="<?php echo $this->get_field_name('gravatar'); ?>" /> <label for="<?php echo $this->get_field_id('gravatar'); ?>"><?php _e('Enable Gravatar' ,'techozoic') ?></label>
 			</p>
 			<p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Size of Gravatar' ,'techozoic') ?></label>
 			<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" /><br />
