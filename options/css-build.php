@@ -536,7 +536,7 @@ CSS;
 		}
 	}
 $css_var .= <<<CSS
-#navmenu ul#nav,#navmenu ul#nav2,#navmenu ul#dropdown,#navmenu ul.menu{
+#header ul#nav,#header ul#nav2,#header ul#dropdown,#header ul.menu{
 {$tech['nav_align']};
 }
 CSS;
@@ -942,7 +942,6 @@ height: 100%;
 #headerl{
 background:url('{$img_path}/images/bgl.png') repeat-y scroll left top transparent;
 width: 100%;
-postition:absolute;
 left: 0;
 top: 0;
 }
