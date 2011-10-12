@@ -12,58 +12,280 @@
  *
  */
 
+include(get_template_directory() . '/functions/tech-meta-box.php');
 
-/**************************************
-	Loads dynamic styles if get variable is set to css
-	Rebuilds styles stored in database if set to build
-	Since 1.9.1
-***************************************/
-	if (isset($_GET['techozoic_css'])){
-		if ($_GET['techozoic_css'] == 'css'){
-			include_once (TEMPLATEPATH . '/style.php');
-			exit;
-		} elseif ($_GET['techozoic_css'] == 'build') {
-			include_once(TEMPLATEPATH . '/options/css-build.php');
-		}
-	}
-	//Continue Normal Functions
-	load_theme_textdomain( 'techozoic', TEMPLATEPATH.'/languages');
+if ( !function_exists( 'optionsframework_init' ) ) {
+
+/*-----------------------------------------------------------------------------------*/
+/* Options Framework
+/*-----------------------------------------------------------------------------------*/
+
+/* Set the file path based on whether the Options Framework Theme is a parent theme or child theme */
+
+if ( get_stylesheet_directory() == get_template_directory() ) {
+	define('OPTIONS_FRAMEWORK_URL', get_template_directory() . '/admin/');
+	define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/');
+} else {
+	define('OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/admin/');
+	define('OPTIONS_FRAMEWORK_DIRECTORY', get_stylesheet_directory_uri() . '/admin/');
+}
+
+require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
+
+}
+
+add_action('admin_init','optionscheck_change_santiziation', 10,2);
+ 
+function optionscheck_change_santiziation() {
+    remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+    add_filter( 'of_sanitize_textarea', 'tech_sanitize_textarea' );
+}
+ 
+function tech_sanitize_textarea($input) {
+    global $allowedposttags;
+    $custom_allowedtags["embed"] = array(
+        "src" => array(),
+        "type" => array(),
+        "allowfullscreen" => array(),
+        "allowscriptaccess" => array(),
+        "height" => array(),
+        "width" => array()
+    );
+
+    $custom_allowedtags["script"] = array(
+        "src" => array(),
+        "type" => array()
+    );
+    $custom_allowedtags["iframe"] = array( 
+        "src" => array(),
+        "height" => array(),
+        "width" => array(),
+        "frameborder" => array(),
+        "allowfullscreen" => array()
+    );
+
+    $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
+    $output = wp_kses( $input, $custom_allowedtags);
+    return $output;
+}
+
+add_action( 'after_setup_theme', 'techozoic_setup' );
+ 
+ /**
+ * Techozoic Theme setup
+ *
+ * Setup theme translation, theme features, menus, and custom header
+ * 
+ *
+ * @access    private
+ * @since     2.0
+ */
+ 
+ function techozoic_setup() {
+	load_theme_textdomain( 'techozoic', get_template_directory() . '/languages');
 	$locale = get_locale();
-	$locale_file = TEMPLATEPATH."/languages/$locale.php";
+	$locale_file = get_template_directory() . "/languages/$locale.php";
 	if ( is_readable($locale_file) )
 		require_once($locale_file);
-	$upload_path = get_option('upload_path');
-	if ( ! defined( 'WP_CONTENT_URL' ) )
-    		define( 'WP_CONTENT_URL', get_option( 'siteurl' ) . '/wp-content' );
-	if ( ! defined( 'WP_CONTENT_DIR' ) )
-    		define( 'WP_CONTENT_DIR', ABSPATH . 'wp-content' );
-	define ('WP_UPLOAD_PATH', ABSPATH . $upload_path );
-	
-	if(is_admin()) {
-            include_once (TEMPLATEPATH . "/options/option-array.php");
-            include_once(TEMPLATEPATH . '/options/main.php');
-	}
 	// Include other custom functions files
-	//A custom.php file can be added and included without being overwritten by theme updates
-	include(TEMPLATEPATH . '/functions/tech-widget.php');
-	include(TEMPLATEPATH . '/functions/tech-comments-functions.php');
-	if(file_exists(TEMPLATEPATH . '/functions/custom.php')){
-		include(TEMPLATEPATH . '/functions/custom.php');
-	}
-	global $tech;
-	if ($tech = get_option('techozoic_options') ){
-		$tech = get_option('techozoic_options');
-	} else {
-		include_once(TEMPLATEPATH . '/options/tech-init.php');
-		$tech = tech_temp_options();
-	}
-	$theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
-	$version = $theme_data['Version'];
-
+	include(get_template_directory() . '/functions/tech-widget.php');
+	include(get_template_directory() . '/functions/tech-comments-functions.php');
+        include(get_template_directory() . '/functions/tech-css.php');
 	if (!isset($content_width)) {
 		$content_width = tech_content_width();
 	}
 	
+	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'single-post-thumbnail', $content_width, 9999 ); 
+	//WP 2.9 Post Thumbnail Support
+	add_theme_support('automatic-feed-links');
+	//WP Auto Feed Links
+	register_nav_menus( array(
+		'primary' => __( 'Header Navigation', 'techozoic' ),
+		'sidebar' => __( 'Sidebar Navigation', 'techozoic'),
+		'footer' => __('Footer Navigation', 'techozoic'),
+	) );
+        //WP Navigation Menu
+        add_theme_support( 'custom-header', array( 'random-default' => true ) );
+        //WP Custom Header - random roation by default
+        define( 'HEADER_TEXTCOLOR', '' );
+        define( 'HEADER_IMAGE', '' );
+        define( 'HEADER_IMAGE_WIDTH', of_get_option('header_height','200') );
+        define( 'HEADER_IMAGE_HEIGHT', of_get_option('header_width','1000') );
+        define('NO_HEADER_TEXT', true );
+        add_custom_image_header( 'techozoic_header_style', 'techozoic_admin_header_style', 'techozoic_admin_header_image' );
+        register_default_headers( array(
+		'grunge' => array(
+			'url' => '%s/images/headers/Grunge.jpg',
+			'thumbnail_url' => '%s/images/headers/Grunge-thumbnail.jpg',
+			'description' => __( 'Grunge', 'techozoic' )
+		),
+		'landscape' => array(
+			'url' => '%s/images/headers/Landscape.jpg',
+			'thumbnail_url' => '%s/images/headers/Landscape-thumbnail.jpg',
+			'description' => __( 'Landscape', 'techozoic' )
+		),
+		'random_lines_1' => array(
+			'url' => '%s/images/headers/Random_Lines_1.jpg',
+			'thumbnail_url' => '%s/images/headers/Random_Lines_1-thumbnail.jpg',
+			'description' => __( 'Random Lines 1', 'techozoic' )
+		),
+		'random_lines_2' => array(
+			'url' => '%s/images/headers/Random_Lines_2.jpg',
+			'thumbnail_url' => '%s/images/headers/Random_Lines_2-thumbnail.jpg',
+			'description' => __( 'Random Lines 2', 'techozoic' )
+		),
+		'technology' => array(
+			'url' => '%s/images/headers/Technology.jpg',
+			'thumbnail_url' => '%s/images/headers/Technology-thumbnail.jpg',
+			'description' => __( 'Technology', 'techozoic' )
+		),
+	) );
+}
+
+/**
+ * Techozoic header style
+ *
+ * Custom header frontend style.
+ * 
+ *
+ * @access    private
+ * @since     2.0
+ */
+
+function techozoic_header_style() {
+?>
+<style type="text/css">
+        #header {
+            background-image: url(<?php header_image(); ?>);
+        }
+</style>
+<?php
+}
+
+/**
+ * Techozoic admin header style
+ *
+ * Custom header admin page style.
+ * 
+ *
+ * @access    private
+ * @since     2.0
+ */
+
+function techozoic_admin_header_style() {
+?>
+    <style type="text/css">
+	#headimg img {
+		max-width: 1000px;
+		height: auto;
+	}
+    </style>
+<?php
+}
+
+/**
+ * Techozoic admin header html
+ *
+ * Custom admin header html.
+ * 
+ *
+ * @access    private
+ * @since     2.0
+ */
+
+function techozoic_admin_header_image() { ?>
+	<div id="headimg">
+		<?php $header_image = get_header_image();
+		if ( ! empty( $header_image ) ) : ?>
+			<img src="<?php echo esc_url( $header_image ); ?>" alt="" />
+		<?php endif; ?>
+	</div>
+<?php }
+
+
+/**
+ * Techozoic Theme Logo
+ *
+ * function for option page hook to output css to head to change icon.
+ * 
+ *
+ * @access    private
+ * @since     2.0
+ */
+
+add_action('admin_head-appearance_page_options-framework', 'techozoic_theme_logo');
+
+function techozoic_theme_logo(){
+?>
+<style type="text/css">
+#icon-themes {
+    background: url(" <?php echo get_template_directory_uri() ?>/images/techozoic-logo-small.png") no-repeat scroll 2px 0px transparent;
+}
+</style>
+<?php
+}
+
+/**
+ * Techozoic Theme Links
+ *
+ * Used to output links to theme support and rss feed of theme news
+ * 
+ * @param     string    CSS class to be applied to div around theme links
+ * @return    string    HTML for theme links box
+ *
+ * @access    public
+ * @since     1.9.3
+ */
+
+function techozoic_links_box($class="tech_links_box") {
+	$output ='	<div class="' . $class . '" style="float:right;width: 48%;">';
+		// Get RSS Feed(s)
+		$feed_address = "http://techozoic.clark-technet.com/category/news/feed";
+		$feed_items = 5;
+		$tech_changelog = get_template_directory_uri() . '/changelog.php';
+		$output .= "<h3 style='background:none;cursor:default;'>" . __('Techozoic News','techozoic') . "</h3>";
+		include_once(ABSPATH . WPINC . '/feed.php');
+		// Get a SimplePie feed object from the specified feed source.
+		$rss = fetch_feed($feed_address);
+		if (!is_wp_error( $rss ) ) {
+			// Checks that the object is created correctly 
+			// Figure out how many total items there are, but limit it to $feed_items. 
+			 $maxitems = $rss->get_item_quantity($feed_items); 
+
+			// Build an array of all the items, starting with element 0 (first element).
+			$rss_items = $rss->get_items(0, $maxitems); 
+			$output .='<ul>';
+			if (isset($maxitems) && $maxitems == 0) {
+				$output .= '<li>' . __("No News.","techozoic") . '</li>';
+			} else {
+				// Loop through each feed item and display each item as a hyperlink.
+				foreach ( $rss_items as $item ) { 
+					$output .= "<li>
+						<a href='{$item->get_permalink()}' target='_blank' title='{$item->get_title()}'>
+						{$item->get_title()}</a>
+					</li>";
+				}
+				$output.='</ul>';
+			}
+		}
+	$output .="<h3 style='background:none;cursor:default'>" . __('Techozoic Links','techozoic') . "</h3>
+	<ul>
+		<li>
+			<a href='http://clark-technet.com/theme-support/techozoic'>" . __('Support Forum','techozoic') . "</a>
+		</li>
+		<li>
+			<a href='http://techozoic.clark-technet.com/documentation/'>" . __('Documentation','techozoic') . "</a>
+		</li>
+		<li>
+			<a href='http://techozoic.clark-technet.com/documentation/faq/'>" . __('FAQ','techozoic') . "</a>
+		</li>
+		<li>
+			<a href='$tech_changelog' onclick='return changelog(\"$tech_changelog\")'>" . __('Change Log','techozoic') . "</a>
+		</li>
+	</div>";
+	echo $output;
+}
         
 /**
  * Techozoic All Image Size Links
@@ -107,9 +329,8 @@ function tech_image_links() {
  */
 
 function tech_excerpt($where){
-	global $tech;
-	$locs = explode(',' , $tech['excerpt_location']);
-	if (in_array($where, $locs)){ 
+	$locs = of_get_option('excerpt_location', array("tag" => '1'));
+	if ($locs[$where] == '1'){ 
 		return true;
 	} else {
 		return false;
@@ -129,9 +350,8 @@ function tech_excerpt($where){
  */
 
 function tech_icons($where){
-	global $tech;
-	$locs = explode(',' , $tech['post_social_media_location']);
-	if (in_array($where, $locs)){ 
+	$locs = of_get_option('post_social_media_location', array("main" =>"1",'single'=>'1'));
+	if ($locs[$where] == '1'){ 
 		return true;
 	} else {
 		return false;
@@ -150,11 +370,16 @@ function tech_icons($where){
  * @since     1.9.3
  */
 
+add_filter('the_excerpt', 'tech_excerpt_filter'); // Replaces [...] at end of excerpt with link to single post page.
+
 function tech_excerpt_filter($text){ 
 	global $post;
 	return str_replace('[...]', '<a href="'. get_permalink($post->ID) . '">' . ' [&hellip; ' . __('Read More', 'techozoic') . ']' . '</a>', $text);  
 }  
-	
+
+
+if (of_get_option('google_font','0') == '1') {
+
 /**
  * Techozoic google font 
  *
@@ -165,12 +390,16 @@ function tech_excerpt_filter($text){
  * @since     1.9.3
  */
 
+add_action('wp_print_styles','tech_google_font');
+
 function tech_google_font() {
 	global $tech;
-        $tech_google_font_decoration = str_ireplace(',', '', $tech['google_font_decoration']);
-	wp_enqueue_style('google_fonts' , "http://fonts.googleapis.com/css?family={$tech['google_font_family']}:{$tech_google_font_decoration}", '', '', 'screen');
-	}
-
+        $font_name = of_get_option('google_font_family','');
+        $tech_google_font = str_ireplace(' ', '+', $font_name);
+        $tech_google_font_decoration = of_get_option('google_font_decoration','');
+        wp_enqueue_style('google_fonts' , "http://fonts.googleapis.com/css?family={$tech_google_font}:{$tech_google_font_decoration}", '', '', 'screen');
+}
+}//End if goolge_font check
 	
 /**
  * Techozoic comment count
@@ -186,7 +415,8 @@ function tech_google_font() {
  * @since     1.9.3
  */
 
- 
+add_filter('get_comments_number', 'tech_comment_count', 0); 
+
 function tech_comment_count( $count ) {  
 	if ( ! is_admin() ) {
 		global $id;
@@ -227,6 +457,10 @@ function tech_menu_fallback(){
  * @since     1.9.1
  */
 
+
+if ( is_active_widget(false ,false, 'techozoic_font_size') ) {
+	add_action('template_redirect', 'tech_font_size_script');
+}
 	
 function tech_font_size_script() {
 	$script_dir = get_template_directory_uri() . '/js/';
@@ -234,37 +468,6 @@ function tech_font_size_script() {
 	wp_enqueue_script('font-size');
 }
 	
-/**
- * Techozoic Navigation Selection Function
- *
- * Used to determine which navigation template to use based on user options.  Used
- * with get_template_part as the name parameter to get correct template.
- * 
- * @return      string    returns text of menu type based on options   
- *
- * @access    public
- * @since     1.8.8
- */
-	
-	
-function tech_nav_select(){
-	global $tech;
-	switch ($tech['nav_menu_type']){
-		case "Two Tier":
-			$var = "twotier";
-			break;
-		case "Standard":
-			$var = "standard";
-			break;
-		case "Dropdown":
-			$var = "dropdown";
-			break;
-		case "WP 3 Menu":
-			$var = "wp3";
-			break;
-	}
-	return $var;
-}
 
 /**
  * Techozoic $content_width Function
@@ -304,9 +507,12 @@ function tech_content_width(){
  * @since     1.8.8
  */
 
+add_action('tech_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
+
 function tech_footer_text(){
-	global $tech, $version;
-	$string = stripslashes($tech['footer_text']);
+    	$theme_data = get_theme_data(get_template_directory() . '/style.css');
+	$version = $theme_data['Version'];
+	$string = of_get_option('footer_text','%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% <br /> <small>%MYSQL%</small>');
 	$shortcode = array('/%BLOGNAME%/i','/%THEMENAME%/i','/%THEMEVER%/i','/%THEMEAUTHOR%/i','/%TOP%/i','/%COPYRIGHT%/i','/%MYSQL%/i');
 	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy; '. date('Y'),sprintf(__('%1$d mySQL queries in %2$s seconds.','techozoic'), get_num_queries(),timer_stop(0)));
 	echo preg_replace($shortcode, $output, $string);
@@ -325,36 +531,31 @@ function tech_footer_text(){
  */
 
 function tech_show_sidebar($loc) {
-	global $tech;
-	if ($tech['column'] > 1) {
-		switch ($tech['sidebar_pos']) {
-			case "Sidebar - Content - Sidebar":
+	if (of_get_option('column','3') > 1) {
+		switch (of_get_option('sidebar_pos','3-col')) {
+			case "3-col":
 				$left = 1;
 				$right = 1;
 			break;
-			case "Content - Sidebar - Sidebar":
+			case "3-col-right":
 				$left = 0;
 				$right = 2;
 			break;
-			case "Sidebar - Sidebar - Content":
+			case "3-col-left":
 				$left = 2;
 				$right = 0;
 			break;
-			case "Content - Sidebar":
+			case "2-col-right":
 				$left = 0;
 				$right = 1;
 			break;
-			case "Sidebar - Content":
+			case "2-col-left":
 				$left = 1;
 				$right = 0;
 			break;
 		}
 		if ($loc == "l" && $left > 0){
-			if (function_exists('get_template_part')) {
-				get_template_part('sidebar','left');
-			} else {
-				include (TEMPLATEPATH . "/sidebar-left.php"); 
-			}
+			get_template_part('sidebar','left');
 			if ($left > 1){
 				get_sidebar();
 			}
@@ -362,11 +563,7 @@ function tech_show_sidebar($loc) {
 		if ($loc == "r" && $right > 0){
 			get_sidebar();
 			if ($right > 1){
-				if (function_exists('get_template_part')) {
-					get_template_part('sidebar','left');
-				} else {
-					include (TEMPLATEPATH . "/sidebar-left.php"); 
-				}
+				get_template_part('sidebar','left');
 			}
 		}
 	}
@@ -388,8 +585,8 @@ function tech_show_sidebar($loc) {
 function tech_social_icons($home=true){
 	global $tech, $post;
 	$short_link = home_url()."/?p=".$post->ID;
-	$home_icons = explode(',' , $tech['home_social_icons']);
-	$single_icons = explode(',' , $tech['single_social_icons']);
+	$home_icons = of_get_option('home_social_icons',array('delicious'=>'1','digg'=>'1','rss'=>'1'));
+	$single_icons = of_get_option('single_social_icons',array('delicious'=>'1','digg'=>'1','rss'=>'1'));
 	$image = get_template_directory_uri() . "/images/icons";
 	$link = get_permalink();
 	$title = $post->post_title;
@@ -400,25 +597,33 @@ function tech_social_icons($home=true){
 	$excerpt_mail = preg_replace("/&#?[a-z0-9]{2,8};/i","",$excerpt_mail);
 	$home_title = urlencode(get_bloginfo( 'name' ));
 	$social_links = array(
-		"Delicious" => "<a href=\"http://delicious.com/post?url={$link}&amp;title={$url_title}\" title=\"" .  __('del.icio.us this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/delicious_16.png\" alt=\"" .  __('del.icio.us this!','techozoic') . "\" /></a>",
-		"Digg" => "<a href=\"http://digg.com/submit?phase=2&amp;url={$link}&amp;title={$url_title} \" title=\"" .  __('Digg this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/digg_16.png\" alt=\"" .  __('Digg this!','techozoic') . "\"/></a>",
-		"Email" => "<a href=\"mailto:?subject={$email_title}&amp;body={$excerpt_mail} {$link}\" title=\"" .  __('Share this by email.','techozoic') . "\"><img src=\"{$image}/email_16.png\" alt=\"" .  __('Share this by email.','techozoic') . "\"/></a>",
-		"Facebook" => "<a href=\"http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Facebook!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/facebook_16.png\" alt=\"" .  __('Share on Facebook!','techozoic') . "\"/></a>",
-		"LinkedIn" => "<a href =\"http://www.linkedin.com/shareArticle?mini=true&amp;url={$link}&amp;title={$url_title}&amp;summary={$excerpt}&amp;source={$home_title}\" title=\"" .  __('Share on LinkedIn!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/linkedin_16.png\" alt=\"" .  __('Share on LinkedIn!','techozoic') . "\" /></a>",
-		"MySpace" => "<a href=\"http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Myspace!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/myspace_16.png\" alt=\"" .  __('Share on Myspace!','techozoic') . "\"/></a>",
-		"NewsVine" => "<a href=\"http://www.newsvine.com/_tools/seed&amp;save?u={$link}\" title=\"" .  __('Share on NewsVine!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/newsvine_16.png\" alt=\"" .  __('Share on NewsVine!','techozoic') . "\"/></a>",
-		"StumbleUpon" => "<a href=\"http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}\" title=\"" .  __('Stumble Upon this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/stumbleupon_16.png\" alt=\"" .  __('Stumble Upon this!','techozoic') . "\"/></a>",
-		"Twitter" => "<a href=\"http://twitter.com/home?status=Reading%20{$url_title}%20on%20{$short_link}\" title=\"" .  __('Tweet this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/twitter_16.png\" alt=\"" .  __('Tweet this!','techozoic') . "\"/></a>",
-		"Reddit" => "<a href=\"http://reddit.com/submit?url={$link}&amp;title={$url_title}\" title=\"" .  __('Share on Reddit!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/reddit_16.png\" alt=\"" .  __('Share on Reddit!','techozoic') . "\" /></a>",
-		"RSS Icon" => "<a href=\"".get_post_comments_feed_link()."\" title=\"".__('Subscribe to Feed','techozoic')."\"><img src=\"{$image}/rss_16.png\" alt=\"" . __('RSS 2.0','techozoic') . "\"/></a>");
+		"delicious" => "<a href=\"http://delicious.com/post?url={$link}&amp;title={$url_title}\" title=\"" .  __('del.icio.us this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/delicious_16.png\" alt=\"" .  __('del.icio.us this!','techozoic') . "\" /></a>",
+		"digg" => "<a href=\"http://digg.com/submit?phase=2&amp;url={$link}&amp;title={$url_title} \" title=\"" .  __('Digg this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/digg_16.png\" alt=\"" .  __('Digg this!','techozoic') . "\"/></a>",
+		"email" => "<a href=\"mailto:?subject={$email_title}&amp;body={$excerpt_mail} {$link}\" title=\"" .  __('Share this by email.','techozoic') . "\"><img src=\"{$image}/email_16.png\" alt=\"" .  __('Share this by email.','techozoic') . "\"/></a>",
+		"facebook" => "<a href=\"http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Facebook!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/facebook_16.png\" alt=\"" .  __('Share on Facebook!','techozoic') . "\"/></a>",
+		"linkedin" => "<a href =\"http://www.linkedin.com/shareArticle?mini=true&amp;url={$link}&amp;title={$url_title}&amp;summary={$excerpt}&amp;source={$home_title}\" title=\"" .  __('Share on LinkedIn!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/linkedin_16.png\" alt=\"" .  __('Share on LinkedIn!','techozoic') . "\" /></a>",
+		"myspace" => "<a href=\"http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Myspace!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/myspace_16.png\" alt=\"" .  __('Share on Myspace!','techozoic') . "\"/></a>",
+		"newsvine" => "<a href=\"http://www.newsvine.com/_tools/seed&amp;save?u={$link}\" title=\"" .  __('Share on NewsVine!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/newsvine_16.png\" alt=\"" .  __('Share on NewsVine!','techozoic') . "\"/></a>",
+		"stumbleupon" => "<a href=\"http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}\" title=\"" .  __('Stumble Upon this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/stumbleupon_16.png\" alt=\"" .  __('Stumble Upon this!','techozoic') . "\"/></a>",
+		"twitter" => "<a href=\"http://twitter.com/home?status=Reading%20{$url_title}%20on%20{$short_link}\" title=\"" .  __('Tweet this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/twitter_16.png\" alt=\"" .  __('Tweet this!','techozoic') . "\"/></a>",
+		"reddit" => "<a href=\"http://reddit.com/submit?url={$link}&amp;title={$url_title}\" title=\"" .  __('Share on Reddit!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/reddit_16.png\" alt=\"" .  __('Share on Reddit!','techozoic') . "\" /></a>",
+		"rss" => "<a href=\"".get_post_comments_feed_link()."\" title=\"".__('Subscribe to Feed','techozoic')."\"><img src=\"{$image}/rss_16.png\" alt=\"" . __('RSS 2.0','techozoic') . "\"/></a>");
 	if ($home == true){
-		foreach ($home_icons as $soc){
-			echo $social_links[$soc] ."&nbsp;";
-		}
+                if (is_array($home_icons)){
+                    foreach ($home_icons as $key => $value){
+                        if ($value == "1"){
+                            echo $social_links[$key] ."&nbsp;";
+                        }
+                    }
+                }
 	} else {
-		foreach ($single_icons as $soc){
-			echo $social_links[$soc] ."&nbsp;";
-		}
+                if(is_array($single_icons)){
+                    foreach ($single_icons as $key => $value){
+                        if ($value == "1"){
+                            echo $social_links[$soc] ."&nbsp;";
+                        }
+                    }
+                }
 	}
 }
 
@@ -466,9 +671,10 @@ function tech_about_icons($fb=0,$my=0,$twitter=0){
  */
 
 function tech_comment_preview($ID){
-	global $comment, $tech;
+	global $comment;
+        $tech_comment_num = of_get_option('comment_preview_num','3');
 	$output = "";
-	$comment_array = get_comments(array('post_id'=>$ID,'number'=>$tech['comment_preview_num'],'type'=>'comment','status'=>'approve'));
+	$comment_array = get_comments(array('post_id'=>$ID,'number'=>$tech_comment_num,'type'=>'comment','status'=>'approve'));
 	if ($comment_array) {
 		$output .=	'<ul class="comment-preview">';
 		foreach($comment_array as $comment){
@@ -488,6 +694,8 @@ function tech_comment_preview($ID){
 	print $output;
 }
 
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ){
+
 /**
  * Techozoic Custom Activation Message
  *
@@ -498,6 +706,8 @@ function tech_comment_preview($ID){
  * @since     1.8.6
  */
 
+add_action( 'admin_notices', 'techozoic_show_notice' );  // Shows custom theme activation notice with links to option page and changelog
+
 function techozoic_show_notice() { ?>
     <div id="message" class="updated fade">
 		<p><?php printf( __( 'Theme activated! This theme contains <a href="%s">theme options</a> and <a href="%s">custom sidebar widgets</a>.<br />&nbsp; See <a href="%s">Change Log</a>.', 'techozoic' ), admin_url( 'themes.php?page=techozoic' ), admin_url( 'widgets.php' ) , get_template_directory_uri() . "/changelog.php\" onclick=\"return changelog('". get_template_directory_uri() ."/changelog.php')\"") ?></p>
@@ -505,6 +715,8 @@ function techozoic_show_notice() { ?>
     <style type="text/css">#message2, #message0 { display: none; }</style>
     <?php
 }
+
+} //End If activation page check
 
 /**
  * Techozoic Cufon Font Replacement
@@ -560,167 +772,6 @@ function tech_cufon_options() {
 	</script>\n";
 	print $output;
 }
-	
-$meta_box = array(
-    'id' => 'tech-meta-box',
-    'title' => 'Techozoic Options',
-    'context' => 'side',
-    'priority' => 'low',
-    'fields' => array(
-        array(
-            'name' => 'Sidebar',
-            'id' => 'Sidebar_value',
-            'type' => 'checkbox',
-			'title' => 'Disable Sidebar',
-			'description' => 'Checking the box will disable the sidebar showing on this post/page single view.'
-        ),
-		array(
-            'name' => 'Nav',
-            'id' => 'Nav_value',
-            'type' => 'checkbox',
-			'title' => 'Disable Navigation Menu',
-			'description' => 'Checking the box will disable the navigation menu on this post/page single view.'
-        )
-    )
-);
-	
-/**
- * Techozoic meta boxes
- *
- * Used to output meta box for disabling the navigation menu and sidebars
- * on single pages/posts 
- *
- * @access    private
- * @since     1.8.6
- */
-
-function tech_new_meta_boxes() {
-    global $meta_box, $post;
-    
-    // Use nonce for verification
-    echo '<input type="hidden" name="techozoic_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
-    
-    echo '<table class="form-table">';
-
-    foreach ($meta_box['fields'] as $field) {
-        // get current post meta data
-        $meta = get_post_meta($post->ID, $field['id'], true);
-        
-        echo '<tr>',
-                '<th><label for="', $field['id'], '">', $field['title'], '</label></th>',
-                '<td>';
-        switch ($field['type']) {
-            case 'text':
-                echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" />', '
-', $field['desc'];
-                break;
-            case 'textarea':
-                echo '<textarea name="', $field['id'], '" id="', $field['id'], '" cols="60" rows="4" style="width:97%">', $meta ? $meta : $field['std'], '</textarea>', '
-', $field['desc'];
-                break;
-            case 'select':
-                echo '<select name="', $field['id'], '" id="', $field['id'], '">';
-                foreach ($field['options'] as $option) {
-                    echo '<option', $meta == $option ? ' selected="selected"' : '', '>', $option, '</option>';
-                }
-                echo '</select>';
-                break;
-            case 'radio':
-                foreach ($field['options'] as $option) {
-                    echo '<input type="radio" name="', $field['id'], '" value="', $option['value'], '"', $meta == $option['value'] ? ' checked="checked"' : '', ' />', $option['name'];
-                }
-                break;
-            case 'checkbox':
-                echo '<input type="checkbox" name="', $field['id'], '" id="', $field['id'], '"', $meta ? ' checked="checked"' : '', ' />';
-                break;
-        }
-        echo	'<td>',
-				'<tr><td colspan="3">',$field['description'],'</td></tr>',
-				'</tr>';
-    }
-    
-    echo '</table>';
-
-}
- 
-/**
- * Techozoic create meta boxes
- *
- * Creates the meta boxes setup in tech_new_meta_boxes function
- *    
- *
- * @access    private
- * @since     1.8.6
- */
-
-function tech_create_meta_box() {
-	global $meta_box;
-	add_meta_box($meta_box['id'], $meta_box['title'], 'tech_new_meta_boxes', 'post', $meta_box['context'], $meta_box['priority']);
-	add_meta_box($meta_box['id'], $meta_box['title'], 'tech_new_meta_boxes', 'page', $meta_box['context'], $meta_box['priority']);
-}
-
-/**
- * Techozoic save metabox data
- *
- * Verifies the nonce of the meta box form and saves the option to the database using
- * the update_post_meta function.
- * 
- * @param       string  post id of current post being edited
- *
- * @access    private
- * @since     1.8.6
- */
-
-function tech_save_postdata( $post_id ) {
-    global $meta_box;
-    
-    // verify nonce
-	if (isset($_POST['techozoic_meta_box_nonce'])){
-		if (!wp_verify_nonce($_POST['techozoic_meta_box_nonce'], basename(__FILE__))) {
-		   return $post_id;
-		}
-
-		// check autosave
-		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-			return $post_id;
-		}
-
-		// check permissions
-		if ('page' == $_POST['post_type']) {
-			if (!current_user_can('edit_page', $post_id)) {
-				return $post_id;
-			}
-		} elseif (!current_user_can('edit_post', $post_id)) {
-			return $post_id;
-		}
-		
-		foreach ($meta_box['fields'] as $field) {
-			$old = get_post_meta($post_id, $field['id'], true);
-			$new = $_POST[$field['id']];
-			
-			if ($new && $new != $old) {
-				update_post_meta($post_id, $field['id'], $new);
-			} elseif ('' == $new && $old) {
-				delete_post_meta($post_id, $field['id'], $old);
-			}
-		}
-	}
-}
-
-if(function_exists('add_theme_support')) {
-	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'single-post-thumbnail', $content_width, 9999 ); 
-	//WP 2.9 Post Thumbnail Support
-	add_theme_support('automatic-feed-links');
-	//WP Auto Feed Links
-}
-if(function_exists('register_nav_menus')) {
-	register_nav_menus( array(
-		'primary' => __( 'Header Navigation', 'techozoic' ),
-		'sidebar' => __( 'Sidebar Navigation', 'techozoic'),
-		'footer' => __('Footer Navigation', 'techozoic'),
-	) );
-}
 
 /**
  * Techozoic add dashboard widget
@@ -747,6 +798,8 @@ function tech_dashboard_widgets() {
  * @since     1.9.3
  */
 
+add_action('wp_dashboard_setup', 'tech_dashboard_widgets'); //Add Techozoic dashboard widget with info for theme and donate button
+
 function techozoic_dashboard_widget() { ?>
    	<div style="float:left;width: 46%;margin:1% 10px;">
 	<div class="alignleft">
@@ -767,35 +820,9 @@ function techozoic_dashboard_widget() { ?>
 		</div>
 		<?php techozoic_links_box('tech_links_front'); ?>
 		<div class="clear"> </div>
-		<?php if (current_user_can('edit_theme') || current_user_can('edit_theme_options')) { ?>
-		<h5 style="margin:8px 0 0;"><?php _e('Techozoic Settings Pages','techozoic'); ?></h5>
-		<?php
-			echo techozoic_top_menu(); 
-		}
+<?php
+
 }
-
-/**
- * Techozoic first run options
- *
- * Creates default options if none are set and creates folders for image uploads
- * 
- * @access    private
- */
-
-function tech_first_run_options() {
-	global $version;
-	$header_folder = TEMPLATEPATH. "/uploads/images/headers";
-	$background_folder = TEMPLATEPATH. "/uploads/images/backgrounds";
-  	$check = get_option('techozoic_activation_check');
-  	if ($check != $version || !file_exists($header_folder) || !file_exists($background_folder)) {
-		include_once(TEMPLATEPATH . '/options/tech-init.php');
-		tech_update_options();
-		tech_create_folders(TEMPLATEPATH . '/uploads');
-    		// Add marker so it doesn't run in future
-  		add_option('techozoic_activation_check', $version);
-		update_option('techozoic_activation_check', $version);
-  	}
-}//End first_run_options
 
 /**
  * Techozoic dropdown javascript
@@ -805,6 +832,8 @@ function tech_first_run_options() {
  * 
  * @access private 
  */
+
+add_action('wp_print_styles','tech_dropdown_js');
 
 function tech_dropdown_js(){
 	wp_enqueue_script('dropdown', get_template_directory_uri() . '/js/dropdown.js',array('jquery'),'3.0' );
@@ -913,21 +942,8 @@ function tech_breadcrumbs() {
 	}
 }
 
-/**
- * Techozoic get options
- *
- * Pull options out of database and returns them.
- * 
- * @return      string    array of set options   
- *
- * @access    public
- */
-
-function get_tech_options() {
-	$tech = get_option('techozoic_options');
-	return $tech;
-}
-
+if (of_get_option('thickbox','0') == '0'){
+    
 /**
  * Techozoic thickbox image paths
  *
@@ -937,6 +953,8 @@ function get_tech_options() {
  * @access    private
  */
 
+add_action('wp_footer', 'tech_thickbox_image_paths');    
+    
 function tech_thickbox_image_paths() {
 	$thickbox_path = get_option('siteurl') . '/wp-includes/js/thickbox/';
 	echo "<script type=\"text/javascript\">\n";
@@ -953,6 +971,8 @@ function tech_thickbox_image_paths() {
  *
  * @access    private
  */
+
+add_action('wp_print_styles','tech_enque_thickbox');
 
 function tech_enque_thickbox() {
 	wp_enqueue_script('thickbox');
@@ -972,6 +992,8 @@ function tech_enque_thickbox() {
  * @since     1.9.3
  */
 
+add_filter('the_content', 'tech_thickbox', 65 );
+
 function tech_thickbox($content) {
 	global $post;
 	$pattern = array( '/<a([^>]*)href=[\'"]([^"\']+).(gif|jpeg|jpg|png)[\'"]([^>]*>)/i', '/<a class="thickbox" rel="%ID%" href="([^"]+)"([^>]*)class=[\'"]([^"\']+)[\'"]([^>]*>)/i' );
@@ -979,37 +1001,7 @@ function tech_thickbox($content) {
 	$content = preg_replace($pattern, $replacement, $content);
 	return str_replace('%ID%', $post->ID, $content);
 }
-
-if ($tech['thickbox'] =="On"){
-	add_action('wp_footer', 'tech_thickbox_image_paths');
-	add_filter('the_content', 'tech_thickbox', 65 );
-	add_action('wp_print_styles','tech_enque_thickbox');
-} // End if thickbox check
 	
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ){
-        add_action( 'admin_notices', 'techozoic_show_notice' );  // Shows custom theme activation notice with links to option page and changelog
-}
-if ($tech['nav_menu_type'] == "Dropdown" || $tech['nav_menu_type'] == "WP 3 Menu"){	
-	add_action('wp_print_styles','tech_dropdown_js');
-}
-if ($tech['google_font'] == "Enable") {
-	add_action('wp_print_styles','tech_google_font');
-}
-if ($tech['cufon_font'] == "Enable") {
-	add_action('template_redirect', 'tech_cufon_script');  // Calls script to add Cufon font replacement scripts See - http://cufon.shoqolate.com/
-	add_action('wp_head', 'tech_cufon_options');
-}
-if ( is_active_widget(false ,false, 'techozoic_font_size') ) {
-	add_action('template_redirect', 'tech_font_size_script');
-}
-add_filter('get_comments_number', 'tech_comment_count', 0);
-add_filter('the_excerpt', 'tech_excerpt_filter'); // Replaces [...] at end of excerpt with link to single post page.	
-add_action('tech_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
-add_action('admin_menu', 'tech_create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis
-add_action('save_post', 'tech_save_postdata');  // Saves meta box data to postmeta table
-if ( !isset($_GET['preview'])){ //Doesn't run when previewing the theme before activating the theme
-	add_action('wp_head', 'tech_first_run_options'); //Calls tech_init.php which sets up default options in database and creates folder to hold custom images
-	add_action('admin_head', 'tech_first_run_options'); //Same as above but works for the admin side
-}
-add_action('wp_dashboard_setup', 'tech_dashboard_widgets'); //Add Techozoic dashboard widget with info for theme and donate button
+} // End if thickbox check
+
 ?>

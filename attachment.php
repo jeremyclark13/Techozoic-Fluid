@@ -1,9 +1,8 @@
 <?php get_header();
-get_tech_options();
-global $tech;
-if ($tech['single_sidebar'] == "Yes") { tech_show_sidebar("l");} ?>
+if (of_get_option('home_sidebar','1') == "1")  tech_show_sidebar("l");
+?>
 
-<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
+<div id="content" class="<?php if (of_get_option('home_sidebar','1') != "1" || of_get_option('column','3') == '3') { echo "wide"; }else {echo "narrow";}?>column">
 				
 <?php 
 if (have_posts()) {
@@ -138,5 +137,5 @@ if (have_posts()) {
 </div><!--#content-->
 
 <?php 
-if ($tech['single_sidebar'] == "Yes" ) { tech_show_sidebar("r"); }
+if (of_get_option('home_sidebar','1') == "1")  tech_show_sidebar("r");
 get_footer(); ?>

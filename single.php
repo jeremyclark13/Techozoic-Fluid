@@ -1,15 +1,13 @@
 <?php get_header();
-get_tech_options();
-global $tech;
 $date_format = get_option('date_format');
 $tech_disable_sidebar = get_post_meta($post->ID, "Sidebar_value", $single = true);
-$tech_disable_nav = get_post_meta($post->ID, "Nav_value", $single = true);
-if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { tech_show_sidebar("l");} ?>
-<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { echo "narrow"; }else {echo "wide";}?>column">
+if (of_get_option('single_sidebar','1') == "1" && $tech_disable_sidebar != "on") { tech_show_sidebar("l");} ?>
+<div id="content" class="<?php if (of_get_option('single_sidebar','1') == "1" && $tech_disable_sidebar != "on") { echo "narrow"; }else {echo "wide";}?>column">
 <?php
-    if (!empty($tech['sing_ad_code']) && $tech['sing_ad_pos'] == "Above") { ?>
+    $tech_sing_ad_code = of_get_option('sing_ad_code','');
+    if (!empty($tech_sing_ad_code) && of_get_option('sing_ad_pos','above') == "above") { ?>
         <div class="aligncenter">
-            <?php $tech_sing_ad_code = stripslashes ($tech['sing_ad_code']);
+            <?php $tech_sing_ad_code = stripslashes ($tech_sing_ad_code);
             echo do_shortcode($tech_sing_ad_code);?>
         </div>
 <?php }
@@ -57,9 +55,10 @@ if (have_posts()) {
 <?php do_action('tech_after_sing_content');?>
 		</div>
 <?php
-    if (!empty($tech['sing_ad_code']) && $tech['sing_ad_pos'] == "Below") { ?>
+    $tech_sing_ad_code = of_get_option('sing_ad_code','');
+    if (!empty($tech_sing_ad_code) && of_get_option('sing_ad_pos','above') == "below") { ?>
         <div class="aligncenter">
-            <?php $tech_sing_ad_code = stripslashes ($tech['sing_ad_code']);
+            <?php $tech_sing_ad_code = stripslashes ($tech_sing_ad_code);
             echo do_shortcode($tech_sing_ad_code);?>
         </div>
 <?php }
@@ -72,5 +71,5 @@ if (have_posts()) {
 } //End If loop
 ?>	</div>
 <?php 
-if ($tech['single_sidebar'] == "Yes"  && $tech_disable_sidebar != "on") { tech_show_sidebar("r"); }
+if (of_get_option('single_sidebar','1') == "1"  && $tech_disable_sidebar != "on") { tech_show_sidebar("r"); }
 get_footer(); ?>

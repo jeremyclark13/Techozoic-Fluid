@@ -1,6 +1,4 @@
 <?php 
-get_tech_options();
-global $tech;
 $home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>'; 
 
 ?>
@@ -29,7 +27,6 @@ $home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>';
 			</li>
 <?php		}
 		}
-	if ($tech['nav_menu_type'] != "Sidebar") {
 		if(is_page()) {
 			$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
 			if ($children) { ?>
@@ -37,7 +34,6 @@ $home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>';
 					<ul><?php echo $children; ?></ul>
 					</li>
 <?php	 		} 
-			}
 		}
 ?>
 		<li id="rss"><h2 class="widgettitle"><?php _e('Syndicate','techozoic')?></h2>

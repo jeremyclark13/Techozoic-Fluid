@@ -1,6 +1,4 @@
 <?php 
-get_tech_options();
-global $tech;
 ?>
 <div id="footermain">
 <div id="footer">
@@ -22,8 +20,6 @@ global $tech;
 
 </div><!--footer-->
 </div><!--footercont"-->
-</div><!--pager-->
-</div><!--pagel-->
 </div><!--page-->
 <?php	wp_footer(); ?>
 </body>

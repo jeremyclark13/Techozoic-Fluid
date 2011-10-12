@@ -2,7 +2,7 @@
 Theme Name: Techozoic Fluid
 Theme URI: http://clark-technet.com/theme-support
 Description: Advanced, fluid width 2 or 3 column theme with widgetized sidebar, footer, and header areas.  Theme option pages to adjust everything from layout settings, color scheme, typography, ad placement, and custom headers.  SEO optimized titles and meta description and keyword fields.  Builtin social bookmarking, choose from 10 different popular social network and bookmarking sites to include.  Visit the <a href="themes.php?page=techozoic">theme options</a> page to setup Techozoic.  
-Version: 1.9.5
+Version: 2.0
 Author: Jeremy Clark
 Author URI: http://clark-technet.com
 Tags: blue, light, one-column, two-columns, three-columns, flexible-width, custom-colors, custom-header, theme-options ,left-sidebar, right-sidebar, threaded-comments, translation-ready, sticky-post
@@ -31,14 +31,9 @@ body{
 	padding:0;
 	text-align:left;
 	width:95%;
-}
-
-#pagel{
-	background:transparent url(images/bgl.png) repeat-y left top;
-}
-
-#pager{
-	background:transparent url(images/bgr.png) repeat-y right top;
+        box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow:0px 0px 10px rgba(0, 0, 0, 0.5);
+        -webkit-box-shadow:0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 #content{
@@ -101,13 +96,14 @@ Header
  *************************************/
 
 #header{
-	background:url(images/headers/Grunge.jpg) no-repeat bottom center #f7f7f7;
+	background:url(images/headers/Grunge.jpg) no-repeat bottom center transparent;
 	height:200px;
 	margin:10px auto 0;
 	padding:0;
-	width:95%;
+        width: 100%;
 	min-width: 760px;
 	position: relative;
+        z-index: 1;
 }
 
 #header_top{
@@ -211,7 +207,7 @@ h1 a,h1 a:hover,h1 a:visited,.blog_title a,.blog_title a:hover,.blog_title a:vis
 }
 
 .blog_title a,.blog_title a:visited{
-	color:#A0B3C2 !important;
+	color:#A0B3C2;
 	padding:5px;
 }
 
@@ -783,7 +779,6 @@ Nav Menus
  
 #dropdown ul, .menu ul{
 	display:none;
-	height:35px;
 	left:-1px;
 	line-height:1.5em;
 	list-style-image:none;
@@ -798,6 +793,10 @@ Nav Menus
 #dropdown li ul , .menu li ul{ 
 	width:210px;
 	padding-left:0;
+        box-shadow:2px 1px 4px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow:2px 1px 4px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow:2px 1px 4px rgba(0, 0, 0, 0.3);
+         clip:rect(0px, 1000px, 1000px, -10px);
 }
 #dropdown li ul a , .menu li ul a{
 	width:202px; 
@@ -839,48 +838,28 @@ Nav Menus
 	border-bottom:1px dotted;
 }
 
-#nav2{
-	padding:5px 0 0;
+#dropdown li:hover, 
+#navmenu .menu li:hover {
+    background:#efefef;
+    box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
 }
 
-#nav2 a:visited{
-	font-size:1.3em;
-	font-weight:bolder;
-	text-decoration:none;
+#dropdown li ul li:hover, 
+#navmenu .menu li ul li:hover {
+    background: #efefef;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;  
 }
-
-#nav2 li.current_page_item,
-#nav2 li.current_page_parent,
-ul#nav2 li.current_page_ancestor{
-	background-color:#A0B3C2;
-}
-
 #navmenu{
 	background:url(images/navbarbg.png) repeat-x;
 	height:60px;
 	margin:-30px 0 -20px;
 	padding:0 10px;
-}
-
-#subnav a,#subnav a:visited{
-	color:#A0B3C2;
-	font-weight:700;
-	text-decoration:none;
-}
-
-#subnav a:hover,
-#subnav a:active,
-#subnav li.current_page_item a,
-#subnav li.current_page_item a:visited{
-	text-decoration:underline;
-}
-
-#subnav li{
-	border-right:1px solid #ddd;
-	float:left;
-	font-size:1.1em;
-	list-style:none;
-	padding:0 5px;
+        z-index: 10;
+        position: relative;
 }
 
 ul#admin{
@@ -890,42 +869,24 @@ ul#admin{
 	margin-top:-10px;
 }
 
-ul#nav{
-	height:35px;
-	list-style-image:none;
-	list-style-type:none;
-	margin:auto;
-	padding:5px 0 0;
-	width:100%;
-}
 
-ul#nav a, ul#admin a, #nav2 a{
+ul#admin a{
 	color:#A0B3C2;
-	font-size:1.3em;
 	font-weight:bolder;
 	text-decoration:none;
 }
 
-ul#nav li, #nav2 li{
-        border-top-left-radius:5px;
-	border-top-right-radius:5px;
-	-moz-border-radius-topleft:5px;
-	-moz-border-radius-topright:5px;
-	-webkit-border-top-left-radius:5px;
-	-webkit-border-top-right-radius:5px;
-}	
-
-ul#nav li, ul#admin li, #nav2 li{
+ul#admin li{
 	background-color:#E3E3E3;
 	display:inline;
 	float:left;
 	font-family:"Lucida Sans Unicode" , "Lucida Grande", Sans-Serif;
-	height:1.5em;
 	margin-right:2px;
 	overflow:hidden;
 	padding:3px;
 	text-align:center;
 }
+
 ul#admin li{
         border-bottom-left-radius:5px;
 	border-bottom-right-radius:5px;
@@ -934,42 +895,12 @@ ul#admin li{
 	-webkit-border-bottom-left-radius:5px;
 	-webkit-border-bottom-right-radius:5px;
 }
-	
-ul#nav li.current_page_item{
-	background-color:#A0B3C2;
-	border-bottom:1px dotted;
-}
-
-ul#nav li.current_page_item a,
-#nav2 li.current_page_item a,
-#nav2 li.current_page_parent a,
-#nav2 li.current_page_ancestor a{
-	color:#f7f7f7;
-}
-
-ul#nav li.current_page_item a:hover,
-#nav2 li.current_page_item a:hover,
-ul#nav2 li.current_page_item a:hover,
-ul#nav2 li.current_page_parent a:hover{
-	color:#A0B3C2;
-}
-
-ul#nav li:hover, #nav2 li:hover, #nav2 li:active{
-        box-shadow:2px -1px 2px rgba(0, 0, 0, 0.3);
-	-moz-box-shadow:2px -1px 2px rgba(0, 0, 0, 0.3);
-	-webkit-box-shadow:2px -1px 2px rgba(0, 0, 0, 0.3);
-	background:#efefef;
-}
 
 ul#admin li:hover{
         box-shadow:2px 1px 2px rgba(0, 0, 0, 0.3);
 	-moz-box-shadow:2px 1px 2px rgba(0, 0, 0, 0.3);
 	-webkit-box-shadow:2px 1px 2px rgba(0, 0, 0, 0.3);
 	background:#efefef;
-}
-
-ul#nav2{
-	height:25px;
 }
 
 /*************************************
@@ -1010,6 +941,8 @@ Forms
 	font-size:1.3em;
 	font-weight:bolder;
 	margin:-80px 10px 0 0;
+        position: relative;
+        z-index: 10;
 }
 
 #searchform{

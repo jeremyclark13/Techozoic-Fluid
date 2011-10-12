@@ -1,10 +1,9 @@
 <?php get_header(); 	
-get_tech_options();
-global $tech;
 $date_format = get_option('date_format');	
-	if ($tech['home_sidebar'] == "Yes")  tech_show_sidebar("l");?>
+if (of_get_option('home_sidebar','1') == "1")  tech_show_sidebar("l");
+?>
 
-	<div id="content" class="<?php if ($tech['home_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
+	<div id="content" class="<?php if (of_get_option('home_sidebar','1') == "1") { echo "narrow"; }else {echo "wide";}?>column">
 
 		<?php if (have_posts()) : ?>
 
@@ -41,7 +40,7 @@ $date_format = get_option('date_format');
 				<small><?php the_time($date_format) ?></small>
 				
 				<div class="entry">
-<?php 			if ( ( is_category() && tech_excerpt('Category Archive') ) || ( is_year() && tech_excerpt('Yearly Archive') ) || ( is_month() && tech_excerpt('Monthly Archive') ) ){
+<?php 			if ( ( is_category() && tech_excerpt('archive') ) || ( is_year() && tech_excerpt('year') ) || ( is_month() && tech_excerpt('month') ) ){
 					the_excerpt();
 				} else {
 					the_content(__('Read the remainder of this entry &raquo;'  , 'techozoic')); 
@@ -52,7 +51,7 @@ $date_format = get_option('date_format');
 				<?php 
 				}  ?>
 				</div>
-<?php			if ( ( is_category() && tech_icons('Category Archive') ) || ( is_year() && tech_icons('Yearly Archive') ) || ( is_month() && tech_icons('Monthly Archive') ) ){?>
+<?php			if ( ( is_category() && tech_icons('archive') ) || ( is_year() && tech_icons('year') ) || ( is_month() && tech_icons('month') ) ){?>
 				<div class="top">
 				<?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
 				</div>
@@ -73,5 +72,5 @@ $date_format = get_option('date_format');
 	<?php endif; ?>
 		
 	</div>
-<?php 	if ($tech['home_sidebar'] == "Yes")  tech_show_sidebar("r");
+<?php 	if (of_get_option('home_sidebar','1') == "1")  tech_show_sidebar("r");
 	get_footer(); ?>
