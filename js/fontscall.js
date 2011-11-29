@@ -1,1 +1,0 @@
-Cufon.now(); 

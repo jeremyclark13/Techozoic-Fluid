@@ -1448,7 +1448,7 @@ blockquote{
 }
 blockquote:before{
         color: #ccc;
-        content: 'â€œ';
+        content: '“';
         font-size: 5em;
         font-weight: bold;
         line-height: 0px;
