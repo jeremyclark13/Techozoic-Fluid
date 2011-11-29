@@ -2,8 +2,6 @@
 /******************************************
 This File Contains callback functions for comment loops
 ******************************************/
-	global $tech;
-	$tech = get_option('techozoic_options');
 	 
 	 // credit to yoast.com
 function delete_comment_link($id,$post_name) {

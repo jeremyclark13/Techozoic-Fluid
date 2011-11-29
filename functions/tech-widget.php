@@ -2,49 +2,73 @@
 /******************************************
 Widget registration and custom widgets defined here
 ******************************************/
-	global $tech;
-	$tech = get_option('techozoic_options');
-	$theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
-	$version = $theme_data['Version'];
-	
-	if(function_exists('register_sidebar')){
-	register_sidebar(array(
-		'name'=>__('Right Sidebar','techozoic'),
-		'id'=> 'right_sidebar'
-		));
-	register_sidebar(array(
-		'name'=>__('Left Sidebar','techozoic'),
-		'id'=> 'left_sidebar'
-		));
-	register_sidebar(array(
-		'name'=>__('Footer','techozoic'),
-		'description' => __('Limit 3 widgets can be assigned to footer area','techozoic'),
-		'id'=> 'tech_footer',
-		'before_widget' => '<div class="footercont"><ul><li class="widget %2$s">',
-		'after_widget' => '</li></ul></div>',
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => '</h2>'
-	));
-	register_sidebar(array(
-		'name'=>__('Right Header','techozoic'),
-		'description' => __('Area to the right side of the header','techozoic'),
-		'id'=> 'right_header',
-		'before_widget' => '<div class="hwidget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => '</h2>'
-	));
-	register_sidebar(array(
-		'name'=>__('Left Header','techozoic'),
-		'description' => __('Area to the left side of the header','techozoic'),
-		'id'=> 'left_header',
-		'before_widget' => '<div class="hwidget %2$s">',
-		'after_widget' => '</div>',
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title' => '</h2>'
-	));
-	
 
+$theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
+$version = $theme_data['Version'];
+
+if(function_exists('register_sidebar')){
+register_sidebar(array(
+        'name'=>__('Right Sidebar','techozoic'),
+        'id'=> 'right_sidebar'
+        ));
+register_sidebar(array(
+        'name'=>__('Left Sidebar','techozoic'),
+        'id'=> 'left_sidebar'
+        ));
+register_sidebar(array(
+        'name'=>__('Footer','techozoic'),
+        'description' => __('Limit 3 widgets can be assigned to footer area','techozoic'),
+        'id'=> 'tech_footer',
+        'before_widget' => '<div class="footercont"><ul><li class="widget %2$s">',
+        'after_widget' => '</li></ul></div>',
+        'before_title' => '<h2 class="widgettitle">',
+        'after_title' => '</h2>'
+));
+register_sidebar(array(
+        'name'=>__('Right Header','techozoic'),
+        'description' => __('Area to the right side of the header','techozoic'),
+        'id'=> 'right_header',
+        'before_widget' => '<div class="hwidget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widgettitle">',
+        'after_title' => '</h2>'
+));
+register_sidebar(array(
+        'name'=>__('Left Header','techozoic'),
+        'description' => __('Area to the left side of the header','techozoic'),
+        'id'=> 'left_header',
+        'before_widget' => '<div class="hwidget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widgettitle">',
+        'after_title' => '</h2>'
+));
+	
+$pages = get_pages();
+$page_option = of_get_option('page_sidebar','');
+foreach ($pages as $page){
+    if (empty($page_option)){
+        break;
+    }elseif($page_option[$page->ID] == '1'){
+        register_sidebar(array(
+                'name'=>"$page->post_title Left Sidebar",
+                'description' => __("Sidebar displayed only on $page->post_title.  Page ID($page->ID)",'techozoic'),
+                'id'=> "page_sidebar_l_$page->ID",
+                'before_widget' => '<div class="hwidget %2$s">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2 class="widgettitle">',
+                'after_title' => '</h2>'
+        ));
+        register_sidebar(array(
+                'name'=>"$page->post_title Right Sidebar",
+                'description' => __("Sidebar displayed only on $page->post_title.  Page ID($page->ID)",'techozoic'),
+                'id'=> "page_sidebar_r_$page->ID",
+                'before_widget' => '<div class="hwidget %2$s">',
+                'after_widget' => '</div>',
+                'before_title' => '<h2 class="widgettitle">',
+                'after_title' => '</h2>'
+        ));
+    }
+}
 	
 	class Techozoic_Font_Size_Widget extends WP_Widget {
 
@@ -54,7 +78,6 @@ Widget registration and custom widgets defined here
 		}
 
 		function widget( $args, $instance ) {
-			global $tech;
 			extract($args);
 			$title = apply_filters('widget_title', empty( $instance['title'] ) ? __('Resize Text'  , 'techozoic') : $instance['title']);
 			echo $before_widget;
@@ -88,7 +111,6 @@ Widget registration and custom widgets defined here
 		}
 
 		function widget( $args, $instance ) {
-			global $tech;
 			extract($args);
 			$title = apply_filters('widget_title', empty( $instance['title'] ) ? __('Sub Pages'  , 'techozoic') : $instance['title']);
 			echo $before_widget;
@@ -136,7 +158,6 @@ Widget registration and custom widgets defined here
 		}
 
 		function widget( $args, $instance ) {
-			global $tech;
 			extract($args);
 			$title = apply_filters('widget_title', empty( $instance['title'] ) ? __('Navigation'  , 'techozoic') : $instance['title']);
 			$c = $instance['cats'] ? '1' : '0';
@@ -149,32 +170,7 @@ Widget registration and custom widgets defined here
 			echo $before_title . $title . $after_title;
 			if (has_nav_menu( 'sidebar' ) ) {		
 				wp_nav_menu( array('container' =>'','theme_location'=>'sidebar','menu_class' => 'sidenav')); 
-			} else {
-?>
-			<ul class="sidenav">
-<?php			if ($s) { 
-				echo '<li class="navhead"><h3>'. __('Pages' ,'techozoic').'</h3></li>';
- 			} 
-			if ($p) { 
-				$home_link = get_option('show_on_front');
-				if ($home_link == "posts") {?>
-					<li class="<?php if (is_home()) echo'current_page_item' ?>"><a href="<?php echo home_url(); ?>" title="<?php _e('Home' ,'techozoic')?>"><?php _e('Home' ,'techozoic')?></a></li>
-<?php					} else {};
-					if (!$tech['nav_exclude_list']){
-						wp_list_pages('title_li=');
-					} else {
-						$nav_exclude = $tech['nav_exclude_list'];
-						wp_list_pages("exclude=".$nav_exclude."&title_li=");
-					}
-				}
-			if ($s) { 
-?>				<li class="navhead"><h3><?php _e('Categories' ,'techozoic') ?></h3></li>
-<?php				} 
-			if ($c) { 
-				wp_list_categories('title_li='); 
-				}
-?>			</ul>
-<?php	 } 		
+			} 		
 			echo $after_widget;
 		}
 
@@ -382,9 +378,78 @@ Widget registration and custom widgets defined here
 <?php
 		}
 	} //End Class Techozoic_RSS_Widget
+        
+	class Techozoic_Status_Widget extends WP_Widget {
+
+		function Techozoic_Status_Widget() {
+			$widget_ops = array('classname' => 'techozoic_status', 'description' => __( 'Techozoic Status Widget - Dispaly Post Format Status updates in sidebar' , 'techozoic') );
+			$this->WP_Widget('techozoic_status', __('Techozoic Status' , 'techozoic'), $widget_ops);
+		}
+
+		function widget( $args, $instance ) {
+			extract($args);
+			$title = apply_filters('widget_title', empty( $instance['title'] ) ? __('Status Updates'  , 'techozoic') : $instance['title']);
+                        if ( !$number = (int) $instance['number'] )
+				$number = 3;
+                        
+			echo $before_widget;
+			if ( $title)
+			echo $before_title . $title . $after_title;
+                        $args = array(
+                            'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'post_format',
+                                    'field' => 'slug',
+                                    'terms' => array('post-format-status')
+                                )
+                            ),
+                            'posts_per_page' => $number
+                        );
+                        $wp_query = new WP_Query( $args);
+                        if ($wp_query->have_posts()) {
+                            while ($wp_query->have_posts()) { 
+                                $wp_query ->the_post();
+                                echo '<div class="status">';
+                                echo '<div class="group">';
+                                echo '<div class="avatar"><a href="' . add_query_arg('post_format','status',get_author_posts_url( get_the_author_meta( 'ID' ) ) ) .'" title="' . __('View all status updates by this author','techozoic') . '">' . get_avatar( get_the_author_meta( 'ID' ), 32 ) . '</a></div>';
+                                echo '<div class="' . join( ' ', get_post_class() ) . '"' . '>';
+                                echo '<a href="' . get_permalink() . '">' . get_the_content() . '</a>';
+                                echo '</div>';
+                                echo '</div>';
+                                echo '<div class="timestamp">' . get_the_date() . ' ' . get_the_time() . '</div>';
+                                echo '<div class="clear"></div></div>';
+                            }
+                        }
+                        $wp_query = null; 
+                        wp_reset_postdata();
+			echo $after_widget;
+		}
+
+		function update( $new_instance, $old_instance ) {
+			$instance = $old_instance;
+			$new_instance = wp_parse_args( (array) $new_instance, array( 'title' => '', 'number'=> 3 ) );
+			$instance['title'] = strip_tags($new_instance['title']);
+                        $instance['number'] = (int) $new_instance['number'];
+			return $instance;
+		}
+
+		function form( $instance ) {
+			$instance = wp_parse_args( (array) $instance, array('title' => '',) );
+			$title = esc_attr( $instance['title'] );
+                        $number = isset($instance['number']) ? absint($instance['number']) : 3;
+                        
+?>
+			<p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:','techozoic'); ?></label> <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" /></p>
+                        <p><label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of statuses to show' ,'techozoic') ?></label>
+			<input id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" type="text" value="<?php echo $number; ?>" size="3" /></p>
+
+<?php
+		}
+	} //End Class Techozoic_Status_Widget        
 	
 		//Register Widgets for Sidebars
 		register_widget('Techozoic_Nav_Widget');
+                register_widget('Techozoic_Status_Widget');
 		register_widget('Techozoic_Page_Widget');
 		register_widget('Techozoic_Font_Size_Widget');
 		register_widget('Techozoic_About_Widget');

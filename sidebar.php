@@ -1,6 +1,4 @@
 <?php 
-get_tech_options();
-global $tech;
 $home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>'; 
 
 ?>
@@ -19,8 +17,10 @@ $home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>';
 		<li><p><?php printf(__('You have searched the %1$s archives for %2$s.','techozoic'),$home_url,'<strong>\'' .esc_html($s).'\'</strong>')?></p></li>
 <?php 	} elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 		<li><p><?php printf(__('You are currently browsing the %1$s archives.','techozoic'),$home_url); ?></p></li>
-<?php 	} 
-	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Right Sidebar','techozoic')) ) { 
+<?php 	}
+        if(is_page() && is_active_sidebar("page_sidebar_r_$post->ID")){
+            dynamic_sidebar("page_sidebar_r_$post->ID");
+        }elseif ( !dynamic_sidebar(__('Right Sidebar','techozoic')) ) { 
 		global $user_ID; 
 		if( $user_ID ) {
 			if( current_user_can('edit_themes') || current_user_can('edit_theme_options') ) { ?>
@@ -29,7 +29,6 @@ $home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>';
 			</li>
 <?php		}
 		}
-	if ($tech['nav_menu_type'] != "Sidebar") {
 		if(is_page()) {
 			$children = wp_list_pages('title_li=&child_of='.$post->ID.'&echo=0');
 			if ($children) { ?>
@@ -37,7 +36,6 @@ $home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>';
 					<ul><?php echo $children; ?></ul>
 					</li>
 <?php	 		} 
-			}
 		}
 ?>
 		<li id="rss"><h2 class="widgettitle"><?php _e('Syndicate','techozoic')?></h2>

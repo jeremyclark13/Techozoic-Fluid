@@ -30,6 +30,15 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+= Version 2.0 = 
+* Moved to Options Framework Option Panel.
+* Using Custom Header functions.
+* Removed Cufon support.
+* Removed support for navigation menus other than built*in menus.
+* Added support for status, quotes, and aside post formats.
+* Various CSS3 styling changes, new calendar style, comment form styling, social media icons.
+* Fixed widget bug not saving options.
+* Added status update widget.
 
 = Version 1.9.4 = 
 * Removed unneeded backwards compatibility code.
@@ -43,7 +52,7 @@ Installation can be done automatically through the Install Themes feature or man
 * WordPress 3.0+ now required as per Theme Review Guidelines
 * Removed deprecated comment function.
 * Fixed problem with header folder upload permissions
-* Added option to change image upload location, images can now be stored in wp-content directory to prevent removal with theme updates.
+* Added option to change image upload location, images can now be stored in wp*content directory to prevent removal with theme updates.
 * Added border to top of header, and spacing to better frame theme.
 * Added option to use Google Fonts.
 * Added post formating options including where excerpt should be used, and where to display social media icons.

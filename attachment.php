@@ -1,17 +1,17 @@
 <?php get_header();
-get_tech_options();
-global $tech;
-if ($tech['single_sidebar'] == "Yes") { tech_show_sidebar("l");} ?>
-
-<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes") { echo "narrow"; }else {echo "wide";}?>column">
-				
+$tech_sidebar = get_post_meta($post->ID, "Sidebar_value", $single = true);
+if (empty($tech_sidebar)){
+    $tech_sidebar = "unset";
+}
+if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || $tech_sidebar == "on") { tech_show_sidebar("l");} ?>
+<div id="content" class="<?php if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || $tech_sidebar == "on") { echo "narrow"; }else {echo "wide";}?>column">
 <?php 
 if (have_posts()) {
 	while (have_posts()) {
 		the_post(); ?>
 	
 		<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-			<h2><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'techozoic' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <a href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h2>
+			<h1 class="post_title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( __( 'Return to %s', 'techozoic' ), get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <a href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h1>
 			<div class="entry text">
 	
 <?php 
@@ -125,8 +125,6 @@ if (have_posts()) {
 		</div><!--#post-???-->
 		
 <?php 
-		comments_template(); 
-	
 		} //Endwhile
 	} else {
 ?>
@@ -138,5 +136,5 @@ if (have_posts()) {
 </div><!--#content-->
 
 <?php 
-if ($tech['single_sidebar'] == "Yes" ) { tech_show_sidebar("r"); }
+if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || $tech_sidebar == "on") { tech_show_sidebar("r"); }
 get_footer(); ?>

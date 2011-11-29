@@ -1,6 +1,9 @@
 <div id="l_sidebar" class="sidebar"> 
 <ul>
-<?php 	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Left Sidebar','techozoic')) ) {
+<?php
+        if(is_page() && is_active_sidebar("page_sidebar_l_$post->ID")){
+            dynamic_sidebar("page_sidebar_l_$post->ID");
+        }elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Left Sidebar','techozoic')) ) {
 		global $user_ID; 
 		if( $user_ID ) {
 			if( current_user_can('edit_themes') || current_user_can('edit_theme_options') ) { ?>

@@ -3,14 +3,16 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php get_bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <?php 
-get_tech_options();
-global $tech, $cpage;
+global $cpage;
 if ( is_singular() ){
-	$tech_disable_nav = get_post_meta($post->ID, "Nav_value", $single = true);
+	$tech_nav = get_post_meta($post->ID, "Nav_value", $single = true);
+        if(empty($tech_nav)){
+            $tech_nav = "on";
+        }
 } else {
-	$tech_disable_nav = "unset";
+    $tech_nav = "on";
 }
-if($tech['seo'] == 'On') { 
+if(of_get_option('seo','1') == '1') { 
 	if(is_single()) { 
 		if ( have_posts() ) { 
 			while ( have_posts() ) { 
@@ -49,13 +51,8 @@ else { ?>
 <?php 
 } ?>
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
-<?php 
-	if ($tech['static_css'] == "Static" || (isset($_GET['stylesheet']) && $_GET['stylesheet'] = 'techozoic-fluid') ) { ?>
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri(); ?>/style.css" />
-<?php
-	} else { ?>
-	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo home_url(); ?>/?techozoic_css=css"/>
-<?php } ?>
+<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_stylesheet_uri(); ?>" />
+
 <!--[if IE 6]>
 	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri() ?>/ie6.css" />
 <![endif]-->
@@ -66,6 +63,10 @@ else { ?>
 	.top img:hover{ filter:alpha(opacity=100);}
 	ul.comment-preview li{ filter:alpha(opacity=70);}
 	ul.comment-preview li:hover{ filter:alpha(opacity=100);}
+        #commentform input[type="text"],#commentform .comment-form-author .required, 
+        #commentform .comment-form-email .required{padding-left: 65px !important;}
+        .top:hover{bottom: -30px;}
+        .top a {position: relative;top: 2px;}
 	</style>
 <![endif]-->
 <!--[if IE 7]>
@@ -77,17 +78,17 @@ else { ?>
 	</style>
 <![endif]-->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<?php if ($tech['favicon_image']) {?>
-	<link rel="icon" href="<?php echo $tech['favicon_image'];?>" type="image/x-icon" />
-	<link rel="shortcut icon" href="<?php echo $tech['favicon_image'];?>" type="image/x-icon" />
+<?php if ( of_get_option( 'favicon_image' ) ) {?>
+	<link rel="icon" href="<?php echo of_get_option( 'favicon_image' );?>" type="image/x-icon" />
+	<link rel="shortcut icon" href="<?php echo of_get_option( 'favicon_image' );?>" type="image/x-icon" />
 <?php } 
 if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
 wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <a name="top"></a>
+<div id="page">
 <div id="header">
-<div id="header_top">
 <?php if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'left_header' ) ){
 	echo '<div class="hleft">'. "\n";
 	dynamic_sidebar( 'left_header' );
@@ -99,6 +100,11 @@ if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'right_header' ) )
 	echo '</div>' . "\n";
 }
 ?>
+<?php if(of_get_option('header_logo','') != ''){ ?>
+    <div id="header-logo">
+        <a class="header-logo-link" href="<?php echo home_url() ?>"><img src="<?php echo of_get_option('header_logo'); ?>" /></a>
+    </div>
+<?php }?>    
 <div id="headerimgwrap">
 <div id="headerimg">
 <?php if(is_single() || is_page()) { 
@@ -106,8 +112,16 @@ if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'right_header' ) )
 } else { 
 	echo "<h1 class=\"blog_title\">";
 } 
-if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { ?>
-	<a><?php wp_title('',true,''); ?></a><?php 
+if ( is_single() & of_get_option('blog_title_text','single') == "single") { ?>
+	<a><?php if (get_the_title() != ""){ 
+                the_title(); 
+            } else {
+                the_date();
+                echo ' ';
+                the_time();
+            }
+?>
+</a><?php 
 } else { ?>
 	<a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
 <?php 
@@ -117,7 +131,7 @@ if(is_single() || is_page()) {
 } else { 
 	echo "</h1>";
 } 
-if ( is_single() & $tech['blog_title_text'] == "Single Post Title") { 
+if ( is_single() & of_get_option('blog_title_text','single') == "single") { 
 	$description = "<a href=\"" . home_url() . "\">" . get_bloginfo('name') . "</a>"; }
 else {	
 	$description = get_bloginfo('description');
@@ -129,25 +143,24 @@ if (!empty ($description)) { ?>
 </div><!--end headerimg-->
 </div><!--end headerimgwrap-->
 
-<div id="headerl">
-<div id="headerr">
-</div><!--end headerr-->
 
-<?php 	if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
+</div><!--end header-->
+
+<?php if (($tech_nav == "on") && (of_get_option('nav_menu','1') == '1')) {
 ?>
 <div id="navmenu">
 <?php
-	get_template_part('nav',tech_nav_select());
-}
-        if ($tech['nav_menu_type'] != "Disable" && $tech_disable_nav != "checked") {
-	if ($tech['dashboard_link'] == "On") {
+	get_template_part('nav','wp3');
+        
+        if ($tech_nav == "on") {
+	if (of_get_option('dashboard_link','1') == "1") {
 		if (is_user_logged_in()) { ?>
 			<ul id="admin"><li><a href="<?php echo site_url(); ?>/wp-admin" title="<?php _e('Dashboard' ,'techozoic')?>"><?php _e('Dashboard' ,'techozoic')?></a></li>
 			<li><a href="<?php echo wp_logout_url(); ?>" title="<?php _e('Log Out' ,'techozoic')?>"><?php _e('Log Out' ,'techozoic')?></a></li></ul>
 <?php 
 		} else { ?>
 			<ul id="admin"><li>
-<?php 	if ($tech['thickbox'] =="On") { 
+<?php 	if (of_get_option('thickbox','0') == '1') { 
 ?>
 			<a href="#TB_inline?height=120&amp;width=120&amp;inlineId=loginthick" class="thickbox" title="Login"><?php _e('Login' ,'techozoic')?></a>
 <?php 	} else { 
@@ -171,18 +184,12 @@ if (!empty ($description)) { ?>
 ?>
 </div><!--end navmenu-->
 <?php }
-if ($tech['breadcrumbs'] == "On"){
+}
+if (of_get_option('breadcrumbs','0') == '1'){
 	tech_breadcrumbs();
 }?>
-</div><!--end headerl-->
-</div><!--end header_top-->
-</div><!--end header-->
 
-
-<div id="page">
-<div id="pagel">
-<div id="pager">
-<?php if ($tech['search_box'] == "Yes" && !is_active_sidebar( 'right_header' )) { ?>
+<?php if (of_get_option('search_box','1') == '1' && !is_active_sidebar( 'right_header' )) { ?>
 	<div id="search">
 	<?php get_search_form(); ?>
 	</div>

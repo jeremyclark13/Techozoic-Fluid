@@ -2,16 +2,18 @@
 <head><title> Techozoic Change Log</title></head>
 <body>
 <p>
-<h2>Donor Thank You</h2>
-<p>Thank you to all of those that have donated towards my further development of Techozoic</p>
-<ul><li><a href="http://nicolaus.com" rel="nofollow" target="_blank">Martin Nicolaus</a></li>
-<li>Dayona Dodd</li>
-<li><a href="http://saconsultants.org/blog1/" rel="nofollow" target="_blank">Don Wilmer</a></li>
-<li>Debra Rosenberg – <a href="http://divaentertains.com/blog/" rel="nofollow" target="_blank">DivaEntertains</a></li>
-<li><a href="http://www.GetaWebSiteShell.com" rel="nofollow" target="_blank">Heather</a></li>
-</ul>
 <br />
 <h2>Change Log</h2>
+<h3>Version 2.0</h3><br />
+- Moved to Options Framework Option Panel.<br />
+- Using Custom Header functions.<br />
+- Removed Cufon support.<br />
+- Removed support for navigation menus other than built-in menus.<br />
+- Added support for status, quotes, and aside post formats.<br />
+- Various CSS3 styling changes, new calendar style, comment form styling, social media icons.<br />
+- Fixed widget bug not saving options.<br />
+- Added status update widget.<br />
+
 <h3>Version 1.9.4</h3><br />
 - Removed unneeded backwards compatibility code.<br />
 - Fixed error with deleted headers returning when saving options.<br />

@@ -1,8 +1,5 @@
 <?php 
-get_tech_options();
-global $tech;
 ?>
-<div id="footermain">
 <div id="footer">
 <div id="footerdivs">
 <?php if ( !function_exists('dynamic_sidebar')
@@ -21,9 +18,6 @@ global $tech;
 	?>
 
 </div><!--footer-->
-</div><!--footercont"-->
-</div><!--pager-->
-</div><!--pagel-->
 </div><!--page-->
 <?php	wp_footer(); ?>
 </body>

@@ -1,15 +1,16 @@
 <?php get_header();
-get_tech_options();
-global $tech;
 $date_format = get_option('date_format');
-$tech_disable_sidebar = get_post_meta($post->ID, "Sidebar_value", $single = true);
-$tech_disable_nav = get_post_meta($post->ID, "Nav_value", $single = true);
-if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { tech_show_sidebar("l");} ?>
-<div id="content" class="<?php if ($tech['single_sidebar'] == "Yes" && $tech_disable_sidebar != "on") { echo "narrow"; }else {echo "wide";}?>column">
+$tech_sidebar = get_post_meta($post->ID, "Sidebar_value", $single = true);
+if (empty($tech_sidebar)){
+    $tech_sidebar = "unset";
+}
+if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || $tech_sidebar == "on") { tech_show_sidebar("l");} ?>
+<div id="content" class="<?php if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || $tech_sidebar == "on") { echo "narrow"; }else {echo "wide";}?>column">
 <?php
-    if (!empty($tech['sing_ad_code']) && $tech['sing_ad_pos'] == "Above") { ?>
+    $tech_sing_ad_code = of_get_option('sing_ad_code','');
+    if (!empty($tech_sing_ad_code) && of_get_option('sing_ad_pos','above') == "above") { ?>
         <div class="aligncenter">
-            <?php $tech_sing_ad_code = stripslashes ($tech['sing_ad_code']);
+            <?php $tech_sing_ad_code = stripslashes ($tech_sing_ad_code);
             echo do_shortcode($tech_sing_ad_code);?>
         </div>
 <?php }
@@ -22,10 +23,17 @@ if (have_posts()) {
 		</div>
 		<div style="clear:both"></div>
 		<div class="post" id="post-<?php the_ID(); ?>">
-		<h1 class="post_title"><a href="<?php echo get_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php the_title(); ?></a></h1>
-		<small><?php printf(__('By %s','techozoic'), get_the_author()); ?>.  <?php printf(__('Filed in %s','techozoic'),get_the_category_list(', ')) ?>&nbsp; | &nbsp;<?php edit_post_link(__('Edit','techozoic'), '', ''); ?>&nbsp;<br /><?php the_tags(); ?></small>
+		<h1 class="post_title">
+                    <?php if (get_the_title() != ""){ ?>
+                        <?php the_title(); ?>
+                    <?php } else {
+                        echo get_the_date();
+                        echo ' ';
+                        the_time();
+                    }?>
+                </h1>
 		<div class="toppost">
-		<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/home.png" border="0" alt="Home" title="<?php printf(__('Go back to %s','techozoic'), get_bloginfo('name')); ?>" /></a>&nbsp;<?php if (tech_icons('Single Post')){ tech_social_icons($home=false); } ?>
+		<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/home.png" border="0" alt="Home" title="<?php printf(__('Go back to %s','techozoic'), get_bloginfo('name')); ?>" /></a>&nbsp;<?php if (tech_icons('single')){ tech_social_icons($home=false); } ?>
 		</div>
 <?php do_action('tech_before_sing_content');?>	
 		<div class="singlepost entry">
@@ -35,6 +43,7 @@ if (have_posts()) {
 ?>
 		<p class="postmetadata alt">
 		<small>
+                <?php printf(__('Written by %s','techozoic'), get_the_author()); ?>.  <?php the_tags(); ?>
 		<?php printf(__('This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed.','techozoic'), get_the_time($date_format), get_the_time(), get_the_category_list(', '), "<a href=\"".get_post_comments_feed_link()."\">".__('RSS 2.0','techozoic')."</a>"); ?>				
 <?php 		if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
 			// Both Comments and Pings are open ?>
@@ -57,9 +66,10 @@ if (have_posts()) {
 <?php do_action('tech_after_sing_content');?>
 		</div>
 <?php
-    if (!empty($tech['sing_ad_code']) && $tech['sing_ad_pos'] == "Below") { ?>
+    $tech_sing_ad_code = of_get_option('sing_ad_code','');
+    if (!empty($tech_sing_ad_code) && of_get_option('sing_ad_pos','above') == "below") { ?>
         <div class="aligncenter">
-            <?php $tech_sing_ad_code = stripslashes ($tech['sing_ad_code']);
+            <?php $tech_sing_ad_code = stripslashes ($tech_sing_ad_code);
             echo do_shortcode($tech_sing_ad_code);?>
         </div>
 <?php }
@@ -72,5 +82,5 @@ if (have_posts()) {
 } //End If loop
 ?>	</div>
 <?php 
-if ($tech['single_sidebar'] == "Yes"  && $tech_disable_sidebar != "on") { tech_show_sidebar("r"); }
+if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || $tech_sidebar == "on") { tech_show_sidebar("r"); }
 get_footer(); ?>
