@@ -100,12 +100,13 @@ if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'right_header' ) )
 	echo '</div>' . "\n";
 }
 ?>
-<?php if(of_get_option('header_logo','') != ''){ ?>
+  
+<div id="headerimgwrap">
+    <?php if(of_get_option('header_logo','') != ''){ ?>
     <div id="header-logo">
         <a class="header-logo-link" href="<?php echo home_url() ?>"><img src="<?php echo of_get_option('header_logo'); ?>" /></a>
     </div>
-<?php }?>    
-<div id="headerimgwrap">
+<?php }?>  
 <div id="headerimg">
 <?php if(is_single() || is_page()) { 
 	echo "<span class=\"blog_title\">";

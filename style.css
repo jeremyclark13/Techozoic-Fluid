@@ -128,7 +128,6 @@ Header
 
 #headerimgwrap{
 	position:relative;
-	top:20%;
 }
 #headerl{
 	background:url(images/bgl.png) repeat-y scroll left top transparent;
@@ -368,7 +367,10 @@ ul.comment-preview li:hover{
 	margin-top:10px;
 }
 
-.home .narrowcolumn .entry, .home .widecolumn .entry, .archive .entry{
+.home .narrowcolumn .entry, 
+.home .widecolumn .entry, .archive .entry, 
+.blog .narrowcolumn .entry, 
+.blog .widecolumn .entry{
         box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
 	-webkit-box-shadow:2px 2px 6px rgba(0,0,0,0.4);
@@ -749,6 +751,7 @@ Comments
         display:block;
         z-index: 1;
         text-indent: 0px;
+        outline: none;
         -webkit-transition:text-indent .3s ease-in;  
         -moz-transition:text-indent .1s ease-in;  
         -o-transition:text-indent .1s ease-in;  
@@ -756,8 +759,8 @@ Comments
 }
 
 #commentform input[type="text"]{
-        height: 30px;
-    	width:50%;
+        height: 45px;
+    	width:70%;
 }
 
 #commentform input[type="text"],
@@ -770,8 +773,8 @@ Comments
         -moz-box-shadow:inset 0px 1px 3px rgba(0, 0, 0, 0.5);
         -webkit-box-shadow:inset 0px 1px 3px rgba(0, 0, 0, 0.5);
         border: 4px solid #ccc;
-        padding: 5px;
 	font-size:12px;
+        padding: 0 5px;
         position: relative;
         text-indent: 65px;
         -webkit-transition:text-indent .3s ease-in;  
@@ -783,7 +786,7 @@ Comments
 #commentform .comment-form-author .required, 
 #commentform .comment-form-email .required{
         position:absolute;
-        left: 49%;
+        left: 68%;
         z-index: 1;
         top: 14px;
         font-size: 22px;
@@ -815,6 +818,7 @@ Comments
 }
 
 #commentform textarea{
+        padding: 5px;
 	width:80%;
 }
 
@@ -896,12 +900,11 @@ Comments
 	font-weight:700;
 }
 
-.commentlist li{
+.commentlist li.comment{
     border-radius: 5px 5px 5px 5px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     -moz-box-shadow:1px 1px 3px rgba(0, 0, 0, 0.4);
     -webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.4);
-    font-size: 0.9em;
     font-weight: 700;
     list-style: none outside none;
     margin: 15px auto 3px;
@@ -927,6 +930,7 @@ Comments
 	padding:0;
 	text-align:justify;
         position:relative;
+        font-size: 0.9em;
         width: 70%;
         margin: 0 auto;
 }
@@ -1278,6 +1282,7 @@ input[type="text"]:focus, textarea:focus, input[type="submit"]:hover{
      box-shadow:0px 0px 3px rgba(0, 0, 0, 0.3);
     -moz-box-shadow:0px 0px 3px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow:0px 0px 3px rgba(0, 0, 0, 0.3);
+    outline: none;
 }
 
 select{
@@ -1353,20 +1358,39 @@ Footer
 }
 
 /*************************************
-Image Gallery Page
+Image Gallery
 *************************************/
+.gallery dl.gallery-item dd.gallery-caption{
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 0px;
+    -moz-transition:visibility 0s linear 0.5s,opacity 0.3s linear;
+    -webkit-transition:visibility 0s linear 0.5s,opacity 0.3s linear;
+    -o-transition:visibility 0s linear 0.5s,opacity 0.3s linear;
+    transition:visibility 0s linear 0.5s,opacity 0.3s linear;
+}
+.gallery dl.gallery-item:hover dd.gallery-caption{
+    visibility: visible;
+    opacity:1;
+    -moz-transition:opacity 0.3s linear;
+    -webkit-transition:opacity 0.3s linear;
+    -o-transition:opacity 0.3s linear;
+    transition:opacity 0.3s linear;
+}
+.gallery dl.gallery-item{
+    position: relative;
+}
 #main_image{ 
 	position:relative;
         text-align: center;
 }
 #main_image a .pic_info {
-	display:none;
-}
-#main_image a:hover .pic_info{
-	display: block;
+	visibility: hidden;
+        opacity: 0;
+        display: block;
 	background: #111;
 	filter:alpha(opacity=75);
-	opacity:.75;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)"; /*--IE 8 Transparency--*/
 	color: #fff;
 	position: absolute;
@@ -1376,6 +1400,18 @@ Image Gallery Page
         border-radius:5px;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
+        -moz-transition:visibility 0s linear 0.5s,opacity 0.3s linear;
+        -webkit-transition:visibility 0s linear 0.5s,opacity 0.3s linear;
+        -o-transition:visibility 0s linear 0.5s,opacity 0.3s linear;
+        transition:visibility 0s linear 0.5s,opacity 0.3s linear;
+}
+#main_image a:hover .pic_info{
+        visibility: visible;
+        opacity:.75;
+        -moz-transition:opacity 0.3s linear;
+        -webkit-transition:opacity 0.3s linear;
+        -o-transition:opacity 0.3s linear;
+        transition:opacity 0.3s linear;
 }
 
 .pic_info {
@@ -1448,7 +1484,7 @@ blockquote{
 }
 blockquote:before{
         color: #ccc;
-        content: '“';
+        content: 'â€œ';
         font-size: 5em;
         font-weight: bold;
         line-height: 0px;
@@ -1478,7 +1514,7 @@ hr{
 	display:none;
 }
 
-ol li{
+ol > li{
 	list-style:decimal outside;
 }
 

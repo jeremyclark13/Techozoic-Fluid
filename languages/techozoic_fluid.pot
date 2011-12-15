@@ -1,1804 +1,1643 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Techozoic Fluid\n"
+"Project-Id-Version: Techozoic Fluid 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-11 23:29-0500\n"
-"PO-Revision-Date: 2011-02-11 23:29-0500\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2011-12-09 08:15-0500\n"
+"PO-Revision-Date: 2011-12-09 08:15-0500\n"
+"Last-Translator: Jeremy Clark <jeremy@clark-technet.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2\n"
-"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wp-content\\themes\\techozoic-fluid\n"
 "X-Poedit-Language: English\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-Country: UNITED STATES\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: C:\\Users\\Jeremy\\Documents\\NetBeansProjects\\Techozoic\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wp-content\\themes\\techozoic-fluid\n"
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/404.php:16
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/404.php:16
 msgid "Error 404 - Not Found"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/404.php:18
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/404.php:18
 msgid "Browse Archives"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:13
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:12
 #, php-format
 msgid "Archive for the %s Category"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:16
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:19
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:22
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:15
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:18
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:21
 #, php-format
 msgid "Archive for %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:25
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:24
 msgid "Search Results"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:28
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:27
 msgid "Author Archive"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:31
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:30
 msgid "Blog Archives"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:35
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:66
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:18
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:76
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:35
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:17
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:22
 msgid "&laquo; Older Entries"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:36
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:67
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:19
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:77
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:36
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:18
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:23
 msgid "Newer Entries &raquo;"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:40
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:14
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:32
-#, php-format
-msgid "Permanent Link to %s"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:47
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:40
-msgid "Read the remainder of this entry &raquo;"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:57
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:57
-msgid "To the top"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:60
-#, php-format
-msgid "Posted in %s"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:60
-msgid "Edit"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:60
-msgid "No Comments &#187;"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:60
-msgid "1 Comment &#187;"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/archive.php:72
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:80
-msgid "Not Found"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:14
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:14
 #, php-format
 msgid "Return to %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:20
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:14
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:10
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:34
+#, php-format
+msgid "Permanent Link to %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:20
 msgid "View Full Size"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:27
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:27
 msgid "Image Information"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:29
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:29
 #, php-format
 msgid "Size: %1$s &times; %2s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:32
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:32
 #, php-format
 msgid "Camera: %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:36
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:36
 #, php-format
 msgid "Taken: %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:40
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:40
 #, php-format
 msgid "Aperture: %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:44
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:44
 #, php-format
 msgid "ISO: %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:48
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:48
 #, php-format
 msgid "Shutter Speed: %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:52
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:52
 msgid "Click for original image"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:57
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:57
 #, php-format
 msgid "Additional sizes: %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:63
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:63
 msgid "Read the rest of this entry"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:88
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:88
 msgid "Previous Image"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:91
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:91
 msgid "Next Image"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:100
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:100
 msgid "Pages"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:105
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:105
 #, php-format
 msgid "This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:105
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:315
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:105
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:806
 msgid "RSS 2.0"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:108
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:108
 #, php-format
 msgid "You can %1$s or %2$s from your own site."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:108
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:108
 msgid "leave a response"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:108
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:111
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:108
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:111
 msgid "trackback"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:111
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:111
 #, php-format
 msgid "Responses are currently closed, but you can %s from your site."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:114
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:114
 msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:117
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:117
 msgid "Both comments and pings are currently closed."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:119
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:119
 msgid "  Edit this entry."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/attachment.php:133
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:131
 msgid "Sorry, no attachments matched your criteria."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:3
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:3
 msgid "Please do not load this page directly. Thanks!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:6
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:13
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:6
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:13
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:21
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:21
 msgid "No Comments"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:21
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:21
 msgid "One Comment"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:36
-msgid "Comments are closed."
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:74
+msgid "Header Navigation"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:54
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:56
-msgid "Leave a Reply"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:75
+msgid "Sidebar Navigation"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:54
-#, php-format
-msgid "Leave a Reply to %s"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:76
+msgid "Footer Navigation"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:60
-#, php-format
-msgid "You must be %s to post a comment."
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:91
+msgid "Grunge"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:60
-msgid "logged in"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:96
+msgid "Landscape"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:65
-#, php-format
-msgid "Logged in as %s"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:101
+msgid "Random Lines 1"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:65
-msgid "Log out of this account"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:106
+msgid "Random Lines 2"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:65
-msgid "Logout"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:111
+msgid "Technology"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:68
-msgid "Name"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:437
+msgid "Techozoic News"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:68
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:70
-msgid "(required)"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:450
+msgid "No News."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:70
-msgid "Mail (will not be published)"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:462
+msgid "Techozoic Links"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:72
-msgid "Website"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:465
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:983
+msgid "Support Forum"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/comments.php:77
-msgid "Submit Comment"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:468
+msgid "Documentation"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:100
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:471
+msgid "FAQ"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:474
+msgid "Change Log"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:567
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:20
 msgid "Read More"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:205
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:713
 msgid "Top"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:205
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:713
 #, php-format
 msgid "%1$d mySQL queries in %2$s seconds."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:305
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:796
 msgid "del.icio.us this!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:306
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:797
 msgid "Digg this!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:307
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:798
 msgid "Share this by email."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:308
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:799
 msgid "Share on Facebook!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:309
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:800
 msgid "Share on LinkedIn!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:310
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:801
 msgid "Share on Myspace!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:311
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:802
 msgid "Share on NewsVine!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:312
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:803
 msgid "Stumble Upon this!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:313
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:804
 msgid "Tweet this!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:314
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:805
 msgid "Share on Reddit!"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:315
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:806
 msgid "Subscribe to Feed"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:338
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:848
 msgid "Follow me on Facebook"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:341
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:851
 msgid "Follow me on Myspace"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:344
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:854
 msgid "Follow me on Twitter"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:361
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:362
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:881
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:882
 msgid " posted on "
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:381
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:911
 #, php-format
 msgid "Theme activated! This theme contains <a href=\"%s\">theme options</a> and <a href=\"%s\">custom sidebar widgets</a>.<br />&nbsp; See <a href=\"%s\">Change Log</a>."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:560
-msgid "Header Navigation"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:934
+#, php-format
+msgid "Header height and width and aligment can be set on the <a href=\"%s\">theme options</a> page."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:561
-msgid "Sidebar Navigation"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:562
-msgid "Footer Navigation"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:585
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:979
 msgid "Thank you for using the Techozoic Theme.  "
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:587
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:981
 #, php-format
 msgid "Visit the %s to start customizing Techozoic.  "
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:587
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:981
 msgid "options page"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:589
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:983
 #, php-format
 msgid "If your having problems or would like to suggest a new feature, please visit the %s."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:589
-msgid "Support Forum"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:589
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:983
 msgid "support forum"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:595
-msgid "Techozoic Settings Pages"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:650
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/nav-dropdown.php:9
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/nav-standard.php:9
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/nav-twotier.php:9
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1020
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/nav-dropdown.php:9
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/nav-standard.php:9
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/nav-twotier.php:9
 msgid "Home"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:674
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1039
 msgid "Archive for category &#39;"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:718
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1085
 msgid "Search results for &#39;"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:721
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1088
 msgid "Posts tagged &#39;"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:728
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1095
 msgid "Articles posted by "
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:731
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1098
 msgid "Error 404"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions.php:736
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1103
 msgid "Page"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:28
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:30
 msgid "Archive for "
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:155
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:159
 msgid "Dashboard"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:156
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:160
 msgid "Log Out"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:162
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:164
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:166
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:168
 msgid "Login"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:171
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:175
 msgid "Username: "
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:172
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:176
 msgid "Password: "
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/header.php:173
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:177
 msgid "Log in"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:32
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:10
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:20
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:34
 msgid "Read More &hellip;"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:33
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:17
+msgid "View all status updates by this author"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:35
 msgid "By"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:33
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:35
 #, php-format
 msgid "Filed in %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:33
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:35
 msgid "&nbsp;|&nbsp; Edit."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:44
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:43
+msgid "Read the remainder of this entry &raquo;"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:47
 msgid "Be the first to comment"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:44
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:47
 msgid "1 Comment. Join the Conversation"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:44
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:47
 msgid "Comments Closed"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/index.php:81
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:60
+msgid "To the top"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:81
+msgid "Not Found"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:82
 msgid "Sorry, but you are looking for something that isn't here"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/page.php:20
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:30
+msgid "Techozoic Theme Options"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:31
+#, php-format
+msgid "Looking for assistance? Please visit the <a href=\"%1$s\">support forums</a>, refer to the <a href=\"%2$s\">documentation</a>, or the <a href=\"%3$s\">FAQ</a>."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:68
+msgid "Layout"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:71
+msgid "Column Layout"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:78
+msgid "Fixed or Fluid Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:84
+msgid "Fixed Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:84
+msgid "Fluid Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:86
+msgid "Page Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:87
+msgid "Fluid Width - Percentage of Total Screen Size  <br />Fixed Width - Width in number of pixels"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:94
+msgid "Main Column Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:95
+msgid "(Post Content) - Percentage of Page Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:102
+msgid "Left Sidebar Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:103
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:111
+msgid "Percentage of Page Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:110
+msgid "Right Sidebar Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:118
+msgid "Fav Icon Image"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:119
+msgid "Fav Icon must be an .ico file.  Browse for a new image or chose previously uploaded image.  After choosing press Save to upload."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:123
+msgid "Display Sidebars on Blog Home Page"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:129
+msgid "Display Sidebars on Single Post Pages"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:135
+msgid "Page Specific Sidebars"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:136
+msgid "Choose which pages to register a sidebar.  After selecting pages, two new sidebars will be avaialbe from the widgets screen.  These sidebars will be used if any widgets are added, otherwise the default sidebars will be used."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:142
+msgid "SEO Features"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:143
+msgid "Disable this if any SEO plugins are used"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:149
+msgid "Thickbox on Images"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:150
+msgid "Use Thickbox to automatically overlay images on pages</small>"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:156
+msgid "Comment Preview"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:157
+msgid "Enable the comment preview for posts on the home page."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:163
+msgid "Comment Preview Number"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:164
+msgid "Number of comments to display in comment preview area."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:171
+msgid "Custom Footer Text"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:172
+msgid "Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:178
+msgid "Drop Shadow Boxes"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:179
+msgid "Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safari."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+msgid "Header Text"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+msgid "Post Boxes"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+msgid "Images"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:216
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Main Page"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:186
+msgid "Page Background Image"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:187
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:193
+msgid "Use a tiled image for best results."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:192
+msgid "Content Background Image"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:198
+msgid "Posts"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:201
+msgid "Excerpt Location"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:202
+msgid "Check where excerpts should be used instead of full post content.  If an area isn't checked then the full post is displayed."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Category Archive"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Yearly Archive"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Monthly Archive"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/tag.php:10
+msgid "Tag Archive"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:210
+msgid "Background Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:211
+msgid "Check where background color for posts defined on the color tab should be applied."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:216
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Single Post"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:216
+msgid "Archive Pages"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:218
+msgid "Social Media Icons"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:219
+msgid "Check where Social Media Icons will be displayed."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:226
+msgid "Nav"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:229
+msgid "Navigation Menu"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:230
+msgid "Enable navigation menu.  If disabled visit the <a href=\"widgets.php\">widgets</a> page to add  the Techozoic Sidebar Navigation widget"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:235
+msgid "Log In/Out Links"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:236
+msgid "Enable Dashboard and Log in/out links."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:242
+msgid "Breadcrumbs"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:243
+msgid "Enable Breadcrumb navigation.  Useful with Sidebar Nav Widget."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:249
+msgid "Navigation Menu Alignment"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:254
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:551
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:574
+msgid "Left"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:254
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:551
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:574
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:582
+msgid "Center"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:256
+msgid "Navigation Button Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:257
+msgid "Size of navigation button width in Pixels.  Set to <strong>0</strong> for variable sized buttons"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:265
+msgid "Font"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:268
+msgid "Default Text"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:273
+msgid "Main Heading Font"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:278
+msgid "Post Heading Font"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:283
+msgid "Sidebar Heading Font"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:288
+msgid "Nav Menu Text Font"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:293
+msgid "Post Text Font"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:298
+msgid "Metadata Font"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:303
+msgid "Google Font Replacement"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:304
+msgid "Enable this to use the Google Font API to add new fonts."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:310
+msgid "Goolge Fonts"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:311
+msgid "Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After choosing on the font to use, copy the Name of the font here."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:316
+msgid "Goolge Font - Font Decoration"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:317
+msgid "Some Goolge Fonts have additional variants for <strong>Bold</strong> and <em>Italic</em>.  If the font chosen has these variants check the boxes for which decoration to apply to the Google Font."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Bold"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Bold Italic"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Italic"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Select One"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:325
+msgid "Font Replacement"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:326
+msgid "Check which headings you would like replaced."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "Main Blog Title"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "Sidebar Titles"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "Post Titles"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H1 Headings"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H2 Headings"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H3 Headings"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H4 Headings"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H5 Headings"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:333
+msgid "Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:336
+msgid "Prebuilt Color Scheme"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:337
+msgid "Choose Custom to specify your own scheme"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Custom"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Blue"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Khaki"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Red"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:344
+msgid "Body Background Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:345
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:359
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:373
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:380
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:387
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:394
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:401
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:415
+msgid "Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:351
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:365
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:407
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:421
+msgid "Transparent"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:352
+msgid "Check to not apply any color to the body background."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:358
+msgid "Content Background Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:366
+msgid "Check to not apply any color to the content background."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:372
+msgid "Accent Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:379
+msgid "Link Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:386
+msgid "Link Hover Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:393
+msgid "Visited Link Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:400
+msgid "Nav Button Background Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:408
+msgid "Check to not apply any color to the nav button background."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:414
+msgid "Post Background Color"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:422
+msgid "Check to not apply any color to the post background."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:428
+msgid "Ads"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:431
+msgid "Home Page Ad Code"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:432
+msgid "This Ad Code will be displayed a total of 3 times. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:438
+msgid "Number of Posts Between Ad Units"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:446
+msgid "Home Page Header Ad Code"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:447
+msgid "This Ad Code will be displayed on the home  page below the header and navigation. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:453
+msgid "Single Post Ad Code"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:454
+msgid "This Ad Code will be displayed on the single post page. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:460
+msgid "Single Post Ad Position"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:461
+msgid "Above or below the post content on single page"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:466
+msgid "Above"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:466
+msgid "Below"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:468
+msgid "Social"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:471
+msgid "Home/Archive Page Social Network Icons"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:472
+msgid "Choose which social network icons you would like displayed below the post on the Home/Archive pages."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:479
+msgid "Single Page Social Media Icons"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:480
+msgid "Choose which social media icons you would like displayed on the single post page."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:487
+msgid "Facebook Profile"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:488
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:495
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:502
+msgid "Used for the About widget Must be full link to profile page"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:494
+msgid "MySpace Profile"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:501
+msgid "Twitter Profile"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:508
+msgid "Header"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:511
+msgid "Display Search box in header"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:512
+msgid "Set to no if you don't want the search box to show in the header area.  If widgets are assigned to Right Header search box is automatically disabled."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:518
+msgid "Display Blog Title and Tagline in header"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:519
+msgid "Uncheck if your custom header image already has your blog title and tagline.  If header logo is uploaded it will always be used."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:525
+msgid "Header Logo"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:526
+msgid "Replace Blog Title and Tagline with a custom logo.  Logo is overlayed on header image.  For best results use a logo with a transparent background.  When uploading Alignment options are NOT used from the uploader, alignment is set below."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:531
+msgid "Header Logo Top Padding"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:532
+msgid "Number of pixels of top padding that should be added to logo."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:538
+msgid "Header Logo Left Padding"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:539
+msgid "Number of pixels of left padding that should be added to logo."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:545
+msgid "Blog Title and Tagline / Logo Horizontal Alignment"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:546
+msgid "Horizontal alignment of Blog title and tagline or header logo if used."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:551
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:574
+msgid "Right"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:553
+msgid "Single Page Header Title Text"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:554
+msgid "Show the Post title as the main heading and the the Blog title as the tagline on single pages.   Always Blog Title will only display the Blog Title and Tagline set in the General Options of the Blog."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:559
+msgid "Single Post Title"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:559
+msgid "Always Blog Title"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:561
+msgid "Blog Title Box Styling"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:562
+msgid "Styling of box around the Blog Title <br />- On: White rounded box with transparency <br />- Off: Title and tagline text only."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:568
+msgid "Header Image Alignment"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:569
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:577
+msgid "Align header to the Left, Right, or Center the image in the Header Container"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:576
+msgid "Header Image Vertical Alignment"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:582
+msgid "Bottom"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:584
+msgid "Header Container Height"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:585
+msgid "Adjust the size of the header image  Default Height: 200px"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:592
+msgid "Header Image Width"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:593
+msgid "Adjust the size of the header image  Default width: 1000px"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:600
+msgid "CSS"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:603
+msgid "Custom CSS"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:604
+msgid "<strong>No HTML allowed</strong> Here you can enter your own CSS.  Please keep in mind proper CSS structure."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/page.php:21
 msgid "Read the rest of this page"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/page.php:21
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/page.php:22
 msgid "Pages:"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/page.php:27
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/page.php:28
 msgid "Edit this page."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:9
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:7
 msgid "Search Results for "
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:18
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:16
 msgid "articles"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:45
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+#, php-format
+msgid "Posted in %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:33
+msgid "Edit"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
 msgid "No Comments &raquo;"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:45
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
 msgid "1 Comment &raquo;"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:45
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
 msgid "Comments Off"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/search.php:54
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:52
 msgid "No posts found. Try a different search?"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/searchform.php:2
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/searchform.php:2
 msgid "Search: Type and Enter"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/searchform.php:4
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:57
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/searchform.php:4
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:52
 msgid "Go"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:3
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:16
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:6
 msgid "Left Sidebar"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:7
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:30
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:10
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:27
 msgid "Default Widgets"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:8
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:31
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:28
 #, php-format
 msgid "Widgets below are default.  These will be replaced when customizing using %s Widget Admin</a>"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:8
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:31
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:28
 msgid "Widgets"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:13
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:312
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:16
 msgid "Meta"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:16
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:317
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:19
 msgid "This page validates as XHTML 1.0 Transitional"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:16
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:317
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:19
 msgid "Valid XHTML"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:17
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:20
 msgid "Valid CSS"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:18
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:318
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:21
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar-left.php:27
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:30
 msgid "Tags"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:14
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:9
 #, php-format
 msgid "You are currently browsing the archives for the %s category."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:16
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:18
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:20
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:13
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:15
 #, php-format
 msgid "You are currently browsing the %1$s archives for %2$s."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:22
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:17
 #, php-format
 msgid "You have searched the %1$s archives for %2$s."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:24
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:19
 #, php-format
 msgid "You are currently browsing the %1$s archives."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:26
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:12
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:23
 msgid "Right Sidebar"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:39
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:35
 msgid "Pages Below Current"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:46
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:356
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:41
 msgid "Syndicate"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:50
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:362
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:45
 msgid "Comments"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:54
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:170
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:49
 msgid "Categories"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/sidebar.php:61
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:56
 msgid "Blogroll"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/single.php:20
-#, php-format
-msgid "By %s"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/single.php:22
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:36
 #, php-format
 msgid "Go back to %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/single.php:57
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:46
+#, php-format
+msgid "Written by %s"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:48
+msgid "Tagged "
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:81
 msgid "Sorry, no posts matched your criteria."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/tag.php:10
-msgid "Tag Archive"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:68
+msgid "Techozoic Setting Import / Export"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:68
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:107
+msgid "Import / Export"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:109
+msgid "Import Settings"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:110
+msgid "If you have settings in a backup file on your computer, the Import / Export system can import those into this site. To get started, upload your backup file to import from below."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:115
+#, php-format
+msgid "Upload File: (Maximum Size: %s)"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:118
+msgid "Upload File and Import"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:123
+msgid "Export Settings"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:124
+msgid "When you click the button below, the Import / Export system will create a text file for you to save to your computer."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:125
+#, php-format
+msgid "This text file can be used to restore your settings here on \"%s\", or to easily setup another website with the same settings\"."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:129
+msgid "Download Export File"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:152
+msgid "Welcome to the OptionsFramework Backup Manager."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:153
+msgid "Here are a few notes on using this screen."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:154
+msgid "The backup manager allows you to backup or restore your \"Theme Options\" and other settings to or from a text file."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:155
+msgid "To create a backup, simply select the setting type you'd like to backup (or \"All Settings\") and hit the \"Download Export File\" button."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:156
+msgid "To restore your settings from a backup, browse your computer for the file (under the \"Import Settings\" heading) and hit the \"Upload File and Import\" button. This will restore only the settings that have changed since the backup."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:158
+msgid "Please note that only valid backup files generated through the OptionsFramework Backup Manager should be imported."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:178
+#, php-format
+msgid "Please note that this backup manager backs up only your settings and not your content. To backup your content, please use the %sWordPress Export Tool%s."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:181
+msgid "There was a problem importing your settings. Please Try again."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:183
+msgid "There was a problem exporting your settings. Please Try again."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:185
+msgid "The import file you've provided is invalid. Please try again."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:187
+#, php-format
+msgid "Settings successfully imported. | Return to %sTheme Options%s"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:170
+msgid "Techozoic Setting"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:238
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:270
+msgid "Default options restored."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:311
+msgid "Options saved."
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:405
+msgid "Techozoic Settings"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:137
+msgid "Remove"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr ""
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:9
 msgid "Delete"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:12
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:10
 msgid "Spam"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:32
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:27
 #, php-format
 msgid "Comment by %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:34
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:29
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-comments-functions.php:57
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:52
 #, php-format
 msgid "Ping from %s"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:20
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:19
 msgid "Footer"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:21
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:20
 msgid "Limit 3 widgets can be assigned to footer area"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:29
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:28
 msgid "Right Header"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:30
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:29
 msgid "Area to the right side of the header"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:38
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:37
 msgid "Left Header"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:39
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:38
 msgid "Area to the left side of the header"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:52
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:76
 msgid "Techozoic Font Size Control Widget"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:53
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:77
 msgid "Techozoic Font Size"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:59
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:82
 msgid "Resize Text"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:78
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:126
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:198
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:277
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:379
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:101
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:148
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:195
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:274
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:376
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:442
 msgid "Title:"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:86
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:109
 msgid "Techozoic Child Page menu displays child pages below current page."
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:87
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:110
 msgid "Techozoic Child Page"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:93
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:115
 msgid "Sub Pages"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:134
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:156
 msgid "Techozoic Sidebar Navigation Menu - option to add categories to navigation"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:135
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:157
 msgid "Techozoic Navigation"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:141
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:394
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:162
 msgid "Navigation"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:200
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:197
 msgid "Include Pages in Menu"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:202
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:199
 msgid "Include Categories in Menu"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:204
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:201
 msgid "Separate Pages and Categories"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:217
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:214
 msgid "Author information Widget - Enter short blurb about yourself"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:218
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:215
 msgid "Techozoic About"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:223
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:220
 msgid "About Author"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:279
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:276
 msgid "Write About yourself here"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:282
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:279
 msgid "Display link to Facebook Profile"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:284
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:281
 msgid "Display link to MySpace Profile"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:286
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:283
 msgid "Display link to Twitter Profile"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:288
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:285
 msgid "Enable Gravatar"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:290
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:287
 msgid "Size of Gravatar"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:292
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:289
 msgid "Between 25 and 100 Pixels"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:301
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:298
 msgid "Meta Information as well as Dashboard and Log In/Out Links"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:302
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:299
 msgid "Techozoic Meta"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:336
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:333
 msgid "Title"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:345
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:342
 msgid "Link to RSS feed for blog as well as comment RSS feed"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/functions/tech-widget.php:346
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:343
 msgid "Techozoic RSS"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/delete-admin.php:6
-#, php-format
-msgid "%s Delete Settings"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:385
+msgid "Techozoic Status Widget - Dispaly Post Format Status updates in sidebar"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/delete-admin.php:10
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/delete-admin.php:14
-msgid "Delete Settings"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:386
+msgid "Techozoic Status"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/delete-admin.php:11
-msgid "Clicking this button below will remove all theme settings from database and deactivate the theme.  <strong>This is irreversible.</strong>"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:391
+msgid "Status Updates"
 msgstr ""
 
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:3
-#, php-format
-msgid "%s settings imported."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:7
-#, php-format
-msgid "%s Export/Import Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:11
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:15
-msgid "Export Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:12
-msgid "Here you can export your current Techozoic settings, this is useful if you plan on copying your current layout to another blog using Techozoic."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:21
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:26
-msgid "Import Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/export-admin.php:22
-msgid "If you have an export file from Techozoic you can upload it here.  (This will overwrite any current changes)"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:3
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:369
-#, php-format
-msgid "%s settings saved"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:4
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:370
-#, php-format
-msgid "%s settings reset"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:9
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:375
-msgid "Image Uploaded"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:23
-#, php-format
-msgid "%s Header Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:27
-msgid "Upload Header Image"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:28
-msgid "Max Dimensions: 1000 px wide X 200 px high"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:29
-msgid "Supported format: jpg, jpeg, gif, png"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:30
-msgid "Recommend format:</em> jpg, jpeg, png"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:31
-msgid "After image is uploaded it will appear in the list below and can be selected in the list below to be used as the Header Image."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:39
-msgid "Upload"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:44
-#, php-format
-msgid "Please make sure <strong>%s</strong> is writable to enable upload of headers."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:46
-msgid "Image Upload Location"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:49
-msgid "<code>wp-content/techozoic</code> folder"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:50
-msgid "<code>wp-content/themes/techozoic-fluid/uploads</code> folder"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:53
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:77
-msgid "Save Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:59
-msgid "Header Image Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:62
-msgid "Height of Container:"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:63
-msgid "Header Image Horizontal Alignment:"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:69
-msgid "Header Image Vertical Alignment:"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:86
-msgid "Header Images:"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:89
-msgid "Rotate Through All Headers"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:93
-msgid "Rotate"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:101
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:105
-msgid "No Header Image"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:135
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:139
-msgid " - Current Selected Header"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:169
-msgid "Click for full size preview of"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:172
-msgid "Width:"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:172
-msgid "Height:"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:176
-msgid "Select This Header"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/header-admin.php:183
-msgid "Delete This Header"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
-msgid "Return Error"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
-msgid "File Already Exists"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
-msgid "Incorrect File Type / File Size Limit exceeded"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
-msgid "Folder isn't writable please check folder that upload path exists and is writable."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
-msgid "File Doesn't exist."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
-msgid "Folder isn't writable please check folder image upload folder Permissions."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:5
-msgid "Please only use .ico format for Fav Icon Images"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:336
-#, php-format
-msgid "Techozoic %s Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:336
-msgid "Techozoic Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:390
-#, php-format
-msgid "%s General Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:392
-msgid "Layout"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:393
-msgid "Post"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:395
-msgid "Social Networks"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:396
-msgid "Typography"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:397
-msgid "Color Options"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:398
-msgid "Backgrounds"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:399
-msgid "Ad Placement"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:400
-msgid "Manual Header Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:566
-msgid "Preview:"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:571
-msgid "Reset - Check and Save Options to Clear"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:622
-msgid "Save changes"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:629
-msgid "Reset"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:679
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:683
-msgid "You do not have permission to edit these options.  Please go back"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:694
-msgid "Help for Techozoic can be obtained in a number of ways.  Please use the links below for help."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:696
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:751
-msgid "Documentation"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:697
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:754
-msgid "FAQ"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:707
-msgid "General Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:708
-msgid "Header Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:709
-msgid "CSS Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:710
-msgid "Export/Import Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:720
-msgid "Techozoic News"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:733
-msgid "No News."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:745
-msgid "Techozoic Links"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:757
-msgid "Change Log"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:764
-msgid "Theme Option page for"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:764
-msgid "Framework by"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/main.php:765
-msgid "Social Network Icons provided by"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:13
-msgid "Number of Columns"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:21
-msgid "Column Layout"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:29
-msgid "Fixed or Fluid Width"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:37
-msgid "Page Width"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:38
-msgid "Fluid Width - Percentage of Total Screen Size  <br />Fixed Width - Width in number of pixels"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:49
-msgid "Main Column Width - <small>(Post Content)</small> "
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:50
-msgid "Percentage of Page Width"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:60
-msgid "Left Sidebar Width - <small>Percentage of Page Width</small>"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:70
-msgid "Right Sidebar Width - <small>Percentage of Page Width</small>"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:80
-msgid "Total Content Width"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:81
-msgid "If Javascript is disabled this field will not update"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:91
-msgid "Fav Icon Image"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:92
-msgid "Fav Icon must be an .ico file.  Browse for a new image or chose previously uploaded image.  After choosing press Save to upload."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:101
-msgid "Display Sidebars on Blog Home Page"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:108
-msgid "Display Sidebars on Single Post Pages"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:115
-msgid "SEO Features"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:116
-msgid "Disable this if any SEO plugins are used"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:123
-msgid "Thickbox on Images"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:124
-msgid "Use Thickbox to automatically overlay images on pages</small>"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:131
-msgid "Display Search box in header"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:132
-msgid "Set to no if you don't want the search box to show in the header area.  If widgets are assigned to Right Header search box is automatically disabled."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:139
-msgid "Display Blog Title and Tagline in header"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:140
-msgid "Set to no if your custom header image already has your blog title and tagline"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:147
-msgid "Blog Title and Tagline Horizontal Alignment"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:154
-msgid "Single Page Header Title Text"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:155
-msgid "Show the Post title as the main heading and the the Blog title as the tagline on single pages.   Always Blog Title will only display the Blog Title and Tagline set in the General Options of the Blog."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:162
-msgid "Blog Title Box Styling"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:163
-msgid "Styling of box around the Blog Title <br />- On: White rounded box with transparency <br />- Off: Title and tagline text only."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:170
-msgid "Custom Footer Text"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:171
-msgid "Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:178
-msgid "Drop Shadow Boxes"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:179
-msgid "Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safari."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:186
-msgid "Post Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:191
-msgid "Excerpt Location"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:192
-msgid "Check where excerpts should be used instead of full post content.  If an area isn't checked then the full post is displayed."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:199
-msgid "Background Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:200
-msgid "Check where background color for posts defined on the color tab should be applied."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:207
-msgid "Social Media Icons"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:208
-msgid "Check where Social Media Icons will be displayed."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:215
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:152
-msgid "Static CSS"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:216
-msgid "For Advanced Users who would like to edit the style.css file directly. Setting this to static will stop using the Dynamic style.php in favor of the static style.css  If you would like the changes you've made already to transfer then below  is the CSS being used currently and allow you to copy and paste to the style.css file."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:224
-msgid "Custom CSS"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:225
-msgid "<strong>No HTML allowed</strong> Here you can enter your own CSS.  Please keep in mind proper CSS structure."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:238
-msgid "Navigation Menu Type"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:239
-msgid "Standard - Pages listed in horizontal menu in a single tier | Two Tier - Parent pages listed in horizontal menu with any sub-pages listed in lower menu | Disable the horizontal menu and visit the <a href=\"widgets.php\">widgets</a> page to add  the Techozoic Sidebar Navigation widget"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:246
-msgid "Log In/Out Links"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:247
-msgid "Enable Dashboard and Log in/out links."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:254
-msgid "Breadcrumbs"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:255
-msgid "Enable Breadcrumb navigation.  Useful with Sidebar Nav Widget."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:262
-msgid "Navigation Menu Alignment"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:269
-msgid "Navigation Button Width"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:270
-msgid "Set to <strong>0</strong> for variable sized buttons"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:279
-msgid "Navigation Menu Exclusion"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:280
-msgid "<strong>Choose which pages to exclude from all Navigation Menus. Hold CTRL to select multiple pages.</strong>"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:287
-msgid "Display Home Link"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:288
-msgid "Display the link back to the Blog Home"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:295
-msgid "Text for Home Link"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:296
-msgid "Text displayed for the link to the blog home"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:303
-msgid "Display Custom Links"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:304
-msgid "Before or After default links"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:311
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:322
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:333
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:344
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:355
-msgid "Custom Navigation Link"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:312
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:323
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:334
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:345
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:356
-msgid "Link should be entered in this form"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:312
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:323
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:334
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:345
-msgid "Add Link"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:323
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:334
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:345
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:356
-msgid "Remove Link"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:371
-msgid "Base Font Size"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:372
-msgid "Default text.  <br />For more info on text size: <a href='http://www.w3schools.com/css/css_font.asp' title='W3Schools' target='_blank'> W3Schools Text Size</a>"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:382
-msgid "Main Heading Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:392
-msgid "Post Heading Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:402
-msgid "Sidebar Heading Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:412
-msgid "Nav Menu Text Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:422
-msgid "Post Text Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:432
-msgid "Metadata Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:442
-msgid "Header Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:451
-msgid "Post Body Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:460
-msgid "Sidebar Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:469
-msgid "Nav Menu Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:478
-msgid "Default Page Font"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:487
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:495
-msgid "Cufon Font Replacement"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:488
-msgid "Visit this <a href=\"http://cufon.shoqolate.com/generate/\">link</a> to find out about Cufon.  <strong>Cufon will be phased out in favor of <a href='http://code.google.com/webfonts'>Google Fonts</a></strong>"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:496
-msgid "Choose the Font you would like to replace with. More coming in later versions."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:504
-msgid "Google Font Replacement"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:505
-msgid "Enable this to use the Google Font API to add new fonts."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:512
-msgid "Goolge Fonts"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:513
-msgid "Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After clicking on the font to use, locate the <strong>Font API parameter name</strong> ex: Walter+Turncoat.  This should be added to the text box."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:519
-msgid "Font Replacement"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:520
-msgid "Check which headings you would like replaced."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:527
-msgid "Custom Backgrounds"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:532
-msgid "Image Storage Location"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:533
-msgid "Choose where to store custom background and custom header images.<br /><strong>wp-content</strong> will store in wp-content/techozoic<br /><strong>theme</strong> will store in the theme directory under the uploads folder"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:540
-msgid "Page Background Image"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:541
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:559
-msgid "Use a tiled image for best results Browse for a new image or chose previously uploaded image.  After choosing press Save to upload."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:550
-msgid "Page Background Image Repeat"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:551
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:569
-msgid "X is Horizontal, Y is Vertical, both repeat tiled pattern"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:558
-msgid "Content Background Image"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:568
-msgid "Content Background Image Repeat"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:582
-msgid "Prebuilt Color Scheme"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:583
-msgid "Choose Custom 1 or 2 to specify your own scheme Two Custom options are provided to save two custom color schemes"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:592
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:707
-msgid "Body Background Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:593
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:611
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:628
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:637
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:646
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:655
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:664
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:673
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:690
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:708
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:726
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:743
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:752
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:761
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:770
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:779
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:788
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:805
-msgid "Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:602
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:619
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:681
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:698
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:717
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:734
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:796
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:813
-msgid "Transparent"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:603
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:718
-msgid "Check to not apply any color to the body background."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:610
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:725
-msgid "Content Background Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:620
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:735
-msgid "Check to not apply any color to the content background."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:627
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:742
-msgid "Accent Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:636
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:751
-msgid "Text Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:645
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:760
-msgid "Link Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:654
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:769
-msgid "Link Hover Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:663
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:778
-msgid "Visited Link Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:672
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:787
-msgid "Nav Button Background Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:682
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:797
-msgid "Check to not apply any color to the nav button background."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:689
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:804
-msgid "Post Background Color"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:699
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:814
-msgid "Check to not apply any color to the post background."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:704
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:819
-msgid "Reset Colors"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:827
-msgid "Home Page Ad Code"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:828
-msgid "This Ad Code will be displayed a total of 3 times. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:834
-msgid "Number of Posts Between Ad Units"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:841
-msgid "Home Page Header Ad Code"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:842
-msgid "This Ad Code will be displayed on the home  page below the header and navigation. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:848
-msgid "Single Post Ad Code"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:849
-msgid "This Ad Code will be displayed on the single post page. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:855
-msgid "Single Post Ad Position"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:856
-msgid "Above or below the post content on single page"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:863
-msgid "Social Networking"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:868
-msgid "Home/Archive Page Social Network Icons"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:869
-msgid "Choose which social network icons you would like displayed below the post on the Home/Archive pages."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:876
-msgid "Single Page Social Media Icons"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:877
-msgid "Choose which social media icons you would like displayed on the single post page."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:884
-msgid "Facebook Profile"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:885
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:893
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:901
-msgid "Used for the About widget Must be full link to profile page"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:892
-msgid "MySpace Profile"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:900
-msgid "Twitter Profile"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:908
-msgid "Standard Header Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:913
-msgid "Header Image"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:914
-msgid "<strong> Use the <a href=\"admin.php?page=techozoic_header_admin\">Header Image page</a> to upload custom headers and choose header image.</strong> If errors occur use dropdown menu  Select Rotate to rotate through all images,   or select Defined Here and input URL below"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:922
-msgid "Header Image Alignment"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:923
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:931
-msgid "Align header to the Left, Right, or Center the image in the Header Container"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:930
-msgid "Header Image Vertical Alignment"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:938
-msgid "Header Container Height"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:939
-msgid "Adjust the size of the container holding the header image  Default Height: 200px"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:947
-msgid "Header Image URL"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/option-array.php:948
-msgid "Needs to be full path the header image  Example: <em>http://www.example.com/header.jpg</em>  Max Height: 200px"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:15
-#, php-format
-msgid "%s Style Settings"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:153
-msgid "If you have set the Static CSS option to Static you may chose to either copy and paste this code from here to the style.css file using the WordPress code editor or use the button below to automatically overwrite the style.css with the contents below."
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:154
-msgid "A backup file is created as style.css.bu if any errors occur.  Also the original style.css can be restored by clicking Reset Style.css. <strong>-Use at your own risk</strong>.<br /><small>All changes made to style.css file are overwritten with theme updates"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:163
-msgid "Copy to Style.css"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:164
-msgid "Restore Style.css backup"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:165
-msgid "Reset Style.css"
-msgstr ""
-
-#: C:\Users\Jeremy\Documents\NetBeansProjects\Techozoic/options/style-admin.php:169
-#, php-format
-msgid "Please make sure <strong>%s</strong> is writable to enable automatic copying of stylesheet."
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:443
+msgid "Number of statuses to show"
 msgstr ""
 

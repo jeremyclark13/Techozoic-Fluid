@@ -80,8 +80,8 @@ add_action( 'after_setup_theme', 'techozoic_setup' );
         //WP Custom Header - random roation by default
         define( 'HEADER_TEXTCOLOR', '' );
         define( 'HEADER_IMAGE', '' );
-        define( 'HEADER_IMAGE_WIDTH', of_get_option('header_height','200') );
-        define( 'HEADER_IMAGE_HEIGHT', of_get_option('header_width','1000') );
+        define( 'HEADER_IMAGE_HEIGHT', of_get_option('header_height','200') );
+        define( 'HEADER_IMAGE_WIDTH', of_get_option('header_width','1000') );
         define('NO_HEADER_TEXT', true );
         add_custom_image_header( 'techozoic_header_style', 'techozoic_admin_header_style', 'techozoic_admin_header_image' );
         register_default_headers( array(
@@ -875,6 +875,7 @@ function tech_comment_preview($ID){
 	if ($comment_array) {
 		$output .=	'<ul class="comment-preview">';
 		foreach($comment_array as $comment){
+                        
 			$output .= '<li class="comments-link">';
 			$output .= '<div class="comment-author">';
 			$output .= '<a href="'. get_comment_link() .'" title="'. $comment->comment_author . __(' posted on ','techozoic') . get_comment_date() .'">';
@@ -915,6 +916,27 @@ function techozoic_show_notice() { ?>
 
 } //End If activation page check
 
+if ( is_admin() && (isset($_GET['page'] ) && $_GET['page'] == 'custom-header') && $pagenow == "themes.php" ){
+ 
+/**
+ * Techozoic header notice
+ *
+ * Used to show that header height and width can be set on the options page.
+ *     
+ *
+ * @access    private
+ * @since     2.0
+ */   
+add_action( 'admin_notices', 'techozoic_header_notice' );  // Shows custom theme activation notice with links to option page and changelog
+
+function techozoic_header_notice() { ?>
+    <div id="message" class="updated fade">
+		<p><?php printf(__('Header height and width and aligment can be set on the <a href="%s">theme options</a> page.','techozoic'),admin_url( 'themes.php?page=options-framework' )); ?></p>
+    </div>
+    <?php
+}
+
+}//End if custom header page
 
 /**
  * Techozoic add dashboard widget

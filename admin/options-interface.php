@@ -7,7 +7,8 @@
 function optionsframework_fields() {
 
 	global $allowedtags;
-	$optionsframework_settings = get_option('optionsframework');
+        $allowedtags['br'] = array();
+        $optionsframework_settings = get_option('optionsframework');
 	
 	// Get the theme name so we can display it up top
 	$themename = get_theme_data(STYLESHEETPATH . '/style.css');
@@ -22,9 +23,9 @@ function optionsframework_fields() {
 	};
 
 	$settings = get_option($option_name);
-    $options = optionsframework_options();
-        
-    $counter = 0;
+        $options = optionsframework_options();
+
+        $counter = 0;
 	$menu = '';
 	$output = '';
 	

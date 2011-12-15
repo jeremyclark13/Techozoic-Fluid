@@ -19,6 +19,20 @@ function optionsframework_option_name() {
 	
 	// echo $themename;
 }
+/**
+ * Addes contextual help to the theme options page.
+ */
+add_action( 'contextual_help', 'admin_screen_help', 10, 3 );
+
+function admin_screen_help ( $contextual_help, $screen_id, $screen ) {
+    if ( $screen->id == 'appearance_page_options-framework' ) {
+        $contextual_help =
+        '<h3>' . __( 'Techozoic Theme Options', 'techozoic' ) . '</h3>' .
+        '<p><strong>' . sprintf(__( 'Looking for assistance? Please visit the <a href="%1$s">support forums</a>, refer to the <a href="%2$s">documentation</a>, or the <a href="%3$s">FAQ</a>.' ),'http://clark-technet.com/theme-support/techozoic','http://techozoic.clark-technet.com/documentation/','http://techozoic.clark-technet.com/documentation/faq/') . '</strong></p>';
+    } // End IF Statement
+
+    return $contextual_help;
+} 
 
 /**
  * Defines an array of options that will be used to generate the settings page and be saved in the database.
@@ -119,7 +133,7 @@ function optionsframework_options() {
                 "std" => "0");
 
         $options[] = array(  "name" => __("Page Specific Sidebars","techozoic"),
-                "desc" => __("Choose which pages to register a sidebar.","techozoic"),
+                "desc" => __("Choose which pages to register a sidebar.  After selecting pages, two new sidebars will be avaialbe from the widgets screen.  These sidebars will be used if any widgets are added, otherwise the default sidebars will be used.","techozoic"),
                 "id" => "page_sidebar",
                 "type" => "multicheck",
                 "std" => '',
@@ -502,33 +516,34 @@ function optionsframework_options() {
                 "std" => "1");
 
         $options[] = array(	"name" => __("Display Blog Title and Tagline in header","techozoic"),
-                "desc" => __("Uncheck if your custom header image already has your blog title and tagline","techozoic"),
+                "desc" => __("Uncheck if your custom header image already has your blog title and tagline.  If header logo is uploaded it will always be used.","techozoic"),
                 "id" => "blog_title",
                 "type" => "checkbox",
                 "old_options" => array("Yes" => "1", "No" => "0"),
                 "std" => "1");
 
         $options[] = array(	"name" => __("Header Logo","techozoic"),
-                "desc" => __("Replace Blog Title and Tagline with a custom logo.  Logo is overlayed on header image.  For best results use a logo with a transparent background.","techozoic"),
+                "desc" => __("Replace Blog Title and Tagline with a custom logo.  Logo is overlayed on header image.  For best results use a logo with a transparent background.  When uploading Alignment options are NOT used from the uploader, alignment is set below.","techozoic"),
                 "id" => "header_logo",
                 "std" => '',
                 "type" => "upload");        
  
-       $options[] = array(	"name" => __("Header Logo Top Offset","techozoic"),
-                "desc" => __("Number of pixels from top of header area logo should be offset." ,"techozoic"),
+       $options[] = array(	"name" => __("Header Logo Top Padding","techozoic"),
+                "desc" => __("Number of pixels of top padding that should be added to logo." ,"techozoic"),
                 "id" => "header_logo_top",
                 "type" => "text",
                 "class" => "mini",
                 "std" => "0");        
  
-       $options[] = array(	"name" => __("Header Logo Left Offset","techozoic"),
-                "desc" => __("Number of pixels from left of header area logo should be offset." ,"techozoic"),
+       $options[] = array(	"name" => __("Header Logo Left Padding","techozoic"),
+                "desc" => __("Number of pixels of left padding that should be added to logo." ,"techozoic"),
                 "id" => "header_logo_left",
                 "type" => "text",
                 "class" => "mini",
                 "std" => "0");        
        
-        $options[] = array(	"name" => __("Blog Title and Tagline Horizontal Alignment","techozoic"),
+        $options[] = array(	"name" => __("Blog Title and Tagline / Logo Horizontal Alignment","techozoic"),
+                "desc" => __("Horizontal alignment of Blog title and tagline or header logo if used." ,"techozoic"),
                 "id" => "blog_title_align",
                 "type" => "radio",
                 "std" => "left",

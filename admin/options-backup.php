@@ -65,7 +65,7 @@ add_action( 'admin_menu', array( &$this, 'register_admin_screen' ), 20 );
 
 function register_admin_screen () {
 
-$this->admin_page = add_theme_page(__( 'OptionsFramework Import / Export', 'OptionsFramework' ), __( 'Import / Export', 'OptionsFramework' ), 'manage_options', $this->token, array( &$this, 'admin_screen' ) );
+$this->admin_page = add_theme_page(__( 'Techozoic Setting Import / Export', 'techozoic' ), __( 'Import / Export', 'techozoic' ), 'manage_options', $this->token, array( &$this, 'admin_screen' ) );
 
 // Adds actions to hook in the required css and javascript
 add_action("admin_print_styles-$this->admin_page",'optionsframework_load_adminstyles');
@@ -104,29 +104,29 @@ $export_type = esc_attr( $_POST['export-type'] );
 ?>
 <div class="wrap">
 <?php echo get_screen_icon( $screen = 'import-export' ); ?>
-<h2><?php _e( 'Import / Export' ); ?></h2>
+<h2><?php _e( 'Import / Export','techozoic' ); ?></h2>
 <div class="import">
-<h3><?php _e( 'Import Settings' ); ?></h3>
-<p><?php _e( 'If you have settings in a backup file on your computer, the Import / Export system can import those into this site. To get started, upload your backup file to import from below.' ); ?></p>
+<h3><?php _e( 'Import Settings','techozoic' ); ?></h3>
+<p><?php _e( 'If you have settings in a backup file on your computer, the Import / Export system can import those into this site. To get started, upload your backup file to import from below.','techozoic' ); ?></p>
 
 
 <form enctype="multipart/form-data" method="post" action="<?php echo admin_url( 'admin.php?page=' . $this->token ); ?>">
 <?php wp_nonce_field( 'OptionsFramework-backup-import' ); ?>
-<label for="OptionsFramework-import-file"><?php printf( __( 'Upload File: (Maximum Size: %s)' ), ini_get( 'post_max_size' ) ); ?></label>
+<label for="OptionsFramework-import-file"><?php printf( __( 'Upload File: (Maximum Size: %s)','techozoic' ), ini_get( 'post_max_size' ) ); ?></label>
 <input type="file" id="OptionsFramework-import-file" name="OptionsFramework-import-file" size="25" />
 <input type="hidden" name="OptionsFramework-backup-import" value="1" />
-<input type="submit" class="button" value="<?php _e( 'Upload File and Import' ); ?>" />
+<input type="submit" class="button" value="<?php _e( 'Upload File and Import','techozoic' ); ?>" />
 </form>
 
 </div>
 <div class="export">
-<h3><?php _e( 'Export Settings' ); ?></h3>
-<p><?php _e( 'When you click the button below, the Import / Export system will create a text file for you to save to your computer.' ); ?></p>
-<p><?php echo sprintf( __( 'This text file can be used to restore your settings here on "%s", or to easily setup another website with the same settings".' ), get_bloginfo( 'name' ) ); ?></p>
+<h3><?php _e( 'Export Settings','techozoic' ); ?></h3>
+<p><?php _e( 'When you click the button below, the Import / Export system will create a text file for you to save to your computer.','techozoic' ); ?></p>
+<p><?php echo sprintf( __( 'This text file can be used to restore your settings here on "%s", or to easily setup another website with the same settings".','techozoic' ), get_bloginfo( 'name' ) ); ?></p>
 <form method="post" action="<?php echo admin_url( 'admin.php?page=' . $this->token ); ?>">
 <?php wp_nonce_field( 'OptionsFramework-backup-export' ); ?>
 <input type="hidden" name="OptionsFramework-backup-export" value="1" />
-<input type="submit" class="button" value="<?php _e( 'Download Export File', 'OptionsFramework' ); ?>" />
+<input type="submit" class="button" value="<?php _e( 'Download Export File','techozoic' ); ?>" />
 </form>
 </div>
 </div><!--/.wrap-->
@@ -149,16 +149,13 @@ function admin_screen_help ( $contextual_help, $screen_id, $screen ) {
 if ( $this->admin_page == $screen->id ) {
 
 $contextual_help =
-'<h3>' . __( 'Welcome to the OptionsFramework Backup Manager.' ) . '</h3>' .
-'<p>' . __( 'Here are a few notes on using this screen.' ) . '</p>' .
-'<p>' . __( 'The backup manager allows you to backup or restore your "Theme Options" and other settings to or from a text file.' ) . '</p>' .
-'<p>' . __( 'To create a backup, simply select the setting type you\'d like to backup (or "All Settings") and hit the "Download Export File" button.' ) . '</p>' .
-'<p>' . __( 'To restore your settings from a backup, browse your computer for the file (under the "Import Settings" heading) and hit the "Upload File and Import" button. This will restore only the settings that have changed since the backup.' ) . '</p>' .
+'<h3>' . __( 'Welcome to the OptionsFramework Backup Manager.','techozoic' ) . '</h3>' .
+'<p>' . __( 'Here are a few notes on using this screen.' ,'techozoic') . '</p>' .
+'<p>' . __( 'The backup manager allows you to backup or restore your "Theme Options" and other settings to or from a text file.','techozoic' ) . '</p>' .
+'<p>' . __( 'To create a backup, simply select the setting type you\'d like to backup (or "All Settings") and hit the "Download Export File" button.','techozoic' ) . '</p>' .
+'<p>' . __( 'To restore your settings from a backup, browse your computer for the file (under the "Import Settings" heading) and hit the "Upload File and Import" button. This will restore only the settings that have changed since the backup.','techozoic' ) . '</p>' .
 
-'<p><strong>' . __( 'Please note that only valid backup files generated through the OptionsFramework Backup Manager should be imported.' ) . '</strong></p>' .
-
-'<p><strong>' . __( 'Looking for assistance?' ) . '</strong></p>' .
-'<p>' . sprintf( __( 'Please post your query on the %sOptionsFramework Support Forums%s where we will do our best to assist you further.' ), '<a href="http://www.OptionsFramework.com/support=forum/" target="_blank">', '</a>' ) . '</p>';
+'<p><strong>' . __( 'Please note that only valid backup files generated through the OptionsFramework Backup Manager should be imported.','techozoic' ) . '</strong></p>';
 
 } // End IF Statement
 
@@ -178,16 +175,16 @@ function admin_notices () {
 
 if ( ! isset( $_GET['page'] ) || ( $_GET['page'] != $this->token ) ) { return; }
 
-echo '<div id="import-notice" class="updated"><p>' . sprintf( __( 'Please note that this backup manager backs up only your settings and not your content. To backup your content, please use the %sWordPress Export Tool%s.', 'OptionsFramework' ), '<a href="' . admin_url( 'export.php' ) . '">', '</a>' ) . '</p></div><!--/#import-notice .message-->' . "\n";
+echo '<div id="import-notice" class="updated"><p>' . sprintf( __( 'Please note that this backup manager backs up only your settings and not your content. To backup your content, please use the %sWordPress Export Tool%s.','techozoic' ), '<a href="' . admin_url( 'export.php' ) . '">', '</a>' ) . '</p></div><!--/#import-notice .message-->' . "\n";
 
 if ( isset( $_GET['error'] ) && $_GET['error'] == 'true' ) {
-echo '<div id="message" class="error"><p>' . __( 'There was a problem importing your settings. Please Try again.' ) . '</p></div>';
+echo '<div id="message" class="error"><p>' . __( 'There was a problem importing your settings. Please Try again.','techozoic' ) . '</p></div>';
 } else if ( isset( $_GET['error-export'] ) && $_GET['error-export'] == 'true' ) {
-echo '<div id="message" class="error"><p>' . __( 'There was a problem exporting your settings. Please Try again.' ) . '</p></div>';
+echo '<div id="message" class="error"><p>' . __( 'There was a problem exporting your settings. Please Try again.','techozoic') . '</p></div>';
 } else if ( isset( $_GET['invalid'] ) && $_GET['invalid'] == 'true' ) {
-echo '<div id="message" class="error"><p>' . __( 'The import file you\'ve provided is invalid. Please try again.' ) . '</p></div>';
+echo '<div id="message" class="error"><p>' . __( 'The import file you\'ve provided is invalid. Please try again.','techozoic' ) . '</p></div>';
 } else if ( isset( $_GET['imported'] ) && $_GET['imported'] == 'true' ) {
-echo '<div id="message" class="updated"><p>' . sprintf( __( 'Settings successfully imported. | Return to %sTheme Options%s', 'OptionsFramework' ), '<a href="' . admin_url( 'admin.php?page=options-framework' ) . '">', '</a>' ) . '</p></div>';
+echo '<div id="message" class="updated"><p>' . sprintf( __( 'Settings successfully imported. | Return to %sTheme Options%s','techozoic' ), '<a href="' . admin_url( 'admin.php?page=options-framework' ) . '">', '</a>' ) . '</p></div>';
 } // End IF Statement
 
 } // End admin_notices()
@@ -230,7 +227,7 @@ check_admin_referer( 'OptionsFramework-backup-import' ); // Security check.
 if ( ! isset( $_FILES['OptionsFramework-import-file'] ) ) { return; } // We can't import the settings without a settings file.
 
 // Extract file contents
-$upload = file_get_contents( $_FILES['OptionsFramework-import-file']['tmp_name'] );
+$upload = implode('', file( $_FILES['OptionsFramework-import-file']['tmp_name'] ));
 
 // Decode the JSON from the uploaded file
 $datafile = json_decode( $upload, true );

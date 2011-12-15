@@ -43,8 +43,8 @@ function tech_head_css(){
         $tech_sidebar_pos = of_get_option('sidebar_pos','3-col');
 	$tech_content_bg_image = of_get_option('content_bg_image',array('color' => '', 'image' => '', 'repeat' => 'repeat','position' => 'top center','attachment'=>'scroll'));
 	if (of_get_option('page_type','fluid') == 'fixed'){$tech_sign = 'px';} else {$tech_sign = '%';}
-	if ($tech_page_width == 0 ) { $tech_page_width = '95'; $tech_sign = '%';}
-	if (of_get_option('page_type','fluid') == 'fluid' && $tech_page_width > 101)  $tech_page_width = '100';
+        if (of_get_option('page_type','fluid') == 'fluid' && $tech_page_width > 101)  $tech_page_width = '100';
+	if (of_get_option('page_type','fluid') == 'fluid' && ($tech_page_width > 100 || $tech_page_width < 0) ) { $tech_page_width = '95'; $tech_sign = '%';}
 	if (of_get_option('blog_title','1') == '0' || of_get_option('header_logo','') != '')  $tech_blog_title_display = 'display:none';
 	if (of_get_option('blog_title_text','single') == 'single') $tech_blog_title_cursor = 'cursor:default;';
 	$tech_logo_top = of_get_option('header_logo_top','0');
@@ -99,6 +99,10 @@ function tech_head_css(){
             $tech_nav_bg_color = 	$tech_default_color[$tech_color_scheme][6];
             $tech_post_bg_color = 	$tech_default_color[$tech_color_scheme][7];
             $tech_content_bg_color =    $tech_default_color[$tech_color_scheme][8];
+            $tech_bg_trans =            '0';
+            $tech_nav_bg_trans =        '0';
+            $tech_post_bg_trans =       '0';
+            $tech_content_bg_trans =    '0';
         } elseif ($tech_color_scheme == 'custom'){
             $tech_bg_color =            of_get_option('cust_bg_color1','#A0B3C2');
             $tech_bg_trans =            of_get_option('cust_bg_trans1','0');
@@ -307,6 +311,7 @@ color:{$tech_acc_color};
 {$tech_blog_title_align};
 }
 #header-logo{
+{$tech_blog_title_align};
 padding-top:{$tech_logo_top}px;
 padding-left:{$tech_logo_left}px;
 }
@@ -322,7 +327,14 @@ opacity:1 !important;
 border: none !important;
 }
 CSS;
-	if ($tech_blog_title_align_check == "Center" && is_active_sidebar( 'left_header' ) ){
+    if (of_get_option('header_logo','') == ''){
+$css_var .= <<<CSS
+#headerimgwrap{
+top:20%;
+}  
+CSS;
+}
+    if ($tech_blog_title_align_check == "Center" && is_active_sidebar( 'left_header' ) ){
 $css_var .= <<<CSS
 #headerimgwrap {
 float:left;

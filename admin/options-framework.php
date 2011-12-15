@@ -167,7 +167,7 @@ function optionsframework_setdefaults() {
 if ( !function_exists( 'optionsframework_add_page' ) ) {
 function optionsframework_add_page() {
 
-	$of_page = add_theme_page('Theme Options', 'Theme Options', 'edit_theme_options', 'options-framework','optionsframework_page');
+	$of_page = add_theme_page(__('Techozoic Setting','techozoic'), __('Techozoic Setting','techozoic'), 'edit_theme_options', 'options-framework','optionsframework_page');
 	
 	// Adds actions to hook in the required css and javascript
 	add_action("admin_print_styles-$of_page",'optionsframework_load_styles');
@@ -234,8 +234,8 @@ function optionsframework_page() {
 
 		<?php echo $return[0]; /* Settings */ ?>
                <div id="optionsframework-submit">
-			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" />
-            <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!' ) ); ?>' );" />
+			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options','techozoic' ); ?>" />
+            <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults','techozoic' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!','techozoic' ) ); ?>' );" />
             <div class="clear"></div>
 		</div>
 	</form>
@@ -267,7 +267,7 @@ function optionsframework_validate( $input ) {
 	 */
 	 
 	if ( isset( $_POST['reset'] ) ) {
-		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'optionsframework' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'techozoic' ), 'updated fade' );
 		return of_get_default_values();
 	}
 
@@ -308,7 +308,7 @@ function optionsframework_validate( $input ) {
 			}
 		}
 
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'optionsframework' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'techozoic' ), 'updated fade' );
 		return $clean;
 	}
 
@@ -402,7 +402,7 @@ function optionsframework_adminbar() {
 	$wp_admin_bar->add_menu( array(
 		'parent' => 'appearance',
 		'id' => 'of_theme_options',
-		'title' => __( 'Theme Options' ),
+		'title' => __( 'Techozoic Settings','techozoic' ),
 		'href' => admin_url( 'themes.php?page=options-framework' )
   ));
 }
