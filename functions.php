@@ -580,7 +580,7 @@ if (of_get_option('google_font','0') == '1') {
  * @since     1.9.3
  */
 
-add_action('wp_print_styles','tech_google_font');
+add_action('wp_enqueue_scripts','tech_google_font');
 
 function tech_google_font() {
 	global $tech;
@@ -989,20 +989,6 @@ function techozoic_dashboard_widget() { ?>
 
 }
 
-/**
- * Techozoic dropdown javascript
- *
- * Enqueues javascript used for cross browser compatiblity with dropdown navigation
- * menus.
- * 
- * @access private 
- */
-
-add_action('wp_print_styles','tech_dropdown_js');
-
-function tech_dropdown_js(){
-	wp_enqueue_script('dropdown', get_template_directory_uri() . '/js/dropdown.js',array('jquery'),'3.0' );
-}//End Dropdown_js
 
 /**
  * Techozoic breadcrumb navigation
@@ -1139,7 +1125,7 @@ function tech_thickbox_image_paths() {
  * @access    private
  */
 
-add_action('wp_print_styles','tech_enque_thickbox');
+add_action('wp_enqueue_scripts','tech_enque_thickbox');
 
 function tech_enque_thickbox() {
 	wp_enqueue_script('thickbox');
