@@ -432,7 +432,6 @@ ul.comment-preview li:hover{
 
 .format-quote .permalink:before, .format-status .permalink:before, .format-aside .permalink:before{
         content: "\0BB \020";
-        vertical-align: text-bottom;
 }
 
 .format-status {
@@ -1060,6 +1059,7 @@ ul#dropdown > li, ul.menu > li{
         border-radius:0;
 	-moz-border-radius:0;
 	-webkit-border-radius:0;
+        overflow:hidden;
 }
 #dropdown ul ul, .menu ul ul{
 	top:auto;

@@ -8,6 +8,9 @@ function optionsframework_fields() {
 
 	global $allowedtags;
         $allowedtags['br'] = array();
+	$allowedtags['img'] = array(
+	"src" => array()
+	);
         $optionsframework_settings = get_option('optionsframework');
 	
 	// Get the theme name so we can display it up top

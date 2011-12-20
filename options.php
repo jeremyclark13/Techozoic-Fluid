@@ -606,6 +606,24 @@ function optionsframework_options() {
                 "std" => "",
                 "old_options" => '',
                 "type" => "textarea");
-
-        return $options;
+        
+       $options[] = array( "name"=>__('About','techozoic'),
+                "type"=> "heading");
+       
+       $options[] = array( "name" => __("Donate to help further development","techozoic"),
+                "type" => "info",
+        	"desc" => "<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817' title='Donate Securely'><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' /></a>");
+         
+       $options[] = array( "name" => __("Changelog - Version 2.0","techozoic"),
+                "type" => "info",      
+                "desc" => 'Moved to Options Framework Option Panel.<br />
+                    Using Custom Header functions.<br />
+                    Removed Cufon support.<br />
+                    Removed support for navigation menus other than built-in menus.<br />
+                    Added support for status, quotes, and aside post formats.<br />
+                    Various CSS3 styling changes, new calendar style, comment form styling, social media icons.<br />
+                    Fixed widget bug not saving options.<br />
+                    Added status update widget.<br />');
+       
+       return $options;
 }
