@@ -216,36 +216,36 @@ font-size: {$tech_post_font['size']};
 acronym,abbr,span.caps,small,.trackback li,.sidebar {
 font-size: {$tech_small_font['size']};
 }
-.description, ul#nav a, ul#admin a, #dropdown li.current_page_item a:hover, .menu li.current-menu-item a:hover, #dropdown li.current_page_item ul a, .menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a, #navmenu .menu li a, #navmenu .menu li.current-menu-item a{
+.description, ul#nav a, ul#admin a, #dropdown li.current_page_item a:hover, .top-menu li.current-menu-item a:hover, #dropdown li.current_page_item ul a, .top-menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover, #nav2 a, #nav2 li.current_page_item a:hover,#subnav a, #subnav a:visited, #dropdown a, #navmenu .top-menu li a, #navmenu .top-menu li.current-menu-item a{
 color: {$tech_acc_color};
 }
 .author,#searchform #s, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,.postform,#TB_ajaxContent {
 background-color: {$tech_acc_color} ;
 }
-ul#admin li, ul#dropdown li, #navmenu .menu li{
+ul#admin li, ul#dropdown li, #navmenu .top-menu li{
 /*background-color: {$tech_nav_bg_color};*/
 }
-ul#admin li a, ul#dropdown li a, #navmenu .menu li a{
+ul#admin li a, ul#dropdown li a, #navmenu .top-menu li a{
 font-family:{$tech_nav_font['face']}, Sans-Serif;
 font-size:{$tech_nav_font['size']};
 color:{$tech_nav_font['color']};
 }
-#navmenu .menu ul.sub-menu{
+#navmenu .top-menu ul.sub-menu{
 background-color: {$tech_nav_ul_bg_color};
 }
 CSS;
 if($tech_nav_bg_trans != 'On') {
 $css_var .=  <<<CSS
-#dropdown li.current_page_item, #navmenu .menu li.current-menu-item, #navmenu .menu ul.sub-menu li.current-menu-item {
+#dropdown li.current_page_item, #navmenu .top-menu li.current-menu-item, #navmenu .top-menu ul.sub-menu li.current-menu-item {
 background-color: {$tech_acc_color} ;
 }
-#dropdown li:hover, #navmenu .menu li:hover, #navmenu .menu ul.sub-menu > li:hover {
+#dropdown li:hover, #navmenu .top-menu li:hover, #navmenu .top-menu ul.sub-menu > li:hover {
 background:#efefef;
 }
-#dropdown li.current_page_item > a, #navmenu .menu li.current-menu-item > a{
+#dropdown li.current_page_item > a, #navmenu .top-menu li.current-menu-item > a{
 color:#f7f7f7;
 }
-#dropdown li.current_page_item > a:hover, #navmenu .menu li.current-menu-item > a:hover{
+#dropdown li.current_page_item > a:hover, #navmenu .top-menu li.current-menu-item > a:hover{
 color:{$tech_acc_color};
 }
 ul#admin li:hover{
@@ -257,19 +257,19 @@ box-shadow:2px 1px 3px rgba(0, 0, 0, 0.3);
 CSS;
 } else {
 $css_var .= <<<CSS
-#dropdown li.current_page_item, #navmenu .menu li.current-menu-item {
+#dropdown li.current_page_item, #navmenu .top-menu li.current-menu-item {
 background-color: transparent ;
 }
-#dropdown li:hover, #navmenu .menu li:hover {
+#dropdown li:hover, #navmenu .top-menu li:hover {
 background-color:transparent;
 box-shadow:none;
 -moz-box-shadow:none;
 -webkit-box-shadow:none;
 }
-#dropdown li.current_page_item > a, #navmenu .menu li.current-menu-item > a{
+#dropdown li.current_page_item > a, #navmenu .top-menu li.current-menu-item > a{
 color:#f7f7f7;
 }
-#dropdown li.current_page_item > a:hover, #navmenu .menu li.current-menu-item > a:hover{
+#dropdown li.current_page_item > a:hover, #navmenu .top-menu li.current-menu-item > a:hover{
 color:{$tech_acc_color};
 }
 ul#admin li:hover{
@@ -516,14 +516,14 @@ CSS;
 		}
 	}
 $css_var .= <<<CSS
-#header ul#nav,#header ul#nav2,#header ul#dropdown,#header ul.menu{
+#header ul#nav,#header ul#nav2,#header ul#dropdown,#header ul.top-menu{
 {$tech_nav_align};
 }
 CSS;
 	if (of_get_option('nav_button_width','0') != '0') { 
             $tech_nav_button_width = of_get_option('nav_button_width','0');
 $css_var .= <<<CSS
-#navmenu ul#nav li, #navmenu ul#admin li, #nav2 li,#dropdown li, #navmenu .menu li{
+#navmenu ul#nav li, #navmenu ul#admin li, #nav2 li,#dropdown li, #navmenu .top-menu li{
 width: {$tech_nav_button_width}px;
 } 
 CSS;
@@ -538,7 +538,7 @@ left:50%;
 ul#admin{
 margin-top:30px !important;
 }
-#dropdown, .menu{
+#dropdown, .top-menu{
 position:relative;
 clear:both;
 left:-50%;

@@ -975,7 +975,7 @@ h3.comments{
 Nav Menus
  *************************************/
 
-#dropdown, .menu{
+#dropdown, .top-menu{
 	height:35px;
 	line-height:16px;
 	list-style-image:none;
@@ -987,7 +987,7 @@ Nav Menus
 	z-index:10;
 }
 
-#dropdown a, .menu a{
+#dropdown a, .top-menu a{
 	color:#A0B3C2;
 	display:block;
 	font-size:1.3em;
@@ -996,11 +996,11 @@ Nav Menus
 	text-decoration:none;
 }
 
-#dropdown a:hover, .menu a:hover{
+#dropdown a:hover, .top-menu a:hover{
 	text-decoration:none !important;
 }
 
-ul#dropdown > li, ul.menu > li{
+ul#dropdown > li, ul.top-menu > li{
         border-top-left-radius:5px;
 	border-top-right-radius:5px;
 	-moz-border-radius-topleft:5px;
@@ -1014,7 +1014,7 @@ ul#dropdown > li, ul.menu > li{
 	position:relative;
 } 
  
-#dropdown ul, .menu ul{
+#dropdown ul, .top-menu ul{
 	visibility: hidden;
         opacity: 0;
         -moz-transition:visibility 0s linear 0.5s,opacity 0.3s linear;
@@ -1033,7 +1033,7 @@ ul#dropdown > li, ul.menu > li{
         background-color:#E3E3E3;
 } 
  
-#dropdown li ul , .menu li ul{ 
+#dropdown li ul , .top-menu li ul{ 
 	width:210px;
 	padding:0 0 3px;
         box-shadow:2px 1px 4px rgba(0, 0, 0, 0.3);
@@ -1047,11 +1047,11 @@ ul#dropdown > li, ul.menu > li{
 	-webkit-border-bottom-left-radius:5px;
 	-webkit-border-bottom-right-radius:5px;
 }
-#dropdown li ul a , .menu li ul a{
+#dropdown li ul a , .top-menu li ul a{
 	width:202px; 
 	float:left;
 }
-#dropdown li ul li, .menu li ul li{
+#dropdown li ul li, .top-menu li ul li{
 	width:210px !important;
         border-top: 1px solid #D3D3D3;
         height: 24px;
@@ -1061,21 +1061,21 @@ ul#dropdown > li, ul.menu > li{
 	-webkit-border-radius:0;
         overflow:hidden;
 }
-#dropdown ul ul, .menu ul ul{
+#dropdown ul ul, .top-menu ul ul{
 	top:auto;
         border: 1px solid #D3D3D3;
         border-top:none;
 }
-#dropdown li ul ul, .menu li ul ul{
+#dropdown li ul ul, .top-menu li ul ul{
 	left:200px; 
 	margin:0px 0 0 10px;
 }
 #dropdown li:hover ul ul, 
 #dropdown li:hover ul ul ul, 
 #dropdown li:hover ul ul ul ul, 
-.menu li:hover ul ul, 
-.menu li:hover ul ul ul, 
-.menu li:hover ul ul ul ul {
+.top-menu li:hover ul ul, 
+.top-menu li:hover ul ul ul, 
+.top-menu li:hover ul ul ul ul {
 	visibility: hidden;
         opacity: 0;
         -moz-transition:visibility 0s linear 0.5s,opacity 0.3s linear;
@@ -1087,10 +1087,10 @@ ul#dropdown > li, ul.menu > li{
 #dropdown li li:hover ul, 
 #dropdown li li li:hover ul, 
 #dropdown li li li li:hover ul, 
-.menu li:hover ul, 
-.menu li li:hover ul, 
-.menu li li li:hover ul, 
-.menu li li li li:hover ul  {
+.top-menu li:hover ul, 
+.top-menu li li:hover ul, 
+.top-menu li li li:hover ul, 
+.top-menu li li li li:hover ul  {
         visibility: visible;
 	display:block;
         opacity: 1;
@@ -1106,7 +1106,7 @@ ul#dropdown > li, ul.menu > li{
 }
 
 #dropdown li:hover, 
-#navmenu .menu li:hover {
+#navmenu .top-menu li:hover {
     background:#efefef;
     box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
     -moz-box-shadow:2px -1px 3px rgba(0, 0, 0, 0.3);
@@ -1114,13 +1114,13 @@ ul#dropdown > li, ul.menu > li{
 }
 
 #dropdown li ul li:hover, 
-#navmenu .menu li ul li:hover {
+#navmenu .top-menu li ul li:hover {
     background: #efefef;
     box-shadow:none;
     -moz-box-shadow:none;
     -webkit-box-shadow:none;  
 }
-.menu li ul li.has_children{
+.top-menu li ul li.has_children{
         background: url(images/submenu.gif) no-repeat center right;
 }
 #navmenu{
