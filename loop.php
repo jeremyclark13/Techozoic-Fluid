@@ -3,24 +3,17 @@
 			the_post();
 ?>
 			<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-<?php                   if ( has_post_format( 'quote' ) || has_post_format( 'aside' ) ) {
-                            if ($post->post_content!=""){ ?>
+<?php                   if ( has_post_format( 'quote' )  || has_post_format( 'aside' ) ) { ?>
                                 <div class="entry">
                                 <?php the_content();?>
-                                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"" class="permalink"><?php if( get_the_title() ) { the_title(); } else{ _e('Read More &hellip;','techozoic'); } ?></a>
-                                </div>
-                             
+                                </div>               
 <?php                   
-                            }
-                        } elseif(has_post_format( 'status' )) {
-                            if ($post->post_content!=""){ ?>
+                        } elseif ( has_post_format( 'status' ) ) { ?>
                                 <div class="avatar"><a href="<?php echo add_query_arg('post_format','status',get_author_posts_url( get_the_author_meta( 'ID' ) ) );?>" title="<?php _e('View all status updates by this author','techozoic'); ?>"><?php echo get_avatar( get_the_author_meta( 'ID' ), 64 ); ?></a></div>    
                                 <div class="entry">
                                 <?php the_content();?>
-                                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php _e('Read More','techozoic'); ?>" class="permalink"><?php if( get_the_title() ) { the_title(); } else{ _e('Read More &hellip;','techozoic'); } ?></a>
                                 </div>
 <?php                   
-                            }
                         } else {    
 ?>                            
 			<div class="heading">
@@ -41,8 +34,9 @@
                                             the_excerpt();
                                     } else {
                                             the_content(__('Read the remainder of this entry &raquo;'  , 'techozoic')); 
-                                    }?>
-<?php        			if ( comments_open()  && empty($post->post_password) && (of_get_option('comment_preview','1') == "1")) { ?>
+                                    }
+                                    wp_link_pages();
+        			if ( comments_open()  && empty($post->post_password) && (of_get_option('comment_preview','1') == "1")) { ?>
                                     <div class="post_comment_cont">
 <?php       			comments_popup_link(__('Be the first to comment' ,'techozoic'), __('1 Comment. Join the Conversation' ,'techozoic'), _n('% Comment so far. Join the Conversation' , '% Comments so far. Join the Conversation',get_comments_number(),'techozoic'), 'comments-link', __('Comments Closed' ,'techozoic')); ?>
                                     </div>

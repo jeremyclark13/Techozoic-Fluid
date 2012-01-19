@@ -23,6 +23,9 @@ if (have_posts()) {
 		</div>
 		<div style="clear:both"></div>
 		<div class="post" id="post-<?php the_ID(); ?>">
+                <div class="toppost">
+		<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/home.png" border="0" alt="Home" title="<?php printf(__('Go back to %s','techozoic'), get_bloginfo('name')); ?>" /></a>&nbsp;<?php if (tech_icons('single')){ tech_social_icons($home=false); } ?>
+		</div>
 		<h1 class="post_title">
                     <?php if (get_the_title() != ""){ ?>
                         <?php the_title(); ?>
@@ -32,9 +35,6 @@ if (have_posts()) {
                         the_time();
                     }?>
                 </h1>
-		<div class="toppost">
-		<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/home.png" border="0" alt="Home" title="<?php printf(__('Go back to %s','techozoic'), get_bloginfo('name')); ?>" /></a>&nbsp;<?php if (tech_icons('single')){ tech_social_icons($home=false); } ?>
-		</div>
 <?php do_action('tech_before_sing_content');?>	
 		<div class="singlepost entry">
 <?php 		if(function_exists('the_post_thumbnail')) { the_post_thumbnail('single-post-thunbnail'); }?>

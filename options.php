@@ -614,6 +614,10 @@ function optionsframework_options() {
                 "type" => "info",
         	"desc" => "<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817' title='Donate Securely'><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' /></a>");
          
+       $options[] = array("name" => __("Changelog - Version 2.0.2", "techozoic"),
+                "type" => "info",
+                "desc" =>'Title was overlapping social media icons on single post page.<br />Navigation button color wasn\'t respected.<br /> Post title color wasn\'t respected on single post page.<br /> Post format status post weren\'t showing up on home page.<br />');
+       
        $options[] = array( "name" => __("Changelog - Version 2.0","techozoic"),
                 "type" => "info",      
                 "desc" => 'Moved to Options Framework Option Panel.<br />

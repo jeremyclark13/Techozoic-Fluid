@@ -197,6 +197,11 @@ font-family:{$tech_h5_font}, Sans-Serif;
 font:{$tech_main_heading_font['style']} {$tech_main_heading_font['size']} {$tech_blog_title_font}, Sans-Serif;
 color: {$tech_main_heading_font['color']};
 }
+h1.post_title{
+font-family:{$tech_post_title_font}, Sans-Serif;
+color:{$tech_header_font['color']} !important;
+font-size: {$tech_header_font['size']};
+}
 .post_title a{
 font-family:{$tech_post_title_font}, Sans-Serif;
 color:{$tech_header_font['color']} !important;
@@ -230,7 +235,7 @@ font-family:{$tech_nav_font['face']}, Sans-Serif;
 font-size:{$tech_nav_font['size']};
 color:{$tech_nav_font['color']};
 }
-#navmenu .top-menu ul.sub-menu{
+#navmenu .top-menu li, #navmenu .top-menu ul.sub-menu{
 background-color: {$tech_nav_ul_bg_color};
 }
 CSS;

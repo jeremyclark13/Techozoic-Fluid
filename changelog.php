@@ -4,6 +4,11 @@
 <p>
 <br />
 <h2>Change Log</h2>
+<h3>Version 2.0.2</h3><br />
+- Title was overlapping social media icons on single post page.<br />
+- Navigation button color wasn't respected. <br />
+- Post title color wasn't respected on single post page. <br />
+- Post format status post weren't showing up on home page. <br />
 <h3>Version 2.0</h3><br />
 - Moved to Options Framework Option Panel.<br />
 - Using Custom Header functions.<br />

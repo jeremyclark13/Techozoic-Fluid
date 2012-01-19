@@ -6,71 +6,74 @@ Widget registration and custom widgets defined here
 $theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
 $version = $theme_data['Version'];
 
-if(function_exists('register_sidebar')){
-register_sidebar(array(
-        'name'=>__('Right Sidebar','techozoic'),
-        'id'=> 'right_sidebar'
-        ));
-register_sidebar(array(
-        'name'=>__('Left Sidebar','techozoic'),
-        'id'=> 'left_sidebar'
-        ));
-register_sidebar(array(
-        'name'=>__('Footer','techozoic'),
-        'description' => __('Limit 3 widgets can be assigned to footer area','techozoic'),
-        'id'=> 'tech_footer',
-        'before_widget' => '<div class="footercont"><ul><li class="widget %2$s">',
-        'after_widget' => '</li></ul></div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>'
-));
-register_sidebar(array(
-        'name'=>__('Right Header','techozoic'),
-        'description' => __('Area to the right side of the header','techozoic'),
-        'id'=> 'right_header',
-        'before_widget' => '<div class="hwidget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>'
-));
-register_sidebar(array(
-        'name'=>__('Left Header','techozoic'),
-        'description' => __('Area to the left side of the header','techozoic'),
-        'id'=> 'left_header',
-        'before_widget' => '<div class="hwidget %2$s">',
-        'after_widget' => '</div>',
-        'before_title' => '<h2 class="widgettitle">',
-        'after_title' => '</h2>'
-));
-	
-$pages = get_pages();
-$page_option = of_get_option('page_sidebar','');
-foreach ($pages as $page){
-    if (empty($page_option)){
-        break;
-    }elseif($page_option[$page->ID] == '1'){
-        register_sidebar(array(
-                'name'=>"$page->post_title Left Sidebar",
-                'description' => __("Sidebar displayed only on $page->post_title.  Page ID($page->ID)",'techozoic'),
-                'id'=> "page_sidebar_l_$page->ID",
-                'before_widget' => '<div class="hwidget %2$s">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2 class="widgettitle">',
-                'after_title' => '</h2>'
-        ));
-        register_sidebar(array(
-                'name'=>"$page->post_title Right Sidebar",
-                'description' => __("Sidebar displayed only on $page->post_title.  Page ID($page->ID)",'techozoic'),
-                'id'=> "page_sidebar_r_$page->ID",
-                'before_widget' => '<div class="hwidget %2$s">',
-                'after_widget' => '</div>',
-                'before_title' => '<h2 class="widgettitle">',
-                'after_title' => '</h2>'
-        ));
+function tech_widgets_init(){
+    register_sidebar(array(
+            'name'=>__('Right Sidebar','techozoic'),
+            'id'=> 'right_sidebar'
+            ));
+    register_sidebar(array(
+            'name'=>__('Left Sidebar','techozoic'),
+            'id'=> 'left_sidebar'
+            ));
+    register_sidebar(array(
+            'name'=>__('Footer','techozoic'),
+            'description' => __('Limit 3 widgets can be assigned to footer area','techozoic'),
+            'id'=> 'tech_footer',
+            'before_widget' => '<div class="footercont"><ul><li class="widget %2$s">',
+            'after_widget' => '</li></ul></div>',
+            'before_title' => '<h2 class="widgettitle">',
+            'after_title' => '</h2>'
+    ));
+    register_sidebar(array(
+            'name'=>__('Right Header','techozoic'),
+            'description' => __('Area to the right side of the header','techozoic'),
+            'id'=> 'right_header',
+            'before_widget' => '<div class="hwidget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widgettitle">',
+            'after_title' => '</h2>'
+    ));
+    register_sidebar(array(
+            'name'=>__('Left Header','techozoic'),
+            'description' => __('Area to the left side of the header','techozoic'),
+            'id'=> 'left_header',
+            'before_widget' => '<div class="hwidget %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<h2 class="widgettitle">',
+            'after_title' => '</h2>'
+    ));
+
+    $pages = get_pages();
+    $page_option = of_get_option('page_sidebar','');
+    foreach ($pages as $page){
+        if (empty($page_option)){
+            break;
+        }elseif($page_option[$page->ID] == '1'){
+            register_sidebar(array(
+                    'name'=>"$page->post_title Left Sidebar",
+                    'description' => __("Sidebar displayed only on $page->post_title.  Page ID($page->ID)",'techozoic'),
+                    'id'=> "page_sidebar_l_$page->ID",
+                    'before_widget' => '<div class="hwidget %2$s">',
+                    'after_widget' => '</div>',
+                    'before_title' => '<h2 class="widgettitle">',
+                    'after_title' => '</h2>'
+            ));
+            register_sidebar(array(
+                    'name'=>"$page->post_title Right Sidebar",
+                    'description' => __("Sidebar displayed only on $page->post_title.  Page ID($page->ID)",'techozoic'),
+                    'id'=> "page_sidebar_r_$page->ID",
+                    'before_widget' => '<div class="hwidget %2$s">',
+                    'after_widget' => '</div>',
+                    'before_title' => '<h2 class="widgettitle">',
+                    'after_title' => '</h2>'
+            ));
+        }
     }
-}
+}	
+
+add_action( 'widgets_init', 'tech_widgets_init' );
 	
-	class Techozoic_Font_Size_Widget extends WP_Widget {
+    class Techozoic_Font_Size_Widget extends WP_Widget {
 
 		function Techozoic_Font_Size_Widget() {
 			$widget_ops = array('classname' => 'techozoic_font_size', 'description' => __( 'Techozoic Font Size Control Widget' , 'techozoic') );
@@ -384,7 +387,7 @@ foreach ($pages as $page){
 		function Techozoic_Status_Widget() {
 			$widget_ops = array('classname' => 'techozoic_status', 'description' => __( 'Techozoic Status Widget - Dispaly Post Format Status updates in sidebar' , 'techozoic') );
 			$this->WP_Widget('techozoic_status', __('Techozoic Status' , 'techozoic'), $widget_ops);
-		}
+                }
 
 		function widget( $args, $instance ) {
 			extract($args);
@@ -455,5 +458,4 @@ foreach ($pages as $page){
 		register_widget('Techozoic_About_Widget');
 		register_widget('Techozoic_Meta_Widget');
 		register_widget('Techozoic_RSS_Widget');
-	} //End if(function_exists('register_sidebar'))
 ?>

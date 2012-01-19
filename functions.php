@@ -173,6 +173,22 @@ function techozoic_admin_header_image() { ?>
 	</div>
 <?php }
 
+/**
+ * Techozoic comment reply enqueue
+ *
+ * function enqueuing comment reply script, to be added to header if needed.
+ * 
+ *
+ * @access    private
+ * @since     2.0.1
+ */
+
+function techozoic_enqueue_comment_reply() {
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'techozoic_enqueue_comment_reply' );
 
 /**
  * Techozoic Theme Logo
@@ -350,49 +366,7 @@ function tech_exclude_post_formats_from_feeds( &$wp_query ) {
 	}
 }
 
-/**
- * Techozoic Exclude aside/status post format from home page
- *
- * Remove certain post formats from home query only applied if the status 
- * widget is enabled.
- * 
- * @param     string    wp_query from hook
- * @return    string    wp_query with post formats removed.
- *
- * @access    public
- * @since     2.0
- */
 
-if ( is_active_widget(false, false, 'techozoic_status', true) ) {
-    add_action( 'pre_get_posts', 'tech_exclude_post_formats_from_home' );
-}
-function tech_exclude_post_formats_from_home( &$wp_query ) {
-
-	// Only do this for feed queries:
-	if ( $wp_query->is_home() || $wp_query->is_category() ) {
-
-		// Array of post formats to exclude, by slug,
-		$post_formats_to_exclude = array(
-			'post-format-status'
-		);
-
-		// Extra query to hack onto the $wp_query object:
-		$extra_tax_query = array(
-			'taxonomy' => 'post_format',
-			'field' => 'slug',
-			'terms' => $post_formats_to_exclude,
-			'operator' => 'NOT IN'
-		);
-
-		$tax_query = $wp_query->get( 'tax_query' );
-		if ( is_array( $tax_query ) ) {
-			$tax_query = $tax_query + $extra_tax_query;
-		} else {
-			$tax_query = array( $extra_tax_query );
-		}
-		$wp_query->set( 'tax_query', $tax_query );
-	}
-}
 /**
  * Techozoic Google Plus one JS
  *

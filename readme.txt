@@ -6,16 +6,16 @@ Requires at least: 3.0
 Tested up to: 3.1
 Stable tag: trunk
 
-Simple, fluid width, widget-ready sidebars and footer, 2 or 3 column theme.    
+Advanced, fluid width, widget-ready sidebars and footer, 1, 2, or 3 column theme.    
 
 == Description ==
-Over 70 theme options to adjust column settings, color scheme, font, ad placement, and custom headers.  SEO optimized titles and meta information.
+Advanced, fluid width 2 or 3 column theme with widgetized sidebar, footer, and header areas.  Theme option pages to adjust everything from layout settings, color scheme, typography, ad placement, and custom headers.  SEO optimized titles and meta description and keyword fields.  Builtin social bookmarking, choose from 10 different popular social network and bookmarking sites to include.  Visit the <a href="themes.php?page=options-framework">theme options</a> page to setup Techozoic.
 
 == Installation ==
 
 Installation can be done automatically through the Install Themes feature or manually by following instructions below.
 
-1. Upload `techozoic-fluid.zip` to the `/wp-content/themes/` directory
+1. Upload contents of `techozoic-fluid.zip` to the `/wp-content/themes/` directory
 1. Choose the theme from the 'Appearance menu in WordPress
 1. Visit the Techozoic Settings pages to configure all the theme options.
 
@@ -30,6 +30,12 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+= Version 2.0.2 =
+* Title was overlapping social media icons on single post page.
+* Navigation button color wasn't respected. 
+* Post title color wasn't respected on single post page. 
+* Post format status post weren't showing up on home page. 
+
 = Version 2.0 = 
 * Moved to Options Framework Option Panel.
 * Using Custom Header functions.

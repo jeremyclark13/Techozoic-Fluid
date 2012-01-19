@@ -82,7 +82,6 @@ else { ?>
 	<link rel="icon" href="<?php echo of_get_option( 'favicon_image' );?>" type="image/x-icon" />
 	<link rel="shortcut icon" href="<?php echo of_get_option( 'favicon_image' );?>" type="image/x-icon" />
 <?php } 
-if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
 wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
