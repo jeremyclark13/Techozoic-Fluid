@@ -4,6 +4,9 @@
 <p>
 <br />
 <h2>Change Log</h2>
+<h3>Version 2.0.3</h3><br />
+- Updated Social Media icons to GPL licensed - Elegant Media Icons. <br />
+- Cleaned out old unused images and files.<br />
 <h3>Version 2.0.2</h3><br />
 - Title was overlapping social media icons on single post page.<br />
 - Navigation button color wasn't respected. <br />

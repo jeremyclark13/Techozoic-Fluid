@@ -613,8 +613,12 @@ function optionsframework_options() {
        $options[] = array( "name" => __("Donate to help further development","techozoic"),
                 "type" => "info",
         	"desc" => "<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817' title='Donate Securely'><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' /></a>");
-         
-       $options[] = array("name" => __("Changelog - Version 2.0.2", "techozoic"),
+       
+       $options[] = array("name" => __("Changelog - Version 2.0.3", "techozoic"),
+                "type" => "info",  
+                "desc" =>'Updated Social Media icons to GPL licensed - Elegant Media Icons. <br />Cleaned out old unused images and files.<br />');
+       
+        $options[] = array("name" => __("Changelog - Version 2.0.2", "techozoic"),
                 "type" => "info",
                 "desc" =>'Title was overlapping social media icons on single post page.<br />Navigation button color wasn\'t respected.<br /> Post title color wasn\'t respected on single post page.<br /> Post format status post weren\'t showing up on home page.<br />');
        

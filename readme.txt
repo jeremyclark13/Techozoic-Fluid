@@ -16,8 +16,14 @@ Advanced, fluid width 2 or 3 column theme with widgetized sidebar, footer, and h
 Installation can be done automatically through the Install Themes feature or manually by following instructions below.
 
 1. Upload contents of `techozoic-fluid.zip` to the `/wp-content/themes/` directory
-1. Choose the theme from the 'Appearance menu in WordPress
-1. Visit the Techozoic Settings pages to configure all the theme options.
+2. Choose the theme from the 'Appearance menu in WordPress
+3. Visit the Techozoic Settings pages to configure all the theme options.
+
+== Licensing ==
+
+* Social Icon Set - Elegant Media Icons - License: GPL
+* Header Images - Jeremy Clark - License: GPL
+* All Other Images - Jeremy Clark - License: GPL
 
 == Frequently Asked Questions ==
 
@@ -30,6 +36,10 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+= Version 2.0.3 =
+* Updated Social Media icons to GPL licensed - Elegant Media Icons 
+* Cleaned out old unused images and files
+
 = Version 2.0.2 =
 * Title was overlapping social media icons on single post page.
 * Navigation button color wasn't respected. 
