@@ -9,7 +9,7 @@ if (of_get_option('home_sidebar','1') == "1")  tech_show_sidebar("l");
 
 		 <?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 <?php /* If this is a category archive */ if (is_category()) { ?>				
-		<h2 class="pagetitle"><?php printf(__('Archive for the %s Category','techozoic'), single_cat_title('',false)); ?></h2>
+		<h2 class="pagetitle"><?php printf(__('%s Archive','techozoic'), single_cat_title('',false)); ?></h2>
 		
  	  <?php /* If this is a daily archive */ } elseif (is_day()) { ?>
 		<h2 class="pagetitle"><?php printf(__('Archive for %s' ,'techozoic'), get_the_time('F jS, Y')); ?></h2>
@@ -32,9 +32,9 @@ if (of_get_option('home_sidebar','1') == "1")  tech_show_sidebar("l");
 <?php           } 
            }?>		
 <div class="navigation">
-<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
-<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
-	</div>
+	<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries' , 'techozoic')) ?></div>
+	<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;' , 'techozoic')) ?></div>
+</div>
 <?php get_template_part( 'loop' , 'archive'); ?>		
 		
 	</div>

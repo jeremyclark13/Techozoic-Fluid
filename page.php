@@ -6,10 +6,10 @@ if (empty($tech_sidebar)){
 if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || $tech_sidebar == "on") { tech_show_sidebar("l");} 
 ?>
 	<div id="content" class="<?php if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || $tech_sidebar == "on") { echo "narrow"; }else {echo "wide";}?>column">
-<?php	if (strlen(wp_title('', false))>0) {
+<?php	if (get_the_title()) {
 ?>		<h1 class="post_title">
-		<?php wp_title('', 'display'); 
-?>		</h1>
+		<?php the_title(); ?>		
+                </h1>
 <?php 	}
 	if (have_posts()) { 
 		while (have_posts()) { 

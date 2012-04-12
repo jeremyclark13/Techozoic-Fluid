@@ -41,28 +41,20 @@ if (have_posts()) {
 <?php 		the_content('<p class="serif">'.__('Read the rest of this entry','techozoic'). '&raquo;</p>'); 
 		wp_link_pages(); 
 ?>
-		<p class="postmetadata alt">
-		<small>
-                <?php printf(__('Written by %s','techozoic'), get_the_author()); ?>.
-		<?php printf(__('This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed.','techozoic'), get_the_time($date_format), get_the_time(), get_the_category_list(', '), "<a href=\"".get_post_comments_feed_link()."\">".__('RSS 2.0','techozoic')."</a>"); ?>				
-                <?php the_tags(__('Tagged ','techozoic')); ?>
-<?php 		if (('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
-			// Both Comments and Pings are open ?>
-			<?php printf(__('You can %1$s or %2$s from your own site.','techozoic'),'<a href="#respond">'. __('leave a response','techozoic').'</a>', '<a href="'. get_trackback_url() .'" rel="trackback">'. __('trackback','techozoic').'</a>')?>
-<?php 		} elseif (!('open' == $post-> comment_status) && ('open' == $post->ping_status)) {
-			// Only Pings are Open ?>
-			<?php printf(__('Responses are currently closed, but you can %s from your site.','techozoic'),'<a href="'. get_trackback_url().'" rel="trackback">'.__('trackback','techozoic').'</a>'); ?>
-<?php 		} elseif (('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
-			// Comments are open, Pings are not ?>
-			<?php _e('You can skip to the end and leave a response. Pinging is currently not allowed.','techozoic')?>
-<?php 		} elseif (!('open' == $post-> comment_status) && !('open' == $post->ping_status)) {
-			// Neither Comments, nor Pings are open ?>
-			<?php _e('Both comments and pings are currently closed.','techozoic')?>			
-<?php 		} 
-		edit_post_link('&nbsp;'.__('  Edit this entry.','techozoic'),'',''); 
-?>
-		</small>
-		</p>
+		<div class="postmetadata alt">
+                <?php if (get_the_author_meta('description', get_the_author_meta('ID')) != ''){ ?>
+                <div class="author-info">
+                    <div class="alignleft"><?php echo get_avatar(get_the_author_meta('ID'),64); ?></div>
+                    <h5><?php printf(__('About %s','techozoic'), get_the_author()); ?></h5>
+                    <?php echo apply_filters('the_content', get_the_author_meta('description', get_the_author_meta('ID'))); ?>
+                </div>
+                <?php } ?>
+                <div class="single-time"><?php echo get_the_time($date_format); ?> @ <?php echo get_the_time(); ?></div>
+                <div class="single-category"><?php echo get_the_category_list(', ');?></div>
+                <?php the_tags(__('<div class="single-tags">','techozoic'),', ', '</div>'); ?>
+                <div class="clear"></div>
+                <?php edit_post_link(__('Edit this page.' ,'techozoic'), '<br /><p>', '</p>'); ?>
+		</div>
 		</div>
 <?php do_action('tech_after_sing_content');?>
 		</div>

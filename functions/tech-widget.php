@@ -224,6 +224,7 @@ add_action( 'widgets_init', 'tech_widgets_init' );
 			$gravatar = $instance['gravatar'] ? '1' : '0';
 			$facebook = $instance['facebook'] ? '1' : '0';
 			$myspace = $instance['myspace'] ? '1' : '0';
+                        $google = $instance['google'] ? '1' : '0';
 			$twitter = $instance['twitter'] ? '1' : '0';
 			$about = $instance['about'];
 			if ( !$number = (int) $instance['number'] )
@@ -245,7 +246,7 @@ add_action( 'widgets_init', 'tech_widgets_init' );
 ?>			</span><p>
 <?php			echo $about;
 ?>			<ul class="about_icons">
-<?php		tech_about_icons($facebook,$myspace,$twitter);
+<?php		tech_about_icons($facebook,$myspace,$twitter,$google);
 ?>			</ul>
 			</p><div style="clear:both"></div>
 <?php	  		echo $after_widget;
@@ -259,6 +260,7 @@ add_action( 'widgets_init', 'tech_widgets_init' );
 			$instance['facebook'] = !empty($new_instance['facebook']) ? 1 : 0;
 			$instance['myspace'] = !empty($new_instance['myspace']) ? 1 : 0;
 			$instance['twitter'] = !empty($new_instance['twitter']) ? 1 : 0;
+                        $instance['google'] = !empty($new_instance['google']) ? 1 : 0;
 			$instance['gravatar'] = !empty($new_instance['gravatar']) ? 1 : 0;
 			$instance['number'] = (int) $new_instance['number'];
 			return $instance;
@@ -271,6 +273,7 @@ add_action( 'widgets_init', 'tech_widgets_init' );
 			$facebook = isset($instance['facebook']) ? (bool) $instance['facebook'] : false;
 			$myspace = isset($instance['myspace']) ? (bool) $instance['myspace'] : false;
 			$twitter = isset($instance['twitter']) ? (bool) $instance['twitter'] : false;
+                        $google = isset($instance['google']) ? (bool) $instance['google'] : false;
 			$gravatar = isset($instance['gravatar']) ? (bool) $instance['gravatar'] : false;
 			$number = isset($instance['number']) ? absint($instance['number']) : 50;
 ?>
@@ -284,6 +287,8 @@ add_action( 'widgets_init', 'tech_widgets_init' );
 			<input class="checkbox" type="checkbox" <?php checked($myspace); ?> id="<?php echo $this->get_field_id('myspace'); ?>" name="<?php echo $this->get_field_name('myspace'); ?>" /> <label for="<?php echo $this->get_field_id('myspace'); ?>"><?php _e('Display link to MySpace Profile' ,'techozoic') ?></label>
 			<br />
 			<input class="checkbox" type="checkbox" <?php checked($twitter); ?> id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" /> <label for="<?php echo $this->get_field_id('twitter'); ?>"><?php _e('Display link to Twitter Profile' ,'techozoic')?></label>
+			<br />
+                        <input class="checkbox" type="checkbox" <?php checked($google); ?> id="<?php echo $this->get_field_id('google'); ?>" name="<?php echo $this->get_field_name('google'); ?>" /> <label for="<?php echo $this->get_field_id('google'); ?>"><?php _e('Display link to Google+ Profile' ,'techozoic')?></label>
 			<br />
 			<input class="checkbox" type="checkbox" <?php checked($gravatar); ?> id="<?php echo $this->get_field_id('gravatar'); ?>" name="<?php echo $this->get_field_name('gravatar'); ?>" /> <label for="<?php echo $this->get_field_id('gravatar'); ?>"><?php _e('Enable Gravatar' ,'techozoic') ?></label>
 			</p>

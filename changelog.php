@@ -4,6 +4,13 @@
 <p>
 <br />
 <h2>Change Log</h2>
+<h3>Version 2.0.4</h3><br />
+- Added two new navigation styles, Ribbon and Square. <br />
+- Added more color choices for navigation menus. <br />
+- Added option to specify width of navigation menu sub menus. <br />
+- Added ability to specify two Google Web fonts. <br />
+- Romanian Translation ,<img src="http://mobirout.com/uploads/ro.gif" alt="Romanian translation" /> Web Geek Science  (<a href="http://webhostinggeeks.com/">Web Hosting Geeks</a>)<br /> 
+- New post author block on single post screens, if user bio is filled out on profile page it is displayed along with gravatar. <br />
 <h3>Version 2.0.3</h3><br />
 - Updated Social Media icons to GPL licensed - Elegant Media Icons. <br />
 - Cleaned out old unused images and files.<br />

@@ -23,7 +23,7 @@ function techozoic_comment($comment, $args, $depth) {
 ?>
         <li <?php comment_class(); ?> id="li-comment-<?php comment_ID( ); ?>">
         <div id="comment-<?php comment_ID( ); ?>">
-        <div class="avatar_cont"><?php echo get_avatar( get_comment_author_email(), '50' ); ?></div>
+        <div class="avatar_cont"><?php echo get_avatar( $comment, '50' ); ?></div>
         <?php printf(__('Comment by %s','techozoic'),'<em>'.get_comment_author_link().'</em>'); ?>:
 <?php 			if ($comment->comment_approved == '0') { 
 ?>				<em><?php _e('Your comment is awaiting moderation.' ,'techozoic') ?></em>

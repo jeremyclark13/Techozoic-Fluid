@@ -36,6 +36,15 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+
+= Version 2.0.4 =
+* Added two new navigation styles, Ribbon and Square.
+* Added more color choices for navigation menus.
+* Added option to specify width of navigation menu sub menus.
+* Added ability to specify two Google Web fonts.
+* Romanian Translation  (http://webhostinggeeks.com/ "Web Hosting Geeks") 
+* New post author block on single post screens, if user bio is filled out on profile page it is displayed along with gravatar.
+
 = Version 2.0.3 =
 * Updated Social Media icons to GPL licensed - Elegant Media Icons 
 * Cleaned out old unused images and files

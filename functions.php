@@ -53,7 +53,7 @@ add_action( 'after_setup_theme', 'techozoic_setup' );
  */
  
  function techozoic_setup() {
-        global $content_width;
+        global $content_width, $wp_version;
 	load_theme_textdomain( 'techozoic', get_template_directory() . '/languages');
 	$locale = get_locale();
 	$locale_file = get_template_directory() . "/languages/$locale.php";
@@ -76,41 +76,66 @@ add_action( 'after_setup_theme', 'techozoic_setup' );
 		'footer' => __('Footer Navigation', 'techozoic'),
 	) );
         //WP Navigation Menu
-        add_theme_support( 'custom-header', array( 'random-default' => true ) );
-        //WP Custom Header - random roation by default
-        define( 'HEADER_TEXTCOLOR', '' );
-        define( 'HEADER_IMAGE', '' );
-        define( 'HEADER_IMAGE_HEIGHT', of_get_option('header_height','200') );
-        define( 'HEADER_IMAGE_WIDTH', of_get_option('header_width','1000') );
-        define('NO_HEADER_TEXT', true );
-        add_custom_image_header( 'techozoic_header_style', 'techozoic_admin_header_style', 'techozoic_admin_header_image' );
+        if (version_compare($wp_version, '3.4' , '>=')){ 
+            add_theme_support( 'custom-header', array(
+                // Header image default
+                'default-image'			=> get_template_directory_uri() . '/images/headers/Grunge.jpg',
+                // Header text display default
+                'header-text'			=> false,
+                // Header text color default
+                'default-text-color'		=> '000',
+                // Header image width (in pixels)
+                'width'				=> of_get_option('header_width','1000'),
+                'flex-width'                    => true,
+                // Header image height (in pixels)
+                'height'			=> of_get_option('header_height','200'),
+                'flex-height'                   => true,
+                // Header image random rotation default
+                'random-default'		=> true,
+                // Template header style callback
+                'wp-head-callback'		=> 'techozoic_header_style',
+                // Admin header style callback
+                'admin-head-callback'		=> 'techozoic_admin_header_style',
+                // Admin preview style callback
+                'admin-preview-callback'	=> 'techozoic_admin_header_image'
+            ) );
+        } else {
+            add_theme_support( 'custom-header', array( 'random-default' => true ) );
+            //WP Custom Header - random roation by default
+            define( 'HEADER_TEXTCOLOR', '' );
+            define( 'HEADER_IMAGE', '' );
+            define( 'HEADER_IMAGE_HEIGHT', of_get_option('header_height','200') );
+            define( 'HEADER_IMAGE_WIDTH', of_get_option('header_width','1000') );
+            define('NO_HEADER_TEXT', true );
+            add_custom_image_header( 'techozoic_header_style', 'techozoic_admin_header_style', 'techozoic_admin_header_image' );
+        }
         register_default_headers( array(
-		'grunge' => array(
-			'url' => '%s/images/headers/Grunge.jpg',
-			'thumbnail_url' => '%s/images/headers/Grunge-thumbnail.jpg',
-			'description' => __( 'Grunge', 'techozoic' )
-		),
-		'landscape' => array(
-			'url' => '%s/images/headers/Landscape.jpg',
-			'thumbnail_url' => '%s/images/headers/Landscape-thumbnail.jpg',
-			'description' => __( 'Landscape', 'techozoic' )
-		),
-		'random_lines_1' => array(
-			'url' => '%s/images/headers/Random_Lines_1.jpg',
-			'thumbnail_url' => '%s/images/headers/Random_Lines_1-thumbnail.jpg',
-			'description' => __( 'Random Lines 1', 'techozoic' )
-		),
-		'random_lines_2' => array(
-			'url' => '%s/images/headers/Random_Lines_2.jpg',
-			'thumbnail_url' => '%s/images/headers/Random_Lines_2-thumbnail.jpg',
-			'description' => __( 'Random Lines 2', 'techozoic' )
-		),
-		'technology' => array(
-			'url' => '%s/images/headers/Technology.jpg',
-			'thumbnail_url' => '%s/images/headers/Technology-thumbnail.jpg',
-			'description' => __( 'Technology', 'techozoic' )
-		),
-	) );
+                    'grunge' => array(
+                            'url' => '%s/images/headers/Grunge.jpg',
+                            'thumbnail_url' => '%s/images/headers/Grunge-thumbnail.jpg',
+                            'description' => __( 'Grunge', 'techozoic' )
+                    ),
+                    'landscape' => array(
+                            'url' => '%s/images/headers/Landscape.jpg',
+                            'thumbnail_url' => '%s/images/headers/Landscape-thumbnail.jpg',
+                            'description' => __( 'Landscape', 'techozoic' )
+                    ),
+                    'random_lines_1' => array(
+                            'url' => '%s/images/headers/Random_Lines_1.jpg',
+                            'thumbnail_url' => '%s/images/headers/Random_Lines_1-thumbnail.jpg',
+                            'description' => __( 'Random Lines 1', 'techozoic' )
+                    ),
+                    'random_lines_2' => array(
+                            'url' => '%s/images/headers/Random_Lines_2.jpg',
+                            'thumbnail_url' => '%s/images/headers/Random_Lines_2-thumbnail.jpg',
+                            'description' => __( 'Random Lines 2', 'techozoic' )
+                    ),
+                    'technology' => array(
+                            'url' => '%s/images/headers/Technology.jpg',
+                            'thumbnail_url' => '%s/images/headers/Technology-thumbnail.jpg',
+                            'description' => __( 'Technology', 'techozoic' )
+                    ),
+            ) );
 }
 
 /**
@@ -213,6 +238,24 @@ function techozoic_theme_logo(){
 }
 
 /**
+ * Techozoic mobile css
+ *
+ * Enques mobile css if option is set will be incorparated into main style.css
+ * soon
+ * 
+ * @access    private
+ * @since     2.0.4
+ */
+if (of_get_option('mobile_css','0') == "1" ){
+    add_action('wp_enqueue_scripts','tech_enque_mobile');
+}
+
+function tech_enque_mobile() {
+    wp_register_style( 'tech-mobile', get_stylesheet_directory_uri() . '/mobile.css', false, 0.1 );
+    wp_enqueue_style( 'tech-mobile' );
+}
+
+/**
  * Techozoic custom menu walker
  *
  * Outputs custom menu class if menu has children.
@@ -220,6 +263,7 @@ function techozoic_theme_logo(){
  * @access    private
  * @since     2.0
  */
+
 
 class techozoic_menu_walker extends Walker_Nav_Menu {
 
@@ -265,6 +309,28 @@ class techozoic_menu_walker extends Walker_Nav_Menu {
 		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 
+}
+
+/**
+ * Techozoic change fonts
+ *
+ * Addes additional fonts to options framework for Google Web Fonts
+ * 
+ * @access    private
+ * @since     2.0.4
+ */
+add_action('admin_init','optionscheck_change_font', 10,2);
+
+function optionscheck_change_font(){
+    add_filter ( 'of_recognized_font_faces','tech_change_fonts');
+}
+
+function tech_change_fonts($fonts){
+    $google_fonts = array(
+    'google1'   => 'Google Font 1',
+    'google2'   => 'Google Font 2'
+        );
+    return array_merge($fonts, $google_fonts);
 }
 
 /**
@@ -557,15 +623,11 @@ if (of_get_option('google_font','0') == '1') {
 add_action('wp_enqueue_scripts','tech_google_font');
 
 function tech_google_font() {
-	global $tech;
-        $font_name = of_get_option('google_font_family','');
-        $tech_google_font = str_ireplace(' ', '+', $font_name);
-        $tech_google_font_decoration = of_get_option('google_font_decoration','none');
-        if ($tech_google_font_decoration != "none"){
-            wp_enqueue_style('google_fonts' , "http://fonts.googleapis.com/css?family={$tech_google_font}:{$tech_google_font_decoration}", '', '', 'screen');
-        } else {
-            wp_enqueue_style('google_fonts' , "http://fonts.googleapis.com/css?family={$tech_google_font}", '', '', 'screen');
-        }    
+        $font_name1 = of_get_option('google_font_family','');
+        $tech_google_font1 = str_ireplace(' ', '+', $font_name1);
+        $font_name2 = of_get_option('google_font_family_2','');
+        $tech_google_font2 = str_ireplace(' ', '+', $font_name2);
+        wp_enqueue_style('google_fonts' , "http://fonts.googleapis.com/css?family={$tech_google_font1}|{$tech_google_font2}", '', '', 'screen');        
 }    
 
 
@@ -702,6 +764,8 @@ function tech_footer_text(){
 
 function tech_show_sidebar($loc) {
 	if (of_get_option('column','3') > 1) {
+            $left = 0;
+            $right = 0;
 		switch (of_get_option('sidebar_pos','3-col')) {
 			case "3-col":
 				$left = 1;
@@ -812,11 +876,11 @@ function tech_social_icons($home=true){
  * @since     1.8.8
  */
 
-function tech_about_icons($fb=0,$my=0,$twitter=0){
-	global $tech;
-	$fb_profile = $tech['facebook_profile'];
-	$my_profile = $tech['myspace_profile'];
-	$twitter_profile = $tech['twitter_profile'];
+function tech_about_icons($fb=0,$my=0,$twitter=0,$google=0){
+	$fb_profile = of_get_option('facebook_profile','');
+	$my_profile = of_get_option('myspace_profile','');
+	$twitter_profile = of_get_option('twitter_profile', '');
+        $google_profile = of_get_option('google_profile', '');
 	$image = get_template_directory_uri() . "/images/icons";
 	if ($fb !=0){
 		echo "<li><a href=\"{$fb_profile}\" title=\"".__('Follow me on Facebook','techozoic')."\"><img src=\"{$image}/facebook_32.png\"></a></li>";
@@ -826,6 +890,9 @@ function tech_about_icons($fb=0,$my=0,$twitter=0){
 	}	
 	if ($twitter !=0){
 		echo "<li><a href=\"{$twitter_profile}\" title=\"".__('Follow me on Twitter','techozoic')."\"><img src=\"{$image}/twitter_32.png\"></a></li>";
+	}
+        if ($google !=0){
+		echo "<li><a href=\"{$google_profile}\" title=\"".__('Follow me on Google+','techozoic')."\"><img src=\"{$image}/google_32.png\"></a></li>";
 	}
 }
 

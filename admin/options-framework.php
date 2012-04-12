@@ -1,12 +1,10 @@
 <?php
 /*
-Plugin Name: Options Framework
-Plugin URI: http://www.wptheming.com
 Description: A framework for building theme options.
-Version: 0.8
 Author: Devin Price
 Author URI: http://www.wptheming.com
 License: GPLv2
+Version: 1.0
 */
 
 /*
@@ -25,14 +23,10 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-/* Basic plugin definitions */
-
-define('OPTIONS_FRAMEWORK_VERSION', '0.9');
-
 /* Make sure we don't expose any info if called directly */
 
 if ( !function_exists( 'add_action' ) ) {
-	echo "Hi there!  I'm just a little plugin, don't mind me.";
+	echo "Hi there!  I'm just a little extension, don't mind me.";
 	exit;
 }
 
@@ -46,6 +40,7 @@ function optionsframework_rolescheck () {
 		add_action( 'admin_menu', 'optionsframework_add_page');
 		add_action( 'admin_init', 'optionsframework_init' );
 		add_action( 'admin_init', 'optionsframework_mlu_init' );
+		add_action( 'wp_before_admin_bar_render', 'optionsframework_adminbar' );
 	}
 }
 
@@ -54,7 +49,7 @@ function optionsframework_rolescheck () {
 add_action('init', 'optionsframework_load_backup' );
 
 function optionsframework_load_backup() {
- require_once dirname( __FILE__ ) . '/options-backup.php';
+    require_once dirname( __FILE__ ) . '/options-backup.php';
 }
 
 /* Loads the file for option sanitization */
@@ -113,6 +108,18 @@ function optionsframework_init() {
         }
 }
 
+/**
+ * Ensures that a user with the 'edit_theme_options' capability can actually set the options
+ * See: http://core.trac.wordpress.org/ticket/14365
+ *
+ * @param string $capability The capability used for the page, which is manage_options by default.
+ * @return string The capability to actually use.
+ */
+
+function optionsframework_page_capability( $capability ) {
+	return 'edit_theme_options';
+}
+
 /* 
  * Adds default options to the database if they aren't already present.
  * May update this later to load only on plugin activation, or theme
@@ -165,15 +172,15 @@ function optionsframework_setdefaults() {
 /* Add a subpage called "Theme Options" to the appearance menu. */
 
 if ( !function_exists( 'optionsframework_add_page' ) ) {
-function optionsframework_add_page() {
 
-	$of_page = add_theme_page(__('Techozoic Setting','techozoic'), __('Techozoic Setting','techozoic'), 'edit_theme_options', 'options-framework','optionsframework_page');
+	function optionsframework_add_page() {
+		$of_page = add_theme_page('Techozoic Settings', 'Techozoic Settings', 'edit_theme_options', 'options-framework','optionsframework_page');
+		
+		// Load the required CSS and javscript
+		add_action('admin_enqueue_scripts', 'optionsframework_load_scripts');
+		add_action( 'admin_print_styles-' . $of_page, 'optionsframework_load_styles' );
+	}
 	
-	// Adds actions to hook in the required css and javascript
-	add_action("admin_print_styles-$of_page",'optionsframework_load_styles');
-	add_action("admin_print_scripts-$of_page", 'optionsframework_load_scripts');
-	
-}
 }
 
 /* Loads the CSS */
@@ -185,15 +192,18 @@ function optionsframework_load_styles() {
 
 /* Loads the javascript */
 
-function optionsframework_load_scripts() {
+function optionsframework_load_scripts($hook) {
 
-	// Inline scripts from options-interface.php
-	add_action('admin_head', 'of_admin_head');
+	if ( 'appearance_page_options-framework' != $hook )
+        return;
 	
 	// Enqueued scripts
 	wp_enqueue_script('jquery-ui-core');
 	wp_enqueue_script('color-picker', OPTIONS_FRAMEWORK_DIRECTORY.'js/colorpicker.js', array('jquery'));
 	wp_enqueue_script('options-custom', OPTIONS_FRAMEWORK_DIRECTORY.'js/options-custom.js', array('jquery'));
+	
+	// Inline scripts from options-interface.php
+	add_action('admin_head', 'of_admin_head');
 }
 
 function of_admin_head() {
@@ -215,25 +225,24 @@ function of_admin_head() {
  */
 
 if ( !function_exists( 'optionsframework_page' ) ) {
-function optionsframework_page() {
-        $options = optionsframework_options();
-	$return = optionsframework_fields();
-	settings_errors();
-	?>
-    
+	function optionsframework_page() {
+		settings_errors();
+?>
+
 	<div class="wrap">
     <?php screen_icon( 'themes' ); ?>
     <h2 class="nav-tab-wrapper">
-        <?php echo $return[1]; ?>
+        <?php echo optionsframework_tabs(); ?>
     </h2>
-    
+
     <div class="metabox-holder">
     <div id="optionsframework" class="postbox">
 		<form action="options.php" method="post">
 		<?php settings_fields('optionsframework'); ?>
 
-		<?php echo $return[0]; /* Settings */ ?>
-               <div id="optionsframework-submit">
+		<?php optionsframework_fields(); /* Settings */ ?>
+
+        <div id="optionsframework-submit">
 			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options','techozoic' ); ?>" />
             <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults','techozoic' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!','techozoic' ) ); ?>' );" />
             <div class="clear"></div>
@@ -244,7 +253,7 @@ function optionsframework_page() {
 </div> <!-- / .wrap -->
 
 <?php
-}
+	}
 }
 
 /** 
@@ -376,9 +385,9 @@ function of_get_default_values() {
                             $output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $prev_settings[$option['id']], $option);
                         }
                     } else{
-                        $output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $option['std'], $option );
-                    }
-                }
+			$output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $option['std'], $option );
+		}
+	}
                 if ($option['type'] == 'color' && $prev_settings) {
                     $output[$option['id']] = '#' . $prev_settings[$option['id']];
                 }
@@ -392,19 +401,17 @@ function of_get_default_values() {
 /**
  * Add Theme Options menu item to Admin Bar.
  */
- 
-add_action( 'wp_before_admin_bar_render', 'optionsframework_adminbar' );
 
 function optionsframework_adminbar() {
-	
+
 	global $wp_admin_bar;
-	
+
 	$wp_admin_bar->add_menu( array(
-		'parent' => 'appearance',
-		'id' => 'of_theme_options',
+			'parent' => 'appearance',
+			'id' => 'of_theme_options',
 		'title' => __( 'Techozoic Settings','techozoic' ),
-		'href' => admin_url( 'themes.php?page=options-framework' )
-  ));
+			'href' => admin_url( 'themes.php?page=options-framework' )
+		));
 }
 
 if ( ! function_exists( 'of_get_option' ) ) {

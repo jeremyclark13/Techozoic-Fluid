@@ -12,6 +12,9 @@
 	max-width:780px;
 	background:#fff;
 }
+#optionsframework h3 {
+	cursor: default;
+}
 #optionsframework p {
 	margin-bottom:0;
 	padding-bottom:10px;
@@ -49,6 +52,9 @@
 #optionsframework .section-color .controls {
 	min-width:125px;
 	width:125px
+}
+#optionsframework .section-editor .explain{
+        max-width:100%;
 }
 #optionsframework .controls input, #optionsframework .controls select, #optionsframework .controls textarea {
 	margin-bottom:10px;
@@ -152,6 +158,14 @@
 #optionsframework .mini .explain {
 	max-width:74%;
 }
+
+/* Editor */
+
+#optionsframework .section-editor .explain {
+	float:none;
+	margin-bottom:5px;
+}
+
 /* Image Uploader */
 
 #optionsframework .controls input.upload {
@@ -220,16 +234,13 @@
 #optionsframework .button-primary {
 	float:right;
 }
-/* Backup Settings */
 
-.import, .export {
-    margin: 20px 0;
-    padding: 0 0 20px 10px;
-    border: 1px solid #ECECEC;
-    background-color: #f9f9f9;
+/* Bottom Section */
+
+#optionsframework .section:before, #optionsframework .section:after {
+	content: "";
+	display: table;
 }
-
-.import label {
-    display:block;
-    padding: 0 0 5px 0;
+#optionsframework .section:after {
+	clear: both;
 }

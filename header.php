@@ -2,8 +2,9 @@
 <html <?php language_attributes(); ?> xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php get_bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 <?php 
-global $cpage;
+global $cpage, $tech_nav;
 if ( is_singular() ){
 	$tech_nav = get_post_meta($post->ID, "Nav_value", $single = true);
         if(empty($tech_nav)){
@@ -87,6 +88,9 @@ wp_head(); ?>
 <body <?php body_class(); ?>>
 <a name="top"></a>
 <div id="page">
+<?php if(of_get_option('nav_location','below') == 'above') {
+    get_template_part('nav','wp3'); 
+}?>    
 <div id="header">
 <?php if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'left_header' ) ){
 	echo '<div class="hleft">'. "\n";
@@ -146,47 +150,8 @@ if (!empty ($description)) { ?>
 
 </div><!--end header-->
 
-<?php if (($tech_nav == "on") && (of_get_option('nav_menu','1') == '1')) {
-?>
-<div id="navmenu">
-<?php
-	get_template_part('nav','wp3');
-        
-        if ($tech_nav == "on") {
-	if (of_get_option('dashboard_link','1') == "1") {
-		if (is_user_logged_in()) { ?>
-			<ul id="admin"><li><a href="<?php echo site_url(); ?>/wp-admin" title="<?php _e('Dashboard' ,'techozoic')?>"><?php _e('Dashboard' ,'techozoic')?></a></li>
-			<li><a href="<?php echo wp_logout_url(); ?>" title="<?php _e('Log Out' ,'techozoic')?>"><?php _e('Log Out' ,'techozoic')?></a></li></ul>
-<?php 
-		} else { ?>
-			<ul id="admin"><li>
-<?php 	if (of_get_option('thickbox','0') == '1') { 
-?>
-			<a href="#TB_inline?height=120&amp;width=120&amp;inlineId=loginthick" class="thickbox" title="Login"><?php _e('Login' ,'techozoic')?></a>
-<?php 	} else { 
-?>			<a href="<?php echo wp_login_url();?>" title="<?php _e('Login' ,'techozoic')?>"><?php _e('Login' ,'techozoic')?></a>
-<?php 	}
-?>
-		</li></ul>
-		<div id="loginthick" style="display:none">
-		<div class="aligncenter">
-		<form action="<?php echo site_url(); ?>/wp-login.php" method="post" id="loginform">
-		<label><?php _e('Username: ' ,'techozoic')?><br /><input type="text" id="user_login" class="text" name="log"/></label><br />
-		<label><?php _e('Password: ' ,'techozoic')?><br /><input type="password" id="user_pass" class="text" name="pwd"/></label><br />
-		<input type="submit" id="wp-submit" value="<?php _e('Log in' ,'techozoic')?>" />
-		<input type="hidden" name="redirect_to" value="<?php echo "http://".$_SERVER["SERVER_NAME"].$_SERVER['REQUEST_URI']; ?>" />
-		<input type="hidden" name="testcookie" value="1" />
-		</form>
-		</div><!--end aligncenter-->
-		</div><!--end loginthick-->
-<?php 	}
-	}
-?>
-</div><!--end navmenu-->
-<?php }
-}
-if (of_get_option('breadcrumbs','0') == '1'){
-	tech_breadcrumbs();
+<?php if(of_get_option('nav_location','below') == 'below') {
+    get_template_part('nav','wp3'); 
 }?>
 
 <?php if (of_get_option('search_box','1') == '1' && !is_active_sidebar( 'right_header' )) { ?>

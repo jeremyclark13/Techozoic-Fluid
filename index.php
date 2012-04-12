@@ -14,13 +14,13 @@
 
 	<div id="content" class="<?php if (of_get_option('home_sidebar','1') != "1" || of_get_option('sidebar_pos','3-col') == '1-col') { echo "wide"; }else {echo "narrow";}?>column">
 	<div class="navigation">
-	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
-	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
+	<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries' , 'techozoic')) ?></div>
+	<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;' , 'techozoic')) ?></div>
 	</div>
 <?php   get_template_part( 'loop', 'index'); ?>
 	<div class="navigation">
-	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
-	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
+	<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries' , 'techozoic')) ?></div>
+	<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;' , 'techozoic')) ?></div>
 		</div>
 	</div>
 <?php 	if (of_get_option('home_sidebar','1') == "1")  tech_show_sidebar("r");

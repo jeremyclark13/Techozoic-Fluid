@@ -173,7 +173,7 @@ function optionsframework_options() {
                 "id" => "footer_text",
                 "old_options" => '',
                 "std" => "%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% <br /> <small>%MYSQL%</small>",
-                "type" => "textarea");
+                "type" => "editor");
 
         $options[] = array("name" => __("Drop Shadow Boxes","techozoic"),
                 "desc" => __("Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safari.","techozoic"),
@@ -231,7 +231,19 @@ function optionsframework_options() {
                 "id" => "nav_menu",
                 "type" => "checkbox",
                 "std" => "1");
+        
+        $options[] = array(	"name" => __("Navigation Menu Location","techozoic"),
+                "id" => "nav_location",
+                "type" => "radio",
+                "std" => "below",
+                "options" => array('below'=> __("Below Header","techozoic") ,'above'=> __("Above Header","techozoic") ));
 
+       $options[] = array(	"name" => __("Navigation Menu Type","techozoic"),
+                "id" => "nav_type",
+                "type" => "radio",
+                "std" => "standard",
+                "options" => array('standard'=> __("Tabs","techozoic") ,'ribbon'=> __("Ribbon - Can only be left aligned","techozoic") , 'square' => __('Square',"techozoic")));
+        
         $options[] = array(	"name" => __("Log In/Out Links","techozoic"),
                 "desc" => __("Enable Dashboard and Log in/out links.","techozoic"),
                 "id" => "dashboard_link",
@@ -253,6 +265,14 @@ function optionsframework_options() {
                 "old_options" => array("Left" => "left","Center" => "center"),
                 "options" => array('left'=> __("Left","techozoic") ,'center'=> __("Center","techozoic") ));
 
+       $options[] = array(	"name" => __("Navigation Button Padding","techozoic"),
+                "desc" => __("Margin between naviagation buttons in Pixels.","techozoic"),
+                "id" => "nav_button_margin",
+                "string" => "num",
+                "std" => "3",
+                "class" => "mini",
+                "type" => "text");
+        
         $options[] = array(	"name" => __("Navigation Button Width","techozoic"),
                 "desc" => __("Size of navigation button width in Pixels.  Set to <strong>0</strong> for variable sized buttons","techozoic"),
                 "id" => "nav_button_width",
@@ -261,9 +281,35 @@ function optionsframework_options() {
                 "old_options" => '',
                 "class" => "mini",
                 "type" => "text");
-
+        
+        $options[] = array(	"name" => __("Navigation Sub Menu Width","techozoic"),
+                "desc" => __("Size of navigation sub menu width in Pixels.","techozoic"),
+                "id" => "nav_menu_width",
+                "string" => "num",
+                "std" => "250",
+                "class" => "mini",
+                "type" => "text");        
+        
         $options[] = array( 	"name" => __("Font","techozoic"),
                 "type" => "heading");
+
+        $options[] = array("name" => __("Google Font Replacement","techozoic"),
+                "desc" =>__("Enable this to use the Google Font API to add new fonts.","techozoic"),
+                "id" => "google_font",
+                "std" => "0",
+                "old_options" => array("Enable" => "1","Disable" => "0"),
+                "type" => "checkbox");
+
+        $options[] = array("name" => __("Google Font 1","techozoic"),
+                "desc" => __("Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After choosing on the font to use, copy the Name of the font here.  If font supports additional styling it can be added with a ':' .  Example: Droid Sans:bold,italic","techozoic"),
+                "id" => "google_font_family",
+                "old_options" => '',
+                "type" => "text");
+        
+        $options[] = array("name" => __("Google Font 2","techozoic"),
+                "desc" => __("Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After choosing on the font to use, copy the Name of the font here.  If font supports additional styling it can be added with a ':' .  Example: Droid Sans:bold,italic","techozoic"),
+                "id" => "google_font_family_2",
+                "type" => "text");       
 
         $options[] = array(	"name" => __("Default Text","techozoic"),
                 "id" => "body_font",
@@ -299,36 +345,6 @@ function optionsframework_options() {
                 "id" => "small_font",
                  "std" => array('size'=>"10px",'face'=>'arial','style'=>'','color'=>'#777777'),
                  "type" => "typography");
-
-        $options[] = array("name" => __("Google Font Replacement","techozoic"),
-                "desc" =>__("Enable this to use the Google Font API to add new fonts.","techozoic"),
-                "id" => "google_font",
-                "std" => "0",
-                "old_options" => array("Enable" => "1","Disable" => "0"),
-                "type" => "checkbox");
-
-        $options[] = array("name" => __("Goolge Fonts","techozoic"),
-                "desc" => __("Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After choosing on the font to use, copy the Name of the font here.","techozoic"),
-                "id" => "google_font_family",
-                "old_options" => '',
-                "type" => "text");
-
-        $options[] = array("name" => __("Goolge Font - Font Decoration","techozoic"),
-                "desc" => __("Some Goolge Fonts have additional variants for <strong>Bold</strong> and <em>Italic</em>.  If the font chosen has these variants check the boxes for which decoration to apply to the Google Font.","techozoic"),
-                "id" => "google_font_decoration",
-                "std" => "none",
-                "class" => "mini",
-                "type" => "select",
-                "options" => array("b" => __('Bold',"techozoic") ,'bi' => __('Bold Italic',"techozoic") , 'i' => __("Italic" ,"techozoic") ,"none" => __("Select One","techozoic") ));
-
-
-        $options[] = array("name" => __("Font Replacement","techozoic"),
-                "desc"=>__("Check which headings you would like replaced.","techozoic"),
-                "id" => "font_headings",
-                "std" => "",
-                "type" => "multicheck",
-                "old_options" => array("Main Blog Title" => "main","Sidebar Titles" => "sidebar","Post Titles" =>"post","H1 Headings" =>"h1","H2 Headings"  =>"h2","H3 Headings"  =>"h3","H4 Headings"  =>"h4","H5 Headings" =>"h5"),
-                "options" => array('main'=>__("Main Blog Title","techozoic") ,'sidebar' => __("Sidebar Titles" ,"techozoic") , 'post'=>__("Post Titles","techozoic"), 'h1' =>__("H1 Headings","techozoic"),'h2' => __("H2 Headings","techozoic"),'h3' => __("H3 Headings" ,"techozoic"),'h4'=> __("H4 Headings","techozoic") ,'h5'=> __("H5 Headings","techozoic")));
 
         $options[] = array(	"name" => __("Color","techozoic"),
                 "type" => "heading");
@@ -410,6 +426,42 @@ function optionsframework_options() {
                 "std" => "0",
                 "old_options" => array("On" =>"1"),
                 "type" => "checkbox");
+        
+        $options[] = array(	"name" => __("Nav Button Hover Background Color","techozoic"),
+                "desc" => __("Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
+                "id" => "cust_nav_hov_bg_color1",
+                "std" => "#EFEFEF",
+                "type" => "color");
+        
+        $options[] = array(	"name" => __("Nav Button Hover Text Color","techozoic"),
+                "desc" => __("Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
+                "id" => "cust_nav_hov_text_color1",
+                "std" => "#A0B3C2",
+                "type" => "color");
+        
+        $options[] = array(	"name" => __("Nav Button Active Background Color","techozoic"),
+                "desc" => __("Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
+                "id" => "cust_nav_active_bg_color1",
+                "std" => "#A0B3C2",
+                "type" => "color");
+        
+        $options[] = array(	"name" => __("Nav Button Active Text Color","techozoic"),
+                "desc" => __("Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
+                "id" => "cust_nav_active_text_color1",
+                "std" => "#F7F7F7",
+                "type" => "color"); 
+        
+        $options[] = array(	"name" => __("Nav Bar Background Gradient Top","techozoic"),
+                "desc" => __("Used when Navigation Menu Type is set to Ribbon or Square.  Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
+                "id" => "cust_nav_bg_gradient_top",
+                "std" => "#E3E3E3",
+                "type" => "color"); 
+        
+        $options[] = array(	"name" => __("Nav Bar Background Gradient Bottom","techozoic"),
+                "desc" => __("Used when Navigation Menu Type is set to Ribbon or Square.  Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
+                "id" => "cust_nav_bg_gradient_bot",
+                "std" => "#CCCCCC",
+                "type" => "color");        
 
         $options[] = array(	"name" => __("Post Background Color","techozoic"),
                 "desc" => __("Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>","techozoic"),
@@ -504,6 +556,12 @@ function optionsframework_options() {
                 "std" => "",
                 "old_options" => '',
                 "type" => "text");
+        
+        $options[] = array(	"name" => __("Google Profile","techozoic"),
+                "desc" => __("Used for the About widget Must be full link to profile page","techozoic"),
+                "id" => "google_profile",
+                "std" => "",
+                "type" => "text");        
 
         $options[] = array( 	"name" => __("Header","techozoic"),
                 "type" => "heading");
@@ -607,12 +665,22 @@ function optionsframework_options() {
                 "old_options" => '',
                 "type" => "textarea");
         
+        $options[] = array( 	"name" => __("Responsive CSS - Beta","techozoic"),
+                "desc" => __("Enable responsive CSS.  Allows site customizations to work even on smaller screens.","techozoic"),
+                "id" => "mobile_css",
+                "type" => "checkbox",
+                "std" => "0");           
+        
        $options[] = array( "name"=>__('About','techozoic'),
                 "type"=> "heading");
        
        $options[] = array( "name" => __("Donate to help further development","techozoic"),
                 "type" => "info",
         	"desc" => "<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817' title='Donate Securely'><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' /></a>");
+       
+       $options[] = array("name" => __("Changelog - Version 2.0.4", "techozoic"),
+                "type" => "info",  
+                "desc" =>'Added two new navigation styles, Ribbon and Square. <br /> Added more color choices for navigation menus. <br /> Added ability to specify two Google Web fonts. <br /> New post author block on single post screens, if user bio is filled out on profile page it is displayed along with gravatar. <br />Romanian Translation Added,<img src="http://mobirout.com/uploads/ro.gif" alt="Romanian translation" /> Web Geek Science  (<a href="http://webhostinggeeks.com/">Web Hosting Geeks</a>)<br />');
        
        $options[] = array("name" => __("Changelog - Version 2.0.3", "techozoic"),
                 "type" => "info",  

@@ -1,0 +1,1643 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Techozoic Fluid 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-12-09 08:15-0500\n"
+"PO-Revision-Date: 2012-03-29 11:34+0200\n"
+"X-Poedit-Language: Romanian\n"
+"X-Poedit-Country: Romania\n"
+"Language-Team: Web Geeks\n"
+"Last-Translator: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wp-content\\themes\\techozoic-fluid\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wp-content\\themes\\techozoic-fluid\n"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/404.php:16
+msgid "Error 404 - Not Found"
+msgstr "Eroarea 404 - nu a fost găsit"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/404.php:18
+msgid "Browse Archives"
+msgstr "Răsfoiţi arhivele"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:12
+#, php-format
+msgid "Archive for the %s Category"
+msgstr "Arhiva pentru categoria %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:15
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:18
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:21
+#, php-format
+msgid "Archive for %s"
+msgstr "Arhiva pentru %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:24
+msgid "Search Results"
+msgstr "Rezultatele cautarii"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:27
+msgid "Author Archive"
+msgstr "Arhiva de autor"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:30
+msgid "Blog Archives"
+msgstr "Blog Archives"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:35
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:17
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:22
+msgid "« Older Entries"
+msgstr "«Intrări mai vechi"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:36
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:18
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:23
+msgid "Newer Entries »"
+msgstr "Intrări mai noi»"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:14
+#, php-format
+msgid "Return to %s"
+msgstr "Reveni la %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:14
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:10
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:34
+#, php-format
+msgid "Permanent Link to %s"
+msgstr "Link permanent la %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:20
+msgid "View Full Size"
+msgstr "View Full Size"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:27
+msgid "Image Information"
+msgstr "Informaţiile despre imagine"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:29
+#, php-format
+msgid "Size: %1$s × %2s"
+msgstr "Dimensiune: %1$s × %2s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:32
+#, php-format
+msgid "Camera: %s"
+msgstr "Aparat de fotografiat: %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:36
+#, php-format
+msgid "Taken: %s"
+msgstr "Luate: %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:40
+#, php-format
+msgid "Aperture: %s"
+msgstr "Deschidere: %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:44
+#, php-format
+msgid "ISO: %s"
+msgstr "ISO: %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:48
+#, php-format
+msgid "Shutter Speed: %s"
+msgstr "Shutter Speed: %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:52
+msgid "Click for original image"
+msgstr "Click pentru imagine original"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:57
+#, php-format
+msgid "Additional sizes: %s"
+msgstr "Dimensiuni suplimentare: %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:63
+msgid "Read the rest of this entry"
+msgstr "Citeşte restul acestui intrare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:88
+msgid "Previous Image"
+msgstr "Imaginea anterioară"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:91
+msgid "Next Image"
+msgstr "Imaginea următoare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:100
+msgid "Pages"
+msgstr "Pagini"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:105
+#, php-format
+msgid "This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed."
+msgstr "Această intrare a fost postat pe %1$ s în %2$ s şi este depusă în %3$ s. Tu poţi a urma orice răspuns la spre this intrare prin %4$ s feed."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:105
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:806
+msgid "RSS 2.0"
+msgstr "RSS 2.0"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:108
+#, php-format
+msgid "You can %1$s or %2$s from your own site."
+msgstr "Puteţi %1$ s sau %2$ s la al tău own site."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:108
+msgid "leave a response"
+msgstr "lăsa un răspuns"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:108
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:111
+msgid "trackback"
+msgstr "Trackback"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:111
+#, php-format
+msgid "Responses are currently closed, but you can %s from your site."
+msgstr "Răspunsurile sunt în prezent închisă, dar puteţi %s la site-ul dumneavoastră."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:114
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Puteţi trece la sfârşitul şi a lăsa un răspuns. Pinging este în prezent nu sunt acceptate."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:117
+msgid "Both comments and pings are currently closed."
+msgstr "Ambele comentarii şi de ping sunt în prezent închisă."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:119
+msgid "  Edit this entry."
+msgstr "  Editaţi această intrare."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:131
+msgid "Sorry, no attachments matched your criteria."
+msgstr "Ne pare rău, ataºate potrivit criteriilor."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Vă rugăm să nu încărca această pagină direct. mulţumesc!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:6
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:13
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Acest post este protejată prin parolă. Introduceţi parola pentru vizualizarea comentariilor."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:21
+msgid "No Comments"
+msgstr "No Comments"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:21
+msgid "One Comment"
+msgstr "Un comentariu"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:74
+msgid "Header Navigation"
+msgstr "Antet navigare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:75
+msgid "Sidebar Navigation"
+msgstr "Bara laterală de navigare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:76
+msgid "Footer Navigation"
+msgstr "Subsol de navigare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:91
+msgid "Grunge"
+msgstr "Grunge"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:96
+msgid "Landscape"
+msgstr "Peisaj"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:101
+msgid "Random Lines 1"
+msgstr "Random linii 1"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:106
+msgid "Random Lines 2"
+msgstr "Random linii 2"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:111
+msgid "Technology"
+msgstr "Tehnologie"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:437
+msgid "Techozoic News"
+msgstr "Techozoic Stiri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:450
+msgid "No News."
+msgstr "Nici o veste."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:462
+msgid "Techozoic Links"
+msgstr "Techozoic link-uri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:465
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:983
+msgid "Support Forum"
+msgstr "Forum suport"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:468
+msgid "Documentation"
+msgstr "Documentaţia"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:471
+msgid "FAQ"
+msgstr "FAQ"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:474
+msgid "Change Log"
+msgstr "Jurnalul de modificări"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:567
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:20
+msgid "Read More"
+msgstr "Citeste mai mult"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:713
+msgid "Top"
+msgstr "Top"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:713
+#, php-format
+msgid "%1$d mySQL queries in %2$s seconds."
+msgstr "%1$ d mySQL interogări în %2$ s secunde."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:796
+msgid "del.icio.us this!"
+msgstr "del.icio.us aceasta!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:797
+msgid "Digg this!"
+msgstr "Digg acest lucru!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:798
+msgid "Share this by email."
+msgstr "Partajaţi acest prin e-mail."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:799
+msgid "Share on Facebook!"
+msgstr "Partajaţi pe Facebook!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:800
+msgid "Share on LinkedIn!"
+msgstr "Partajaţi pe LinkedIn!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:801
+msgid "Share on Myspace!"
+msgstr "Share on Myspace!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:802
+msgid "Share on NewsVine!"
+msgstr "Share on NewsVine!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:803
+msgid "Stumble Upon this!"
+msgstr "Stumble Upon this!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:804
+msgid "Tweet this!"
+msgstr "Tweet acest!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:805
+msgid "Share on Reddit!"
+msgstr "Partajaţi pe Reddit!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:806
+msgid "Subscribe to Feed"
+msgstr "Aboneaza-te la Feed"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:848
+msgid "Follow me on Facebook"
+msgstr "Urmaţi-mă pe Facebook"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:851
+msgid "Follow me on Myspace"
+msgstr "Urmaţi-mă pe Myspace"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:854
+msgid "Follow me on Twitter"
+msgstr "Urmaţi-mă pe stare de nervozitate"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:881
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:882
+msgid " posted on "
+msgstr " Postat pe "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:911
+#, php-format
+msgid "Theme activated! This theme contains <a href=\"%s\">theme options</a> and <a href=\"%s\">custom sidebar widgets</a>.<br />  See <a href=\"%s\">Change Log</a>."
+msgstr "Tema activat! Această temă conţine opţiuni <a href=\"%s\">tematice </a> <a href=\"%s\"> şi widget-uri personalizate Sidebar </a>. <br /> Consultaţi <a href=\"%s\">Schimba Log</a>."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:934
+#, php-format
+msgid "Header height and width and aligment can be set on the <a href=\"%s\">theme options</a> page."
+msgstr "Antet înălţime şi lăţime şi aligment poate fi setat pe <a href=\"%s\">Opţiuni de temă</a> pagină."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:979
+msgid "Thank you for using the Techozoic Theme.  "
+msgstr "Vă mulţumim pentru utilizând tema Techozoic.  "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:981
+#, php-format
+msgid "Visit the %s to start customizing Techozoic.  "
+msgstr "Vizitaţi %s pentru a începe particularizarea Techozoic.  "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:981
+msgid "options page"
+msgstr "Opţiuni pagină"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:983
+#, php-format
+msgid "If your having problems or would like to suggest a new feature, please visit the %s."
+msgstr "Dacă vă probleme sau ar dori să sugereze o caracteristică nouă, vă rugăm să vizitaţi % s."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:983
+msgid "support forum"
+msgstr "forum suport"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1020
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/nav-dropdown.php:9
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/nav-standard.php:9
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/nav-twotier.php:9
+msgid "Home"
+msgstr "Home"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1039
+msgid "Archive for category '"
+msgstr "Arhiva pentru categoria '"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1085
+msgid "Search results for '"
+msgstr "Rezultatele cautarii pentru '"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1088
+msgid "Posts tagged '"
+msgstr "Posts tagged '"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1095
+msgid "Articles posted by "
+msgstr "Articolele Postat de "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1098
+msgid "Error 404"
+msgstr "Eroarea 404"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1103
+msgid "Page"
+msgstr "Pagină"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:30
+msgid "Archive for "
+msgstr "Arhiva pentru "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:159
+msgid "Dashboard"
+msgstr "Tabloul de bord"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:160
+msgid "Log Out"
+msgstr "Conectaţi-vă"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:166
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:168
+msgid "Login"
+msgstr "Login"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:175
+msgid "Username: "
+msgstr "Numele de utilizator: "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:176
+msgid "Password: "
+msgstr "Parola: "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:177
+msgid "Log in"
+msgstr "conectează-te"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:10
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:20
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:34
+msgid "Read More …"
+msgstr "Citeste mai mult …"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:17
+msgid "View all status updates by this author"
+msgstr "Vizualiza actualizările statutului de acest autor"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:35
+msgid "By"
+msgstr "De"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:35
+#, php-format
+msgid "Filed in %s"
+msgstr "Dosar în %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:35
+msgid " |  Edit."
+msgstr "| Editare."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:43
+msgid "Read the remainder of this entry »"
+msgstr "«Citeşte restul acestui intrare»"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:47
+msgid "Be the first to comment"
+msgstr "Fii primul care comentariu"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:47
+msgid "1 Comment. Join the Conversation"
+msgstr "1 Comentariu. Se alăture conversaţie"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:47
+msgid "Comments Closed"
+msgstr "Comments închis"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:60
+msgid "To the top"
+msgstr "În partea de sus"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:81
+msgid "Not Found"
+msgstr "Nu a fost găsit"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:82
+msgid "Sorry, but you are looking for something that isn't here"
+msgstr "Ne pare rău, dar sunteţi în căutarea pentru ceva ce nu este aici"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:30
+msgid "Techozoic Theme Options"
+msgstr "Opţiuni de temă Techozoic"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:31
+#, php-format
+msgid "Looking for assistance? Please visit the <a href=\"%1$s\">support forums</a>, refer to the <a href=\"%2$s\">documentation</a>, or the <a href=\"%3$s\">FAQ</a>."
+msgstr "Cauti pentru asistenţă? Vă rugăm să vizitaţi sprijinul <a href=\"%1$s\">forum </a>, se referă la documentaţia <a href=\"%2$s\"> </a>, sau <a href=\"%3$s\">FAQ</a>."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:68
+msgid "Layout"
+msgstr "Aspect"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:71
+msgid "Column Layout"
+msgstr "Dispunere coloane"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:78
+msgid "Fixed or Fluid Width"
+msgstr "Lăţime fix sau lichide"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:84
+msgid "Fixed Width"
+msgstr "Lăţime fixă"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:84
+msgid "Fluid Width"
+msgstr "Lăţime de lichide"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:86
+msgid "Page Width"
+msgstr "Lăţimea paginii"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:87
+msgid "Fluid Width - Percentage of Total Screen Size  <br />Fixed Width - Width in number of pixels"
+msgstr "Lăţime fluid - procentul de dimensiune totală de ecran < br / > Lăţime fix - lăţime în numărul de pixeli"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:94
+msgid "Main Column Width"
+msgstr "Principalele lăţimea coloanei"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:95
+msgid "(Post Content) - Percentage of Page Width"
+msgstr "(Post conţinutului) - procent din lăţimea paginii"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:102
+msgid "Left Sidebar Width"
+msgstr "Stânga bara laterală lăţime"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:103
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:111
+msgid "Percentage of Page Width"
+msgstr "Procent din lăţimea paginii"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:110
+msgid "Right Sidebar Width"
+msgstr "Dreptul de bara laterală lăţime"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:118
+msgid "Fav Icon Image"
+msgstr "Imaginea pictogramă fav"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:119
+msgid "Fav Icon must be an .ico file.  Browse for a new image or chose previously uploaded image.  After choosing press Save to upload."
+msgstr "Pictograma fav trebuie să fie un fişier .ico.  Browse pentru o nouă imagine sau ales anterior încărcat imagine.  După alegerea press salvaţi pentru a încărca."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:123
+msgid "Display Sidebars on Blog Home Page"
+msgstr "Afişa Sidebars pe pagina de pornire blog-ul"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:129
+msgid "Display Sidebars on Single Post Pages"
+msgstr "Afişa Sidebars în paginile singur Post"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:135
+msgid "Page Specific Sidebars"
+msgstr "Pagina specifice Sidebars"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:136
+msgid "Choose which pages to register a sidebar.  After selecting pages, two new sidebars will be avaialbe from the widgets screen.  These sidebars will be used if any widgets are added, otherwise the default sidebars will be used."
+msgstr "Selectaţi paginile care să se înregistreze o bara laterală.  După selectarea pagini, sidebars doi nou va fi avaialbe de ecran, widget-uri.  Aceste sidebars vor fi utilizate în cazul în care se adaugă orice widget-uri, altfel va fi utilizat implicit sidebars."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:142
+msgid "SEO Features"
+msgstr "Caracteristici SEO"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:143
+msgid "Disable this if any SEO plugins are used"
+msgstr "Dezactivaţi acest lucru dacă orice SEO plugin-uri sunt utilizate"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:149
+msgid "Thickbox on Images"
+msgstr "Thickbox pe imagini"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:150
+msgid "Use Thickbox to automatically overlay images on pages</small>"
+msgstr "Utilizaţi Thickbox de acoperire automat imaginile de pe paginile</small>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:156
+msgid "Comment Preview"
+msgstr "Previzualizare comentariu"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:157
+msgid "Enable the comment preview for posts on the home page."
+msgstr "Permite Previzualizare comentariu pentru posturi pe pagina de start."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:163
+msgid "Comment Preview Number"
+msgstr "Numărul de previzualizare comentariu"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:164
+msgid "Number of comments to display in comment preview area."
+msgstr "Numărul de comentarii de afişat în zona de previzualizare comentariu."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:171
+msgid "Custom Footer Text"
+msgstr "Text subsol particularizat"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:172
+msgid "Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link."
+msgstr "Textul afişat în subsolul - HTML permis. < br / > Shortcodes care pot fi utilizate: < br />%BLOGNAME%-> titlul blog-ul lui. < br />%THEMENAME%-> Tematica nume. < br / > % THEMEVER %-> temă curent traducere. < br / > % % THEMEAUTHOR %-> Link la website.* autorului tema < br />%TOP%-> Link la partea de sus a paginii. < br / > % COPYRIGHT-> Inserare autor info pentru anul curent. < br / > % MYSQL-> MySQL interogări şi prelucrarea timp info < br / > < br / > * este complet opţională, dar dacă vă place Techozoic aş aprecia dacă vă păstraţi legătura de credit."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:178
+msgid "Drop Shadow Boxes"
+msgstr "Cutii de umbra picătură"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:179
+msgid "Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safari."
+msgstr "Verifica zonele în care nu ar trebui să se utilizează casetele de umbra picătură < br / >-Notă vizibil doar în Firefox, Chrome, Safari."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+msgid "Header Text"
+msgstr "Text antet"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+msgid "Post Boxes"
+msgstr "Casetele de post"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+msgid "Images"
+msgstr "Imagini"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:216
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Main Page"
+msgstr "Principal pagină"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:186
+msgid "Page Background Image"
+msgstr "Imagine de fundal pagină"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:187
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:193
+msgid "Use a tiled image for best results."
+msgstr "Utilizaţi o imagine mozaic pentru cele mai bune rezultate."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:192
+msgid "Content Background Image"
+msgstr "Imagine de fundal conţinut"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:198
+msgid "Posts"
+msgstr "Posturi"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:201
+msgid "Excerpt Location"
+msgstr "Fragment de locaţie"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:202
+msgid "Check where excerpts should be used instead of full post content.  If an area isn't checked then the full post is displayed."
+msgstr "A verifica în cazul în care fragmente ar trebui să fie folosit în loc de plin post conţinutului.  Dacă o zonă nu este verificat apoi plin post este afişată."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Category Archive"
+msgstr "Categorie Arhiva"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Yearly Archive"
+msgstr "Arhiva anual"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Monthly Archive"
+msgstr "Arhiva lunara"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/tag.php:10
+msgid "Tag Archive"
+msgstr "Arhiva tag-ul"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:210
+msgid "Background Color"
+msgstr "Culoare de fundal"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:211
+msgid "Check where background color for posts defined on the color tab should be applied."
+msgstr "A verifica în cazul în care culoarea de fundal pentru posturi definite în fila culoare trebuie să se aplice."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:216
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Single Post"
+msgstr "Singur Post"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:216
+msgid "Archive Pages"
+msgstr "Pagini de Arhiva"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:218
+msgid "Social Media Icons"
+msgstr "Social Media Icoane"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:219
+msgid "Check where Social Media Icons will be displayed."
+msgstr "A verifica în cazul în care va fi afişat Social Media icoane."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:226
+msgid "Nav"
+msgstr "NAV"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:229
+msgid "Navigation Menu"
+msgstr "Meniul de navigare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:230
+msgid "Enable navigation menu.  If disabled visit the <a href=\"widgets.php\">widgets</a> page to add  the Techozoic Sidebar Navigation widget"
+msgstr "Activează meniul de navigare. Dacă este dezactivată vizita <a href=\"widgets.php\">widget-uri</a> pagină pentru a adăuga widget Techozoic bara laterală de navigare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:235
+msgid "Log In/Out Links"
+msgstr "Log In/Out link-uri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:236
+msgid "Enable Dashboard and Log in/out links."
+msgstr "Permite tabloul de bord şi Log in/out link-uri."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:242
+msgid "Breadcrumbs"
+msgstr "Pesmet"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:243
+msgid "Enable Breadcrumb navigation.  Useful with Sidebar Nav Widget."
+msgstr "Permite Breadcrumb de navigare.  Utilă cu Nav Widget-Sidebar."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:249
+msgid "Navigation Menu Alignment"
+msgstr "Alinierea meniul de navigare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:254
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:551
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:574
+msgid "Left"
+msgstr "Stânga"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:254
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:551
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:574
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:582
+msgid "Center"
+msgstr "Centrul de"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:256
+msgid "Navigation Button Width"
+msgstr "Navigare butonul Lăţime"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:257
+msgid "Size of navigation button width in Pixels.  Set to <strong>0</strong> for variable sized buttons"
+msgstr "Dimensiunea de navigare butonul lăţimea în pixeli.  Stabilită la <strong>0</strong> pentru butoane de dimensiuni variabile"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:265
+msgid "Font"
+msgstr "Font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:268
+msgid "Default Text"
+msgstr "Text implicit"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:273
+msgid "Main Heading Font"
+msgstr "Principalele rubrica Font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:278
+msgid "Post Heading Font"
+msgstr "Post titlu Font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:283
+msgid "Sidebar Heading Font"
+msgstr "Bara laterală rubrica Font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:288
+msgid "Nav Menu Text Font"
+msgstr "Font Text meniu NAV"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:293
+msgid "Post Text Font"
+msgstr "Post Text Font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:298
+msgid "Metadata Font"
+msgstr "Fontului metadate"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:303
+msgid "Google Font Replacement"
+msgstr "Înlocuire Google Font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:304
+msgid "Enable this to use the Google Font API to add new fonts."
+msgstr "Permite să utilizaţi Google Font API pentru a adăuga noi fonturi."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:310
+msgid "Goolge Fonts"
+msgstr "Goolge fonturi"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:311
+msgid "Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After choosing on the font to use, copy the Name of the font here."
+msgstr "Vizitaţi site-ul <a href='http://code.google.com/webfonts' target='_blank'> Google fonturi</a> pentru a alege fontul pentru a utiliza.  După alegerea pe fontul să utilizaţi, copiaţi numele fontului aici."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:316
+msgid "Goolge Font - Font Decoration"
+msgstr "Goolge Font - decorare Font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:317
+msgid "Some Goolge Fonts have additional variants for <strong>Bold</strong> and <em>Italic</em>.  If the font chosen has these variants check the boxes for which decoration to apply to the Google Font."
+msgstr "Unele fonturi Goolge au variante suplimentare pentru <strong>Aldin</strong> şi <em>cursiv</em>.  Dacă fontul ales are aceste variante verifica casetele pentru care decorare pentru a aplica fontul Google."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Bold"
+msgstr "Bold"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Bold Italic"
+msgstr "Bold Italic"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Italic"
+msgstr "Italic"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Select One"
+msgstr "Selectaţi una"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:325
+msgid "Font Replacement"
+msgstr "Înlocuire font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:326
+msgid "Check which headings you would like replaced."
+msgstr "Verificaţi care titlurile doriţi înlocuită."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "Main Blog Title"
+msgstr "Titlul blog-ul principal"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "Sidebar Titles"
+msgstr "Bara laterală titluri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "Post Titles"
+msgstr "Titlurile post"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H1 Headings"
+msgstr "Rubricile H1"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H2 Headings"
+msgstr "H2 titlurile"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H3 Headings"
+msgstr "Rubricile H3"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H4 Headings"
+msgstr "H4 titlurile"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H5 Headings"
+msgstr "Rubricile H5"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:333
+msgid "Color"
+msgstr "Culoare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:336
+msgid "Prebuilt Color Scheme"
+msgstr "Schema de culori precompilate"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:337
+msgid "Choose Custom to specify your own scheme"
+msgstr "Selectaţi personalizat pentru a specifica propriul sistem"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Custom"
+msgstr "Custom"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Blue"
+msgstr "Albastru"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Khaki"
+msgstr "Kaki"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Red"
+msgstr "Red"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:344
+msgid "Body Background Color"
+msgstr "Culoarea de fundal a corpului"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:345
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:359
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:373
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:380
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:387
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:394
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:401
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:415
+msgid "Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>"
+msgstr "Selectaţi sau tastaţi un <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">Codul de culoare HEX</a>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:351
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:365
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:407
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:421
+msgid "Transparent"
+msgstr "Transparent"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:352
+msgid "Check to not apply any color to the body background."
+msgstr "Selectare nu i se aplică orice culoare de fundal organism."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:358
+msgid "Content Background Color"
+msgstr "Culoare de fundal conţinut"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:366
+msgid "Check to not apply any color to the content background."
+msgstr "Verificaţi să nu se aplice orice culoare fundal conţinut."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:372
+msgid "Accent Color"
+msgstr "Culoare accent"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:379
+msgid "Link Color"
+msgstr "Culoare legătură"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:386
+msgid "Link Hover Color"
+msgstr "Link Hover culoare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:393
+msgid "Visited Link Color"
+msgstr "Culoare legătură vizitată"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:400
+msgid "Nav Button Background Color"
+msgstr "NAV butonul culoare de fundal"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:408
+msgid "Check to not apply any color to the nav button background."
+msgstr "Verificaţi să nu se aplice orice culoare nav butonul fundal."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:414
+msgid "Post Background Color"
+msgstr "Post a fundalului"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:422
+msgid "Check to not apply any color to the post background."
+msgstr "Verificaţi să nu se aplice orice culoare fundal post."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:428
+msgid "Ads"
+msgstr "Anunţuri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:431
+msgid "Home Page Ad Code"
+msgstr "Pagina Advertisment Code"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:432
+msgid "This Ad Code will be displayed a total of 3 times. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>"
+msgstr "Acest cod de anunţuri va fi afişat un total de 3 ori. Cele mai bune anunţuri sunt anunţurile banner nu mai larg decât 500 pixeli * doar în html şi javascript acceptate <strong>Shortcodes acum acceptate</strong>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:438
+msgid "Number of Posts Between Ad Units"
+msgstr "Numărul de posturi între unităţile de anunţuri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:446
+msgid "Home Page Header Ad Code"
+msgstr "Pagina antet Advertisment Code"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:447
+msgid "This Ad Code will be displayed on the home  page below the header and navigation. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>"
+msgstr "Acest cod de anunţuri va fi afişat pe pagina de start sub antet şi navigare. Cele mai bune anunţuri sunt anunţurile banner nu mai larg decât 500 pixeli * doar în html şi javascript acceptate <strong>Shortcodes acum acceptate</strong>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:453
+msgid "Single Post Ad Code"
+msgstr "Singur Post Advertisment Code"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:454
+msgid "This Ad Code will be displayed on the single post page. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>"
+msgstr "Acest cod de anunţuri va fi afişat pe pagina singur post. Cele mai bune anunţuri sunt anunţurile banner nu mai larg decât 500 pixeli * doar în html şi javascript acceptate <strong>Shortcodes acum acceptate</strong>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:460
+msgid "Single Post Ad Position"
+msgstr "Singur Post Poziţia anunţurilor"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:461
+msgid "Above or below the post content on single page"
+msgstr "Mai sus sau mai jos post de conţinut de pe pagină"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:466
+msgid "Above"
+msgstr "Mai sus"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:466
+msgid "Below"
+msgstr "Mai jos"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:468
+msgid "Social"
+msgstr "Sociale"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:471
+msgid "Home/Archive Page Social Network Icons"
+msgstr "Home/Arhiva pagina Social Network icoane"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:472
+msgid "Choose which social network icons you would like displayed below the post on the Home/Archive pages."
+msgstr "Alegeți care pictograme de reţea socială care doriţi afişat mai jos post pe paginile Home/Arhiva."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:479
+msgid "Single Page Social Media Icons"
+msgstr "Singură pagină Social Media Icoane"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:480
+msgid "Choose which social media icons you would like displayed on the single post page."
+msgstr "Alege care social media icoane doriţi afişată pe pagina singur post."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:487
+msgid "Facebook Profile"
+msgstr "Facebook profil"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:488
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:495
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:502
+msgid "Used for the About widget Must be full link to profile page"
+msgstr "Utilizat pentru widget despre trebuie să fie complet link la pagina de profil"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:494
+msgid "MySpace Profile"
+msgstr "MySpace Profile"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:501
+msgid "Twitter Profile"
+msgstr "Profil de stare de nervozitate"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:508
+msgid "Header"
+msgstr "Antet"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:511
+msgid "Display Search box in header"
+msgstr "Afişa caseta de căutare în antetul"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:512
+msgid "Set to no if you don't want the search box to show in the header area.  If widgets are assigned to Right Header search box is automatically disabled."
+msgstr "Setaţi pentru a nu dacă nu doriţi caseta Căutare pentru a arăta în zona de antet.  În cazul în care widget-uri sunt atribuite dreptul antet caseta Căutare este dezactivată automat."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:518
+msgid "Display Blog Title and Tagline in header"
+msgstr "Afişa titlul blog-ul şi sloganul în antet"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:519
+msgid "Uncheck if your custom header image already has your blog title and tagline.  If header logo is uploaded it will always be used."
+msgstr "Debifaţi dacă imaginea antet particularizat are deja titlul blog-ul dvs. şi sloganul.  Dacă antetul logo-ul este încărcat acesta va fi folosit întotdeauna."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:525
+msgid "Header Logo"
+msgstr "Logo antetul"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:526
+msgid "Replace Blog Title and Tagline with a custom logo.  Logo is overlayed on header image.  For best results use a logo with a transparent background.  When uploading Alignment options are NOT used from the uploader, alignment is set below."
+msgstr "Înlocuiţi titlul blog-ul, şi sloganul cu un logo-ul personalizat.  Logo-ul este suprapus pe header image.  Pentru rezultate optime, utilizaţi un logo-ul cu un fundal transparent.  Când opţiuni de aliniere încărcat nu sunt utilizate la uploader, aliniere este de jos."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:531
+msgid "Header Logo Top Padding"
+msgstr "Antet logo-ul Top Padding"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:532
+msgid "Number of pixels of top padding that should be added to logo."
+msgstr "Numărul de pixeli de top padding care ar trebui să fie adăugate la logo-ul."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:538
+msgid "Header Logo Left Padding"
+msgstr "Antet logo-ul Padding stânga"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:539
+msgid "Number of pixels of left padding that should be added to logo."
+msgstr "Numărul de pixeli din stânga padding care ar trebui adăugate la logo-ul."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:545
+msgid "Blog Title and Tagline / Logo Horizontal Alignment"
+msgstr "Titlul blog-ul, şi sloganul / logo-ul alinierea orizontală"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:546
+msgid "Horizontal alignment of Blog title and tagline or header logo if used."
+msgstr "Alinierea orizontală de blog-ul titlu şi motto sau antet logo dacă utilizate."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:551
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:574
+msgid "Right"
+msgstr "Dreptul de"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:553
+msgid "Single Page Header Title Text"
+msgstr "Singur Text titlu în antetul paginii"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:554
+msgid "Show the Post title as the main heading and the the Blog title as the tagline on single pages.   Always Blog Title will only display the Blog Title and Tagline set in the General Options of the Blog."
+msgstr "Arată Post titlu ca titlu principal şi titlul blog-ul ca sloganul pe paginile singur.   Întotdeauna titlul blog-ul va afişa numai titlul blog-ul şi sloganul setaţi opţiunile generale de blog-ul."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:559
+msgid "Single Post Title"
+msgstr "Singur Post titlu"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:559
+msgid "Always Blog Title"
+msgstr "Întotdeauna Blog titlu"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:561
+msgid "Blog Title Box Styling"
+msgstr "Titlul blog-ul caseta stil"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:562
+msgid "Styling of box around the Blog Title <br />- On: White rounded box with transparency <br />- Off: Title and tagline text only."
+msgstr "Stil din caseta în jurul titlul Blog < br / > - pe: alb rotunjite caseta cu transparenţă < br / > - Off: numai text titlu şi sloganul."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:568
+msgid "Header Image Alignment"
+msgstr "Aliniere imagine antet"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:569
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:577
+msgid "Align header to the Left, Right, or Center the image in the Header Container"
+msgstr "Alinierea antet la stânga, dreapta, sau centrul imaginii în recipient antet"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:576
+msgid "Header Image Vertical Alignment"
+msgstr "Header imagine alinierea verticală"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:582
+msgid "Bottom"
+msgstr "Partea de jos"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:584
+msgid "Header Container Height"
+msgstr "Antet Container înălţime"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:585
+msgid "Adjust the size of the header image  Default Height: 200px"
+msgstr "Ajustaţi dimensiunea imaginii antetul implicit înălţime: 200px"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:592
+msgid "Header Image Width"
+msgstr "Antet Latime imagine"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:593
+msgid "Adjust the size of the header image  Default width: 1000px"
+msgstr "Ajustaţi dimensiunea header image lăţimea implicită: 1000px"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:600
+msgid "CSS"
+msgstr "CSS"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:603
+msgid "Custom CSS"
+msgstr "Custom CSS"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:604
+msgid "<strong>No HTML allowed</strong> Here you can enter your own CSS.  Please keep in mind proper CSS structure."
+msgstr "<strong>No HTML permis</strong> Aici aveţi posibilitatea să introduceţi propriul CSS.  Vă rugăm să ţineţi minte corectă CSS structura."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/page.php:21
+msgid "Read the rest of this page"
+msgstr "Citeşte restul de această pagină"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/page.php:22
+msgid "Pages:"
+msgstr "Pagini:"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/page.php:28
+msgid "Edit this page."
+msgstr "Editaţi această pagină."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:7
+msgid "Search Results for "
+msgstr "Rezultatele cautarii pentru "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:16
+msgid "articles"
+msgstr "articolele"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+#, php-format
+msgid "Posted in %s"
+msgstr "Postat în %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:33
+msgid "Edit"
+msgstr "Editare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+msgid "No Comments »"
+msgstr "«No Comments»"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+msgid "1 Comment »"
+msgstr "1 Comentariu»"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+msgid "Comments Off"
+msgstr "Comments Off"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:52
+msgid "No posts found. Try a different search?"
+msgstr "Nu posturile de găsit. Încercaţi o căutare diferite?"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/searchform.php:2
+msgid "Search: Type and Enter"
+msgstr "Căutare: Tip şi introduceţi"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/searchform.php:4
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:52
+msgid "Go"
+msgstr "Du-te"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:6
+msgid "Left Sidebar"
+msgstr "Bara laterală stânga"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:10
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:27
+msgid "Default Widgets"
+msgstr "Widget-uri implicite"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:28
+#, php-format
+msgid "Widgets below are default.  These will be replaced when customizing using %s Widget Admin</a>"
+msgstr "Widget-uri de mai jos sunt implicit.  Acestea vor fi înlocuite când personalizarea folosirea %s Widget Admin</a>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:28
+msgid "Widgets"
+msgstr "Widget-uri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:16
+msgid "Meta"
+msgstr "Meta"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:19
+msgid "This page validates as XHTML 1.0 Transitional"
+msgstr "Această pagină validează ca XHTML 1.0 tranzitorii"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:19
+msgid "Valid XHTML"
+msgstr "Valid XHTML"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:20
+msgid "Valid CSS"
+msgstr "Valid CSS"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:21
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Powered by WordPress, stat-of--art semantică personale platforma publicare."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:30
+msgid "Tags"
+msgstr "Tag-uri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:9
+#, php-format
+msgid "You are currently browsing the archives for the %s category."
+msgstr "Sunteti de navigare în prezent arhivele pentru categoria %s."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:13
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:15
+#, php-format
+msgid "You are currently browsing the %1$s archives for %2$s."
+msgstr "Sunteti de navigare în prezent arhivele %1$ s pentru %2$ s."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:17
+#, php-format
+msgid "You have searched the %1$s archives for %2$s."
+msgstr "Aţi au căutat %1$ s arhivele pentru %2$ s."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:19
+#, php-format
+msgid "You are currently browsing the %1$s archives."
+msgstr "Sunteti de navigare în prezent arhivele %1$ s."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:23
+msgid "Right Sidebar"
+msgstr "Dreptul de bara laterală"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:35
+msgid "Pages Below Current"
+msgstr "Pagini mai jos curent"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:41
+msgid "Syndicate"
+msgstr "Sindicat"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:45
+msgid "Comments"
+msgstr "Comentarii"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:49
+msgid "Categories"
+msgstr "Categorii"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:56
+msgid "Blogroll"
+msgstr "Blogroll"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:36
+#, php-format
+msgid "Go back to %s"
+msgstr "Du-te înapoi la %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:46
+#, php-format
+msgid "Written by %s"
+msgstr "Scris de %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:48
+msgid "Tagged "
+msgstr "Tagged "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:81
+msgid "Sorry, no posts matched your criteria."
+msgstr "Ne pare rău, nu de posturi potrivit criteriilor."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:68
+msgid "Techozoic Setting Import / Export"
+msgstr "Techozoic setarea Import / Export"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:68
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:107
+msgid "Import / Export"
+msgstr "Import / Export"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:109
+msgid "Import Settings"
+msgstr "Import setări"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:110
+msgid "If you have settings in a backup file on your computer, the Import / Export system can import those into this site. To get started, upload your backup file to import from below."
+msgstr "Dacă aveţi setările într-un fişier copie de rezervă pe computer, Import / Export sistem pot importa cele în acest site. Pentru a începe, încărcaţi fişierul copie de rezervă pentru a importa de mai jos."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:115
+#, php-format
+msgid "Upload File: (Maximum Size: %s)"
+msgstr "Upload File: (dimensiune maximă: % s)"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:118
+msgid "Upload File and Import"
+msgstr "Fişier încărcat şi Import"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:123
+msgid "Export Settings"
+msgstr "Export setări"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:124
+msgid "When you click the button below, the Import / Export system will create a text file for you to save to your computer."
+msgstr "Când faceţi clic pe butonul de mai jos, Import / Export sistemul va crea un fişier de text pentru a salva pe computer."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:125
+#, php-format
+msgid "This text file can be used to restore your settings here on \"%s\", or to easily setup another website with the same settings\"."
+msgstr "Acest fişier text poate fi folosit pentru a restabili setările aici, pe \"%s\", sau de a configura cu uşurinţă un alt site, cu aceleaşi setări\"."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:129
+msgid "Download Export File"
+msgstr "Descărcaţi fişierul de Export"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:152
+msgid "Welcome to the OptionsFramework Backup Manager."
+msgstr "Bine ati venit la OptionsFramework Backup Manager."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:153
+msgid "Here are a few notes on using this screen."
+msgstr "Aici sunt câteva note pe folosind acest ecran."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:154
+msgid "The backup manager allows you to backup or restore your \"Theme Options\" and other settings to or from a text file."
+msgstr " şi alte setări la sau de la un fişier text."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:155
+msgid "To create a backup, simply select the setting type you'd like to backup (or \"All Settings\") and hit the \"Download Export File\" button."
+msgstr "Pentru a crea o copie de rezervă, selectaţi pur şi simplu tipul de setare pe care doriţi să salvaţi (sau \"Toate Settings\"), şi a lovit \"fişierul de export Download\" buton."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:156
+msgid "To restore your settings from a backup, browse your computer for the file (under the \"Import Settings\" heading) and hit the \"Upload File and Import\" button. This will restore only the settings that have changed since the backup."
+msgstr " buton. Acest lucru va va restabili numai setările care s-au schimbat după copiere de rezervă."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:158
+msgid "Please note that only valid backup files generated through the OptionsFramework Backup Manager should be imported."
+msgstr "Vă rugăm să reţineţi că valabil numai fişierele copie de rezervă generat prin OptionsFramework Backup Manager ar trebui să fie importate."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:178
+#, php-format
+msgid "Please note that this backup manager backs up only your settings and not your content. To backup your content, please use the %sWordPress Export Tool%s."
+msgstr "Vă rugăm să reţineţi că această copie de rezervă manager susţine numai setările şi nu conţinutul dvs. Pentru backup conţinutul dvs., vă rugăm să utilizaţi %sWordPress instrument Export%s."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:181
+msgid "There was a problem importing your settings. Please Try again."
+msgstr "Acolo a fost o problemă importatoare setările. Vă rugăm să încercaţi din nou."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:183
+msgid "There was a problem exporting your settings. Please Try again."
+msgstr "Acolo a fost o problemă exportatoare setările. Vă rugăm să încercaţi din nou."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:185
+msgid "The import file you've provided is invalid. Please try again."
+msgstr "Fişierul de import pe care le-aţi furnizat este nevalid. Vă rugăm să încercaţi din nou."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:187
+#, php-format
+msgid "Settings successfully imported. | Return to %sTheme Options%s"
+msgstr "Setări importate cu succes. | Opţiuni de întoarcere la % sTheme % s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:170
+msgid "Techozoic Setting"
+msgstr "Setarea Techozoic"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:238
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Faceţi clic pe OK pentru a reseta. Orice setări tema vor fi pierdute!"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:270
+msgid "Default options restored."
+msgstr "Opţiunile implicite restaurat."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:311
+msgid "Options saved."
+msgstr "Opţiuni salvate."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:405
+msgid "Techozoic Settings"
+msgstr "Setări de Techozoic"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr "Opţiuni cadru Container interior"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr "Încărcaţi"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:137
+msgid "Remove"
+msgstr "Eliminare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr "Fişierul vizualizare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr "Galerie"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr "Încărcat anterior"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:9
+msgid "Delete"
+msgstr "Ştergere"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:10
+msgid "Spam"
+msgstr "Spam"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:27
+#, php-format
+msgid "Comment by %s"
+msgstr "Comentariu de %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:29
+msgid "Your comment is awaiting moderation."
+msgstr "Comentariu este în aşteptarea moderaţie."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:52
+#, php-format
+msgid "Ping from %s"
+msgstr "Ping la %s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:19
+msgid "Footer"
+msgstr "Subsol"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:20
+msgid "Limit 3 widgets can be assigned to footer area"
+msgstr "Zona de subsol pot aloca limită 3 widget-uri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:28
+msgid "Right Header"
+msgstr "Antet dreapta"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:29
+msgid "Area to the right side of the header"
+msgstr "Zonă în partea dreaptă a antetului"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:37
+msgid "Left Header"
+msgstr "Antet stânga"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:38
+msgid "Area to the left side of the header"
+msgstr "Zona din partea stângă a antetului"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:76
+msgid "Techozoic Font Size Control Widget"
+msgstr "Techozoic Font Size Control Widget"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:77
+msgid "Techozoic Font Size"
+msgstr "Dimensiune Techozoic Font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:82
+msgid "Resize Text"
+msgstr "Resize Text"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:101
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:148
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:195
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:274
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:376
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:442
+msgid "Title:"
+msgstr "Titlu:"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:109
+msgid "Techozoic Child Page menu displays child pages below current page."
+msgstr "Pagina fiu Techozoic meniul afişează pagini copil sub pagina curentă."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:110
+msgid "Techozoic Child Page"
+msgstr "Pagina fiu Techozoic"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:115
+msgid "Sub Pages"
+msgstr "Paginile de sub"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:156
+msgid "Techozoic Sidebar Navigation Menu - option to add categories to navigation"
+msgstr "Techozoic Sidebar meniul de navigare - opţiune să adauge categorii pentru navigație"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:157
+msgid "Techozoic Navigation"
+msgstr "Techozoic de navigare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:162
+msgid "Navigation"
+msgstr "Navigare"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:197
+msgid "Include Pages in Menu"
+msgstr "Include pagini din meniul"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:199
+msgid "Include Categories in Menu"
+msgstr "Include categorii în meniul"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:201
+msgid "Separate Pages and Categories"
+msgstr "Separat pagini şi categorii"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:214
+msgid "Author information Widget - Enter short blurb about yourself"
+msgstr "Autor informaţii Widget - introduceţi blurb scurt despre tine"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:215
+msgid "Techozoic About"
+msgstr "Techozoic despre"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:220
+msgid "About Author"
+msgstr "Despre autor"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:276
+msgid "Write About yourself here"
+msgstr "Scrie despre tine aici"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:279
+msgid "Display link to Facebook Profile"
+msgstr "Afişare link la profilul Facebook"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:281
+msgid "Display link to MySpace Profile"
+msgstr "Link-ul de afişare a MySpace Profile"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:283
+msgid "Display link to Twitter Profile"
+msgstr "Afişare link la profilul stare de nervozitate"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:285
+msgid "Enable Gravatar"
+msgstr "Permite Gravatar"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:287
+msgid "Size of Gravatar"
+msgstr "Dimensiunea Gravatar"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:289
+msgid "Between 25 and 100 Pixels"
+msgstr "Între 25 și 100 pixeli"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:298
+msgid "Meta Information as well as Dashboard and Log In/Out Links"
+msgstr "Meta informaţii, precum şi tabloul de bord şi Log opţiunii link-uri"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:299
+msgid "Techozoic Meta"
+msgstr "Techozoic Meta"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:333
+msgid "Title"
+msgstr "Titlul"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:342
+msgid "Link to RSS feed for blog as well as comment RSS feed"
+msgstr "Link la RSS feed pentru blog-ul, precum şi comentariu RSS feed"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:343
+msgid "Techozoic RSS"
+msgstr "Techozoic RSS"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:385
+msgid "Techozoic Status Widget - Dispaly Post Format Status updates in sidebar"
+msgstr "Techozoic stare Widget - Dispaly Post Format statuie updates în bara laterală"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:386
+msgid "Techozoic Status"
+msgstr "Starea Techozoic"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:391
+msgid "Status Updates"
+msgstr "Statuie Updates"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:443
+msgid "Number of statuses to show"
+msgstr "Numărul de stările de afişare"
+

@@ -1,0 +1,137 @@
+/***********************************
+    Mobile CSS - BETA
+***********************************/
+@media only screen and (max-width: 640px), only screen and (max-device-width: 640px){
+    
+    #page{
+        min-width: 240px;
+        width: 100% !important;
+        position: relative;
+        overflow: hidden;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    #header{
+        min-width: 240px;
+        background: none !important;
+        height: 100px !important;
+    }
+    #content{
+        float:none !important;
+        width: 95% !important;
+        margin: 5px auto;
+    }
+    #l_sidebar, #r_sidebar{
+        float: none !important;
+        width: 95% !important;
+        margin: 5px auto;
+    }
+    .sidebar > ul > li{
+        min-width: 32%;
+        display: inline-block;
+        vertical-align: text-top;
+        max-width: 48%
+    }
+    ul#admin{
+        display:none;
+    }
+    #navmenu{
+        background-image: none;
+        height: auto;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        background-color: #e3e3e3;
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e3e3e3), to(#cccccc));
+        background-image: -webkit-linear-gradient(top, #e3e3e3, #cccccc);
+        background-image:    -moz-linear-gradient(top, #e3e3e3, #cccccc);
+        background-image:     -ms-linear-gradient(top, #e3e3e3, #cccccc);
+        background-image:      -o-linear-gradient(top, #e3e3e3, #cccccc);
+        background-image:         linear-gradient(top, #e3e3e3, #cccccc);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e3e3', endColorstr='#cccccc');
+        z-index: 10;
+        box-shadow:0 2px 2px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow:0 2px 2px rgba(0, 0, 0, 0.3);
+        -webkit-box-shadow:0 2px 2px rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid #999999;
+        border-top: 1px solid #bbb;
+    }
+    .ribbon ul.top-menu:before, .ribbon ul.top-menu:after, .ribbon ul.top-menu > li:first-child, .square ul.top-menu > li:first-child{
+        border: none;
+    }
+    ul.top-menu{
+        width: auto;
+        height: auto;
+        padding-bottom: 5px;
+    }
+    ul.top-menu li, .ribbon ul.top-menu > li, .square ul.top-menu > li{
+        border-radius: 10px;
+        margin: 2px !important;
+        border: none;
+        height: auto;
+        text-align: center;
+        display: inline-block;
+        float: none !important;
+    }
+    .ribbon ul.top-menu > li.has_children, .square ul.top-menu > li.has_children{
+        background: none;
+        padding: 0;
+    }
+    #dropdown a, .top-menu a {
+        padding: 1px;
+        font-size: 12px !important;
+        line-height: 15px !important;
+    }
+    ul.top-menu li ul{
+        visibility: hidden !important;
+    }
+    #search{
+        float:right;
+        margin: 0;
+        position: absolute;
+        top: 65px;
+        right: 5px;
+    }
+    #headerimgwrap{
+        top: 10% !important;
+    }
+    #header-logo, #headerimg{
+        max-width: 90%;
+    }
+    #header-logo img{
+        max-width: 100%;
+        max-height: 100px;
+    }
+    .top{
+        position: static;
+        background: none !important;
+        box-shadow: none !important;
+    }
+    .top:hover{
+         -webkit-transform:none;  
+        -moz-transform:none;  
+        -o-transform:none;
+        -ms-transform: none;
+        transform:none;
+    }
+    .entry{
+        background: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+    .post{
+        margin-bottom: 20px;
+    }
+    .post_title{
+        margin-top: 10px;
+    }
+    .navigation{
+        clear: both;
+    }
+    .navigation a{
+        display: block;
+        border-radius: 10px;
+        background-color: #e3e3e3;
+        padding: 4px;
+    }
+}
