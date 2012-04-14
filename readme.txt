@@ -36,6 +36,8 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+= Version 2.0.5 =
+* Emergency Bug Fix - Typography options not saving correctly due to issue with options framework now fixed.
 
 = Version 2.0.4 =
 * Added two new navigation styles, Ribbon and Square.

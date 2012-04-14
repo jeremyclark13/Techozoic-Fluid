@@ -4,6 +4,8 @@
 <p>
 <br />
 <h2>Change Log</h2>
+<h3>Version 2.0.5</h3><br />
+- Emergency Bug Fix - Typography options not saving correctly due to issue with options framework now fixed.<br />
 <h3>Version 2.0.4</h3><br />
 - Added two new navigation styles, Ribbon and Square. <br />
 - Added more color choices for navigation menus. <br />

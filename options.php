@@ -677,7 +677,11 @@ function optionsframework_options() {
        $options[] = array( "name" => __("Donate to help further development","techozoic"),
                 "type" => "info",
         	"desc" => "<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817' title='Donate Securely'><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' /></a>");
-       
+
+       $options[] = array("name" => __("Changelog - Version 2.0.5", "techozoic"),
+                "type" => "info",  
+                "desc" =>'Emergency Bug Fix - Typography options not saving correctly due to issue with options framework now fixed.');
+                 
        $options[] = array("name" => __("Changelog - Version 2.0.4", "techozoic"),
                 "type" => "info",  
                 "desc" =>'Added two new navigation styles, Ribbon and Square. <br /> Added more color choices for navigation menus. <br /> Added ability to specify two Google Web fonts. <br /> New post author block on single post screens, if user bio is filled out on profile page it is displayed along with gravatar. <br />Romanian Translation Added,<img src="http://mobirout.com/uploads/ro.gif" alt="Romanian translation" /> Web Geek Science  (<a href="http://webhostinggeeks.com/">Web Hosting Geeks</a>)<br />');

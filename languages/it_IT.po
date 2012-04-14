@@ -1,671 +1,1643 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Techozoic Fluid\n"
+"Project-Id-Version: Techozoic Fluid 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-30 11:51-0500\n"
-"PO-Revision-Date: 2010-05-05 23:44+0100\n"
-"Last-Translator: Giuseppe <mailgiuseppe@alice.it>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2011-12-09 08:15-0500\n"
+"PO-Revision-Date: 2012-04-13 21:14+0100\n"
+"Last-Translator: Redazione IoNonMollo <redazione@iononmollo.it>\n"
+"Language-Team: http://www.iononmollo.it <redazione@iononmollo.it>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-Language: English\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Country: UNITED STATES\n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: /home/jeremy/Desktop/techozoic-fluid\n"
+"X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wp-content\\themes\\techozoic-fluid\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wp-content\\themes\\techozoic-fluid\n"
 
-#: /home/jeremy/Desktop/techozoic-fluid/404.php:20
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/404.php:16
 msgid "Error 404 - Not Found"
 msgstr "Errore 404 - Non Trovato"
 
-#: /home/jeremy/Desktop/techozoic-fluid/404.php:22
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/404.php:18
 msgid "Browse Archives"
-msgstr "Sfoglia Archivi"
+msgstr "Sfoglia Archivi "
 
-#: /home/jeremy/Desktop/techozoic-fluid/page.php:24
-msgid "Read the rest of this page"
-msgstr "Leggi il resto di quaesta pagina "
-
-#: /home/jeremy/Desktop/techozoic-fluid/page.php:25
-msgid "Pages:"
-msgstr "Pagine: "
-
-#: /home/jeremy/Desktop/techozoic-fluid/page.php:31
-msgid "Edit this page."
-msgstr "Modifica questa pagina. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/footer.php:17
-msgid "by"
-msgstr "da "
-
-#: /home/jeremy/Desktop/techozoic-fluid/footer.php:17
-msgid "Top"
-msgstr "Alto "
-
-#: /home/jeremy/Desktop/techozoic-fluid/footer.php:18
-#, php-format
-msgid "%1$d mySQL queries in %2$s seconds."
-msgstr "%1$d mySQL queries in %2$s secondi."
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:10
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:40
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:22
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:33
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:57
-#, php-format
-msgid "Permanent Link to %s"
-msgstr "Link Permanente a %s "
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:14
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:29
-msgid "Read the rest of this entry"
-msgstr "Leggi il resto di questo articolo "
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:16
-msgid "Pages"
-msgstr "Pagine "
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:20
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:34
-#, php-format
-msgid "This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed."
-msgstr "Questo articolo è stato pubblicato il %1$s alle %2$s e fa parte di %3$s. Puoi essere informato di ogni risposta a questo articolo seguendo il feed %4$s."
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:20
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:34
-msgid "RSS 2.0"
-msgstr "RSS 2.0"
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:23
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:37
-#, php-format
-msgid "You can %1$s or %2$s from your own site."
-msgstr "Puoi %1$s o %2$s dal tuo sito personale."
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:23
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:37
-msgid "leave a response"
-msgstr "lascia una risposta "
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:23
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:26
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:37
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:40
-msgid "trackback"
-msgstr "trackback"
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:26
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:40
-#, php-format
-msgid "Responses are currently closed, but you can %s from your site."
-msgstr "Le risposte sono attualmente chiuse, ma puoi %s dal tuo sito."
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:29
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:43
-msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
-msgstr "Puoi passare alla fine e lasciare una risposta. Il Pinging non è attualmente consentito. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:32
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:46
-msgid "Both comments and pings are currently closed."
-msgstr "Commenti e Pings sono entrambi attualmente chiusi. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:34
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:48
-msgid "  Edit this entry."
-msgstr "Modifica questo articolo. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/attachment.php:46
-msgid "Sorry, no attachments matched your criteria."
-msgstr "Spiacente, nessun risultato soddisfa il tuo criterio di ricerca. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:3
-msgid "Please do not load this page directly. Thanks!"
-msgstr "Per favore, non caricare direttamente questa pagina. Grazie!. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:6
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:13
-msgid "This post is password protected. Enter the password to view comments."
-msgstr "Questo Articolo è protetto da password. Per vedere i commenti digita la password. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:23
-msgid "No Comments"
-msgstr "Nessun Commento "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:23
-msgid "One Comment"
-msgstr "Un Commento "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:23
-msgid "% Comment"
-msgid_plural "% Comments"
-msgstr[0] "% Commento"
-msgstr[1] "% Commenti"
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:37
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:99
-msgid "Comments are closed."
-msgstr "I Commenti sono chiusi. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:49
-#, php-format
-msgid "%1$s to %2$s &#8221;"
-msgstr "%1$s a %2$s &#8221;"
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:49
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:57
-msgid "No Comments &#187;"
-msgstr "Nessun Commento &#187; "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:49
-msgid "One Comment &#187;"
-msgstr "Un Commento &#187; "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:49
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:57
-msgid "% Comment &#187;"
-msgid_plural "%Comments &#187"
-msgstr[0] "% Commento &#187; "
-msgstr[1] "% Commenti &#187; "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:55
-#, php-format
-msgid "Comment by %s"
-msgstr "Commento di %s "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:57
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:88
-msgid "Your comment is awaiting moderation."
-msgstr "Il tuo Commento è in attesa di moderazione. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:61
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:57
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:22
-msgid "Edit"
-msgstr "Modifica "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:70
-msgid "TrackBacks / PingBacks"
-msgstr "TrackBacks / PingBacks"
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:81
-msgid "TrackBack"
-msgstr "TrackBack"
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:83
-msgid "PingBack"
-msgstr "PingBack"
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:117
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:119
-msgid "Leave a Reply"
-msgstr "Lascia una risposta "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:117
-#, php-format
-msgid "Leave a Reply to %s"
-msgstr "Lascia una risposta a %s "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:123
-#, php-format
-msgid "You must be %s to post a comment."
-msgstr "Devi essere %s per pubblicare un Commento. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:123
-msgid "logged in"
-msgstr "Loggato "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:128
-#, php-format
-msgid "Logged in as %s"
-msgstr "Loggato come %s "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:128
-msgid "Log out of this account"
-msgstr "Esci da questo Account "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:128
-msgid "Logout"
-msgstr "Esci"
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:131
-msgid "Name"
-msgstr "Nome "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:131
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:133
-msgid "(required)"
-msgstr "(richiesto) "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:133
-msgid "Mail (will not be published)"
-msgstr "Mail ( non sarà pubblicato) "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:135
-msgid "Website"
-msgstr "Website "
-
-#: /home/jeremy/Desktop/techozoic-fluid/comments.php:140
-msgid "Submit Comment"
-msgstr "Invia Commento "
-
-#: /home/jeremy/Desktop/techozoic-fluid/l_sidebar.php:3
-msgid "Left Sidebar"
-msgstr "Sidebar di Sinistra "
-
-#: /home/jeremy/Desktop/techozoic-fluid/l_sidebar.php:4
-msgid "Meta"
-msgstr "Meta "
-
-#: /home/jeremy/Desktop/techozoic-fluid/l_sidebar.php:7
-msgid "This page validates as XHTML 1.0 Transitional"
-msgstr "Questa pagina è convalidata come XHTML 1.0 Transitional "
-
-#: /home/jeremy/Desktop/techozoic-fluid/l_sidebar.php:7
-msgid "Valid XHTML"
-msgstr "Valido XHTML"
-
-#: /home/jeremy/Desktop/techozoic-fluid/l_sidebar.php:8
-msgid "Valid CSS"
-msgstr "Valido CSS "
-
-#: /home/jeremy/Desktop/techozoic-fluid/l_sidebar.php:9
-msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
-msgstr "Powered by WordPress, stato-dell'arte-semantica della piattaforma di pubblicazione personale. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/l_sidebar.php:18
-msgid "Tags"
-msgstr "Parole chiavi "
-
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:13
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:12
 #, php-format
 msgid "Archive for the %s Category"
 msgstr "Archivio per la Categoria %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:16
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:19
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:22
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:15
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:18
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:21
 #, php-format
 msgid "Archive for %s"
 msgstr "Archivio per %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:25
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:24
 msgid "Search Results"
 msgstr "Risultati della ricerca "
 
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:28
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:27
 msgid "Author Archive"
 msgstr "Archivio dell'Autore "
 
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:31
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:30
 msgid "Blog Archives"
 msgstr "Archivi del Blog "
 
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:35
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:63
-msgid "&laquo; Previous Entries"
-msgstr "&laquo; Articoli Precedenti "
-
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:36
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:64
-msgid "Next Entries &raquo;"
-msgstr "prossimi Articoli &raquo; "
-
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:57
-#, php-format
-msgid "Posted in %s"
-msgstr "Pubblicato in %s "
-
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:57
-msgid "1 Comment &#187;"
-msgstr "1 Commento &#187; "
-
-#: /home/jeremy/Desktop/techozoic-fluid/archive.php:69
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:81
-msgid "Not Found"
-msgstr "Non Trovato "
-
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:22
-#, php-format
-msgid "By %s"
-msgstr "da %s "
-
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:22
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:34
-#, php-format
-msgid "Filed in %s"
-msgstr "Archiviato in %s "
-
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:24
-#, php-format
-msgid "Go back to %s"
-msgstr "Ritorna a %s "
-
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:24
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:55
-msgid "del.icio.us this!"
-msgstr "del.icio.us questo!. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:25
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:54
-msgid "DIGG this!"
-msgstr "DIGG questo!. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/single.php:58
-msgid "Sorry, no posts matched your criteria."
-msgstr "Spiacente, nessun articolo trovato con il criterio di ricerca. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:19
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:77
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:35
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:17
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:22
 msgid "&laquo; Older Entries"
 msgstr "&laquo; Voci meno Recenti "
 
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:20
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:78
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/archive.php:36
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:18
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/index.php:23
 msgid "Newer Entries &raquo;"
 msgstr "Voci più Recenti &raquo; "
 
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:34
-msgid "By"
-msgstr "Da "
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:34
-msgid "&nbsp;|&nbsp; Edit."
-msgstr "&nbsp;|&nbsp; Modifica. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:38
-msgid "Read the remainder of this entry &raquo;"
-msgstr "Leggi il resto di questa voce &raquo;"
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:41
-msgid "Be the first to comment"
-msgstr "Sii il primo a commentare "
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:41
-msgid "1 Comment. Join the Conversation"
-msgstr "1 Commento. Partecipa alla Conversazione. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:41
-msgid "% Comment so far. Join the Conversation"
-msgid_plural "% Comments so far. Join the Conversation"
-msgstr[0] "% Commento finora. Partecipa alla Conversazione. "
-msgstr[1] "% Commenti finora. Partecipa alla Conversazione. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:41
-msgid "Comments Closed"
-msgstr "I Commenti sono Chiusi "
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:57
-msgid "Trackback"
-msgstr "Trackback"
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:59
-msgid "To the top"
-msgstr "In alto "
-
-#: /home/jeremy/Desktop/techozoic-fluid/index.php:82
-msgid "Sorry, but you are looking for something that isn't here"
-msgstr "Spiacente, ma stai cercando qualcosa che non è qui. "
-
-#: /home/jeremy/Desktop/techozoic-fluid/searchform.php:2
-msgid "Search: Type and Enter"
-msgstr "Ricerca: Digita ed Invia "
-
-#: /home/jeremy/Desktop/techozoic-fluid/searchform.php:4
-msgid "Go"
-msgstr "Vai "
-
-#: /home/jeremy/Desktop/techozoic-fluid/header.php:135
-msgid "Dashboard"
-msgstr "Bacheca "
-
-#: /home/jeremy/Desktop/techozoic-fluid/header.php:136
-msgid "Log Out"
-msgstr "Log Out "
-
-#: /home/jeremy/Desktop/techozoic-fluid/header.php:142
-#: /home/jeremy/Desktop/techozoic-fluid/header.php:144
-msgid "Login"
-msgstr "Login "
-
-#: /home/jeremy/Desktop/techozoic-fluid/header.php:151
-msgid "Username: "
-msgstr "Username: "
-
-#: /home/jeremy/Desktop/techozoic-fluid/header.php:152
-msgid "Password: "
-msgstr "Password: "
-
-#: /home/jeremy/Desktop/techozoic-fluid/header.php:153
-msgid "Log in"
-msgstr "Log in"
-
-#: /home/jeremy/Desktop/techozoic-fluid/search.php:10
-msgid "Search Results for "
-msgstr "Risultati della ricerca per "
-
-#: /home/jeremy/Desktop/techozoic-fluid/search.php:19
-msgid "articles"
-msgstr "articoli "
-
-#: /home/jeremy/Desktop/techozoic-fluid/search.php:59
-msgid "No posts found. Try a different search?"
-msgstr "Nessun articolo trovato. Provare con una differente ricerca?."
-
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:10
-msgid "Pages Below Current"
-msgstr "Pagine Seguenti "
-
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:20
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:14
 #, php-format
-msgid "You are currently browsing the archives for the %s category."
-msgstr "Stai attualmente navigando gli archivi per la categoria %s. "
+msgid "Return to %s"
+msgstr "Ritorna a %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:22
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:24
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:26
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:14
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:10
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:34
 #, php-format
-msgid "You are currently browsing the %1$s archives for %2$s."
-msgstr "Stai attualmente navigando gli archivie %1$s per %2$s. "
+msgid "Permanent Link to %s"
+msgstr "Link Permanente a %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:28
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:20
+msgid "View Full Size"
+msgstr "Visione a Tutta Pagina"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:27
+msgid "Image Information"
+msgstr "Informazione Immagine "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:29
 #, php-format
-msgid "You have searched the %1$s archives for %2$s."
-msgstr "Hai ricercato negli archivi %1$s per %2$s. "
+msgid "Size: %1$s &times; %2s"
+msgstr "Dimensione: %1$s &times; %2s"
 
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:30
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:32
 #, php-format
-msgid "You are currently browsing the %1$s archives."
-msgstr "Stai attualmente navigando gli archivi %1$s. "
+msgid "Camera: %s"
+msgstr "Telecamera: %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:32
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:9
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:12
-msgid "Right Sidebar"
-msgstr "Sidebar di Destra "
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:36
+#, php-format
+msgid "Taken: %s"
+msgstr "Preso: %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:33
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:224
-msgid "Syndicate"
-msgstr "Sindacato"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:40
+#, php-format
+msgid "Aperture: %s"
+msgstr "Apertura: %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:37
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:230
-msgid "Comments"
-msgstr "Commenti"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:44
+#, php-format
+msgid "ISO: %s"
+msgstr "ISO: %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:41
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:60
-msgid "Categories"
-msgstr "Categorie"
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:48
+#, php-format
+msgid "Shutter Speed: %s"
+msgstr "Velocità dell'otturatore: %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/sidebar.php:48
-msgid "Blogroll"
-msgstr "Blogroll "
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:52
+msgid "Click for original image"
+msgstr "Clicca per il formato originale "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:42
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:46
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:57
+#, php-format
+msgid "Additional sizes: %s"
+msgstr "Dimensioni addizionali: %s "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:63
+msgid "Read the rest of this entry"
+msgstr "Leggi il resto di questo Articolo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:88
+msgid "Previous Image"
+msgstr "Immagine Precedente "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:91
+msgid "Next Image"
+msgstr "Immagine Prossima "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:100
+msgid "Pages"
+msgstr "Pagine"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:105
+#, php-format
+msgid "This entry was posted on %1$s at %2$s and is filed under %3$s. You can follow any responses to this entry through the %4$s feed."
+msgstr "Questo articolo è stato pubblicato il %1$s alle %2$s ed è archiviato sotto %3$s. Puoi seguire ogni commento a questo articolo con il feed %4$s. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:105
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:806
+msgid "RSS 2.0"
+msgstr "RSS 2.0 "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:108
+#, php-format
+msgid "You can %1$s or %2$s from your own site."
+msgstr "Puoi %1$s o %2$s dal tuo sito. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:108
+msgid "leave a response"
+msgstr "lascia un commento "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:108
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:111
+msgid "trackback"
+msgstr "trackback"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:111
+#, php-format
+msgid "Responses are currently closed, but you can %s from your site."
+msgstr "I Commenti sono attualmente chiusi, ma puoi %s dal tuo sito. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:114
+msgid "You can skip to the end and leave a response. Pinging is currently not allowed."
+msgstr "Puoi saltare alla fine e lasciare un commento. Fare il Ping non è al momento consentito. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:117
+msgid "Both comments and pings are currently closed."
+msgstr "I commenti ed i pings al momento sono chiusi. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:119
+msgid "  Edit this entry."
+msgstr "Modifica questo articolo. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/attachment.php:131
+msgid "Sorry, no attachments matched your criteria."
+msgstr "Spiacenti, nessun allegato corrisponde ai tuoi criteri. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:3
+msgid "Please do not load this page directly. Thanks!"
+msgstr "Per favore non caricare direttamente questa pagina. Grazie!. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:6
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:13
+msgid "This post is password protected. Enter the password to view comments."
+msgstr "Questo articolo è protetto da password. Digita la password per vedere i commenti. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:21
+msgid "No Comments"
+msgstr "Nessun Commento "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/comments.php:21
+msgid "One Comment"
+msgstr "Un Commento "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:74
+msgid "Header Navigation"
+msgstr "Navigazione dell'Header "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:75
+msgid "Sidebar Navigation"
+msgstr "Navigazione della Sidebar "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:76
+msgid "Footer Navigation"
+msgstr "Navigazione del Footer "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:91
+msgid "Grunge"
+msgstr "Grunge "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:96
+msgid "Landscape"
+msgstr "Panorama "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:101
+msgid "Random Lines 1"
+msgstr "Linee casuali 1 "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:106
+msgid "Random Lines 2"
+msgstr "Linee casuali 2 "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:111
+msgid "Technology"
+msgstr "Tecnologia "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:437
+msgid "Techozoic News"
+msgstr "Le News di Techozoic "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:450
+msgid "No News."
+msgstr "Nessuna New."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:462
+msgid "Techozoic Links"
+msgstr "Links Techozoic "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:465
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:983
+msgid "Support Forum"
+msgstr "Forum di supporto "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:468
+msgid "Documentation"
+msgstr "Documentazione"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:471
+msgid "FAQ"
+msgstr "FAQ"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:474
+msgid "Change Log"
+msgstr "Storia dei cambiamenti "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:567
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:20
+msgid "Read More"
+msgstr "Leggi il Resto "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:713
+msgid "Top"
+msgstr "Alto "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:713
+#, php-format
+msgid "%1$d mySQL queries in %2$s seconds."
+msgstr "%1$d mySQL queries in %2$s secondi."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:796
+msgid "del.icio.us this!"
+msgstr "del.icio.us questo!. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:797
+msgid "Digg this!"
+msgstr "Digg questo!. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:798
+msgid "Share this by email."
+msgstr "Condividi questo per E-mail!. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:799
+msgid "Share on Facebook!"
+msgstr "Condividi su Facebook!. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:800
+msgid "Share on LinkedIn!"
+msgstr "Codividi su LinkedIn!."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:801
+msgid "Share on Myspace!"
+msgstr "Condividi su Myspace!. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:802
+msgid "Share on NewsVine!"
+msgstr "Condividi su NewsVine!. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:803
+msgid "Stumble Upon this!"
+msgstr "Questo su OkNotizie!."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:804
+msgid "Tweet this!"
+msgstr "Twitta questo!. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:805
+msgid "Share on Reddit!"
+msgstr "Condividi su Reddit!. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:806
+msgid "Subscribe to Feed"
+msgstr "Sottoscrizione al Feed "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:848
+msgid "Follow me on Facebook"
+msgstr "Seguimi su Facebook "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:851
+msgid "Follow me on Myspace"
+msgstr "Seguimi su Myspace "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:854
+msgid "Follow me on Twitter"
+msgstr "Seguimi su Twitter"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:881
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:882
 msgid " posted on "
-msgstr "inserito il "
+msgstr " pubblicato su "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:66
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:911
 #, php-format
 msgid "Theme activated! This theme contains <a href=\"%s\">theme options</a> and <a href=\"%s\">custom sidebar widgets</a>.<br />&nbsp; See <a href=\"%s\">Change Log</a>."
-msgstr "Tema attivato!. Esso contiene <a href=\"%s\">opzioni del tema</a> and <a href=\"%s\">sidebar widgets personalizzata</a>.<br />&nbsp; Vedi <a href=\"%s\">Cambia Log</a>."
+msgstr "Tema attivato!. Questo tema contiene <a href=\"%s\">opzioni del tema </a> e <a href=\"%s\">sidebar dei widgets personalizzato</a>.<br />&nbsp; Vedi <a href=\"%s\">Storia dei cambiamenti </a>."
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:205
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:934
+#, php-format
+msgid "Header height and width and aligment can be set on the <a href=\"%s\">theme options</a> page."
+msgstr "Larghezza, Altezza ed allineamento dell'Header possono essere impostati sulla pagina <a href=\"%s\"> Opzioni del Tema</a>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:979
 msgid "Thank you for using the Techozoic Theme.  "
-msgstr "Grazie di usare il Tema Techozoic. "
+msgstr "Grazie per aver scelto di utilizzare il Tema Techozoic. "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:207
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:981
 #, php-format
 msgid "Visit the %s to start customizing Techozoic.  "
 msgstr "Visita %s per cominciare a personalizzare Techozoic. "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:207
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:981
 msgid "options page"
-msgstr "pagina delle opzioni "
+msgstr "Pagina delle Opzioni "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:983
 #, php-format
 msgid "If your having problems or would like to suggest a new feature, please visit the %s."
-msgstr "Se stai avendo dei problemi o vorresti suggerire nuove funzioni, per favore visita %s. "
+msgstr "Se hai problemi o vuoi suggerire delle novità, per favore visita %s. "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:208
-msgid "Support Forum"
-msgstr "Forum di Supporto "
-
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:983
 msgid "support forum"
 msgstr "forum di supporto "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:265
-#: /home/jeremy/Desktop/techozoic-fluid/nav/twotier.php:9
-#: /home/jeremy/Desktop/techozoic-fluid/nav/dropdown.php:9
-#: /home/jeremy/Desktop/techozoic-fluid/nav/standard.php:9
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:50
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1020
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/nav-dropdown.php:9
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/nav-standard.php:9
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/nav-twotier.php:9
 msgid "Home"
 msgstr "Home "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:285
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1039
 msgid "Archive for category &#39;"
-msgstr "Archivio per categoria &#39; "
+msgstr "Archivio per Categoria  &#39; "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:328
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1085
 msgid "Search results for &#39;"
-msgstr "Risultati della Ricerca per &#39; "
+msgstr "Risultati della ricerca per  &#39; "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:331
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1088
 msgid "Posts tagged &#39;"
-msgstr "Articoli marcati con tag &#39; "
+msgstr "Articoli con tag  &#39; "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:338
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1095
 msgid "Articles posted by "
-msgstr "Articoli inseriti da "
+msgstr "Articoli pubblicati da "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:341
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1098
 msgid "Error 404"
 msgstr "Errore 404 "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:346
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions.php:1103
 msgid "Page"
 msgstr "Pagina "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:362
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:30
+msgid "Archive for "
+msgstr "Archivio per "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:159
+msgid "Dashboard"
+msgstr "Pannello di Controllo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:160
+msgid "Log Out"
+msgstr "Log Out "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:166
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:168
+msgid "Login"
+msgstr "Login "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:175
+msgid "Username: "
+msgstr "Username: "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:176
+msgid "Password: "
+msgstr "Password: "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/header.php:177
+msgid "Log in"
+msgstr "Log in "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:10
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:20
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:34
+msgid "Read More &hellip;"
+msgstr "Leggi il resto &hellip; "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:17
+msgid "View all status updates by this author"
+msgstr "Guarda tutti gli aggiornamenti di stato di questo autore "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:35
+msgid "By"
+msgstr "Da "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:35
+#, php-format
+msgid "Filed in %s"
+msgstr "depositato in %s "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:35
+msgid "&nbsp;|&nbsp; Edit."
+msgstr "&nbsp;|&nbsp; Modifica. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:43
+msgid "Read the remainder of this entry &raquo;"
+msgstr "Leggi il resto di questa voce &raquo; "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:47
+msgid "Be the first to comment"
+msgstr "Sii il primo a commentare "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:47
+msgid "1 Comment. Join the Conversation"
+msgstr "1 Commento. Partecipa alla Conversazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:47
+msgid "Comments Closed"
+msgstr "Commenti Chiusi "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:60
+msgid "To the top"
+msgstr "Vai in Alto "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:81
+msgid "Not Found"
+msgstr "Non Trovato "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/loop.php:82
+msgid "Sorry, but you are looking for something that isn't here"
+msgstr "Spiacenti, ma stai cercando qualcosa che non è qui "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:30
+msgid "Techozoic Theme Options"
+msgstr "Opzioni del Tema Techozoic "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:31
+#, php-format
+msgid "Looking for assistance? Please visit the <a href=\"%1$s\">support forums</a>, refer to the <a href=\"%2$s\">documentation</a>, or the <a href=\"%3$s\">FAQ</a>."
+msgstr "Cerchi Assistenza?. Per favore visita il  <a href=\"%1$s\">supporto per il forum</a>, fai riferimento alla <a href=\"%2$s\">documentazione </a>, o alle <a href=\"%3$s\">FAQ</a>."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:68
+msgid "Layout"
+msgstr "Disposizione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:71
+msgid "Column Layout"
+msgstr "Disposizione Colonna"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:78
+msgid "Fixed or Fluid Width"
+msgstr "Larghezza Fissa o Fluida "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:84
+msgid "Fixed Width"
+msgstr "Larghezza Fissa "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:84
+msgid "Fluid Width"
+msgstr "Larghezza Fluida "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:86
+msgid "Page Width"
+msgstr "Larghezza Pagina "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:87
+msgid "Fluid Width - Percentage of Total Screen Size  <br />Fixed Width - Width in number of pixels"
+msgstr "Larghezza Fluida - Percentuale della Dimensione Totale del Video <br />Larghezza Fissa - Larghezza in numero di pixels "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:94
+msgid "Main Column Width"
+msgstr "Larghezza Colonna Principale"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:95
+msgid "(Post Content) - Percentage of Page Width"
+msgstr "(Contenuto dell'Articolo) - Percentuale della Larghezza Pagina "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:102
+msgid "Left Sidebar Width"
+msgstr "Larghezza della Sidebar di Sinistra "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:103
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:111
+msgid "Percentage of Page Width"
+msgstr "Percentuale della Larghezza Pagina "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:110
+msgid "Right Sidebar Width"
+msgstr "Larghezza della Sidebar di Destra "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:118
+msgid "Fav Icon Image"
+msgstr "Immagine Favicon "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:119
+msgid "Fav Icon must be an .ico file.  Browse for a new image or chose previously uploaded image.  After choosing press Save to upload."
+msgstr "FavIcon deve essere un file .ico Cerca una nuova immagine o scegli un'immagine precedentemente caricata. Dopo aver scelto premere Salva per caricare."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:123
+msgid "Display Sidebars on Blog Home Page"
+msgstr "Visualizza le Sidebars sulla Home Page"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:129
+msgid "Display Sidebars on Single Post Pages"
+msgstr "Visualizza le Sidebars Sulle Pagine per Articolo Singolo"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:135
+msgid "Page Specific Sidebars"
+msgstr "Pagina di Specifiche Sidebars "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:136
+msgid "Choose which pages to register a sidebar.  After selecting pages, two new sidebars will be avaialbe from the widgets screen.  These sidebars will be used if any widgets are added, otherwise the default sidebars will be used."
+msgstr "Scegli su quali pagine registrare una Sidebar. Dopo aver selezionato le pagine, due nuove sidebars saranno disponibili dallaschermata dei widgets. Queste Sidebars saranno usate se verrà aggiunto qualche widget, altrimenti verrano usate le Sidebar di default. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:142
+msgid "SEO Features"
+msgstr "Caratteristiche SEO "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:143
+msgid "Disable this if any SEO plugins are used"
+msgstr "Disabilita questo, se è usato qualche Plugin SEO "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:149
+msgid "Thickbox on Images"
+msgstr "Thickbox sulle immagini"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:150
+msgid "Use Thickbox to automatically overlay images on pages</small>"
+msgstr "Utilizzare Thickbox per sovrapporre automaticamente immagini nelle pagine"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:156
+msgid "Comment Preview"
+msgstr "Anteprima del Commento "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:157
+msgid "Enable the comment preview for posts on the home page."
+msgstr "Abilita l'anteprima commenti per gli articoli sulla Home Page "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:163
+msgid "Comment Preview Number"
+msgstr "Numero Anteprima Commento "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:164
+msgid "Number of comments to display in comment preview area."
+msgstr "Numero di Commenti da visualizzare nell'area dell'anteprima commento. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:171
+msgid "Custom Footer Text"
+msgstr "Testo personalizzato nel Footer "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:172
+msgid "Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog's title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author's website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link."
+msgstr "Testo visualizzato nel Footer - HTML Consentito <br />Codici Funzione che possono essere utilizzati: <br />%BLOGNAME% -> Titolo del Blog. <br />%THEMENAME% -> Nome del Tema. <br />%THEMEVER% -> Versione del Tema Corrente. <br /> %THEMEAUTHOR% -> Link al  Website dell'autore del Tema. *<br />%TOP% -> Link ad Alto della pagina.<br /> %COPYRIGHT% -> Inserisci informazioe copyright per il corrente anno.<br /> %MYSQL% -> MySql informazioni su tempo di esecuzione delle queries.<br /><br />*E' del tutto opzionale, ma se ti piace Techozoic, ti sarei grato se tu mantenessi il collegamento di credito. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:178
+msgid "Drop Shadow Boxes"
+msgstr "Elimina Ombra Boxes "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:179
+msgid "Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safari."
+msgstr "Spunta le aree dove l'effetto Ombra non deve essere usato <br /> - nota visibile solo in Firefox, Chrome, Safari."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+msgid "Header Text"
+msgstr "Testo dell'Header"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+msgid "Post Boxes"
+msgstr "Boxes degli Articoli "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+msgid "Images"
+msgstr "Immagini "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:184
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:216
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Main Page"
+msgstr "Pagina Principale "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:186
+msgid "Page Background Image"
+msgstr "Pagina Immagine di Sfondo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:187
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:193
+msgid "Use a tiled image for best results."
+msgstr "Per migliori risultati usa un'immagine affiancata. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:192
+msgid "Content Background Image"
+msgstr "Contenuto Immagine di Sfondo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:198
+msgid "Posts"
+msgstr "Articoli "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:201
+msgid "Excerpt Location"
+msgstr "Ubicazione Stralcio"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:202
+msgid "Check where excerpts should be used instead of full post content.  If an area isn't checked then the full post is displayed."
+msgstr "Controlla dove gli stralci dovrebbero essere usati al posto del contenuto completo degli articoli. Se una zona non è spuntata allora viene mostrato l'articolo completo. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Category Archive"
+msgstr "Archivio delle Categorie "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Yearly Archive"
+msgstr "Archivio Annuale "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Monthly Archive"
+msgstr "Archivio Mensile "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:208
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/tag.php:10
+msgid "Tag Archive"
+msgstr "Archivio dei Tag "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:210
+msgid "Background Color"
+msgstr "Colore di Sfondo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:211
+msgid "Check where background color for posts defined on the color tab should be applied."
+msgstr "Verifica dove deve essere applicato il colore di sfondo degli articoli, definito nella scheda colore ."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:216
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:224
+msgid "Single Post"
+msgstr "Articolo Singolo"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:216
+msgid "Archive Pages"
+msgstr "Pagine Archivi"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:218
+msgid "Social Media Icons"
+msgstr "Icone dei Media Sociali"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:219
+msgid "Check where Social Media Icons will be displayed."
+msgstr "Controlla dove le Icone dei Media Sociali saranno disabilitati. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:226
+msgid "Nav"
+msgstr "Navigazione"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:229
+msgid "Navigation Menu"
+msgstr "Menu di Navigazione"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:230
+msgid "Enable navigation menu.  If disabled visit the <a href=\"widgets.php\">widgets</a> page to add  the Techozoic Sidebar Navigation widget"
+msgstr "Abilita il Menu di Navigazione. Se disabilitato visita la pagina <a href=\"widgets.php\">widgets</a> per aggiungere la Sidebar del Widget Navication di Techozoic. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:235
+msgid "Log In/Out Links"
+msgstr "Links per il Log In/Out "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:236
+msgid "Enable Dashboard and Log in/out links."
+msgstr "Abilita il Pannello di Controllo ed i Links per il Log In/Out. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:242
+msgid "Breadcrumbs"
+msgstr "Briciole"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:243
+msgid "Enable Breadcrumb navigation.  Useful with Sidebar Nav Widget."
+msgstr "Abilita le briciole di Navigazione. Utile con la Sidebar del Widget di Navigazione. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:249
+msgid "Navigation Menu Alignment"
+msgstr "Allineamento del Menu di Navigazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:254
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:551
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:574
+msgid "Left"
+msgstr "Sinistra "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:254
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:551
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:574
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:582
+msgid "Center"
+msgstr "Centro "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:256
+msgid "Navigation Button Width"
+msgstr "Larghezza Pulsante di Navigazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:257
+msgid "Size of navigation button width in Pixels.  Set to <strong>0</strong> for variable sized buttons"
+msgstr "Larghezza del Pulsante di Navigazione espressa in pixels. Impostato a <strong>0</strong> per i pulsanti di dimensioni variabili"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:265
+msgid "Font"
+msgstr "Font"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:268
+msgid "Default Text"
+msgstr "Testo Predefinito"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:273
+msgid "Main Heading Font"
+msgstr "Font Testata  Principale "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:278
+msgid "Post Heading Font"
+msgstr "Font Testata Articolo"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:283
+msgid "Sidebar Heading Font"
+msgstr "Font per la Testata Sidebar "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:288
+msgid "Nav Menu Text Font"
+msgstr "Font per il Testo del Menu di Navigazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:293
+msgid "Post Text Font"
+msgstr "Font per il Testo dell'Articolo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:298
+msgid "Metadata Font"
+msgstr "Font Metadata "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:303
+msgid "Google Font Replacement"
+msgstr "Sostituzione Font Google "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:304
+msgid "Enable this to use the Google Font API to add new fonts."
+msgstr "Abilita questo per permettere ad API Google Font di aggiungere nuovi fonts . "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:310
+msgid "Goolge Fonts"
+msgstr "Fonts Google "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:311
+msgid "Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After choosing on the font to use, copy the Name of the font here."
+msgstr "Visita il sito <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> per prelevare il font da usare. Dopo aver scelto il font da usare, scrivi qui il suo Nome. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:316
+msgid "Goolge Font - Font Decoration"
+msgstr "Google Font - Font Decorazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:317
+msgid "Some Goolge Fonts have additional variants for <strong>Bold</strong> and <em>Italic</em>.  If the font chosen has these variants check the boxes for which decoration to apply to the Google Font."
+msgstr "Alcuni Google Fonts hanno delle variabili per il <strong>Grassetto</strong> e per il <em>Corsivo</em>. Se il font scelto ha una di queste variabili, spunta la corrispondente casella per applicare lo stile del Google Font. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Bold"
+msgstr "Grassetto "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Bold Italic"
+msgstr "Grassetto Corsivo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Italic"
+msgstr "Corsivo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:322
+msgid "Select One"
+msgstr "Seleziona Uno "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:325
+msgid "Font Replacement"
+msgstr "Sostituzione Font "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:326
+msgid "Check which headings you would like replaced."
+msgstr "Spunta quali voci vorresti sostituire. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "Main Blog Title"
+msgstr "Titolo Principale del Blog "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "Sidebar Titles"
+msgstr "Titoli delle Sidebars (Barre Laterali) "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "Post Titles"
+msgstr "Titolo dell'Articolo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H1 Headings"
+msgstr "Testata  H1 "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H2 Headings"
+msgstr "Testata  H2 "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H3 Headings"
+msgstr "Testata  H3 "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H4 Headings"
+msgstr "Testata H4 "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:331
+msgid "H5 Headings"
+msgstr "Testata H5"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:333
+msgid "Color"
+msgstr "Colore "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:336
+msgid "Prebuilt Color Scheme"
+msgstr "Schema Precostituito dei Colori"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:337
+msgid "Choose Custom to specify your own scheme"
+msgstr "Scegli Personalizza per specificare il tuo schema"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Custom"
+msgstr "Personalizza "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Blue"
+msgstr "Blu"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Khaki"
+msgstr "Cachi "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:342
+msgid "Red"
+msgstr "Rosso "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:344
+msgid "Body Background Color"
+msgstr "Colore di sfondo del Corpo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:345
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:359
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:373
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:380
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:387
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:394
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:401
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:415
+msgid "Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>"
+msgstr "Seleziona o Digita un  <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">codice del colore HEX</a> "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:351
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:365
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:407
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:421
+msgid "Transparent"
+msgstr "Trasparente"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:352
+msgid "Check to not apply any color to the body background."
+msgstr "Spunta per non applicare un colore allo sfondo del corpo. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:358
+msgid "Content Background Color"
+msgstr "Colore di sfondo del contenuto. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:366
+msgid "Check to not apply any color to the content background."
+msgstr "Spunta per non applicare un colore di sfondo al contenuto. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:372
+msgid "Accent Color"
+msgstr "Colore di Risalto "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:379
+msgid "Link Color"
+msgstr "Colore del Link "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:386
+msgid "Link Hover Color"
+msgstr "Colore con mouse sul Link."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:393
+msgid "Visited Link Color"
+msgstr "Colore del Link visitato "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:400
+msgid "Nav Button Background Color"
+msgstr "Colore di sfondo del Pulsante di Navigazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:408
+msgid "Check to not apply any color to the nav button background."
+msgstr "Spunta per non applicare un colore allo Sfondo del Pulsante di Navigazione. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:414
+msgid "Post Background Color"
+msgstr "Colore di Sfondo degli Articoli "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:422
+msgid "Check to not apply any color to the post background."
+msgstr "Spunta per non applicare un colore allo Sfondo degli Articoli. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:428
+msgid "Ads"
+msgstr "Ads"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:431
+msgid "Home Page Ad Code"
+msgstr "Codice Ad per Home Page "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:432
+msgid "This Ad Code will be displayed a total of 3 times. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>"
+msgstr "Questo Codice Ad verrà visualizzato 3 volte. I migliori Ads sono Banners Ad non più larghi di 500 pixels *Accettato solo html e javascript <strong>Ora accettati anche i Codici 'shortcodes'</strong>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:438
+msgid "Number of Posts Between Ad Units"
+msgstr "Numero di Articoli  tra le Unità Ad "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:446
+msgid "Home Page Header Ad Code"
+msgstr "Codice Ad Testata Home Page "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:447
+msgid "This Ad Code will be displayed on the home  page below the header and navigation. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>"
+msgstr "Questo Codice Ad sarà visualizzato sulla Home Page sotto la Testata e la Navigazione. I migliori Ads sono i Banners Ad non più larghi di 500 pixels  *Accettato solo html e javascript <strong>Ora accettati anche i Codici 'shortcodes'</strong>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:453
+msgid "Single Post Ad Code"
+msgstr "Codice Ad per Singolo Articolo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:454
+msgid "This Ad Code will be displayed on the single post page. Best ads are banner ads no wider than 500 pixels *Only html and javascript accepted <strong>Shortcodes now accepted</strong>"
+msgstr "Questo codice Ad verrà visualizzato nella pagina per singolo articolo. Migliori Ads sono banner pubblicitari non più larghi di 500 pixel *Accettati solo html e javascript <strong>Gli Shortcodes ora sono accettati</strong>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:460
+msgid "Single Post Ad Position"
+msgstr "Posizione Ad nell'Articolo Singolo"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:461
+msgid "Above or below the post content on single page"
+msgstr "Sopra o Sotto il contenuto dell'articolo sulla singola pagina "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:466
+msgid "Above"
+msgstr "Sopra "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:466
+msgid "Below"
+msgstr "Sotto "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:468
+msgid "Social"
+msgstr "Sociale "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:471
+msgid "Home/Archive Page Social Network Icons"
+msgstr "Icone dei Social/Network sulla pagina Home/Archivio "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:472
+msgid "Choose which social network icons you would like displayed below the post on the Home/Archive pages."
+msgstr "Scegliere quali icone dei network sociali desideri visualizzare sotto l'articolo sulla pagine Home/Archivio."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:479
+msgid "Single Page Social Media Icons"
+msgstr "Icone dei Media Sociali su Pagina Singola "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:480
+msgid "Choose which social media icons you would like displayed on the single post page."
+msgstr "Scegliere quali icone sociali dei media si desidera visualizzare nella pagina singolo articolo."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:487
+msgid "Facebook Profile"
+msgstr "Profilo Facebook "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:488
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:495
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:502
+msgid "Used for the About widget Must be full link to profile page"
+msgstr "Utilizzato perAbout il widget deve linkare alla pagina del profilo"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:494
+msgid "MySpace Profile"
+msgstr "Profilo MySpace "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:501
+msgid "Twitter Profile"
+msgstr "Profilo Twitter "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:508
+msgid "Header"
+msgstr "Testata  "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:511
+msgid "Display Search box in header"
+msgstr "Mostra il campo di ricerca nella Testata "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:512
+msgid "Set to no if you don't want the search box to show in the header area.  If widgets are assigned to Right Header search box is automatically disabled."
+msgstr "Impostare a no se non si desidera che la casella di ricerca sia mostrare nell'area di intestazione. Se i widget sono assegnati alla Destra dell'Intestazione, la casella di ricerca viene automaticamente disattivata."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:518
+msgid "Display Blog Title and Tagline in header"
+msgstr "Visualizzare Titolo e Sottotitolo del Blog nell'intestazione."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:519
+msgid "Uncheck if your custom header image already has your blog title and tagline.  If header logo is uploaded it will always be used."
+msgstr "Deseleziona se l'immagine personalizzata dell'intestazione ha già il titolo ed il sottotitolo del blog. Se il logo intestazione viene caricato, esso sarà sempre utilizzato."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:525
+msgid "Header Logo"
+msgstr "Logo Testata  "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:526
+msgid "Replace Blog Title and Tagline with a custom logo.  Logo is overlayed on header image.  For best results use a logo with a transparent background.  When uploading Alignment options are NOT used from the uploader, alignment is set below."
+msgstr "Sostituire il Titolo e Sottotitolo del Blog con un logo personalizzato. Logo è sovrapposto all'immagine di intestazione. Per ottenere i migliori risultati, utilizzare un logo con uno sfondo trasparente. Quando le opzioni di allineamento NON vengono utilizzati dal uploader, l'allineamento è impostato sotto."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:531
+msgid "Header Logo Top Padding"
+msgstr "Spazio dall'Alto Testata Logo"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:532
+msgid "Number of pixels of top padding that should be added to logo."
+msgstr "Numero di pixels di spazio dall'alto che deve essere aggiunto al logo. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:538
+msgid "Header Logo Left Padding"
+msgstr "Spazio da Sinistra per il Logo Testata  "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:539
+msgid "Number of pixels of left padding that should be added to logo."
+msgstr "Numero di pixels del padding a sinistra che dovrebbero essere aggiunte al logo."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:545
+msgid "Blog Title and Tagline / Logo Horizontal Alignment"
+msgstr "Titolo e Sottotitolo del Blog  / Allineamento Orizzontale Logo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:546
+msgid "Horizontal alignment of Blog title and tagline or header logo if used."
+msgstr "Allineamento orizzontale del Titolo del Bog ed il sottotitolo o il logo di intestazione se usato."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:551
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:574
+msgid "Right"
+msgstr "Destra "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:553
+msgid "Single Page Header Title Text"
+msgstr "Testata Singola Pagina Testo Titolo"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:554
+msgid "Show the Post title as the main heading and the the Blog title as the tagline on single pages.   Always Blog Title will only display the Blog Title and Tagline set in the General Options of the Blog."
+msgstr "Mostra il titolo dell'Articolo come intestazione principale ed il titolo del Blog come slogan sulle singole pagine. Il Titolo del Blog sempre visualizzerà solo il Titolo ed il Sottotitolo del Blog, impostati nelle Opzioni Generali del Blog."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:559
+msgid "Single Post Title"
+msgstr "Titolo del Singolo Articolo "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:559
+msgid "Always Blog Title"
+msgstr "Sempre Titolo Blog "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:561
+msgid "Blog Title Box Styling"
+msgstr "Titolo Blog Stilizzazione Box"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:562
+msgid "Styling of box around the Blog Title <br />- On: White rounded box with transparency <br />- Off: Title and tagline text only."
+msgstr "Stilizzazione del box intorno al Titolo del Blog <br />-On: Box Bianco arrotondato con trasparenza <br /> - Off: Titolo e sottotitolo solo testo."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:568
+msgid "Header Image Alignment"
+msgstr "Allineamento Testata Immagine"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:569
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:577
+msgid "Align header to the Left, Right, or Center the image in the Header Container"
+msgstr "Allineare l'intestazione a Sinistra, Destra, o al Centro dell'immagine nella Testata Contenitore "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:576
+msgid "Header Image Vertical Alignment"
+msgstr "Allineamento Verticale Testata Imagine "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:582
+msgid "Bottom"
+msgstr "Basso"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:584
+msgid "Header Container Height"
+msgstr "Altezza Testata Contenitore "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:585
+msgid "Adjust the size of the header image  Default Height: 200px"
+msgstr "Aggiusta la dimensione della Testata Immagine. Altezza Predefinita: 200px "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:592
+msgid "Header Image Width"
+msgstr "Larghezza Testata Immagine"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:593
+msgid "Adjust the size of the header image  Default width: 1000px"
+msgstr "Aggiusta la dimensione della Testata Immagine. Larghezza Predefinita: 1000px "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:600
+msgid "CSS"
+msgstr "CSS"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:603
+msgid "Custom CSS"
+msgstr "Personalizzazione CSS"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/options.php:604
+msgid "<strong>No HTML allowed</strong> Here you can enter your own CSS.  Please keep in mind proper CSS structure."
+msgstr "<strong>HTML non consentito</strong>  Qui puoi inserire il tuo CSS personale. Si prega di tenere presente la corretta struttura CSS. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/page.php:21
+msgid "Read the rest of this page"
+msgstr "Leggi il resto di questa pagina "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/page.php:22
+msgid "Pages:"
+msgstr "Pagine: "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/page.php:28
+msgid "Edit this page."
+msgstr "Modifica questa Pagina. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:7
+msgid "Search Results for "
+msgstr "Risultati della Ricerca per "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:16
+msgid "articles"
+msgstr "articoli "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+#, php-format
+msgid "Posted in %s"
+msgstr "Pubblicato in %s "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:33
+msgid "Edit"
+msgstr "Modifica "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+msgid "No Comments &raquo;"
+msgstr "Nessun Commento &raquo;"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+msgid "1 Comment &raquo;"
+msgstr "1 Commento &raquo;"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:43
+msgid "Comments Off"
+msgstr "I Commenti sono chiusi "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/search.php:52
+msgid "No posts found. Try a different search?"
+msgstr "Articoli non Trovati. Provare con una ricerca differente?."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/searchform.php:2
+msgid "Search: Type and Enter"
+msgstr "Ricerca: Digita ed Invia"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/searchform.php:4
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:52
+msgid "Go"
+msgstr "Vai "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:6
+msgid "Left Sidebar"
+msgstr "Sidebar di Sinistra "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:10
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:27
+msgid "Default Widgets"
+msgstr "Widgets Predefiniti "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:28
+#, php-format
+msgid "Widgets below are default.  These will be replaced when customizing using %s Widget Admin</a>"
+msgstr "I Widget qui sotto sono predefiniti. Questi verranno sostituiti durante la personalizzazione con Admin Widget% s </a>"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:28
+msgid "Widgets"
+msgstr "Widgets"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:16
+msgid "Meta"
+msgstr "Meta"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:19
+msgid "This page validates as XHTML 1.0 Transitional"
+msgstr "Questa pagina convalida come XHTML 1.0 Transitional "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:19
+msgid "Valid XHTML"
+msgstr "Valido XHTML "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:20
+msgid "Valid CSS"
+msgstr "Valido CSS "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:21
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Powered by WordPress, piattaforma dello stato dell'arte  di editoria semantica personale."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar-left.php:30
+msgid "Tags"
+msgstr "Tags"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:9
+#, php-format
+msgid "You are currently browsing the archives for the %s category."
+msgstr "Stai visualizzando gli archivi della Categoria %s. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:11
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:13
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:15
+#, php-format
+msgid "You are currently browsing the %1$s archives for %2$s."
+msgstr "Stai visualizzando gli archivi %1$s per %2$s. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:17
+#, php-format
+msgid "You have searched the %1$s archives for %2$s."
+msgstr "Hai cercato gli archivi %1$s per %2$s. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:19
+#, php-format
+msgid "You are currently browsing the %1$s archives."
+msgstr "Stai visualizzando gli archivi %1$s. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:23
+msgid "Right Sidebar"
+msgstr "Sidebar di Destra "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:35
+msgid "Pages Below Current"
+msgstr "Pagine Dopo l'Attuale "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:41
+msgid "Syndicate"
+msgstr "Condividi "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:45
+msgid "Comments"
+msgstr "Commenti "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:49
+msgid "Categories"
+msgstr "Categorie "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/sidebar.php:56
+msgid "Blogroll"
+msgstr "Blogroll"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:36
+#, php-format
+msgid "Go back to %s"
+msgstr "Torna a %s "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:46
+#, php-format
+msgid "Written by %s"
+msgstr "Scritto da %s "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:48
+msgid "Tagged "
+msgstr "Taggato "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/single.php:81
+msgid "Sorry, no posts matched your criteria."
+msgstr "Spiacenti, nessun Articolo corrisponde ai tuoi criteri. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:68
+msgid "Techozoic Setting Import / Export"
+msgstr "Techozoic Settaggi Importazione / Esportazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:68
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:107
+msgid "Import / Export"
+msgstr "Importazione / Esportazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:109
+msgid "Import Settings"
+msgstr "Importazione Settaggi "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:110
+msgid "If you have settings in a backup file on your computer, the Import / Export system can import those into this site. To get started, upload your backup file to import from below."
+msgstr "Se nel computer si dispone di un file di backup delle impostazioni, il sistema Import / Export può importarlo in questo sito. Per iniziare, qui in basso caricare il file di backup da importare. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:115
+#, php-format
+msgid "Upload File: (Maximum Size: %s)"
+msgstr "Carico File: (Massima Grandezza: %s) "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:118
+msgid "Upload File and Import"
+msgstr "Carico File ed Importazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:123
+msgid "Export Settings"
+msgstr "Esportazione Settaggi"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:124
+msgid "When you click the button below, the Import / Export system will create a text file for you to save to your computer."
+msgstr "Quando si fa click sul bottone qui sotto, il sistema di Import / Export creerà un file di testo da salvare sul computer. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:125
+#, php-format
+msgid "This text file can be used to restore your settings here on \"%s\", or to easily setup another website with the same settings\"."
+msgstr "Questo file di testo può essere utilizzato per ripristinare le impostazioni su \"%s\", o di impostare facilmente un altro sito web con le stesse impostazioni\"."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:129
+msgid "Download Export File"
+msgstr "Scarica File Esportazione"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:152
+msgid "Welcome to the OptionsFramework Backup Manager."
+msgstr "Benvenuto al Backup Manager Opzioni Framework. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:153
+msgid "Here are a few notes on using this screen."
+msgstr "Qui seguono alcune note sull'utilizzo di questa schermata. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:154
+msgid "The backup manager allows you to backup or restore your \"Theme Options\" and other settings to or from a text file."
+msgstr "Manager Backup ti permette di fare il backup o di ripristinare \"Opzioni del Thema\" ed altri settaggi verso e da un file di tipo testo."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:155
+msgid "To create a backup, simply select the setting type you'd like to backup (or \"All Settings\") and hit the \"Download Export File\" button."
+msgstr "Per creare un Backup, seleziona semplicemente il tipo di settaggio del quale vorresti fare il backup (o\"Tutti i Settaggi\") e pigia sul pulsante \"Scarica File Esportazione\"."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:156
+msgid "To restore your settings from a backup, browse your computer for the file (under the \"Import Settings\" heading) and hit the \"Upload File and Import\" button. This will restore only the settings that have changed since the backup."
+msgstr "Per ripristinare le impostazioni da un backup, cerca nel tuo computerer per il file (nella cartella \"Import Settings \" voce) e premere il pulsante \"Carica file e Importa \". Questo ripristinerà solo le impostazioni che sono state modificate dall'ultimo backup."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:158
+msgid "Please note that only valid backup files generated through the OptionsFramework Backup Manager should be imported."
+msgstr "Si prega di notare che solo i files di backup validi, generati attraverso il Backup Manager OptionsFramework, devono essere importati."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:178
+#, php-format
+msgid "Please note that this backup manager backs up only your settings and not your content. To backup your content, please use the %sWordPress Export Tool%s."
+msgstr "Si prega di notare che questo Backup Manager fa il Backup solo dei settaggi e non dei contenuti . Per fare il Backup dei contenuti, per favore usa il %sWordPress Export Tool%s."
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:181
+msgid "There was a problem importing your settings. Please Try again."
+msgstr "C'è stato un problema durante l'importazione dei tuoi settaggi. Per favore riprova. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:183
+msgid "There was a problem exporting your settings. Please Try again."
+msgstr "C'è stato un problema durante l'esportazione dei tuoi settaggi. Per favore riprova. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:185
+msgid "The import file you've provided is invalid. Please try again."
+msgstr "Il file di importazione che hai fornito non è valido. Per favore riprova. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-backup.php:187
+#, php-format
+msgid "Settings successfully imported. | Return to %sTheme Options%s"
+msgstr "Settaggi importati con successo. | Ritorna a  %sTheme Options%s"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:170
+msgid "Techozoic Setting"
+msgstr "Settaggi Techozoic "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:238
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "Clicca OK per resettare. Tutti i settaggi personali andranno persi. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:270
+msgid "Default options restored."
+msgstr "Ripristinate le opzioni base. "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:311
+msgid "Options saved."
+msgstr "Opzioni salvate "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-framework.php:405
+msgid "Techozoic Settings"
+msgstr "Settaggi Techozoic "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:26
+msgid "Options Framework Internal Container"
+msgstr "Opzioni Framework Contenitore Interno "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:128
+msgid "Upload"
+msgstr "Caricare "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:137
+msgid "Remove"
+msgstr "Rimuovere "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:151
+msgid "View File"
+msgstr "Visualizza File "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:288
+msgid "Gallery"
+msgstr "Galleria "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/admin/options-medialibrary-uploader.php:288
+msgid "Previously Uploaded"
+msgstr "Caricato Precedentemente "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:9
 msgid "Delete"
 msgstr "Cancella "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions.php:363
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:10
 msgid "Spam"
 msgstr "Spam "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-comments-functions.php:42
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:27
+#, php-format
+msgid "Comment by %s"
+msgstr "Commento di %s "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:29
+msgid "Your comment is awaiting moderation."
+msgstr "Il tuo commento è in attesa di moderazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-comments-functions.php:52
 #, php-format
 msgid "Ping from %s"
 msgstr "Ping da %s "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:18
-msgid "Footer - Limit 3 Widgets"
-msgstr "Piè di Pagina - Limite di 3 Widgets "
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:19
+msgid "Footer"
+msgstr "Footer (Piè di Pagina) "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:28
-msgid "Techozoic Sidebar Navigation Menu - option to add categories to navigation"
-msgstr "Sidebar del Menu di Navigazione Techozoic "
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:20
+msgid "Limit 3 widgets can be assigned to footer area"
+msgstr "3 Widget possono essere assegnati al Footer "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:29
-msgid "Techozoic Navigation"
-msgstr "Navigazione Techozoic "
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:28
+msgid "Right Header"
+msgstr "Testata di Destra "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:35
-msgid "Navigation"
-msgstr "Navigazione "
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:29
+msgid "Area to the right side of the header"
+msgstr "Zona alla destra della Testata "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:87
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:151
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:247
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:37
+msgid "Left Header"
+msgstr "Testata di Sinistra "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:38
+msgid "Area to the left side of the header"
+msgstr "Zona alla Sinistra della Testata "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:76
+msgid "Techozoic Font Size Control Widget"
+msgstr "Widget Techozoic Controllo Dimensione Font "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:77
+msgid "Techozoic Font Size"
+msgstr "Techozoic Dimensione del Carattere"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:82
+msgid "Resize Text"
+msgstr "Ridimensionare il Testo"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:101
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:148
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:195
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:274
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:376
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:442
 msgid "Title:"
 msgstr "Titolo: "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:90
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:109
+msgid "Techozoic Child Page menu displays child pages below current page."
+msgstr "Techozoic SottoPagina Menu mostra le SottoPagine sotto l'attuale pagina"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:110
+msgid "Techozoic Child Page"
+msgstr "SottoPaginaTechozoic "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:115
+msgid "Sub Pages"
+msgstr "Torna alle Pagine"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:156
+msgid "Techozoic Sidebar Navigation Menu - option to add categories to navigation"
+msgstr "Techozoic Sidebar Menu di Navigazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:157
+msgid "Techozoic Navigation"
+msgstr "Navigazione di Techozoic"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:162
+msgid "Navigation"
+msgstr "Navigazione "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:197
 msgid "Include Pages in Menu"
-msgstr "Includi Pagine nel Menu "
+msgstr "Includi le Pagine nel Menu"
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:92
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:199
 msgid "Include Categories in Menu"
-msgstr "Includi Categorie nel Menu "
+msgstr "Includi le Categorie nel Menu "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:94
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:201
 msgid "Separate Pages and Categories"
-msgstr "Distinte Pagine e Categorie "
+msgstr "Separa Pagine e Categorie"
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:103
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:214
 msgid "Author information Widget - Enter short blurb about yourself"
-msgstr "Widget di informazioni sull'Autore - Digita una breve descrizione di te stesso "
+msgstr "Widget Informazioni Autore - Digita un corto trafiletto su di te. "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:104
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:215
 msgid "Techozoic About"
-msgstr "Informazioni su Techozoic "
+msgstr "Riguardo a Techozoic "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:109
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:220
 msgid "About Author"
-msgstr "Informazioni sull'Autore "
+msgstr "Riguardo all'Autore "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:153
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:276
 msgid "Write About yourself here"
 msgstr "Scrivi qui qualcosa di te "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:156
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:279
+msgid "Display link to Facebook Profile"
+msgstr "Mostra il Link al Profilo di Facebook "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:281
+msgid "Display link to MySpace Profile"
+msgstr "Mostra il Link al Profilo di MySpace "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:283
+msgid "Display link to Twitter Profile"
+msgstr "Mostra il Link al Profilo di Twitter "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:285
 msgid "Enable Gravatar"
 msgstr "Abilita Gravatar "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:158
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:287
 msgid "Size of Gravatar"
-msgstr "Grandezza del Gratavar "
+msgstr "Dimensione del Gravatar "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:160
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:289
 msgid "Between 25 and 100 Pixels"
-msgstr "Compreso tra 25 e 100 pixels "
+msgstr "Tra 25 e 100 Pixels "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:169
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:298
 msgid "Meta Information as well as Dashboard and Log In/Out Links"
-msgstr "Informazione Meta come i Links alla Bacheca e per il Log In/Out "
+msgstr "Informazione Meta come il Pannello di Controllo ed i Links Log In/Out. "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:170
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:299
 msgid "Techozoic Meta"
-msgstr "Techozoic Meta "
+msgstr "Meta Techozoic "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:204
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:333
 msgid "Title"
 msgstr "Titolo "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:213
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:342
 msgid "Link to RSS feed for blog as well as comment RSS feed"
-msgstr "Link al feed Rss per blog come il feed RSS dei commenti "
+msgstr "Link al feed RSS del blog come il feed rss dei commenti "
 
-#: /home/jeremy/Desktop/techozoic-fluid/functions/tech-widget.php:214
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:343
 msgid "Techozoic RSS"
-msgstr "Techozoic RSS"
+msgstr "RSS Techozoic "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:385
+msgid "Techozoic Status Widget - Dispaly Post Format Status updates in sidebar"
+msgstr "Widget dello stato di Techozoic. Visualizza nella Sidebar lo stato degli aggiornamenti "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:386
+msgid "Techozoic Status"
+msgstr "Stato di Techozoic "
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:391
+msgid "Status Updates"
+msgstr "Aggiornamenti di stato"
+
+#: C:\xampp\htdocs\wp-content\themes\techozoic-fluid/functions/tech-widget.php:443
+msgid "Number of statuses to show"
+msgstr "Numero di stati da mostrare "
 
