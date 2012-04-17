@@ -173,7 +173,7 @@ function optionsframework_options() {
                 "id" => "footer_text",
                 "old_options" => '',
                 "std" => "%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% <br /> <small>%MYSQL%</small>",
-                "type" => "editor");
+                "type" => "textarea");
 
         $options[] = array("name" => __("Drop Shadow Boxes","techozoic"),
                 "desc" => __("Check the areas where the Drop Shadow Boxes shouldn't be used<br /> - note only visible in Firefox, Chrome, Safari.","techozoic"),
@@ -235,18 +235,21 @@ function optionsframework_options() {
         $options[] = array(	"name" => __("Navigation Menu Location","techozoic"),
                 "id" => "nav_location",
                 "type" => "radio",
+                "class" => "hidden",
                 "std" => "below",
                 "options" => array('below'=> __("Below Header","techozoic") ,'above'=> __("Above Header","techozoic") ));
 
        $options[] = array(	"name" => __("Navigation Menu Type","techozoic"),
                 "id" => "nav_type",
                 "type" => "radio",
+                "class" => "hidden",
                 "std" => "standard",
                 "options" => array('standard'=> __("Tabs","techozoic") ,'ribbon'=> __("Ribbon - Can only be left aligned","techozoic") , 'square' => __('Square',"techozoic")));
         
         $options[] = array(	"name" => __("Log In/Out Links","techozoic"),
                 "desc" => __("Enable Dashboard and Log in/out links.","techozoic"),
                 "id" => "dashboard_link",
+                "class" => "hidden",
                 "type" => "checkbox",
                 "old_options" => array("On" => "1","Off" => "0"),
                 "std" => "1");
@@ -254,6 +257,7 @@ function optionsframework_options() {
         $options[] = array(	"name" => __("Breadcrumbs","techozoic"),
                 "desc" => __("Enable Breadcrumb navigation.  Useful with Sidebar Nav Widget.","techozoic"),
                 "id" => "breadcrumbs",
+                "class" => "hidden",
                 "type" => "checkbox",
                 "old_options" => array("On" => "1","Off" => "0"),
                 "std" => "0");
@@ -261,6 +265,7 @@ function optionsframework_options() {
         $options[] = array(	"name" => __("Navigation Menu Alignment","techozoic"),
                 "id" => "nav_align",
                 "type" => "radio",
+                "class" => "hidden",
                 "std" => "left",
                 "old_options" => array("Left" => "left","Center" => "center"),
                 "options" => array('left'=> __("Left","techozoic") ,'center'=> __("Center","techozoic") ));
@@ -270,7 +275,7 @@ function optionsframework_options() {
                 "id" => "nav_button_margin",
                 "string" => "num",
                 "std" => "3",
-                "class" => "mini",
+                "class" => "mini hidden",
                 "type" => "text");
         
         $options[] = array(	"name" => __("Navigation Button Width","techozoic"),
@@ -279,7 +284,7 @@ function optionsframework_options() {
                 "string" => "num",
                 "std" => "0",
                 "old_options" => '',
-                "class" => "mini",
+                "class" => "mini hidden",
                 "type" => "text");
         
         $options[] = array(	"name" => __("Navigation Sub Menu Width","techozoic"),
@@ -287,7 +292,7 @@ function optionsframework_options() {
                 "id" => "nav_menu_width",
                 "string" => "num",
                 "std" => "250",
-                "class" => "mini",
+                "class" => "mini hidden",
                 "type" => "text");        
         
         $options[] = array( 	"name" => __("Font","techozoic"),
@@ -303,12 +308,14 @@ function optionsframework_options() {
         $options[] = array("name" => __("Google Font 1","techozoic"),
                 "desc" => __("Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After choosing on the font to use, copy the Name of the font here.  If font supports additional styling it can be added with a ':' .  Example: Droid Sans:bold,italic","techozoic"),
                 "id" => "google_font_family",
+                "class" => "hidden",
                 "old_options" => '',
                 "type" => "text");
         
         $options[] = array("name" => __("Google Font 2","techozoic"),
                 "desc" => __("Visit the <a href='http://code.google.com/webfonts' target='_blank'>Google Fonts</a> site to pick the font to use.  After choosing on the font to use, copy the Name of the font here.  If font supports additional styling it can be added with a ':' .  Example: Droid Sans:bold,italic","techozoic"),
                 "id" => "google_font_family_2",
+                "class" => "hidden",
                 "type" => "text");       
 
         $options[] = array(	"name" => __("Default Text","techozoic"),
@@ -678,6 +685,15 @@ function optionsframework_options() {
                 "type" => "info",
         	"desc" => "<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817' title='Donate Securely'><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' /></a>");
 
+        $options[] = array( "name" => __("Follow on Twitter","techozoic"),
+                "type" => "info",
+        	"desc" => "<a href='https://twitter.com/#!/search/realtime/%23techozoic%20from%3Aclarktechnet' title='Follow Development on Twitter'>Follow Development on Twitter</a> | <a href='https://twitter.com/#!/clarktechnet' title='Follow Me on Twitter'>Follow Me on Twitter</a>");
+    
+       
+       $options[] = array("name" => __("Changelog - Version 2.0.6", "techozoic"),
+                "type" => "info",  
+                "desc" =>'Bug Fix - Typography size wasn\'t saving correctly due to issue with options framework now fixed.<br /> Bug Fix - Footer editor box rolled back to standard textarea, until framework supports it.<br />');
+          
        $options[] = array("name" => __("Changelog - Version 2.0.5", "techozoic"),
                 "type" => "info",  
                 "desc" =>'Emergency Bug Fix - Typography options not saving correctly due to issue with options framework now fixed.');
@@ -706,4 +722,45 @@ function optionsframework_options() {
                     Added status update widget.<br />');
        
        return $options;
+}
+
+add_action('optionsframework_custom_scripts', 'optionsframework_custom_scripts');
+
+function optionsframework_custom_scripts() { ?>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+    $('#nav_menu').click(function() {
+        $('#section-nav_location').fadeToggle(400);
+        $('#section-nav_type').fadeToggle(400);
+        $('#section-dashboard_link').fadeToggle(400);
+        $('#section-breadcrumbs').fadeToggle(400);
+        $('#section-nav_align').fadeToggle(400);
+        $('#section-nav_button_margin').fadeToggle(400);
+        $('#section-nav_button_width').fadeToggle(400);
+        $('#section-nav_menu_width').fadeToggle(400);
+    });
+    if ($('#nav_menu:checked').val() !== undefined) {
+        $('#section-nav_location').show();
+        $('#section-nav_type').show();
+        $('#section-dashboard_link').show();
+        $('#section-breadcrumbs').show();
+        $('#section-nav_align').show();
+        $('#section-nav_button_margin').show();
+        $('#section-nav_button_width').show();
+        $('#section-nav_menu_width').show();
+    }
+    $('#google_font').click(function() {
+        $('#section-google_font_family').fadeToggle(400);
+        $('#section-google_font_family_2').fadeToggle(400);
+    });
+    if ($('#google_font:checked').val() !== undefined) {
+        $('#section-google_font_family').show();
+        $('#section-google_font_family_2').show();
+    }
+});
+</script>
+
+<?php
 }

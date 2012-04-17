@@ -176,7 +176,7 @@ font:{$tech_body_font['style']} {$tech_body_font['size']} {$tech_body_font['face
 background:{$tech_bg_color} url({$tech_bg_image['image']}) {$tech_bg_image['repeat']} {$tech_bg_image['position']} {$tech_bg_image['attachment']};
 }
 .techozoic_font_size{
-font-size: {$tech_body_font['size']}px;
+font-size: {$tech_body_font['size']};
 }
 .narrowcolumn .entry,.widecolumn .entry, .top {
 font:{$tech_post_font['style']} {$tech_post_font['size']} {$tech_post_font['face']}, Sans-Serif;

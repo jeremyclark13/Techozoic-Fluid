@@ -12,24 +12,16 @@
  *
  */
 
+/*
+* Loads the Options Panel
+*
+* If you're loading from a child theme use stylesheet_directory
+* instead of template_directory
+*/
+ 
 if ( !function_exists( 'optionsframework_init' ) ) {
-
-/*-----------------------------------------------------------------------------------*/
-/* Options Framework
-/*-----------------------------------------------------------------------------------*/
-
-/* Set the file path based on whether the Options Framework Theme is a parent theme or child theme */
-
-if ( get_stylesheet_directory() == get_template_directory() ) {
-	define('OPTIONS_FRAMEWORK_URL', get_template_directory() . '/admin/');
-	define('OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/admin/');
-} else {
-	define('OPTIONS_FRAMEWORK_URL', get_stylesheet_directory() . '/admin/');
-	define('OPTIONS_FRAMEWORK_DIRECTORY', get_stylesheet_directory_uri() . '/admin/');
-}
-
-require_once (OPTIONS_FRAMEWORK_URL . 'options-framework.php');
-
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('template_directory') . '/admin/' );
+require_once dirname( __FILE__ ) . '/admin/options-framework.php';
 }
 
 include(get_template_directory() . '/functions/tech-meta-box.php');

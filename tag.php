@@ -10,8 +10,8 @@ you'll get a tag cloud displaying on a page.
 <h2 class="center"><?php _e("Tag Archive","techozoic");?></h2><br />
 	<?php wp_tag_cloud(''); ?>
 	<div class="navigation">
-	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
-	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
+	<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries' , 'techozoic')) ?></div>
+	<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;' , 'techozoic')) ?></div>
 	</div>
 <div style="clear:both"></div>
 <?php if (have_posts()) : ?>
@@ -36,8 +36,8 @@ you'll get a tag cloud displaying on a page.
 	<?php endwhile; ?>
 	<?php endif; ?>
 	<div class="navigation">
-	<div class="alignleft"><?php posts_nav_link(' ',' ',__('&laquo; Older Entries' , 'techozoic')) ?></div>
-	<div class="alignright"><?php posts_nav_link(' ',__('Newer Entries &raquo;' , 'techozoic'),' ') ?></div>
+	<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries' , 'techozoic')) ?></div>
+	<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;' , 'techozoic')) ?></div>
 	</div>
 
 

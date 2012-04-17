@@ -4,6 +4,9 @@
 <p>
 <br />
 <h2>Change Log</h2>
+<h3>Version 2.0.6</h3><br />
+- Bug Fix - Typography size wasn't saving correctly due to issue with options framework now fixed.<br />
+- Bug Fix - Footer editor box rolled back to standard textarea, until framework supports it.<br />
 <h3>Version 2.0.5</h3><br />
 - Emergency Bug Fix - Typography options not saving correctly due to issue with options framework now fixed.<br />
 <h3>Version 2.0.4</h3><br />

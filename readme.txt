@@ -36,6 +36,10 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+= Version 2.0.6 =
+* Bug Fix - Typography size wasn't saving correctly due to issue with options framework now fixed.
+* Bug Fix - Footer editor box rolled back to standard textarea, until framework supports it.
+
 = Version 2.0.5 =
 * Emergency Bug Fix - Typography options not saving correctly due to issue with options framework now fixed.
 
