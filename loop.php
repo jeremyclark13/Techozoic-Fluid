@@ -51,7 +51,7 @@
                             </div>
 <?php       		if ( ( is_home() && tech_icons('main') ) || ( is_category() && tech_icons('archive') ) || ( is_year() && tech_icons('year') ) || ( is_month() && tech_icons('month') ) ) {	?>	
                                     <div class="top">
-                                    <?php tech_social_icons($home=true); ?><a href="#top"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/top.png" border="0" alt="TOP" title="<?php _e('To the top' , 'techozoic') ?>" /></a>
+                                    <?php tech_social_icons($home=true); ?><a href="#top" title="<?php _e('To the top' , 'techozoic') ?>" class="social toplink"></a>
                                     </div>
 <?php       		}
                     } // End if $post->post-content blank check.

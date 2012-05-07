@@ -24,6 +24,10 @@ define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('template_directory') . '/ad
 require_once dirname( __FILE__ ) . '/admin/options-framework.php';
 }
 
+if ( class_exists( 'bbPress' ) ) {
+    require_once (get_template_directory() . '/bbpress/bbpress_functions.php');
+}
+
 include(get_template_directory() . '/functions/tech-meta-box.php');
 // Loads custom meta boxes on single post and page edit screen
 
@@ -62,6 +66,8 @@ add_action( 'after_setup_theme', 'techozoic_setup' );
 	//WP Auto Feed Links
         add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'status') );
         //WP Post Format
+        add_theme_support( 'bbpress' );
+        //bbPress Support
 	register_nav_menus( array(
 		'primary' => __( 'Header Navigation', 'techozoic' ),
 		'sidebar' => __( 'Sidebar Navigation', 'techozoic'),
@@ -230,10 +236,97 @@ function techozoic_theme_logo(){
 }
 
 /**
+* Techozoic twitter feed
+*
+*  
+*
+* @param string $user user of twitter feed to retrieve.
+* @param string $count number of tweets to retrive.
+* @param string $type type of info to retrive.
+* 
+* Inspiration for code:
+* Chip Bennet's oenology theme https://github.com/chipbennett/oenology and
+* catswhocode http://www.catswhocode.com/blog/snippets/grab-tweets-from-twitter-feed
+* 
+* @return string of formatted API data
+*/
+
+function tech_twitter_info($user = 'clarktechnet', $count = '3',$type = 'feed'){
+    if ($type == 'feed'){
+        // Build Twitter api url
+        $apiurl = "http://api.twitter.com/1/statuses/user_timeline/{$user}.json?count={$count}";
+        //cache request
+        $transient_key = "tech_" . $user . "_twitter";
+    } elseif ($type == 'followers'){
+        // Build Twitter api url
+        $apiurl = "http://api.twitter.com/1/users/show.json?screen_name={$user}";
+        //cache request
+        $transient_key = "tech_" . $user . "_twitter_follow"; 
+    }    
+    $i = 1;
+    // If cached (transient) data are used, output an HTML
+    // comment indicating such
+    $cached = get_transient( $transient_key );
+
+    if ( false !== $cached ) {
+        return $cached;
+    }
+
+    // Request the API data, using the constructed URL
+    $remote = wp_remote_get( esc_url( $apiurl ) );
+
+    // If the API data request results in an error, return
+    // an appropriate comment
+    if ( is_wp_error( $remote ) ) {
+        return '<p>' . __('Twitter unaviable','techozoic') . '</p>';
+    }
+
+    // If the API returns a server error in response, output
+    // an error message indicating the server response.
+    if ( '200' != $remote['response']['code'] ) {
+        return '<p>' . __('Twitter responded with an HTTP status code of ') . esc_html( $remote['response']['code'] ) . '.</p>';
+    }
+
+    // If the API returns a valid response, the data will be
+    // json-encoded; so decode it.
+    $data = json_decode( $remote['body'] );
+    if ($type == 'feed'){
+        $output = '<ul>';
+
+        while ($i <= $count){
+            //Assign feed to $feed
+            if(isset($data[$i-1])){
+                $feed = $data[($i-1)]->text;
+                //Find location of @ in feed
+                $feed = str_pad($feed, 3, ' ', STR_PAD_LEFT);   //pad feed
+                $startat = stripos($feed, '@');
+                $numat = substr_count($feed, '@');
+                $numhash = substr_count($feed, '#');
+                $numhttp = substr_count($feed, 'http');
+                $feed = preg_replace("#(^|[\n ])([\w]+?://[\w]+[^ \"\n\r\t< ]*)#", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $feed);
+                $feed = preg_replace("#(^|[\n ])((www|ftp)\.[^ \"\t\n\r< ]*)#", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $feed);
+                $feed = preg_replace("/@(\w+)/", "<a href=\"http://www.twitter.com/\\1\" target=\"_blank\">@\\1</a>", $feed);
+                $feed = preg_replace("/#(\w+)/", "<a href=\"http://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $feed);
+                $output .= "<li class='tweet'>" . $feed . " - <em>" . date("M - j",strtotime($data[($i-1)]->created_at)) . "</em></li>";
+            }
+            $i++;        
+        }
+
+        $output .="</ul>";
+    } elseif ($type == 'followers') {
+        $output = $data->followers_count ." " . __("followers", "techozoic");
+    }   
+    set_transient( $transient_key, $output, 600 );
+    
+    return $output;
+}
+
+
+/**
  * Techozoic mobile css
  *
- * Enques mobile css if option is set will be incorparated into main style.css
- * soon
+ * Enqueues mobile css if option is set.  Will be incorparated into main 
+ * style.css in upcoming versions
  * 
  * @access    private
  * @since     2.0.4
@@ -243,7 +336,7 @@ if (of_get_option('mobile_css','0') == "1" ){
 }
 
 function tech_enque_mobile() {
-    wp_register_style( 'tech-mobile', get_stylesheet_directory_uri() . '/mobile.css', false, 0.1 );
+    wp_register_style( 'tech-mobile', get_template_directory_uri() . '/css/mobile.css', false, 0.1 );
     wp_enqueue_style( 'tech-mobile' );
 }
 
@@ -424,6 +517,8 @@ function tech_exclude_post_formats_from_feeds( &$wp_query ) {
 	}
 }
 
+$tech_home_social = of_get_option('home_social_icons',array('delicious'=>'1','digg'=>'1','rss'=>'1'));
+$tech_single_social = of_get_option('single_social_icons',array('delicious'=>'1','digg'=>'1','rss'=>'1'));
 
 /**
  * Techozoic Google Plus one JS
@@ -435,8 +530,9 @@ function tech_exclude_post_formats_from_feeds( &$wp_query ) {
  * @since     2.0
  */
 
-add_action('wp_footer', 'tech_plus_one');    
-    
+if ($tech_home_social['google'] == 1 || $tech_single_social['google'] == 1){
+    add_action('wp_footer', 'tech_plus_one');    
+}   
 function tech_plus_one() {
     echo "<script type=\"text/javascript\">
       (function() {
@@ -445,6 +541,22 @@ function tech_plus_one() {
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
       })();
     </script>";
+}
+
+/**
+ * Techozoic Pintrest JS
+ *
+ * Output javascript needed for pin it button.
+ * 
+ *
+ * @access    public
+ * @since     2.0.6
+ */
+if ($tech_home_social['pintrest'] == 1 || $tech_single_social['pintrest'] == 1){
+    add_action('wp_footer', 'tech_pin_it');    
+}    
+function tech_pin_it() {
+    echo "<script type='text/javascript' src='//assets.pinterest.com/js/pinit.js'></script>";
 }
 
 
@@ -460,13 +572,10 @@ function tech_plus_one() {
  * @since     1.9.3
  */
 
-function techozoic_links_box($class="tech_links_box") {
-	$output ='	<div class="' . $class . '" style="float:right;width: 48%;">';
+function techozoic_links_box() {
 		// Get RSS Feed(s)
 		$feed_address = "http://techozoic.clark-technet.com/category/news/feed";
 		$feed_items = 5;
-		$tech_changelog = get_template_directory_uri() . '/changelog.php';
-		$output .= "<h3 style='background:none;cursor:default;'>" . __('Techozoic News','techozoic') . "</h3>";
 		include_once(ABSPATH . WPINC . '/feed.php');
 		// Get a SimplePie feed object from the specified feed source.
 		$rss = fetch_feed($feed_address);
@@ -477,36 +586,24 @@ function techozoic_links_box($class="tech_links_box") {
 
 			// Build an array of all the items, starting with element 0 (first element).
 			$rss_items = $rss->get_items(0, $maxitems); 
-			$output .='<ul>';
+			$output ='<ul>';
 			if (isset($maxitems) && $maxitems == 0) {
 				$output .= '<li>' . __("No News.","techozoic") . '</li>';
 			} else {
 				// Loop through each feed item and display each item as a hyperlink.
 				foreach ( $rss_items as $item ) { 
-					$output .= "<li>
-						<a href='{$item->get_permalink()}' target='_blank' title='{$item->get_title()}'>
-						{$item->get_title()}</a>
-					</li>";
+					$output .= "<li><a href='{$item->get_permalink()}' target='_blank' title='{$item->get_title()}'>{$item->get_title()}</a></li>";
 				}
 				$output.='</ul>';
 			}
 		}
-	$output .="<h3 style='background:none;cursor:default'>" . __('Techozoic Links','techozoic') . "</h3>
+	$output .= "<strong>" . __('Techozoic Links','techozoic') . "</strong>
 	<ul>
-		<li>
-			<a href='http://clark-technet.com/theme-support/techozoic'>" . __('Support Forum','techozoic') . "</a>
-		</li>
-		<li>
-			<a href='http://techozoic.clark-technet.com/documentation/'>" . __('Documentation','techozoic') . "</a>
-		</li>
-		<li>
-			<a href='http://techozoic.clark-technet.com/documentation/faq/'>" . __('FAQ','techozoic') . "</a>
-		</li>
-		<li>
-			<a href='$tech_changelog' onclick='return changelog(\"$tech_changelog\")'>" . __('Change Log','techozoic') . "</a>
-		</li>
-	</div>";
-	echo $output;
+		<li><a href='http://clark-technet.com/theme-support/techozoic'>" . __('Support Forum','techozoic') . "</a></li>
+		<li><a href='http://techozoic.clark-technet.com/documentation/'>" . __('Documentation','techozoic') . "</a></li>
+		<li><a href='http://techozoic.clark-technet.com/documentation/faq/'>" . __('FAQ','techozoic') . "</a></li>
+        </ul>";
+	return $output;
 }
         
 /**
@@ -732,10 +829,14 @@ function tech_content_width(){
  */
 
 add_action('tech_footer', 'tech_footer_text'); 	// Adds custom footer text defined on option page to footer.
-
 function tech_footer_text(){
-    	$theme_data = get_theme_data(get_template_directory() . '/style.css');
-	$version = $theme_data['Version'];
+        if (function_exists('wp_get_theme')){
+            $theme_data = wp_get_theme('techozoic-fluid');
+            $version = $theme_data->Version;
+        } else {
+            $theme_data = get_theme_data(get_template_directory() . '/style.css');
+            $version = $theme_data['Version'];
+        }   
 	$string = of_get_option('footer_text','%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% <br /> <small>%MYSQL%</small>');
 	$shortcode = array('/%BLOGNAME%/i','/%THEMENAME%/i','/%THEMEVER%/i','/%THEMEAUTHOR%/i','/%TOP%/i','/%COPYRIGHT%/i','/%MYSQL%/i');
 	$output = array(get_bloginfo('name'),"Techozoic",$version,'<a href="http://clark-technet.com/"> Jeremy Clark</a>','<a href="#top">'. __('Top' ,'techozoic') .'</a>','&copy; '. date('Y'),sprintf(__('%1$d mySQL queries in %2$s seconds.','techozoic'), get_num_queries(),timer_stop(0)));
@@ -809,8 +910,11 @@ function tech_show_sidebar($loc) {
  */	
 
 function tech_social_icons($home=true){
-	global $tech, $post;
-	$short_link = home_url()."/?p=".$post->ID;
+	global $post;
+        if (has_post_thumbnail( $post->ID ) ){
+            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+        }
+        $short_link = home_url()."/?p=".$post->ID;
 	$home_icons = of_get_option('home_social_icons',array('delicious'=>'1','digg'=>'1','rss'=>'1'));
 	$single_icons = of_get_option('single_social_icons',array('delicious'=>'1','digg'=>'1','rss'=>'1'));
 	$image = get_template_directory_uri() . "/images/icons";
@@ -823,18 +927,19 @@ function tech_social_icons($home=true){
 	$excerpt_mail = preg_replace("/&#?[a-z0-9]{2,8};/i","",$excerpt_mail);
 	$home_title = urlencode(get_bloginfo( 'name' ));
 	$social_links = array(
-		"delicious" => "<a href=\"http://delicious.com/post?url={$link}&amp;title={$url_title}\" title=\"" .  __('del.icio.us this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/delicious_16.png\" alt=\"" .  __('del.icio.us this!','techozoic') . "\" /></a>",
-		"digg" => "<a href=\"http://digg.com/submit?phase=2&amp;url={$link}&amp;title={$url_title} \" title=\"" .  __('Digg this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/digg_16.png\" alt=\"" .  __('Digg this!','techozoic') . "\"/></a>",
-		"email" => "<a href=\"mailto:?subject={$email_title}&amp;body={$excerpt_mail} {$link}\" title=\"" .  __('Share this by email.','techozoic') . "\"><img src=\"{$image}/email_16.png\" alt=\"" .  __('Share this by email.','techozoic') . "\"/></a>",
-		"facebook" => "<a href=\"http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Facebook!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/facebook_16.png\" alt=\"" .  __('Share on Facebook!','techozoic') . "\"/></a>",
-                "linkedin" => "<a href =\"http://www.linkedin.com/shareArticle?mini=true&amp;url={$link}&amp;title={$url_title}&amp;summary={$excerpt}&amp;source={$home_title}\" title=\"" .  __('Share on LinkedIn!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/linkedin_16.png\" alt=\"" .  __('Share on LinkedIn!','techozoic') . "\" /></a>",
-		"myspace" => "<a href=\"http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}\" title=\"" .  __('Share on Myspace!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/myspace_16.png\" alt=\"" .  __('Share on Myspace!','techozoic') . "\"/></a>",
-		"newsvine" => "<a href=\"http://www.newsvine.com/_tools/seed&amp;save?u={$link}\" title=\"" .  __('Share on NewsVine!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/newsvine_16.png\" alt=\"" .  __('Share on NewsVine!','techozoic') . "\"/></a>",
-		"stumbleupon" => "<a href=\"http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}\" title=\"" .  __('Stumble Upon this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/stumbleupon_16.png\" alt=\"" .  __('Stumble Upon this!','techozoic') . "\"/></a>",
-		"twitter" => "<a href=\"http://twitter.com/home?status=Reading%20{$url_title}%20on%20{$short_link}\" title=\"" .  __('Tweet this!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/twitter_16.png\" alt=\"" .  __('Tweet this!','techozoic') . "\"/></a>",
-		"reddit" => "<a href=\"http://reddit.com/submit?url={$link}&amp;title={$url_title}\" title=\"" .  __('Share on Reddit!','techozoic') . "\" target=\"_blank\"><img src=\"{$image}/reddit_16.png\" alt=\"" .  __('Share on Reddit!','techozoic') . "\" /></a>",
-		"rss" => "<a href=\"".get_post_comments_feed_link()."\" title=\"".__('Subscribe to Feed','techozoic')."\"><img src=\"{$image}/rss_16.png\" alt=\"" . __('RSS 2.0','techozoic') . "\"/></a>",
-                "google" => "<g:plusone size=\"small\" annotation=\"none\" expandto=\"right\" href=\"$link\"></g:plusone>");
+		"delicious" => "<a href='http://delicious.com/post?url={$link}&amp;title={$url_title}' title='" .  __('del.icio.us this!','techozoic') . "' target='_blank' class='social delicious'></a>",
+		"digg" => "<a href='http://digg.com/submit?phase=2&amp;url={$link}&amp;title={$url_title}' title='" .  __('Digg this!','techozoic') . "' target='_blank' class='social digg'></a>",
+		"email" => "<a href='mailto:?subject={$email_title}&amp;body={$excerpt_mail} {$link}' title='" .  __('Share this by email.','techozoic') . "'  class='social email'></a>",
+		"facebook" => "<a href='http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}' title='" .  __('Share on Facebook!','techozoic') . "' target='_blank' class='social facebook'></a>",
+                "linkedin" => "<a href ='http://www.linkedin.com/shareArticle?mini=true&amp;url={$link}&amp;title={$url_title}&amp;summary={$excerpt}&amp;source={$home_title}' title='" .  __('Share on LinkedIn!','techozoic') . "' target='_blank' class='social linkedin'></a>",
+		"myspace" => "<a href='http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}' title='" .  __('Share on Myspace!','techozoic') . "' target='_blank' class='social myspace'></a>",
+		"newsvine" => "<a href='http://www.newsvine.com/_tools/seed&amp;save?u={$link}' title='" .  __('Share on NewsVine!','techozoic') . "' target='_blank' class='social newsvine'></a>",
+		"stumbleupon" => "<a href='http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}' title='" .  __('Stumble Upon this!','techozoic') . "' target='_blank' class='social stumble'></a>",
+		"twitter" => "<a href='http://twitter.com/home?status=Reading%20{$url_title}%20on%20{$short_link}' title='" .  __('Tweet this!','techozoic') . "' target='_blank' class='social twitter'></a>",
+		"reddit" => "<a href='http://reddit.com/submit?url={$link}&amp;title={$url_title}' title='" .  __('Share on Reddit!','techozoic') . "' target='_blank' class='social reddit'></a>",
+		"rss" => "<a href='".get_post_comments_feed_link()."' title='".__('Subscribe to Feed','techozoic')."' class='social feed'></a>",
+                "pintrest" => "<a href='http://pinterest.com/pin/create/button/?url={$link}&amp;media={$image}&amp;description={$excerpt}' class='pin-it-button' count-layout='none'><img src='//assets.pinterest.com/images/PinExt.png' title='Pin It' /></a>",
+                "google" => "<g:plusone size='small' annotation='none' expandto='right' href='$link'></g:plusone>");
 	if ($home == true){
                 if (is_array($home_icons)){
                     foreach ($home_icons as $key => $value){
@@ -875,16 +980,16 @@ function tech_about_icons($fb=0,$my=0,$twitter=0,$google=0){
         $google_profile = of_get_option('google_profile', '');
 	$image = get_template_directory_uri() . "/images/icons";
 	if ($fb !=0){
-		echo "<li><a href=\"{$fb_profile}\" title=\"".__('Follow me on Facebook','techozoic')."\"><img src=\"{$image}/facebook_32.png\"></a></li>";
+		echo "<li><a href='{$fb_profile}' title='".__('Follow me on Facebook','techozoic')."' class='about facebook32'></a></li>";
 	}
 	if ($my !=0){
-		echo "<li><a href=\"{$my_profile}\" title=\"".__('Follow me on Myspace','techozoic')."\"><img src=\"{$image}/myspace_32.png\"></a></li>";
+		echo "<li><a href='{$my_profile}' title='".__('Follow me on Myspace','techozoic')."' class='about myspace32'></a></li>";
 	}	
 	if ($twitter !=0){
-		echo "<li><a href=\"{$twitter_profile}\" title=\"".__('Follow me on Twitter','techozoic')."\"><img src=\"{$image}/twitter_32.png\"></a></li>";
+		echo "<li><a href='{$twitter_profile}' title='".__('Follow me on Twitter','techozoic')."' class='about twitter32'></a></li>";
 	}
         if ($google !=0){
-		echo "<li><a href=\"{$google_profile}\" title=\"".__('Follow me on Google+','techozoic')."\"><img src=\"{$image}/google_32.png\"></a></li>";
+		echo "<li><a href='{$google_profile}' title='".__('Follow me on Google+','techozoic')."' class='about google32'></a></li>";
 	}
 }
 
@@ -937,11 +1042,11 @@ if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ){
  * @since     1.8.6
  */
 
-add_action( 'admin_notices', 'techozoic_show_notice' );  // Shows custom theme activation notice with links to option page and changelog
+add_action( 'admin_notices', 'techozoic_show_notice' );  // Shows custom theme activation notice with links to option page
 
 function techozoic_show_notice() { ?>
     <div id="message" class="updated fade">
-		<p><?php printf( __( 'Theme activated! This theme contains <a href="%s">theme options</a> and <a href="%s">custom sidebar widgets</a>.<br />&nbsp; See <a href="%s">Change Log</a>.', 'techozoic' ), admin_url( 'themes.php?page=options-framework' ), admin_url( 'widgets.php' ) , get_template_directory_uri() . "/changelog.php\" onclick=\"return changelog('". get_template_directory_uri() ."/changelog.php')\"") ?></p>
+		<p><?php printf( __( 'Theme activated! This theme contains <a href="%s">theme options</a> and <a href="%s">custom sidebar widgets</a>.<br />&nbsp;', 'techozoic' ), admin_url( 'themes.php?page=options-framework' ), admin_url( 'widgets.php' )) ?></p>
     </div>
     <style type="text/css">#message2, #message0 { display: none; }</style>
     <?php
@@ -970,57 +1075,6 @@ function techozoic_header_notice() { ?>
 }
 
 }//End if custom header page
-
-/**
- * Techozoic add dashboard widget
- *
- * Add dashboard widget defined in techozoic_dashboard_widget.
- *
- * @access    private
- */
-
-function tech_dashboard_widgets() {
-   	global $wp_meta_boxes;
-   	wp_add_dashboard_widget('techozoic_dashboard_widget', 'Techozoic Theme Setup', 'techozoic_dashboard_widget');
-}
-
-/**
- * Techozoic dashboard widget content
- *
- * Adds dashboard widget with links to options pages, support, documentation, and
- * donate links.
- * 
- *  
- *
- * @access    private
- * @since     1.9.3
- */
-
-add_action('wp_dashboard_setup', 'tech_dashboard_widgets'); //Add Techozoic dashboard widget with info for theme and donate button
-
-function techozoic_dashboard_widget() { ?>
-   	<div style="float:left;width: 46%;margin:1% 10px;">
-	<div class="alignleft">
-		<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-		<input type="hidden" name="cmd" value="_s-xclick">
-		<input type="hidden" name="hosted_button_id" value="10999960">
-		<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-		<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
-		</form>
-		</div>
-		<p>
-		<?php _e('Thank you for using the Techozoic Theme.  ' ,'techozoic'); 
-		if (current_user_can('edit_theme') || current_user_can('edit_theme_options')) { 
-			printf(__('Visit the %s to start customizing Techozoic.  ' ,'techozoic'),'<a href="themes.php?page=options-framework" title="' . __("options page" ,"techozoic").'">'.__("options page" ,"techozoic").'</a>'); 
-			} 
-		printf(__('If your having problems or would like to suggest a new feature, please visit the %s.' ,'techozoic'), '<a href="http://clark-technet.com/theme-support/techozoic/" title="' .__('Support Forum' ,'techozoic').'"> '.__('support forum' ,'techozoic').'</a>')?>
-		</p>
-		</div>
-		<?php techozoic_links_box('tech_links_front'); ?>
-		<div class="clear"> </div>
-<?php
-
-}
 
 
 /**
@@ -1143,7 +1197,7 @@ add_action('wp_footer', 'tech_thickbox_image_paths');
     
 function tech_thickbox_image_paths() {
 	$thickbox_path = get_option('siteurl') . '/wp-includes/js/thickbox/';
-	echo "<script type=\"text/javascript\">\n";
+	echo "<script type='text/javascript'>\n";
 	echo "	var tb_pathToImage = \"${thickbox_path}loadingAnimation.gif\";\n";
 	echo "	var tb_closeImage = \"${thickbox_path}tb-close.png\";\n";
 	echo "</script>\n";

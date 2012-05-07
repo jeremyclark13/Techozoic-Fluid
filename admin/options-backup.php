@@ -80,7 +80,7 @@ wp_enqueue_style('admin-style', OPTIONS_FRAMEWORK_DIRECTORY.'css/admin-style.css
 add_action( 'load-' . $this->admin_page, array( &$this, 'admin_screen_logic' ) );
 
 // Add contextual help.
-add_action( 'contextual_help', array( &$this, 'admin_screen_help' ), 10, 3 );
+add_action( 'load-' . $this->admin_page, array( &$this, 'admin_screen_help' ), 10, 3 );
 
 add_action( 'admin_notices', array( &$this, 'admin_notices' ), 10 );
 
@@ -142,24 +142,20 @@ $export_type = esc_attr( $_POST['export-type'] );
 * @since 1.0.0
 */
 
-function admin_screen_help ( $contextual_help, $screen_id, $screen ) {
+function admin_screen_help () {
 
-// $contextual_help .= var_dump($screen); // use this to help determine $screen->id
+    $screen = get_current_screen();
+    $screen->add_help_tab(array(
+        'id'        => 'of_options_page_help',
+        'title'     =>  __( 'Backup Manager', 'techozoic' ),
+        'content'   =>  '<h3>' . __( 'Welcome to the OptionsFramework Backup Manager.','techozoic' ) . '</h3>' .
+                        '<p>' . __( 'Here are a few notes on using this screen.' ,'techozoic') . '</p>' .
+                        '<p>' . __( 'The backup manager allows you to backup or restore your "Theme Options" and other settings to or from a text file.','techozoic' ) . '</p>' .
+                        '<p>' . __( 'To create a backup, simply select the setting type you\'d like to backup (or "All Settings") and hit the "Download Export File" button.','techozoic' ) . '</p>' .
+                        '<p>' . __( 'To restore your settings from a backup, browse your computer for the file (under the "Import Settings" heading) and hit the "Upload File and Import" button. This will restore only the settings that have changed since the backup.','techozoic' ) . '</p>' .
+                        '<p><strong>' . __( 'Please note that only valid backup files generated through the OptionsFramework Backup Manager should be imported.','techozoic' ) . '</strong></p>'
 
-if ( $this->admin_page == $screen->id ) {
-
-$contextual_help =
-'<h3>' . __( 'Welcome to the OptionsFramework Backup Manager.','techozoic' ) . '</h3>' .
-'<p>' . __( 'Here are a few notes on using this screen.' ,'techozoic') . '</p>' .
-'<p>' . __( 'The backup manager allows you to backup or restore your "Theme Options" and other settings to or from a text file.','techozoic' ) . '</p>' .
-'<p>' . __( 'To create a backup, simply select the setting type you\'d like to backup (or "All Settings") and hit the "Download Export File" button.','techozoic' ) . '</p>' .
-'<p>' . __( 'To restore your settings from a backup, browse your computer for the file (under the "Import Settings" heading) and hit the "Upload File and Import" button. This will restore only the settings that have changed since the backup.','techozoic' ) . '</p>' .
-
-'<p><strong>' . __( 'Please note that only valid backup files generated through the OptionsFramework Backup Manager should be imported.','techozoic' ) . '</strong></p>';
-
-} // End IF Statement
-
-return $contextual_help;
+        ));
 
 } // End admin_screen_help()
 

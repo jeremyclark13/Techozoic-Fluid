@@ -1,4 +1,5 @@
 <?php 
+global $post_type;
 $home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>'; 
 
 ?>
@@ -20,6 +21,8 @@ $home_url = '<a href="' . home_url() . '">' . get_bloginfo("name") . '</a>';
 <?php 	}
         if(is_page() && is_active_sidebar("page_sidebar_r_$post->ID")){
             dynamic_sidebar("page_sidebar_r_$post->ID");
+        }elseif ( ($post_type == 'forum' || $post_type == 'topic' || $post_type == 'reply') && is_active_sidebar("page_sidebar_r_forum") ) {
+            dynamic_sidebar("page_sidebar_r_forum");
         }elseif ( !dynamic_sidebar(__('Right Sidebar','techozoic')) ) { 
 		global $user_ID; 
 		if( $user_ID ) {

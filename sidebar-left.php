@@ -1,8 +1,11 @@
 <div id="l_sidebar" class="sidebar"> 
 <ul>
 <?php
+    global $post_type;
         if(is_page() && is_active_sidebar("page_sidebar_l_$post->ID")){
             dynamic_sidebar("page_sidebar_l_$post->ID");
+        }elseif (($post_type == 'forum' || $post_type == 'topic' || $post_type == 'reply') && is_active_sidebar("page_sidebar_l_forum") ) {
+            dynamic_sidebar("page_sidebar_l_forum");
         }elseif ( !function_exists('dynamic_sidebar') || !dynamic_sidebar(__('Left Sidebar','techozoic')) ) {
 		global $user_ID; 
 		if( $user_ID ) {
