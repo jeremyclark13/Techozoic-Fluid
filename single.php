@@ -24,7 +24,7 @@ if (have_posts()) {
 		<div style="clear:both"></div>
 		<div class="post" id="post-<?php the_ID(); ?>">
                 <div class="toppost">
-		<a href="<?php echo home_url(); ?>" title="<?php printf(__('Go back to %s','techozoic'), get_bloginfo('name')); ?>" class="social homelink"></a>&nbsp;<?php if (tech_icons('single')){ tech_social_icons($home=false); } ?>
+		<a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/home.png" border="0" alt="Home" title="<?php printf(__('Go back to %s','techozoic'), get_bloginfo('name')); ?>" /></a>&nbsp;<?php if (tech_icons('single')){ tech_social_icons($home=false); } ?>
 		</div>
 		<h1 class="post_title">
                     <?php if (get_the_title() != ""){ ?>
@@ -45,8 +45,8 @@ if (have_posts()) {
                 <?php if (get_the_author_meta('description', get_the_author_meta('ID')) != ''){ ?>
                 <div class="author-info">
                     <div class="alignleft"><?php echo get_avatar(get_the_author_meta('ID'),64); ?></div>
-                    <h5><?php _e('About','techozoic'); ?> <?php the_author_posts_link();?></h5>
-                    <?php echo wpautop(get_the_author_meta('description', get_the_author_meta('ID'))); ?>
+                    <h5><?php printf(__('About %s','techozoic'), get_the_author()); ?></h5>
+                    <?php echo apply_filters('the_content', get_the_author_meta('description', get_the_author_meta('ID'))); ?>
                 </div>
                 <?php } ?>
                 <div class="single-time"><?php echo get_the_time($date_format); ?> @ <?php echo get_the_time(); ?></div>

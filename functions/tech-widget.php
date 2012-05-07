@@ -3,13 +3,8 @@
 Widget registration and custom widgets defined here
 ******************************************/
 
-if (function_exists('wp_get_theme')){
-    $theme_data = wp_get_theme('techozoic-fluid');
-    $version = $theme_data->Version;
-} else {
-    $theme_data = get_theme_data(get_template_directory() . '/style.css');
-    $version = $theme_data['Version'];
-} 
+$theme_data = get_theme_data(TEMPLATEPATH . '/style.css');
+$version = $theme_data['Version'];
 
 function tech_widgets_init(){
     register_sidebar(array(
@@ -67,25 +62,6 @@ function tech_widgets_init(){
                     'name'=>"$page->post_title Right Sidebar",
                     'description' => __("Sidebar displayed only on $page->post_title.  Page ID($page->ID)",'techozoic'),
                     'id'=> "page_sidebar_r_$page->ID",
-                    'before_widget' => '<div class="hwidget %2$s">',
-                    'after_widget' => '</div>',
-                    'before_title' => '<h2 class="widgettitle">',
-                    'after_title' => '</h2>'
-            ));
-        }elseif($page_option['forum'] == '1'){
-            register_sidebar(array(
-                    'name'=>"Forums Left Sidebar",
-                    'description' => __("Sidebar displayed only on Forums.",'techozoic'),
-                    'id'=> "page_sidebar_l_forum",
-                    'before_widget' => '<div class="hwidget %2$s">',
-                    'after_widget' => '</div>',
-                    'before_title' => '<h2 class="widgettitle">',
-                    'after_title' => '</h2>'
-            ));
-            register_sidebar(array(
-                    'name'=>"Forums Right Sidebar",
-                    'description' => __("Sidebar displayed only on Forums.",'techozoic'),
-                    'id'=> "page_sidebar_r_forum",
                     'before_widget' => '<div class="hwidget %2$s">',
                     'after_widget' => '</div>',
                     'before_title' => '<h2 class="widgettitle">',

@@ -73,9 +73,6 @@
         display: inline-block;
         float: none !important;
     }
-    .ribbon ul.top-menu > li, .square ul.top-menu > li{
-        min-height:0 !important;
-    }
     .ribbon ul.top-menu > li.has_children, .square ul.top-menu > li.has_children{
         background: none;
         padding: 0;

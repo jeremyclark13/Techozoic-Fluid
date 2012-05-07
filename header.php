@@ -2,11 +2,9 @@
 <html <?php language_attributes(); ?> xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="<?php get_bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<?php if (of_get_option('mobile_css','0') == 1){ ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<?php
-}
-global $cpage, $tech_nav, $post_type;
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<?php 
+global $cpage, $tech_nav;
 if ( is_singular() ){
 	$tech_nav = get_post_meta($post->ID, "Nav_value", $single = true);
         if(empty($tech_nav)){
@@ -55,6 +53,10 @@ else { ?>
 } ?>
 <meta name="generator" content="WordPress <?php bloginfo('version'); ?>" /> <!-- leave this for stats -->
 <link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_stylesheet_uri(); ?>" />
+
+<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" media="screen" href="<?php echo get_template_directory_uri() ?>/ie6.css" />
+<![endif]-->
 <!--[if IE]>
 	<style type="text/css">
 	#headerimg{ filter:alpha(opacity=80);}
@@ -109,8 +111,7 @@ if ( function_exists('dynamic_sidebar') && is_active_sidebar( 'right_header' ) )
     </div>
 <?php }?>  
 <div id="headerimg">
-<?php 
-    if(is_single() || is_page() || ($post_type == 'forum' || $post_type == 'topic' || $post_type == 'reply') ) { 
+<?php if(is_single() || is_page()) { 
 	echo "<span class=\"blog_title\">";
 } else { 
 	echo "<h1 class=\"blog_title\">";
@@ -129,7 +130,7 @@ if ( is_single() & of_get_option('blog_title_text','single') == "single") { ?>
 	<a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?></a>
 <?php 
 } 
-if(is_single() || is_page() || ($post_type == 'forum' || $post_type == 'topic' || $post_type == 'reply') ) {  
+if(is_single() || is_page()) { 
 	echo "</span>"; 
 } else { 
 	echo "</h1>";
@@ -152,3 +153,9 @@ if (!empty ($description)) { ?>
 <?php if(of_get_option('nav_location','below') == 'below') {
     get_template_part('nav','wp3'); 
 }?>
+
+<?php if (of_get_option('search_box','1') == '1' && !is_active_sidebar( 'right_header' )) { ?>
+	<div id="search">
+	<?php get_search_form(); ?>
+	</div>
+<?php } ?>

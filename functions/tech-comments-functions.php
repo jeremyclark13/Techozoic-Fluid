@@ -13,7 +13,7 @@ function delete_comment_link($id,$post_name) {
 add_filter('get_comments_number', 'comment_count', 0);
 function comment_count( $count ) {
         global $id;
-        $get_comments= get_comments(array('post_id' => $id , 'status'=>'approve'));
+        $get_comments= get_comments('post_id=' . $id);
         $comments_by_type = &separate_comments($get_comments);
         return count($comments_by_type['comment']);
 }
