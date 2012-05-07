@@ -316,7 +316,7 @@ function tech_twitter_info($user = 'clarktechnet', $count = '3',$type = 'feed'){
     } elseif ($type == 'followers') {
         $output = $data->followers_count ." " . __("followers", "techozoic");
     }   
-    set_transient( $transient_key, $output, 600 );
+    set_transient( $transient_key, $output, 21600 );
     
     return $output;
 }
