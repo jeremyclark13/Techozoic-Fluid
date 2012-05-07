@@ -2,8 +2,8 @@
 Contributors: jeremyclark13
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817
 Tags: blue, light, one-column, two-columns, three-columns, flexible-width, custom-colors, custom-header, theme-options ,left-sidebar, right-sidebar, threaded-comments, translation-ready, sticky-post
-Requires at least: 3.0
-Tested up to: 3.1
+Requires at least: 3.3
+Tested up to: 3.4
 Stable tag: trunk
 
 Advanced, fluid width, widget-ready sidebars and footer, 1, 2, or 3 column theme.    
@@ -37,6 +37,17 @@ Installation can be done automatically through the Install Themes feature or man
 
 == Changelog ==
 = Version 2.0.6 =
+* bbPress support added. (Version 2.0.2)
+* Register sidebars for bbPress pages option.
+* 3.4 custom headers added, backward compatible with 3.3.
+* Switched to add_help_tab method for adding help menus.
+* Using wp_get_theme to retrieve theme data if available, falling back to get_theme_data if not.
+* Added Twitter feed functions for display on options panel.  Will be turned into shortcode for next version.
+* Removed dashboard widget and moved everything to about tab on options panel.
+* Moved search bar into navigation menu.
+* Converted social media icons to css sprites.
+* Added Pintrest pin it button.
+* Minor styling changes to form elements.
 * Bug Fix - Typography size wasn't saving correctly due to issue with options framework now fixed.
 * Bug Fix - Footer editor box rolled back to standard textarea, until framework supports it.
 

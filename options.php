@@ -9,8 +9,14 @@
 function optionsframework_option_name() {
 
 	// This gets the theme name from the stylesheet (lowercase and without spaces)
-	$themename = get_theme_data(STYLESHEETPATH . '/style.css');
-	$themename = $themename['Name'];
+        if (function_exists('wp_get_theme')){
+            $themename = wp_get_theme('techozoic-fluid');
+            $themename = $themename->Name;
+        } else {
+            $themename = get_theme_data(STYLESHEETPATH . '/style.css');
+            $themename = $themename['Name'];
+        } 
+	
 	$themename = preg_replace("/\W/", "", strtolower($themename) );
 	
 	$optionsframework_settings = get_option('optionsframework');
@@ -22,16 +28,14 @@ function optionsframework_option_name() {
 /**
  * Addes contextual help to the theme options page.
  */
-add_action( 'contextual_help', 'admin_screen_help', 10, 3 );
 
-function admin_screen_help ( $contextual_help, $screen_id, $screen ) {
-    if ( $screen->id == 'appearance_page_options-framework' ) {
-        $contextual_help =
-        '<h3>' . __( 'Techozoic Theme Options', 'techozoic' ) . '</h3>' .
-        '<p><strong>' . sprintf(__( 'Looking for assistance? Please visit the <a href="%1$s">support forums</a>, refer to the <a href="%2$s">documentation</a>, or the <a href="%3$s">FAQ</a>.' ),'http://clark-technet.com/theme-support/techozoic','http://techozoic.clark-technet.com/documentation/','http://techozoic.clark-technet.com/documentation/faq/') . '</strong></p>';
-    } // End IF Statement
-
-    return $contextual_help;
+function admin_screen_help () {
+    $screen = get_current_screen();
+    $screen->add_help_tab(array(
+        'id'        => 'of_options_page_help',
+        'title'     =>  __( 'Techozoic Support', 'techozoic' ),
+        'content'   => '<p><strong>' . sprintf(__( 'Looking for assistance? Please visit the <a href="%1$s">support forums</a>, refer to the <a href="%2$s">documentation</a>, or the <a href="%3$s">FAQ</a>.' ),'http://clark-technet.com/theme-support/techozoic','http://techozoic.clark-technet.com/documentation/','http://techozoic.clark-technet.com/documentation/faq/') . '</strong></p>'
+        ));
 } 
 
 /**
@@ -42,7 +46,7 @@ function admin_screen_help ( $contextual_help, $screen_id, $screen ) {
 
 function optionsframework_options() {
 	
-        $social_media = array('delicious'=>"Delicious",'digg'=>"Digg",'email'=>"Email",'facebook'=>"Facebook",'google' =>"Google +1", 'linkedin'=>"LinkedIn",'myspace'=>"MySpace",'newsvine'=>"NewsVine",'stumbleupon'=>"StumbleUpon",'twitter'=>"Twitter",'reddit'=>"Reddit",'rss'=>"RSS Icon");
+        $social_media = array('delicious'=>"Delicious",'digg'=>"Digg",'email'=>"Email",'facebook'=>"Facebook",'google' =>"Google +1",'pintrest' =>'Pintrest', 'linkedin'=>"LinkedIn",'myspace'=>"MySpace",'newsvine'=>"NewsVine",'stumbleupon'=>"StumbleUpon",'twitter'=>"Twitter",'reddit'=>"Reddit",'rss'=>"RSS Icon");
         $old_social_media = array("Delicious"=>'delicious',"Digg" =>'digg',"Email"=>'email',"Facebook"=>'facebook',"LinkedIn" => 'linkedin',"MySpace" =>'myspace',"NewsVine"=>'newsvine',"StumbleUpon" =>'stumbleupon',"Twitter"=>'twitter',"Reddit"=>'reddit',"RSS Icon"=>'rss');
 
 	// Pull all the categories into an array
@@ -59,12 +63,68 @@ function optionsframework_options() {
 	foreach ($options_pages_obj as $page) {
     	$options_pages[$page->ID] = $page->post_title;
 	}
-		
+        if ( class_exists( 'bbPress' ) ) { 
+            $options_pages['forum'] = 'All bbPress Forum Pages';
+        }
+	$twitter_feed = tech_twitter_info($user = 'clarktechnet', $count = '5', $type = 'feed');
+        $twitter_followers = tech_twitter_info($user = 'clarktechnet', $count = '0', $type = 'followers');
+        $news_feed = techozoic_links_box();
 	// If using image radio buttons, define a directory path
 	$imagepath =  get_template_directory_uri() . '/images/';
 		
 	$options = array();
-		
+        
+       $options[] = array( "name"=>__('About','techozoic'),
+                "type"=> "heading");
+       
+       $options[] = array( "name" => __("Donate to help further development","techozoic"),
+                "type" => "info",
+        	"desc" => "<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2M9KFK4JHR6LW' title='Donate Securely' target='_blank' ><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' /></a>");
+
+        $options[] = array( "name" => __("Twitter","techozoic") . " - " . $twitter_followers,
+                "type" => "info",
+        	"desc" => "<a href='https://twitter.com/#!/search/realtime/%23techozoic%20from%3Aclarktechnet' title='Follow Development on Twitter' target='_blank'>Follow Development on Twitter</a> | <a href='https://twitter.com/intent/user?screen_name=clarktechnet' title='Follow Me on Twitter' target='_blank'>Follow Me on Twitter</a>");
+    
+        $options[] = array( 
+                "type" => "info",
+        	"desc" => "<strong>" . __("Twitter Feed","techozoic") . "</strong>" . $twitter_feed );
+        
+        $options[] = array( "name" => __("Techozoic News","techozoic"),
+                "type" => "info",
+        	"desc" => $news_feed );
+    
+       
+       $options[] = array("name" => __("Changelog - Version 2.0.6", "techozoic"),
+                "type" => "info",  
+                "desc" =>'bbPress support added. (Version 2.0.2)<br />Added Pintrest Pin it button.<br />Moved search bar into navigation menu.<br />Register sidebars for bbPress pages option.<br />3.4 custom headers added<br /> Bug Fix - Typography size wasn\'t saving correctly due to issue with options framework now fixed.<br /> Bug Fix - Footer editor box rolled back to standard textarea, until framework supports it.<br />');
+          
+       $options[] = array("name" => __("Changelog - Version 2.0.5", "techozoic"),
+                "type" => "info",  
+                "desc" =>'Emergency Bug Fix - Typography options not saving correctly due to issue with options framework now fixed.');
+                 
+       $options[] = array("name" => __("Changelog - Version 2.0.4", "techozoic"),
+                "type" => "info",  
+                "desc" =>'Added two new navigation styles, Ribbon and Square. <br /> Added more color choices for navigation menus. <br /> Added ability to specify two Google Web fonts. <br /> New post author block on single post screens, if user bio is filled out on profile page it is displayed along with gravatar. <br />Romanian Translation Added,<img src="http://mobirout.com/uploads/ro.gif" alt="Romanian translation" /> Web Geek Science  (<a href="http://webhostinggeeks.com/">Web Hosting Geeks</a>)<br />');
+       
+       $options[] = array("name" => __("Changelog - Version 2.0.3", "techozoic"),
+                "type" => "info",  
+                "desc" =>'Updated Social Media icons to GPL licensed - Elegant Media Icons. <br />Cleaned out old unused images and files.<br />');
+       
+        $options[] = array("name" => __("Changelog - Version 2.0.2", "techozoic"),
+                "type" => "info",
+                "desc" =>'Title was overlapping social media icons on single post page.<br />Navigation button color wasn\'t respected.<br /> Post title color wasn\'t respected on single post page.<br /> Post format status post weren\'t showing up on home page.<br />');
+       
+       $options[] = array( "name" => __("Changelog - Version 2.0","techozoic"),
+                "type" => "info",      
+                "desc" => 'Moved to Options Framework Option Panel.<br />
+                    Using Custom Header functions.<br />
+                    Removed Cufon support.<br />
+                    Removed support for navigation menus other than built-in menus.<br />
+                    Added support for status, quotes, and aside post formats.<br />
+                    Various CSS3 styling changes, new calendar style, comment form styling, social media icons.<br />
+                    Fixed widget bug not saving options.<br />
+                    Added status update widget.<br />');
+       
         $options[] = array(	"name" => __("Layout","techozoic"),
                 "type" => "heading");
 
@@ -131,7 +191,13 @@ function optionsframework_options() {
                 "type" => "checkbox",
                 "old_options" => array("Yes" => "1", "No" => "0"),
                 "std" => "0");
-
+if ( class_exists( 'bbPress' ) ) {        
+        $options[] = array(  "name" => __("Display Sidebars on Forum","techozoic"),
+                "id" => "forum_sidebar",
+                "type" => "checkbox",
+                "old_options" => array("Yes" => "1", "No" => "0"),
+                "std" => "0");        
+}
         $options[] = array(  "name" => __("Page Specific Sidebars","techozoic"),
                 "desc" => __("Choose which pages to register a sidebar.  After selecting pages, two new sidebars will be avaialbe from the widgets screen.  These sidebars will be used if any widgets are added, otherwise the default sidebars will be used.","techozoic"),
                 "id" => "page_sidebar",
@@ -357,9 +423,10 @@ function optionsframework_options() {
                 "type" => "heading");
 
         $options[] = array(	"name" => __("Prebuilt Color Scheme","techozoic"),
-                "desc"=> __("Choose Custom to specify your own scheme","techozoic"),
+                "desc"=> __("After choosing color scheme, adjustments can be made below.  Choose custom to create your own.","techozoic"),
                 "id" => "color_scheme",
                 "type" => "select",
+                "class" => "mini",
                 "std" => "custom",
                 "old_options" => array("Custom 1" => 'custom',"Custom 2" => 'custom', "Blue" => "blue", "Khaki" => "khaki", "Red" =>"red", "Grunge" =>"grunge"),
                 "options" => array('custom' => __("Custom","techozoic"), 'blue'=> __("Blue","techozoic") , 'khaki'=>__("Khaki","techozoic"), 'red'=>__("Red","techozoic"), 'grunge'=>__("Grunge","techozoic")));
@@ -678,49 +745,6 @@ function optionsframework_options() {
                 "type" => "checkbox",
                 "std" => "0");           
         
-       $options[] = array( "name"=>__('About','techozoic'),
-                "type"=> "heading");
-       
-       $options[] = array( "name" => __("Donate to help further development","techozoic"),
-                "type" => "info",
-        	"desc" => "<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817' title='Donate Securely'><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' /></a>");
-
-        $options[] = array( "name" => __("Follow on Twitter","techozoic"),
-                "type" => "info",
-        	"desc" => "<a href='https://twitter.com/#!/search/realtime/%23techozoic%20from%3Aclarktechnet' title='Follow Development on Twitter'>Follow Development on Twitter</a> | <a href='https://twitter.com/#!/clarktechnet' title='Follow Me on Twitter'>Follow Me on Twitter</a>");
-    
-       
-       $options[] = array("name" => __("Changelog - Version 2.0.6", "techozoic"),
-                "type" => "info",  
-                "desc" =>'Bug Fix - Typography size wasn\'t saving correctly due to issue with options framework now fixed.<br /> Bug Fix - Footer editor box rolled back to standard textarea, until framework supports it.<br />');
-          
-       $options[] = array("name" => __("Changelog - Version 2.0.5", "techozoic"),
-                "type" => "info",  
-                "desc" =>'Emergency Bug Fix - Typography options not saving correctly due to issue with options framework now fixed.');
-                 
-       $options[] = array("name" => __("Changelog - Version 2.0.4", "techozoic"),
-                "type" => "info",  
-                "desc" =>'Added two new navigation styles, Ribbon and Square. <br /> Added more color choices for navigation menus. <br /> Added ability to specify two Google Web fonts. <br /> New post author block on single post screens, if user bio is filled out on profile page it is displayed along with gravatar. <br />Romanian Translation Added,<img src="http://mobirout.com/uploads/ro.gif" alt="Romanian translation" /> Web Geek Science  (<a href="http://webhostinggeeks.com/">Web Hosting Geeks</a>)<br />');
-       
-       $options[] = array("name" => __("Changelog - Version 2.0.3", "techozoic"),
-                "type" => "info",  
-                "desc" =>'Updated Social Media icons to GPL licensed - Elegant Media Icons. <br />Cleaned out old unused images and files.<br />');
-       
-        $options[] = array("name" => __("Changelog - Version 2.0.2", "techozoic"),
-                "type" => "info",
-                "desc" =>'Title was overlapping social media icons on single post page.<br />Navigation button color wasn\'t respected.<br /> Post title color wasn\'t respected on single post page.<br /> Post format status post weren\'t showing up on home page.<br />');
-       
-       $options[] = array( "name" => __("Changelog - Version 2.0","techozoic"),
-                "type" => "info",      
-                "desc" => 'Moved to Options Framework Option Panel.<br />
-                    Using Custom Header functions.<br />
-                    Removed Cufon support.<br />
-                    Removed support for navigation menus other than built-in menus.<br />
-                    Added support for status, quotes, and aside post formats.<br />
-                    Various CSS3 styling changes, new calendar style, comment form styling, social media icons.<br />
-                    Fixed widget bug not saving options.<br />
-                    Added status update widget.<br />');
-       
        return $options;
 }
 
@@ -730,6 +754,103 @@ function optionsframework_custom_scripts() { ?>
 
 <script type="text/javascript">
 jQuery(document).ready(function($) {
+
+    var custom = new Array();
+        custom['cust_bg_color1']='#A0B3C2';
+        custom['cust_content_bg_color1']='#F7F7F7';
+        custom['cust_acc_color1']='#A0B3C2';
+        custom['cust_link_color1']='#597EAA';
+        custom['cust_link_hov_color1']='#114477';
+        custom['cust_link_visit_color1']='#2C4353';
+        custom['cust_nav_bg_color1']='#E3E3E3';
+        custom['cust_nav_hov_bg_color1']='#EFEFEF';
+        custom['cust_nav_hov_text_color1']='#A0B3C2';
+        custom['cust_nav_active_bg_color1']='#A0B3C2';
+        custom['cust_nav_active_text_color1']='#F7F7F7';
+        custom['cust_nav_bg_gradient_top']='#E3E3E3';
+        custom['cust_nav_bg_gradient_bot']='#CCCCCC';
+        custom['cust_post_bg_color1']='#E3E3E3';
+    var blue = new Array();
+        blue['cust_bg_color1']='#A0B3C2';
+        blue['cust_content_bg_color1']='#F7F7F7';
+        blue['cust_acc_color1']='#A0B3C2';
+        blue['cust_link_color1']='#597EAA';
+        blue['cust_link_hov_color1']='#114477';
+        blue['cust_link_visit_color1']='#2C4353';
+        blue['cust_nav_bg_color1']='#E3E3E3';
+        blue['cust_nav_hov_bg_color1']='#EFEFEF';
+        blue['cust_nav_hov_text_color1']='#A0B3C2';
+        blue['cust_nav_active_bg_color1']='#A0B3C2';
+        blue['cust_nav_active_text_color1']='#F7F7F7';
+        blue['cust_nav_bg_gradient_top']='#E3E3E3';
+        blue['cust_nav_bg_gradient_bot']='#CCCCCC';
+        blue['cust_post_bg_color1']='#E3E3E3';
+    var khaki = new Array();
+        khaki['cust_bg_color1']='#c7c69a';
+        khaki['cust_acc_color1']='#c7c69a';
+        khaki['cust_link_color1']='#6E0405';
+        khaki['cust_link_hov_color1']='#B53839';
+        khaki['cust_link_visit_color1']='#2C4353';
+        khaki['cust_nav_bg_color1']='#E3E3E3';
+        khaki['cust_post_bg_color1']='#E3E3E3';
+        khaki['cust_content_bg_color1']='#F7F7F7';
+        khaki['cust_nav_hov_bg_color1']='#C7C69A';
+        khaki['cust_nav_hov_text_color1']='#f7f7f7';
+        khaki['cust_nav_active_bg_color1']='#C7C69A';
+        khaki['cust_nav_active_text_color1']='#F7F7F7';
+        khaki['cust_nav_bg_gradient_top']='#E3E3E3';
+        khaki['cust_nav_bg_gradient_bot']='#CCCCCC';
+    var red = new Array();
+        red['cust_bg_color1']='#AB2222';
+        red['cust_acc_color1']='#AB2222';
+        red['cust_link_color1']='#D33535';
+        red['cust_link_hov_color1']='#B53839';
+        red['cust_link_visit_color1']='#2C4353';
+        red['cust_nav_bg_color1']='#E3E3E3';
+        red['cust_post_bg_color1']='#E3E3E3';
+        red['cust_content_bg_color1']='#F7F7F7';
+        red['cust_nav_hov_bg_color1']='#EFEFEF';
+        red['cust_nav_hov_text_color1']='#B53839';
+        red['cust_nav_active_bg_color1']='#B53839';
+        red['cust_nav_active_text_color1']='#F7F7F7';
+        red['cust_nav_bg_gradient_top']='#E3E3E3';
+        red['cust_nav_bg_gradient_bot']='#CCCCCC';
+    var grunge = new Array();
+        grunge['cust_bg_color1']='#534E3E';
+        grunge['cust_acc_color1']='#534E3E';
+        grunge['cust_link_color1']='#78BFBF';
+        grunge['cust_link_hov_color1']='#78BFBF';
+        grunge['cust_link_visit_color1']='#2C4353';
+        grunge['cust_nav_bg_color1']='#E3E3E3';
+        grunge['cust_post_bg_color1']='#E3E3E3';
+        grunge['cust_content_bg_color1']='#F7F7F7';
+        grunge['cust_nav_hov_bg_color1']='#EFEFEF';
+        grunge['cust_nav_hov_text_color1']='#534E3E';
+        grunge['cust_nav_active_bg_color1']='#534E3E';
+        grunge['cust_nav_active_text_color1']='#F7F7F7';
+        grunge['cust_nav_bg_gradient_top']='#E3E3E3';
+        grunge['cust_nav_bg_gradient_bot']='#CCCCCC';
+    // When the select box #base_color_scheme changes
+    // it checks which value was selected and calls of_update_color
+    $('#color_scheme').change(function() {
+        colorscheme = $(this).val();
+	if (colorscheme == 'custom') { colorscheme = custom; }
+        if (colorscheme == 'blue') { colorscheme = blue; }
+        if (colorscheme == 'khaki') { colorscheme = khaki; }
+        if (colorscheme == 'red') { colorscheme = red; }
+	if (colorscheme == 'grunge') { colorscheme = grunge; }
+        for (id in colorscheme) {
+            of_update_color(id,colorscheme[id]);
+        }
+    });
+    // This does the heavy lifting of updating all the colorpickers and text
+    function of_update_color(id,hex) {
+        $('#section-' + id + ' .of-color').css({backgroundColor:hex});
+        $('#section-' + id + ' .colorSelector').ColorPickerSetColor(hex);
+        $('#section-' + id + ' .colorSelector').children('div').css('backgroundColor', hex);
+        $('#section-' + id + ' .of-color').val(hex);
+        $('#section-' + id + ' .of-color').animate({backgroundColor:'#ffffff'}, 600);
+    }
 
     $('#nav_menu').click(function() {
         $('#section-nav_location').fadeToggle(400);

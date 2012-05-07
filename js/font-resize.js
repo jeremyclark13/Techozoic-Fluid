@@ -7,10 +7,10 @@ jQuery(document).ready(function () {
 	var max=18;	
 	
 	//grab the default font size
-	var reset = jQuery('#content').css('fontSize'); 
+	var reset = jQuery('.entry').css('fontSize'); 
 	
 	//font resize these elements
-	var elm = jQuery('#content');  
+	var elm = jQuery('.entry');  
 	
 	//set the default font size and remove px from the value
 	var size = str_replace(reset, 'px', ''); 

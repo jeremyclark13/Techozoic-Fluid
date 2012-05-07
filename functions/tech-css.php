@@ -82,54 +82,24 @@ function tech_head_css(){
 		break;
 	}
 	
-        $tech_color_scheme = of_get_option('color_scheme','custom');
-	$tech_default_color = array(
-		"blue" => 	array ('#A0B3C2','#A0B3C2','#597EAA','#114477','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7', '#EFEFEF','#A0B3C2','#A0B3C2','#F7F7F7','#E3E3E3','#CCCCCC','#A0B3C2'),
-		"khaki" => 	array ('#c7c69a','#c7c69a','#6E0405','#B53839','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7', '#C7C69A','#f7f7f7','#C7C69A','#F7F7F7','#E3E3E3','#CCCCCC','#6E0405'),
-		"red" => 	array ('#AB2222','#AB2222','#D33535','#B53839','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7', '#EFEFEF','#B53839','#B53839','#F7F7F7','#E3E3E3','#CCCCCC','#D33535'),
-		"grunge" => 	array ('#534E3E','#534E3E','#78BFBF','#78BFBF','#2C4353','#2C4353','#E3E3E3','#E3E3E3','#F7F7F7', '#EFEFEF','#534E3E','#534E3E','#F7F7F7','#E3E3E3','#CCCCCC','#78BFBF')
-	);
-        $tech_color_names = array('blue','khaki','red','grunge');
-        if (in_array($tech_color_scheme, $tech_color_names)){
-            $tech_bg_color =            $tech_default_color[$tech_color_scheme][0];
-            $tech_acc_color =           $tech_default_color[$tech_color_scheme][1];
-            $tech_link_color =          $tech_default_color[$tech_color_scheme][2];
-            $tech_link_hov_color = 	$tech_default_color[$tech_color_scheme][3];
-            $tech_visit_link_color = 	$tech_default_color[$tech_color_scheme][4];
-            $tech_nav_bg_color = 	$tech_default_color[$tech_color_scheme][6];
-            $tech_post_bg_color = 	$tech_default_color[$tech_color_scheme][7];
-            $tech_content_bg_color =    $tech_default_color[$tech_color_scheme][8];
-            $tech_bg_trans =            '0';
-            $tech_nav_bg_trans =        '0';
-            $tech_post_bg_trans =       '0';
-            $tech_content_bg_trans =    '0';
-            $tech_nav_hov_bg_color =    $tech_default_color[$tech_color_scheme][9];
-            $tech_nav_hov_text_color =  $tech_default_color[$tech_color_scheme][10];
-            $tech_nav_active_bg_color = $tech_default_color[$tech_color_scheme][11];
-            $tech_nav_active_text_color =$tech_default_color[$tech_color_scheme][12];
-            $tech_nav_bg_gradient_top = $tech_default_color[$tech_color_scheme][13];
-            $tech_nav_bg_gradient_bot = $tech_default_color[$tech_color_scheme][14];
-            $tech_nav_font['color'] =   $tech_default_color[$tech_color_scheme][15];
-        } elseif ($tech_color_scheme == 'custom'){
-            $tech_bg_color =            of_get_option('cust_bg_color1','#A0B3C2');
-            $tech_bg_trans =            of_get_option('cust_bg_trans1','0');
-            $tech_acc_color =           of_get_option('cust_acc_color1','#A0B3C2');
-            $tech_link_color =          of_get_option('cust_link_color1','#597EAA');
-            $tech_link_hov_color =      of_get_option('cust_link_hov_color1','#114477');
-            $tech_visit_link_color =    of_get_option('cust_link_visit_color1','#2C4353');
-            $tech_nav_bg_color =        of_get_option('cust_nav_bg_color1','#E3E3E3');
-            $tech_nav_bg_trans =        of_get_option('cust_nav_bg_trans1','0');
-            $tech_post_bg_color =       of_get_option('cust_post_bg_color1','#E3E3E3');
-            $tech_post_bg_trans =       of_get_option('cust_post_bg_trans1','0');
-            $tech_content_bg_color =    of_get_option('cust_content_bg_color1','#F7F7F7');
-            $tech_content_bg_trans =    of_get_option('cust_content_bg_trans1','0');
-            $tech_nav_hov_bg_color =    of_get_option('cust_nav_hov_bg_color1' ,'#EFEFEF');
-            $tech_nav_hov_text_color =  of_get_option('cust_nav_hov_text_color1', '#A0B3C2');
-            $tech_nav_active_bg_color = of_get_option('cust_nav_active_bg_color1', '#A0B3C2');
-            $tech_nav_active_text_color = of_get_option('cust_nav_active_text_color1', '#F7F7F7');
-            $tech_nav_bg_gradient_top =  of_get_option('cust_nav_bg_gradient_top', '#E3E3E3');
-            $tech_nav_bg_gradient_bot =  of_get_option('cust_nav_bg_gradient_bot', '#CCCCCC');
-        }
+        $tech_bg_color =            of_get_option('cust_bg_color1','#A0B3C2');
+        $tech_bg_trans =            of_get_option('cust_bg_trans1','0');
+        $tech_acc_color =           of_get_option('cust_acc_color1','#A0B3C2');
+        $tech_link_color =          of_get_option('cust_link_color1','#597EAA');
+        $tech_link_hov_color =      of_get_option('cust_link_hov_color1','#114477');
+        $tech_visit_link_color =    of_get_option('cust_link_visit_color1','#2C4353');
+        $tech_nav_bg_color =        of_get_option('cust_nav_bg_color1','#E3E3E3');
+        $tech_nav_bg_trans =        of_get_option('cust_nav_bg_trans1','0');
+        $tech_post_bg_color =       of_get_option('cust_post_bg_color1','#E3E3E3');
+        $tech_post_bg_trans =       of_get_option('cust_post_bg_trans1','0');
+        $tech_content_bg_color =    of_get_option('cust_content_bg_color1','#F7F7F7');
+        $tech_content_bg_trans =    of_get_option('cust_content_bg_trans1','0');
+        $tech_nav_hov_bg_color =    of_get_option('cust_nav_hov_bg_color1' ,'#EFEFEF');
+        $tech_nav_hov_text_color =  of_get_option('cust_nav_hov_text_color1', '#A0B3C2');
+        $tech_nav_active_bg_color = of_get_option('cust_nav_active_bg_color1', '#A0B3C2');
+        $tech_nav_active_text_color = of_get_option('cust_nav_active_text_color1', '#F7F7F7');
+        $tech_nav_bg_gradient_top =  of_get_option('cust_nav_bg_gradient_top', '#E3E3E3');
+        $tech_nav_bg_gradient_bot =  of_get_option('cust_nav_bg_gradient_bot', '#CCCCCC');
         $tech_nav_ul_bg_color = $tech_nav_bg_color;
         if ($tech_bg_trans == '1') $tech_bg_color = 'transparent';
         if ($tech_nav_bg_trans == '1') $tech_nav_bg_color = 'transparent';
@@ -176,7 +146,7 @@ font:{$tech_body_font['style']} {$tech_body_font['size']} {$tech_body_font['face
 background:{$tech_bg_color} url({$tech_bg_image['image']}) {$tech_bg_image['repeat']} {$tech_bg_image['position']} {$tech_bg_image['attachment']};
 }
 .techozoic_font_size{
-font-size: {$tech_body_font['size']};
+font-size: {$tech_body_font['size']}px;
 }
 .narrowcolumn .entry,.widecolumn .entry, .top {
 font:{$tech_post_font['style']} {$tech_post_font['size']} {$tech_post_font['face']}, Sans-Serif;
@@ -242,7 +212,7 @@ color: {$tech_small_font['color']};
 ul#nav a, ul#admin a, #dropdown li.current_page_item a:hover, .top-menu li.current-menu-item a:hover, #dropdown li.current_page_item ul a, .top-menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover, {
 color: {$tech_nav_font['color']};
 }
-.author,#searchform #s, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,.postform,#TB_ajaxContent {
+.commenlist .author,#searchform #s, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,#TB_ajaxContent {
 background-color: {$tech_acc_color} ;
 }
 ul#admin li, ul#dropdown li, #navmenu .top-menu li{
@@ -287,6 +257,13 @@ border-right: 10px solid {$tech_nav_bg_gradient_bot};
 border-left: 10px solid {$tech_nav_bg_gradient_bot};
 }
 CSS;
+if (of_get_option('search_box','1') == '1'){
+$css_var .= <<<CSS
+.ribbon ul.top-menu > li:last-child, .square ul.top-menu > li:last-child{
+margin-right: 100px;
+}
+CSS;
+}
 if($tech_nav_bg_trans != '1') {
 $css_var .=  <<<CSS
 #navmenu .top-menu li, #navmenu .top-menu ul.sub-menu, ul#admin li{
@@ -356,7 +333,7 @@ background-color:{$tech_acc_color};
 border-bottom:1px {$tech_acc_color} solid;
 border-top:1px {$tech_acc_color} solid;
 }
-a,h2 a:hover,h3 a:hover,.commentdiv a, .commentdiv a:visited,#user_login,#user_pass,.postform,.commentdiv span, #sidenav a:visited {
+a,h2 a:hover,h3 a:hover,.commentdiv a, .commentdiv a:visited,#user_login,#user_pass, .commentdiv span, #sidenav a:visited {
 color:{$tech_link_color}; 
 text-decoration:none;
 }
@@ -454,12 +431,12 @@ width: {$tech_page_width}{$tech_sign};
 .narrowcolumn {
 float:left;
 margin:0;
-padding:0 2% 20px 3%;
+padding:25px 2% 20px 3%;
 width:{$tech_main_column_width}%;
 }
 #r_sidebar {
 float:right;
-padding:10px 2% 0 1%;
+padding:25px 2% 0 1%;
 width:{$tech_r_sidebar_width}%
 }
 CSS;
@@ -483,12 +460,12 @@ width: {$tech_page_width}{$tech_sign};
 .narrowcolumn {
 float:left;
 margin:0;
-padding:0 3% 20px 2%;
+padding:25px 3% 20px 2%;
 width:{$tech_main_column_width}%;
 }
 #l_sidebar {
 float:left;
-padding:10px 1% 0 2%;
+padding:25px 1% 0 2%;
 width:{$tech_l_sidebar_width}%
 }
 CSS;
@@ -516,18 +493,18 @@ width: {$tech_page_width}{$tech_sign}
 .narrowcolumn {
 float:left;
 margin:0 0 0 2%;
-padding:0 0 20px 0;
+padding:25px 0 20px 0;
 width:{$tech_main_column_width}%;
 }
 #l_sidebar {
 float:right;
-padding:10px 0 0 2%;
+padding:25px 0 0 2%;
 width:{$tech_l_sidebar_width}%
 }
 #r_sidebar {
 float:right;
 clear:right;
-padding:10px 2% 0 0;
+padding:25px 2% 0 0;
 width:{$tech_r_sidebar_width}%
 }
 CSS;
@@ -539,12 +516,12 @@ width: {$tech_page_width}{$tech_sign}
 .narrowcolumn {
 float:left;
 margin:0 1%;
-padding:0 0 20px 0;
+padding:25px 0 20px 0;
 width:{$tech_main_column_width}%;
 }
 #r_sidebar {
 float:right;
-padding:10px 2% 0 0;
+padding:25px 2% 0 0;
 width:{$tech_r_sidebar_width}%
 }
 CSS;
@@ -552,7 +529,7 @@ $tech_l_sidebar_width = $tech_l_sidebar_width - 2;
 $css_var .= <<<CSS
 #l_sidebar {
 float:left;
-padding:10px 0 0 2%;
+padding:25px 0 0 2%;
 width:{$tech_l_sidebar_width}%
 }
 CSS;
@@ -564,12 +541,12 @@ width: {$tech_page_width}{$tech_sign}
 .narrowcolumn {
 float:left;
 margin:0 1%;
-padding:0 0 20px 0;
+padding:25px 0 20px 0;
 width:{$tech_main_column_width}%;
 }
 #r_sidebar {
 float:left;
-padding:10px 2% 0 0;
+padding:25px 2% 0 0;
 width:{$tech_r_sidebar_width}%
 }
 CSS;
@@ -577,7 +554,7 @@ $tech_l_sidebar_width = $tech_l_sidebar_width - 2;
 $css_var .= <<<CSS
 #l_sidebar {
 float:left;
-padding:10px 0 0 2%;
+padding:25px 0 0 2%;
 width:{$tech_l_sidebar_width}%
 }
 CSS;
