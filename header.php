@@ -64,7 +64,6 @@ else { ?>
 	ul.comment-preview li:hover{ filter:alpha(opacity=100);}
         #commentform input[type="text"],#commentform .comment-form-author .required, 
         #commentform .comment-form-email .required{padding-left: 65px !important;}
-        .top:hover{bottom: -30px;}
         .top a {position: relative;top: 2px;}
 	</style>
 <![endif]-->
@@ -73,7 +72,12 @@ else { ?>
 	#headerimgwrap{ position:absolute;left:20%}
 	.hleft{position:absolute;}
 	.hright{position:absolute; right:0;}
-	
+	.top:hover {bottom: -30px;}
+	</style>
+<![endif]-->
+<!--[if IE 8 ]>
+	<style type="text/css">
+	.top:hover {bottom: -30px;}
 	</style>
 <![endif]-->
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />

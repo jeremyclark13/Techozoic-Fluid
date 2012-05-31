@@ -83,7 +83,7 @@ function optionsframework_options() {
 
         $options[] = array( "name" => __("Twitter","techozoic") . " - " . $twitter_followers,
                 "type" => "info",
-        	"desc" => "<a href='https://twitter.com/#!/search/realtime/%23techozoic%20from%3Aclarktechnet' title='Follow Development on Twitter' target='_blank'>Follow Development on Twitter</a> | <a href='https://twitter.com/intent/user?screen_name=clarktechnet' title='Follow Me on Twitter' target='_blank'>Follow Me on Twitter</a>");
+        	"desc" => "<a href='https://twitter.com/#!/search/realtime/techozoic%20from%3Aclarktechnet' title='Follow Development on Twitter' target='_blank'>Follow Development on Twitter</a> | <a href='https://twitter.com/intent/user?screen_name=clarktechnet' title='Follow Me on Twitter' target='_blank'>Follow Me on Twitter</a>");
     
         $options[] = array( 
                 "type" => "info",
@@ -93,7 +93,10 @@ function optionsframework_options() {
                 "type" => "info",
         	"desc" => $news_feed );
     
-       
+        $options[] = array("name" => __("Changelog - Version 2.0.8", "techozoic"),
+                "type" => "info",  
+                "desc" =>'IE dropdown menu bug fixed.<br />Added option to minify dynamic css.<br />Fixed virus warning for Chrome users.');
+        
        $options[] = array("name" => __("Changelog - Version 2.0.6", "techozoic"),
                 "type" => "info",  
                 "desc" =>'bbPress support added. (Version 2.0.2)<br />Register sidebars for bbPress pages option.<br />Pintrest Pin it button added.<br />Search bar moved into navigation menu<br />3.4 custom headers added<br /> Bug Fix - Typography size wasn\'t saving correctly due to issue with options framework now fixed.<br /> Bug Fix - Footer editor box rolled back to standard textarea, until framework supports it.<br />');
@@ -104,7 +107,7 @@ function optionsframework_options() {
                  
        $options[] = array("name" => __("Changelog - Version 2.0.4", "techozoic"),
                 "type" => "info",  
-                "desc" =>'Added two new navigation styles, Ribbon and Square. <br /> Added more color choices for navigation menus. <br /> Added ability to specify two Google Web fonts. <br /> New post author block on single post screens, if user bio is filled out on profile page it is displayed along with gravatar. <br />Romanian Translation Added,<img src="http://mobirout.com/uploads/ro.gif" alt="Romanian translation" /> Web Geek Science  (<a href="http://webhostinggeeks.com/">Web Hosting Geeks</a>)<br />');
+                "desc" =>'Added two new navigation styles, Ribbon and Square. <br /> Added more color choices for navigation menus. <br /> Added ability to specify two Google Web fonts. <br /> New post author block on single post screens, if user bio is filled out on profile page it is displayed along with gravatar. <br />Romanian Translation Added, Web Geek Science  (<a href="http://webhostinggeeks.com/">Web Hosting Geeks</a>)<br />');
        
        $options[] = array("name" => __("Changelog - Version 2.0.3", "techozoic"),
                 "type" => "info",  
@@ -310,7 +313,7 @@ if ( class_exists( 'bbPress' ) ) {
                 "type" => "radio",
                 "class" => "hidden",
                 "std" => "standard",
-                "options" => array('standard'=> __("Tabs","techozoic") ,'ribbon'=> __("Ribbon - Can only be left aligned","techozoic") , 'square' => __('Square',"techozoic")));
+                "options" => array('standard'=> __("Tabs","techozoic") ,'ribbon'=> __("Ribbon - Can only be left aligned","techozoic") , 'square' => __('Square - Can only be left aligned',"techozoic")));
         
         $options[] = array(	"name" => __("Log In/Out Links","techozoic"),
                 "desc" => __("Enable Dashboard and Log in/out links.","techozoic"),
@@ -738,6 +741,12 @@ if ( class_exists( 'bbPress' ) ) {
                 "std" => "",
                 "old_options" => '',
                 "type" => "textarea");
+
+        $options[] = array( 	"name" => __("Minify Dynamic CSS","techozoic"),
+                "desc" => __("Minifies Dynamic CSS before outputing.","techozoic"),
+                "id" => "minify",
+                "type" => "checkbox",
+                "std" => "0");         
         
         $options[] = array( 	"name" => __("Responsive CSS - Beta","techozoic"),
                 "desc" => __("Enable responsive CSS.  Allows site customizations to work even on smaller screens.","techozoic"),

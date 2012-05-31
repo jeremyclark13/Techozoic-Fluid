@@ -1,6 +1,6 @@
 === Techozoic Fluid ===
 Contributors: jeremyclark13
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=10998817
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2M9KFK4JHR6LW
 Tags: blue, light, one-column, two-columns, three-columns, flexible-width, custom-colors, custom-header, theme-options ,left-sidebar, right-sidebar, threaded-comments, translation-ready, sticky-post
 Requires at least: 3.3
 Tested up to: 3.4
@@ -36,6 +36,11 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+= Version 2.0.8 =
+* IE dropdown menu bug fixed.
+* Added option to minify dynamic css.
+* Fixed virus warning for Chrome users.
+
 = Version 2.0.6 =
 * bbPress support added. (Version 2.0.2)
 * Register sidebars for bbPress pages option.

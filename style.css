@@ -2,7 +2,7 @@
 Theme Name: Techozoic Fluid
 Theme URI: http://clark-technet.com/theme-support
 Description: Advanced, fluid width 2 or 3 column theme with widgetized sidebar, footer, and header areas.  Theme option pages to adjust everything from layout settings, color scheme, typography, ad placement, and custom headers.  SEO optimized titles and meta description and keyword fields.  Builtin social bookmarking, choose from 10 different popular social network and bookmarking sites to include.  Visit the <a href="themes.php?page=options-framework">theme options</a> page to setup Techozoic.  
-Version: 2.0.7
+Version: 2.0.8
 Author: Jeremy Clark
 Author URI: http://clark-technet.com
 Tags: blue, light, one-column, two-columns, three-columns, flexible-width, custom-colors, custom-header, theme-options ,left-sidebar, right-sidebar, threaded-comments, translation-ready, sticky-post, post-formats, left-sidebar, right-sidebar
@@ -973,23 +973,26 @@ Social Icons
 	-webkit-border-bottom-left-radius:3px;
 	-webkit-border-bottom-right-radius:3px;
 	-webkit-box-shadow:2px 2px 4px rgba(0,0,0,0.4);
-        -webkit-transition: all .5s ease 0s;
-        -moz-transition: all .2s ease 0s;
-        -o-transition: all .2s ease 0s;
-        transition: all .2s ease 0s;
+        -webkit-transition: all .5s ease 1s;
+        -moz-transition: all .2s ease 1s;
+        -o-transition: all .2s ease 1s;
+        transition: all .2s ease 1s;
 	background:url(images/top-arrow.png) bottom center no-repeat #E3E3E3;
 	float:right;
 	font-family:"Lucida Sans Unicode" , "Lucida Grande", Sans-Serif;
 	padding:7px 7px 10px;
 }
 .top:hover {
+        -webkit-transition: all .5s ease 0s;
+        -moz-transition: all .2s ease 0s;
+        -o-transition: all .2s ease 0s;
+        transition: all .2s ease 0s;
         -webkit-transform:translateY(26px);  
         -moz-transform:translateY(26px);  
         -o-transform:translateY(26px);
         -ms-transform: translateY(26px);
         transform:translateY(26px);
 }
-
 .top a{
 	opacity:.5;
         z-index: 1;
@@ -1078,7 +1081,9 @@ Social Icons
 /*************************************
 Nav Menus
  *************************************/
-
+#navwrap {
+        position: relative;
+}
 #dropdown, .top-menu{
 	line-height:16px;
 	list-style-image:none;
@@ -1094,7 +1099,6 @@ Nav Menus
 .ribbon .top-menu, .square .top-menu{
         padding-top: 0;
         line-height: 26px;
-
 }
 #dropdown a, .top-menu a{
 	color:#A0B3C2;
@@ -1121,9 +1125,11 @@ ul#dropdown > li, ul.top-menu > li{
 	margin: 0 2px;
 	position:relative;
         padding: 0 2px;
-        } 
+} 
 ul#dropdown li, ul.top-menu li{
     	display: inline-block;
+        zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
+	*display: inline;
 }
 
 .ribbon ul.top-menu > li, .square ul.top-menu > li{
@@ -1131,7 +1137,8 @@ ul#dropdown li, ul.top-menu li{
         -moz-border-radius:0;
         -webkit-border-radius:0;
         background-color: transparent ;
-        border-right: 1px solid #aaa;
+        border-right: 1px solid #AAAAAA;
+        border-left: 1px solid #EEEEEE;
         padding: 0 2px;
         min-height: 35px;
 }
@@ -1358,7 +1365,6 @@ ul#dropdown li, ul.top-menu li{
         margin-left: -10px;
         margin-right: -10px;
         border-top: 1px solid #bbb;
-        position: relative;
 }
 .square{
     margin-left: 0px;
@@ -1420,7 +1426,6 @@ Forms
 	font-size:.9em;
 	padding:0 3px;
 }
-
 #navmenu #searchform{
 	border-right:none;
 	display:block;

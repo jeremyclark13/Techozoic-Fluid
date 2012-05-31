@@ -621,6 +621,10 @@ CSS;
 }
 $css_var .= of_get_option('custom_styles','');
 $css_var .= '</style>';
-echo $css_var;
+if (of_get_option('minify', '1') == 1){
+    echo str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '',$css_var);
+} else {
+    echo $css_var;
+}
 }
 ?>
