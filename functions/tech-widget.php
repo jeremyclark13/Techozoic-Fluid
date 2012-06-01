@@ -55,8 +55,8 @@ function tech_widgets_init(){
             break;
         }elseif($page_option[$page->ID] == '1'){
             register_sidebar(array(
-                    'name'=>"$page->post_title Left Sidebar",
-                    'description' => __("Sidebar displayed only on $page->post_title.  Page ID($page->ID)",'techozoic'),
+                    'name'=>sprint(__('%s Left Sidebar','techozoic'),$page->post_title),
+                    'description' => sprintf(__('Sidebar displayed only on %1$s.  Page ID(%2$s)','techozoic'), $page->post_title, $page->ID),
                     'id'=> "page_sidebar_l_$page->ID",
                     'before_widget' => '<div class="hwidget %2$s">',
                     'after_widget' => '</div>',
@@ -64,8 +64,8 @@ function tech_widgets_init(){
                     'after_title' => '</h2>'
             ));
             register_sidebar(array(
-                    'name'=>"$page->post_title Right Sidebar",
-                    'description' => __("Sidebar displayed only on $page->post_title.  Page ID($page->ID)",'techozoic'),
+                    'name'=> sprint(__('%s Right Sidebar','techozoic'),$page->post_title),
+                    'description' => sprintf(__('Sidebar displayed only on %1$s.  Page ID(%2$s)','techozoic'), $page->post_title, $page->ID),
                     'id'=> "page_sidebar_r_$page->ID",
                     'before_widget' => '<div class="hwidget %2$s">',
                     'after_widget' => '</div>',
@@ -75,7 +75,7 @@ function tech_widgets_init(){
         }elseif($page_option['forum'] == '1'){
             register_sidebar(array(
                     'name'=>"Forums Left Sidebar",
-                    'description' => __("Sidebar displayed only on Forums.",'techozoic'),
+                    'description' => __('Sidebar displayed only on Forums.','techozoic'),
                     'id'=> "page_sidebar_l_forum",
                     'before_widget' => '<div class="hwidget %2$s">',
                     'after_widget' => '</div>',
@@ -84,7 +84,7 @@ function tech_widgets_init(){
             ));
             register_sidebar(array(
                     'name'=>"Forums Right Sidebar",
-                    'description' => __("Sidebar displayed only on Forums.",'techozoic'),
+                    'description' => __('Sidebar displayed only on Forums.','techozoic'),
                     'id'=> "page_sidebar_r_forum",
                     'before_widget' => '<div class="hwidget %2$s">',
                     'after_widget' => '</div>',

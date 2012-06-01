@@ -314,7 +314,7 @@ function tech_twitter_info($user = 'clarktechnet', $count = '3',$type = 'feed'){
 
         $output .="</ul>";
     } elseif ($type == 'followers') {
-        $output = $data->followers_count ." " . __("followers", "techozoic");
+        $output = $data->followers_count ." " . __('followers', 'techozoic');
     }   
     set_transient( $transient_key, $output, 21600 );
     
@@ -588,7 +588,7 @@ function techozoic_links_box() {
 			$rss_items = $rss->get_items(0, $maxitems); 
 			$output ='<ul>';
 			if (isset($maxitems) && $maxitems == 0) {
-				$output .= '<li>' . __("No News.","techozoic") . '</li>';
+				$output .= '<li>' . __('No News.','techozoic') . '</li>';
 			} else {
 				// Loop through each feed item and display each item as a hyperlink.
 				foreach ( $rss_items as $item ) { 
