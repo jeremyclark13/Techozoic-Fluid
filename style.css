@@ -396,7 +396,6 @@ ul.comment-preview li:hover{
 	line-height:1.7em;
 	margin-top:4px;
 	padding:2px 4px 1px;
-	float:right;
 	width:98%;
 }
 
@@ -460,7 +459,6 @@ ul.comment-preview li:hover{
 
 .post{
 	margin:0 0 40px;
-	float:left;
 	width:100%;
         position: relative;
 }
