@@ -36,6 +36,10 @@ Installation can be done automatically through the Install Themes feature or man
 [Techozoic Fluid](http://techozoic.clark-technet.com/ "Techozoic Fluid theme site")
 
 == Changelog ==
+= Version 2.0.9 =
+* Added Twitter Feed widget.
+* Updated Options Framework to latest version.
+
 = Version 2.0.8 =
 * IE dropdown menu bug fixed.
 * Added option to minify dynamic css.

@@ -4,7 +4,7 @@ Description: A framework for building theme options.
 Author: Devin Price
 Author URI: http://www.wptheming.com
 License: GPLv2
-Version: 1.0
+Version: 1.1
 */
 
 /*
@@ -103,9 +103,15 @@ function optionsframework_init() {
 	}
 	
 	// Registers the settings fields and callback
-        if (!isset( $_POST['OptionsFramework-backup-import'] )) {
-            register_setting( 'optionsframework', $option_name, 'optionsframework_validate' );
-        }
+	register_setting( 'optionsframework', $option_name, 'optionsframework_validate' );
+	
+	// Change the capability required to save the 'optionsframework' options group.
+	add_filter( 'option_page_capability_optionsframework', 'optionsframework_page_capability' );
+	
+	//Load Import/Export settings
+	if (!isset( $_POST['OptionsFramework-backup-import'] )) {
+		register_setting( 'optionsframework', $option_name, 'optionsframework_validate' );
+	}	
 }
 
 /**
@@ -187,7 +193,7 @@ if ( !function_exists( 'optionsframework_add_page' ) ) {
 /* Loads the CSS */
 
 function optionsframework_load_styles() {
-	wp_enqueue_style('admin-style', OPTIONS_FRAMEWORK_DIRECTORY.'css/admin-style.css');
+	wp_enqueue_style('optionsframework', OPTIONS_FRAMEWORK_DIRECTORY.'css/optionsframework.css');
 	wp_enqueue_style('color-picker', OPTIONS_FRAMEWORK_DIRECTORY.'css/colorpicker.css');
 }	
 
@@ -244,8 +250,8 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 		<?php optionsframework_fields(); /* Settings */ ?>
 
         <div id="optionsframework-submit">
-			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options','techozoic' ); ?>" />
-            <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults','techozoic' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!','techozoic' ) ); ?>' );" />
+			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'options_framework_theme' ); ?>" />
+            <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'options_framework_theme' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'options_framework_theme' ) ); ?>' );" />
             <div class="clear"></div>
 		</div>
 	</form>
@@ -277,7 +283,7 @@ function optionsframework_validate( $input ) {
 	 */
 	 
 	if ( isset( $_POST['reset'] ) ) {
-		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'techozoic' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'options_framework_theme' ), 'updated fade' );
 		return of_get_default_values();
 	}
 
@@ -318,7 +324,7 @@ function optionsframework_validate( $input ) {
 			}
 		}
 
-		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'techozoic' ), 'updated fade' );
+		add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'options_framework_theme' ), 'updated fade' );
 		return $clean;
 	}
 
@@ -345,10 +351,8 @@ function optionsframework_validate( $input ) {
  
 function of_get_default_values() {
 	$output = array();
-        $prev_settings = get_option('techozoic_options');
 	$config = optionsframework_options();
 	foreach ( (array) $config as $option ) {
-            $setting = '';
 		if ( ! isset( $option['id'] ) ) {
 			continue;
 		}
@@ -359,42 +363,8 @@ function of_get_default_values() {
 			continue;
 		}
 		if ( has_filter( 'of_sanitize_' . $option['type'] ) ) {
-                    if( isset($option['old_options']) && $prev_settings){
-                        if ( $option['type'] == 'select'){
-                            $setting = $option['old_options'];
-                            $output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $setting[$prev_settings[$option['id']]], $option);
-                        } elseif ($option['type'] == 'radio'){    
-                            $setting = $option['old_options'];
-                            $output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $setting[$prev_settings[$option['id']]], $option);
-                        } elseif ($option['type'] == 'checkbox'){
-                            $setting = $option['old_options'];
-                            $output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $setting[$prev_settings[$option['id']]] , $option);
-                        } elseif ($option['type'] == 'multicheck'){
-                            $setting = $option['old_options'];
-                            $output_array = array();
-                            $prev_option = explode( ',', $prev_settings[$option['id']]);
-                            foreach($setting as $set => $val){
-                                if (in_array($set, $prev_option)){
-                                    $output_array[$val] = '1';
-                                }
-                            }
-                            $output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $output_array , $option);
-                        } elseif ($option['type'] == 'images'){
-                            $setting = $option['old_options'];
-                            $output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $setting[$prev_settings[$option['id']]] , $option);
-                        } else {
-                            $output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $prev_settings[$option['id']], $option);
-                        }
-                    } else{
 			$output[$option['id']] = apply_filters( 'of_sanitize_' . $option['type'], $option['std'], $option );
 		}
-	}
-                if ($option['type'] == 'color' && $prev_settings) {
-                    $output[$option['id']] = '#' . $prev_settings[$option['id']];
-                }
-                if($prev_settings){
-                    delete_option('techozoic_options');
-                }
 	}
 	return $output;
 }
@@ -410,7 +380,7 @@ function optionsframework_adminbar() {
 	$wp_admin_bar->add_menu( array(
 			'parent' => 'appearance',
 			'id' => 'of_theme_options',
-		'title' => __( 'Techozoic Settings','techozoic' ),
+			'title' => __( 'Theme Options', 'options_framework_theme' ),
 			'href' => admin_url( 'themes.php?page=options-framework' )
 		));
 }

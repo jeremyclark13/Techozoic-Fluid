@@ -677,7 +677,7 @@ a,
 
 .sidebar ul ul li{
 	color:#777;
-	margin:3px 0 0;
+	margin:5px 0 0;
 	padding:0;
 }
 
@@ -955,8 +955,8 @@ Social Icons
  *************************************/
 .top{
         position: absolute;
-        bottom: -10px;
-        right: 4px;
+        bottom: -15px;
+        right: 10px;
         z-index: 0;
         height: 20px;
         line-height: 26px;
@@ -985,11 +985,11 @@ Social Icons
         -moz-transition: all .2s ease 0s;
         -o-transition: all .2s ease 0s;
         transition: all .2s ease 0s;
-        -webkit-transform:translateY(26px);  
-        -moz-transform:translateY(26px);  
-        -o-transform:translateY(26px);
-        -ms-transform: translateY(26px);
-        transform:translateY(26px);
+        -webkit-transform:translateY(21px);  
+        -moz-transform:translateY(21px);  
+        -o-transform:translateY(21px);
+        -ms-transform: translateY(21px);
+        transform:translateY(21px);
 }
 .top a{
 	opacity:.5;
@@ -1780,9 +1780,22 @@ code{
 	font:1.1em 'Courier New', Courier, Fixed;
 }
 
-.clear{
-        clear:both;
+/* For modern browsers */
+.clear:before,
+.clear:after {
+    content:"";
+    display:table;
 }
+
+.clear:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.clear {
+    *zoom:1;
+}
+
 dd{
 	font-style:italic;
 	margin-left:5px;

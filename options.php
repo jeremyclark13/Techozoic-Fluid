@@ -34,7 +34,7 @@ function admin_screen_help () {
     $screen->add_help_tab(array(
         'id'        => 'of_options_page_help',
         'title'     =>  __( 'Techozoic Support', 'techozoic' ),
-        'content'   => '<p><strong>' . sprintf(__( 'Looking for assistance? Please visit the <a href="%1$s">support forums</a>, refer to the <a href="%2$s">documentation</a>, or the <a href="%3$s">FAQ</a>.' ),'http://clark-technet.com/theme-support/techozoic','http://techozoic.clark-technet.com/documentation/','http://techozoic.clark-technet.com/documentation/faq/') . '</strong></p>'
+        'content'   => '<p><strong>' . sprintf(__( 'Looking for assistance? Please visit the <a href="%1$s">support forums</a>, refer to the <a href="%2$s">documentation</a>, or the <a href="%3$s">FAQ</a>.  <br /><a href="%4$s">Open an issue on Github</a>' ),'http://clark-technet.com/theme-support/techozoic','http://techozoic.clark-technet.com/documentation/','http://techozoic.clark-technet.com/documentation/faq/','https://github.com/jeremyclark13/Techozoic-Fluid/issues') . '</strong></p>'
         ));
 } 
 
@@ -74,13 +74,13 @@ function optionsframework_options() {
 		
 	$options = array();
         
-       $options[] = array( "name"=>__('About','techozoic'),
+        $options[] = array( "name"=>__('About','techozoic'),
                 "type"=> "heading");
        
-       $options[] = array( "name" => __('Donate to help further development','techozoic'),
+        $options[] = array( "name" => __('Donate to help further development','techozoic'),
                 "type" => "info",
         	"desc" => "<a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2M9KFK4JHR6LW' title='Donate Securely' target='_blank' ><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' /></a>");
-
+       
         $options[] = array( "name" => __('Twitter','techozoic') . " - " . $twitter_followers,
                 "type" => "info",
         	"desc" => "<a href='https://twitter.com/#!/search/realtime/techozoic%20from%3Aclarktechnet' title='Follow Development on Twitter' target='_blank'>Follow Development on Twitter</a> | <a href='https://twitter.com/intent/user?screen_name=clarktechnet' title='Follow Me on Twitter' target='_blank'>Follow Me on Twitter</a>");
@@ -92,7 +92,12 @@ function optionsframework_options() {
         $options[] = array( "name" => __('Techozoic News','techozoic'),
                 "type" => "info",
         	"desc" => $news_feed );
-    
+
+        $options[] = array("name" => __('Changelog - Version 2.0.9', 'techozoic'),
+                "type" => "info",  
+                "desc" =>'Added Twitter Feed widget.  <br />Updated Options Framework to latest version.');
+            
+        
         $options[] = array("name" => __('Changelog - Version 2.0.8', 'techozoic'),
                 "type" => "info",  
                 "desc" =>'IE dropdown menu bug fixed.<br />Added option to minify dynamic css.<br />Fixed virus warning for Chrome users.');

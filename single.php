@@ -17,12 +17,11 @@ if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || 
 if (have_posts()) {
 	while (have_posts()) {
 		the_post(); ?>
-		<div class="navigation">
+		<div class="navigation clear">
 			<div class="alignleft"><?php previous_post_link('&laquo; %link') ?></div>
 			<div class="alignright"><?php next_post_link('%link &raquo;') ?></div>
 		</div>
-		<div style="clear:both"></div>
-		<div class="post" id="post-<?php the_ID(); ?>">
+		<div <?php post_class('clear'); ?> id="post-<?php the_ID(); ?>">
                 <div class="toppost">
 		<a href="<?php echo home_url(); ?>" title="<?php printf(__('Go back to %s','techozoic'), get_bloginfo('name')); ?>" class="social homelink"></a>&nbsp;<?php if (tech_icons('single')){ tech_social_icons($home=false); } ?>
 		</div>

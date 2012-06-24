@@ -31,7 +31,7 @@ if (of_get_option('home_sidebar','1') == "1")  tech_show_sidebar("l");
 
 <?php           } 
            }?>		
-<div class="navigation">
+<div class="navigation clear">
 	<div class="alignleft"><?php next_posts_link(__('&laquo; Older Entries' , 'techozoic')) ?></div>
 	<div class="alignright"><?php previous_posts_link(__('Newer Entries &raquo;' , 'techozoic')) ?></div>
 </div>

@@ -20,8 +20,8 @@
 */
  
 if ( !function_exists( 'optionsframework_init' ) ) {
-define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_bloginfo('template_directory') . '/admin/' );
-require_once dirname( __FILE__ ) . '/admin/options-framework.php';
+    define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+    require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 }
 
 if ( class_exists( 'bbPress' ) ) {
@@ -31,6 +31,8 @@ if ( class_exists( 'bbPress' ) ) {
 include(get_template_directory() . '/functions/tech-meta-box.php');
 // Loads custom meta boxes on single post and page edit screen
 
+include(get_template_directory() . '/functions/tech-twitter.php');
+// Loads functions for pulling twitter feeds
 
 if (!isset($content_width)) {
         $content_width = tech_content_width();
@@ -234,93 +236,6 @@ function techozoic_theme_logo(){
 </style>
 <?php
 }
-
-/**
-* Techozoic twitter feed
-*
-*  
-*
-* @param string $user user of twitter feed to retrieve.
-* @param string $count number of tweets to retrive.
-* @param string $type type of info to retrive.
-* 
-* Inspiration for code:
-* Chip Bennet's oenology theme https://github.com/chipbennett/oenology and
-* catswhocode http://www.catswhocode.com/blog/snippets/grab-tweets-from-twitter-feed
-* 
-* @return string of formatted API data
-*/
-
-function tech_twitter_info($user = 'clarktechnet', $count = '3',$type = 'feed'){
-    if ($type == 'feed'){
-        // Build Twitter api url
-        $apiurl = "http://api.twitter.com/1/statuses/user_timeline/{$user}.json?count={$count}";
-        //cache request
-        $transient_key = "tech_" . $user . "_twitter";
-    } elseif ($type == 'followers'){
-        // Build Twitter api url
-        $apiurl = "http://api.twitter.com/1/users/show.json?screen_name={$user}";
-        //cache request
-        $transient_key = "tech_" . $user . "_twitter_follow"; 
-    }    
-    $i = 1;
-    // If cached (transient) data are used, output an HTML
-    // comment indicating such
-    $cached = get_transient( $transient_key );
-
-    if ( false !== $cached ) {
-        return $cached;
-    }
-
-    // Request the API data, using the constructed URL
-    $remote = wp_remote_get( esc_url( $apiurl ) );
-
-    // If the API data request results in an error, return
-    // an appropriate comment
-    if ( is_wp_error( $remote ) ) {
-        return '<p>' . __('Twitter unaviable','techozoic') . '</p>';
-    }
-
-    // If the API returns a server error in response, output
-    // an error message indicating the server response.
-    if ( '200' != $remote['response']['code'] ) {
-        return '<p>' . __('Twitter responded with an HTTP status code of ') . esc_html( $remote['response']['code'] ) . '.</p>';
-    }
-
-    // If the API returns a valid response, the data will be
-    // json-encoded; so decode it.
-    $data = json_decode( $remote['body'] );
-    if ($type == 'feed'){
-        $output = '<ul>';
-
-        while ($i <= $count){
-            //Assign feed to $feed
-            if(isset($data[$i-1])){
-                $feed = $data[($i-1)]->text;
-                //Find location of @ in feed
-                $feed = str_pad($feed, 3, ' ', STR_PAD_LEFT);   //pad feed
-                $startat = stripos($feed, '@');
-                $numat = substr_count($feed, '@');
-                $numhash = substr_count($feed, '#');
-                $numhttp = substr_count($feed, 'http');
-                $feed = preg_replace("#(^|[\n ])([\w]+?://[\w]+[^ \"\n\r\t< ]*)#", "\\1<a href=\"\\2\" target=\"_blank\">\\2</a>", $feed);
-                $feed = preg_replace("#(^|[\n ])((www|ftp)\.[^ \"\t\n\r< ]*)#", "\\1<a href=\"http://\\2\" target=\"_blank\">\\2</a>", $feed);
-                $feed = preg_replace("/@(\w+)/", "<a href=\"http://www.twitter.com/\\1\" target=\"_blank\">@\\1</a>", $feed);
-                $feed = preg_replace("/#(\w+)/", "<a href=\"http://search.twitter.com/search?q=\\1\" target=\"_blank\">#\\1</a>", $feed);
-                $output .= "<li class='tweet'>" . $feed . " - <em>" . date("M - j",strtotime($data[($i-1)]->created_at)) . "</em></li>";
-            }
-            $i++;        
-        }
-
-        $output .="</ul>";
-    } elseif ($type == 'followers') {
-        $output = $data->followers_count ." " . __('followers', 'techozoic');
-    }   
-    set_transient( $transient_key, $output, 21600 );
-    
-    return $output;
-}
-
 
 /**
  * Techozoic mobile css
@@ -600,8 +515,9 @@ function techozoic_links_box() {
 	$output .= "<strong>" . __('Techozoic Links','techozoic') . "</strong>
 	<ul>
 		<li><a href='http://clark-technet.com/theme-support/techozoic'>" . __('Support Forum','techozoic') . "</a></li>
-		<li><a href='http://techozoic.clark-technet.com/documentation/'>" . __('Documentation','techozoic') . "</a></li>
-		<li><a href='http://techozoic.clark-technet.com/documentation/faq/'>" . __('FAQ','techozoic') . "</a></li>
+                <li><a href='https://github.com/jeremyclark13/Techozoic-Fluid/issues'>" . __('Open a Bug Report', 'techozoic') . "</a></li>		
+                <li><a href='http://techozoic.clark-technet.com/documentation/'>" . __('Documentation','techozoic') . "</a></li>
+		<li><a href='http://techozoic.clark-technet.com/documentation/faq/'>" . __('FAQ','techozoic') . "</a></li>  
         </ul>";
 	return $output;
 }
@@ -780,7 +696,7 @@ function tech_menu_fallback(){
 
 
 if ( is_active_widget(false ,false, 'techozoic_font_size') ) {
-	add_action('template_redirect', 'tech_font_size_script');
+	add_action('wp_footer', 'tech_font_size_script');
 }
 	
 function tech_font_size_script() {

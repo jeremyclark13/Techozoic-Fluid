@@ -1,5 +1,5 @@
 /*-------------------------------------------------------------------------------------------*/
-/* OptionsFramework Admin Styles */
+/* Options Framework Admin Styles */
 /*-------------------------------------------------------------------------------------------*/
 
 .updated {
@@ -18,6 +18,7 @@
 #optionsframework p {
 	margin-bottom:0;
 	padding-bottom:10px;
+	line-height: 1.4em;
 }
 #optionsframework .section {
 	padding:10px 10px 0;
@@ -53,9 +54,6 @@
 	min-width:125px;
 	width:125px
 }
-#optionsframework .section-editor .explain{
-        max-width:100%;
-}
 #optionsframework .controls input, #optionsframework .controls select, #optionsframework .controls textarea {
 	margin-bottom:10px;
 	width:100%;
@@ -68,6 +66,7 @@
 }
 #optionsframework input.checkbox, #optionsframework input.of-radio {
 	width: 30px;
+	margin-top:2px;
 	float:left;
 	clear:both;
 }
@@ -162,6 +161,7 @@
 /* Editor */
 
 #optionsframework .section-editor .explain {
+	max-width: 98%;
 	float:none;
 	margin-bottom:5px;
 }
@@ -243,4 +243,11 @@
 }
 #optionsframework .section:after {
 	clear: both;
+}
+li.tweet{
+    padding-bottom: 5px;
+}
+li.tweet ul{
+    padding: 10px 10px 5px;
+    list-style: disc inside none;
 }

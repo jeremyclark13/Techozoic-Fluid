@@ -16,7 +16,7 @@
 <?php                   
                         } else {    
 ?>                            
-			<div class="heading">
+			<div class="heading clear">
 <?php                   if (is_home()){ ?>                            
                             <div class="post_date">
                             <div class="month_post"><?php the_time('M') ?></div>    
@@ -26,7 +26,7 @@
 <?php                   } ?>                        
 			<h2 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf(__('Permanent Link to %s','techozoic'), get_the_title()); ?>"><?php if( get_the_title() ) { the_title(); } else{ _e('Read More &hellip;','techozoic'); } ?></a></h2>	
 			<small><?php _e('By' , 'techozoic') ?> <?php the_author() ?>&nbsp;|&nbsp;<?php printf(__('Filed in %s' , 'techozoic'), get_the_category_list(', ')) ?><?php edit_post_link(__('&nbsp;|&nbsp; Edit.','techozoic'), '', ''); ?></small>
-			</div><div style="clear:both"></div>
+			</div>
                         <?php if ($post->post_content!=""){ ?>
                             <div class="entry">
 <?php                       if(function_exists('the_post_thumbnail')) { the_post_thumbnail('thumbnail'); }?>

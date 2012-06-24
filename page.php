@@ -15,7 +15,7 @@ if ((of_get_option('single_sidebar','0') == "1" && $tech_sidebar == "unset") || 
 		while (have_posts()) { 
 			the_post(); 
 ?>
-			<div class="post" id="post-<?php the_ID(); ?>">
+			<div <?php post_class('post clear'); ?> id="post-<?php the_ID(); ?>">
 			<div class="singlepost entry">
 <?php 			if(function_exists('the_post_thumbnail')) the_post_thumbnail(); 
  			the_content('<p class="serif">'.__('Read the rest of this page','techozoic'). '&raquo;</p>'); 
