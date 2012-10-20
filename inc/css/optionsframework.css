@@ -244,10 +244,3 @@
 #optionsframework .section:after {
 	clear: both;
 }
-li.tweet{
-    padding-bottom: 5px;
-}
-li.tweet ul{
-    padding: 10px 10px 5px;
-    list-style: disc inside none;
-}

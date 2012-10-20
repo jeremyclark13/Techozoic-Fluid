@@ -1,6 +1,6 @@
 === Techozoic Fluid ===
 Contributors: jeremyclark13
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=2M9KFK4JHR6LW
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q2UB936PZYYZ6
 Tags: blue, light, one-column, two-columns, three-columns, flexible-width, custom-colors, custom-header, theme-options ,left-sidebar, right-sidebar, threaded-comments, translation-ready, sticky-post
 Requires at least: 3.3
 Tested up to: 3.4

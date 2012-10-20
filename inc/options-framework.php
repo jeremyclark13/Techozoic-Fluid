@@ -4,7 +4,7 @@ Description: A framework for building theme options.
 Author: Devin Price
 Author URI: http://www.wptheming.com
 License: GPLv2
-Version: 1.1
+Version: 1.3
 */
 
 /*
@@ -111,7 +111,7 @@ function optionsframework_init() {
 	//Load Import/Export settings
 	if (!isset( $_POST['OptionsFramework-backup-import'] )) {
 		register_setting( 'optionsframework', $option_name, 'optionsframework_validate' );
-	}	
+}
 }
 
 /**
@@ -236,41 +236,39 @@ if ( !function_exists( 'optionsframework_page' ) ) {
 		settings_errors();
 ?>
 
-	<div class="wrap">
+	<div id="optionsframework-wrap" class="wrap">
     <?php screen_icon( 'themes' ); ?>
     <h2 class="nav-tab-wrapper">
         <?php echo optionsframework_tabs(); ?>
     </h2>
 
-    <div class="metabox-holder">
-    <div id="optionsframework" class="postbox">
-		<form action="options.php" method="post">
-		<?php settings_fields('optionsframework'); ?>
-
-		<?php optionsframework_fields(); /* Settings */ ?>
-
-        <div id="optionsframework-submit">
-			<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'options_framework_theme' ); ?>" />
-            <input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'options_framework_theme' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'options_framework_theme' ) ); ?>' );" />
-            <div class="clear"></div>
-		</div>
-	</form>
-</div> <!-- / #container -->
-</div>
-</div> <!-- / .wrap -->
-
+    <div id="optionsframework-metabox" class="metabox-holder">
+	    <div id="optionsframework" class="postbox">
+			<form action="options.php" method="post">
+			<?php settings_fields('optionsframework'); ?>
+			<?php optionsframework_fields(); /* Settings */ ?>
+			<div id="optionsframework-submit">
+				<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options', 'optionsframework' ); ?>" />
+				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults', 'optionsframework' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!', 'options_framework_theme' ) ); ?>' );" />
+				<div class="clear"></div>
+			</div>
+			</form>
+		</div> <!-- / #container -->
+	</div>
+	<?php do_action('optionsframework_after'); ?>
+	</div> <!-- / .wrap -->
+	
 <?php
 	}
 }
 
-/** 
+/**
  * Validate Options.
  *
  * This runs after the submit/reset button has been clicked and
  * validates the inputs.
  *
- * @uses $_POST['reset']
- * @uses $_POST['update']
+ * @uses $_POST['reset'] to restore default options
  */
 function optionsframework_validate( $input ) {
 
@@ -281,17 +279,19 @@ function optionsframework_validate( $input ) {
 	 * button, the options defined in the theme's options.php
 	 * file will be added to the option for the active theme.
 	 */
-	 
+
 	if ( isset( $_POST['reset'] ) ) {
 		add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'options_framework_theme' ), 'updated fade' );
 		return of_get_default_values();
-	}
-
+	} else {
+	
 	/*
-	 * Udpdate Settings.
+	 * Update Settings
+	 *
+	 * This used to check for $_POST['update'], but has been updated
+	 * to be compatible with the theme customizer introduced in WordPress 3.4
 	 */
-	 
-	if ( isset( $_POST['update'] ) ) {
+
 		$clean = array();
 		$options = optionsframework_options();
 		foreach ( $options as $option ) {
@@ -308,13 +308,13 @@ function optionsframework_validate( $input ) {
 
 			// Set checkbox to false if it wasn't sent in the $_POST
 			if ( 'checkbox' == $option['type'] && ! isset( $input[$id] ) ) {
-				$input[$id] = '0';
+				$input[$id] = false;
 			}
 
 			// Set each item in the multicheck to false if it wasn't sent in the $_POST
 			if ( 'multicheck' == $option['type'] && ! isset( $input[$id] ) ) {
 				foreach ( $option['options'] as $key => $value ) {
-					$input[$id][$key] = '0';
+					$input[$id][$key] = false;
 				}
 			}
 
@@ -328,11 +328,6 @@ function optionsframework_validate( $input ) {
 		return $clean;
 	}
 
-	/*
-	 * Request Not Recognized.
-	 */
-	
-	return of_get_default_values();
 }
 
 /**
@@ -411,3 +406,4 @@ if ( ! function_exists( 'of_get_option' ) ) {
 		return $default;
 	}
 }
+?>

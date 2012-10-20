@@ -16,7 +16,7 @@ $meta_box = array(
                 'on', 'off'
             )
         ),
-	array(
+        array(
             'name' => 'Nav',
             'id' => 'Nav_value',
             'type' => 'select',
@@ -29,9 +29,10 @@ $meta_box = array(
     )
 );
 
-if (of_get_option('single_sidebar', '0') == '0'){
-    $meta_box['fields'][0]['options'] = array('off','on');
+if ( of_get_option( 'single_sidebar', '0' ) == '0' ) {
+    $meta_box['fields'][0]['options'] = array( 'off', 'on' );
 }
+
 /**
  * Techozoic meta boxes
  *
@@ -41,23 +42,22 @@ if (of_get_option('single_sidebar', '0') == '0'){
  * @access    private
  * @since     1.8.6
  */
-
-function tech_new_meta_boxes($post) {
+function tech_new_meta_boxes( $post ) {
     global $meta_box, $post;
-    
+
     // Use nonce for verification
-    echo '<input type="hidden" name="techozoic_meta_box_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
-    
+    echo '<input type="hidden" name="techozoic_meta_box_nonce" value="', wp_create_nonce( basename( __FILE__ ) ), '" />';
+
     echo '<table class="form-table">';
 
-    foreach ($meta_box['fields'] as $field) {
+    foreach ( $meta_box['fields'] as $field ) {
         // get current post meta data
-        $meta = get_post_meta($post->ID, $field['id'], true);
-        
+        $meta = get_post_meta( $post->ID, $field['id'], true );
+
         echo '<tr>',
-                '<th><label for="', $field['id'], '">', $field['title'], '</label></th>',
-                '<td>';
-        switch ($field['type']) {
+        '<th><label for="', $field['id'], '">', $field['title'], '</label></th>',
+        '<td>';
+        switch ( $field['type'] ) {
             case 'text':
                 echo '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width:97%" />', '
 ', $field['desc'];
@@ -68,13 +68,13 @@ function tech_new_meta_boxes($post) {
                 break;
             case 'select':
                 echo '<select name="', $field['id'], '" id="', $field['id'], '" style="width: 50px;">';
-                foreach ($field['options'] as $option) {
+                foreach ( $field['options'] as $option ) {
                     echo '<option', $meta == $option ? ' selected="selected"' : '', '>', $option, '</option>';
                 }
                 echo '</select>';
                 break;
             case 'radio':
-                foreach ($field['options'] as $option) {
+                foreach ( $field['options'] as $option ) {
                     echo '<input type="radio" name="', $field['id'], '" value="', $option['value'], '"', $meta == $option['value'] ? ' checked="checked"' : '', ' />', $option['name'];
                 }
                 break;
@@ -82,15 +82,14 @@ function tech_new_meta_boxes($post) {
                 echo '<input type="checkbox" name="', $field['id'], '" id="', $field['id'], '"', $meta ? ' checked="checked"' : '', ' />';
                 break;
         }
-        echo	'<td>',
-				'<tr><td colspan="3">',$field['description'],'</td></tr>',
-				'</tr>';
+        echo '<td>',
+        '<tr><td colspan="3">', $field['description'], '</td></tr>',
+        '</tr>';
     }
-    
-    echo '</table>';
 
+    echo '</table>';
 }
- 
+
 /**
  * Techozoic create meta boxes
  *
@@ -100,13 +99,12 @@ function tech_new_meta_boxes($post) {
  * @access    private
  * @since     1.8.6
  */
-
-add_action('add_meta_boxes', 'tech_create_meta_box');  	// Creates custom meta box for disabling sidebar on page by page basis
+add_action( 'add_meta_boxes', 'tech_create_meta_box' );   // Creates custom meta box for disabling sidebar on page by page basis
 
 function tech_create_meta_box() {
-	global $meta_box;
-	add_meta_box($meta_box['id'], $meta_box['title'], 'tech_new_meta_boxes', 'post', $meta_box['context'], $meta_box['priority']);
-	add_meta_box($meta_box['id'], $meta_box['title'], 'tech_new_meta_boxes', 'page', $meta_box['context'], $meta_box['priority']);
+    global $meta_box;
+    add_meta_box( $meta_box['id'], $meta_box['title'], 'tech_new_meta_boxes', 'post', $meta_box['context'], $meta_box['priority'] );
+    add_meta_box( $meta_box['id'], $meta_box['title'], 'tech_new_meta_boxes', 'page', $meta_box['context'], $meta_box['priority'] );
 }
 
 /**
@@ -120,42 +118,42 @@ function tech_create_meta_box() {
  * @access    private
  * @since     1.8.6
  */
-
-add_action('save_post', 'tech_save_postdata');  // Saves meta box data to postmeta table
+add_action( 'save_post', 'tech_save_postdata' );  // Saves meta box data to postmeta table
 
 function tech_save_postdata( $post_id ) {
     global $meta_box;
-    
+
     // verify nonce
-	if (isset($_POST['techozoic_meta_box_nonce'])){
-		if (!wp_verify_nonce($_POST['techozoic_meta_box_nonce'], basename(__FILE__))) {
-		   return $post_id;
-		}
+    if ( isset( $_POST['techozoic_meta_box_nonce'] ) ) {
+        if ( !wp_verify_nonce( $_POST['techozoic_meta_box_nonce'], basename( __FILE__ ) ) ) {
+            return $post_id;
+        }
 
-		// check autosave
-		if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
-			return $post_id;
-		}
+        // check autosave
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+            return $post_id;
+        }
 
-		// check permissions
-		if ('page' == $_POST['post_type']) {
-			if (!current_user_can('edit_page', $post_id)) {
-				return $post_id;
-			}
-		} elseif (!current_user_can('edit_post', $post_id)) {
-			return $post_id;
-		}
-		
-		foreach ($meta_box['fields'] as $field) {
-			$old = get_post_meta($post_id, $field['id'], true);
-			$new = $_POST[$field['id']];
-			
-			if ($new && $new != $old) {
-				update_post_meta($post_id, $field['id'], $new);
-			} elseif ('' == $new && $old) {
-				delete_post_meta($post_id, $field['id'], $old);
-			}
-		}
-	}
+        // check permissions
+        if ( 'page' == $_POST['post_type'] ) {
+            if ( !current_user_can( 'edit_page', $post_id ) ) {
+                return $post_id;
+            }
+        } elseif ( !current_user_can( 'edit_post', $post_id ) ) {
+            return $post_id;
+        }
+
+        foreach ( $meta_box['fields'] as $field ) {
+            $old = get_post_meta( $post_id, $field['id'], true );
+            $new = $_POST[$field['id']];
+
+            if ( $new && $new != $old ) {
+                update_post_meta( $post_id, $field['id'], $new );
+            } elseif ( '' == $new && $old ) {
+                delete_post_meta( $post_id, $field['id'], $old );
+            }
+        }
+    }
 }
+
 ?>

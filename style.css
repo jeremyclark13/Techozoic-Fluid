@@ -39,7 +39,6 @@ body{
         -moz-border-radius: 10px;
         border-radius: 10px;
 }
-
 #content{
 	color:#2C4353;
 	font-size:1em;
@@ -1923,19 +1922,45 @@ WP-Classes
 
 .wp-caption, .gallery-caption{
         border-radius:3px;
-        box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
 	-moz-border-radius:3px;
-	-moz-box-shadow:2px 2px 6px rgba(0, 0, 0, 0.4);
 	-webkit-border-radius:3px;
-	-webkit-box-shadow:2px 2px 6px rgba(0,0,0,0.4);
 	background-color:#f7f7f7;
 	border:1px solid #444;
 	padding:3px;
 	text-align:center;
         max-width:95%;
         height: auto;
+        margin-bottom: 15px;
+        position: relative;
 }
-
+.wp-caption:before, .wp-caption:after {  
+    position: absolute;  
+    width: 50%;  
+    height: 10px;  
+    content: ' ';  
+    left: 12px;  
+    bottom: 12px;  
+    background: transparent;  
+    -webkit-transform: skew(-5deg) rotate(-5deg);  
+    -moz-transform: skew(-5deg) rotate(-5deg);  
+    -ms-transform: skew(-5deg) rotate(-5deg);  
+    -o-transform: skew(-5deg) rotate(-5deg);  
+    transform: skew(-5deg) rotate(-5deg);  
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);  
+    -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);  
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);  
+    z-index: -1;  
+}  
+.wp-caption:after  
+{  
+    left: auto;  
+    right: 12px;  
+    -webkit-transform: skew(5deg) rotate(5deg);  
+    -moz-transform: skew(5deg) rotate(5deg);  
+    -ms-transform: skew(5deg) rotate(5deg);  
+    -o-transform: skew(5deg) rotate(5deg);  
+    transform: skew(5deg) rotate(5deg);  
+}
 .wp-caption img{
         box-shadow:none;
 	-moz-box-shadow:none;
