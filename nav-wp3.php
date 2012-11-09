@@ -18,16 +18,16 @@ if ( ($tech_nav == "on") && (of_get_option( 'nav_menu', '1' ) == '1') ) {
                     ?>
                     <ul id="admin"><li><a href="<?php echo site_url(); ?>/wp-admin" title="<?php _e( 'Dashboard', 'techozoic' ) ?>"><?php _e( 'Dashboard', 'techozoic' ) ?></a></li>
                         <li><a href="<?php echo wp_logout_url(); ?>" title="<?php _e( 'Log Out', 'techozoic' ) ?>"><?php _e( 'Log Out', 'techozoic' ) ?></a></li></ul>
-                            <?php } else {
-                            ?>
+                <?php } else {
+                    ?>
                     <ul id="admin"><li>
                             <?php if ( of_get_option( 'thickbox', '0' ) == '1' ) {
                                 ?>
                                 <a href="#TB_inline?height=120&amp;width=120&amp;inlineId=loginthick" class="thickbox" title="Login"><?php _e( 'Login', 'techozoic' ) ?></a>
                             <?php } else {
                                 ?>			<a href="<?php echo wp_login_url(); ?>" title="<?php _e( 'Login', 'techozoic' ) ?>"><?php _e( 'Login', 'techozoic' ) ?></a>
-                <?php }
-                ?>
+                            <?php }
+                            ?>
                         </li></ul>
                     <div id="loginthick" style="display:none">
                         <div class="aligncenter">
@@ -40,12 +40,12 @@ if ( ($tech_nav == "on") && (of_get_option( 'nav_menu', '1' ) == '1') ) {
                             </form>
                         </div><!--end aligncenter-->
                     </div><!--end loginthick-->
-            <?php
+                    <?php
+                }
             }
-        }
-        ?>
+            ?>
         </div><!--end navmenu-->
-    <?php
+        <?php
     }
 }
 if ( of_get_option( 'breadcrumbs', '0' ) == '1' ) {

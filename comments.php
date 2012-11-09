@@ -26,13 +26,13 @@ if ( have_comments() ) {
         <?php wp_list_comments( 'type=comment&callback=techozoic_comment' ); ?>
     </ol>
     <ol class="trackback">
-    <?php wp_list_comments( 'type=pings&callback=techozoic_ping' ); ?>
+        <?php wp_list_comments( 'type=pings&callback=techozoic_ping' ); ?>
     </ol>
     <div class="navigation">
         <div class="alignleft"><?php previous_comments_link() ?></div>
         <div class="alignright"><?php next_comments_link() ?></div>
     </div>
-<?php
+    <?php
 } // this is displayed if there are no comments so far 
 
 if ( 'open' == $post->comment_status ) {

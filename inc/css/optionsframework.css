@@ -6,10 +6,19 @@
 	max-width:764px;
 	margin-bottom:0px !important;
 }
+#optionsframework-metabox{
+        float:left;
+        margin-right: 15px;
+        min-width: 640px;
+        width: 68%;
+}
+#optionsframework-sidebar{
+        float:left;
+        width: 30%;
+}
 #optionsframework {
 	position:relative;
 	z-index: 0;
-	max-width:780px;
 	background:#fff;
 }
 #optionsframework h3 {

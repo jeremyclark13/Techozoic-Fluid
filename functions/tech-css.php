@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Techozoic Custom CSS
  *

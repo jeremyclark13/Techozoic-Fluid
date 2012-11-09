@@ -34,7 +34,7 @@ function tech_twitter_info( $user = 'clarktechnet', $count = '3', $type = 'feed'
     $cached = get_transient( $transient_key );
 
     if ( false !== $cached ) {
-        //return $cached;
+        return $cached;
     }
 
     // Request the API data, using the constructed URL

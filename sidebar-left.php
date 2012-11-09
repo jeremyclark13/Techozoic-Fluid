@@ -35,7 +35,7 @@
                     if ( $numtags > 0 ) {
                         ?>
                         <li><h2 class="widgettitle"><?php _e( 'Tags', 'techozoic' ) ?></h2>
-                        <?php wp_tag_cloud( 'format=list&largest=8&order=DESC&orderby=count&number=5' ); ?>
+                            <?php wp_tag_cloud( 'format=list&largest=8&order=DESC&orderby=count&number=5' ); ?>
                         </li>
                         <?php
                     }

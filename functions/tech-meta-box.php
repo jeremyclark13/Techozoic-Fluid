@@ -1,5 +1,4 @@
 <?php
-
 $meta_box = array(
     'id' => 'tech-meta-box',
     'title' => 'Techozoic Options',
