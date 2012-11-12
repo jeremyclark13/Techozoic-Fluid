@@ -172,10 +172,10 @@ function optionsframework_options() {
         "std" => "3" );
 
     $options[] = array( "name" => __( 'Custom Footer Text', 'techozoic' ),
-        "desc" => __( 'Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog\'s title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author\'s website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link.', 'techozoic' ),
+        "desc" => __( 'Text displayed in footer - HTML allowed. <br />Shortcodes that can be used: <br />%BLOGNAME% -> The blog\'s title. <br />%THEMENAME% -> Theme name.<br /> %THEMEVER% -> Current Theme Version.<br /> %THEMEAUTHOR% -> Link to Theme Author\'s website.*<br />%TOP% -> Link to the Top of the page.<br /> %COPYRIGHT% -> Insert copyright info for current year.<br /> %LOGIN% -> Displays link to login form or logout link depending on user status.<br /> %MYSQL% -> MySQL queries and processing time info<br /><br />*It is completely optional, but if you like Techozoic I would appreciate it if you keep the credit link.', 'techozoic' ),
         "id" => "footer_text",
         "old_options" => '',
-        "std" => "%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% <br /> <small>%MYSQL%</small>",
+        "std" => "%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% | %LOGIN% <br /> <small>%MYSQL%</small>",
         "type" => "textarea" );
 
     $options[] = array( "name" => __( 'Drop Shadow Boxes', 'techozoic' ),
@@ -246,16 +246,8 @@ function optionsframework_options() {
         "id" => "nav_type",
         "type" => "radio",
         "class" => "hidden",
-        "std" => "standard",
+        "std" => "square",
         "options" => array( 'standard' => __( 'Tabs', 'techozoic' ), 'ribbon' => __( 'Ribbon - Can only be left aligned', 'techozoic' ), 'square' => __( 'Square - Can only be left aligned', 'techozoic' ) ) );
-
-    $options[] = array( "name" => __( 'Log In/Out Links', 'techozoic' ),
-        "desc" => __( 'Enable Dashboard and Log in/out links.', 'techozoic' ),
-        "id" => "dashboard_link",
-        "class" => "hidden",
-        "type" => "checkbox",
-        "old_options" => array( "On" => "1", "Off" => "0" ),
-        "std" => "1" );
 
     $options[] = array( "name" => __( 'Breadcrumbs', 'techozoic' ),
         "desc" => __( 'Enable Breadcrumb navigation.  Useful with Sidebar Nav Widget.', 'techozoic' ),

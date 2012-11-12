@@ -241,20 +241,20 @@ color:{$tech_nav_font['color']};
 ul#admin li a:hover, ul#dropdown li a:hover, #navmenu .top-menu li a:hover{
 color: {$tech_nav_hov_text_color};
 }
-ul#dropdown > li, ul.top-menu > li{
+#dropdown > li, ul.top-menu > li{
 margin: 0 {$tech_nav_margin}px;
 }
-.ribbon ul.top-menu > li, .square ul.top-menu > li{
+.ribbon ul.top-menu > li, .square ul.top-menu > li, #dropdown > li{
 margin: 0;
 padding: 0 {$tech_nav_margin}px;
 }
-.ribbon ul.top-menu > li.has_children:hover:after, .square ul.top-menu > li.has_children:hover:after {
+.ribbon ul.top-menu > li.has_children:hover:after, .square ul.top-menu > li.has_children:hover:after, #dropdown > li.has_children:hover:after {
 border-bottom: 5px solid {$tech_nav_ul_bg_color};
 }
 #dropdown ul, .top-menu ul{
 background-color: {$tech_nav_bg_gradient_top};
 }
-.ribbon, .square{
+.ribbon, .square, #dropdown{
 background-color: {$tech_nav_bg_gradient_top};
 background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from({$tech_nav_bg_gradient_top}), to({$tech_nav_bg_gradient_bot}));
 background-image: -webkit-linear-gradient(top, {$tech_nav_bg_gradient_top}, {$tech_nav_bg_gradient_bot});
@@ -273,26 +273,26 @@ border-left: 10px solid {$tech_nav_bg_gradient_bot};
 CSS;
     if ( of_get_option( 'search_box', '1' ) == '1' ) {
         $css_var .= <<<CSS
-.ribbon ul.top-menu > li:last-child, .square ul.top-menu > li:last-child{
+.ribbon ul.top-menu > li:last-child, .square ul.top-menu > li:last-child, #dropdown > li:last-child{
 margin-right: 100px;
 }
 CSS;
     }
     if ( $tech_nav_bg_trans != '1' ) {
         $css_var .= <<<CSS
-#navmenu .top-menu li, #navmenu .top-menu ul.sub-menu, ul#admin li{
+#navmenu .top-menu li, #navmenu .top-menu ul.sub-menu, ul#admin li, #navmenu #dropdown li{
 background-color: {$tech_nav_ul_bg_color};
 }       
-#dropdown li.current_page_item, #navmenu .top-menu li.current-menu-item, #navmenu .top-menu ul.sub-menu li.current-menu-item {
+#navmenu #dropdown li.current_page_item, #navmenu .top-menu li.current-menu-item, #navmenu .top-menu ul.sub-menu li.current-menu-item {
 background-color: {$tech_nav_active_bg_color} ;
 }
-#dropdown li:hover, #navmenu .top-menu li:hover, #navmenu .top-menu ul.sub-menu > li:hover {
+#navmenu #dropdown li:hover, #navmenu .top-menu li:hover, #navmenu .top-menu ul.sub-menu > li:hover {
 background-color:{$tech_nav_hov_bg_color};
 }
-#dropdown li.current_page_item > a:hover, #navmenu .top-menu li.current-menu-item > a:hover, #navmenu .top-menu li.current-menu-item:hover > a, #navmenu .top-menu li:hover > a {
+#navmenu #dropdown li.current_page_item > a:hover, #navmenu .top-menu li.current-menu-item > a:hover, #navmenu .top-menu li.current-menu-item:hover > a, #navmenu .top-menu li:hover > a, #navmenu #dropdown li:hover > a {
 color:{$tech_nav_hov_text_color};
 }
-#dropdown li.current_page_item > a, #navmenu .top-menu li.current-menu-item > a{
+#navmenu #dropdown li.current_page_item > a, #navmenu .top-menu li.current-menu-item > a{
 color:{$tech_nav_active_text_color};
 }
 ul#admin li:hover{

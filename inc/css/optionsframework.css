@@ -43,11 +43,11 @@
 #optionsframework .section .controls {
 	float: left;
 	min-width:350px;
-	width: 54%;
+	width: 65%;
 	padding-right:2%;
 }
 #optionsframework .section .explain {
-	max-width:38%;
+	max-width:33%;
 	float: left;
 	font-size: 12px;
 	line-height:16px;

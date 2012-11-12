@@ -721,7 +721,7 @@ function tech_comment_count( $count ) {
 }
 
 /**
- * Techozoic WP 3 menu fallback
+ * Techozoic WP menu fallback
  *
  * Callback for use in wp_nav_menu when no menu is assigned.
  *   
@@ -738,6 +738,25 @@ function tech_menu_fallback() {
     $output .= '</ul>';
     echo $output;
 }
+
+/**
+ * Techozoic WP menu fallback
+ *
+ * filter to add css class to wp_list_pages function for styling fallback menu 
+ * child menus
+ *   
+ *
+ * @access    private
+ * @since     2.0.9
+ */
+
+function tech_add_menu_parent_class( $css_class, $page, $depth, $args )
+{
+    if ( ! empty( $args['has_children'] ) )
+        $css_class[] = 'has_children';
+    return $css_class;
+}
+add_filter( 'page_css_class', 'tech_add_menu_parent_class', 10, 4 );
 
 /**
  * Techozoic Font Resize Script
@@ -806,9 +825,9 @@ function tech_footer_text() {
         $theme_data = get_theme_data( get_template_directory() . '/style.css' );
         $version = $theme_data['Version'];
     }
-    $string = of_get_option( 'footer_text', '%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% <br /> <small>%MYSQL%</small>' );
-    $shortcode = array( '/%BLOGNAME%/i', '/%THEMENAME%/i', '/%THEMEVER%/i', '/%THEMEAUTHOR%/i', '/%TOP%/i', '/%COPYRIGHT%/i', '/%MYSQL%/i' );
-    $output = array( get_bloginfo( 'name' ), "Techozoic", $version, '<a href="http://clark-technet.com/"> Jeremy Clark</a>', '<a href="#top">' . __( 'Top', 'techozoic' ) . '</a>', '&copy; ' . date( 'Y' ), sprintf( __( '%1$d mySQL queries in %2$s seconds.', 'techozoic' ), get_num_queries(), timer_stop( 0 ) ) );
+    $string = of_get_option( 'footer_text', '%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% | %LOGIN% <br /> <small>%MYSQL%</small>' );
+    $shortcode = array( '/%BLOGNAME%/i', '/%THEMENAME%/i', '/%THEMEVER%/i', '/%THEMEAUTHOR%/i', '/%TOP%/i', '/%COPYRIGHT%/i', '/%MYSQL%/i', '/%LOGIN%/i' );
+    $output = array( get_bloginfo( 'name' ), "Techozoic", $version, '<a href="http://clark-technet.com/"> Jeremy Clark</a>', '<a href="#top">' . __( 'Top', 'techozoic' ) . '</a>', '&copy; ' . date( 'Y' ), sprintf( __( '%1$d mySQL queries in %2$s seconds.', 'techozoic' ), get_num_queries(), timer_stop( 0 ) ),  wp_loginout(get_permalink(), false) );
     echo preg_replace( $shortcode, $output, $string );
 }
 

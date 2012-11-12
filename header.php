@@ -128,6 +128,6 @@
 
             <?php
             if ( of_get_option( 'nav_location', 'below' ) == 'below' ) {
-                get_template_part( 'nav', 'wp3' );
+                get_template_part( 'nav' );
             }
             ?>
