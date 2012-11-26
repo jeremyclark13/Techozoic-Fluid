@@ -9,7 +9,7 @@
 function optionsframework_option_name() {
 
     $optionsframework_settings = get_option( 'optionsframework' );
-    $optionsframework_settings['id'] = 'techozoic-fluid';
+    $optionsframework_settings['id'] = 'techozoicfluid';
     update_option( 'optionsframework', $optionsframework_settings );
 
     // echo $themename;
@@ -72,7 +72,7 @@ function optionsframework_options() {
         "old_options" => array( "Sidebar - Content - Sidebar" => "3-col", "Content - Sidebar - Sidebar" => "3-col-right", "Sidebar - Sidebar - Content" => "3-col-left", "Content - Sidebar" => "2-col_right", "Sidebar - Content" => "2-col-left", "No Sidebars" => "1-col" ),
         "options" => array( "3-col" => $imagepath . '3-col.jpg', "3-col-right" => $imagepath . '3-col-right.jpg', "3-col-left" => $imagepath . '3-col-left.jpg', "2-col-right" => $imagepath . '2-col-right.jpg', "2-col-left" => $imagepath . '2-col-left.jpg', "1-col" => $imagepath . '1-col.jpg' ) );
 
-    $options[] = array( "name" => __( 'Fixed or Fluid Width', 'techozoic' ),
+    $options['page_type'] = array( "name" => __( 'Fixed or Fluid Width', 'techozoic' ),
         "id" => "page_type",
         "std" => "fluid",
         "type" => "select",
@@ -80,7 +80,7 @@ function optionsframework_options() {
         "old_options" => array( "Fixed Width" => "fixed", "Fluid Width" => "fluid" ),
         "options" => array( 'fixed' => __( 'Fixed Width', 'techozoic' ), 'fluid' => __( 'Fluid Width', 'techozoic' ) ) );
 
-    $options[] = array( "name" => __( 'Page Width', 'techozoic' ),
+    $options['page_width'] = array( "name" => __( 'Page Width', 'techozoic' ),
         "desc" => __( 'Fluid Width - Percentage of Total Screen Size  <br />Fixed Width - Width in number of pixels', 'techozoic' ),
         "id" => "page_width",
         "std" => "90",
@@ -88,7 +88,7 @@ function optionsframework_options() {
         "class" => "mini",
         "type" => "text" );
 
-    $options[] = array( "name" => __( 'Main Column Width', 'techozoic' ),
+    $options['main_column_width'] = array( "name" => __( 'Main Column Width', 'techozoic' ),
         "desc" => __( '(Post Content) - Percentage of Page Width', 'techozoic' ),
         "id" => "main_column_width",
         "std" => "50",
@@ -96,7 +96,7 @@ function optionsframework_options() {
         "class" => "mini",
         "type" => "text" );
 
-    $options[] = array( "name" => __( 'Left Sidebar Width', 'techozoic' ),
+    $options['l_sidebar_width'] = array( "name" => __( 'Left Sidebar Width', 'techozoic' ),
         "desc" => __( 'Percentage of Page Width', 'techozoic' ),
         "id" => "l_sidebar_width",
         "std" => "25",
@@ -104,7 +104,7 @@ function optionsframework_options() {
         "class" => "mini",
         "type" => "text" );
 
-    $options[] = array( "name" => __( 'Right Sidebar Width', 'techozoic' ),
+    $options['r_sidebar_width'] = array( "name" => __( 'Right Sidebar Width', 'techozoic' ),
         "desc" => __( 'Percentage of Page Width', 'techozoic' ),
         "id" => "r_sidebar_width",
         "std" => "25",
@@ -117,7 +117,7 @@ function optionsframework_options() {
         "id" => "favicon_image",
         "type" => "upload" );
 
-    $options[] = array( "name" => __( 'Display Sidebars on Blog Home Page', 'techozoic' ),
+    $options['home_sidebar'] = array( "name" => __( 'Display Sidebars on Blog Home Page', 'techozoic' ),
         "id" => "home_sidebar",
         "type" => "checkbox",
         "old_options" => array( "Yes" => "1", "No" => "0" ),
@@ -141,13 +141,6 @@ function optionsframework_options() {
         "type" => "multicheck",
         "std" => '',
         "options" => $options_pages );
-
-    $options[] = array( "name" => __( 'SEO Features', 'techozoic' ),
-        "desc" => __( 'Disable this if any SEO plugins are used', 'techozoic' ),
-        "id" => "seo",
-        "type" => "checkbox",
-        "old_options" => array( "On" => "1", "Off" => "0" ),
-        "std" => "1" );
 
     $options[] = array( "name" => __( 'Thickbox on Images', 'techozoic' ),
         "desc" => __( 'Use Thickbox to automatically overlay images on pages</small>', 'techozoic' ),
@@ -235,19 +228,19 @@ function optionsframework_options() {
         "type" => "checkbox",
         "std" => "1" );
 
-    $options[] = array( "name" => __( 'Navigation Menu Location', 'techozoic' ),
+    $options['nav_location'] = array( "name" => __( 'Navigation Menu Location', 'techozoic' ),
         "id" => "nav_location",
         "type" => "radio",
         "class" => "hidden",
         "std" => "below",
         "options" => array( 'below' => __( 'Below Header', 'techozoic' ), 'above' => __( 'Above Header', 'techozoic' ) ) );
 
-    $options[] = array( "name" => __( 'Navigation Menu Type', 'techozoic' ),
+    $options['nav_type'] = array( "name" => __( 'Navigation Menu Type', 'techozoic' ),
         "id" => "nav_type",
         "type" => "radio",
         "class" => "hidden",
         "std" => "square",
-        "options" => array( 'standard' => __( 'Tabs', 'techozoic' ), 'ribbon' => __( 'Ribbon - Can only be left aligned', 'techozoic' ), 'square' => __( 'Square - Can only be left aligned', 'techozoic' ) ) );
+        "options" => array( 'standard' => __( 'Tabs', 'techozoic' ), 'ribbon' => __( 'Ribbon', 'techozoic' ), 'square' => __( 'Square', 'techozoic' ) ) );
 
     $options[] = array( "name" => __( 'Breadcrumbs', 'techozoic' ),
         "desc" => __( 'Enable Breadcrumb navigation.  Useful with Sidebar Nav Widget.', 'techozoic' ),
@@ -257,15 +250,15 @@ function optionsframework_options() {
         "old_options" => array( "On" => "1", "Off" => "0" ),
         "std" => "0" );
 
-    $options[] = array( "name" => __( 'Navigation Menu Alignment', 'techozoic' ),
+    $options['nav_align'] = array( "name" => __( 'Navigation Menu Alignment', 'techozoic' ),
         "id" => "nav_align",
-        "type" => "radio",
+        "type" => "select",
         "class" => "hidden",
         "std" => "left",
         "old_options" => array( "Left" => "left", "Center" => "center" ),
-        "options" => array( 'left' => __( 'Left', 'techozoic' ), 'center' => __( 'Center', 'techozoic' ) ) );
+        "options" => array( 'left' => __( 'Left', 'techozoic' ), 'center' => __( 'Center', 'techozoic' ), 'right' => __( 'Right', 'techozoic' ) ) );
 
-    $options[] = array( "name" => __( 'Navigation Button Padding', 'techozoic' ),
+    $options['nav_button_margin'] = array( "name" => __( 'Navigation Button Padding', 'techozoic' ),
         "desc" => __( 'Margin between naviagation buttons in Pixels.', 'techozoic' ),
         "id" => "nav_button_margin",
         "string" => "num",
@@ -273,7 +266,7 @@ function optionsframework_options() {
         "class" => "mini hidden",
         "type" => "text" );
 
-    $options[] = array( "name" => __( 'Navigation Button Width', 'techozoic' ),
+    $options['nav_button_width'] = array( "name" => __( 'Navigation Button Width', 'techozoic' ),
         "desc" => __( 'Size of navigation button width in Pixels.  Set to <strong>0</strong> for variable sized buttons', 'techozoic' ),
         "id" => "nav_button_width",
         "string" => "num",
@@ -282,7 +275,7 @@ function optionsframework_options() {
         "class" => "mini hidden",
         "type" => "text" );
 
-    $options[] = array( "name" => __( 'Navigation Sub Menu Width', 'techozoic' ),
+    $options['nav_menu_width'] = array( "name" => __( 'Navigation Sub Menu Width', 'techozoic' ),
         "desc" => __( 'Size of navigation sub menu width in Pixels.', 'techozoic' ),
         "id" => "nav_menu_width",
         "string" => "num",
@@ -315,7 +308,7 @@ function optionsframework_options() {
 
     $options[] = array( "name" => __( 'Default Text', 'techozoic' ),
         "id" => "body_font",
-        "std" => array( 'size' => "12px", 'face' => 'arial', 'style' => '', 'color' => '#2C4353' ),
+        "std" => array( 'size' => "14px", 'face' => 'arial', 'style' => '', 'color' => '#2C4353' ),
         "type" => "typography" );
 
     $options[] = array( "name" => __( 'Main Heading Font', 'techozoic' ),
@@ -325,12 +318,12 @@ function optionsframework_options() {
 
     $options[] = array( "name" => __( 'Post Heading Font', 'techozoic' ),
         "id" => "post_heading",
-        "std" => array( 'size' => "20px", 'face' => 'verdana', 'style' => 'bold', 'color' => '#2C4353' ),
+        "std" => array( 'size' => "24px", 'face' => 'verdana', 'style' => 'bold', 'color' => '#2C4353' ),
         "type" => "typography" );
 
     $options[] = array( "name" => __( 'Sidebar Heading Font', 'techozoic' ),
         "id" => "side_heading_font",
-        "std" => array( 'size' => "16px", 'face' => 'verdana', 'style' => 'bold', 'color' => '#2C4353' ),
+        "std" => array( 'size' => "18px", 'face' => 'verdana', 'style' => 'bold', 'color' => '#2C4353' ),
         "type" => "typography" );
 
     $options[] = array( "name" => __( 'Nav Menu Text Font', 'techozoic' ),
@@ -340,12 +333,12 @@ function optionsframework_options() {
 
     $options[] = array( "name" => __( 'Post Text Font', 'techozoic' ),
         "id" => "post_text_font",
-        "std" => array( 'size' => "12px", 'face' => 'arial', 'style' => '', 'color' => '#2C4353' ),
+        "std" => array( 'size' => "14px", 'face' => 'arial', 'style' => '', 'color' => '#2C4353' ),
         "type" => "typography" );
 
     $options[] = array( "name" => __( 'Metadata Font', 'techozoic' ),
         "id" => "small_font",
-        "std" => array( 'size' => "10px", 'face' => 'arial', 'style' => '', 'color' => '#777777' ),
+        "std" => array( 'size' => "12px", 'face' => 'arial', 'style' => '', 'color' => '#777777' ),
         "type" => "typography" );
 
     $options[] = array( "name" => __( 'Color', 'techozoic' ),
@@ -360,120 +353,120 @@ function optionsframework_options() {
         "old_options" => array( "Custom 1" => 'custom', "Custom 2" => 'custom', "Blue" => "blue", "Khaki" => "khaki", "Red" => "red", "Grunge" => "grunge" ),
         "options" => array( 'custom' => __( 'Custom', 'techozoic' ), 'blue' => __( 'Blue', 'techozoic' ), 'khaki' => __( 'Khaki', 'techozoic' ), 'red' => __( 'Red', 'techozoic' ), 'grunge' => __( 'Grunge', 'techozoic' ) ) );
 
-    $options[] = array( "name" => __( 'Body Background Color', 'techozoic' ),
+    $options['cust_bg_color1'] = array( "name" => __( 'Body Background Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_bg_color1",
         "old_options" => '',
         "std" => "#A0B3C2",
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Transparent', 'techozoic' ),
+    $options['cust_bg_trans1'] = array( "name" => __( 'Body Background Transparent', 'techozoic' ),
         "desc" => __( 'Check to not apply any color to the body background.', 'techozoic' ),
         "id" => "cust_bg_trans1",
         "std" => "0",
         "old_options" => array( "On" => "1" ),
         "type" => "checkbox" );
 
-    $options[] = array( "name" => __( 'Content Background Color', 'techozoic' ),
+    $options['cust_content_bg_color1'] = array( "name" => __( 'Content Background Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_content_bg_color1",
         "std" => "#F7F7F7",
         "old_options" => '',
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Transparent', 'techozoic' ),
+    $options['cust_content_bg_trans1'] = array( "name" => __( 'Content Background Transparent', 'techozoic' ),
         "desc" => __( 'Check to not apply any color to the content background.', 'techozoic' ),
         "id" => "cust_content_bg_trans1",
         "std" => "0",
         "old_options" => array( "On" => "1" ),
         "type" => "checkbox" );
 
-    $options[] = array( "name" => __( 'Accent Color', 'techozoic' ),
+    $options['cust_acc_color1'] = array( "name" => __( 'Accent Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_acc_color1",
         "std" => "#A0B3C2",
         "old_options" => '',
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Link Color', 'techozoic' ),
+    $options['cust_link_color1'] = array( "name" => __( 'Link Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_link_color1",
         "std" => "#597EAA",
         "old_options" => '',
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Link Hover Color', 'techozoic' ),
+    $options['cust_link_hov_color1'] = array( "name" => __( 'Link Hover Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_link_hov_color1",
         "std" => "#114477",
         "old_options" => '',
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Visited Link Color', 'techozoic' ),
+    $options['cust_link_visit_color1'] = array( "name" => __( 'Visited Link Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_link_visit_color1",
         "std" => "#2C4353",
         "old_options" => '',
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Nav Button Background Color', 'techozoic' ),
+    $options['cust_nav_bg_color1'] = array( "name" => __( 'Nav Button Background Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_nav_bg_color1",
         "std" => "#E3E3E3",
         "old_options" => '',
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Transparent', 'techozoic' ),
+    $options['cust_nav_bg_trans1'] = array( "name" => __( 'Nav Button Transparent', 'techozoic' ),
         "desc" => __( 'Check to not apply any color to the nav button background.', 'techozoic' ),
         "id" => "cust_nav_bg_trans1",
         "std" => "0",
         "old_options" => array( "On" => "1" ),
         "type" => "checkbox" );
 
-    $options[] = array( "name" => __( 'Nav Button Hover Background Color', 'techozoic' ),
+    $options['cust_nav_hov_bg_color1'] = array( "name" => __( 'Nav Button Hover Background Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_nav_hov_bg_color1",
         "std" => "#EFEFEF",
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Nav Button Hover Text Color', 'techozoic' ),
+    $options['cust_nav_hov_text_color1'] = array( "name" => __( 'Nav Button Hover Text Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_nav_hov_text_color1",
         "std" => "#A0B3C2",
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Nav Button Active Background Color', 'techozoic' ),
+    $options['cust_nav_active_bg_color1'] = array( "name" => __( 'Nav Button Active Background Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_nav_active_bg_color1",
         "std" => "#A0B3C2",
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Nav Button Active Text Color', 'techozoic' ),
+    $options['cust_nav_active_text_color1'] = array( "name" => __( 'Nav Button Active Text Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_nav_active_text_color1",
         "std" => "#F7F7F7",
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Nav Bar Background Gradient Top', 'techozoic' ),
+    $options['cust_nav_bg_gradient_top'] = array( "name" => __( 'Nav Bar Background Gradient Top', 'techozoic' ),
         "desc" => __( 'Used when Navigation Menu Type is set to Ribbon or Square.  Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_nav_bg_gradient_top",
         "std" => "#E3E3E3",
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Nav Bar Background Gradient Bottom', 'techozoic' ),
+    $options['cust_nav_bg_gradient_bot'] = array( "name" => __( 'Nav Bar Background Gradient Bottom', 'techozoic' ),
         "desc" => __( 'Used when Navigation Menu Type is set to Ribbon or Square.  Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_nav_bg_gradient_bot",
         "std" => "#CCCCCC",
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Post Background Color', 'techozoic' ),
+    $options['cust_post_bg_color1'] = array( "name" => __( 'Post Background Color', 'techozoic' ),
         "desc" => __( 'Choose or Type a <a href=\"http://www.w3schools.com/HTML/html_colors.asp\" target=\"_blank\">HEX color code</a>', 'techozoic' ),
         "id" => "cust_post_bg_color1",
         "std" => "#E3E3E3",
         "old_options" => '',
         "type" => "color" );
 
-    $options[] = array( "name" => __( 'Transparent', 'techozoic' ),
+    $options['cust_post_bg_trans1'] = array( "name" => __( 'Post Background Transparent', 'techozoic' ),
         "desc" => __( 'Check to not apply any color to the post background.', 'techozoic' ),
         "id" => "cust_post_bg_trans1",
         "std" => "0",
@@ -569,41 +562,41 @@ function optionsframework_options() {
     $options[] = array( "name" => __( 'Header', 'techozoic' ),
         "type" => "heading" );
 
-    $options[] = array( "name" => __( 'Display Search box in header', 'techozoic' ),
+    $options['search_box'] = array( "name" => __( 'Display Search box in header', 'techozoic' ),
         "desc" => __( 'Set to no if you don\'t want the search box to show in the header area.  If widgets are assigned to Right Header search box is automatically disabled.', 'techozoic' ),
         "id" => "search_box",
         "type" => "checkbox",
         "old_options" => array( "Yes" => "1", "No" => "0" ),
         "std" => "1" );
 
-    $options[] = array( "name" => __( 'Display Blog Title and Tagline in header', 'techozoic' ),
+    $options['blog_title'] = array( "name" => __( 'Display Blog Title and Tagline in header', 'techozoic' ),
         "desc" => __( 'Uncheck if your custom header image already has your blog title and tagline.  If header logo is uploaded it will always be used.', 'techozoic' ),
         "id" => "blog_title",
         "type" => "checkbox",
         "old_options" => array( "Yes" => "1", "No" => "0" ),
         "std" => "1" );
 
-    $options[] = array( "name" => __( 'Header Logo', 'techozoic' ),
+    $options['header_logo'] = array( "name" => __( 'Header Logo', 'techozoic' ),
         "desc" => __( 'Replace Blog Title and Tagline with a custom logo.  Logo is overlayed on header image.  For best results use a logo with a transparent background.  When uploading Alignment options are NOT used from the uploader, alignment is set below.', 'techozoic' ),
         "id" => "header_logo",
         "std" => '',
         "type" => "upload" );
 
-    $options[] = array( "name" => __( 'Header Logo Top Padding', 'techozoic' ),
+    $options['header_logo_top'] = array( "name" => __( 'Header Logo Top Padding', 'techozoic' ),
         "desc" => __( 'Number of pixels of top padding that should be added to logo.', 'techozoic' ),
         "id" => "header_logo_top",
         "type" => "text",
         "class" => "mini",
         "std" => "0" );
 
-    $options[] = array( "name" => __( 'Header Logo Left Padding', 'techozoic' ),
+    $options['header_logo_left'] = array( "name" => __( 'Header Logo Left Padding', 'techozoic' ),
         "desc" => __( 'Number of pixels of left padding that should be added to logo.', 'techozoic' ),
         "id" => "header_logo_left",
         "type" => "text",
         "class" => "mini",
         "std" => "0" );
 
-    $options[] = array( "name" => __( 'Blog Title and Tagline / Logo Horizontal Alignment', 'techozoic' ),
+    $options['blog_title_align'] = array( "name" => __( 'Blog Title and Tagline / Logo Horizontal Alignment', 'techozoic' ),
         "desc" => __( 'Horizontal alignment of Blog title and tagline or header logo if used.', 'techozoic' ),
         "id" => "blog_title_align",
         "type" => "radio",
@@ -619,14 +612,14 @@ function optionsframework_options() {
         "old_options" => array( "Single Post Title" => "single", "Always Blog Title" => "blog" ),
         "options" => array( 'single' => __( 'Single Post Title', 'techozoic' ), 'blog' => __( 'Always Blog Title', 'techozoic' ) ) );
 
-    $options[] = array( "name" => __( 'Blog Title Box Styling', 'techozoic' ),
+    $options['blog_title_box'] = array( "name" => __( 'Blog Title Box Styling', 'techozoic' ),
         "desc" => __( 'Styling of box around the Blog Title <br />- On: White rounded box with transparency <br />- Off: Title and tagline text only.', 'techozoic' ),
         "id" => "blog_title_box",
         "type" => "checkbox",
         "old_options" => array( "On" => "1", "Off" => "0" ),
         "std" => "1" );
 
-    $options[] = array( "name" => __( 'Header Image Alignment', 'techozoic' ),
+    $options['header_align'] = array( "name" => __( 'Header Image Alignment', 'techozoic' ),
         "desc" => __( 'Align header to the Left, Right, or Center the image in the Header Container', 'techozoic' ),
         "id" => "header_align",
         "type" => "select",
@@ -634,7 +627,7 @@ function optionsframework_options() {
         "old_options" => array( "Left" => "left", "Right" => "right", "Center" => "center" ),
         "options" => array( 'left' => __( 'Left', 'techozoic' ), 'right' => __( 'Right', 'techozoic' ), 'center' => __( 'Center', 'techozoic' ) ) );
 
-    $options[] = array( "name" => __( 'Header Image Vertical Alignment', 'techozoic' ),
+    $options['header_v_align'] = array( "name" => __( 'Header Image Vertical Alignment', 'techozoic' ),
         "desc" => __( 'Align header to the Left, Right, or Center the image in the Header Container', 'techozoic' ),
         "id" => "header_v_align",
         "type" => "select",
@@ -642,7 +635,7 @@ function optionsframework_options() {
         "old_options" => array( "Top" => "top", "Center" => "center", "Bottom" => "bottom" ),
         "options" => array( 'top' => __( 'Top', 'techozoic' ), 'center' => __( 'Center', 'techozoic' ), 'bottom' => __( 'Bottom', 'techozoic' ) ) );
 
-    $options[] = array( "name" => __( 'Header Container Height', 'techozoic' ),
+    $options['header_height'] = array( "name" => __( 'Header Container Height', 'techozoic' ),
         "desc" => __( 'Adjust the size of the header image  Default Height: 200px', 'techozoic' ),
         "id" => "header_height",
         "std" => "200",
@@ -650,7 +643,7 @@ function optionsframework_options() {
         "class" => "mini",
         "type" => "text" );
 
-    $options[] = array( "name" => __( 'Header Image Width', 'techozoic' ),
+    $options['header_width'] = array( "name" => __( 'Header Image Width', 'techozoic' ),
         "desc" => __( 'Adjust the size of the header image  Default width: 1000px', 'techozoic' ),
         "id" => "header_width",
         "std" => "1000",
@@ -678,9 +671,138 @@ function optionsframework_options() {
         "desc" => __( 'Enable responsive CSS.  Allows site customizations to work even on smaller screens.', 'techozoic' ),
         "id" => "mobile_css",
         "type" => "checkbox",
-        "std" => "0" );
+        "std" => "1" );
 
     return $options;
+}
+
+/**
+ * Front End Customizer
+ *
+ * WordPress 3.4 Required
+ */
+add_action( 'customize_register', 'tech_customizer_register' );
+
+function tech_customizer_register( $wp_customize ) {
+    /**
+     * This is optional, but if you want to reuse some of the defaults
+     * or values you already have built in the options panel, you
+     * can load them into $options for easy reference
+     */
+    $customizer_array = array(
+        'layout' => array(
+            'name' => __( 'Layout', 'techozoic'),
+            'priority' => 102,
+            'settings' => array(
+                'page_type',
+                'page_width',
+                'main_column_width',
+                'l_sidebar_width',
+                'r_sidebar_width',
+                'home_sidebar'
+            )
+        ),
+        'nav_layout' => array(
+            'name' => __( 'Navigation Layout', 'techozoic'),
+            'priority' => 101,
+            'settings' => array(
+                'nav_type',
+                'nav_location',
+                'nav_align',
+                'nav_button_margin',
+                'nav_button_width',
+                'nav_menu_width'
+            )
+        ),
+        'color_scheme' => array(
+            'name' => __( 'Color Scheme', 'techozoic'),
+            'priority' => 103,
+            'settings' => array(
+                'cust_bg_color1',
+                'cust_bg_trans1',
+                'cust_content_bg_color1',
+                'cust_content_bg_trans1',
+                'cust_acc_color1',
+                'cust_link_color1',
+                'cust_link_hov_color1',
+                'cust_link_visit_color1',
+                'cust_nav_bg_color1',
+                'cust_nav_bg_trans1',
+                'cust_nav_hov_bg_color1',
+                'cust_nav_hov_text_color1',
+                'cust_nav_active_bg_color1',
+                'cust_nav_active_text_color1',
+                'cust_nav_bg_gradient_top',
+                'cust_nav_bg_gradient_bot',
+                'cust_post_bg_color1',
+                'cust_post_bg_trans1'
+            )
+        ),
+        'header_layout' => array(
+            'name' => __( 'Header Layout', 'techozoic'),
+            'priority' => 99,
+            'settings' => array(
+                'search_box',
+                'blog_title',
+                'header_logo',
+                'header_logo_top',
+                'header_logo_left',
+                'blog_title_align',
+                'blog_title_box',
+                'header_align',
+                'header_v_align',
+                'header_height',
+                'header_width'
+            )
+        )
+    );
+    $options = optionsframework_options();
+    $i = 0;
+    foreach ( $customizer_array as $name => $val ) {
+        $wp_customize->add_section( "techozoicfluid_$name", array(
+            'title' => $val['name'],
+            'priority' => $val['priority']
+        ) );
+        foreach ( $val['settings'] as $setting ) {
+            $wp_customize->add_setting( "techozoicfluid[$setting]", array(
+                'default' => $options[$setting]['std'],
+                'type' => 'option'
+            ) );
+            if ( $options[$setting]['type'] == 'radio' || $options[$setting]['type'] == 'select' ) {
+                $wp_customize->add_control( "techozoicfluid_$setting", array(
+                    'label' => $options[$setting]['name'],
+                    'section' => "techozoicfluid_$name",
+                    'settings' => "techozoicfluid[$setting]",
+                    'type' => $options[$setting]['type'],
+                    'choices' => $options[$setting]['options'],
+                    'priority' => $i
+                ) );
+            } elseif ( $options[$setting]['type'] == 'text' || $options[$setting]['type'] == 'checkbox' ) {
+                $wp_customize->add_control( "techozoicfluid_$setting", array(
+                    'label' => $options[$setting]['name'],
+                    'section' => "techozoicfluid_$name",
+                    'settings' => "techozoicfluid[$setting]",
+                    'type' => $options[$setting]['type'],
+                    'priority' => $i
+                ) );
+            } elseif ( $options[$setting]['type'] == 'color' ) {
+                $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, "techozoicfluid_$setting", array(
+                            'label' => $options[$setting]['name'],
+                            'section' => "techozoicfluid_$name",
+                            'settings' => "techozoicfluid[$setting]",
+                            'priority' => $i
+                                ) ) );
+            } elseif ( $options[$setting]['type'] == 'upload' ) {
+                $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, "techozoicfluid_$setting", array(
+                            'label' => $options[$setting]['name'],
+                            'section' => "techozoicfluid_$name",
+                            'settings' => "techozoicfluid[$setting]",
+                            'priority' => $i
+                                ) ) );
+            }
+            $i++;
+        }
+    }
 }
 
 add_action( 'optionsframework_custom_scripts', 'optionsframework_custom_scripts' );
@@ -785,7 +907,8 @@ function optionsframework_custom_scripts() {
                 $('#section-' + id + ' .colorSelector').ColorPickerSetColor(hex);
                 $('#section-' + id + ' .colorSelector').children('div').css('backgroundColor', hex);
                 $('#section-' + id + ' .of-color').val(hex);
-                $('#section-' + id + ' .of-color').animate({backgroundColor:'#ffffff'}, 600);
+                //$('#section-' + id + ' .of-color').animate({backgroundColor:'#ffffff'}, 600);
+                $('#section-' + id + ' .of-color').css({backgroundColor:'#ffffff'});
             }
 
             $('#nav_menu').click(function() {
@@ -828,22 +951,30 @@ function tech_options_display_sidebar() {
     ?>
     <div class="metabox-holder" id="optionsframework-sidebar">
         <div class="postbox">
-            <h3>About Techozoic</h3>
+            <h3><?php _e('About Techozoic', 'techozoic'); ?></h3>
             <div class="inside">
-                <h4>Help Support Further Development</h4>
+                <h4><?php _e('Help Support Further Development', 'techozoic'); ?></h4>
                 <p><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q2UB936PZYYZ6' title='Help Support Development' target='_blank' ><img src='https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif' /></a></p>
                 <hr />
-                <h4>Twitter - <?php echo tech_twitter_info( $user = 'clarktechnet', $count = '0', $type = 'followers' ); ?></h4>
+                <h4><?php _e('Twitter', 'techozoic'); ?> - <?php echo tech_twitter_info( $user = 'clarktechnet', $count = '0', $type = 'followers' ); ?></h4>
                 <p><a href='https://twitter.com/#!/search/realtime/techozoic%20from%3Aclarktechnet' title='Follow Development on Twitter' target='_blank'>Follow Development on Twitter</a> | <a href='https://twitter.com/intent/user?screen_name=clarktechnet' title='Follow Me on Twitter' target='_blank'>Follow Me on Twitter</a></p>
                 <p><?php echo tech_twitter_info( $user = 'clarktechnet', $count = '5', $type = 'feed' ); ?></p>
                 <hr />
-                <h4>What's New</h4>
+                <h4><?php _e('What\'s New', 'techozoic'); ?></h4>
                 <p>
-                    <strong>Version 2.0.9</strong>
+                    <strong>Version 2.1</strong>
                 <ul>
-                    <li>Added Twitter Feed widget.</li>  
+                    <li>Performance increased by caching css generated by settings.</li>
+                    <li>Added Twitter Feed widget.</li>
+                    <li>Added new template tags to reduce repeated code.</li>
+                    <li>Updated Posts page layout.</li>
+                    <li>Responsive styling updated.</li>
+                    <li>New touch enabled sliding menu in responsive view.</li>
                     <li>Updated Options Framework to latest version.</li>
+                    <li>New layout for options page.</li>
                     <li>Removed unneeded meta description and keyword tags.</li>
+                    <li>Minor styling updates.</li>
+                    <li>Updated bbPress theme support to 2.2.</li>
                     <li>Code cleanup to follow WordPress coding standards.</li>
                 </ul>
                 <strong>Version 2.0.8</strong>

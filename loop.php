@@ -1,4 +1,5 @@
 <?php
+$date_format = get_option( 'date_format' );
 if ( have_posts() ) {
     while ( have_posts() ) {
         the_post();
@@ -17,18 +18,7 @@ if ( have_posts() ) {
                 <?php
             } else {
                 ?>                            
-                <div class="heading clear">
-                    <?php if ( is_home() ) { ?>                            
-                        <div class="post_date">
-                            <div class="month_post"><?php the_time( 'M' ) ?></div>    
-                            <div class="date_post"><?php the_time( 'j' ) ?></div>
-                        </div>
-                        <div class="commentdiv"><?php
-                if ( comments_open() && empty( $post->post_password ) ) {
-                    comments_popup_link( '0', '1', '%', 'comment_num', '' );
-                }
-                        ?></div>
-                    <?php } ?>                        
+                <div class="heading clear">                  
                     <h2 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf( __( 'Permanent Link to %s', 'techozoic' ), get_the_title() ); ?>">
                             <?php
                             if ( get_the_title() ) {
@@ -37,7 +27,7 @@ if ( have_posts() ) {
                                 _e( 'Read More &hellip;', 'techozoic' );
                             }
                             ?></a></h2>	
-                    <small><?php _e( 'By', 'techozoic' ) ?> <?php the_author() ?>&nbsp;|&nbsp;<?php printf( __( 'Filed in %s', 'techozoic' ), get_the_category_list( ', ' ) ) ?><?php edit_post_link( __( '&nbsp;|&nbsp; Edit.', 'techozoic' ), '', '' ); ?></small>
+                    <small><?php printf( __('Posted %s By %s', 'techozoic' ), get_the_time( $date_format ), get_the_author()); ?><?php edit_post_link( __( '&nbsp;|&nbsp; Edit.', 'techozoic' ), '', '' ); ?></small>
                 </div>
                 <?php if ( $post->post_content != "" ) { ?>
                     <div class="entry">
@@ -61,13 +51,12 @@ if ( have_posts() ) {
                             <?php tech_comment_preview( $post->ID ); ?>				
                             <?php
                         }
-
-                        $posttags = get_the_tags();
-                        if ( !empty( $posttags ) ) {
-                            ?>
-                            <div class="tags"><small><?php the_tags(); ?></small></div><?php
-                }
-                        ?>
+?>
+                            <div class="post_info">
+                                <small>
+                                <?php printf( __( 'Filed in %s', 'techozoic' ), get_the_category_list( ', ' ) ) ?><?php the_tags( __( ' | Tagged: ' ) ); ?>
+                                </small>
+                            </div>
                     </div>
                     <?php if ( ( is_home() && tech_icons( 'main' ) ) || ( is_category() && tech_icons( 'archive' ) ) || ( is_year() && tech_icons( 'year' ) ) || ( is_month() && tech_icons( 'month' ) ) ) { ?>	
                         <div class="top">

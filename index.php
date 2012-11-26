@@ -19,15 +19,9 @@ if ( of_get_option( 'home_sidebar', '1' ) == "1" )
 ?>
 
 <div id="content" class="<?php echo ( of_get_option( 'home_sidebar', '1' ) != "1" || of_get_option( 'sidebar_pos', '3-col' ) == '1-col' ) ? "wide" : "narrow"; ?>column">
-    <div class="navigation clear">
-        <div class="alignleft"><?php next_posts_link( __( '&laquo; Older Entries', 'techozoic' ) ) ?></div>
-        <div class="alignright"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'techozoic' ) ) ?></div>
-    </div>
+    <?php tech_nav_links(); ?>
     <?php get_template_part( 'loop', 'index' ); ?>
-    <div class="navigation clear">
-        <div class="alignleft"><?php next_posts_link( __( '&laquo; Older Entries', 'techozoic' ) ) ?></div>
-        <div class="alignright"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'techozoic' ) ) ?></div>
-    </div>
+    <?php tech_nav_links(); ?>
 </div>
 <?php
 if ( of_get_option( 'home_sidebar', '1' ) == "1" )

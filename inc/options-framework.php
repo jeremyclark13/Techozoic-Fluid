@@ -282,6 +282,8 @@ function optionsframework_validate( $input ) {
     if ( isset( $_POST['reset'] ) ) {
         add_settings_error( 'options-framework', 'restore_defaults', __( 'Default options restored.', 'options_framework_theme' ), 'updated fade' );
         return of_get_default_values();
+        //deletes css cache after saving.
+        delete_transient( 'tech_css_cache' );
     } else {
 
         /*
@@ -325,6 +327,8 @@ function optionsframework_validate( $input ) {
 
         add_settings_error( 'options-framework', 'save_options', __( 'Options saved.', 'options_framework_theme' ), 'updated fade' );
         return $clean;
+        //deletes css cache after saving.
+        delete_transient( 'tech_css_cache' );
     }
 }
 

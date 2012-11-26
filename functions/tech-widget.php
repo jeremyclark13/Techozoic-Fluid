@@ -1,7 +1,16 @@
 <?php
-/* * ****************************************
-  Widget registration and custom widgets defined here
- * **************************************** */
+/**
+ * Widgets
+ *
+ * Registers sidebars and widgets.
+ *
+ * @package      Techozoic Fluid
+ * @author       Jeremy Clark <jeremy@clark-technet.com>
+ * @copyright    Copyright (c) 2011, Jeremy Clark
+ * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since        1.0
+ *
+ */
 
 if ( function_exists( 'wp_get_theme' ) ) {
     $theme_data = wp_get_theme( 'techozoic-fluid' );

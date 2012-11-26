@@ -1,43 +1,52 @@
 <?php
-
 /**
  * Single Forum
  *
  * @package bbPress
  * @subpackage Theme
  */
-
+get_header();
+if ( of_get_option( 'forum_sidebar', '0' ) == "1" ) {
+    tech_show_sidebar( "l" );
+}
 ?>
-<?php get_header(); 
-    if (of_get_option('forum_sidebar','0') == "1" ) { tech_show_sidebar("l");} 
-?>
-	<div id="content" class="<?php if (of_get_option('forum_sidebar','0') == "1" ) { echo "narrow"; }else {echo "wide";}?>column">
+<div id="content" class="<?php if ( of_get_option( 'forum_sidebar', '0' ) == "1" ) {
+    echo "narrow";
+} else {
+    echo "wide";
+} ?>column">
 
-            <?php do_action( 'bbp_template_notices' ); ?>
+    <?php do_action( 'bbp_before_main_content' ); ?>
 
-                    <?php while ( have_posts() ) : the_post(); ?>
+    <?php do_action( 'bbp_template_notices' ); ?>
 
-                            <?php if ( bbp_user_can_view_forum() ) : ?>
+<?php while ( have_posts() ) : the_post(); ?>
 
-                                    <div id="forum-<?php bbp_forum_id(); ?>" class="bbp-forum-content">
-                                            <h1 class="entry-title"><?php bbp_forum_title(); ?></h1>
-                                            <div class="entry-content">
+    <?php if ( bbp_user_can_view_forum() ) : ?>
 
-                                                    <?php bbp_get_template_part( 'bbpress/content', 'single-forum' ); ?>
+            <div id="forum-<?php bbp_forum_id(); ?>" class="bbp-forum-content">
+                <h1 class="entry-title"><?php bbp_forum_title(); ?></h1>
+                <div class="entry-content">
 
-                                            </div>
-                                    </div><!-- #forum-<?php bbp_forum_id(); ?> -->
+            <?php bbp_get_template_part( 'content', 'single-forum' ); ?>
 
-                            <?php else : // Forum exists, user no access ?>
+                </div>
+            </div><!-- #forum-<?php bbp_forum_id(); ?> -->
 
-                                    <?php bbp_get_template_part( 'bbpress/feedback', 'no-access' ); ?>
+        <?php else : // Forum exists, user no access ?>
 
-                            <?php endif; ?>
+            <?php bbp_get_template_part( 'feedback', 'no-access' ); ?>
 
-                    <?php endwhile; ?>
+        <?php endif; ?>
 
-            </div><!-- #content -->
+<?php endwhile; ?>
+
+<?php do_action( 'bbp_after_main_content' ); ?>
+
+</div><!-- #content -->
 <?php
-    if (of_get_option('forum_sidebar','0') == "1" ) { tech_show_sidebar("r"); }
-    get_footer();  
+if ( of_get_option( 'forum_sidebar', '0' ) == "1" ) {
+    tech_show_sidebar( "r" );
+}
+get_footer();
 ?>

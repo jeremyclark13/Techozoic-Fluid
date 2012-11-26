@@ -2,12 +2,15 @@
 /**
  * Techozoic Custom CSS
  *
- * Outputs customized CSS to header
+ * Outputs customized CSS to header.  Cached in tech_css_cache transient.  
+ * Transient is deleted when saving or resetting options, and every 6 hours 
+ * regardless.
  * 
  *
  * @access    private
  * @since     2.0
  */
+
 if ( !is_admin() ) {
     add_action( 'wp_head', 'tech_head_css' );
 }
@@ -29,6 +32,14 @@ function tech_google_font_family( $font ) {
 }
 
 function tech_head_css() {
+    global $wp_customize;
+    if ( !isset( $wp_customize ) ) {
+        $cache = get_transient( 'tech_css_cache' );
+        if ( $cache !== false ) {
+            echo $cache;
+            return;
+        }
+    }
     $tech_blog_title_display = '';
     $tech_blog_title_cursor = '';
     $tech_header_font = tech_google_font_family( of_get_option( 'post_heading', array( 'size' => "20px", 'face' => 'verdana', 'style' => 'bold', 'color' => '#2C4353' ) ) );
@@ -65,11 +76,10 @@ function tech_head_css() {
         $tech_blog_title_display = 'display:none';
     if ( of_get_option( 'blog_title_text', 'single' ) == 'single' )
         $tech_blog_title_cursor = 'cursor:default;';
-    $tech_page_overflow = (of_get_option( 'nav_type', 'square' ) != 'ribbon') ? 'overflow:hidden' : '';
     $tech_logo_top = of_get_option( 'header_logo_top', '0' );
     $tech_logo_left = of_get_option( 'header_logo_left', '0' );
     $tech_blog_title_align_check = "";
-    $tech_nav_align_check = "";
+    $tech_nav_align = of_get_option( 'nav_align', 'left' );
     switch ( of_get_option( 'blog_title_align', 'left' ) ) {
         case "left":
             $tech_blog_title_align = 'float:left;margin-left:10px';
@@ -82,16 +92,6 @@ function tech_head_css() {
             $tech_blog_title_align_check = "Center";
             break;
     }
-    switch ( of_get_option( 'nav_align', 'left' ) ) {
-        case "center":
-            $tech_nav_align = 'float:left;position:relative;left:-50%';
-            $tech_nav_align_check = "center";
-            break;
-        case "left":
-            $tech_nav_align = '';
-            break;
-    }
-
     $tech_bg_color = of_get_option( 'cust_bg_color1', '#A0B3C2' );
     $tech_bg_trans = of_get_option( 'cust_bg_trans1', '0' );
     $tech_acc_color = of_get_option( 'cust_acc_color1', '#A0B3C2' );
@@ -148,22 +148,21 @@ function tech_head_css() {
             }
         }
     }
-    $css_var = '<style type="text/css">';
+    $css_var = "\r\n<style type=\"text/css\">";
     $css_var .= <<<CSS
 /*Variable Styles*/
 #page{ 
 background:{$tech_content_bg_color} url({$tech_content_bg_image['image']}) {$tech_content_bg_image['repeat']} {$tech_content_bg_image['position']} {$tech_content_bg_image['attachment']};
-{$tech_page_overflow};
 }
 body{
-font:{$tech_body_font['style']} {$tech_body_font['size']} {$tech_body_font['face']}, Sans-Serif;
+font:{$tech_body_font['style']} {$tech_body_font['size']}/1.3em {$tech_body_font['face']}, Sans-Serif;
 background:{$tech_bg_color} url({$tech_bg_image['image']}) {$tech_bg_image['repeat']} {$tech_bg_image['position']} {$tech_bg_image['attachment']};
 }
 .techozoic_font_size{
 font-size: {$tech_body_font['size']};
 }
 .narrowcolumn .entry,.widecolumn .entry, .top {
-font:{$tech_post_font['style']} {$tech_post_font['size']} {$tech_post_font['face']}, Sans-Serif;
+font:{$tech_post_font['style']} {$tech_post_font['size']}/1.5em {$tech_post_font['face']}, Sans-Serif;
 color: {$tech_post_font['color']};
 }
 {$tech_post_bg_color_classes}{
@@ -174,39 +173,39 @@ border-top:1px {$tech_acc_color} solid;
 border:none;
 }
 .blog_title, .blog_title a, .blog_title a:hover, .blog_title a:visited{
-font:{$tech_main_heading_font['style']} {$tech_main_heading_font['size']} {$tech_main_heading_font['face']}, Sans-Serif;
+font:{$tech_main_heading_font['style']} {$tech_main_heading_font['size']}/1.3em {$tech_main_heading_font['face']}, Sans-Serif;
 color: {$tech_main_heading_font['color']};
 }
 h1.post_title{
-font:{$tech_header_font['style']} {$tech_header_font['size']} {$tech_header_font['face']}, Sans-Serif;
+font:{$tech_header_font['style']} {$tech_header_font['size']}/1.4em {$tech_header_font['face']}, Sans-Serif;
 color:{$tech_header_font['color']} !important;
 }
 .post_title a{
-font:{$tech_header_font['style']} {$tech_header_font['size']} {$tech_header_font['face']}, Sans-Serif;
+font:{$tech_header_font['style']} {$tech_header_font['size']}/1.4em {$tech_header_font['face']}, Sans-Serif;
 color:{$tech_header_font['color']} !important;
 }
 .entry h1{
-font:{$tech_header_font['style']} 3em {$tech_header_font['face']}, Sans-Serif;
+font:{$tech_header_font['style']} 3em/2.2em {$tech_header_font['face']}, Sans-Serif;
 color: {$tech_header_font['color']} !important;
 }
 .entry h2{
-font:{$tech_header_font['style']} 2em {$tech_header_font['face']}, Sans-Serif;
+font:{$tech_header_font['style']} 2em/2em {$tech_header_font['face']}, Sans-Serif;
 color: {$tech_header_font['color']} !important;
 }
 .entry h3{
-font:{$tech_header_font['style']} 1.4em {$tech_header_font['face']}, Sans-Serif;
+font:{$tech_header_font['style']} 1.4em/1.6em {$tech_header_font['face']}, Sans-Serif;
 color: {$tech_header_font['color']} !important;
 }
 .entry h4{
-font:{$tech_header_font['style']} 1.3em {$tech_header_font['face']}, Sans-Serif;
+font:{$tech_header_font['style']} 1.3em/1.4em {$tech_header_font['face']}, Sans-Serif;
 color: {$tech_header_font['color']} !important;
 }
 .entry h5{
-font:{$tech_header_font['style']} 1.2em {$tech_header_font['face']}, Sans-Serif;
+font:{$tech_header_font['style']} 1.2em/1.3em {$tech_header_font['face']}, Sans-Serif;
 color: {$tech_header_font['color']} !important;
 }
 .sidebar h2, .sidebar h3, #footer h2{
-font: {$tech_sidebar_font['style']} {$tech_sidebar_font['size']} {$tech_sidebar_font['face']}, Sans-Serif;
+font: {$tech_sidebar_font['style']} {$tech_sidebar_font['size']}/1.3em {$tech_sidebar_font['face']}, Sans-Serif;
 color:{$tech_sidebar_font['color']};
 }
 .widgettitle {
@@ -220,7 +219,7 @@ acronym,abbr,span.caps,small,.trackback li,.sidebar, .postmetadata {
 font-size: {$tech_small_font['size']};
 }
 .postmetadata{
-font: {$tech_small_font['style']} {$tech_small_font['size']} {$tech_small_font['face']}, Sans-Serif;
+font: {$tech_small_font['style']} {$tech_small_font['size']}/1.3em {$tech_small_font['face']}, Sans-Serif;
 color: {$tech_small_font['color']};
 }
 ul#nav a, ul#admin a, #dropdown li.current_page_item a:hover, .top-menu li.current-menu-item a:hover, #dropdown li.current_page_item ul a, .top-menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover, {
@@ -575,8 +574,8 @@ CSS;
         }
     }
     $css_var .= <<<CSS
-#header ul#nav,#header ul#nav2,#header ul#dropdown,#header ul.top-menu{
-{$tech_nav_align};
+#dropdown, .top-menu{
+text-align:{$tech_nav_align};
 }
 CSS;
     if ( of_get_option( 'nav_button_width', '0' ) != '0' ) {
@@ -585,23 +584,6 @@ CSS;
 #navmenu ul#admin li, #nav2 li,#dropdown li, #navmenu .top-menu li{
 width: {$tech_nav_button_width}px;
 } 
-CSS;
-    }
-    if ( $tech_nav_align_check == "center" ) {
-        $css_var .= <<<CSS
-#navwrap {
-float:left;
-position:relative;
-left:50%;
-}
-ul#admin{
-margin-top:30px !important;
-}
-#dropdown, .top-menu{
-position:relative;
-clear:both;
-left:-50%;
-}
 CSS;
     }
     $tech_hwidget_height = of_get_option( 'header_height', '200' ) - 40;
@@ -636,10 +618,10 @@ CSS;
     $css_var .= of_get_option( 'custom_styles', '' );
     $css_var .= '</style>';
     if ( of_get_option( 'minify', '1' ) == 1 ) {
-        echo str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $css_var );
-    } else {
-        echo $css_var;
+        $css_var = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), '', $css_var );
     }
+    if ( !isset( $wp_customize ) ) set_transient( 'tech_css_cache', $css_var, 60 * 60 * 6 );
+    echo $css_var;
 }
 
 ?>

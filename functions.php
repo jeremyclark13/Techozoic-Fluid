@@ -24,15 +24,16 @@ if ( !function_exists( 'optionsframework_init' ) ) {
     require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 }
 
-if ( class_exists( 'bbPress' ) ) {
-    require_once (get_template_directory() . '/bbpress/bbpress_functions.php');
-}
+require_once dirname( __FILE__ ) . '/options.php';
 
 include(get_template_directory() . '/functions/tech-meta-box.php');
 // Loads custom meta boxes on single post and page edit screen
 
 include(get_template_directory() . '/functions/tech-twitter.php');
 // Loads functions for pulling twitter feeds
+
+include(get_template_directory() . '/functions/tech-template-tags.php');
+// Loads template tags
 
 if ( !isset( $content_width ) ) {
     $content_width = tech_content_width();
@@ -201,24 +202,6 @@ function techozoic_admin_header_image() {
     <?php
 }
 
-/**
- * Techozoic comment reply enqueue
- *
- * function enqueuing comment reply script, to be added to header if needed.
- * 
- *
- * @access    private
- * @since     2.0.1
- */
-
-add_action( 'wp_enqueue_scripts', 'techozoic_enqueue_comment_reply' );
-
-function techozoic_enqueue_comment_reply() {
-    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
-    }
-}
-
 
 /**
  * Techozoic Theme Logo
@@ -300,19 +283,36 @@ function tech_wp_title( $old_title, $sep, $sep_location ) {
 /**
  * Techozoic mobile css
  *
- * Enqueues mobile css if option is set.  Will be incorparated into main 
- * style.css in upcoming versions
+ * Enqueues mobile css if option is set.  Outputs small menu javascript.
+ * Will be incorparated into main style.css in upcoming versions
  * 
  * @access    private
  * @since     2.0.4
  */
 if ( of_get_option( 'mobile_css', '0' ) == "1" ) {
     add_action( 'wp_enqueue_scripts', 'tech_enque_mobile' );
+    add_action( 'wp_head' , 'tech_small_menu_js');
 }
 
 function tech_enque_mobile() {
+    $script_dir = get_template_directory_uri() . '/js/';
     wp_register_style( 'tech-mobile', get_template_directory_uri() . '/css/mobile.css', false, 0.1 );
     wp_enqueue_style( 'tech-mobile' );
+    //wp_register_script( 'small-menu', $script_dir . 'small-menu.js', array( 'jquery' ), '1.0' );
+    //wp_enqueue_script( 'small-menu' );
+}
+
+function tech_small_menu_js(){
+    echo '<script type="text/javascript">
+        jQuery(document).ready(function($){
+	/* toggle nav */
+	$("#menu-icon").on("click", function(){
+		$(".top-menu").slideToggle();
+		$(this).toggleClass("active");
+	});
+
+        });
+        </script>';
 }
 
 /**
@@ -378,9 +378,9 @@ class techozoic_menu_walker extends Walker_Nav_Menu {
  * @access    private
  * @since     2.0.4
  */
-add_action( 'admin_init', 'optionscheck_change_font', 10, 2 );
+add_action( 'admin_init', 'tech_options_change_font', 10, 2 );
 
-function optionscheck_change_font() {
+function tech_options_change_font() {
     add_filter( 'of_recognized_font_faces', 'tech_change_fonts' );
 }
 
@@ -401,9 +401,9 @@ function tech_change_fonts( $fonts ) {
  * @since     2.0
  */
 
-add_action( 'admin_init', 'optionscheck_change_santiziation', 10, 2 );
+add_action( 'admin_init', 'tech_options_change_santiziation', 10, 2 );
 
-function optionscheck_change_santiziation() {
+function tech_options_change_santiziation() {
     remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
     add_filter( 'of_sanitize_textarea', 'tech_sanitize_textarea' );
 }
@@ -453,8 +453,8 @@ function tech_sanitize_textarea( $input ) {
  *
  * Remove certain post formats from feed query
  * 
- * @param     string    wp_query from hook
- * @return    string    wp_query with post formats removed.
+ * @param     string  $wp_query  wp_query from hook
+ * @return    string  $wp_query  wp_query with post formats removed.
  *
  * @access    public
  * @since     2.0
@@ -539,13 +539,13 @@ function tech_pin_it() {
  *
  * Used to output links to theme support and rss feed of theme news
  * 
- * @param     string    CSS class to be applied to div around theme links
- * @return    string    HTML for theme links box
+ * @return    string  $output   HTML for theme links box
  *
  * @access    public
  * @since   
  *   1.9.3
  */
+
 function techozoic_links_box() {
 // Get RSS Feed(s)
     $feed_address = "http://techozoic.clark-technet.com/category/news/feed";
@@ -615,7 +615,7 @@ function tech_image_links() {
  *
  * Used to check whether current page type is in excerpt locations set in options
  * 
- * @param       string  Current page type
+ * @param       string  $where  Current page type
  * @return      bool    Return if current page is in excerpt_location array    
  *
  * @access    public
@@ -636,7 +636,7 @@ function tech_excerpt( $where ) {
  *
  * Used to check whether current page type is in post social media locations set in options
  * 
- * @param       string  Current page type
+ * @param       string  $where  Current page type
  * @return      bool    Return if current page is in post_social_media_location array    
  *
  * @access    public
@@ -657,7 +657,7 @@ function tech_icons( $where ) {
  *
  * Filter that replaces ellipses with proper html ententity and link to single post page
  * 
- * @param       string  exceprt text
+ * @param       string  $text  exceprt text
  * @return      string    string replaced excerpt text    
  *
  * @access    private
@@ -695,32 +695,6 @@ if ( of_get_option( 'google_font', '0' ) == '1' ) {
 }//End if goolge_font check
 
 /**
- * Techozoic comment count
- *
- * Filter that displays correct comment count.
- * http://www.wpbeginner.com/wp-tutorials/display-the-most-accurate-comment-count-in-wordpress/
- * 
- * 
- * @param       string  filter variable
- * @return      string    correct comment count   
- *
- * @access    private
- * @since     1.9.3
- */
-
-add_filter( 'get_comments_number', 'tech_comment_count', 0 );
-
-function tech_comment_count( $count ) {
-    if ( !is_admin() ) {
-        global $id;
-        $comments_by_type = &separate_comments( get_comments( 'status=approve&post_id=' . $id ) );
-        return count( $comments_by_type['comment'] );
-    } else {
-        return $count;
-    }
-}
-
-/**
  * Techozoic WP menu fallback
  *
  * Callback for use in wp_nav_menu when no menu is assigned.
@@ -745,9 +719,13 @@ function tech_menu_fallback() {
  * filter to add css class to wp_list_pages function for styling fallback menu 
  * child menus
  *   
+ * @param   array   $css_class  class array from filter
+ * @param   int     $page   page id
+ * @param   int     $depth  page nested depth
+ * @param   array   $args   args from filter
  *
  * @access    private
- * @since     2.0.9
+ * @since     2.1
  */
 
 function tech_add_menu_parent_class( $css_class, $page, $depth, $args )
@@ -837,7 +815,7 @@ function tech_footer_text() {
  * Determine which sidebar template should be shown based on options.
  * 
  * 
- * @param       string  location of current template function called from 
+ * @param   string  $loc  location of current template function called from 
  *
  * @access    public
  * @since     1.8.8
@@ -890,7 +868,7 @@ function tech_show_sidebar( $loc ) {
  * Echos the social media icon links and images as set in options.
  * 
  * 
- * @param       bool    function called from home page or single page
+ * @param   bool    $home   whether the function called from home page or single page
  *
  * @access    public
  * @since     1.8.8
@@ -952,10 +930,11 @@ function tech_social_icons( $home = true ) {
  * Used to display social media profile links for Techozoic About widget.
  * 
  * 
- * @param       int     if facebook profile link is checked
- * @param       int     if myspace profile link is checked
- * @param       int     if twitter profile link is checked  
- *
+ * @param   int $fb     if facebook profile link is checked
+ * @param   int $my     if myspace profile link is checked
+ * @param   int $twitter     if twitter profile link is checked  
+ * @param   int $google     if google profile link is checked 
+ * 
  * @access    public
  * @since     1.8.8
  */
@@ -986,7 +965,7 @@ function tech_about_icons( $fb = 0, $my = 0, $twitter = 0, $google = 0 ) {
  * Comment preview section on home page.  Pull comment excerpt for approved comments
  * displays in an unordered list at bottom of each post. 
  * 
- * @param       string  id of current post to pull comments for
+ * @param   string $ID  id of current post to pull comments for
  *
  * @access    public
  * @since     1.8.7
@@ -1041,103 +1020,6 @@ if ( is_admin() && (isset( $_GET['page'] ) && $_GET['page'] == 'custom-header') 
 
 }//End if custom header page
 
-/**
- * Techozoic breadcrumb navigation
- *
- * Displays breadcrumb navigation if option is set.
- * 
- * @access    public
- */
-
-function tech_breadcrumbs() {
-// Thanks to dimox for the code
-//http://dimox.net/wordpress-breadcrumbs-without-a-plugin/
-    global $tech;
-    $delimiter = '&raquo;';
-    $name = __( 'Home', 'techozoic' );
-    $currentBefore = '<span class="current">';
-    $currentAfter = '</span>';
-
-    if ( !is_home() || !is_front_page() || is_paged() ) {
-
-        echo '<div id="crumbs">';
-
-        global $post;
-        $home = home_url();
-        echo '<a href="' . $home . '">' . $name . '</a> ' . $delimiter . ' ';
-
-        if ( is_category() ) {
-            global $wp_query;
-            $cat_obj = $wp_query->get_queried_object();
-            $thisCat = $cat_obj->term_id;
-            $thisCat = get_category( $thisCat );
-            $parentCat = get_category( $thisCat->parent );
-            if ( $thisCat->parent != 0 )
-                echo(get_category_parents( $parentCat, TRUE, ' ' . $delimiter . ' ' ));
-            echo $currentBefore . __( 'Archive for category &#39;', 'techozoic' );
-            single_cat_title();
-            echo '&#39;' . $currentAfter;
-        } elseif ( is_day() ) {
-            echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '">' . get_the_time( 'Y' ) . '</a> ' . $delimiter . ' ';
-            echo '<a href="' . get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) . '">' . get_the_time( 'F' ) . '</a> ' . $delimiter . ' ';
-            echo $currentBefore . get_the_time( 'd' ) . $currentAfter;
-        } elseif ( is_month() ) {
-            echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '">' . get_the_time( 'Y' ) . '</a> ' . $delimiter . ' ';
-            echo $currentBefore . get_the_time( 'F' ) . $currentAfter;
-        } elseif ( is_year() ) {
-            echo $currentBefore . get_the_time( 'Y' ) . $currentAfter;
-        } elseif ( is_single() && !is_attachment() ) {
-            $cat = get_the_category();
-            if ( $cat ) {
-                $cat = $cat[0];
-                echo get_category_parents( $cat, TRUE, ' ' . $delimiter . ' ' );
-            }
-            echo $currentBefore;
-            the_title();
-            echo $currentAfter;
-        } elseif ( is_page() && !$post->post_parent ) {
-            echo $currentBefore;
-            the_title();
-            echo $currentAfter;
-        } elseif ( is_page() && $post->post_parent ) {
-            $parent_id = $post->post_parent;
-            $breadcrumbs = array( );
-            while ( $parent_id ) {
-                $page = get_page( $parent_id );
-                $breadcrumbs[] = '<a href="' . get_permalink( $page->ID ) . '">' . get_the_title( $page->ID ) . '</a>';
-                $parent_id = $page->post_parent;
-            }
-            $breadcrumbs = array_reverse( $breadcrumbs );
-            foreach ( $breadcrumbs as $crumb )
-                echo $crumb . ' ' . $delimiter . ' ';
-            echo $currentBefore;
-            the_title();
-            echo $currentAfter;
-        } elseif ( is_search() ) {
-            echo $currentBefore . __( 'Search results for &#39;', 'techozoic' ) . get_search_query() . '&#39;' . $currentAfter;
-        } elseif ( is_tag() ) {
-            echo $currentBefore . __( 'Posts tagged &#39;', 'techozoic' );
-            single_tag_title();
-            echo '&#39;' . $currentAfter;
-        } elseif ( is_author() ) {
-            global $author;
-            $userdata = get_userdata( $author );
-            echo $currentBefore . __( 'Articles posted by ', 'techozoic' ) . $userdata->display_name . $currentAfter;
-        } elseif ( is_404() ) {
-            echo $currentBefore . __( 'Error 404', 'techozoic' ) . $currentAfter;
-        }
-
-        if ( get_query_var( 'paged' ) ) {
-            if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() )
-                echo ' (';
-            echo __( 'Page', 'techozoic' ) . ' ' . get_query_var( 'paged' );
-            if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() )
-                echo ')';
-        }
-
-        echo '</div>';
-    }
-}
 
 if ( of_get_option( 'thickbox', '0' ) == '1' ) {
 
@@ -1182,8 +1064,8 @@ if ( of_get_option( 'thickbox', '0' ) == '1' ) {
      * Replaces img links with img links with thickbox class and rel for grouping images
      * based on post id.
      * 
-     * @param       string  post content
-     * @return      string  string replaced post content   
+     * @param   string  $content  post content
+     * @return  string  string replaced post content   
      *
      * @access    private
      * @since     1.9.3

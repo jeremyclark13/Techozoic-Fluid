@@ -9,10 +9,10 @@ if ( (of_get_option( 'single_sidebar', '0' ) == "1" && $tech_sidebar == "unset")
 }
 ?>
 <div id="content" class="<?php echo ( (of_get_option( 'single_sidebar', '0' ) == "1" && $tech_sidebar == "unset") || $tech_sidebar == "on" ) ? "narrow" : "wide"; ?>column">
-    <?php if ( get_the_title() ) {
-        ?>		<h1 class="post_title">
+    <?php if ( get_the_title() ) { ?>
+    <h1 class="post_title">
         <?php the_title(); ?>		
-        </h1>
+    </h1>
         <?php
     }
     if ( have_posts() ) {

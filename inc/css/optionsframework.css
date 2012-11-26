@@ -182,10 +182,10 @@
 }
 #optionsframework .controls input.upload_button {
 	float:right;
-	width:45px;
+	width:55px;
 	border-color:#BBBBBB;
 	cursor:pointer;
-	height:16px;
+	height:25px;
 }
 #optionsframework .controls input.upload_button:hover {
 	border-color:#666666;

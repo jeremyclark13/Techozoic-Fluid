@@ -1,6 +1,20 @@
 <?php
 
 /**
+ * Twitter functions
+ *
+ * Holds functions releated to Twitter feeds
+ *
+ * @package      Techozoic Fluid
+ * @author       Jeremy Clark <jeremy@clark-technet.com>
+ * @copyright    Copyright (c) 2011, Jeremy Clark
+ * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
+ * @since        1.0
+ *
+ */
+
+
+/**
  * Techozoic twitter feed
  *
  * @param string $user user of twitter feed to retrieve.

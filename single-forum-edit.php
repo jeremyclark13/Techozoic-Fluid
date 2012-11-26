@@ -1,6 +1,6 @@
 <?php
 /**
- * Edit handler for replies
+ * Edit handler for forums
  *
  * @package bbPress
  * @subpackage Theme
@@ -10,24 +10,19 @@ if ( of_get_option( 'forum_sidebar', '0' ) == "1" ) {
     tech_show_sidebar( "l" );
 }
 ?>
-<div id="content" class="<?php if ( of_get_option( 'forum_sidebar', '0' ) == "1" ) {
-    echo "narrow";
-} else {
-    echo "wide";
-} ?>column">
 
 <?php do_action( 'bbp_before_main_content' ); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-        <div id="bbp-edit-page" class="bbp-edit-page">
-            <h1 class="entry-title"><?php the_title(); ?></h1>
-            <div class="entry-content">
+    <div id="bbp-edit-page" class="bbp-edit-page">
+        <h1 class="entry-title"><?php the_title(); ?></h1>
+        <div class="entry-content">
 
-        <?php bbp_get_template_part( 'form', 'reply' ); ?>
+            <?php bbp_get_template_part( 'form', 'forum' ); ?>
 
-            </div>
-        </div><!-- #bbp-edit-page -->
+        </div>
+    </div><!-- #bbp-edit-page -->
 
 <?php endwhile; ?>
 
