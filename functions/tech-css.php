@@ -339,18 +339,15 @@ width: {$tech_menu_width}px !important;
 #dropdown li ul ul, .top-menu li ul ul{
 left:{$tech_menu_width}px ; 
 }
-.post_date {
-background-color:{$tech_acc_color};
-}
 .tags {
 border-bottom:1px {$tech_acc_color} solid;
 border-top:1px {$tech_acc_color} solid;
 }
-a,h2 a:hover,h3 a:hover,.commentdiv a, .commentdiv a:visited,#user_login,#user_pass, .commentdiv span, #sidenav a:visited {
+a,h2 a:hover,h3 a:hover,#user_login,#user_pass, #sidenav a:visited {
 color:{$tech_link_color}; 
 text-decoration:none;
 }
-.date_post,#searchform #s {
+#searchform #s {
 color:{$tech_post_bg_color}; 
 text-decoration:none;
 }

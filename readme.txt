@@ -48,6 +48,7 @@ Installation can be done automatically through the Install Themes feature or man
 * Removed unneeded meta description and keyword tags.
 * Minor styling updates.
 * Updated bbPress theme support to 2.2.
+* Added support for Jetpack Infinite Scroll module.
 * Code cleanup to follow WordPress coding standards.
 
 = Version 2.0.8 =

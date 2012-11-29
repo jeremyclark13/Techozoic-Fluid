@@ -166,3 +166,40 @@ function techozoic_enqueue_comment_reply() {
         wp_enqueue_script( 'comment-reply' );
     }
 }
+
+/**
+ * Techozoic Home Page Comment Preview
+ *
+ * Comment preview section on home page.  Pull comment excerpt for approved comments
+ * displays in an unordered list at bottom of each post. 
+ * 
+ * @param   string $ID  id of current post to pull comments for
+ *
+ * @access    public
+ * @since     1.8.7
+ */
+
+function tech_comment_preview( $ID ) {
+    global $comment;
+    $tech_comment_num = of_get_option( 'comment_preview_num', '3' );
+    $output = "";
+    $comment_array = get_comments( array( 'post_id' => $ID, 'number' => $tech_comment_num, 'type' => 'comment', 'status' => 'approve' ) );
+    if ( $comment_array ) {
+        $output .= '<ul class="comment-preview">';
+        foreach ( $comment_array as $comment ) {
+
+            $output .= '<li class="comments-link">';
+            $output .= '<div class="comment-author">';
+            $output .= '<a href="' . get_comment_link() . '" title="' . $comment->comment_author . __( ' posted on ', 'techozoic' ) . get_comment_date() . '">';
+            $output .= $comment->comment_author . __( ' posted on ', 'techozoic' ) . get_comment_date();
+            $output .= '</a>';
+            $output .= '</div>';
+            $output .= '<div class="comment-text">';
+            $output .= get_comment_excerpt( $comment->comment_ID );
+            $output .= '</div>';
+            $output .= '</li>';
+        }
+        $output .= '</ul>';
+    }
+    print $output;
+}

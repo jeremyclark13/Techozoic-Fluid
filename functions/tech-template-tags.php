@@ -8,8 +8,83 @@
  * @author       Jeremy Clark <jeremy@clark-technet.com>
  * @copyright    Copyright (c) 2011, Jeremy Clark
  * @license      http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since        1.0
+ * @since        2.1
  *
+ */
+
+/**
+ * Techozoic Social Media Icons Function
+ *
+ * Echos the social media icon links and images as set in options.
+ * 
+ * 
+ * @param   bool    $home   whether the function called from home page or single page
+ *
+ * @access    public
+ * @since     1.8.8
+ */
+
+function tech_social_icons( $home = true ) {
+    global $post;
+    $post_image = "";
+    if ( has_post_thumbnail( $post->ID ) ) {
+        $post_image_array = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+        $post_image = 'media=' . $post_image_array[0] . '&amp;';
+    }
+    $short_link = home_url() . "/?p=" . $post->ID;
+    $home_icons = of_get_option( 'home_social_icons', array( 'delicious' => '1', 'digg' => '1', 'rss' => '1' ) );
+    $single_icons = of_get_option( 'single_social_icons', array( 'delicious' => '1', 'digg' => '1', 'rss' => '1' ) );
+    $image = get_template_directory_uri() . "/images/icons";
+    $link = get_permalink();
+    $title = $post->post_title;
+    $email_title = preg_replace( '/&/i', 'and', $title );
+    $url_title = urlencode( $post->post_title );
+    $excerpt = urlencode( wp_trim_excerpt( $post->post_excerpt ) );
+    $excerpt_mail = wp_trim_excerpt( $post->post_excerpt );
+    $excerpt_mail = preg_replace( "/&#?[a-z0-9]{2,8};/i", "", $excerpt_mail );
+    $home_title = urlencode( get_bloginfo( 'name' ) );
+    $social_links = array(
+        "delicious" => "<a href='http://delicious.com/post?url={$link}&amp;title={$url_title}' title='" . __( 'del.icio.us this!', 'techozoic' ) . "' target='_blank' class='social delicious'></a>",
+        "digg" => "<a href='http://digg.com/submit?phase=2&amp;url={$link}&amp;title={$url_title}' title='" . __( 'Digg this!', 'techozoic' ) . "' target='_blank' class='social digg'></a>",
+        "email" => "<a href='mailto:?subject={$email_title}&amp;body={$excerpt_mail} {$link}' title='" . __( 'Share this by email.', 'techozoic' ) . "'  class='social email'></a>",
+        "facebook" => "<a href='http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}' title='" . __( 'Share on Facebook!', 'techozoic' ) . "' target='_blank' class='social facebook'></a>",
+        "linkedin" => "<a href ='http://www.linkedin.com/shareArticle?mini=true&amp;url={$link}&amp;title={$url_title}&amp;summary={$excerpt}&amp;source={$home_title}' title='" . __( 'Share on LinkedIn!', 'techozoic' ) . "' target='_blank' class='social linkedin'></a>",
+        "myspace" => "<a href='http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}' title='" . __( 'Share on Myspace!', 'techozoic' ) . "' target='_blank' class='social myspace'></a>",
+        "newsvine" => "<a href='http://www.newsvine.com/_tools/seed&amp;save?u={$link}' title='" . __( 'Share on NewsVine!', 'techozoic' ) . "' target='_blank' class='social newsvine'></a>",
+        "stumbleupon" => "<a href='http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}' title='" . __( 'Stumble Upon this!', 'techozoic' ) . "' target='_blank' class='social stumble'></a>",
+        "twitter" => "<a href='http://twitter.com/home?status=Reading%20{$url_title}%20on%20{$short_link}' title='" . __( 'Tweet this!', 'techozoic' ) . "' target='_blank' class='social twitter'></a>",
+        "reddit" => "<a href='http://reddit.com/submit?url={$link}&amp;title={$url_title}' title='" . __( 'Share on Reddit!', 'techozoic' ) . "' target='_blank' class='social reddit'></a>",
+        "rss" => "<a href='" . get_post_comments_feed_link() . "' title='" . __( 'Subscribe to Feed', 'techozoic' ) . "' class='social feed'></a>",
+        "pintrest" => "<a href='http://pinterest.com/pin/create/button/?url={$link}&amp;{$post_image}description={$excerpt}' class='pin-it-button' count-layout='none'><img src='//assets.pinterest.com/images/PinExt.png' title='Pin It' /></a>",
+        "google" => "<g:plusone size='small' annotation='none' expandto='right' href='$link'></g:plusone>" );
+    if ( $home == true ) {
+        if ( is_array( $home_icons ) ) {
+            foreach ( $home_icons as $key => $value ) {
+                if ( $value == "1" ) {
+                    echo $social_links[$key] . "&nbsp;";
+                }
+            }
+        }
+    } else {
+        if ( is_array( $single_icons ) ) {
+            foreach ( $single_icons as $key => $value ) {
+                if ( $value == "1" ) {
+                    echo $social_links[$key] . "&nbsp;";
+                }
+            }
+        }
+    }
+}
+
+/**
+ * Techozoic Single Nav Links
+ *
+ * Echos the single nav links on single pages.
+ * 
+ *
+ *
+ * @access    public
+ * @since     2.1
  */
 
 function tech_single_nav_links() {
@@ -29,6 +104,17 @@ function tech_single_nav_links() {
     echo '</div>';
 }
 
+/**
+ * Techozoic Nav Links
+ *
+ * Echos the nav links on archive pages.
+ * 
+ *
+ *
+ * @access    public
+ * @since     2.1
+ */
+
 function tech_nav_links() {
     $prev_link = get_next_posts_link( __( '&laquo; Older Entries', 'techozoic' ) );
     $next_link = get_previous_posts_link( __( 'Newer Entries &raquo;', 'techozoic' ) );
@@ -41,6 +127,16 @@ function tech_nav_links() {
     }
     echo '</div>';
 }
+
+/**
+ * Techozoic Archive title
+ *
+ * Echos the title base on what archive user is currently browsing.
+ * 
+ *
+ * @access    public
+ * @since     2.1
+ */
 
 function tech_archive_title() {
     /* If this is a category archive */

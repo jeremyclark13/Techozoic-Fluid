@@ -71,6 +71,11 @@ function techozoic_setup() {
     //WP Post Format
     add_theme_support( 'bbpress' );
     //bbPress Support
+    add_theme_support ( 'infinite-scroll', array(
+        'container' => 'content',
+        'footer' => 'page',
+        'footer_widgets' => 'tech_footer',
+    ));
     register_nav_menus( array(
         'primary' => __( 'Header Navigation', 'techozoic' ),
         'sidebar' => __( 'Sidebar Navigation', 'techozoic' ),
@@ -515,6 +520,10 @@ function tech_plus_one() {
         po.src = 'https://apis.google.com/js/plusone.js';
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
       })();
+      jQuery( document.body ).on( 'post-load', function() {
+        if ( typeof gapi !== 'undefined')
+            gapi.plusone.go(\"content\");
+});; 
     </script>";
 }
 
@@ -863,67 +872,6 @@ function tech_show_sidebar( $loc ) {
     }
 }
 
-/**
- * Techozoic Social Media Icons Function
- *
- * Echos the social media icon links and images as set in options.
- * 
- * 
- * @param   bool    $home   whether the function called from home page or single page
- *
- * @access    public
- * @since     1.8.8
- */
-
-function tech_social_icons( $home = true ) {
-    global $post;
-    if ( has_post_thumbnail( $post->ID ) ) {
-        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-    }
-    $short_link = home_url() . "/?p=" . $post->ID;
-    $home_icons = of_get_option( 'home_social_icons', array( 'delicious' => '1', 'digg' => '1', 'rss' => '1' ) );
-    $single_icons = of_get_option( 'single_social_icons', array( 'delicious' => '1', 'digg' => '1', 'rss' => '1' ) );
-    $image = get_template_directory_uri() . "/images/icons";
-    $link = get_permalink();
-    $title = $post->post_title;
-    $email_title = preg_replace( '/&/i', 'and', $title );
-    $url_title = urlencode( $post->post_title );
-    $excerpt = urlencode( wp_trim_excerpt( $post->post_excerpt ) );
-    $excerpt_mail = wp_trim_excerpt( $post->post_excerpt );
-    $excerpt_mail = preg_replace( "/&#?[a-z0-9]{2,8};/i", "", $excerpt_mail );
-    $home_title = urlencode( get_bloginfo( 'name' ) );
-    $social_links = array(
-        "delicious" => "<a href='http://delicious.com/post?url={$link}&amp;title={$url_title}' title='" . __( 'del.icio.us this!', 'techozoic' ) . "' target='_blank' class='social delicious'></a>",
-        "digg" => "<a href='http://digg.com/submit?phase=2&amp;url={$link}&amp;title={$url_title}' title='" . __( 'Digg this!', 'techozoic' ) . "' target='_blank' class='social digg'></a>",
-        "email" => "<a href='mailto:?subject={$email_title}&amp;body={$excerpt_mail} {$link}' title='" . __( 'Share this by email.', 'techozoic' ) . "'  class='social email'></a>",
-        "facebook" => "<a href='http://www.facebook.com/share.php?u={$link}&amp;t={$url_title}' title='" . __( 'Share on Facebook!', 'techozoic' ) . "' target='_blank' class='social facebook'></a>",
-        "linkedin" => "<a href ='http://www.linkedin.com/shareArticle?mini=true&amp;url={$link}&amp;title={$url_title}&amp;summary={$excerpt}&amp;source={$home_title}' title='" . __( 'Share on LinkedIn!', 'techozoic' ) . "' target='_blank' class='social linkedin'></a>",
-        "myspace" => "<a href='http://www.myspace.com/Modules/PostTo/Pages/?u={$link}&amp;t={$url_title}' title='" . __( 'Share on Myspace!', 'techozoic' ) . "' target='_blank' class='social myspace'></a>",
-        "newsvine" => "<a href='http://www.newsvine.com/_tools/seed&amp;save?u={$link}' title='" . __( 'Share on NewsVine!', 'techozoic' ) . "' target='_blank' class='social newsvine'></a>",
-        "stumbleupon" => "<a href='http://www.stumbleupon.com/submit?url={$link}&amp;title={$url_title}' title='" . __( 'Stumble Upon this!', 'techozoic' ) . "' target='_blank' class='social stumble'></a>",
-        "twitter" => "<a href='http://twitter.com/home?status=Reading%20{$url_title}%20on%20{$short_link}' title='" . __( 'Tweet this!', 'techozoic' ) . "' target='_blank' class='social twitter'></a>",
-        "reddit" => "<a href='http://reddit.com/submit?url={$link}&amp;title={$url_title}' title='" . __( 'Share on Reddit!', 'techozoic' ) . "' target='_blank' class='social reddit'></a>",
-        "rss" => "<a href='" . get_post_comments_feed_link() . "' title='" . __( 'Subscribe to Feed', 'techozoic' ) . "' class='social feed'></a>",
-        "pintrest" => "<a href='http://pinterest.com/pin/create/button/?url={$link}&amp;media={$image}&amp;description={$excerpt}' class='pin-it-button' count-layout='none'><img src='//assets.pinterest.com/images/PinExt.png' title='Pin It' /></a>",
-        "google" => "<g:plusone size='small' annotation='none' expandto='right' href='$link'></g:plusone>" );
-    if ( $home == true ) {
-        if ( is_array( $home_icons ) ) {
-            foreach ( $home_icons as $key => $value ) {
-                if ( $value == "1" ) {
-                    echo $social_links[$key] . "&nbsp;";
-                }
-            }
-        }
-    } else {
-        if ( is_array( $single_icons ) ) {
-            foreach ( $single_icons as $key => $value ) {
-                if ( $value == "1" ) {
-                    echo $social_links[$key] . "&nbsp;";
-                }
-            }
-        }
-    }
-}
 
 /**
  * Techozoic About Icons Function
@@ -960,42 +908,7 @@ function tech_about_icons( $fb = 0, $my = 0, $twitter = 0, $google = 0 ) {
     }
 }
 
-/**
- * Techozoic Home Page Comment Preview
- *
- * Comment preview section on home page.  Pull comment excerpt for approved comments
- * displays in an unordered list at bottom of each post. 
- * 
- * @param   string $ID  id of current post to pull comments for
- *
- * @access    public
- * @since     1.8.7
- */
 
-function tech_comment_preview( $ID ) {
-    global $comment;
-    $tech_comment_num = of_get_option( 'comment_preview_num', '3' );
-    $output = "";
-    $comment_array = get_comments( array( 'post_id' => $ID, 'number' => $tech_comment_num, 'type' => 'comment', 'status' => 'approve' ) );
-    if ( $comment_array ) {
-        $output .= '<ul class="comment-preview">';
-        foreach ( $comment_array as $comment ) {
-
-            $output .= '<li class="comments-link">';
-            $output .= '<div class="comment-author">';
-            $output .= '<a href="' . get_comment_link() . '" title="' . $comment->comment_author . __( ' posted on ', 'techozoic' ) . get_comment_date() . '">';
-            $output .= $comment->comment_author . __( ' posted on ', 'techozoic' ) . get_comment_date();
-            $output .= '</a>';
-            $output .= '</div>';
-            $output .= '<div class="comment-text">';
-            $output .= get_comment_excerpt( $comment->comment_ID );
-            $output .= '</div>';
-            $output .= '</li>';
-        }
-        $output .= '</ul>';
-    }
-    print $output;
-}
 
 
 if ( is_admin() && (isset( $_GET['page'] ) && $_GET['page'] == 'custom-header') && $pagenow == "themes.php" ) {

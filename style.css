@@ -245,39 +245,6 @@ h3{
 /*************************************
 Entry
  *************************************/
-.commentdiv{
-    float:right;
-    height:40px;
-    margin-top:7px;
-    text-align:center;
-    width:40px;
-}
-
-.commentdiv a{
-    background:url(images/comment2.png) no-repeat top center;
-    color:#597EAA;
-    display:block;
-    height:35px;
-    font-size:18px;
-    font-weight:700;
-    text-decoration:none;
-    padding-top:8px;
-    text-decoration:none;
-    width:40px;
-}
-.commentdiv a:hover{
-    text-decoration: none;
-}
-.commentdiv span{
-    background:url(images/comment2.png) no-repeat top center;
-    color:#597EAA;
-    display:block;
-    font-size:9px;
-    height:35px;
-    padding-top:6px;
-    text-decoration:none;
-    width:40px;
-}
 
 .post_comment_cont{
     clear:both;
@@ -292,20 +259,6 @@ ul.comment-preview li {
 }
 ul.comment-preview li:hover{
     opacity:1;
-}
-
-.date_post{
-    clear: left;
-    color: #e3e3e3;
-    float: left;
-    font-size: 19px;
-    font-weight: 800;
-    height: 20px;
-    letter-spacing: -1px;
-    text-align: center;
-    text-decoration: none;
-    width: 40px;
-    line-height: 20px;
 }
 
 .entry h2{
@@ -383,23 +336,6 @@ ul.comment-preview li:hover{
     box-shadow:none !important;
     -moz-box-shadow:none !important;
     -webkit-box-shadow:none !important;
-}
-
-.month_post{
-    background: -moz-linear-gradient(center top , #E3E3E3, #C3C3C3);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C3C3C3), to(#E3E3E3)); 
-    background: -webkit-linear-gradient(top, #E3E3E3, #C3C3C3); 
-    background: -ms-linear-gradient(top, #E3E3E3, #C3C3C3); 
-    background: -o-linear-gradient(top, #E3E3E3, #C3C3C3);
-    background-color: #e3e3e3;
-    border-bottom: 1px solid #777777;
-    clear: left;
-    color: #2C4353;
-    font-size: 12px;
-    font-weight: bold;
-    height: 16px;
-    padding: 0 4px 0 0;
-    text-align: right;
 }
 
 .narrowcolumn .entry, .widecolumn .entry{
@@ -989,7 +925,9 @@ Social Icons
 .top a{
     margin: 0 1px;
 }
-
+.top a img{
+    vertical-align: bottom;
+}
 .social{
     display: inline-block;
     width:16px;
@@ -1513,7 +1451,7 @@ select{
 }
 
 
-input[type="submit"], .button {
+input[type="submit"], .button, div#infinite-handle span {
     display: inline-block;
     zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */
     *display: inline;
@@ -1538,14 +1476,14 @@ input[type="submit"], .button {
     background: -moz-linear-gradient(top,  #fff,  #ededed);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
 }
-input[type="submit"]:hover, .button:hover {
+input[type="submit"]:hover, .button:hover, div#infinite-handle span:hover {
     text-decoration: none;
     background: #ededed;
     background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
     background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
 }
-input[type="submit"]:active, .button:active {
+input[type="submit"]:active, .button:active, div#infinite-handle span: active {
     position: relative;
     top: 1px;
     color: #999;
@@ -1619,7 +1557,6 @@ Footer
 #footer ul.footernav li{
     display: inline;
 }
-
 /*************************************
 Image Gallery
 *************************************/
@@ -1962,4 +1899,27 @@ WP-Classes
 .wp-post-image,.alignleft{
     float:left;
     margin:0 6px;
+}
+
+/****************************************
+Infnite Scroll
+*****************************************/
+
+/* Hides navigation links and site footer when infinite scroll is active */
+.infinite-scroll .navigation,
+.infinite-scroll.neverending #footer {
+	visibility: hidden;
+}
+/* Shows the footer again in case all posts have been loaded */
+.infinity-end.neverending #footer {
+	visibility: visible;
+}
+#infinite-footer{
+    z-index: 10;
+}
+div#infinite-handle span:before{
+    color: #505050;
+}
+div#infinite-handle span:hover:before{
+    color: #303030;
 }
