@@ -4,8 +4,7 @@
     </div>
     <div style="clear:both"></div>
     <p class="credit">
-        <?php do_action( 'tech_footer' );
-        ?>
+        <?php echo tech_footer_text(); ?>
     </p>
     <?php
     if ( has_nav_menu( 'footer' ) ) {

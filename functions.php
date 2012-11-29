@@ -793,31 +793,6 @@ function tech_content_width() {
     return $output;
 }
 
-/**
- * Techozoic footer text function
- *
- * Used to replace shortcodes used in footer_text option with correct values.
- * 
- *
- * @access    public
- * @since     1.8.8
- */
-
-add_action( 'tech_footer', 'tech_footer_text' );  // Adds custom footer text defined on option page to footer.
-
-function tech_footer_text() {
-    if ( function_exists( 'wp_get_theme' ) ) {
-        $theme_data = wp_get_theme( 'techozoic-fluid' );
-        $version = $theme_data->Version;
-    } else {
-        $theme_data = get_theme_data( get_template_directory() . '/style.css' );
-        $version = $theme_data['Version'];
-    }
-    $string = of_get_option( 'footer_text', '%COPYRIGHT% %BLOGNAME% | %THEMENAME% %THEMEVER% by %THEMEAUTHOR%. | %TOP% | %LOGIN% <br /> <small>%MYSQL%</small>' );
-    $shortcode = array( '/%BLOGNAME%/i', '/%THEMENAME%/i', '/%THEMEVER%/i', '/%THEMEAUTHOR%/i', '/%TOP%/i', '/%COPYRIGHT%/i', '/%MYSQL%/i', '/%LOGIN%/i' );
-    $output = array( get_bloginfo( 'name' ), "Techozoic", $version, '<a href="http://clark-technet.com/"> Jeremy Clark</a>', '<a href="#top">' . __( 'Top', 'techozoic' ) . '</a>', '&copy; ' . date( 'Y' ), sprintf( __( '%1$d mySQL queries in %2$s seconds.', 'techozoic' ), get_num_queries(), timer_stop( 0 ) ),  wp_loginout(get_permalink(), false) );
-    echo preg_replace( $shortcode, $output, $string );
-}
 
 /**
  * Techozoic Sidebar Display Function
