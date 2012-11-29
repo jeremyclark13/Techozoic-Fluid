@@ -1064,7 +1064,7 @@ Social Icons
 /*************************************
 Nav Menus
  *************************************/
-#navmenu {
+#navwrap {
     position: relative;
 }
 #menu-icon{
@@ -1424,23 +1424,24 @@ Forms
     -o-transition:width 0.1s linear;
     transition:width 0.1s linear;
 }
-#navmenu #searchform #s:focus,#navmenu #searchform #s:active{
+#navmenu #searchform #s:focus, #navmenu #searchform #s:active{
     width: 120px;
 }
 .standard-below #searchform{
-    position: absolute;
+    position: relative;
     right: 5px;
-    top: -40px;
+    top: -50px;
 }
 .standard-above #searchform{
-    position: absolute;
+    position: relative;
     right: 5px;
     top: 60px;
 }
 .ribbon #searchform, .square #searchform {
-    position: absolute;
+    position: relative;
     right: 10px;
-    top: 0px;
+    top: -35px;
+    margin-bottom: -35px;
 }
 
 #searchform{
