@@ -23,10 +23,10 @@ if ( have_comments() ) {
     ?>
     <h3 id="comments"><?php comments_number( __( 'No Comments', 'techozoic' ), __( 'One Comment', 'techozoic' ), _n( '% Comment', '% Comments', get_comments_number(), 'techozoic' ) ); ?></h3>
     <ol class="commentlist">
-        <?php wp_list_comments( 'type=comment&callback=techozoic_comment' ); ?>
+        <?php wp_list_comments( 'callback=techozoic_comment' ); ?>
     </ol>
     <ol class="trackback">
-        <?php wp_list_comments( 'type=pings&callback=techozoic_ping' ); ?>
+        <?php //wp_list_comments( 'type=pings&callback=techozoic_ping' ); ?>
     </ol>
     <div class="navigation">
         <div class="alignleft"><?php previous_comments_link() ?></div>

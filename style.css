@@ -411,22 +411,6 @@ ul.comment-preview li:hover{
     padding-top:4px;
 }
 
-.post_date{
-    background-color: #A0B3C2;
-    border: 1px solid #CCCCCC;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow:0 0 3px rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow:0 0 3px rgba(0,0,0,0.4);
-    clear: left;
-    float: left;
-    height: 40px;
-    margin: 0 7px 0 0;
-    width: 40px
-}
-
 .postmetadata{
     clear:left;
     color:#777;
@@ -500,11 +484,7 @@ ul.comment-preview li:hover{
     float:right;
     font-size: .8em;
 }
-.tagcont{
-    float:left;
-    margin:2% 1%;
-    width:30%;
-}
+
 .post_info{
     padding: 5px 5px 8px 10px;
 }
@@ -783,7 +763,7 @@ Comments
     font-weight:700;
 }
 
-.commentlist li.comment{
+.commentlist li.comment, .commentlist li.trackback, .commentlist li.pingback{
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
@@ -810,10 +790,6 @@ Comments
     z-index: 2;
 }
 
-.commentlist li.pingback{
-    display:none;
-}
-
 .commentlist p{
     font-weight:400;
     line-height:1.5em;
@@ -825,7 +801,7 @@ Comments
     padding-left:5px;
 }
 
-.commentlist, .trackback{
+.commentlist{
     padding:0;
     text-align:justify;
     position:relative;
@@ -855,15 +831,6 @@ Comments
     margin:0;
     padding:0;
     text-align:center;
-}
-
-.trackback li{
-    border-bottom:1px solid #ddd;
-    font-size:.9em;
-    font-weight:700;
-    list-style:none;
-    margin:2px 0;
-    padding:2px 10px;
 }
 
 h3.comments{
