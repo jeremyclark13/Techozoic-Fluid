@@ -252,7 +252,8 @@ function tech_wp_title( $old_title, $sep, $sep_location ) {
     /** Add wrapping spaces to separator character */
     $sep = ' ' . $sep . ' ';
 
-
+    $tech_title_text = $title;
+    
     /** Add the blog description (tagline) for the home/front page */
     $site_tagline = get_bloginfo( 'description', 'display' );
     if ( $site_tagline && ( is_home() || is_front_page() ) )

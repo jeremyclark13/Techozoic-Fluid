@@ -102,6 +102,15 @@ function tech_widgets_init() {
             ) );
         }
     }
+    //Register Widgets for Sidebars
+    register_widget( 'Techozoic_Nav_Widget' );
+    register_widget( 'Techozoic_Status_Widget' );
+    register_widget( 'Techozoic_Page_Widget' );
+    register_widget( 'Techozoic_Font_Size_Widget' );
+    register_widget( 'Techozoic_About_Widget' );
+    register_widget( 'Techozoic_Meta_Widget' );
+    register_widget( 'Techozoic_RSS_Widget' );
+    register_widget( 'Techozoic_Twitter_Widget' );
 }
 
 add_action( 'widgets_init', 'tech_widgets_init' );
@@ -576,13 +585,5 @@ class Techozoic_Twitter_Widget extends WP_Widget {
 }
 
 //End Class Techozoic_About_Widget
-//Register Widgets for Sidebars
-register_widget( 'Techozoic_Nav_Widget' );
-register_widget( 'Techozoic_Status_Widget' );
-register_widget( 'Techozoic_Page_Widget' );
-register_widget( 'Techozoic_Font_Size_Widget' );
-register_widget( 'Techozoic_About_Widget' );
-register_widget( 'Techozoic_Meta_Widget' );
-register_widget( 'Techozoic_RSS_Widget' );
-register_widget( 'Techozoic_Twitter_Widget' );
+
 ?>
