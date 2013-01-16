@@ -136,13 +136,13 @@ function optionsframework_options() {
         "old_options" => array( "Yes" => "1", "No" => "0" ),
         "std" => "1" );
 
-    $options[] = array( "name" => __( 'Display Sidebars on Single Post Pages', 'techozoic' ),
+    $options['single_sidebar'] = array( "name" => __( 'Display Sidebars on Single Post Pages', 'techozoic' ),
         "id" => "single_sidebar",
         "type" => "checkbox",
         "old_options" => array( "Yes" => "1", "No" => "0" ),
         "std" => "0" );
     if ( class_exists( 'bbPress' ) ) {
-        $options[] = array( "name" => __( 'Display Sidebars on Forum', 'techozoic' ),
+        $options['forum_sidebar'] = array( "name" => __( 'Display Sidebars on Forum', 'techozoic' ),
             "id" => "forum_sidebar",
             "type" => "checkbox",
             "old_options" => array( "Yes" => "1", "No" => "0" ),
@@ -719,8 +719,9 @@ function tech_customizer_register( $wp_customize ) {
                 'main_column_width',
                 'l_sidebar_width',
                 'r_sidebar_width',
-                'home_sidebar'
-            )
+                'home_sidebar',
+                'single_sidebar'
+                )
         ),
         'nav_layout' => array(
             'name' => __( 'Navigation Layout', 'techozoic'),
@@ -776,6 +777,9 @@ function tech_customizer_register( $wp_customize ) {
             )
         )
     );
+    if ( class_exists( 'bbPress' ) ) {
+       $customizer_array['layout']['settings'][] = 'forum_sidebar';
+    }
     $options = optionsframework_options();
     $i = 0;
     foreach ( $customizer_array as $name => $val ) {

@@ -305,8 +305,6 @@ function tech_enque_mobile() {
     wp_register_style( 'tech-mobile', get_template_directory_uri() . '/css/mobile.css', false, 0.1 );
     wp_enqueue_style( 'tech-mobile' );
     wp_enqueue_script( 'jquery' );
-    //wp_register_script( 'small-menu', $script_dir . 'small-menu.js', array( 'jquery' ), '1.0' );
-    //wp_enqueue_script( 'small-menu' );
 }
 
 function tech_small_menu_js(){
