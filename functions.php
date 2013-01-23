@@ -496,8 +496,8 @@ function tech_exclude_post_formats_from_feeds( &$wp_query ) {
     }
 }
 
-$tech_home_social = of_get_option( 'home_social_icons', array( 'delicious' => '1', 'digg' => '1', 'rss' => '1' ) );
-$tech_single_social = of_get_option( 'single_social_icons', array( 'delicious' => '1', 'digg' => '1', 'rss' => '1' ) );
+$tech_home_social = of_get_option( 'home_social_icons', array( 'delicious' => '1', 'digg' => '1', 'rss' => '1', 'google' => '0', 'pintrest' => '0' ) );
+$tech_single_social = of_get_option( 'single_social_icons', array( 'delicious' => '1', 'digg' => '1', 'rss' => '1', 'google' => '0', 'pintrest' => '0' ) );
 
 /**
  * Techozoic Google Plus one JS

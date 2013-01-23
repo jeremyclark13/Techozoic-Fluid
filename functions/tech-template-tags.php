@@ -170,6 +170,9 @@ function tech_archive_title() {
     if ( is_category() ) {
         echo '<h2 class="pagetitle"> ' . sprintf( __( '%s Archive', 'techozoic' ), single_cat_title( '', false ) ) . '</h2>';
         /* If this is a daily archive */
+    } elseif ( is_tag() ) {
+        echo '<h2 class="pagetitle"> ' . sprintf( __( '%s Archive', 'techozoic' ), single_tag_title( '', false ) ) . '</h2>';
+        /* If this is a daily archive */
     } elseif ( is_day() ) {
         echo '<h2 class="pagetitle"> ' . sprintf( __( 'Archive for %s', 'techozoic' ), get_the_time( 'F jS, Y' ) ) . '</h2>';
         /* If this is a monthly archive */

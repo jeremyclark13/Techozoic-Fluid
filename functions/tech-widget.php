@@ -64,7 +64,7 @@ function tech_widgets_init() {
             break;
         } elseif ( $page_option[$page->ID] == '1' ) {
             register_sidebar( array(
-                'name' => sprint( __( '%s Left Sidebar', 'techozoic' ), $page->post_title ),
+                'name' => sprintf( __( '%s Left Sidebar', 'techozoic' ), $page->post_title ),
                 'description' => sprintf( __( 'Sidebar displayed only on %1$s.  Page ID(%2$s)', 'techozoic' ), $page->post_title, $page->ID ),
                 'id' => "page_sidebar_l_$page->ID",
                 'before_widget' => '<div class="hwidget %2$s">',
@@ -73,7 +73,7 @@ function tech_widgets_init() {
                 'after_title' => '</h2>'
             ) );
             register_sidebar( array(
-                'name' => sprint( __( '%s Right Sidebar', 'techozoic' ), $page->post_title ),
+                'name' => sprintf( __( '%s Right Sidebar', 'techozoic' ), $page->post_title ),
                 'description' => sprintf( __( 'Sidebar displayed only on %1$s.  Page ID(%2$s)', 'techozoic' ), $page->post_title, $page->ID ),
                 'id' => "page_sidebar_r_$page->ID",
                 'before_widget' => '<div class="hwidget %2$s">',

@@ -1,22 +1,20 @@
-<?php /*
-  Template Name: Tag Archive
-  This is an example tag archive page.  If you add this to your theme,  and create a page using the "Tag Archive" template (it'll be there in the list)
-  you'll get a tag cloud displaying on a page.
- */ ?>
-<?php get_header(); ?>
+<?php
+get_header();
+$date_format = get_option( 'date_format' );
+if ( of_get_option( 'home_sidebar', '1' ) == "1" )
+    tech_show_sidebar( "l" );
+?>
 
-<div id="content" class="widecolumn">
+<div id="content" class="<?php echo (of_get_option( 'home_sidebar', '1' ) != "1" || of_get_option( 'sidebar_pos', '3-col' ) == '1-col' ) ? "wide" : "narrow"; ?>column">
+
     <div class="post">	
         <h2 class="center"><?php _e( "Tag Archive", "techozoic" ); ?></h2><br />
         <?php wp_tag_cloud( '' ); ?>
-        <div class="navigation">
-            <div class="alignleft"><?php next_posts_link( __( '&laquo; Older Entries', 'techozoic' ) ) ?></div>
-            <div class="alignright"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'techozoic' ) ) ?></div>
-        </div>
-        <div style="clear:both"></div>
-        <?php if ( have_posts() ) : ?>
+        <?php tech_nav_links(); ?>
+        <?php if ( have_posts() ) { ?>
 
-            <?php while ( have_posts() ) : the_post(); ?>
+            <?php while ( have_posts() ) {
+                the_post(); ?>
                 <div class="tagcont">
                     <h2 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf( __( 'Permanent Link to %s', 'techozoic' ), get_the_title() ); ?>"><?php the_title(); ?></a></h2>
 
@@ -35,14 +33,17 @@
                         </div>
                     <?php } ?>
                 </div>
-            <?php endwhile; ?>
-        <?php endif; ?>
-        <div class="navigation">
-            <div class="alignleft"><?php next_posts_link( __( '&laquo; Older Entries', 'techozoic' ) ) ?></div>
-            <div class="alignright"><?php previous_posts_link( __( 'Newer Entries &raquo;', 'techozoic' ) ) ?></div>
-        </div>
+            <?php } // End while have_posts
+        } // End if have_posts
+        tech_nav_links();
+        ?>
 
 
     </div>
 </div>	
-<?php get_footer(); ?>
+<?php
+if ( of_get_option( 'home_sidebar', '1' ) == "1" ) {
+    tech_show_sidebar( "r" );
+}
+get_footer();
+?>
