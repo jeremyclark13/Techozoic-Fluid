@@ -222,38 +222,38 @@ font-size: {$tech_small_font['size']};
 font: {$tech_small_font['style']} {$tech_small_font['size']}/1.3em {$tech_small_font['face']}, Sans-Serif;
 color: {$tech_small_font['color']};
 }
-ul#nav a, ul#admin a, #dropdown li.current_page_item a:hover, .top-menu li.current-menu-item a:hover, #dropdown li.current_page_item ul a, .top-menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover, {
+.top-menu li.current-menu-item a:hover, .top-menu li.current-menu-item ul a, ul#nav li.current_page_item a:hover, {
 color: {$tech_nav_font['color']};
 }
 .commenlist .author,#searchform #s, #searchsubmit:hover,#catsubmit:hover,#wp-submit:hover,#TB_ajaxContent {
 background-color: {$tech_acc_color} ;
 }
-ul#admin li, ul#dropdown li, #navmenu .top-menu li{
+#navmenu .top-menu li{
 /*background-color: {$tech_nav_bg_color};*/
 }
-ul#admin li a, ul#dropdown li a, #navmenu .top-menu li a{
+#navmenu .top-menu li a{
 font-style: {$tech_nav_font['style']}; 
 font-size:{$tech_nav_font['size']};
 font-family: {$tech_nav_font['face']}, Sans-Serif;
 color:{$tech_nav_font['color']};
 }
-ul#admin li a:hover, ul#dropdown li a:hover, #navmenu .top-menu li a:hover{
+#navmenu .top-menu li a:hover{
 color: {$tech_nav_hov_text_color};
 }
-#dropdown > li, ul.top-menu > li{
+ul.top-menu > li{
 margin: 0 {$tech_nav_margin}px;
 }
-.ribbon ul.top-menu > li, .square ul.top-menu > li, #dropdown > li{
+.ribbon ul.top-menu > li, .square ul.top-menu > li{
 margin: 0;
 padding: 0 {$tech_nav_margin}px;
 }
-.ribbon ul.top-menu > li.has_children:hover:after, .square ul.top-menu > li.has_children:hover:after, #dropdown > li.has_children:hover:after {
+.ribbon ul.top-menu > li.has_children:hover:after, .square ul.top-menu > li.has_children:hover:after {
 border-bottom: 5px solid {$tech_nav_ul_bg_color};
 }
-#dropdown ul, .top-menu ul{
+.top-menu ul{
 background-color: {$tech_nav_bg_gradient_top};
 }
-.ribbon, .square, #dropdown{
+.ribbon, .square{
 background-color: {$tech_nav_bg_gradient_top};
 background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from({$tech_nav_bg_gradient_top}), to({$tech_nav_bg_gradient_bot}));
 background-image: -webkit-linear-gradient(top, {$tech_nav_bg_gradient_top}, {$tech_nav_bg_gradient_bot});
@@ -272,26 +272,26 @@ border-left: 10px solid {$tech_nav_bg_gradient_bot};
 CSS;
     if ( of_get_option( 'search_box', '1' ) == '1' ) {
         $css_var .= <<<CSS
-.ribbon ul.top-menu > li:last-child, .square ul.top-menu > li:last-child, #dropdown > li:last-child{
+.ribbon ul.top-menu > li:last-child, .square ul.top-menu > li:last-child{
 margin-right: 100px;
 }
 CSS;
     }
     if ( $tech_nav_bg_trans != '1' ) {
         $css_var .= <<<CSS
-#navmenu .top-menu li, #navmenu .top-menu ul.sub-menu, ul#admin li, #navmenu #dropdown li{
+#navmenu .top-menu li, #navmenu .top-menu ul.sub-menu, ul#admin li{
 background-color: {$tech_nav_ul_bg_color};
 }       
-#navmenu #dropdown li.current_page_item, #navmenu .top-menu li.current-menu-item, #navmenu .top-menu ul.sub-menu li.current-menu-item {
+#navmenu .top-menu li.current-menu-item, #navmenu .top-menu ul.sub-menu li.current-menu-item {
 background-color: {$tech_nav_active_bg_color} ;
 }
-#navmenu #dropdown li:hover, #navmenu .top-menu li:hover, #navmenu .top-menu ul.sub-menu > li:hover {
+#navmenu .top-menu li:hover, #navmenu .top-menu ul.sub-menu > li:hover {
 background-color:{$tech_nav_hov_bg_color};
 }
-#navmenu #dropdown li.current_page_item > a:hover, #navmenu .top-menu li.current-menu-item > a:hover, #navmenu .top-menu li.current-menu-item:hover > a, #navmenu .top-menu li:hover > a, #navmenu #dropdown li:hover > a {
+#navmenu .top-menu li.current-menu-item > a:hover, #navmenu .top-menu li.current-menu-item:hover > a, #navmenu .top-menu li:hover > a {
 color:{$tech_nav_hov_text_color};
 }
-#navmenu #dropdown li.current_page_item > a, #navmenu .top-menu li.current-menu-item > a{
+#navmenu .top-menu li.current-menu-item > a{
 color:{$tech_nav_active_text_color};
 }
 ul#admin li:hover{
@@ -309,19 +309,19 @@ background-color: transparent;
 #navmenu .top-menu ul.sub-menu{
 background-color: {$tech_nav_ul_bg_color}
 }
-#dropdown li.current_page_item, #navmenu .top-menu li.current-menu-item {
+#navmenu .top-menu li.current-menu-item {
 background-color: transparent ;
 }
-#dropdown li:hover, #navmenu .top-menu li:hover {
+#navmenu .top-menu li:hover {
 background-color:transparent;
 box-shadow:none;
 -moz-box-shadow:none;
 -webkit-box-shadow:none;
 }
-#dropdown li.current_page_item > a, #navmenu .top-menu li.current-menu-item > a{
+#navmenu .top-menu li.current-menu-item > a{
 color:{$tech_nav_active_text_color};
 }
-#dropdown li.current_page_item > a:hover, #navmenu .top-menu li.current-menu-item > a:hover, #navmenu .top-menu li.current-menu-item:hover > a, #navmenu .top-menu li:hover > a{
+#navmenu .top-menu li.current-menu-item > a:hover, #navmenu .top-menu li.current-menu-item:hover > a, #navmenu .top-menu li:hover > a{
 color:{$tech_nav_hov_text_color};
 }
 ul#admin li:hover, ul#admin li{
@@ -333,11 +333,14 @@ box-shadow:none;
 CSS;
     }
     $css_var .= <<<CSS
-#dropdown li ul li, .top-menu li ul li, #dropdown li ul , .top-menu li ul{
+.top-menu li ul li, .top-menu li ul{
 width: {$tech_menu_width}px !important;
 }
-#dropdown li ul ul, .top-menu li ul ul{
+.top-menu li ul ul{
 left:{$tech_menu_width}px ; 
+}
+.post_date {
+background-color:{$tech_acc_color};
 }
 .tags {
 border-bottom:1px {$tech_acc_color} solid;
@@ -347,7 +350,7 @@ a,h2 a:hover,h3 a:hover,#user_login,#user_pass, #sidenav a:visited {
 color:{$tech_link_color}; 
 text-decoration:none;
 }
-#searchform #s {
+.date_post,#searchform #s {
 color:{$tech_post_bg_color}; 
 text-decoration:none;
 }
@@ -571,14 +574,14 @@ CSS;
         }
     }
     $css_var .= <<<CSS
-#dropdown, .top-menu{
+.top-menu{
 text-align:{$tech_nav_align};
 }
 CSS;
     if ( of_get_option( 'nav_button_width', '0' ) != '0' ) {
         $tech_nav_button_width = of_get_option( 'nav_button_width', '0' );
         $css_var .= <<<CSS
-#navmenu ul#admin li, #nav2 li,#dropdown li, #navmenu .top-menu li{
+#navmenu ul#admin li, #nav2 li, #navmenu .top-menu li{
 width: {$tech_nav_button_width}px;
 } 
 CSS;

@@ -110,7 +110,6 @@ function tech_widgets_init() {
     register_widget( 'Techozoic_About_Widget' );
     register_widget( 'Techozoic_Meta_Widget' );
     register_widget( 'Techozoic_RSS_Widget' );
-    register_widget( 'Techozoic_Twitter_Widget' );
 }
 
 add_action( 'widgets_init', 'tech_widgets_init' );
@@ -520,70 +519,3 @@ class Techozoic_Status_Widget extends WP_Widget {
 }
 
 //End Class Techozoic_Status_Widget        
-
-class Techozoic_Twitter_Widget extends WP_Widget {
-
-    function Techozoic_Twitter_Widget() {
-        $widget_ops = array( 'classname' => 'techozoic_twitter', 'description' => __( 'Twitter timeline widget', 'techozoic' ) );
-        $this->WP_Widget( 'techozoic_twitter', __( 'Techozoic Twitter', 'techozoic' ), $widget_ops );
-    }
-
-    function widget( $args, $instance ) {
-        extract( $args );
-        $title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Twitter', 'techozoic' ) : $instance['title']  );
-        $user = $instance['user'];
-        if ( !$cache = (int) $instance['cache'] )
-            $cache = 6 * 60 * 60;
-        else if ( $cache < 0 )
-            $cache = 1 * 60 * 60;
-        else if ( $cache > 24 )
-            $cache = 24 * 60 * 60;
-        if ( !$number = (int) $instance['number'] )
-            $number = 5;
-        else if ( $number < 0 )
-            $number = 1;
-        else if ( $number > 20 )
-            $number = 20;
-
-        echo $before_widget;
-        global $post;
-        if ( $title )
-            echo $before_title . $title . $after_title;
-        echo tech_twitter_info( $user, $number, 'feed', $cache );
-        echo $after_widget;
-    }
-
-    function update( $new_instance, $old_instance ) {
-        $instance = $old_instance;
-        $instance['title'] = strip_tags( $new_instance['title'] );
-        $new_instance = wp_parse_args( (array) $new_instance, array( 'user' => 'clarktechnet', 'cache' => '6', 'title' => 'Twitter', 'number' => 5 ) );
-        $instance['user'] = $new_instance['user'];
-        $instance['number'] = (int) $new_instance['number'];
-        $instance['cache'] = (int) $new_instance['cache'];
-        return $instance;
-    }
-
-    function form( $instance ) {
-        $instance = wp_parse_args( (array) $instance, array( 'user' => 'clarktechnet', 'cache' => '6', 'title' => 'Twitter', 'number' => 5 ) );
-        $title = esc_attr( $instance['title'] );
-        $user = esc_attr( $instance['user'] );
-        $number = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
-        $cache = isset( $instance['cache'] ) ? absint( $instance['cache'] ) : 6;
-        ?>
-        <p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'techozoic' ); ?></label> <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
-        <p><label for="<?php echo $this->get_field_id( 'user' ); ?>"><?php _e( 'Twitter User:', 'techozoic' ); ?></label> @<input class="widefat" id="<?php echo $this->get_field_id( 'user' ); ?>" name="<?php echo $this->get_field_name( 'user' ); ?>" type="text" value="<?php echo $user; ?>" /></p>
-        <p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of Tweets', 'techozoic' ) ?></label>
-            <input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $number; ?>" size="3" /><br />
-            <small><?php _e( 'Limit 20', 'techozoic' ) ?></small></p>
-        <p><label for="<?php echo $this->get_field_id( 'cache' ); ?>"><?php _e( 'Time to cache results in hours', 'techozoic' ) ?></label>
-            <input id="<?php echo $this->get_field_id( 'cache' ); ?>" name="<?php echo $this->get_field_name( 'cache' ); ?>" type="text" value="<?php echo $cache; ?>" size="3" /><br />
-            <small><?php _e( 'Between 1 and 24 hours', 'techozoic' ) ?></small></p>
-
-        <?php
-    }
-
-}
-
-//End Class Techozoic_About_Widget
-
-?>

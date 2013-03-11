@@ -16,9 +16,6 @@
         float:left;
         width: 30%;
 }
-#optionsframework-sidebar .tweet ul{
-        margin-left: 10px;
-}
 #optionsframework {
 	position:relative;
 	z-index: 0;

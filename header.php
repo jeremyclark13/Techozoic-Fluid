@@ -131,3 +131,4 @@
                 get_template_part( 'nav' );
             }
             ?>
+            <div id="main">

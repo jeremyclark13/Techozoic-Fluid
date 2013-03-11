@@ -29,9 +29,6 @@ require_once dirname( __FILE__ ) . '/options.php';
 include(get_template_directory() . '/functions/tech-meta-box.php');
 // Loads custom meta boxes on single post and page edit screen
 
-include(get_template_directory() . '/functions/tech-twitter.php');
-// Loads functions for pulling twitter feeds
-
 include(get_template_directory() . '/functions/tech-template-tags.php');
 // Loads template tags
 
@@ -714,11 +711,11 @@ if ( of_get_option( 'google_font', '0' ) == '1' ) {
  */
 
 function tech_menu_fallback() {
-    $output = ' <ul id="dropdown"> ';
+    $output = '<div class="navwrap"> <ul class="top-menu"> ';
     $clean_page_list = wp_list_pages( 'sort_column=menu_order&title_li=&echo=0' );
     $clean_page_list = preg_replace( '/title=\"(.*?)\"/', '', $clean_page_list );
     $output .= $clean_page_list;
-    $output .= '</ul>';
+    $output .= '</ul></div>';
     echo $output;
 }
 

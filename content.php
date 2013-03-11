@@ -1,6 +1,17 @@
 <?php $date_format = get_option( 'date_format' ); ?>
 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-    <div class="heading clear">                  
+    <div class="heading clear">    
+        <?php if ( is_home() && of_get_option( 'post_title_styling', '0' ) ) { ?>                            
+            <div class="post_date">
+                <div class="month_post"><?php the_time( 'M' ) ?></div>    
+                <div class="date_post"><?php the_time( 'j' ) ?></div>
+            </div>
+            <div class="commentdiv"><?php
+        if ( comments_open() && empty( $post->post_password ) ) {
+            comments_popup_link( '0', '1', '%', 'comment_num', '' );
+        }
+            ?></div>
+        <?php } ?>
         <h2 class="post_title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php printf( __( 'Permanent Link to %s', 'techozoic' ), get_the_title() ); ?>">
                 <?php
                 if ( get_the_title() ) {

@@ -54,9 +54,6 @@ function optionsframework_options() {
     if ( class_exists( 'bbPress' ) ) {
         $options_pages['forum'] = 'All bbPress Forum Pages';
     }
-    $twitter_feed = tech_twitter_info( $user = 'clarktechnet', $count = '5', $type = 'feed' );
-    $twitter_followers = tech_twitter_info( $user = 'clarktechnet', $count = '0', $type = 'followers' );
-    $news_feed = techozoic_links_box();
     // If using image radio buttons, define a directory path
     $imagepath = get_template_directory_uri() . '/images/';
 
@@ -162,6 +159,12 @@ function optionsframework_options() {
         "old_options" => array( "On" => "1", "Off" => "0" ),
         "std" => "0" );
 
+    $options[] = array( "name" => __( 'Extra Post Title Styling', 'techozoic' ),
+        "desc" => __( 'Enable the calendar and comment icon on homepage.', 'techozoic' ),
+        "id" => "post_title_styling",
+        "type" => "checkbox",
+        "std" => "0" );
+    
     $options[] = array( "name" => __( 'Comment Preview', 'techozoic' ),
         "desc" => __( 'Enable the comment preview for posts on the home page.', 'techozoic' ),
         "id" => "comment_preview",
@@ -971,8 +974,7 @@ function optionsframework_custom_scripts() {
 
 add_action( 'optionsframework_after', 'tech_options_display_sidebar', 100 );
 
-function tech_options_display_sidebar() {
-    ?>
+function tech_options_display_sidebar() { ?>
     <div class="metabox-holder" id="optionsframework-sidebar">
         <div class="postbox">
             <h3><?php _e('About Techozoic', 'techozoic'); ?></h3>
@@ -980,12 +982,18 @@ function tech_options_display_sidebar() {
                 <h4><?php _e('Help Support Further Development', 'techozoic'); ?></h4>
                 <p><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Q2UB936PZYYZ6' title='Help Support Development' target='_blank' ><img src='https://www.paypalobjects.com/en_US/i/btn/btn_paynow_SM.gif' /></a></p>
                 <hr />
-                <h4><?php _e('Twitter', 'techozoic'); ?> - <?php echo tech_twitter_info( $user = 'clarktechnet', $count = '0', $type = 'followers' ); ?></h4>
-                <p><a href='https://twitter.com/#!/search/realtime/techozoic%20from%3Aclarktechnet' title='Follow Development on Twitter' target='_blank'>Follow Development on Twitter</a> | <a href='https://twitter.com/intent/user?screen_name=clarktechnet' title='Follow Me on Twitter' target='_blank'>Follow Me on Twitter</a></p>
-                <p><?php echo tech_twitter_info( $user = 'clarktechnet', $count = '5', $type = 'feed' ); ?></p>
+                <h4><?php _e('Twitter', 'techozoic'); ?></h4>
+                <p><a href="https://twitter.com/clarktechnet" class="twitter-follow-button" data-show-count="false" data-size="large" data-dnt="true">Follow @clarktechnet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    <br /><a href='https://twitter.com/#!/search/realtime/techozoic%20from%3Aclarktechnet' title='Follow Development on Twitter' target='_blank'>Follow Development on Twitter</a></p>
                 <hr />
                 <h4><?php _e('What\'s New', 'techozoic'); ?></h4>
                 <p>
+                    <strong>Version 2.1.2</strong>
+                <ul>
+                    <li>Fixed issue when using page based menus</li>
+                    <li>Removed Twitter functions due to API 1.1 changes</li>
+                </ul>
                     <strong>Version 2.1.1</strong>
                 <ul>
                     <li>Missed changing archive page to use new template part.</li>

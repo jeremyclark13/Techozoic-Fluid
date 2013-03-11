@@ -1,3 +1,4 @@
+</div><!-- #main -->
 <div id="footer">
     <div id="footerdivs">
         <?php dynamic_sidebar( 'Footer' ); ?>
@@ -12,8 +13,8 @@
     }
     ?>
 
-</div><!--footer-->
-</div><!--page-->
+</div><!-- footer -->
+</div><!-- page -->
 <?php wp_footer(); ?>
 </body>
 </html>
