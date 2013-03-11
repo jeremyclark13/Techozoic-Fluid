@@ -53,10 +53,10 @@ if ( (of_get_option( 'single_sidebar', '0' ) == "1" && $tech_sidebar == "unset")
                         the_post_thumbnail( 'single-post-thumbnail' );
                     }
                     ?>
-                    <?php
-                    the_content( '<p class="serif">' . __( 'Read the rest of this entry', 'techozoic' ) . '&raquo;</p>' );
-                    wp_link_pages();
-                    ?>
+                    <?php the_content( '<p class="serif">' . __( 'Read the rest of this entry', 'techozoic' ) . '&raquo;</p>' ); ?>
+                    <div class="page-links">
+                        <?php wp_link_pages(); ?>
+                    </div>
                     <div class="postmetadata alt">
         <?php if ( get_the_author_meta( 'description', get_the_author_meta( 'ID' ) ) != '' ) { ?>
                             <div class="author-info">

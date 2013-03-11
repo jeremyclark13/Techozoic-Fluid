@@ -457,7 +457,10 @@ ul.comment-preview li:hover{
     -webkit-box-shadow:none;
     width: 64px;
 }
-
+.page-links{
+    clear: both;
+    padding-top: 10px;
+}
 .post{
     margin:0 0 40px;
     width:100%;
